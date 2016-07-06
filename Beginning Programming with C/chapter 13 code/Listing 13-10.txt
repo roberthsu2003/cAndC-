@@ -1,0 +1,9 @@
+char getch(void)
+{
+    char ch;
+
+    ch = getchar();
+    while(getchar()!='\n')
+        ;
+    return(ch);
+}

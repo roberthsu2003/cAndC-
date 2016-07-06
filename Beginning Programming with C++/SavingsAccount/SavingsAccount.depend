@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1269196105 source:c:\beginning_programming-cpp\savingsaccount\main.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<cstring>
+

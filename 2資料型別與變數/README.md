@@ -72,3 +72,33 @@ false = 0
 1,2,3...代表true
 0 ...代表false
 ``` 
+
+
+### 型別轉換
+#### 型別自動轉換
+```
+運算式中若含有不同的型別，編譯器會自動以值域較大的型別為轉換依據
+
+float PI = 3.14149;
+int radius = 10;
+//PI * radius * radius 自動轉換為float
+cout << "圓面積=" << PI * radius * radius; 
+```
+
+```
+如果是指字式，編譯器會自動將=右邊的資料型別轉換為左邊的資料型別。
+
+int area;
+area = PI * radius * radius; //自動由flaot轉換為int
+cout << "area =" << area;
+```
+
+```
+short a = 3000;
+int b;
+b = a; //可以小轉大
+char c;
+c = b; //大轉小，資料會遺失
+```
+
+### 強制轉換

@@ -53,7 +53,7 @@ double | 8 Byte | 15位數
 張四聲    13        0229435467
 ```
 
-### 字串型別(sting)
+### 字串型別(string)
 ```
 string str1;
 string str2 = "這是字串";
@@ -64,7 +64,7 @@ string str3 = "這是 \" C++ \",非常簡單";
 ### 布林型別(bool)
 ```
 bool bolA = true;
-bool bola = false;
+bool bolB = false;
 
 true = 1
 false = 0

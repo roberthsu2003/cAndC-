@@ -28,5 +28,15 @@ int main() {
 
 	cout << "bolA是" << bolA << endl;
 	cout << "bolB是" << bolB << endl;
+
+	//型別自動轉換
+	float PI = 3.14159;
+	int radius = 10;
+	//PI * radius * radius 自動轉換為float
+	cout << "圓面積=" << PI * radius * radius << endl;
+
+	int area;
+	area = PI * radius * radius; //自動由flaot轉換為int
+	cout << "area =" << area;
 	return 0;
 }

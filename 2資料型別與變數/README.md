@@ -79,7 +79,7 @@ false = 0
 ```
 運算式中若含有不同的型別，編譯器會自動以值域較大的型別為轉換依據
 
-float PI = 3.14149;
+float PI = 3.14159;
 int radius = 10;
 //PI * radius * radius 自動轉換為float
 cout << "圓面積=" << PI * radius * radius; 

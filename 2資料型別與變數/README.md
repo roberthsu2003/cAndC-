@@ -160,3 +160,18 @@ outlay_s.cpp
 您的總支出為 xxxx 元，平均每天支出 xxx.xxx 元
 ```
 
+### 常數
+#### 以#define 自訂常數
+
+```
+#define 常數名稱 常數值
+```
+
+#### 以const 自訂常數
+```
+const 類別型別 常數名稱 = 常數值
+
+const double PI = 3.14;
+
+```
+

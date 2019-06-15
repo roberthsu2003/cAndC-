@@ -38,5 +38,16 @@ int main() {
 	int area;
 	area = PI * radius * radius; //自動由flaot轉換為int
 	cout << "area =" << area;
+	/*
+	short a = 3000;
+	int b;
+	b = a; //可以小轉大
+	char c;
+	c = b; //大轉小，資料會遺失
+	cout << "c是:" << c;
+	*/
+	short a = 123;
+	int b;
+	b = (int) a; //可以強制小轉大
 	return 0;
 }

@@ -22,6 +22,7 @@ char a = 's';
 第一個字元符號，只可以是_
 ```
 
+### 數值型別
 數值型別 | 記憶體大小 | 範圍
 ------|------ | ---
 char | 1 Byte | -128 ~ 127
@@ -43,3 +44,31 @@ double | 8 Byte | 15位數
 \n 換行
 \t tab
 ```
+
+```
+*question
+請輸出:
+姓名      座號      電話
+李振聲    11        0229435437
+張四聲    13        0229435467
+```
+
+### 字串型別(sting)
+```
+string str1;
+string str2 = "這是字串";
+string str3 = "這是 \" C++ \",非常簡單";
+
+```
+
+### 布林型別(bool)
+```
+bool bolA = true;
+bool bola = false;
+
+true = 1
+false = 0
+
+1,2,3...代表true
+0 ...代表false
+``` 

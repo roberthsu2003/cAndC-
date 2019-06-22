@@ -11,7 +11,7 @@ using namespace std;
 
 int main() {
 	//讓使用者輸入一個任意數,程式會顯示此數的平方值及立方值
-	float result, n;
+	float result=0, n;
 	cout << "請輸入任意數:";
 	cin >> n;
 	result = n;

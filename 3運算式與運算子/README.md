@@ -106,3 +106,9 @@ int b = sizeof(double); // b = 8
 int c = sizeof(a)	// c = 4
 int d = sizeof(a+b) //d=4
 ```
+
+### 三元運算式
+```
+語法:
+條件判斷 ? 程式碼1 : 程式碼2
+```

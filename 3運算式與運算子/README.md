@@ -85,3 +85,24 @@ a|<= | 小於等於
 		cout << "此數的平方為:" << result << endl;
 		result *= n;
 		cout << "此數的立方為:" << result << endl;
+
+
+```
+*question
+請以複合指定運算子設計程式,讓用者輸入三個任意數，程式會顯示3數相加的總和(float)
+
+
+顯示:
+請輸入第一個數:87.9
+請輸入第二個數:45
+請輸入等三個數:87.5
+三個數的總和為:220.4
+```
+
+### sizeof型別運算子
+```
+int a = sizeof(char);   // a = 1
+int b = sizeof(double); // b = 8
+int c = sizeof(a)	// c = 4
+int d = sizeof(a+b) //d=4
+```

@@ -20,11 +20,15 @@ int main() {
 	//前置遞增
 	int x = 1;
 	int y = ++x;
+	//x = x + 1;
+	//y = x;
 	cout << "x = " << x << " y = "  << y << endl;
 
 	//後置遞增
 	int m = 1;
 	int n = m++;
+	//n = m;
+	//m = m + 1
 	cout << "m = " << m << " n = "  << n << endl;
 	return 0;
 }

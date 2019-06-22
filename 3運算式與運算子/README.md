@@ -74,3 +74,14 @@ a|<= | 小於等於
 -= | 減等於 
 *= | 乘等於 
 /= | 除等於 
+
+
+	//讓使用者輸入一個任意數,程式會顯示此數的平方值及立方值
+		float result, n;
+		cout << "請輸入任意數:";
+		cin >> n;
+		result = n;
+		result *= n;
+		cout << "此數的平方為:" << result << endl;
+		result *= n;
+		cout << "此數的立方為:" << result << endl;

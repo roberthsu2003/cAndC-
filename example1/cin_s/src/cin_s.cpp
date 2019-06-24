@@ -3,6 +3,8 @@
  產癬ㄓ糶祘Α
 */
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 using namespace std;
 
 int main() {
@@ -10,6 +12,7 @@ int main() {
 	cout << "セだ计琌:" << englishScore << endl;
 	cout << "叫块穝だ计:";
 	cin >> englishScore;
-	cout << "眤穝だ计琌:" << englishScore;
+	cout << "眤穝だ计琌:" << englishScore << "\n";
+	printf("Hello! World!");
 	return 0;
 }

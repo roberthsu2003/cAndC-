@@ -20,5 +20,10 @@ int main() {
 	cout << "str1的內容是:" << str1 << endl;
 	cout << "str2的內容是:" << str2 << endl;
 	cout << "str3的內容是:" << str3 << endl;
+
+	bool bolA = true;
+	bool bolB = false;
+	cout << "bolA:" << bolA << endl;
+	cout << "bolB:" << bolB << endl;
 	return 0;
 }

@@ -46,7 +46,7 @@ double | 8 Byte | 15位數
 ```
 
 ```
-*question
+*question_score
 請輸出:
 姓名      座號      電話
 李振聲    11        0229435437

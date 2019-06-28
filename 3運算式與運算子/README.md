@@ -97,17 +97,23 @@ a|<= | 小於等於
 *= | 乘等於 
 /= | 除等於 
 
+	// Name        : complex.cpp
 
-	//讓使用者輸入一個任意數,程式會顯示此數的平方值及立方值
-		float result, n;
+	//請使用者輸入一個任意數，程式會顯示此數的平方值及立方值
+	#include <iostream>
+	using namespace std;
+
+	int main() {
+		float num,result;
 		cout << "請輸入任意數:";
-		cin >> n;
-		result = n;
-		result *= n;
-		cout << "此數的平方為:" << result << endl;
-		result *= n;
-		cout << "此數的立方為:" << result << endl;
-
+		cin >> num;
+		result = num;
+		result *= num;
+		cout << "此數的平方是:" << result << "\n";
+		result *= num;
+		cout << "此數的立方是:" << result << "\n";
+		return 0;
+	}
 
 ```
 *question

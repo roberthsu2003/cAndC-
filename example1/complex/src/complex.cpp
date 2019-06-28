@@ -1,22 +1,22 @@
 //============================================================================
-// Name        : mathop.cpp
+// Name        : complex.cpp
 // Author      : 
 // Version     :
 // Copyright   : Your copyright notice
 // Description : Hello World in C++, Ansi-style
 //============================================================================
-//mathop.cpp
-//讓使用者輸入都是整數的被除數及除數，程式會顯示兩數相除的商及餘數。
+
 #include <iostream>
 using namespace std;
 
 int main() {
-	int n=0,m=0;
-	cout << "請輸入被除數(整數):";
-	cin >> n;
-	cout << "請輸入除數(整數,不可以為0):";
-	cin >> m;
-
-	cout << "商:" << n/m << "餘數:" << n%m << "\n";
+	float num,result;
+	cout << "請輸入任意數:";
+	cin >> num;
+	result = num;
+	result *= num;
+	cout << "此數的平方是:" << result << "\n";
+	result *= num;
+	cout << "此數的立方是:" << result << "\n";
 	return 0;
 }

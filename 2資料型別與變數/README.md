@@ -187,3 +187,14 @@ const double PI = 3.14;
 		return 0;
 	}
 
+
+	#include <iostream>
+	#define MYPI 3.14159
+	using namespace std;
+
+	int main() {
+		const float PI = 3.14159;
+		cout << "常數PI:" << PI << endl;
+		cout << "前端處理指#define MYPI" << MYPI ;
+		return 0;
+	}

@@ -1,10 +1,6 @@
 //============================================================================
 // Name        : ladder.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//讓使用者輸入梯形的上底、下底及高，程式會計算梯形的面積(上底加下底乘以高除以2)
 
 #include <iostream>
 using namespace std;

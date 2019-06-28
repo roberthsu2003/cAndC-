@@ -95,3 +95,18 @@ while(n<10){
 		cout << "存了" << count << "個月的總存款為:" << deposit << "元。\n已經足夠購買機車。";
 		return 0;
 	}
+
+
+```
+while迴圈取代for迴圈
+for(int i=0; i<=5; i++)
+{
+	cout << "這是第" << i << "次迴圈";
+}
+
+//使用while迴圈達到相同結果
+int i=1;
+while(i<=5){
+	cout << "這是第" << i << "次迴圈";
+}
+```

@@ -1,11 +1,6 @@
 //============================================================================
 // Name        : triop.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
-
+//讓使用者輸入三個任意數，程式會顯示三數中的最大數。
 #include <iostream>
 using namespace std;
 

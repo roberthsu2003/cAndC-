@@ -144,3 +144,7 @@ return <返回值>
 		cout << endl;
 		return 0;
 	}
+
+
+### 參數
+### 傳值呼叫(call by value)

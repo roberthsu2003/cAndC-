@@ -1,10 +1,6 @@
 //============================================================================
 // Name        : return1.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//自鍵盤輸入一個數字n,顯示1...n。
 
 #include <iostream>
 using namespace std;

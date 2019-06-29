@@ -1,11 +1,6 @@
 //============================================================================
 // Name        : score1.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
-
+//建立一個包含五個元素的整數陣列，讓使用者輸入五位學生的成績，然後計算班級總成績及平均成績
 #include <iostream>
 using namespace std;
 

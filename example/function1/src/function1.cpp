@@ -1,10 +1,6 @@
 //============================================================================
 // Name        : function1.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//定義函式，顯示「歡迎光臨」。
 
 #include <iostream>
 using namespace std;

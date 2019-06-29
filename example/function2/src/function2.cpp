@@ -1,7 +1,8 @@
 //============================================================================
-// Name        : function2.cpp
+// Name        : function3.cpp
 //輸入攝氏溫度，求華氏溫度
 //function 的原型宣告
+//加上do...while()
 #include <iostream>
 using namespace std;
 

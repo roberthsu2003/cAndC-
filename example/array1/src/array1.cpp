@@ -1,10 +1,6 @@
 //============================================================================
 // Name        : array1.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//建立陣列語法
 
 #include <iostream>
 using namespace std;

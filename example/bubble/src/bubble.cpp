@@ -1,11 +1,6 @@
 //============================================================================
 // Name        : bubble.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
-
+//任由使用者輸入任意個數的數值序列,程式會將此數值序列由小到大排序後顯示
 #include <iostream>
 using namespace std;
 

@@ -1,20 +1,20 @@
 //============================================================================
-// Name        : callByReference.cpp
-//callByReference
+// Name        : callByAddress.cpp
+//call by address
 
 #include <iostream>
 using namespace std;
-void turbo(int&);
+void turbo(int*);
 
 int main() {
 	int speed;
 	cout << "請輸入初始速度:";
 	cin >> speed;
-	turbo(speed);
+	turbo(&speed);
 	cout << "加速後的速度:" << speed << endl;
 	return 0;
 }
-void turbo(int& speed){
-	cout << "加速前速度:" << speed << endl;
-	speed += 10;
+void turbo(int* speed){
+	cout << "加速前速度:" << *speed << endl;
+	*speed += 10;
 }

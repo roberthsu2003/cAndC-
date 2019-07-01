@@ -85,12 +85,23 @@ for ([變數初始化宣告]; [條件判斷]; [改變量]){
 	}
 
 ### 
+	//============================================================================
+	// Name        : forNest2.cpp
 	//利用2層迴圈列印九九乘法表
-		for(int i=1; i<=9 ;i++){
+
+	#include <iostream>
+	using namespace std;
+
+	int main() {
+		for(int i=1; i<=9; i++){
 			for(int j=1; j<=9; j++){
 				cout << i << "*" << j << "=" << i*j << "\t";
 			}
-			cout << "\n\n";
+			cout << "\n";
+		}
+		return 0;
+	}
+
 ## 不固定次數的迴圈
 ```
 while(條件判斷)

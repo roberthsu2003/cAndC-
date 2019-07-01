@@ -1,10 +1,6 @@
 //============================================================================
 // Name        : for1.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//計算2 - 10所有偶數的總和
 
 #include <iostream>
 using namespace std;

@@ -1,11 +1,6 @@
 //============================================================================
 // Name        : for2.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
-
+//計算定中的支出，媽媽每天會將家裡的花費記錄下來，並且計算本週的花費總和
 #include <iostream>
 using namespace std;
 

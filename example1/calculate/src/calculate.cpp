@@ -1,10 +1,6 @@
 //============================================================================
 // Name        : calculate.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//讓使用者輸入加、減、乘、除運算子, 就會顯示運算結果
 
 #include <iostream>
 using namespace std;

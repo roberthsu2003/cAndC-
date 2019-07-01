@@ -1,11 +1,6 @@
 //============================================================================
 // Name        : password2.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
-
+//讓使用者輸入密碼,如果輸入的密碼正確(1234), 要顯示「密碼正確!歡迎光臨!」。如果不正確就顯示密碼錯誤訊息
 #include <iostream>
 using namespace std;
 

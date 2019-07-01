@@ -1,10 +1,6 @@
 //============================================================================
 // Name        : discount.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//輸入顧客購買金額，若金額在100000元打8折，50000打85折，30000打9折，10000打95折
 
 #include <iostream>
 using namespace std;

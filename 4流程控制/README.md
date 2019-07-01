@@ -125,29 +125,39 @@ switch(表示式){
 	
 }
 ```
+	//============================================================================
+	// Name        : calculate.cpp
 	//讓使用者輸入加、減、乘、除運算子, 就會顯示運算結果
+
+	#include <iostream>
+	using namespace std;
+
+	int main() {
 		char op;
-		int first = 20, second = 4;
-		cout << "first=20, second=4\n";
+		int num1 = 20, num2 = 4;
+		cout << "num1=20,num2=4\n";
 		cout << "請輸入要執行的運算(+-*/):";
 		cin >> op;
-		switch (op){
-			case '+':
-				cout << "first + second = " << first + second << "\n";
+		switch(op){
+		case '+':
+			cout << "num1+num2=" << num1+num2 << "\n";
+			break;
+		case '-':
+				cout << "num1-num2=" << num1-num2 << "\n";
 				break;
-			case '-':
-				cout << "first - second = " << first - second << "\n";
+		case '*':
+				cout << "num1*num2=" << num1*num2 << "\n";
 				break;
-			case '*':
-				cout << "first * second = " << first * second << "\n";
+		case '/':
+				cout << "num1/num2=" << num1/num2 << "\n";
 				break;
-			case '/':
-				cout << "first / second = " << first / second << "\n";
+		default:
+				cout << "無法執行運算!\n";
 				break;
-			default:
-				break;
-	
 		}
+		return 0;
+	}
+
 
 ```
 *question season_s

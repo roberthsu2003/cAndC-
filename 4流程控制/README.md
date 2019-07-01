@@ -120,7 +120,7 @@ switch(表示式){
     case valueN:
         程式區塊n
 	break;
-    defautl:
+    default:
         程式區塊
 	
 }

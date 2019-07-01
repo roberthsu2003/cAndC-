@@ -109,7 +109,22 @@ if (條件式一){
 甲等
 ```
 ## switch case:
-
+```
+switch(表示式){
+    case value1:
+        程式區塊1
+	break;
+    case value2:
+        程式區塊2
+	break;
+    case valueN:
+        程式區塊n
+	break;
+    defautl:
+        程式區塊
+	
+}
+```
 	//讓使用者輸入加、減、乘、除運算子, 就會顯示運算結果
 		char op;
 		int first = 20, second = 4;

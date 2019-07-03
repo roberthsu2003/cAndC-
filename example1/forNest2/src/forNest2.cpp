@@ -1,10 +1,6 @@
 //============================================================================
 // Name        : forNest2.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//利用2層迴圈列印九九乘法表
 
 #include <iostream>
 using namespace std;

@@ -1,10 +1,6 @@
 //============================================================================
 // Name        : while2.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//小明想要存錢買一輛機車,機車每輛30000元，他將每月存的錢輸入，當存款足夠買機車時，就顯示提示訊告知。
 
 #include <iostream>
 using namespace std;

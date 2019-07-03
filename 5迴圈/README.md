@@ -120,19 +120,22 @@ while(n<10){
 }
 ```
 
+	//============================================================================
+	// Name        : while2.cpp
 	//小明想要存錢買一輛機車,機車每輛30000元，他將每月存的錢輸入，當存款足夠買機車時，就顯示提示訊告知。
+
 	#include <iostream>
 	using namespace std;
 
 	int main() {
-		int deposit = 0, count = 0, n;
+		int deposit=0, num=0, inputNum;
 		while(deposit < 30000){
-			count++;
-			cout << "請輸入第" << count << "個月份的存款:";
-			cin >> n;
-			deposit += n;
+			num++;
+			cout << "請輸入第" << num << "個月份的存款:";
+			cin >> inputNum;
+			deposit += inputNum;
 		}
-		cout << "存了" << count << "個月的總存款為:" << deposit << "元。\n已經足夠購買機車。";
+		cout << "恭喜!已經存夠了，存了" << num << "個月的總存款為:" << deposit << "元。";
 		return 0;
 	}
 
@@ -162,6 +165,52 @@ while(i<=5){
 請輸入第4位學生的成績:89
 全班總成績為:XXX分, 平均為XX.XX分
 ```
+```
+break可以跳出迴圈
+```
+	//============================================================================
+	// Name        : guess.cpp
+	//猜數字遊戲
+	#include <iostream>
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <time.h>
+	using namespace std;
+
+	int main() {
+		int keyin, guess, count, min, max;
+		count = 0;
+		min =0;
+		max = 100;
+		srand((unsigned)time(NULL));
+		guess = rand() % 99 + 1;
+		cout << "====== 猜數字遊戲==============:\n\n";
+		do
+		{
+			cout << "猜數字範圍" << min << "~" << max << ":";
+			cin >>  keyin;
+			count++;
+			if(keyin>=1 && keyin<100){
+				if(keyin==guess){
+					cout << "賓果!猜對了,答案是" << guess << endl;
+					break;
+				}else if(keyin>guess){
+					max = keyin;
+					cout << "再小一點!!";
+				}else if (keyin<guess){
+					min=keyin;
+					cout << "再大一點!!";
+				}
+				cout << "您猜了" << count << "次\n\n";
+
+			}else{
+				cout << "請輸入提示範圍內的數字!\n";
+			}
+		}while(1);
+		cout << "您總共猜了" << count << "次";
+		return 0;
+	}
+
 
 ```
 先執行再判斷

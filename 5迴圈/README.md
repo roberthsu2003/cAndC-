@@ -210,17 +210,19 @@ break可以跳出迴圈
 	// Name        : guess.cpp
 	//猜數字遊戲
 	#include <iostream>
+
 	#include <stdio.h>
 	#include <stdlib.h>
+
 	#include <time.h>
 	using namespace std;
 
 	int main() {
 		int keyin, guess, count, min, max;
 		count = 0;
-		min =0;
-		max = 100;
-		srand((unsigned)time(NULL));
+		min =1;
+		max = 99;
+		srand(time(NULL));
 		guess = rand() % 99 + 1;
 		cout << "====== 猜數字遊戲==============:\n\n";
 		do
@@ -248,4 +250,3 @@ break可以跳出迴圈
 		cout << "您總共猜了" << count << "次";
 		return 0;
 	}
-

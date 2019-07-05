@@ -28,6 +28,7 @@ int main() {
 
 		totalScores += scores[i];
 	}
+
 	for (int i=0; i<namesCount; i++){
 		cout << names[i] << "總票數為:" << scores[i] << endl;
 		cout << names[i] << "得票率為" << scores[i] / totalScores * 100 << "%" << "\n\n";

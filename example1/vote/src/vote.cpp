@@ -1,11 +1,6 @@
 //============================================================================
 // Name        : vote.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
-
+//設計一個投票統計表，包含計算各四位歌手小個地區投票數及總得票數，最後顯示得票數和得票率(計算至小數2位)
 #include <iostream>
 using namespace std;
 
@@ -24,11 +19,18 @@ int main() {
 	};
 
 	int scores[4] = {0, 0, 0, 0};
+	float totalScores = 0;
 	for(int i=0; i<namesCount;i++){
 		for(int j=0; j<3; j++){
 			scores[i] += votes[i][j];
+
 		}
+
+		totalScores += scores[i];
+	}
+	for (int i=0; i<namesCount; i++){
 		cout << names[i] << "總票數為:" << scores[i] << endl;
+		cout << names[i] << "得票率為" << scores[i] / totalScores * 100 << "%" << "\n\n";
 	}
 
 

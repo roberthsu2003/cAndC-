@@ -1,10 +1,6 @@
 //============================================================================
 // Name        : Pointer.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//宣告變數 double m=5, int n = 10, 顯示變數m,n的值，位址和記憶體大小。
 
 #include <iostream>
 using namespace std;

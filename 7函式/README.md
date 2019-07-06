@@ -445,5 +445,55 @@ for(int i=0; i<5; i++)
 
 ```
 擲骰子遊戲亂數模擬 random1.cpp
+//============================================================================
+// Name        : random2.cpp
+//以亂數來模擬骰子遊戲，使用者按下E鍵後就會結束，按下任意鍵+enter，就會產生1到6的點數
 
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+//使用c的getch(),必需引用<conio.h>標頭檔
+//無法include conio.h
+//#include <conio.h>
+using namespace std;
+
+
+
+int main() {
+	unsigned int seed = (unsigned int)time(NULL);
+	srand(seed);
+	int n;
+	while(true){
+		cout << "請按任意鍵擲骰子,使用「E」結束遊戲:";
+		//getchar要按return鍵
+		char ch = getchar();
+		if(ch == 'E'){
+			cout << "擲骰子遊戲結束!" << endl;
+			break;
+		}else{
+			//亂數1~6
+			n = 1 + rand() % (6 - 1 + 1);
+			cout << "您所擲的點數為:" << n << "點" << endl;
+		}
+	}
+
+```
+
+```
+*question 輸入正整數n後，利用函式計算由 1 + 2 + 3 + ... + n 的和。
+
+
+
+顯示================
+請輸入一個正整數:10
+1 到 10整數的總和為 55 
+```
+
+```
+*question 大樂透開獎:以亂數產生7個1到49之間不重複整數
+
+
+顯示==========================
+本期大樂透的開獎號碼: 35 6 39 17 4 14
+本期大樂透的特別號:26
 ```

@@ -1,10 +1,6 @@
 //============================================================================
 // Name        : random2.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//以亂數來模擬骰子遊戲，使用者按下E鍵後就會結束，按下任意鍵+enter，就會產生1到6的點數
 
 #include <iostream>
 #include <stdio.h>

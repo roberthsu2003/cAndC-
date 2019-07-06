@@ -407,3 +407,40 @@ rand(), 會傳回大於0，小於32767的整數。使用時通常配合亂數種
 srand(seed);
 seed稱為亂數種子，它是unsigned int 資料型別，其值介於(0~(2的32次方-1)，即0~4294967295, 必需改變亂數種子seed, 才能產生不規則的亂數，最簡單就是使用系統時間當亂數種子，使用系統時間必需引用time.h標頭檔
 ```
+
+```
+//============================================================================
+// Name        : random1.cpp
+//建立一個亂數
+
+#include <iostream>
+#include <time.h>
+using namespace std;
+
+int main() {
+	unsigned int seed = (unsigned int)time(NULL);
+	srand(seed);
+
+	for(int i=0; i<5; i++){
+		cout << rand() << endl;
+	}
+
+	return 0;
+}
+
+```
+
+```
+建立0<= r <=n (0~n的亂數)
+int r = rand() % (n+1);
+
+建立m <= r <= n(含m，n)間的亂數
+int r = m + rand() % (n+1 - m); 
+
+
+產生10~100(含10,100)間的亂數
+for(int i=0; i<5; i++)
+	cout << 10 + rand()% (100-10+1) << endl;
+```
+
+

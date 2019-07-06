@@ -300,5 +300,41 @@ double factorial(int n){
 ```
 
 ### 多載(overloading)
+	//============================================================================
+	// Name        : overload1.cpp
+	//建立Add()函式多載，分別處理數值和字串相加。
+	
+	#include <iostream>
+	using namespace std;
+	int add(int a, int b){
+		return a + b;
+	}
+	
+	string add(string a, string b){
+		return a + b;
+	}
+	int main() {
+		cout << "add(2,3)=" << add(2, 3) << endl;
+		cout << "=======================\n";
+		cout << "add(\"Nice\", \"Play\") = " << add("Nice", "Play") << endl;
+		return 0;
+	}
+
+```
+*question Arae.cpp
+建立Area()函式多載,分別求正方形和矩形面積。
+
+顯示====================
+正方形=100
+矩形面積。
 
 
+提示
+int Area(int a){
+	return a*a
+}
+
+int Area(int a,intb){
+	return a*a
+}
+```

@@ -366,3 +366,44 @@ int Area(int a,intb){
 		showNum();
 		return 0;
 	}
+
+### 靜態變數(static variable)
+想要保留區域變數的值，就要使用靜態變數
+
+```
+宣告靜態變數的語法為:
+static 資料型別 變數名稱 = 初始值;
+```
+
+	//============================================================================
+	// Name        : static1.cpp
+	//觀察靜態變數的存取範圍
+	
+	
+	#include <iostream>
+	using namespace std;
+	static int total = 0;
+	
+	void getData(string name){
+		static int n = 0;
+		n++;
+		cout << "第" << n << "位候選人是:" << name << endl;
+		total++;
+	}
+	int main() {
+		getData("David");
+		getData("Amy");
+		getData("Tony");
+		cout << "共有" << total << " 位登記" << endl;
+		return 0;
+	}
+
+
+### 內建函式
+#### 亂數函式rand()
+
+```
+rand(), 會傳回大於0，小於32767的整數。使用時通常配合亂數種子srand();
+srand(seed);
+seed稱為亂數種子，它是unsigned int 資料型別，其值介於(0~(2的32次方-1)，即0~4294967295, 必需改變亂數種子seed, 才能產生不規則的亂數，最簡單就是使用系統時間當亂數種子，使用系統時間必需引用time.h標頭檔
+```

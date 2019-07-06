@@ -1,10 +1,6 @@
 //============================================================================
 // Name        : recoursive.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//自鍵盤輸入一個數字n, 利用遞迴來計算n階層(n!)
 
 #include <iostream>
 #include <stdio.h>

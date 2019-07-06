@@ -257,3 +257,48 @@ return <返回值>
 較的的數是 34
 ```
 
+### 遞迴(Recursive)
+	//============================================================================
+	// Name        : recoursive.cpp
+	//自鍵盤輸入一個數字n, 利用遞迴來計算n階層(n!)
+	
+	#include <iostream>
+	#include <stdio.h>
+	#include <stdlib.h>
+	
+	using namespace std;
+	
+	double factorial(double n){
+		if(n == 0){
+			return 1;
+		}else{
+			return n * factorial(n-1);
+		}
+	}
+	
+	int main() {
+		double n, total;
+		cout << "請輸入數字 n:";
+		cin >> n;
+		total = factorial(n);
+		//cout << n << "!=" << total << endl;
+		printf("%f!=%10.0f",n,total);
+		return 0;
+	}
+	
+### 可以使用迴圈代替遞迴
+
+```
+使用迴圈代替遞迴
+double factorial(int n){
+	int t = 1;
+	for(int i=1; i<=n ; i++){
+		t = t * i;
+	}
+	return t;
+}
+```
+
+### 多載(overloading)
+
+

@@ -1,10 +1,6 @@
 //============================================================================
 // Name        : overload1.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//建立Add()函式多載，分別處理數值和字串相加。
 
 #include <iostream>
 using namespace std;

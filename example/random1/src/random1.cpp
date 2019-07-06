@@ -10,9 +10,8 @@ int main() {
 	unsigned int seed = (unsigned int)time(NULL);
 	srand(seed);
 
-	for(int i=0; i<5; i++){
-		cout << rand() << endl;
-	}
+	for(int i=0; i<5; i++)
+		cout << 10 + rand()% (100-10+1) << endl;
 
 	return 0;
 }

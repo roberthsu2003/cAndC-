@@ -1,10 +1,7 @@
 //============================================================================
 // Name        : pointer2.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//顯示陣列的位址。宣告陣列 int n[3] = {1, 2, 3}，顯示陣列元素的位址。
+
 
 #include <iostream>
 using namespace std;

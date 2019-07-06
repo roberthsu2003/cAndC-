@@ -210,4 +210,39 @@ return <返回值>
 		cout << "加速前速度:" << *speed << endl;
 		*speed += 10;
 	}
+	
+### 陣列參數
+	//============================================================================
+	// Name        : array11.cpp
+	//以陣列當作參數，觀查陣列傳遞變化
+	
+	#include <iostream>
+	using namespace std;
+	
+	void showArray(int tempary[], int count){
+	
+		for(int i=0; i<count; i++){
+			cout << "any[" << i << "]=" << tempary[i] << " \t";
+		}
+		cout << "\n\n";
+	}
+	
+	int main() {
+		int ary[] = {212, 328, 765, 986};
+		int count = sizeof(ary)/ sizeof(ary[0]);
+		cout << "呼叫showArray";
+		showArray(ary, count);
+		return 0;
+	}
+	
+```
+*question 找出大的數,maxValue.cpp
+輸入兩個數字，自定函式找出最大的數
+
+
+顯示========================
+請輸入數值 a = 12
+請輸入數值 b = 34
+較的的數是 34
+```
 

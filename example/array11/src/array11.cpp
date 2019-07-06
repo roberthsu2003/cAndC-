@@ -1,10 +1,6 @@
 //============================================================================
 // Name        : array11.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//以陣列當作參數，觀查陣列傳遞變化
 
 #include <iostream>
 using namespace std;
@@ -14,7 +10,7 @@ void showArray(int tempary[], int count){
 	for(int i=0; i<count; i++){
 		cout << "any[" << i << "]=" << tempary[i] << " \t";
 	}
-	cout << "\n==========================================";
+	cout << "\n\n";
 }
 
 int main() {

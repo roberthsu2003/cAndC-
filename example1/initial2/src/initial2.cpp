@@ -1,10 +1,7 @@
 //============================================================================
 // Name        : initial2.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//建立一個2*3的二維陣列並分化，用來儲存2個學生各三科成績，再以2層巢狀迴圈將所有成績顯示出來。
+
 
 #include <iostream>
 using namespace std;

@@ -8,11 +8,14 @@
 
 #include <iostream>
 using namespace std;
-void sayHello(){
-	cout << "歡迎光臨!" << endl;
-}
+
+void sayHello();
 
 int main() {
 	sayHello();
 	return 0;
+}
+
+void sayHello(){
+	cout << "歡迎光臨!" << endl;
 }

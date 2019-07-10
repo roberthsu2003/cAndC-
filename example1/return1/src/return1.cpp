@@ -20,8 +20,10 @@ void showNum(int n){
 }
 int main() {
 	int m;
-	cout << "請輸入數字 n:";
-	cin >> m;
-	showNum(m);
+	do{
+		cout << "請輸入數字 n:";
+		cin >> m;
+		showNum(m);
+	} while(true);
 	return 0;
 }

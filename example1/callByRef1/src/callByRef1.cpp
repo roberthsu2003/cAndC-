@@ -1,10 +1,6 @@
 //============================================================================
 // Name        : callByRef1.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+// Author      : 傳參考呼叫
 
 #include <iostream>
 using namespace std;

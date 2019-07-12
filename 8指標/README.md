@@ -87,6 +87,27 @@ int *p = &n;
 		cout << "指標p指向的值是;" << *p << endl;
 		return 0;
 	}
+	
+###
+
+	//============================================================================
+	// Name        : pointer4.cpp
+	//宣告n=10,指標p指向n的位址，以指標p在取記憶體的內容
+
+	#include <iostream>
+	using namespace std;
+
+	int main() {
+		int n=10;
+		int *p;
+		p = &n;
+		cout << "n=" << n << endl;
+		cout << "&n=" << &n << endl;
+		cout << "p=" << p << endl;
+		cout << "*p=" << *p << endl;
+		cout << "*&n=" << *&n << endl;
+		return 0;
+	}
 
 ### 
 

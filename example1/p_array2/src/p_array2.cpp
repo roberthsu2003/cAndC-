@@ -1,10 +1,7 @@
 //============================================================================
 // Name        : p_array2.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+// 定義一維字元陣列，分別以陣列與指標取陣列元素內容。
+
 
 #include <iostream>
 using namespace std;

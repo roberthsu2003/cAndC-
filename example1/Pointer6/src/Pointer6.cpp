@@ -14,6 +14,11 @@ int main() {
 	cout << "指標p指向的記憶體位址=" << p << endl;
 	cout << "*p的值=" << *p << endl;
 	cout << "-----------------------" << endl;
+
 	p = &m;
+	cout << "變數m的值=" << m << endl;
+	cout << "指標p指向的記憶體位址=" << p << endl;
+	cout << "*p的值=" << *p << endl;
+	cout << "-----------------------" << endl;
 	return 0;
 }

@@ -350,6 +350,27 @@ cout << *(array+2);
 	}
 
 ### 指標的應用
-
-
+	//============================================================================
+	// Name        : swap.cpp
+	//兩數交換
 	
+	
+	#include <iostream>
+	using namespace std;
+	
+	void swap(int*, int*);
+	int main() {
+		int a = 666,b = 777;
+		cout << "a=" << a << ",b=" << b << endl;
+		swap(&a,&b);
+		cout << "a=" << a << ",b=" << b << endl;
+		return 0;
+	}
+	
+	void swap(int *n, int *m){
+		int temp = *n;
+		*n = *m;
+		*m = temp;
+	}
+	
+

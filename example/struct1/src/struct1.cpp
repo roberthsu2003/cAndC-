@@ -1,10 +1,7 @@
 //============================================================================
 // Name        : struct1.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//結構的宣告與結構存取
+
 
 #include <iostream>
 using namespace std;

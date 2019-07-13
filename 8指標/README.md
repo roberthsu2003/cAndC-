@@ -373,4 +373,6 @@ cout << *(array+2);
 		*m = temp;
 	}
 	
+![2數交換](pic/pic7.png)
+
 

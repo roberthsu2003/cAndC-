@@ -289,3 +289,4 @@ cout << *(array+2);
 	}
 
 ![call by Reference](pic/pic5.png)
+

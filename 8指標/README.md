@@ -480,3 +480,44 @@ delete 指標變數;
 ```
 int *p = new int[3];
 ```
+
+	//============================================================================
+	// Name        : array4.cpp
+	//自鍵盤輸入整數n,程式會建立一維陣列大小為n的動態陣列，並自鍵盤輸入陣列元素資料後，利用指標存取陣列顯示陣列元素。
+	
+	#include <iostream>
+	using namespace std;
+	
+	int main() {
+		int n;
+		cout << "請輸入要配置的一維陣列大小=";
+		cin >> n;
+		int *p = new int[n];
+		for (int i=0; i<n; i++){
+			cin >> *(p+i);
+		}
+	
+		cout << "陣列的元素值為" << endl;
+		for(int i = 0; i< n; i++){
+			cout << *(p+i) << endl;
+		}
+	
+		delete[] p;
+		return 0;
+	}
+
+```
+*question p_reverse2.cpp
+字串輸入後將輸入字串倒印
+輸入任意字串(字元長度不限制)，利用指標p將輸入字串倒印。
+
+
+顯示============================
+字元數 n = 5
+請輸入字串:First
+字串倒印=tsriF
+字元數 n = 6
+請輸入字串:Second
+字串倒印=dnoceS
+字元數 n=
+```

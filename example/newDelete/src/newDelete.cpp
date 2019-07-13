@@ -1,10 +1,6 @@
 //============================================================================
 // Name        : newDelete.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//new 宣告指標變數p並將p儲存值設為1, 即*p=1，程式結束以後以delete釋放指標變數配置的記憶體空間。
 
 #include <iostream>
 using namespace std;

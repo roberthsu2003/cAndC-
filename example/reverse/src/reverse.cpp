@@ -1,10 +1,6 @@
 //============================================================================
 // Name        : reverse.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+//字串倒印
 
 #include <iostream>
 using namespace std;

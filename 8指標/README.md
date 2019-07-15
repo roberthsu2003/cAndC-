@@ -561,5 +561,5 @@ int *p = new int[3];
 字元數 n = 6
 請輸入字串:Second
 字串倒印=dnoceS
-字元數 n=
+字元數 n=
 ```

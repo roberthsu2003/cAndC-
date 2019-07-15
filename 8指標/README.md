@@ -245,9 +245,16 @@ cout << *(array+2);
 		for(int i=0; i < 3; i++){
 			cout << "(str2 + " << i << ")=" << *(str2+i) << endl;
 		}
+		//指標變數的位址是可以更改的
 		str1=str2;
+		cout << "str1的內容被更改後，指向新的內容" << endl;
+		for(int i=0; i < 3; i++){
+			cout << "str1[" << i << "]=" << str1[i] << endl;
+		}
+
+		//陣列變數的位址是不可以更改的
 		//str2 = str1;
-		return 0;
+			return 0;
 	}
 
 
@@ -439,15 +446,20 @@ int *p;
 
 ```
 //解決方法1
-int n;int *p = &n;*p=10;cout << *p;
+int n;
+int *p = &n;
+*p=10;
+cout << *p;
 ```
 #### 宣告分配指標變數記憶體空位址，並設定始始值
 ```
-語法:資料型態 *指標變數 = new 資料型態(初始值)
+語法:
+資料型態 *指標變數 = new 資料型態(初始值)
 ```
 ```
 //解決方法2
-int *p = new int;int *p = new int(1);
+int *p = new int;
+int *p = new int(1);
 ```
 
 ```

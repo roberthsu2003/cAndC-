@@ -6,7 +6,7 @@
 ```
 定義結構的語法:struct 結構名稱{	資料型別 成員變數1;	資料型別 成員變數1;	資料型別 成員變數1;}
 
-例如:111
+例如:
 struct student{	int id;	char *name;	int chinese,math,english;};
 ```
 

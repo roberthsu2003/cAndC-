@@ -6,7 +6,6 @@
 	int main() {
 		string name;
 		cout << "請輸入姓名:";
-		cout << "這是一個測試";
 		cin >> name;
 		cout << "Hello! " << name;
 		return 0;

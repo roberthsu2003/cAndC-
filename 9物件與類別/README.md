@@ -151,4 +151,4 @@ class 類別名稱{
 		return 0;
 	}
 
-	
+	//實作arduino https://single9.github.io/arduino/arduino_basic.html

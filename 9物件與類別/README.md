@@ -151,4 +151,65 @@ class 類別名稱{
 		return 0;
 	}
 
+
+	### 實作h 和 cpp
+		/*
+	* proClass1.h
+	*
+	*  Created on: 2019年7月17日
+	*      Author: teacher
+	*/
+
+	#ifndef PROCLASS1_H_
+	#define PROCLASS1_H_
+
+	#include <iostream>
+	using namespace std;
+
+	//定義class
+	class Person{
+		public:
+		int tall;
+		string name;
+		void walk(int);
+
+	};
+
+
+	//============================================================================
+	// Name        : protClass1.cpp
+	// Author      : 
+	// Version     :
+	// Copyright   : Your copyright notice
+	// Description : Hello World in C++, Ansi-style
+	//============================================================================
+
+	#include "proClass1.h"
+
+
+	void Person::walk(int var){
+			cout << name << "每小時可跑" << var << "公里" << endl;
+	}
+
+
+
+
+	int main() {
+		Person david;
+		david.tall = 180;
+		david.name = "David";
+		cout << david.name << " 身高=" << david.tall << endl ;
+		david.walk(15);
+
+
+		Person robert;
+		robert.tall = 183;
+		robert.name = "Robert";
+		cout << robert.name << " 身高=" << robert.tall << endl;
+		robert.walk(20);
+		return 0;
+	}
+
+
+
 	//實作arduino https://single9.github.io/arduino/arduino_basic.html

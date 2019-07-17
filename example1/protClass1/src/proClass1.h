@@ -10,6 +10,7 @@
 
 #include <iostream>
 using namespace std;
+
 //定義class
 class Person{
 	public:
@@ -18,8 +19,6 @@ class Person{
 	void walk(int);
 
 };
-
-
 
 
 #endif /* PROCLASS1_H_ */

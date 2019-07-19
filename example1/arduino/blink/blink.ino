@@ -1,28 +1,15 @@
-const int buttonPin = 2;     // the number of the pushbutton pin
-const int ledPin =  13;      // the number of the LED pin
-
-// variables will change:
-int buttonState = 0;         // variable for reading the pushbutton status
+int potPin = A3; // select the input pin for the potentiometer
+int ledPin = 9; // select the pin for the LED
 
 void setup() {
-  // initialize the LED pin as an output:
-  pinMode(ledPin, OUTPUT);      
-  // initialize the pushbutton pin as an input:
-  pinMode(buttonPin, INPUT);     
+  Serial.begin(115200);
 }
 
-void loop(){
-  // read the state of the pushbutton value:
-  buttonState = digitalRead(buttonPin);
-
-  // check if the pushbutton is pressed.
-  // if it is, the buttonState is HIGH:
-  if (buttonState == HIGH) {     
-    // turn LED on:    
-    digitalWrite(ledPin, HIGH);  
-  } 
-  else {
-    // turn LED off:
-    digitalWrite(ledPin, LOW); 
-  }
+void loop() {
+  int sensorValue = analogRead(potPin);
+  Serial.println(sensorValue, DEC);
+  
+  sensorValue = sensorValue/4; // convert from 0-1024 to 0-255
+  analogWrite(ledPin, sensorValue);
+  delay(150);
 }

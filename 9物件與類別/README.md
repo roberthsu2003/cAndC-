@@ -217,6 +217,55 @@ class 類別名稱{
 		return 0;
 	}
 
+### public 欄位的保護
+物件的另一個特點是封裝，封裝是為了保護物件，避免物件因為外界不正當的存取而破壞。使用自訂的方法對資料成員作保護。如此可以保護物件的正當存取。
+
+![public 欄位的保護](pic/pic2.png)
+
+	//============================================================================
+	// Name        : speed2.cpp
+	// 使用private 保護欄位
+	
+	
+	#include <iostream>
+	using namespace std;
+	
+	class Car{
+		private:
+		 int speed;
+	
+		public:
+			void turbo(){
+				this -> speed = this -> speed+1;
+			}
+	
+			void setSpeed(int var){
+				if(var < 60){
+					speed = 60;
+				}else if (var > 100){
+					speed = 100;
+				}else{
+					speed = var;
+				}
+	
+			}
+	
+			int getSpeed(){
+				return speed;
+			}
+	};
+	
+	
+	int main() {
+		Car BMW;
+		BMW.setSpeed(58);
+		cout << "現在速度=" << BMW.getSpeed()<< endl;
+		BMW.turbo();
+		cout << "現在速度=" << BMW.getSpeed() << endl;
+		return 0;
+	}
+
+
 ### 實作h 和 cpp
 	/*
 	* proClass1.h

@@ -265,8 +265,55 @@ class 類別名稱{
 		return 0;
 	}
 
+```
+*question 自行定義類別
+定義Circle類別,並建立Radius欄位表示半徑，Area()方法計算圓面積。輸入半徑後計算圓面積
 
-### 實作h 和 cpp
+顯示================
+半徑 = 10
+圓面積=314.159
+```
+
+### 建構式
+類別中有一個特殊的方法，稱為建構式，其名稱和類別相同。
+當使用者建立新的學件時，會自動執行此建構式。
+建構式常來做為物件的初始化動作
+
+	//============================================================================
+	// Name        : new1.cpp
+	// 建構式
+	
+	
+	#include <iostream>
+	using namespace std;
+	class Car{
+		public:
+			int speed;
+			Car(){
+				this->speed = 70;
+			}
+	
+			Car(int n){
+				this->speed = n;
+			}
+	};
+	
+	
+	
+	int main() {
+		Car BMW;
+		cout << "執行Car BMW建立物件後，速度=" << BMW.speed << endl;
+	
+		Car BMW1(95);
+		cout << "執行Car BMW2建立物件後，速度=" << BMW1.speed << endl;
+	
+		return 0;
+	}
+
+
+
+=======
+### 實作.h 和 .cpp
 
 	/*
 	* proClass1.h

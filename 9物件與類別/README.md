@@ -150,10 +150,43 @@ class 類別名稱{
 		robert.walk(20);
 		return 0;
 	}
+	
+	### 在類別的外部定義方法
+	```
+	可以將方法定義在類別的內部，也可以將方法定義在類別的外部。此時就必須在類別中加入方法原型宣告，並在類別外部的方法前加上「::」類別範圍解析子。例如「Person::walk」;
+	```
+	
+	//============================================================================
+	// Name        : protClass1.cpp
+	// 在類別的外部定義方法
+	
+	#include <iostream>
+	using namespace std;
+	
+	class Person{
+		public:
+			int tall;
+			string name;
+			void walk(int);
+	};
+	
+	void Person::walk(int var){
+				cout << name << "每小時可跑" << var << " 公里" << endl;
+	}
+	
+	int main() {
+		Person david;
+		david.tall = 183;
+		david.name = "David";
+		cout << david.name << " 身高=" << david.tall << endl;
+		david.walk(20);	
+		return 0;
+	}
 
 
-	### 實作h 和 cpp
-		/*
+
+### 實作h 和 cpp
+  /*
 	* proClass1.h
 	*
 	*  Created on: 2019年7月17日

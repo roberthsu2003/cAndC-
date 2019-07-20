@@ -1,10 +1,6 @@
 //============================================================================
 // Name        : protClass1.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+// 在類別的外部定義方法
 
 #include <iostream>
 using namespace std;
@@ -26,13 +22,5 @@ int main() {
 	david.name = "David";
 	cout << david.name << " 身高=" << david.tall << endl;
 	david.walk(20);
-
-	cout << "==============================\n";
-
-	Person robert;
-	david.tall = 180;
-	david.name = "Robert";
-	cout << david.name << " 身高=" << david.tall << endl;
-	david.walk(15);
 	return 0;
 }

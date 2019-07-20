@@ -1,3 +1,6 @@
+/*
+ * Person.cpp
+ */
 #include "Person.h"
 
 void Person::walk(int var){

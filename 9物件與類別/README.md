@@ -267,6 +267,7 @@ class 類別名稱{
 
 
 ### 實作h 和 cpp
+
 	/*
 	* proClass1.h
 	*

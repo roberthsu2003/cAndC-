@@ -1,14 +1,15 @@
+int potPin = A3; // select the input pin for the potentiometer
+int ledPin = 9; // select the pin for the LED
+
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(115200);
-  pinMode(13,OUTPUT);
 }
 
 void loop() {
+  int sensorValue = analogRead(potPin);
+  Serial.println(sensorValue, DEC);
   
-  Serial.println("can you see me?");
-  digitalWrite(13, HIGH);
-  delay(500);
-  digitalWrite(13, LOW);
-  delay(500);
+  sensorValue = sensorValue/4; // convert from 0-1024 to 0-255
+  analogWrite(ledPin, sensorValue);
+  delay(150);
 }

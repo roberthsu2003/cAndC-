@@ -1,3 +1,0 @@
-Dates	KEYWORD1
-IsLeapYear	KEYWORD2
-GetEaster	KEYWORD2

@@ -1,4 +1,5 @@
-#輸入輸出
+# 輸入輸出
+```
 	cin.cpp
 	#include <iostream>
 	using namespace std;
@@ -10,7 +11,7 @@
 		cout << "Hello! " << name;
 		return 0;
 	}
-
+```
 
 
 ### 

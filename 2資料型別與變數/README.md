@@ -51,6 +51,7 @@ double | 8 Byte | 15位數
 姓名      座號      電話
 李振聲    11        0229435437
 張四聲    13        0229435467
+
 ```
 
 ### 字串型別(string)
@@ -58,6 +59,9 @@ double | 8 Byte | 15位數
 string str1;
 string str2 = "這是字串";
 string str3 = "這是 \" C++ \",非常簡單";
+cout << "\nstr1:" << str1 << "\n";
+cout << "str2:" << str2 << endl;
+cout << "str3:" << str3 << "\n";
 
 ```
 

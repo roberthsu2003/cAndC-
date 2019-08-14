@@ -21,5 +21,11 @@ int main() {
 	cout << "str2:" << str2 << endl;
 	cout << "str3:" << str3 << "\n";
 
+	//布林型別
+	bool bolA = true;
+	bool bolB = false;
+
+	cout << "bolA:" << bolA << endl;
+	cout << "bolB:" << bolB;
 	return 0;
 }

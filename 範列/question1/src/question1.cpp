@@ -39,5 +39,16 @@ int main() {
 	int area;
 	area = PI * radius * radius; //將左邊的值指定給右邊，型別會自動轉換
 	cout << "area=" <<  area << endl;
+
+
+	//強制轉換
+	short a = 123;
+	int b;
+	b = (int)a;  //可以強制小轉大
+
+	int a1 = 1234567;
+	short shortB;
+	shortB = (short)a1; //大轉小，資料會遣失
+	cout << "shortB:" << shortB << endl;
 	return 0;
 }

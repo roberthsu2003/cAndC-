@@ -32,6 +32,12 @@ int main() {
 	float PI = 3.14159;
 	int radius = 10;
 	cout << "\n";
-	cout << "圓面積=" << PI * radius * radius;
+	cout << "圓面積=" << PI * radius * radius << endl;
+
+
+	//自動轉換型別
+	int area;
+	area = PI * radius * radius; //將左邊的值指定給右邊，型別會自動轉換
+	cout << "area=" <<  area << endl;
 	return 0;
 }

@@ -96,7 +96,7 @@ cout << "圓面積=" << PI * radius * radius;
 如果是指字式，編譯器會自動將=右邊的資料型別轉換為左邊的資料型別。
 
 int area;
-area = PI * radius * radius; //自動由flaot轉換為int
+area = PI * radius * radius; //自動由float轉換為int
 cout << "area =" << area;
 ```
 

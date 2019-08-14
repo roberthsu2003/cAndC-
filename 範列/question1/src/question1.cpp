@@ -27,5 +27,11 @@ int main() {
 
 	cout << "bolA:" << bolA << endl;
 	cout << "bolB:" << bolB;
+
+	//型別自動轉換
+	float PI = 3.14159;
+	int radius = 10;
+	cout << "\n";
+	cout << "圓面積=" << PI * radius * radius;
 	return 0;
 }

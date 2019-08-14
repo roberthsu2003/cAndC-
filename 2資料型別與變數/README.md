@@ -70,11 +70,14 @@ cout << "str3:" << str3 << "\n";
 bool bolA = true;
 bool bolB = false;
 
-true = 1
-false = 0
+cout << bolA;
+cout << bolB;
+
+true 代表 1
+false 代表 0
 
 1,2,3...代表true
-0 ...代表false
+只有0 ...代表false
 ``` 
 
 

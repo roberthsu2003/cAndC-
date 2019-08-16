@@ -172,6 +172,7 @@ outlay_s.cpp
 
 ```
 #define 常數名稱 常數值
+#define PI 3.14
 ```
 
 #### 以const 自訂常數

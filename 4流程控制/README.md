@@ -118,13 +118,13 @@ if (條件式一){
 switch(表示式){
     case value1:
         程式區塊1
-	break;
+		break;
     case value2:
         程式區塊2
-	break;
+		break;
     case valueN:
         程式區塊n
-	break;
+		break;
     default:
         程式區塊
 	

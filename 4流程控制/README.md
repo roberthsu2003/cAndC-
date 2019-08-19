@@ -92,7 +92,7 @@ if (條件式一){
 		if(money >= 100000)
 			cout << money*0.8;
 		else if(money >= 50000)
-			cout << money*0.8;
+			cout << money*0.85;
 		else if(money >= 30000)
 			cout << money*0.9;
 		else if(money >= 10000)

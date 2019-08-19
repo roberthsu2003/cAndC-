@@ -10,22 +10,24 @@
 using namespace std;
 
 int main() {
-	int money;
+	int money, pay;
 	cout << "請輸入購買的金額:";
 	cin >> money;
 	cout << "實付金額:";
+
 	if(money >= 100000){
-		cout << money * 0.8;
+		pay =  money * 0.8;
 	}else if (money >= 50000){
-		cout << money * 0.85;
+		pay = money * 0.85;
 	}else if (money >= 30000){
-		cout << money * 0.9;
+		pay = money * 0.9;
 	}else if (money >= 10000){
-		cout << money * 0.95;
+		pay = money * 0.95;
 	}else{
-		cout << money;
+		pay = money;
 	}
 
-	cout << "元\n";
+	cout << pay <<  "元\n";
+	cout << "拆扣的金額是" << money - pay << "元\n";
 	return 0;
 }

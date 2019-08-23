@@ -10,8 +10,16 @@
 using namespace std;
 
 int main() {
-	int n = 4;
-	float array[]={3, 2, 1, 4} , tem;
+	int n;
+	cout << "請輸入要排序的數值個數:";
+	cin >> n;
+	float array[n] , tem;
+
+	for(int i=0;i<n;i++){
+		cout << "請輸入第" << i+1 << "個數值:";
+		cin >> array[i];
+	}
+
 	for(int i=0; i<n-1; i++){
 		cout << array[i];
 		for(int j=i+1;j<n;j++){

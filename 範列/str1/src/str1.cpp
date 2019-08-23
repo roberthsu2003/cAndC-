@@ -21,5 +21,9 @@ int main() {
 	cout << "str1:" << str1 << endl;
 
 	//str2 = "VirturlC++"; //錯誤
+
+	char str4[50];
+	gets(str4);
+	puts(str4);
 	return 0;
 }

@@ -131,7 +131,7 @@
 試使用陣列配合for迴圈，找尋陣列中最小值的程式，程式執行時會要求連續輸入5個數值，輸入完畢會顯示所輸入5個數值中的最小值
 ```
 
-### 一維陣列空間大小	
+	### 一維陣列空間大小
 	
 	// Name        : sizeof.cpp
 	//建立一個包含五個元素的整數陣列,使用sizeof計算陣列元素的個數,再使用for迴圈顯示陣列內容。
@@ -311,11 +311,38 @@
 
 ### 一維字元陣列
 ```
-在c++中，使用字串，可以使用stirng型別和char字元型別。
+在c++中，使用字串，可以使用string型別和char字元型別。
 string str = "DevC++";
 char str[] = {'D', 'e', 'v', 'C', '+', '+'};
 //利用字串初始化
 char str[] = "DevC++";
+ ```
+ 
+ ```
+ // Name        : str1.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	string str1 = "DevC++";
+	cout << "str1:" << str1 << endl;
+	char str2[] = {'D','e','v','C','+','+','\0'};
+	cout << "str2:" << str2 << endl;
+	char str3[] = "DevC++";
+	cout << "str3:" << str3 << endl;
+
+	str1 = "VirturlC++";
+	cout << "str1:" << str1 << endl;
+
+	//str2 = "VirturlC++"; //錯誤
+	return 0;
+}
  ```
 
 ### 多維陣列

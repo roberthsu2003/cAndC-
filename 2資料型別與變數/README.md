@@ -31,7 +31,7 @@ short | 2 Byte | -32768 ~ 32767
 unsigned short | 2 Byte | 0 ~ 65535	
 int | 4 Byte | -2147483648 ~ 2147483647
 unsigned int | 4 Byte | 0 ~ 4294967295
-long | 4 Byte | -2147483648 ~ 2147483647
+long | 8 Byte | -2147483648 ~ 2147483647
 unsigned long | 4 Byte | 0 ~ 4294967295
 float | 4 Byte | 6,7位數
 double | 8 Byte | 15位數

@@ -31,7 +31,7 @@ short | 2 Byte | -32768 ~ 32767
 unsigned short | 2 Byte | 0 ~ 65535	
 int | 4 Byte | -2147483648 ~ 2147483647
 unsigned int | 4 Byte | 0 ~ 4294967295
-long | 4 Byte | -2147483648 ~ 2147483647
+long | 8 Byte | -2147483648 ~ 2147483647
 unsigned long | 4 Byte | 0 ~ 4294967295
 float | 4 Byte | 6,7位數
 double | 8 Byte | 15位數
@@ -51,6 +51,7 @@ double | 8 Byte | 15位數
 姓名      座號      電話
 李振聲    11        0229435437
 張四聲    13        0229435467
+
 ```
 
 ### 字串型別(string)
@@ -58,6 +59,9 @@ double | 8 Byte | 15位數
 string str1;
 string str2 = "這是字串";
 string str3 = "這是 \" C++ \",非常簡單";
+cout << "\nstr1:" << str1 << "\n";
+cout << "str2:" << str2 << endl;
+cout << "str3:" << str3 << "\n";
 
 ```
 
@@ -66,11 +70,14 @@ string str3 = "這是 \" C++ \",非常簡單";
 bool bolA = true;
 bool bolB = false;
 
-true = 1
-false = 0
+cout << bolA;
+cout << bolB;
+
+true 代表 1
+false 代表 0
 
 1,2,3...代表true
-0 ...代表false
+只有0 ...代表false
 ``` 
 
 
@@ -89,7 +96,7 @@ cout << "圓面積=" << PI * radius * radius;
 如果是指字式，編譯器會自動將=右邊的資料型別轉換為左邊的資料型別。
 
 int area;
-area = PI * radius * radius; //自動由flaot轉換為int
+area = PI * radius * radius; //自動由float轉換為int
 cout << "area =" << area;
 ```
 
@@ -118,7 +125,7 @@ int a = 1234567;
 short b;
 b = (short)a; //大轉小，資料會遺失
 ```
-
+	範例:請讓使用者輸入三科成績後，自動計算其總分及平均
 	//============================================================================
 	// Name        : calscore.cpp
 	// Author      : 
@@ -151,7 +158,7 @@ b = (short)a; //大轉小，資料會遺失
 ```
 *question
 outlay_s.cpp
-小明要了解三天假期金錢支出狀況，設計程式讓小明輸入三天的支出後，自動計算其支出總額及平均
+小張要了解三天出遊花費的總支出和平均，設計程式讓小張輸入三天的支出後，自動計算其支出總額及平均
 
 ------
 請輸入第一天的支出: 321

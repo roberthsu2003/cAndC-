@@ -115,7 +115,7 @@
 ```
 
 *question sale_s.cpp
-小英是白貨公司結帳員,請您為她設計一個程式，先輸入客戶購買的貨品件數，再依此件數宣告陣列來儲存貨品價格，最後計算全部貨品總價
+小英是百貨公司結帳員,請您為她設計一個程式，先輸入客戶購買的貨品件數，再依此件數宣告陣列來儲存貨品價格，最後計算全部貨品總價
 
 顯示=======
 請輸入購買貨品件數:4
@@ -309,6 +309,68 @@
 建立整數陣列int num[] = {67, 12, 9, 52, 91, 3}, 讓使用者輸入一個整數，以二分搜尋方法檢查該整數是否存在於陣列中，並顯示查詢結果。
 ```
 
+### 一維字元陣列
+```
+在c++中，使用字串，可以使用string型別和char字元型別。
+string str = "DevC++";
+char str[] = {'D', 'e', 'v', 'C', '+', '+'};
+//利用字串初始化
+char str[] = "DevC++";
+```
+ 
+ ```
+ // Name        : str1.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	string str1 = "DevC++";
+	cout << "str1:" << str1 << endl;
+	char str2[] = {'D','e','v','C','+','+','\0'};
+	cout << "str2:" << str2 << endl;
+	char str3[] = "DevC++";
+	cout << "str3:" << str3 << endl;
+
+	str1 = "VirturlC++";
+	cout << "str1:" << str1 << endl;
+
+	//str2 = "VirturlC++"; //錯誤
+	return 0;
+}
+
+ ```
+ 
+### 字元陣列的存取  
+ 
+ 
+ ```
+ char sentence[50];
+ cin >> sentence; //輸入 this is apple.
+ cout << sentence; //顯示 this
+ 
+ 如果要取得包含空白鍵的資料，可以使用gets函式
+ gets(字元陣列)
+ ```
+ 
+ ```
+ char sentence[50];
+ gets(sentence);
+ cout << sentence;
+ ```
+ 
+ ```
+ gets函式是專為取得字串設計的，使用gets函式時，參數必需是字元陣列。
+ puts函式來顯示字元陣列
+ 語法為
+ puts(字元陣列);
+ ```
+
 ### 多維陣列
 ```
 資料型別 變數名稱[引數1][引數2]
@@ -346,6 +408,7 @@ int score[500][11]
 		}
 		return 0;
 	}
+![2*3的二維陣列](pic1.png)
 	
 ### 二維陣列
 	//============================================================================
@@ -386,7 +449,7 @@ int score[500][11]
 
 		return 0;
 	}
-
+![vote](pic2.png)
 ###  
 
 	//============================================================================

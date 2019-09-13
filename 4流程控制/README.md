@@ -1,5 +1,10 @@
 # 流程控制
 ```
+c++的流程控制的指令分為2部份
+1有條件跳躍(if else,switch case)
+2迴圈(for,whiel,do..while)
+```
+```
 if(條件式){
   程式區塊
   ......
@@ -87,7 +92,7 @@ if (條件式一){
 		if(money >= 100000)
 			cout << money*0.8;
 		else if(money >= 50000)
-			cout << money*0.8;
+			cout << money*0.85;
 		else if(money >= 30000)
 			cout << money*0.9;
 		else if(money >= 10000)
@@ -113,13 +118,13 @@ if (條件式一){
 switch(表示式){
     case value1:
         程式區塊1
-	break;
+		break;
     case value2:
         程式區塊2
-	break;
+		break;
     case valueN:
         程式區塊n
-	break;
+		break;
     default:
         程式區塊
 	

@@ -126,6 +126,11 @@
 全部貨品總價為:xxxxx元
 ```
 
+```
+*question
+試使用陣列配合for迴圈，找尋陣列中最小值的程式，程式執行時會要求連續輸入5個數值，輸入完畢會顯示所輸入5個數值中的最小值
+```
+
 	### 一維陣列空間大小
 	
 	// Name        : sizeof.cpp
@@ -229,3 +234,223 @@
 		cout << "(共比對" << i+1 << "次)\n\n";
 		return 0;
 	}
+### 二分搜尋法
+	//============================================================================
+	// Name        : binary.cpp
+	//使用2分搜尋法執行搜尋
+
+	#include <iostream>
+	using namespace std;
+
+	int main() {
+		int num[] = {256, 731, 943, 389, 142, 645, 829, 945, 371, 418};
+		string name[] = {"林小1","林小2","林小3","林小4","林小5","林小6","林小7","林小8","林小9","林小10"};
+		int n = sizeof(num) / sizeof(num[0]);
+		int s, i ,j , c, min, max, mid;
+		bool isFound;
+		int tempInt;
+		string tempstr;
+		for (i=0; i < n-1; i++){
+			for(j = i+1; j<n; j++){
+				if(num[i] > num[j]){
+					tempInt = num[i];
+					num[i] = num[j];
+					num[j] = tempInt;
+
+					tempstr = name[i];
+					name[i] = name[j];
+					name[j] = tempstr;
+
+				}
+			}
+		}
+
+		cout << "排序後的編號:\n";
+		for(i = 0; i<n ; i++){
+			cout << num[i] << " ";
+		}
+
+		for(;;){
+			isFound = false;
+			min = 0;
+			max = n-1;
+			c=1;
+			cout << "\n請輸入中獎者的編號:";
+			cin >> s;
+			while(min <= max){
+				mid = (min+max)/2;
+				if(num[mid] == s){
+					isFound = true;
+					break;
+				}
+				c++;
+				if(num[mid] > s){
+					max = mid - 1;
+				}else{
+					min = mid + 1;
+				}
+			}
+
+			if(isFound == true){
+				cout << "中獎者的姓名為:" << name[mid];
+				cout << "(共比對" << c << "次)\n\n";
+				break;
+			}else{
+				cout << "無此中獎號碼!";
+				cout << "(共比對" << c << "次)\n\n";
+			}
+
+		}
+		return 0;
+	}
+
+```
+*question binary_s.cpp
+建立整數陣列int num[] = {67, 12, 9, 52, 91, 3}, 讓使用者輸入一個整數，以二分搜尋方法檢查該整數是否存在於陣列中，並顯示查詢結果。
+```
+
+### 多維陣列
+```
+資料型別 變數名稱[引數1][引數2]
+
+500個學生的學號及10科成績如下:
+int score[500][11]
+```
+
+```
+二維陣列分值設定
+資料型別 陣列名稱[n1][n2];
+陣列名稱[0][0] = 值1;
+陣列名稱[0][1] = 值2;
+-------------------------
+陣列名稱[n1-1][n2-1] = 值n
+
+```
+
+	//============================================================================
+	// Name        : initial2.cpp
+	//建立一個2*3的二維陣列並分化，用來儲存2個學生各三科成績，再以2層巢狀迴圈將所有成績顯示出來。
+
+
+	#include <iostream>
+	using namespace std;
+
+	int main() {
+		int score[2][3] = {{85, 82, 90},{76, 95, 89}};
+		for(int i=0; i<2; i++){
+			for(int j=0; j<3;j++){
+				cout << "第" << i+1 << "位學生第" << j+1 << "科成績:" << score[i][j] << endl;
+			}
+
+			cout << "================================================\n";
+		}
+		return 0;
+	}
+	
+### 二維陣列
+	//============================================================================
+	// Name        : vote.cpp
+	//設計一個投票統計表，包含計算各四位歌手小個地區投票數及總得票數，最後顯示得票數和得票率(計算至小數2位)
+	#include <iostream>
+	using namespace std;
+
+	int main() {
+		string names[] = {"周華見", "劉得華", "張學有", "梁朝為"};
+		int namesCount = sizeof(names) / sizeof(names[0]);
+		for (int i=0; i<namesCount; i++){
+			cout << "names" << "[" << i << "]:" << names[i] << endl;
+		}
+
+		int votes[4][3] = {
+				{713, 600, 310},
+				{999, 512, 215},
+				{543, 689,287},
+				{1125,387, 769}
+		};
+
+		int scores[4] = {0, 0, 0, 0};
+		float totalScores = 0;
+		for(int i=0; i<namesCount;i++){
+			for(int j=0; j<3; j++){
+				scores[i] += votes[i][j];
+
+			}
+
+			totalScores += scores[i];
+		}
+		for (int i=0; i<namesCount; i++){
+			cout << names[i] << "總票數為:" << scores[i] << endl;
+			cout << names[i] << "得票率為" << scores[i] / totalScores * 100 << "%" << "\n\n";
+		}
+
+
+		return 0;
+	}
+
+###  
+
+	//============================================================================
+	// Name        : biglottery.cpp
+	//撰寫一個大樂透電腦自動選號程式，程式執行會以亂數的方式顯示1-49之間七個不重複的大樂透號碼。
+
+	#include <iostream>
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <time.h>
+	using namespace std;
+
+	int main() {
+		int lot[49];
+		int choose[7];
+		int min = 1, max=49, num=7;
+		int max_dim, choice;
+		int i;
+		max_dim = max-min+1;
+		for(i=0; i<max_dim; i++){
+			lot[i] = min + i;
+		}
+		srand(time(NULL));
+		for(i=0; i<num; i++){
+			choice=rand()%max_dim;
+			choose[i] = lot[choice];
+			lot[choice] = lot[max_dim-1];
+			max_dim--;
+		}
+
+		cout << "本期大樂透電腦選號號碼如下:\n\n";
+		for(i = 0; i < num; i++){
+			cout << choose[i] << " ";
+		}
+
+		cout << "\n\n特別號:" << choose[6] << "\n\n";
+
+		return 0;
+	}
+
+```
+*question 
+以程式建立 9 x 9 的二維整數陣列，陣列內容是九九乘法表的乘積，並將之輸出
+
+
+```
+
+
+```
+*question
+建立一個長度為10的一維整數陣列，可以供使用者輸入10個數字後，並由小到大排序輸出。
+```
+
+```
+*question
+建立一個姓名陣列及一個同樣長度的年齡陣列，使用者可以依選項選擇將年齡由小到大，或由大到小排序，並搭配姓名輸出
+string names[] = {"老李", "王種", "發叔", "龍哥" ,"小陳" ,"小張"};
+int ages[] = {56, 45, 51, 48, 35, 57};
+
+顯示==========
+1.由小到大排序      2.由大到小排序
+請輸入選項:1
+
+由小到大排序後:
+小陳:35   王種:45 ...........
+
+```

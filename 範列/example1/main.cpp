@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,7 +9,7 @@ int main() {
     int secondHour,secondMin;
     int totalMins;
     int timeSegments;
-    int payMoney;
+    int payMoney = 0;
 
     printf("請輸入進場時間:");
     scanf("%d %d",&firstHour, &firstMin);
@@ -18,14 +19,22 @@ int main() {
 
     totalMins = (secondHour-firstHour) * 60 + (secondMin - firstMin);
 
-    timeSegments = totalMins /30;
+    timeSegments = totalMins / 30;
 
     if(totalMins <= 120){
         payMoney = timeSegments * 30;
     }else if(totalMins <= 240){
-        payMoney = timeSegments * 40;
+        payMoney += 4 * 30;
+        timeSegments -= 4;
+        payMoney += timeSegments * 40;
     }else{
-        payMoney = timeSegments * 60;
+        payMoney += 4 * 30;
+        timeSegments -= 4;
+
+        payMoney += 4 * 40;
+        timeSegments -= 4;
+        
+        payMoney += timeSegments * 60;
     }
 
     cout << "進場時間是" << firstHour << "-" << firstMin << endl;

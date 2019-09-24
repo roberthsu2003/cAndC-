@@ -7,7 +7,7 @@ int main() {
  unsigned int seed = (unsigned int)time(NULL);
  srand(seed);
  for(int i=0; i<5 ;i++){
-     cout << rand() << endl;
+    cout << 0 + rand()% (100-0+1) << endl;
  }
- cout << rand() << endl; 
+
 }

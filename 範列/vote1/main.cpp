@@ -3,7 +3,7 @@ using namespace std;
 class Artist{
     public:
         string name;
-        int (*voteScores)[3];
+        int *voteScores;
 
 };
 
@@ -16,19 +16,19 @@ Artist ar4;
 int main() {
     ar1.name = "周華建";
     int vote1[] = {713, 600, 310};
-    ar1.voteScores = &vote1;
+    ar1.voteScores = vote1;
 
     ar2.name = "劉的華";
     int vote2[] = {999, 512, 215};
-    ar2.voteScores = &vote2;
+    ar2.voteScores = vote2;
 
     ar3.name = "張學有";
     int vote3[] = {543, 689,287};
-    ar3.voteScores = &vote3;
+    ar3.voteScores = vote3;
 
     ar4.name = "梁朝為";
     int vote4[] = {1125,387, 769};
-    ar4.voteScores = &vote4;
+    ar4.voteScores = vote4;
 
     Artist artists[] = {ar1, ar2, ar3, ar4};
 

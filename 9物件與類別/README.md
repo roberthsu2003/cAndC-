@@ -1,4 +1,4 @@
-#物件與類別
+# 物件與類別
 ### 結構
 
 ![陣列和結構不同之處](pic/pic1.png)
@@ -78,6 +78,66 @@ david.english
 		cout << "姓名" << "\t" << "成績" << endl;
 		cout << david.name << "\t" << david.score;
 		return 0;
+	}
+	
+###
+	//============================================================================
+	// Name        : struct2.cpp
+	//結構的宣告與結構存取
+	
+	
+	
+	#include <iostream>
+	using namespace std;
+
+	typedef struct Student{
+	    string name;
+	    int score;
+	} Student;
+
+	int main() {
+
+
+	  Student stus[3] = {{"robert", 94},{"david", 91}, {"alice", 94}};
+
+	  int stuCount = sizeof(stus) / sizeof(stus[0]);
+	  for(int i=0; i<stuCount; i++){
+	      cout << "第" << i+1 << "位學生是" << stus[i].name << "分數是" << stus[i].score << endl;
+	  }
+
+
+	}
+
+###
+	//============================================================================
+	// Name        : struct2.cpp
+	//結構的宣告與結構存取
+	
+	
+	
+	#include <iostream>
+	using namespace std;
+
+	typedef struct Student{
+	    string name;
+	    int scores[5];
+	} Student;
+
+	int main() {
+
+
+	  Student stus[3] = {{"robert", {78, 98, 78, 63, 83}},{"david", {78, 98, 58, 73, 73}}, {"alice", {68, 98, 74, 63, 82}}};
+
+	  int stuCount = sizeof(stus) / sizeof(stus[0]);
+	  for(int i=0; i<stuCount; i++){
+	      int sum = 0;
+	      for(int j=0; j<5; j++){
+		  sum += stus[i].scores[j];
+	      }
+	      cout << "第" << i+1 << "位學生是" << stus[i].name << "總分數是" << sum << endl;
+	  }
+
+
 	}
 
 
@@ -186,7 +246,7 @@ class 類別名稱{
 
 
 ### 方法
-方法(method)其實就是函式，在類別中有將函式稱為方罄，方法會執行指定的動作，可以傳回或不傳回返回值，在呼叫方法的過程鄉可以傳遞參數或不傳遞參數
+方法(method)其實就是函式，在類別中有將函式稱為方法，方法會執行指定的動作，可以傳回或不傳回返回值，在呼叫方法的過程裡可以傳遞參數或不傳遞參數
 
 ```
 加上static 關鍵字宣告的方法，即為靜態方法。省略static宣告的方法，則為實體方法。

@@ -171,8 +171,60 @@ switch(表示式){
 顯示:
 請輸入現在是第幾季(1-4):1
 現在是春天!
-```	
+```
+### 
+```
+//假設某個停車場的費率是停車2小時以內，每半小時30元，超過2小時，但未滿4小時的部份，每半小時40元，超過4小時以上的部份，每半小時60元，未滿半小時部分不計費。
+//如果您從早上10點23分停到下午3點20分，請撰寫程式計算共需繳交的停中費
+//輸入說明:(24小時制)
 
+
+
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+using  namespace std;
+
+int main() {
+    int firstHour,firstMin;
+    int secondHour,secondMin;
+    int totalMins;
+    int timeSegments;
+    int payMoney = 0;
+
+    printf("請輸入進場時間:");
+    scanf("%d %d",&firstHour, &firstMin);
+
+    printf("請輸入出場時間:");
+    scanf("%d %d",&secondHour, &secondMin);
+
+    totalMins = (secondHour-firstHour) * 60 + (secondMin - firstMin);
+
+    timeSegments = totalMins / 30;
+
+    if(totalMins <= 120){
+        payMoney = timeSegments * 30;
+    }else if(totalMins <= 240){
+        payMoney += 4 * 30;
+        timeSegments -= 4;
+        payMoney += timeSegments * 40;
+    }else{
+        payMoney += 4 * 30;
+        timeSegments -= 4;
+
+        payMoney += 4 * 40;
+        timeSegments -= 4;
+        
+        payMoney += timeSegments * 60;
+    }
+
+    cout << "進場時間是" << firstHour << "-" << firstMin << endl;
+    cout << "出場時間是" << secondHour << "-" << secondMin << endl;
+
+    cout << "停車的總分數" << totalMins << endl;
+    cout << "停車的總費用是" << payMoney << endl;
+}
+```
 
 ```
 *question

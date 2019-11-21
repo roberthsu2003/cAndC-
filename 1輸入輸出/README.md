@@ -1,5 +1,5 @@
 # 輸入輸出
-```
+```c++
 cin.cpp
 #include <iostream>
 using namespace std;
@@ -16,6 +16,7 @@ int main() {
 
 ### 
 	
+	```c++
 	cin_s.cpp
 	#include <iostream>
 	using namespace std;
@@ -27,4 +28,5 @@ int main() {
 		cout << "Hello ! 您的英文分數是: " << englishScore;
 		return 0;
 	}
+	```
 

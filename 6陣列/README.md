@@ -7,20 +7,22 @@
 ........
 ```
 
-	// Name        : array1.cpp
-	//建立陣列語法
-	
-	#include <iostream>
-	using namespace std;
-	
-	int main() {
-		int scores[3];
-		scores[0] = 70;
-		scores[1] = 80;
-		scores[2] = 90;
-		cout << scores[0] << "," << scores[1] << "," << scores[2];
-		return 0;
-	}
+```c++
+// Name        : array1.cpp
+//建立陣列語法
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int scores[3];
+	scores[0] = 70;
+	scores[1] = 80;
+	scores[2] = 90;
+	cout << scores[0] << "," << scores[1] << "," << scores[2];
+	return 0;
+}
+```
 
 ### 宣告陣列變數同時設定各元素初始值的語法為:
 
@@ -28,18 +30,20 @@
 資料型別 陣列名稱[n] = {值1,值2,值3,......,值n}
 ```
 
-	// Name        : array2.cpp
-	//建立陣列語法
-	//宣告時同時給值
-	#include <iostream>
-	using namespace std;
+```c++
+// Name        : array2.cpp
+//建立陣列語法
+//宣告時同時給值
+#include <iostream>
+using namespace std;
+
+int main() {
 	
-	int main() {
-		
-		int scores[3] = {70, 80, 90};
-		cout << scores[0] << "," << scores[1] << "," << scores[2];
-		return 0;
-	}
+	int scores[3] = {70, 80, 90};
+	cout << scores[0] << "," << scores[1] << "," << scores[2];
+	return 0;
+}
+```
 
 ```
 *question fruit_s.cpp
@@ -54,63 +58,68 @@
 ```
 
 ### 使用迴圈設定陣列
-	// Name        : score1.cpp
-	//建立一個包含五個元素的整數陣列，讓使用者輸入五位學生的成績，然後計算班級總成績及平均成績
-	#include <iostream>
-	using namespace std;
 	
-	int main() {
-		const int nums = 5;
+```c++
+// Name        : score1.cpp
+//建立一個包含五個元素的整數陣列，讓使用者輸入五位學生的成績，然後計算班級總成績及平均成績
+#include <iostream>
+using namespace std;
+
+int main() {
+	const int nums = 5;
+	int scores[nums];
+	int sum=0;
+	double ave;
+	for(int i=0;i<nums;i++){
+		cout << "請輸入第" << i+1 << "位學的成績";
+		cin >> scores[i];
+	}
+
+	for(int i=0; i<nums; i++){
+		sum += scores[i];
+	}
+
+	ave = (double)sum / nums;
+
+	cout << "全班總成績為:" << sum << "分,平均為" << ave << "分\n";
+	return 0;
+}
+```
+
+### 
+
+ ```c++
+//========================================================================
+//Name        : score2.c
+//建立一個包含五個元素的整數陣列，讓使用者輸入五位學生的成績，然後計算班級總成績及平均成績
+//使用c的語法
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	const int nums = 5;
 		int scores[nums];
 		int sum=0;
 		double ave;
 		for(int i=0;i<nums;i++){
-			cout << "請輸入第" << i+1 << "位學的成績";
-			cin >> scores[i];
+			//cout << "請輸入第" << i+1 << "位學的成績";
+			//cin >> scores[i];
+			printf("請輸入第%d位學的成績",i);
+			scanf("%d",&scores[i]);
 		}
-	
+
 		for(int i=0; i<nums; i++){
 			sum += scores[i];
 		}
-	
+
 		ave = (double)sum / nums;
-	
-		cout << "全班總成績為:" << sum << "分,平均為" << ave << "分\n";
-		return 0;
-	}
 
-### 
-
-	//============================================================================
-	 //Name        : score2.c
-	 //建立一個包含五個元素的整數陣列，讓使用者輸入五位學生的成績，然後計算班級總成績及平均成績
-	 //使用c的語法
-	
-	#include <stdio.h>
-	#include <stdlib.h>
-	
-	int main(void) {
-		const int nums = 5;
-			int scores[nums];
-			int sum=0;
-			double ave;
-			for(int i=0;i<nums;i++){
-				//cout << "請輸入第" << i+1 << "位學的成績";
-				//cin >> scores[i];
-				printf("請輸入第%d位學的成績",i);
-				scanf("%d",&scores[i]);
-			}
-	
-			for(int i=0; i<nums; i++){
-				sum += scores[i];
-			}
-	
-			ave = (double)sum / nums;
-	
-			//cout << "全班總成績為:" << sum << "分,平均為" << ave << "分\n";
-			printf("全班總成績為:%d分,平均為%.2f分\n",sum,ave);
-		return EXIT_SUCCESS;
-	}
+		//cout << "全班總成績為:" << sum << "分,平均為" << ave << "分\n";
+		printf("全班總成績為:%d分,平均為%.2f分\n",sum,ave);
+	return EXIT_SUCCESS;
+}
+```
 
 ```
 
@@ -131,65 +140,69 @@
 試使用陣列配合for迴圈，找尋陣列中最小值的程式，程式執行時會要求連續輸入5個數值，輸入完畢會顯示所輸入5個數值中的最小值
 ```
 
-	### 一維陣列空間大小
-	
-	// Name        : sizeof.cpp
-	//建立一個包含五個元素的整數陣列,使用sizeof計算陣列元素的個數,再使用for迴圈顯示陣列內容。
-	#include <iostream>
-	using namespace std;
-	
-	int main() {
-		int n[]={1,3,5,7,9};
-		int totalSize = sizeof(n);
-		int oneSize = sizeof(n[0]);
-		int counts = totalSize / oneSize;
-		cout << "陣列的大小為:" << totalSize << ",一個元素的大小是" << oneSize << ",陣列的數量是" << counts;
-		return 0;
-	}
+
+### 一維陣列空間大小
+```c++
+// Name        : sizeof.cpp
+//建立一個包含五個元素的整數陣列,使用sizeof計算陣列元素的個數,再使用for迴圈顯示陣列內容。
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n[]={1,3,5,7,9};
+	int totalSize = sizeof(n);
+	int oneSize = sizeof(n[0]);
+	int counts = totalSize / oneSize;
+	cout << "陣列的大小為:" << totalSize << ",一個元素的大小是" << oneSize << ",陣列的數量是" << counts;
+	return 0;
+}
+```
 
 
 ### 陣列的應用:泡沫排序
 
-	// Name        : bubble.cpp
-	//任由使用者輸入任意個數的數值序列,程式會將此數值序列由小到大排序後顯示
-	#include <iostream>
-	using namespace std;
-	
-	int main() {
-		int nums;
-		cout << "請輸入要排序的數值個數:";
-		cin >> nums;
-		float array[nums],temp;
-	
-		for(int i=0; i<nums; i++){
-			cout << "請輸入第" << i+1 << "個數值:";
-			cin >> array[i];
+```c++
+// Name        : bubble.cpp
+//任由使用者輸入任意個數的數值序列,程式會將此數值序列由小到大排序後顯示
+#include <iostream>
+using namespace std;
+
+int main() {
+	int nums;
+	cout << "請輸入要排序的數值個數:";
+	cin >> nums;
+	float array[nums],temp;
+
+	for(int i=0; i<nums; i++){
+		cout << "請輸入第" << i+1 << "個數值:";
+		cin >> array[i];
+	}
+
+	cout << "排序前:\n";
+	for (int i=0; i < nums; i++){
+		cout << array[i] << " ";
+	}
+
+	//陣列排序
+	for(int i=0; i < nums-1; i++){
+		for(int j=i+1; j < nums; j++){
+			if (array[i] > array[j]){
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
 		}
-	
-		cout << "排序前:\n";
+	}
+
+	cout << "\n";
+	cout << "排序後:\n";
 		for (int i=0; i < nums; i++){
 			cout << array[i] << " ";
 		}
-	
-		//陣列排序
-		for(int i=0; i < nums-1; i++){
-			for(int j=i+1; j < nums; j++){
-				if (array[i] > array[j]){
-					temp = array[i];
-					array[i] = array[j];
-					array[j] = temp;
-				}
-			}
-		}
-	
-		cout << "\n";
-		cout << "排序後:\n";
-			for (int i=0; i < nums; i++){
-				cout << array[i] << " ";
-			}
-	
-		return 0;
-	}
+
+	return 0;
+}
+```
 
 ```
 *question bubble_s.cpp
@@ -203,106 +216,110 @@
 ```
 
 ### 陣列的應用:循序搜尋
-	// Name        : sequential.cpp
-	//百貨公司舉辦週年抽獎活動，將顧客的抽獎編號及姓名分別儲存於陣列中，使用者輸入編號，程式會搜尋出該編號的姓名並顯示。若查詢不到也會顯示無此編號的訊息
-	
-	#include <iostream>
-	using namespace std;
-	
-	int main() {
-		int nums[] = {256, 731, 943, 389, 142, 645, 829, 945, 371, 418};
-		string names[] = {"stu1","stu2","stu3","stu4","stu5","stu6","stu7","stu8","stu9","stu10"};
-		int inputNum;
-		int i;
-		int n = sizeof(nums) / sizeof(nums[0]);
-		bool isfound = false;
-		cout << "請輸入中獎者的編號";
-		cin >> inputNum;
-		for(i=0; i<n ; i++){
-			if(nums[i] == inputNum){
-				isfound = true;
-				break;
+```c++
+// Name        : sequential.cpp
+//百貨公司舉辦週年抽獎活動，將顧客的抽獎編號及姓名分別儲存於陣列中，使用者輸入編號，程式會搜尋出該編號的姓名並顯示。若查詢不到也會顯示無此編號的訊息
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int nums[] = {256, 731, 943, 389, 142, 645, 829, 945, 371, 418};
+	string names[] = {"stu1","stu2","stu3","stu4","stu5","stu6","stu7","stu8","stu9","stu10"};
+	int inputNum;
+	int i;
+	int n = sizeof(nums) / sizeof(nums[0]);
+	bool isfound = false;
+	cout << "請輸入中獎者的編號";
+	cin >> inputNum;
+	for(i=0; i<n ; i++){
+		if(nums[i] == inputNum){
+			isfound = true;
+			break;
+		}
+	}
+
+	if(isfound == true){
+		cout << "中獎者的姓名為:" << names[i];
+	}else{
+		cout << "無此中獎號碼!";
+	}
+
+	cout << "(共比對" << i+1 << "次)\n\n";
+	return 0;
+}
+```
+### 二分搜尋法
+```c++
+//============================================================================
+// Name        : binary.cpp
+//使用2分搜尋法執行搜尋
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int num[] = {256, 731, 943, 389, 142, 645, 829, 945, 371, 418};
+	string name[] = {"林小1","林小2","林小3","林小4","林小5","林小6","林小7","林小8","林小9","林小10"};
+	int n = sizeof(num) / sizeof(num[0]);
+	int s, i ,j , c, min, max, mid;
+	bool isFound;
+	int tempInt;
+	string tempstr;
+	for (i=0; i < n-1; i++){
+		for(j = i+1; j<n; j++){
+			if(num[i] > num[j]){
+				tempInt = num[i];
+				num[i] = num[j];
+				num[j] = tempInt;
+
+				tempstr = name[i];
+				name[i] = name[j];
+				name[j] = tempstr;
+
 			}
 		}
-	
-		if(isfound == true){
-			cout << "中獎者的姓名為:" << names[i];
+	}
+
+	cout << "排序後的編號:\n";
+	for(i = 0; i<n ; i++){
+		cout << num[i] << " ";
+	}
+
+	for(;;){
+		isFound = false;
+		min = 0;
+		max = n-1;
+		c=1;
+		cout << "\n請輸入中獎者的編號:";
+		cin >> s;
+		while(min <= max){
+			mid = (min+max)/2;
+			if(num[mid] == s){
+				isFound = true;
+				break;
+			}
+			c++;
+			if(num[mid] > s){
+				max = mid - 1;
+			}else{
+				min = mid + 1;
+			}
+		}
+
+		if(isFound == true){
+			cout << "中獎者的姓名為:" << name[mid];
+			cout << "(共比對" << c << "次)\n\n";
+			break;
 		}else{
 			cout << "無此中獎號碼!";
+			cout << "(共比對" << c << "次)\n\n";
 		}
-	
-		cout << "(共比對" << i+1 << "次)\n\n";
-		return 0;
+
 	}
-### 二分搜尋法
-	//============================================================================
-	// Name        : binary.cpp
-	//使用2分搜尋法執行搜尋
-
-	#include <iostream>
-	using namespace std;
-
-	int main() {
-		int num[] = {256, 731, 943, 389, 142, 645, 829, 945, 371, 418};
-		string name[] = {"林小1","林小2","林小3","林小4","林小5","林小6","林小7","林小8","林小9","林小10"};
-		int n = sizeof(num) / sizeof(num[0]);
-		int s, i ,j , c, min, max, mid;
-		bool isFound;
-		int tempInt;
-		string tempstr;
-		for (i=0; i < n-1; i++){
-			for(j = i+1; j<n; j++){
-				if(num[i] > num[j]){
-					tempInt = num[i];
-					num[i] = num[j];
-					num[j] = tempInt;
-
-					tempstr = name[i];
-					name[i] = name[j];
-					name[j] = tempstr;
-
-				}
-			}
-		}
-
-		cout << "排序後的編號:\n";
-		for(i = 0; i<n ; i++){
-			cout << num[i] << " ";
-		}
-
-		for(;;){
-			isFound = false;
-			min = 0;
-			max = n-1;
-			c=1;
-			cout << "\n請輸入中獎者的編號:";
-			cin >> s;
-			while(min <= max){
-				mid = (min+max)/2;
-				if(num[mid] == s){
-					isFound = true;
-					break;
-				}
-				c++;
-				if(num[mid] > s){
-					max = mid - 1;
-				}else{
-					min = mid + 1;
-				}
-			}
-
-			if(isFound == true){
-				cout << "中獎者的姓名為:" << name[mid];
-				cout << "(共比對" << c << "次)\n\n";
-				break;
-			}else{
-				cout << "無此中獎號碼!";
-				cout << "(共比對" << c << "次)\n\n";
-			}
-
-		}
-		return 0;
-	}
+	return 0;
+}
+```
 
 ```
 *question binary_s.cpp
@@ -318,8 +335,8 @@ char str[] = {'D', 'e', 'v', 'C', '+', '+'};
 char str[] = "DevC++";
 ```
  
- ```
- // Name        : str1.cpp
+```c++
+// Name        : str1.cpp
 // Author      : 
 // Version     :
 // Copyright   : Your copyright notice
@@ -343,33 +360,32 @@ int main() {
 	//str2 = "VirturlC++"; //錯誤
 	return 0;
 }
-
- ```
+```
  
 ### 字元陣列的存取  
  
  
- ```
- char sentence[50];
- cin >> sentence; //輸入 this is apple.
- cout << sentence; //顯示 this
+```c++
+char sentence[50];
+cin >> sentence; //輸入 this is apple.
+cout << sentence; //顯示 this
+
+如果要取得包含空白鍵的資料，可以使用gets函式
+gets(字元陣列)
+```
  
- 如果要取得包含空白鍵的資料，可以使用gets函式
- gets(字元陣列)
- ```
+```c++
+char sentence[50];
+gets(sentence);
+cout << sentence;
+```
  
- ```
- char sentence[50];
- gets(sentence);
- cout << sentence;
- ```
- 
- ```
- gets函式是專為取得字串設計的，使用gets函式時，參數必需是字元陣列。
- puts函式來顯示字元陣列
- 語法為
- puts(字元陣列);
- ```
+```c++
+gets函式是專為取得字串設計的，使用gets函式時，參數必需是字元陣列。
+puts函式來顯示字元陣列
+語法為
+puts(字元陣列);
+```
 
 ### 多維陣列
 ```
@@ -389,112 +405,115 @@ int score[500][11]
 
 ```
 
-	//============================================================================
-	// Name        : initial2.cpp
-	//建立一個2*3的二維陣列並初始化，用來儲存2個學生各三科成績，再以2層巢狀迴圈將所有成績顯示出來。
+```c++
+//============================================================================
+// Name        : initial2.cpp
+//建立一個2*3的二維陣列並初始化，用來儲存2個學生各三科成績，再以2層巢狀迴圈將所有成績顯示出來。
 
 
-	#include <iostream>
-	using namespace std;
+#include <iostream>
+using namespace std;
 
-	int main() {
-		int score[2][3] = {{85, 82, 90},{76, 95, 89}};
-		for(int i=0; i<2; i++){
-			for(int j=0; j<3;j++){
-				cout << "第" << i+1 << "位學生第" << j+1 << "科成績:" << score[i][j] << endl;
-			}
-
-			cout << "================================================\n";
+int main() {
+	int score[2][3] = {{85, 82, 90},{76, 95, 89}};
+	for(int i=0; i<2; i++){
+		for(int j=0; j<3;j++){
+			cout << "第" << i+1 << "位學生第" << j+1 << "科成績:" << score[i][j] << endl;
 		}
-		return 0;
+
+		cout << "================================================\n";
 	}
+	return 0;
+}
+```
 ![2*3的二維陣列](pic1.png)
 	
 ### 二維陣列
-	//============================================================================
-	// Name        : vote.cpp
-	//設計一個投票統計表，包含計算各四位歌手3個地區投票數及總得票數，最後顯示得票數和得票率(計算至小數2位)
-	#include <iostream>
-	using namespace std;
+```c++
+//============================================================================
+// Name        : vote.cpp
+//設計一個投票統計表，包含計算各四位歌手3個地區投票數及總得票數，最後顯示得票數和得票率(計算至小數2位)
+#include <iostream>
+using namespace std;
 
-	int main() {
-		string names[] = {"周華見", "劉得華", "張學有", "梁朝為"};
-		int namesCount = sizeof(names) / sizeof(names[0]);
-		for (int i=0; i<namesCount; i++){
-			cout << "names" << "[" << i << "]:" << names[i] << endl;
-		}
-
-		int votes[4][3] = {
-				{713, 600, 310},
-				{999, 512, 215},
-				{543, 689,287},
-				{1125,387, 769}
-		};
-
-		int scores[4] = {0, 0, 0, 0};
-		float totalScores = 0;
-		for(int i=0; i<namesCount;i++){
-			for(int j=0; j<3; j++){
-				scores[i] += votes[i][j];
-
-			}
-
-			totalScores += scores[i];
-		}
-		for (int i=0; i<namesCount; i++){
-			cout << names[i] << "總票數為:" << scores[i] << endl;
-			cout << names[i] << "得票率為" << scores[i] / totalScores * 100 << "%" << "\n\n";
-		}
-
-
-		return 0;
+int main() {
+	string names[] = {"周華見", "劉得華", "張學有", "梁朝為"};
+	int namesCount = sizeof(names) / sizeof(names[0]);
+	for (int i=0; i<namesCount; i++){
+		cout << "names" << "[" << i << "]:" << names[i] << endl;
 	}
+
+	int votes[4][3] = {
+			{713, 600, 310},
+			{999, 512, 215},
+			{543, 689,287},
+			{1125,387, 769}
+	};
+
+	int scores[4] = {0, 0, 0, 0};
+	float totalScores = 0;
+	for(int i=0; i<namesCount;i++){
+		for(int j=0; j<3; j++){
+			scores[i] += votes[i][j];
+
+		}
+
+		totalScores += scores[i];
+	}
+	for (int i=0; i<namesCount; i++){
+		cout << names[i] << "總票數為:" << scores[i] << endl;
+		cout << names[i] << "得票率為" << scores[i] / totalScores * 100 << "%" << "\n\n";
+	}
+
+
+	return 0;
+}
+```
 ![vote](pic2.png)
 ###  
+```c++
+//============================================================================
+// Name        : biglottery.cpp
+//撰寫一個大樂透電腦自動選號程式，程式執行會以亂數的方式顯示1-49之間七個不重複的大樂透號碼。
 
-	//============================================================================
-	// Name        : biglottery.cpp
-	//撰寫一個大樂透電腦自動選號程式，程式執行會以亂數的方式顯示1-49之間七個不重複的大樂透號碼。
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+using namespace std;
 
-	#include <iostream>
-	#include <stdio.h>
-	#include <stdlib.h>
-	#include <time.h>
-	using namespace std;
-
-	int main() {
-		int lot[49];
-		int choose[7];
-		int min = 1, max=49, num=7;
-		int max_dim, choice;
-		int i;
-		max_dim = max-min+1;
-		for(i=0; i<max_dim; i++){
-			lot[i] = min + i;
-		}
-		srand(time(NULL));
-		for(i=0; i<num; i++){
-			choice=rand()%max_dim;
-			choose[i] = lot[choice];
-			lot[choice] = lot[max_dim-1];
-			max_dim--;
-		}
-
-		cout << "本期大樂透電腦選號號碼如下:\n\n";
-		for(i = 0; i < num; i++){
-			cout << choose[i] << " ";
-		}
-
-		cout << "\n\n特別號:" << choose[6] << "\n\n";
-
-		return 0;
+int main() {
+	int lot[49];
+	int choose[7];
+	int min = 1, max=49, num=7;
+	int max_dim, choice;
+	int i;
+	max_dim = max-min+1;
+	for(i=0; i<max_dim; i++){
+		lot[i] = min + i;
 	}
+	srand(time(NULL));
+	for(i=0; i<num; i++){
+		choice=rand()%max_dim;
+		choose[i] = lot[choice];
+		lot[choice] = lot[max_dim-1];
+		max_dim--;
+	}
+
+	cout << "本期大樂透電腦選號號碼如下:\n\n";
+	for(i = 0; i < num; i++){
+		cout << choose[i] << " ";
+	}
+
+	cout << "\n\n特別號:" << choose[6] << "\n\n";
+
+	return 0;
+}
+```
 
 ```
 *question 
 以程式建立 9 x 9 的二維整數陣列，陣列內容是九九乘法表的乘積，並將之輸出
-
-
 ```
 
 

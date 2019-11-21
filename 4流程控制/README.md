@@ -13,49 +13,53 @@ if(條件式){
 
 ## 單向選擇(if...)
 
-	// Name        : password.cpp
-	//讓使用者輸入密碼,如果輸入的密碼正確(1234), 要顯示「密碼正確!歡迎光臨!」。如果不正確就不做任何事
-	#include <iostream>
-	using namespace std;
+```c++
+// Name        : password.cpp
+//讓使用者輸入密碼,如果輸入的密碼正確(1234), 要顯示「密碼正確!歡迎光臨!」。如果不正確就不做任何事
+#include <iostream>
+using namespace std;
 
-	int main() {
-		string password;
-		cout << "請輸入密碼:";
-		cin >> password;
+int main() {
+	string password;
+	cout << "請輸入密碼:";
+	cin >> password;
 
-		if (password == "1234"){
-			cout << "密碼正確!歡迎光臨!";
-		}
-		return 0;
+	if (password == "1234"){
+		cout << "密碼正確!歡迎光臨!";
 	}
-## 雙向選擇(if ... else)
+	return 0;
+}
 ```
+## 雙向選擇(if ... else)
+```c++
 if (條件式){
     程式區塊一
 }else{
     程式區塊二
 }
-```
-	/============================================================================
-	// Name        : password2.cpp
-	//讓使用者輸入密碼,如果輸入的密碼正確(1234), 要顯示「密碼正確!歡迎光臨!」。如果不正確就顯示密碼錯誤訊息
-	#include <iostream>
-	using namespace std;
 
-	int main() {
-		string pass;
-		cout << "請輸入密碼:";
-		cin >> pass;
-		if (pass == "1234"){
-			cout << "歡迎光臨!\n";
-		}else{
-			cout << "密碼錯誤!\n";
-			cout << "請重新輸入!\n";
-		}
-		return 0;
+
+/============================================================================
+// Name        : password2.cpp
+//讓使用者輸入密碼,如果輸入的密碼正確(1234), 要顯示「密碼正確!歡迎光臨!」。如果不正確就顯示密碼錯誤訊息
+#include <iostream>
+using namespace std;
+
+int main() {
+	string pass;
+	cout << "請輸入密碼:";
+	cin >> pass;
+	if (pass == "1234"){
+		cout << "歡迎光臨!\n";
+	}else{
+		cout << "密碼錯誤!\n";
+		cout << "請重新輸入!\n";
 	}
-
+	return 0;
+}
 ```
+
+```c++
 *question
 成績及格判斷
 請使用者輸入成績，若成績大於等於60分，則顯示及格，否則顯示不及格。
@@ -66,7 +70,7 @@ if (條件式){
 ```
 
 ## 多向選擇(if ... else if..... else)
-```
+```c++
 if (條件式一){
     程式區塊一
 }else if(條件式二){
@@ -76,36 +80,40 @@ if (條件式一){
 }else{
     程式區塊else
 }
+
+
+
+//============================================================================
+// Name        : discount.cpp
+//輸入顧客購買金額，若金額在100000元打8折，50000打85折，30000打9折，10000打95折
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int money;
+	cout << "請輸入購買金額:";
+	cin >> money;
+	cout << "實付金額:";
+	if(money >= 100000)
+		cout << money*0.8;
+	else if(money >= 50000)
+		cout << money*0.85;
+	else if(money >= 30000)
+		cout << money*0.9;
+	else if(money >= 10000)
+		cout << money*0.95;
+	else
+		cout << money;
+
+	cout << "元\n";
+	return 0;
+}
+
+
 ```
-	//============================================================================
-	// Name        : discount.cpp
-	//輸入顧客購買金額，若金額在100000元打8折，50000打85折，30000打9折，10000打95折
 
-	#include <iostream>
-	using namespace std;
-
-	int main() {
-		int money;
-		cout << "請輸入購買金額:";
-		cin >> money;
-		cout << "實付金額:";
-		if(money >= 100000)
-			cout << money*0.8;
-		else if(money >= 50000)
-			cout << money*0.85;
-		else if(money >= 30000)
-			cout << money*0.9;
-		else if(money >= 10000)
-			cout << money*0.95;
-		else
-			cout << money;
-
-		cout << "元\n";
-		return 0;
-	}
-
-
-```
+```c++
 *question grade_s
 讓使用者輸入成績, 若成績在90分以上就顯示「優等」, 80-89分顯示「甲等」，70-79分顯示「乙等」，60-69分顯示「丙等」，60分以上顯示「丁等」。
 
@@ -114,7 +122,7 @@ if (條件式一){
 甲等
 ```
 ## switch case:
-```
+```c++
 switch(表示式){
     case value1:
         程式區塊1
@@ -129,40 +137,42 @@ switch(表示式){
         程式區塊
 	
 }
-```
-	//============================================================================
-	// Name        : calculate.cpp
-	//讓使用者輸入加、減、乘、除運算子, 就會顯示運算結果
 
-	#include <iostream>
-	using namespace std;
+//============================================================================
+// Name        : calculate.cpp
+//讓使用者輸入加、減、乘、除運算子, 就會顯示運算結果
 
-	int main() {
-		char op;
-		int num1 = 20, num2 = 4;
-		cout << "num1=20,num2=4\n";
-		cout << "請輸入要執行的運算(+-*/):";
-		cin >> op;
-		switch(op){
-		case '+':
-			cout << "num1+num2=" << num1+num2 << "\n";
+#include <iostream>
+using namespace std;
+
+int main() {
+	char op;
+	int num1 = 20, num2 = 4;
+	cout << "num1=20,num2=4\n";
+	cout << "請輸入要執行的運算(+-*/):";
+	cin >> op;
+	switch(op){
+	case '+':
+		cout << "num1+num2=" << num1+num2 << "\n";
+		break;
+	case '-':
+			cout << "num1-num2=" << num1-num2 << "\n";
 			break;
-		case '-':
-				cout << "num1-num2=" << num1-num2 << "\n";
-				break;
-		case '*':
-				cout << "num1*num2=" << num1*num2 << "\n";
-				break;
-		case '/':
-				cout << "num1/num2=" << num1/num2 << "\n";
-				break;
-		default:
-				cout << "無法執行運算!\n";
-				break;
-		}
-		return 0;
+	case '*':
+			cout << "num1*num2=" << num1*num2 << "\n";
+			break;
+	case '/':
+			cout << "num1/num2=" << num1/num2 << "\n";
+			break;
+	default:
+			cout << "無法執行運算!\n";
+			break;
 	}
+	return 0;
+}
 
+
+```
 
 ```
 *question season_s
@@ -173,7 +183,7 @@ switch(表示式){
 現在是春天!
 ```
 ### 
-```
+```c++
 //假設某個停車場的費率是停車2小時以內，每半小時30元，超過2小時，但未滿4小時的部份，每半小時40元，超過4小時以上的部份，每半小時60元，未滿半小時部分不計費。
 //如果您從早上10點23分停到下午3點20分，請撰寫程式計算共需繳交的停中費
 //輸入說明:(24小時制)
@@ -226,18 +236,18 @@ int main() {
 }
 ```
 
-```
+```c++
 *question
 
 下列為綜合所得稅試算
 輸入使用者綜合所得淨額後，印出稅率，累進差額，還有今年應納稅額
 
-級別	綜合所得淨額					稅額	      累進差額
-1		0~540,000			       5%		  0
-2		540,001~1,200,000		       10%	      36,400
-3		1,200,001~2,420,000	               20%           130,000
-4		2,420,001~4,530,000	               30%	     365,000
-5		4,530,001以上                           40%	    805,000		
+級別	 綜合所得淨額					   稅額	      累進差額
+1		0~540,000			         5%		      0
+2		540,001~1,200,000		   10%	      36,400
+3		1,200,001~2,420,000	   20%        130,000
+4		2,420,001~4,530,000	   30%	      365,000
+5		4,530,001以上           40%	      805,000		
 
 
 顯示========================

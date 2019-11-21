@@ -4,6 +4,7 @@
 ```
 &變數名稱
 ```
+```c++
 	//============================================================================
 	// Name        : Pointer.cpp
 	//宣告變數 double m=5, int n = 10, 顯示變數m,n的值，位址和記憶體大小。
@@ -22,9 +23,10 @@
 		cout << "變數n的記憶體=" << sizeof(n) << "Bytes" << endl;
 		return 0;
 	}
-
+```
 ### 
 
+	```c++
 	//============================================================================
 	// Name        : pointer2.cpp
 	//顯示陣列的位址。宣告陣列 int n[3] = {1, 2, 3}，顯示陣列元素的位址。
@@ -42,6 +44,7 @@
 	
 		return 0;
 	}
+	```
 
 ```
 *question 顯示變數n的值和位址 number.cpp
@@ -70,44 +73,49 @@ int n = 10;
 int *p = &n;
 ```
 
-	//============================================================================
-	// Name        : pointer3.cpp
-	// 指標。以指標顯示變數n的位址和內容
-	
-	#include <iostream>
-	using namespace std;
-	
-	int main() {
-		int n=10;
-		int *p = &n;
-		cout << "變數n的值=" << n << endl;
-		cout << "變數n的位址=" << &n << endl;
-		cout << "指標p的值是=" << p << endl;
-		cout << "指標p的記憶體位址是=" << &p << endl;
-		cout << "指標p指向的值是;" << *p << endl;
-		return 0;
-	}
+```c++
+//============================================================================
+// Name        : pointer3.cpp
+// 指標。以指標顯示變數n的位址和內容
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n=10;
+	int *p = &n;
+	cout << "變數n的值=" << n << endl;
+	cout << "變數n的位址=" << &n << endl;
+	cout << "指標p的值是=" << p << endl;
+	cout << "指標p的記憶體位址是=" << &p << endl;
+	cout << "指標p指向的值是;" << *p << endl;
+	return 0;
+}
+```
 	
 ###
 
-	//============================================================================
-	// Name        : pointer4.cpp
-	//宣告n=10,指標p指向n的位址，以指標p存取記憶體的內容
+	
+```c++
+//============================================================================
+// Name        : pointer4.cpp
+//宣告n=10,指標p指向n的位址，以指標p存取記憶體的內容
 
-	#include <iostream>
-	using namespace std;
+#include <iostream>
+using namespace std;
 
-	int main() {
-		int n=10;
-		int *p;
-		p = &n;
-		cout << "n=" << n << endl;
-		cout << "&n=" << &n << endl;
-		cout << "p=" << p << endl;
-		cout << "*p=" << *p << endl;
-		cout << "*&n=" << *&n << endl;
-		return 0;
-	}
+int main() {
+	int n=10;
+	int *p;
+	p = &n;
+	cout << "n=" << n << endl;
+	cout << "&n=" << &n << endl;
+	cout << "p=" << p << endl;
+	cout << "*p=" << *p << endl;
+	cout << "*&n=" << *&n << endl;
+	return 0;
+}
+```
 
 ```
 「*」有2個不同的用途，可以宣告指標變數，也可以當作取用，雖然用法相同，但意義是不一樣
@@ -119,53 +127,57 @@ int *p = &n;
 
 ### 
 
-	//============================================================================
-	// Name        : pointer5.cpp
-	//改變指標變數的記憶體內容
-	
-	
-	#include <iostream>
-	using namespace std;
-	
-	int main() {
-		int n = 10;
-		int *p = &n;
-		cout << "變數n的值=" << n << endl;
-		cout << "指標p的指向的內容=" << *p << endl;
-	
-		*p = 20;
-		cout << "改變後的變數n的值=" << n << endl;
-		return 0;
-	}
+```c++
+//============================================================================
+// Name        : pointer5.cpp
+//改變指標變數的記憶體內容
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n = 10;
+	int *p = &n;
+	cout << "變數n的值=" << n << endl;
+	cout << "指標p的指向的內容=" << *p << endl;
+
+	*p = 20;
+	cout << "改變後的變數n的值=" << n << endl;
+	return 0;
+}
+```
 	
 	
 	
 
 ###
-	//============================================================================
-	// Name        : Pointer6.cpp
-	//同一個指標可以改變指標的指向位址，則其存取的位址和記憶體內容也會不同
+```c++
+//============================================================================
+// Name        : Pointer6.cpp
+//同一個指標可以改變指標的指向位址，則其存取的位址和記憶體內容也會不同
 
-	#include <iostream>
-	using namespace std;
+#include <iostream>
+using namespace std;
 
-	int main() {
-		int n = 10;
-		int m = 20;
-		int *p;
-		p = &n;
-		cout << "變數n的值=" << n << endl;
-		cout << "指標p指向的記憶體位址=" << p << endl;
-		cout << "*p的值=" << *p << endl;
-		cout << "-----------------------" << endl;
+int main() {
+	int n = 10;
+	int m = 20;
+	int *p;
+	p = &n;
+	cout << "變數n的值=" << n << endl;
+	cout << "指標p指向的記憶體位址=" << p << endl;
+	cout << "*p的值=" << *p << endl;
+	cout << "-----------------------" << endl;
 
-		p = &m;
-		cout << "變數m的值=" << m << endl;
-		cout << "指標p指向的記憶體位址=" << p << endl;
-		cout << "*p的值=" << *p << endl;
-		cout << "-----------------------" << endl;
-		return 0;
-	}
+	p = &m;
+	cout << "變數m的值=" << m << endl;
+	cout << "指標p指向的記憶體位址=" << p << endl;
+	cout << "*p的值=" << *p << endl;
+	cout << "-----------------------" << endl;
+	return 0;
+}
+```
 ![在指標變數內，可以動態儲存不同的記憶體位址](pic/pic2.png)
 
 
@@ -196,66 +208,70 @@ cout << *(array+2);
 ```
 ![指標變數存取陣列](pic/pic3.png)
 
-	//============================================================================
-	// Name        : p_array1.cpp
-	//定義整數一維陣列，以陣列與指取得陣列位址和陣例元素內容
+```c++
+//============================================================================
+// Name        : p_array1.cpp
+//定義整數一維陣列，以陣列與指取得陣列位址和陣例元素內容
 
-	#include <iostream>
-	using namespace std;
+#include <iostream>
+using namespace std;
 
-	int main() {
-	int n[3] = {1,2,3};
-	cout << "陣列元素 \t\t 位      址 \t \t值 \n";
-	cout << "-------------------------------------------\n";
-	for(int i=0; i<3; i++){
-		cout << "n[" << i << "]\t\t" << &n[i] << "\t\t" << n[i] << endl;
-	}
-
-	//以指標變數的語法
-	cout << "陣列指標 \t\t 位      址 \t\t值 \n";
-	cout << "-------------------------------------------\n";
-	for(int i=0; i<3; i++){
-		cout << "n+" << i << "\t\t" << n+i << "\t\t" << *(n+i) << endl;
-	}
-
-	return 0;
+int main() {
+int n[3] = {1,2,3};
+cout << "陣列元素 \t\t 位      址 \t \t值 \n";
+cout << "-------------------------------------------\n";
+for(int i=0; i<3; i++){
+	cout << "n[" << i << "]\t\t" << &n[i] << "\t\t" << n[i] << endl;
 }
+
+//以指標變數的語法
+cout << "陣列指標 \t\t 位      址 \t\t值 \n";
+cout << "-------------------------------------------\n";
+for(int i=0; i<3; i++){
+	cout << "n+" << i << "\t\t" << n+i << "\t\t" << *(n+i) << endl;
+}
+
+return 0;
+}
+```
 
 ### 一維字元陣列與指標
 
 ![使用陣列變數和指標變數存取字元陣列](pic/pic4.png)
 
-	//============================================================================
-	// Name        : p_array2.cpp
-	// 定義一維字元陣列，分別以陣列與指標取陣列元素內容。
+```c++
+//============================================================================
+// Name        : p_array2.cpp
+// 定義一維字元陣列，分別以陣列與指標取陣列元素內容。
 
 
-	#include <iostream>
-	using namespace std;
+#include <iostream>
+using namespace std;
 
-	int main() {
-		char *str1 = "One";
-		char str2[] = "Two";
-		cout << "以陣列顯示str1字串" << endl;
-		for(int i=0; i < 3; i++){
-			cout << "str1[" << i << "]=" << str1[i] << endl;
-		}
-
-		cout << "以指標變數顯示str1字串" << endl;
-		for(int i=0; i < 3; i++){
-			cout << "(str2 + " << i << ")=" << *(str2+i) << endl;
-		}
-		//指標變數的位址是可以更改的
-		str1=str2;
-		cout << "str1的內容被更改後，指向新的內容" << endl;
-		for(int i=0; i < 3; i++){
-			cout << "str1[" << i << "]=" << str1[i] << endl;
-		}
-
-		//陣列變數的位址是不可以更改的
-		//str2 = str1;
-			return 0;
+int main() {
+	char *str1 = "One";
+	char str2[] = "Two";
+	cout << "以陣列顯示str1字串" << endl;
+	for(int i=0; i < 3; i++){
+		cout << "str1[" << i << "]=" << str1[i] << endl;
 	}
+
+	cout << "以指標變數顯示str1字串" << endl;
+	for(int i=0; i < 3; i++){
+		cout << "(str2 + " << i << ")=" << *(str2+i) << endl;
+	}
+	//指標變數的位址是可以更改的
+	str1=str2;
+	cout << "str1的內容被更改後，指向新的內容" << endl;
+	for(int i=0; i < 3; i++){
+		cout << "str1[" << i << "]=" << str1[i] << endl;
+	}
+
+	//陣列變數的位址是不可以更改的
+	//str2 = str1;
+		return 0;
+}
+```
 
 
 ```
@@ -271,29 +287,31 @@ cout << *(array+2);
 ```
 
 ### 傳遞陣列元素，使用call By Value和call By Reference
-	//============================================================================
-	// Name        : array4.cpp
-	// 傳遞陣列元素，使用call By Value和call By Reference
+```c++
+//============================================================================
+// Name        : array4.cpp
+// 傳遞陣列元素，使用call By Value和call By Reference
 
 
-	#include <iostream>
-	using namespace std;
-	void sub1(int, int &);
-	int main() {
-		int ary[] = {1, 2, 3};
-		cout << "ary陣列元素 ary[0]傳值,ary[1]傳搖控器後" << endl;
-		sub1(ary[0], ary[1]);
-		for(int i=0; i < 3; i++){
-			cout << ary[i] << " ";
-		}
-		cout << endl;
-		return 0;
+#include <iostream>
+using namespace std;
+void sub1(int, int &);
+int main() {
+	int ary[] = {1, 2, 3};
+	cout << "ary陣列元素 ary[0]傳值,ary[1]傳搖控器後" << endl;
+	sub1(ary[0], ary[1]);
+	for(int i=0; i < 3; i++){
+		cout << ary[i] << " ";
 	}
+	cout << endl;
+	return 0;
+}
 
-	void sub1(int a, int &b){
-		a = 5;
-		b = 5;
-	}
+void sub1(int a, int &b){
+	a = 5;
+	b = 5;
+}
+```
 ![h2](pic/h2.JPG)
 ![h3](pic/h3.JPG)
 ![h4](pic/h4.JPG)
@@ -302,158 +320,171 @@ cout << *(array+2);
 
 
 ### 
-	//============================================================================
-	// Name        : callByRef1.cpp
-	// Author      : 傳參考呼叫
+```c++
+//============================================================================
+// Name        : callByRef1.cpp
+// Author      : 傳參考呼叫
 
-	#include <iostream>
-	using namespace std;
-	void  turbo(int &);
-	int main() {
-		int speed;
-		cout << "請輸入初始速度:";
-		cin >> speed;
+#include <iostream>
+using namespace std;
+void  turbo(int &);
+int main() {
+	int speed;
+	cout << "請輸入初始速度:";
+	cin >> speed;
 
-		turbo(speed);
-		cout << "加速後速度:" << speed << endl;
+	turbo(speed);
+	cout << "加速後速度:" << speed << endl;
 
-		return 0;
-	}
+	return 0;
+}
 
-	void turbo(int &mySpeed){
-		cout << "加整前速度:" << mySpeed << endl;
-		mySpeed+=10;
-	}
+void turbo(int &mySpeed){
+	cout << "加整前速度:" << mySpeed << endl;
+	mySpeed+=10;
+}
+```
 
 ![call by Reference](pic/pic5.png)
 
 
-	//============================================================================
-	// Name        : callByAddress1.cpp
-	//call by address
 	
-	#include <iostream>
-	using namespace std;
-	
-	void turbo(int *);
-	int main() {
-		int speed;
-		cout << "請輸入初始速度:";
-		cin >> speed;
-		turbo(&speed);
-		cout << "加速後的速度:" << speed << endl;
-		return 0;
-	}
-	
-	void turbo(int *mySpeed){
-		cout << "加速前的速度:" << *mySpeed << endl;
-		*mySpeed += 10;
-	}
+```c++
+//============================================================================
+// Name        : callByAddress1.cpp
+//call by address
+
+#include <iostream>
+using namespace std;
+
+void turbo(int *);
+int main() {
+	int speed;
+	cout << "請輸入初始速度:";
+	cin >> speed;
+	turbo(&speed);
+	cout << "加速後的速度:" << speed << endl;
+	return 0;
+}
+
+void turbo(int *mySpeed){
+	cout << "加速前的速度:" << *mySpeed << endl;
+	*mySpeed += 10;
+}
+```
 	
 ![call by address](pic/pic6.png)
 
 
-	//============================================================================
-	// Name        : array21.cpp
-	//陣列變數當作參數,或指標變數當作參數
-	
-	#include <iostream>
-	using namespace std;
-	void showAry(int *);
-	void sub2(int *);
-	int main() {
-		int ary[] = {1, 2, 3};
-		cout << "1指標變數當參數:" << endl;
-		showAry(ary);
-	
-		cout << "2陣列變數當參數" << endl;
-		sub2(ary);
-	
-		showAry(ary);
-		return 0;
+```c++
+//============================================================================
+// Name        : array21.cpp
+//陣列變數當作參數,或指標變數當作參數
+
+#include <iostream>
+using namespace std;
+void showAry(int *);
+void sub2(int *);
+int main() {
+	int ary[] = {1, 2, 3};
+	cout << "1指標變數當參數:" << endl;
+	showAry(ary);
+
+	cout << "2陣列變數當參數" << endl;
+	sub2(ary);
+
+	showAry(ary);
+	return 0;
+}
+
+void showAry(int *tempAry){
+	for(int i=0; i<=2; i++){
+		cout << "ary[" << i << "]=" << tempAry[i] << "\t";
+		cout << "\n-----------------------------" << endl;
 	}
-	
-	void showAry(int *tempAry){
-		for(int i=0; i<=2; i++){
-			cout << "ary[" << i << "]=" << tempAry[i] << "\t";
-			cout << "\n-----------------------------" << endl;
-		}
-	}
-	
-	void sub2(int tempAry[]){
-	 for(int i=0; i<=2; i++){
-		 tempAry[i] *= 2;
-	 }
-	}
+}
+
+void sub2(int tempAry[]){
+ for(int i=0; i<=2; i++){
+	 tempAry[i] *= 2;
+ }
+}
+```
 
 ### 指標的應用
-	//============================================================================
-	// Name        : swap.cpp
-	//兩數交換
-	
-	
-	#include <iostream>
-	using namespace std;
-	
-	void swap(int*, int*);
-	int main() {
-		int a = 666,b = 777;
-		cout << "a=" << a << ",b=" << b << endl;
-		swap(&a,&b);
-		cout << "a=" << a << ",b=" << b << endl;
-		return 0;
-	}
-	
-	void swap(int *n, int *m){
-		int temp = *n;
-		*n = *m;
-		*m = temp;
-	}
+```c++
+//============================================================================
+// Name        : swap.cpp
+//兩數交換
+
+
+#include <iostream>
+using namespace std;
+
+void swap(int*, int*);
+int main() {
+	int a = 666,b = 777;
+	cout << "a=" << a << ",b=" << b << endl;
+	swap(&a,&b);
+	cout << "a=" << a << ",b=" << b << endl;
+	return 0;
+}
+
+void swap(int *n, int *m){
+	int temp = *n;
+	*n = *m;
+	*m = temp;
+}
+```
 	
 ![2數交換](pic/pic7.png)
 
-	//============================================================================
-	// Name        : reverse.cpp
-	//字串倒印
-	
-	#include <iostream>
-	using namespace std;
-	
-	int main() {
-		char p[] = "Hello";
-		cout << "字串=" << p << endl;
-		cout << "p大小" << sizeof(p) << endl;
-		int count = sizeof(p) / sizeof(p[0]) - 1;
-		for (int i=count-1; i >= 0; i--){
-			cout << *(p+i);
-		}
-		cout << endl;
-		return 0;
+```c++
+//============================================================================
+// Name        : reverse.cpp
+//字串倒印
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	char p[] = "Hello";
+	cout << "字串=" << p << endl;
+	cout << "p大小" << sizeof(p) << endl;
+	int count = sizeof(p) / sizeof(p[0]) - 1;
+	for (int i=count-1; i >= 0; i--){
+		cout << *(p+i);
 	}
+	cout << endl;
+	return 0;
+}
+```
 
 
-	//============================================================================
-	// Name        : swapString.cpp
-	//使用者輸入字串，輸出字串
-	
-	#include <iostream>
-	using namespace std;
-	
-	int main() {
-		char *p1=new char[50];
-	
-		cout << "請輸入字串:";
-		cin >> p1;
-	
-		cout << p1 << endl;
-	
-		int i = 0;
-		while(*(p1+i) != '\0'){
-			cout << *(p1+i) << ",";
-			i++;
-		}
-		return 0;
+```c++
+//============================================================================
+// Name        : swapString.cpp
+//使用者輸入字串，輸出字串
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	char *p1=new char[50];
+
+	cout << "請輸入字串:";
+	cin >> p1;
+
+	cout << p1 << endl;
+
+	int i = 0;
+	while(*(p1+i) != '\0'){
+		cout << *(p1+i) << ",";
+		i++;
 	}
+	return 0;
+}
+```
 
 ```
 *question reverse.cpp
@@ -497,22 +528,24 @@ int *p = new int(1);
 delete 指標變數;
 ```
 
-	//============================================================================
-	// Name        : newDelete.cpp
-	//new 宣告指標變數p並將p儲存值設為1, 即*p=1，程式結束以後以delete釋放指標變數配置的記憶體空間。
-	
-	#include <iostream>
-	using namespace std;
-	
-	int main() {
-		int *p = new int(1); //初始化
-		cout << "指標p的位址p=" << p << endl;  // 顯示指標p的位址
-		cout << "*p=" << *p << endl;
-		*p = 2;
-		cout << "*p=" << *p << endl;
-		delete p;
-		return 0;
-	}
+```c++
+//============================================================================
+// Name        : newDelete.cpp
+//new 宣告指標變數p並將p儲存值設為1, 即*p=1，程式結束以後以delete釋放指標變數配置的記憶體空間。
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int *p = new int(1); //初始化
+	cout << "指標p的位址p=" << p << endl;  // 顯示指標p的位址
+	cout << "*p=" << *p << endl;
+	*p = 2;
+	cout << "*p=" << *p << endl;
+	delete p;
+	return 0;
+}
+```
 
 ### 建立動態陣列，並配置動態記憶體空間
 ```
@@ -523,30 +556,32 @@ delete 指標變數;
 int *p = new int[3];
 ```
 
-	//============================================================================
-	// Name        : array4.cpp
-	//自鍵盤輸入整數n,程式會建立一維陣列大小為n的動態陣列，並自鍵盤輸入陣列元素資料後，利用指標存取陣列顯示陣列元素。
-	
-	#include <iostream>
-	using namespace std;
-	
-	int main() {
-		int n;
-		cout << "請輸入要配置的一維陣列大小=";
-		cin >> n;
-		int *p = new int[n];
-		for (int i=0; i<n; i++){
-			cin >> *(p+i);
-		}
-	
-		cout << "陣列的元素值為" << endl;
-		for(int i = 0; i< n; i++){
-			cout << *(p+i) << endl;
-		}
-	
-		delete[] p;
-		return 0;
+```c++
+//============================================================================
+// Name        : array4.cpp
+//自鍵盤輸入整數n,程式會建立一維陣列大小為n的動態陣列，並自鍵盤輸入陣列元素資料後，利用指標存取陣列顯示陣列元素。
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n;
+	cout << "請輸入要配置的一維陣列大小=";
+	cin >> n;
+	int *p = new int[n];
+	for (int i=0; i<n; i++){
+		cin >> *(p+i);
 	}
+
+	cout << "陣列的元素值為" << endl;
+	for(int i = 0; i< n; i++){
+		cout << *(p+i) << endl;
+	}
+
+	delete[] p;
+	return 0;
+}
+```
 
 ```
 

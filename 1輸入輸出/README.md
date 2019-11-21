@@ -132,20 +132,6 @@ int main(void) {
 
 
 
-```c++
-//cin.cpp
-
-#include <iostream>
-using namespace std;
-	
-int main() {
-	string name;
-	cout << "請輸入中文真姓名:";
-	cin >> name;
-	cout << "Hello! " << name;
-	return 0;
-}	
-```
 
 ```c
 題目
@@ -177,6 +163,7 @@ int main() {
 三科平均:83.3
 ```
 [解答](https://repl.it/@roberthsu2003/sumAve)
+
 ### 
 	
 ```c++
@@ -192,4 +179,20 @@ int main() {
 	return 0;
 }
 ```
+
+```c++
+//cin.cpp
+
+#include <iostream>
+using namespace std;
+	
+int main() {
+	string name;
+	cout << "請輸入中文真姓名:";
+	cin >> name;
+	cout << "Hello! " << name;
+	return 0;
+}	
+```
+
 

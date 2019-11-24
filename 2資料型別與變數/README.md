@@ -158,7 +158,7 @@ b = (short)a; //大轉小，資料會遺失
 	}
 	
 ```
-[解題](https://repl.it/@roberthsu2003/outlays)
+
 ```c++
 *question
 outlay_s.cpp
@@ -170,7 +170,7 @@ outlay_s.cpp
 請輸入第三天的支出: 567
 您的總支出為 xxxx 元，平均每天支出 xxx.xxx 元
 ```
-
+[解題](https://repl.it/@roberthsu2003/outlays)
 ## 常數
 #### 以#define 自訂常數
 

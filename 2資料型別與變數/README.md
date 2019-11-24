@@ -158,7 +158,7 @@ b = (short)a; //大轉小，資料會遺失
 	}
 	
 ```
-
+[解題](https://repl.it/@roberthsu2003/outlays)
 ```c++
 *question
 outlay_s.cpp

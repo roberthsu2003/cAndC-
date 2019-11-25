@@ -30,7 +30,9 @@ int main() {
 	return 0;
 }
 ```
+
 ## 雙向選擇(if ... else)
+
 ```c++
 if (條件式){
     程式區塊一
@@ -59,8 +61,9 @@ int main() {
 }
 ```
 
+
 ```c++
-*question
+*question score.cpp
 成績及格判斷
 請使用者輸入成績，若成績大於等於60分，則顯示及格，否則顯示不及格。
 
@@ -68,9 +71,11 @@ int main() {
 請輸入成績:78
 及格!(不及格!)
 ```
+[解題](https://repl.it/@roberthsu2003/score)
 
 ## 多向選擇(if ... else if..... else)
 ```c++
+
 if (條件式一){
     程式區塊一
 }else if(條件式二){
@@ -114,14 +119,17 @@ int main() {
 ```
 
 ```c++
-*question grade_s
+*question grade_s.cpp
 讓使用者輸入成績, 若成績在90分以上就顯示「優等」, 80-89分顯示「甲等」，70-79分顯示「乙等」，60-69分顯示「丙等」，60分以上顯示「丁等」。
 
 顯示:
 請輸入成績(0-100):89
 甲等
 ```
+[解題](https://repl.it/@roberthsu2003/grades)
+
 ## switch case:
+
 ```c++
 switch(表示式){
     case value1:
@@ -175,13 +183,15 @@ int main() {
 ```
 
 ```
-*question season_s
+*question season_s.cpp
 讓使用者入	1-4的數字，由1到4分別顯示春天、夏天、秋天、冬天。
 
 顯示:
 請輸入現在是第幾季(1-4):1
 現在是春天!
 ```
+[解題](https://repl.it/@roberthsu2003/seasons)
+
 ### 
 ```c++
 //假設某個停車場的費率是停車2小時以內，每半小時30元，超過2小時，但未滿4小時的部份，每半小時40元，超過4小時以上的部份，每半小時60元，未滿半小時部分不計費。

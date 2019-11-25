@@ -35,7 +35,7 @@ int main(void) {
     return 0;
 }
 ```
-
+![變數](./pic/pic1.png)
 ```c
 //printf3.c
 //「\n」換行符號

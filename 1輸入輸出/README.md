@@ -1,5 +1,39 @@
 # 輸入輸出
 
+### 
+	
+```c++
+//cin_s.cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+	int englishScore = 60;
+	cout << "請輸入您的英文分數:";
+	cin >> englishScore;
+	cout << "Hello ! 您的英文分數是: " << englishScore;
+	return 0;
+}
+```
+
+```c++
+//cin.cpp
+
+#include <iostream>
+using namespace std;
+	
+int main() {
+	string name;
+	cout << "請輸入中文真姓名:";
+	cin >> name;
+	cout << "Hello! " << name;
+	return 0;
+}	
+```
+
+
+
+
 
 ## printf()
 ### printf("字串\n");
@@ -165,36 +199,4 @@ int main(void) {
 三科平均:83.3
 ```
 [解答](https://repl.it/@roberthsu2003/sumAve)
-
-### 
-	
-```c++
-//cin_s.cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-	int englishScore = 60;
-	cout << "請輸入您的英文分數:";
-	cin >> englishScore;
-	cout << "Hello ! 您的英文分數是: " << englishScore;
-	return 0;
-}
-```
-
-```c++
-//cin.cpp
-
-#include <iostream>
-using namespace std;
-	
-int main() {
-	string name;
-	cout << "請輸入中文真姓名:";
-	cin >> name;
-	cout << "Hello! " << name;
-	return 0;
-}	
-```
-
 

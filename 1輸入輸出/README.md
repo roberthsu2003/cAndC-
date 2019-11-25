@@ -36,7 +36,7 @@ int main(void) {
 }
 ```
 
-![變數](./pic/pic1.png)
+
 
 ```c
 //printf3.c

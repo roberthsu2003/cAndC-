@@ -53,6 +53,7 @@ double | 8 Byte | 15位數
 李振聲    11        0229435437  
 張四聲    13        0229435467  
 ```
+[解題](https://repl.it/@roberthsu2003/student)
 
 
 ## 字串型別(string)

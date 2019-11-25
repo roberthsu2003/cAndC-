@@ -36,7 +36,7 @@ int main(void) {
 }
 ```
 
-![變數](./pic/pic1.png | width=200)
+![](./pic/pic1.png | width=200)
 
 ```c
 //printf3.c

@@ -36,7 +36,7 @@ int main(void) {
 }
 ```
 
-![變數](https://github.com/roberthsu2003/cAndC-/blob/teacher/1%E8%BC%B8%E5%85%A5%E8%BC%B8%E5%87%BA/pic/pic1.png&s=200)
+![變數](./pic/pic1.png)
 
 ```c
 //printf3.c

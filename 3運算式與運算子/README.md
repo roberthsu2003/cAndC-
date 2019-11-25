@@ -211,7 +211,7 @@ int main() {
 ```
 
 ```c++
-*question_triop_s.cpp
+*question circle_s.cpp
 讓使用者輸入圓柱體的半徑及高，程式會計算圓柱體的體積(圓柱體體積的公式為「圓週率乘以半徑平方再乘以高)。
 
 顯示========
@@ -219,4 +219,4 @@ int main() {
 請輸入圓柱體的高(公分):5
 圓柱體的體積:xxxx立方公分
 ```
-
+[解題](https://repl.it/@roberthsu2003/circles)

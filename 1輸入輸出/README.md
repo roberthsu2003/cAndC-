@@ -36,7 +36,7 @@ int main(void) {
 }
 ```
 
-![變數](./pic/pic1.png){:height="50%" width="50%"}
+![變數](./pic/pic1.png s=200)
 
 ```c
 //printf3.c

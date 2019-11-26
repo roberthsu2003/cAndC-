@@ -47,7 +47,7 @@ double | 8 Byte | 15位數
 ```
 
 ```
-*question student.pcc
+*question student.cpp
 請輸出:  
 姓名      座號      電話  
 李振聲    11        0229435437  
@@ -55,7 +55,13 @@ double | 8 Byte | 15位數
 ```
 [解題](https://repl.it/@roberthsu2003/student)
 
-
+## 字元型別
+```c++
+char chrB;
+chrB = ’A‘;
+char chrC;
+chrC = 65;
+```
 ## 字串型別(string)
 ```c++
 string str1;

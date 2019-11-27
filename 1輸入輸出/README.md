@@ -30,10 +30,7 @@ int main() {
 	return 0;
 }	
 ```
-
-
-
-
+<br/><br/>
 # C 語言 輸入輸出
 ## printf()
 ### printf("字串\n");

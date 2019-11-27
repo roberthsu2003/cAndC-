@@ -194,57 +194,21 @@ int main() {
 
 ### 
 ```c++
+//parkingFee
+
 //假設某個停車場的費率是停車2小時以內，每半小時30元，超過2小時，但未滿4小時的部份，每半小時40元，超過4小時以上的部份，每半小時60元，未滿半小時部分不計費。
-//如果您從早上10點23分停到下午3點20分，請撰寫程式計算共需繳交的停中費
+//如果您從早上10點23分停到下午3點20分，請撰寫程式計算共需繳交的停車費
 //輸入說明:(24小時制)
 
-
-
-#include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
-using  namespace std;
-
-int main() {
-    int firstHour,firstMin;
-    int secondHour,secondMin;
-    int totalMins;
-    int timeSegments;
-    int payMoney = 0;
-
-    printf("請輸入進場時間:");
-    scanf("%d %d",&firstHour, &firstMin);
-
-    printf("請輸入出場時間:");
-    scanf("%d %d",&secondHour, &secondMin);
-
-    totalMins = (secondHour-firstHour) * 60 + (secondMin - firstMin);
-
-    timeSegments = totalMins / 30;
-
-    if(totalMins <= 120){
-        payMoney = timeSegments * 30;
-    }else if(totalMins <= 240){
-        payMoney += 4 * 30;
-        timeSegments -= 4;
-        payMoney += timeSegments * 40;
-    }else{
-        payMoney += 4 * 30;
-        timeSegments -= 4;
-
-        payMoney += 4 * 40;
-        timeSegments -= 4;
-        
-        payMoney += timeSegments * 60;
-    }
-
-    cout << "進場時間是" << firstHour << "-" << firstMin << endl;
-    cout << "出場時間是" << secondHour << "-" << secondMin << endl;
-
-    cout << "停車的總分數" << totalMins << endl;
-    cout << "停車的總費用是" << payMoney << endl;
-}
+顯示:
+請輸入進場時間:9 15
+請輸入出場時間:13 56
+進場時間是9-15
+出場時間是13-56
+停車的總分數281
+停車的總費用是340
 ```
+[解題](https://repl.it/@roberthsu2003/parkingFee)
 
 ```c++
 *question
@@ -257,9 +221,9 @@ int main() {
 請輸入綜合所得淨額:1500000
 
 綜合所得淨額: 1500000 元
-稅       額: 20%
+稅額: 20%
 ---------------------
-稅       金: 300000 元
+稅金: 300000 元
 累進差額:1300000
 ----------------------
 今年應納稅額: 170000 元			
@@ -272,6 +236,8 @@ int main() {
 3	|	1,200,001 ~ 2,420,000	  | 20%     |  130,000
 4	|	2,420,001 ~ 4,530,000	  | 30%	    |  365,000
 5	|	4,530,001以上          | 40%	    |  805,000		
+
+[解題](https://repl.it/@roberthsu2003/IncomeTax)
 
 ```c++
 *question

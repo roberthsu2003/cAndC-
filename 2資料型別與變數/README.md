@@ -174,7 +174,9 @@ b = (short)a; //大轉小，資料會遺失
 		cin >> math;
 	
 		int sum = chinese + english + math;
-		float average = (float)sum / 3;
+		//average = (float)sum / 3;
+		//average = (float)(sum / 3);
+		average = sum / 3.0;
 		cout << "您的總分為:" << sum << "分, 平均為" << average << "分\n";
 	
 		return 0;

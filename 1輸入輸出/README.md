@@ -98,7 +98,7 @@ int main(void) {
 ```
 
 ```c
-//print4.c
+//print5.c
 #include <stdio.h>
 
 int main(void) {

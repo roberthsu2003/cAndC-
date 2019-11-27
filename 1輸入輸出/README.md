@@ -16,6 +16,7 @@ int main() {
 }
 ```
 
+
 ```c++
 //cin.cpp
 

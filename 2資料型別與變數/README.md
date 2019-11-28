@@ -214,6 +214,8 @@ const double PI = 3.14;
 ```
 
 ```c++
+//defint.cpp
+
 #include <iostream>
 #define PI 3.14
 using namespace std;
@@ -228,6 +230,8 @@ int main() {
 ```
 
 ```c++
+//define1.cpp
+
 #include <iostream>
 #define MYPI 3.14159
 using namespace std;

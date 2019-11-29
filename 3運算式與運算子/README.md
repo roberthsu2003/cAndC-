@@ -127,7 +127,7 @@ int main() {
 *question
 complex_s
 請以(複合指定運算子)設計程式,讓用者輸入三個任意數，程式會顯示3數相加的總和(float)
-[解題](https://repl.it/@roberthsu2003/complexs)
+
 
 顯示:
 請輸入第一個數:87.9
@@ -135,7 +135,7 @@ complex_s
 請輸入等三個數:87.5
 三個數的總和為:220.4
 ```
-
+[解題](https://repl.it/@roberthsu2003/complexs)
 ## sizeof型別運算子
 ```c++
 int a = sizeof(char);   // a = 1

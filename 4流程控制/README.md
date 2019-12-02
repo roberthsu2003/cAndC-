@@ -1,7 +1,7 @@
 # 流程控制
 ```
 c++的流程控制的指令分為2部份
-1有條件跳躍(if else,switch case)
+1判斷(if else,switch case)
 2迴圈(for,whiel,do..while)
 ```
 ```

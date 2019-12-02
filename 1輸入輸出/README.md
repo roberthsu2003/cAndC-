@@ -142,8 +142,8 @@ int main(void) {
 }
 ```
 
-```c
-//scanf2.c
+```cpp
+//scanf2.cpp
 
 #include <stdio.h>
 

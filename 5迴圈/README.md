@@ -338,6 +338,8 @@ int main() {
 M*1 + M*2 + M*3 + ......+ M*N = 50
 ```
 
+[解題](https://repl.it/@roberthsu2003/inputLoop)
+
 ```c++ 
 *問題 commonfactor.cpp
 設計一個程式，可以由鍵盤輸入兩個數值，並求出這2個數值的最大公因數和最小公倍數

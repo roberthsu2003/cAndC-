@@ -55,8 +55,6 @@ int main() {
 ```
 *問題 transtemperature.cpp
 輸入華氏溫度，求攝氏溫度
-
-
 顯示=====================
 請輸入華氏溫度:xx
 攝氏溫度=xx.xxxx

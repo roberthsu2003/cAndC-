@@ -450,29 +450,6 @@ int main() {
 }
 ```
  
-### 字元陣列的存取   
- 
-```c++
-char sentence[50];
-cin >> sentence; //輸入 this is apple.
-cout << sentence; //顯示 this
-
-如果要取得包含空白鍵的資料，可以使用gets函式
-gets(字元陣列)
-```
- 
-```c++
-char sentence[50];
-gets(sentence);
-cout << sentence;
-```
- 
-```c++
-gets函式是專為取得字串設計的，使用gets函式時，參數必需是字元陣列。
-puts函式來顯示字元陣列
-語法為
-puts(字元陣列);
-```
 
 ### 多維陣列
 ```

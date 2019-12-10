@@ -454,4 +454,75 @@ int main() {
 
 
 
-//實作arduino https://single9.github.io/arduino/arduino_basic.html
+### 繼承
+繼承是從既有的類別中衍生新的類別,繼承後的類別稱為子類別(child class)或衍生類別(derived class), 而被繼承的類別稱為父類別(parent class)或基底類別(base class)
+```c++
+class base{
+};
+
+//子類別derived繼承父類別base
+class derived:public base{
+};
+```
+
+子類別以public方式繼承，代表子類別會繼承父類別中宣告為public 及 protectd的成員(包括欄位或屬性、方法),但不會繼承宣告為private的成員.
+
+```c++
+class base{
+	public;
+	protected;
+	private;
+};
+
+//子類別derived繼承父類別base
+class derived:public base{
+};
+```
+
+```c++
+定義2個類別，一個為父類別一個為子類別,第一個類別Vehicle父類別是具有1個方法和3個欄位的基底類別,第2個類別Car子類別,從基底類別Vehicle繼承方法methosA()和非private 欄位a1,a3,並新增b1欄位和方法methodB()
+
+
+#include <iostream>
+using namespace std;
+
+class Vehicle{
+	public:
+		int a1;
+		Vehicle(){
+			a1 = 1;
+		}
+		void methodA(){
+			cout << "這是Vehicle的methodA" << endl;
+		}
+	private:
+		int a2;
+	
+	protected:
+		int a3;
+};
+
+class Car:public Vehicle{
+	public:
+		int b1;
+		void methodB(){
+			a1 = 8;
+			a3 = 7;
+			//a2 = 5;
+		}
+};
+
+
+int main() {
+	Vehicle vehicle;
+	Car car;
+	cout << "vehicle 中的a1的值:" << vehicle.a1 << endl;
+	cout << "car 中的a1的值:" << car.a1 << endl;
+	//cout << "car 中的a3的值:" << car.a3 << endl; //錯誤
+	car.methodA();
+	car.methodB();
+	cout << "----執行car的methodB後---" << endl;
+	cout << "Vehicle 中的a1的值:" << vehicle.a1 << endl;
+	cout << "Car中的a1的值:" << car.a1 << endl;
+}
+```

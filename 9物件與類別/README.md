@@ -525,3 +525,122 @@ int main() {
 	cout << "Car中的a1的值:" << car.a1 << endl;
 }
 ```
+
+### 子類別的應用
+
+```c++
+計算面積  inherits2.cpp
+
+先定義Rectangle類別,並宣告public欄位width及protected欄位Height,再定義getArea()方法來計算矩形面積。然後再定義Triangle類別,Triangle類別繼承Rectangel類別並增加一個計算三角形面積的方法getArea2()
+
+顯示====================================
+
+矩形面積 = 30
+===================
+三角形面積 = 15
+
+========================================
+
+
+#include <iostream>
+using namespace std;
+
+class Rectangle{
+	public:
+		int width;
+		int getArea(){
+			return width * height;
+		}
+	protected:
+		int height;
+};
+
+class Triangle:public Rectangle{
+	public:
+		Triangle(){
+			width = 5;
+			height = 6;
+		}
+
+		int getArea2(){
+			return (width * height) / 2;
+		}
+};
+
+int main() {
+	Rectangle rectangle;
+	cout << rectangle.getArea() << endl;
+
+	Triangle triangle;
+	cout << "矩形面積 = " << triangle.getArea() << endl;
+	cout << "===================" << endl;
+	cout << "三角形面積 = " << triangle.getArea2() << endl;
+}
+```
+
+```c++
+問題: 繼承 calculator1.cpp
+
+先定義Calculator類別,再定義sum()方法來計 1+2+....+n總和。然後再定義Computer類別繼承Calculator類別並增加1*2*3....*n的方法sum2()
+
+顯示=============================
+輸入 n=5
+1+2+3 .... +n = 15
+1*2*3 .... *n = 120
+```
+
+### 子類別多載
+類別被繼承後,父類別中的public及protected成員均會被子類別繼承,同時子類別也可以對父類別中不足的功能作擴充或調整.要完成這樣的機制,常用的方式有多載(overloads)和覆寫(override).
+
+#### 不同參數的多載
+多載(同名異式),即具有相同名稱但不同參數的方法。如此一來,就可以使用相同的方法名稱完成多樣的功能,只要傳遞的參數不同即可,c++會根據所傳入的參數執行正確的方法,所以多載實際上是以參數來區分。
+
+```c++
+不同參數的多載  override2.cpp
+父類別 Employee 可用 show() 方法顯示「本薪」,子類別Manager繼承Employee父類別,並且以多載show()的方法改成顯示「本薪和獎金」.
+
+顯示====================================
+
+Employee 本薪 20000
+----------------------------
+Manager 薪資(本薪 + 獎金) = 35000
+
+=========================================
+
+#include <iostream>
+using namespace std;
+
+class Employee{
+	public:
+		void show(int);
+		int salary;		
+};
+
+void Employee::show(int x){
+	cout << "Employee 本薪" << x << endl;
+	cout << "------------------------" << endl;
+}
+
+class Manager:public Employee{
+	public:
+	void show(int,int);
+	int bonus;
+};
+
+void Manager::show(int x, int y){
+	cout << "Manager 薪資(本薪+獎金) = " << x + y << endl;
+}
+
+int main() {
+	Employee employee;
+	employee.salary = 20000;
+	employee.show(employee.salary);
+
+	Manager manager;
+	manager.salary = 30000;
+	manager.bonus = 5000;
+	manager.show(manager.salary, manager.bonus);	
+}
+```
+
+### 保留父類別的多載方法

@@ -350,7 +350,7 @@ int main() {
 
 ```
 *問題 Arae.cpp
-建立Area()函式多載,分別求正方形和矩形面積。
+建立area()函式多載,分別求正方形和矩形面積。
 
 顯示====================
 正方形=100
@@ -362,7 +362,7 @@ int Area(int a){
 	return a*a
 }
 
-int Area(int a,intb){
+int Area(int a,int b){
 	return a*a
 }
 ```

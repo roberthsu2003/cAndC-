@@ -644,3 +644,113 @@ int main() {
 ```
 
 ### 保留父類別的多載方法
+
+```c++
+#include <iostream>
+using namespace std;
+
+class Employee{
+	public:
+		int salary;
+		void show(int x){
+			cout << "本薪 =" << x << endl;
+		}
+};
+
+class Manager:public Employee{
+	public:
+	int bonus;
+	void show(int x, int y){
+		Employee::show(x);
+		cout << "獎金=" << y << endl;
+	}
+};
+
+int main() {
+	Employee employee;
+	cout << "employee:" << endl;
+	employee.salary = 20000;
+	employee.show(employee.salary);
+	cout << "============================" << endl;
+	Manager manager;
+	cout << "Manager:" << endl;
+	manager.salary = 30000;
+	manager.bonus = 5000;
+	manager.show(manager.salary, manager.bonus);
+}
+```
+
+### 相同參數的多載(覆寫)
+
+```c++
+#include <iostream>
+using namespace std;
+
+class Employee{
+	public:
+		int salary;
+		void show(int x){
+			cout << "本薪 =" << x << endl;
+		}
+};
+
+class Manager:public Employee{
+	public:
+	int bonus;
+	void show(int x, int y){
+		Employee::show(x);
+		cout << "獎金=" << y << endl;
+	}
+};
+
+int main() {
+	Employee employee;
+	cout << "employee:" << endl;
+	employee.salary = 20000;
+	employee.show(employee.salary);
+	cout << "============================" << endl;
+	Manager manager;
+	cout << "Manager:" << endl;
+	manager.salary = 30000;
+	manager.bonus = 5000;
+	manager.show(manager.salary, manager.bonus);
+}
+```
+
+### 建構式的多載與繼承
+
+```c++
+#include <iostream>
+using namespace std;
+
+class A{
+	public:
+		int n;
+		A(){
+			n=1;
+		}
+		A(int x){
+			n = x;
+		}
+};
+
+class B: public A{
+	public:
+		B():A(){
+
+		}
+
+		B(int x):A(){
+			n = x + 5;
+		}
+
+};
+
+int main() {
+	B b1;
+	cout << "b1.n=" << b1.n << endl;
+	B b2(10);
+	cout << "b2.n" << b2.n << endl;
+}
+```
+

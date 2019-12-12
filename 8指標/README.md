@@ -287,8 +287,9 @@ int main() {
 以陣列元素求總和
 總和 total = 6
 以指標求總和
-總和 tot2 = 6
+總和 total = 6
 ```
+[解題](https://repl.it/@roberthsu2003/arrayPoint)
 
 ### 傳遞陣列元素，使用call By Value和call By Reference
 ```c++

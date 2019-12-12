@@ -349,7 +349,7 @@ int main() {
 ```
 
 ```
-*問題 Arae.cpp
+*問題 Area.cpp
 建立area()函式多載,分別求正方形和矩形面積。
 
 顯示====================
@@ -366,6 +366,7 @@ int Area(int a,int b){
 	return a*a
 }
 ```
+[解題](https://repl.it/@roberthsu2003/area)
 
 
 ### 全域變數，區塊變數，區域變數

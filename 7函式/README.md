@@ -59,6 +59,7 @@ int main() {
 請輸入華氏溫度:xx
 攝氏溫度=xx.xxxx
 ```
+[解題](https://repl.it/@roberthsu2003/transtemperature)
 
 ### 函式原型
 

@@ -56,6 +56,7 @@ int main() {
 變數 n 的值=12
 變數 n 的位址=0x7ffeef0805a0
 ```
+[解題](https://repl.it/@roberthsu2003/number)
 
 ## 指標變數
 指標變數儲存的內容是記憶體位址

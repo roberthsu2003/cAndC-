@@ -184,7 +184,7 @@ int turbo(int speed){
 ```
 
 
-### 傳值呼叫(call by reference)
+### 傳參考呼叫(call by reference)
 ```c++
 // Name        : callByReference.cpp
 //callByReference

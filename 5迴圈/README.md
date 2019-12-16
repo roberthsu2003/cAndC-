@@ -353,7 +353,7 @@ int main() {
 		cin >> keyin;
 		count++;
 
-		if(keyin >=1 && keyin <=99){
+		if(keyin >=min && keyin <=max){
 			if(keyin == guess){
 				cout << "賓果!猜對了,答案是" << guess << endl;
 				cout << "您猜了" << count << "次\n\n";

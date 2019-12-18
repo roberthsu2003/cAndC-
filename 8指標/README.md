@@ -468,25 +468,23 @@ int main() {
 
 ```c++
 //============================================================================
-// Name        : swapString.cpp
+// Name        : listString.cpp
 //使用者輸入字串，輸出字串
 
 #include <iostream>
+#include <stdio.h>
 using namespace std;
 
 int main() {
-	char *p1=new char[50];
+	char p1[50];
 
 	cout << "請輸入字串:";
-	cin >> p1;
+	fgets(p1, sizeof(p1),stdin);
 
-	cout << p1 << endl;
+	puts("輸入的字串為:");
+	puts(p1);
 
-	int i = 0;
-	while(*(p1+i) != '\0'){
-		cout << *(p1+i) << ",";
-		i++;
-	}
+	
 	return 0;
 }
 ```

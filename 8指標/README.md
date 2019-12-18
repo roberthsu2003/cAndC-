@@ -473,19 +473,20 @@ int main() {
 
 #include <iostream>
 #include <stdio.h>
+
 using namespace std;
-
 int main() {
-	char p1[50];
+  char p1[50];
+  cout << "請輸入字串:";
+  fgets(p1, sizeof(p1), stdin);
 
-	cout << "請輸入字串:";
-	fgets(p1, sizeof(p1),stdin);
-
-	puts("輸入的字串為:");
-	puts(p1);
-
-	
-	return 0;
+  //puts("輸入的字串為:");
+  //puts(p1);
+  //cout << "輸入的字串為:";
+  //cout << p1;
+  printf("輸入的字串為:\n");
+  printf("%s",p1);
+  
 }
 ```
 

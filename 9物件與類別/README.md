@@ -225,6 +225,49 @@ int main() {
 	return 0;
 }
 ```
+
+```c++ 
+使用namespace
+
+#include <iostream>
+using namespace std;
+//定義類別
+namespace Human{
+	class Person{
+		public:
+		//field欄位
+		string name;
+		int tall;
+		//實體的method
+		void walk(int var){
+			cout << name << "每小時可以跑多少" << var << "公里" << endl;
+		}
+
+		protected:
+
+		private:
+
+	};
+}
+
+using namespace Human;
+
+int main() {
+	Person david;
+	david.name = "Davie Hsu";
+	cout << "david的姓名:" << david.name << endl;
+	david.tall = 180;
+	cout << "david的高度是:" << david.tall << "公分" << endl;
+	david.walk(8);
+	cout << "======================\n";
+	Person robert;	
+	robert.name = "Robert Hsu";
+	cout << "robert的姓名:" << robert.name << endl;
+	robert.tall = 170;
+	cout << "robert的高度是:" << robert.tall << "公分" << endl;
+	robert.walk(10);
+}
+```
 	
 ### 在類別的外部定義方法  
 	

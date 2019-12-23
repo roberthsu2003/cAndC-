@@ -529,12 +529,14 @@ int main() {
 #include <iostream>
 using namespace std;
 
-
-
 #ifndef MAC
-#define OS "MAC_OS_VERSION_10_0"
-#else
+
 #define OS "Window10"
+
+#else
+
+#define OS "MAC_OS_VERSION"
+
 #endif
 
 int main() {

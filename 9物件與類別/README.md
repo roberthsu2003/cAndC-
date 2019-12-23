@@ -437,6 +437,133 @@ int main() {
 ```
 
 
+### 前端處理程式
+
+```c++
+#define
+
+
+/*========================================
+
+#include <iostream>
+using namespace std;
+
+#define RATE 32.78
+
+int main() {
+  double us, nt;
+  cout << "請輸入您有多少美金:";
+  cin >> us;
+  nt = us * RATE;
+  cout << "您有" << nt << "台幣";
+}
+```
+
+```c++
+marco 巨集
+#include <iostream>
+using namespace std;
+
+#define SQUARE(x) x * x
+
+int main() {
+  int s, result;
+  cout << "請輸入數字:";
+  cin >> s;
+  result = SQUARE(s);
+  cout << s << "的平方為:" << result << endl;
+
+  result = SQUARE(s + 1);
+  cout << s+1 << "的平方為:" << result << endl;
+}
+```
+
+```c++
+前端處理程式
+#ifdef ... #else ... #endif
+
+//==================================
+#include <iostream>
+using namespace std;
+
+#define MAC
+
+#ifdef MAC
+#define OS "MAC_OS_VERSION_10_0"
+#else
+#define OS "Window10"
+#endif
+
+int main() {
+  cout << OS << endl;
+}
+```
+
+```c++
+前端處理程式
+#undef
+
+#include <iostream>
+using namespace std;
+
+#define MAC
+#undef MAC
+
+#ifdef MAC
+#define OS "MAC_OS_VERSION_10_0"
+#else
+#define OS "Window10"
+#endif
+
+int main() {
+  cout << OS << endl;
+}
+```
+
+```c++
+前端處理程式
+#ifndef
+
+//========================================
+
+#include <iostream>
+using namespace std;
+
+
+
+#ifndef MAC
+#define OS "MAC_OS_VERSION_10_0"
+#else
+#define OS "Window10"
+#endif
+
+int main() {
+  cout << OS << endl;
+}
+```
+
+```c++
+typedef
+
+typedef int INTEGER;
+
+//=============================
+#include <iostream>
+using namespace std;
+
+typedef int INTEGER;
+typedef int* POINTER;
+
+int main() {
+  INTEGER x = 100, y=200;
+  POINTER ptr = &x;
+  cout << x << "+" << y << "=" << x+y << endl;
+  cout << "*ptr=" << *ptr; 
+}
+
+```
+
+
 ### 實作.h 和 .cpp
 建立h檔和cpp檔整合的class  
 

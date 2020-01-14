@@ -1,12 +1,13 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
+using namespace std;
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main() {
-	std::cout << "Hello!World\n";
-	std::cout << "Hello!again!\n";
-	std::cout << "another Hello\n";
+	int englishScore = 60;
+	cout << "請輸入您的英文分數:";
+	cin >> englishScore;
+	cout << "Hello!您的英文分數是:" << englishScore;
 	return 0;
 }

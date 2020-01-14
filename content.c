@@ -5,6 +5,8 @@
 
 int main(int argc, char *argv[]) {
 	printf("Hello,徐國堂");
+	printf("Hi\n");
+	printf("Robert\n")
 	system("pause");
 	return 0;
 }

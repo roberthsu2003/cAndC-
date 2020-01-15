@@ -4,20 +4,11 @@
 using namespace std;
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
+#define PI 3.14
 
 int main() {
-	unsigned short chinese=0, english=0, math=0;
-	cout << "請輸入國文成績(0~100):";
-	cin >> chinese;
-	
-	cout << "請輸入英文成績(0~100):";
-	cin >> english;
-	
-	cout << "請輸入數學成績(0~100):";
-	cin >> math;
-	int sum = chinese + english + math;
-	float average = (float)sum/3;
-	cout << "您的總分為:" << sum << "分, 平均為" << average << "分\n";
-	
+	const double TAX1=0.06, TAX2=0.13;
+	cout << "PI是" << PI << endl;
+	cout << "Tax_1是:" << TAX1 << "Tax_2是" << TAX2; 
 	return 0;
 }

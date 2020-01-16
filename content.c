@@ -4,11 +4,14 @@
 using namespace std;
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-#define PI 3.14
 
 int main() {
-	const double TAX1=0.06, TAX2=0.13;
-	cout << "PI是" << PI << endl;
-	cout << "Tax_1是:" << TAX1 << "Tax_2是" << TAX2; 
+	int n=0, m=0;
+	printf("請輸入被除數(整數):");
+	cin >> n;
+	cout << "請輸入除數(整數,不可以為0):";
+	cin >> m;
+	
+	cout << "商:" << n/m << "餘數:" << n%m << "\n";
 	return 0;
 }

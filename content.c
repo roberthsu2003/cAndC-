@@ -6,16 +6,23 @@ using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main() {
-	//char* password;
-	string password;
-	cin >> password;
+	int money;
+	int payMoney;
+	cout << "請輸入購買的金額:";
+	cin >> money;
 	
-	if(password=="1234"){
-		cout << "密碼正確，歡迎光臨";
+	if(money >= 100000){
+		payMoney = money * 0.8;
+	}else if (money >= 50000){
+		payMoney = money * 0.85;
+	}else if (money >= 30000){
+		payMoney = money * 0.9;
+	}else if(money >= 10000){
+		payMoney = money * 0.95;
 	}else{
-		cout << "密碼錯誤!\n";
-		cout << "請重新輸入\n" ;
+		payMoney = money;
 	}
 	
+	cout << "實付金額是:" << payMoney << "元\n";
 	return 0;
 }

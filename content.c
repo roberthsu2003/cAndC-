@@ -6,16 +6,13 @@ using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main() {
-	int n=0,total=0;
-	for(int i=1;i<=7;i++){
-		if(i == 7){
-			cout << "請輸入星期日的支出:" << endl;	
-		}else{
-			cout << "請輸入星期" << i << "的支出:";	
+	for(int i=1; i<=5; i++){
+		cout << "外部第" << i << "次迴圈";
+		for(int j=0; j<i; j++){
+			cout << "#";
 		}
-		cin >> n;
-		total += n;
+		cout << "\n";	
 	}
-	cout << "本星期的支出為:" << total << "元\n";
+	
 	return 0;
 }

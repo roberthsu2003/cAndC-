@@ -6,19 +6,22 @@ using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main() {
-	char letter;
-	int age;
-	char url[30];
-	float price;
-	printf("請輸入字元:");
-	scanf("%c",&letter);
-	printf("請輸入age:");
-	scanf("%d",&age);
-	printf("請輸入字串:");
-	scanf("%s",url);
-	printf("請輸入價格:");
-	scanf("%f",&price);
-	printf("這是字元:%c\n", letter);
-	printf("這是整數:%d,這是字串:%s,這是浮點數:%f\n",age, url, price);
+	const int nums = 5;
+	int scores[nums];
+	int sum = 0;
+	float ave;
+	for(int i=0;i<nums;i++){
+		cout << "請輸入第" << i+1 << "位學生的成績";
+		scanf("%d",&scores[i]);
+		}
+	
+	for(int i=0; i<nums; i++){
+		sum += scores[i];
+	}
+	
+	ave = (float)sum / nums;
+	
+	//cout << "全班總成績為:" << sum << "分,平均為" << ave << "分\n";
+	printf("全班總成績為:%d分,平均為%.2f分\n",sum,ave);
 	return 0;
 }

@@ -6,11 +6,12 @@ using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main() {
-	int scores[3];
-	scores[0] = 70;
-	scores[1] = 80;
-	scores[2]= 90;
+	int scores[] = {70, 80, 90};
+	//char name = {'r', 'o', 'b', 'e', 'r', 't', '\0'}
+	char name[] = "robert";
 	
-	cout << scores[0] << "," << scores[1] << ", " << scores[2];
+	
+	cout << scores[0] << "," << scores[1] << ", " << scores[2] << endl;
+	cout << name;
 	return 0;
 }

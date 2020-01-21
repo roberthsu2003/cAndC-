@@ -6,12 +6,21 @@ using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main() {
-	int scores[] = {70, 80, 90};
-	//char name = {'r', 'o', 'b', 'e', 'r', 't', '\0'}
-	char name[] = "robert";
+	const int nums = 5;
+	int scores[nums];
+	int sum = 0;
+	float ave;
+	for(int i=0;i<nums;i++){
+		cout << "請輸入第" << i+1 << "位學生的成績";
+		cin >> scores[i];
+	}
 	
+	for(int i=0; i<nums; i++){
+		sum += scores[i];
+	}
 	
-	cout << scores[0] << "," << scores[1] << ", " << scores[2] << endl;
-	cout << name;
+	ave = (float)sum / nums;
+	
+	cout << "全班總成績為:" << sum << "分,平均為" << ave << "分\n";	
 	return 0;
 }

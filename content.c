@@ -9,12 +9,19 @@ using namespace std;
 int main() {
 	unsigned int seed = (unsigned int)time(NULL);
 	srand(seed);
-	for(int i=0; i<5; i++){
-			cout << rand() << endl;
+	int n;
+	while(true){
+		cout << "請按任意鍵擲骰子,使用E結束遊戲";
+		char ch = getchar();
+		if(ch == 'E'){
+			cout << "擲骰子遊戲結束!" << endl;
+			break;
+		}else{
+			n = 1 + rand() % (6+1-1);
+			cout << "您所擲的點數為:" << n << "點" << endl;
+		}
+		
+		
 	}
-	
-	int r = 90 + rand() % (100+1-90);
-	cout << r;
-
 	return 0;
 }

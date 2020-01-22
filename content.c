@@ -4,9 +4,8 @@
 using namespace std;
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-float temperature(int value){
-	return 1.8 * value + 32;
-}
+float temperature(int);
+
 int main() {
 	int value;
 	float result;
@@ -17,4 +16,8 @@ int main() {
 	result = temperature(value);
 	cout << "華氏溫度=" << result << endl;
 	return 0;
+}
+
+float temperature(int value){
+	return 1.8 * value + 32;
 }

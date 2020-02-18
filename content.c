@@ -2,5 +2,6 @@
 using namespace std;
 
 int main() {
-	cout << "Hello World!\n";
+	int englishScore = 90;
+	cout << "您現在的英文分數是:" << englishScore;
 }

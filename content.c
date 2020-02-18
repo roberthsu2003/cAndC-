@@ -1,6 +1,5 @@
-#include <stdio.h>
+#include <iostream>
 
-int main(void) {
-    printf("Hello!C and C++");
-    return 0;
+int main() {
+  std::cout << "Hello!徐國堂!";
 }

@@ -1,9 +1,8 @@
+#include "stdio.h"
 #include <iostream>
 using namespace std;
 
 int main() {
-  string name;
-  cout << "請輸入中文姓名:";
-  cin >> name;
-  cout << "Hello! " << name;
+  printf("Hello World!\n");  // \n表示换行
+  cout << "Hello Robert" << endl;
 }

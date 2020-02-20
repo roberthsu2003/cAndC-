@@ -35,4 +35,12 @@ int main() {
 
   cout << bolA << endl;
   cout << bolB << endl;
+
+  float PI = 3.14159;
+  int radius = 10;
+  cout << "圓面積=" << PI * radius * radius << endl;
+
+  int area;
+  area = PI * radius * radius;
+  cout << "area=" << area << endl;
 }

@@ -117,7 +117,7 @@ cout << "圓面積=" << PI * radius * radius;
 ```
 
 ```c++
-如果是指字式，編譯器會自動將=右邊的資料型別轉換為左邊的資料型別。
+如果是指定式，編譯器會自動將=右邊的資料型別轉換為左邊的資料型別。
 
 int area;
 area = PI * radius * radius; //自動由float轉換為int
@@ -165,6 +165,7 @@ b = (short)a; //大轉小，資料會遺失
 	
 	int main() {
 		unsigned short chinese = 0, english = 0, math = 0;
+		float average;
 		cout << "請輸入國文成績(0~100):";
 		cin >> chinese;
 	

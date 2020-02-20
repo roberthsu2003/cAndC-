@@ -1,8 +1,8 @@
-#include "stdio.h"
 #include <iostream>
 using namespace std;
 
 int main() {
-  printf("Hello World!\n");  // \n表示换行
-  cout << "Hello Robert" << endl;
+  cout << "姓名\t\t座號\t\t電話\n";
+  cout << "李振聲\t\t" << 11 << "\t\t0229435437\n";
+  cout << "張四聲\t\t" << 13 << "\t\t0229439937\n";
 }

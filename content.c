@@ -29,4 +29,10 @@ int main() {
   char *name = "徐國堂";
   cout << "name=" << name << "\n";
   printf("name=%s\n",name);
+
+  bool bolA = true;
+  bool bolB = false;
+
+  cout << bolA << endl;
+  cout << bolB << endl;
 }

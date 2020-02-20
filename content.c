@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
 using namespace std;
 
 int main() {
@@ -13,4 +15,18 @@ int main() {
   char chrC;
   chrC = 97;
   cout << chrC << "\n";
+
+  //字串
+  string str1;
+  string str2 = "這是字串";
+  string str3 = "這是\"C++\",非常簡單";
+
+  cout << "\nstr1:" << str1 << "\n";
+  cout << "str2:" << str2 << endl;
+  cout << "str3:" << str3 << "\n";
+
+  //字元陣列(C語言)
+  char *name = "徐國堂";
+  cout << "name=" << name << "\n";
+  printf("name=%s\n",name);
 }

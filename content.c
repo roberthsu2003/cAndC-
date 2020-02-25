@@ -1,20 +1,9 @@
 #include <iostream>
-
-using namespace std;
+#define PI 3.14159
 
 int main() {
-	unsigned int firstDay = 0, secondDay = 0, thirdDay = 0;
-	cout << "請輸入第1天的支出:";
-	cin >> firstDay;
-
-	cout << "請輸入第2天的支出:";
-	cin >> secondDay;
-
-	cout << "請輸入第3天的支出:";
-	cin >> thirdDay;
-
-	int sum = firstDay + secondDay + thirdDay;
-	float average = sum / 3.0;
-
-	cout << "您的總支出為" << sum << "元, 平均每天支出" << average << "元";
+	const double TAX1 = 0.06, TAX2 = 0.13;
+	std::cout << "TAX1=" << TAX1 << ",TAX2" << TAX2 << std::endl;
+	std::cout << "PI=" << PI;
+	return 0;
 }

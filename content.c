@@ -1,9 +1,12 @@
 #include <iostream>
-#define PI 3.14159
+using namespace std;
 
 int main() {
-	const double TAX1 = 0.06, TAX2 = 0.13;
-	std::cout << "TAX1=" << TAX1 << ",TAX2" << TAX2 << std::endl;
-	std::cout << "PI=" << PI;
-	return 0;
+	int n=0, m=0;
+	cout << "請輸入被除數(整數):";
+	cin >> n;
+	cout << "請輸入除數(整數不可以為0):";
+	cin >> m;
+
+	cout << "商:" << n/m  << ",餘數:" << n%m << "\n";
 }

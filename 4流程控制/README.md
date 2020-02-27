@@ -2,7 +2,7 @@
 ```
 c++的流程控制的指令分為2部份
 1判斷(if else,switch case)
-2迴圈(for,whiel,do..while)
+2迴圈(for,while,do..while)
 ```
 ```
 if(條件式){

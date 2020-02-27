@@ -2,13 +2,16 @@
 using namespace std;
 
 int main() {
-	int n[3] = {1, 2, 3};
-	//陣列變數
-	cout << n[0] << endl;
-	cout << &n[0] << endl;
+	float top, bottom, height, area;
+	cout << "請輸入梯形的上底(公分):";
+	cin >> top;
 
-	//指標變數的語法
-	cout << *(n+0) << endl;
-	cout << n+0 << endl;
+	cout << "請輸入梯形的下底(公分):";
+	cin >> bottom;
 
+	cout <<	"請輸入梯形的高(公分):";
+	cin >> height;
+
+	area = (top + bottom) * height / 2;
+	cout << "梯形的面積:" << area << "平方公分\n";
 }

@@ -1,20 +1,13 @@
 #include <iostream>
 using namespace std;
 
-
-//call by address 
-void turbo(int *);
-
 int main() {
-  int speed;
-  cout << "請輸入初始速度:";
-  cin >> speed;
-  turbo(&speed);
-  cout << "加速後速度:" << speed << endl;
-  return 0;
-}
-
-//call by value
-void turbo(int *mySpeed){
-	 *mySpeed += 10;
+	int *p = new int(1);
+	cout << "指標p的位址p=" << p << endl;
+	cout << "*p=" << *p << endl;
+	*p = 2;
+	cout << "*p=" << *p << endl;
+	delete p;
+	cout << "釋放指標變數配置的記憶體空間";
+	return 0;
 }

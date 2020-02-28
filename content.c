@@ -1,20 +1,18 @@
 #include <iostream>
 using namespace std;
-
-void sub1(int, int &);
-
+//call by value
+//宣告原型
+int turbo(int);
 int main() {
-  int ary[] = {1, 2, 3};
-  cout << "ary陣列元素 ary[0]傳值,ary[1]傳搖器後" << endl;
-  sub1(ary[0] ,ary[1]);
-  for(int i=0; i<3; i++){
-	  cout << ary[i] << " ";
-  }
-  cout << endl;
+  int speed;
+  cout << "請輸入初始速度:";
+  cin >> speed;
+  speed = turbo(speed);
+  cout << "加速後速度:" << speed << endl;
   return 0;
 }
 
-void sub1(int a, int &b){
-	a = 5;
-	b = 5;
+//call by value
+int turbo(int mySpeed){
+	return mySpeed + 10;
 }

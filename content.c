@@ -2,27 +2,11 @@
 using namespace std;
 
 int main() {
-	char op;
-	int num1 = 20, num2 = 4;
-	cout << "請輸入要執行的運算(+-*/):";
-	cin >> op;
+  int n[3] = {1,2,3};
+  //陣列變數
+  cout << "使用陣列變數-取記憶體位址"  << &n[0] << endl;
+  cout << "使用陣列變數-取值:" << n[0] << endl;
+  cout << "使用指標變數-取記憶體位址" << n+0 << endl;
+  cout << "使用指標變數-取值" << *(n+0) << endl;
 
-	switch(op){
-		case '+':
-			cout << "num1+num2=" << num1 + num2 << "\n";
-			break;
-		case '-':
-			cout << "num1-num2=" << num1 - num2 << "\n";
-			break;
-		case '*':
-			cout << "num1*num2=" << num1 * num2 << "\n";
-			break;
-		case '/':
-			cout << "num1/num2=" << num1 / num2 << "\n";
-			break;
-		default:
-			cout << "無法執行運算!\n";
-	}
-
-	return 0;
 }

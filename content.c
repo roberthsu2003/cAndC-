@@ -1,20 +1,23 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-	int n;
-	cout << "請輸入要配置的一維陣列大小=";
-	cin >> n;
-	int *p = new int[n];
-	for (int i=0; i<n; i++){
-		cin >> *(p+i);
-	}
+struct student{
+	int id;
+	const char *name;
+	int chinese, math, english;
+};
 
-	cout << "陣列的元素值為:" << endl;
-	for(int i=0; i<n; i++){
-		cout << *(p+i) << endl;
-	}
-	delete[] p;
-	cout << "動態配置陣列記體空間被刪除";
-	return 0;
+int main() {
+	struct student david;
+	david.id = 99001;
+	david.name = "rober";
+	david.chinese = 75;
+	david.math = 86;
+	david.english = 90;
+
+	cout << "id=" << david.id << endl;
+	cout << "name=" << david.name << endl;
+	cout << "chinese=" << david.chinese << endl;
+	cout << "math=" << david.math << endl;
+	cout << "english=" << david.math << endl;
 }

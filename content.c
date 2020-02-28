@@ -2,12 +2,19 @@
 using namespace std;
 
 int main() {
-	int *p = new int(1);
-	cout << "指標p的位址p=" << p << endl;
-	cout << "*p=" << *p << endl;
-	*p = 2;
-	cout << "*p=" << *p << endl;
-	delete p;
-	cout << "釋放指標變數配置的記憶體空間";
+	int n;
+	cout << "請輸入要配置的一維陣列大小=";
+	cin >> n;
+	int *p = new int[n];
+	for (int i=0; i<n; i++){
+		cin >> *(p+i);
+	}
+
+	cout << "陣列的元素值為:" << endl;
+	for(int i=0; i<n; i++){
+		cout << *(p+i) << endl;
+	}
+	delete[] p;
+	cout << "動態配置陣列記體空間被刪除";
 	return 0;
 }

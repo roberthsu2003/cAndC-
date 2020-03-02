@@ -1,17 +1,27 @@
 #include <iostream>
 using namespace std;
 
-typedef struct Rectangle{
-	int width;
-	int height;
-} Rectangle;
+class Person{
+	public:
+		int tall;
+		string name;
+		void walk(int var){
+			cout << name << "每小時可跑" << var << "公里" << endl;
+		}
+};
 
 int main() {
-  Rectangle rec = {0, 0};
-  cout << "請輸入width:";
-  cin >> rec.width;
-  cout << "請輸入height:";
-  cin >> rec.height;
+	Person david;
+	david.tall = 180;
+	david.name = "David";
+	cout << david.name << " 身高=" << david.tall << endl;
+	david.walk(15);
 
-  cout << "矩形的面績是:" << rec.width * rec.height << endl;
+	Person robert;
+	robert.tall = 183;
+	robert.name = "Robert";
+	cout << robert.name << " 身高=" << robert.tall << endl;
+	robert.walk(20);
+
+	return 0;
 }

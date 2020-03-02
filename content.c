@@ -1,21 +1,21 @@
-#include <iostream>
-using namespace std;
-class Person{
+//Car.h
+class Car{
 	public:
-		int tall;
-		string name;
-		void walk(int);
+		int speed;
+		void turbo(){
+			speed += 10;
+		}
 };
+//end
 
-void Person::walk(int var){
-	cout << name << "每小時可跑" << var << " 公里" << endl;
-}
+#include <iostream>
+#include "Car.h"
+using namespace std;
 
 int main() {
-	Person david;
-	david.tall = 183;
-	david.name = "David";
-	cout << david.name << " 身高=" << david.tall << endl;
-	david.walk(20);
-	return 0;
+	Car BMW;
+	BMW.speed = 70;
+	cout << "現在的速度=" << BMW.speed << endl;
+	BMW.turbo();
+	cout << "加速後的速度是" << BMW.speed << endl;
 }

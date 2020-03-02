@@ -1,9 +1,25 @@
 //Car.h
 class Car{
-	public:
+	private:
 		int speed;
+	
+	public:
 		void turbo(){
 			speed += 10;
+		}
+
+		void setSpeed(int var){
+			if(var < 60){
+				speed = 60;
+			}else if(var > 100){
+				speed = 100;
+			}else{
+				speed = var;
+			}
+		}
+
+		int getSpeed(){
+			return speed;
 		}
 };
 //end
@@ -14,8 +30,9 @@ using namespace std;
 
 int main() {
 	Car BMW;
-	BMW.speed = 70;
-	cout << "現在的速度=" << BMW.speed << endl;
+	BMW.setSpeed(58);
+	cout << "現在速度=" << BMW.getSpeed() << endl;
 	BMW.turbo();
-	cout << "加速後的速度是" << BMW.speed << endl;
+	cout << "加速後的速度=" << BMW.getSpeed() << endl;
+	return 0;
 }

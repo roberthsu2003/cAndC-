@@ -1,14 +1,15 @@
 #include <iostream>
 using namespace std;
 
-struct Student{
-	const char* name;
+typedef struct Student{
+	string name;
 	int score;
-};
+} Student;
 
 int main() {
-	struct Student david = {"David", 90};
-	cout << "姓名" << "\t" << "成績" << endl;
-	cout << david.name << "\t" << david.score;
-	return 0;
+  Student stus[3] = {{"robert", 94}, {"david", 91}, {"alice", 94}};
+  int stuCount = sizeof(stus) / sizeof(stus[0]);
+  for(int i=0; i<stuCount; i++){
+	  cout << "第" << i+1 << "位學生是" << stus[i].name  << "分數是" << stus[i].score << endl; 
+  }
 }

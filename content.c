@@ -4,19 +4,30 @@ class Car{
 		int speed;
 	
 	public:
-		Car(){
-			speed = 70;
-		}
+		Car();
+		Car(int);
+		void turbo();
+		void setSpeed(int);
+		int getSpeed();
+};
+//end
 
-		Car(int n){
-			speed = n;
-		}
+//Car.cpp
+#include "Car.h"
 
-		void turbo(){
-			speed += 10;
-		}
+Car::Car(){
+	speed = 70;
+}
 
-		void setSpeed(int var){
+Car::Car(int n){
+	speed = n;
+}
+
+void Car::turbo(){
+	speed += 10;
+}
+
+void Car::setSpeed(int var){
 			if(var < 60){
 				speed = 60;
 			}else if(var > 100){
@@ -24,12 +35,13 @@ class Car{
 			}else{
 				speed = var;
 			}
-		}
+		
+}
 
-		int getSpeed(){
-			return speed;
-		}
-};
+int Car::getSpeed(){
+	return speed;
+}
+
 //end
 
 #include <iostream>

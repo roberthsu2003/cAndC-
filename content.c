@@ -4,6 +4,14 @@ class Car{
 		int speed;
 	
 	public:
+		Car(){
+			speed = 70;
+		}
+
+		Car(int n){
+			speed = n;
+		}
+
 		void turbo(){
 			speed += 10;
 		}
@@ -29,10 +37,9 @@ class Car{
 using namespace std;
 
 int main() {
-	Car BMW;
-	BMW.setSpeed(58);
+	Car BMW;	
 	cout << "現在速度=" << BMW.getSpeed() << endl;
-	BMW.turbo();
-	cout << "加速後的速度=" << BMW.getSpeed() << endl;
+	Car BMW1(95);
+	cout << "BMW1的速度=" << BMW1.getSpeed() << endl;
 	return 0;
 }

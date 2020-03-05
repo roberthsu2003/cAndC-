@@ -2,11 +2,20 @@
 using namespace std;
 
 int main() {
-	int scores[3];
-	scores[0] = 70;
-	scores[1] = 80;
-	scores[2] = 90;
+	int nums = 5;
+	int scores[nums];
+	int sum=0;
 
-	cout << scores[0] << "," << scores[1] << "," << scores[2];
-	return 0;
+	for(int i=0; i<nums; i++){
+		cout << "請輸入第" << i+1 << "位學生的成績";
+		cin >> scores[i];
+		sum += scores[i];
+	}
+
+	cout << "所有學生的分數是:";
+	for (int i=0; i<nums; i++){
+		cout << scores[i] << "\t";
+	}
+	cout << endl;
+	cout << "全班總成績為:" << sum << "分,平均為" << (float)sum / nums << "分\n";
 }

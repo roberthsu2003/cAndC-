@@ -1,21 +1,9 @@
 #include <iostream>
 using namespace std;
-
 int main() {
-	int nums = 5;
-	int scores[nums];
-	int sum=0;
-
-	for(int i=0; i<nums; i++){
-		cout << "請輸入第" << i+1 << "位學生的成績";
-		cin >> scores[i];
-		sum += scores[i];
-	}
-
-	cout << "所有學生的分數是:";
-	for (int i=0; i<nums; i++){
-		cout << scores[i] << "\t";
-	}
-	cout << endl;
-	cout << "全班總成績為:" << sum << "分,平均為" << (float)sum / nums << "分\n";
+	int n[] = {1, 3, 5, 7, 9, 11, 13};
+	int totalSize = sizeof(n);
+	int oneSize = sizeof(n[0]);
+	int counts = totalSize/oneSize;
+	cout << "陣列的大小為:" << totalSize << ",一個元素的大小是" << oneSize << ",陣列的數量是" << counts; 
 }

@@ -2,27 +2,11 @@
 using namespace std;
 
 int main() {
-	int nums[] = {256, 731, 943, 389, 142, 645, 829, 945, 371, 418};
-	string names[] =  {"stu1","stu2","stu3","stu4","stu5","stu6","stu7","stu8","stu9","stu10"};
-	int n = sizeof(nums) / sizeof(nums[0]);
-	int inputNum;
-	bool isfound = false;
-	int i;
-	cout << "請輸入中獎者的編號:";
-	cin >> inputNum;
-	for(i=0; i<n ; i++){
-		if(nums[i] == inputNum){
-			isfound = true;
-			break;
+	int scores[2][3] = {{85, 82, 90},{76, 95, 89}};
+	for(int i=0; i<2; i++){
+		for(int j=0; j<3; j++){
+			cout << "第" << i+1 << "位學生第" << j+1 << "科成績:" << scores[i][j] << endl;
 		}
+		cout << "=======================================\n";
 	}
-
-	if(isfound == true){
-		cout << "中獎者的姓名為:" << names[i];
-	}else{
-		cout << "無此中獎號碼!";
-	}
-
-	cout << "共比對" << i+1 << "次\n\n";
-
 }

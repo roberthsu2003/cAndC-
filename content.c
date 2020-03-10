@@ -2,11 +2,19 @@
 using namespace std;
 
 int main() {
-	int scores[2][3] = {{85, 82, 90},{76, 95, 89}};
-	for(int i=0; i<2; i++){
-		for(int j=0; j<3; j++){
-			cout << "第" << i+1 << "位學生第" << j+1 << "科成績:" << scores[i][j] << endl;
-		}
-		cout << "=======================================\n";
-	}
+//c++ string
+string str = "DevC++";
+str = "JavaC++";
+cout << "c++字串:" << str << endl;
+
+//c字元陣列
+char str1[7] = {'D', 'e', 'v', 'C', '+', '+', '\0'};
+cout << str1 << endl;
+
+//字元陣列
+char str2[] = "DevC++";
+cout << str2 << endl;
+str2[0] = 'G';
+cout << str2 << endl;
+
 }

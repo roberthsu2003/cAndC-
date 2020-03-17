@@ -1,26 +1,18 @@
 #include <iostream>
 using namespace std;
+//overloading
 
-void showArray(int tempary[], int count){
-	for(int i=0; i< count; i++){
-		cout << "any[" << i << "]=" << tempary[i] << "\t";
-	}
-	cout << "\n\n";
+int add(int a, int b){
+	return a+b;
 }
 
-void sub2(int tempary[], int count){
-	for(int i=0; i<count; i++){
-		tempary[i] *= 2;
-	}
+string add(string a, string b){
+	return a+b;
 }
 
 int main() {
-	int ary[] = {212, 328, 765, 986};
-	int count = sizeof(ary) / sizeof(ary[0]);
-	cout << "呼叫showArray\n";
-	showArray(ary, count);
-
-	sub2(ary, count);
-	showArray(ary, count);
+	cout << "add(2,3)=" << add(2,3) << endl;
+	cout << "=================\n";
+	cout << "add(\"Nice\", \"Play\") = " << add("Nice", "Play") << endl; 
 	return 0;
 }

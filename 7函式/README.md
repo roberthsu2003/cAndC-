@@ -483,6 +483,7 @@ seed稱為亂數種子，它是unsigned int 資料型別，其值介於(0~(2的3
 
 #include <iostream>
 #include <time.h>
+#include <stdlib.h>
 using namespace std;
 
 int main() {

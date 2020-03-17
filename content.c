@@ -1,18 +1,19 @@
 #include <iostream>
 using namespace std;
-//overloading
 
-int add(int a, int b){
-	return a+b;
-}
-
-string add(string a, string b){
-	return a+b;
+int n;
+void showNum(){
+	int value = n;
+	cout << "=================" << endl;
+	for(int n=value; n>=1; n--){
+		//n 區塊變數
+		cout << "區塊變數 n=" << n << endl;
+	}
 }
 
 int main() {
-	cout << "add(2,3)=" << add(2,3) << endl;
-	cout << "=================\n";
-	cout << "add(\"Nice\", \"Play\") = " << add("Nice", "Play") << endl; 
+	cout << "請輸入全域變數 n=";
+	cin >> n;
+	showNum();
 	return 0;
 }

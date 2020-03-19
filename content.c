@@ -1,18 +1,15 @@
 #include <iostream>
 using namespace std;
-
-void swap(int* , int*);
-
 int main() {
-	int a=666, b=777;
-	cout << "a=" << a << ",b=" << b << endl;
-	swap(&a, &b);
-	cout << "a=" << a << ",b=" << b << endl;
-	return 0;
-}
+	int *p = new int(100);
+	cout << *p << endl;
+	int myarr[] = {10, 20, 30, 40, 50};
+	int *arr = new int[5];
+	for(int i=0; i<5; i++){
+		arr[i] = 10;
+		*(arr+i) = 20;
+	}
 
-void swap(int* n, int* m){
-	int temp = *n;
-	*n = *m;
-	*m = temp;
+	cout << *(arr+0);
+	
 }

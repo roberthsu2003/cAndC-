@@ -1,17 +1,17 @@
 #include <iostream>
 using namespace std;
+//call by value
+int turbo(int);
 
 int main() {
-	char n[] = {'r','o','b', 'e', 'r', 't'};
-	cout << "陣列變數語法" << n[0] << endl;
+	int speed;
+	cout << "請輸入初速度:";
+	cin >> speed;
+	speed = turbo(speed);
+	cout << "加速後的速度:" << speed << endl;
+}
 
-	cout << "指標變數的語法" << *(n+0) << endl;
-
-	char *p = "jenny";
-
-	cout << "陣列變數語法" << p[0] << endl;
-
-	cout << "指標變數的語法" << *(p+0) << endl;
-
-	string s = "Alice";
+int turbo(int speed){
+	cout << "加速前速度" << speed << endl;
+	return speed += 10;
 }

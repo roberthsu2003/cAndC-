@@ -1,20 +1,22 @@
 #include <iostream>
 using namespace std;
 
-typedef struct Student{
+class Person{
+	public:
+	int tall;
 	string name;
-	int scores[5];
-} Student;
+};
+
 
 int main() {
-	Student stus[3]={{"robert",{78, 98, 78, 63,83}},{"david",{78, 98, 58, 73, 79}},{"alice",{68, 79, 83, 93, 64}}};
-	for(int i=0; i<3; i++){
-		int sum=0;
+	Person david;
+	david.name = "David";
+	david.tall = 170;
 
-		for(int j=0;j<5;j++){
-			sum += stus[i].scores[j];
-		}
+	Person robert;
+	robert.name = "Robert";
+	robert.tall = 183;
 
-		cout << "第" << i+1 << "位學生是" << stus[i].name << "總分數是" << sum << endl;
-	}
+	cout << david.name << "身高=" << david.tall << endl;
+	cout << robert.name << "身高=" << robert.tall << endl;
 }

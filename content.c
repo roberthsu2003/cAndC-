@@ -4,8 +4,8 @@ using namespace std;
 class Car{
 	private:
 		int speed;
-
 	public:
+		//speed(getter, setter)
 		void setSpeed(int sp){
 			if(sp < 60){
 				speed = 60;
@@ -23,14 +23,22 @@ class Car{
 		void turbo(){
 			setSpeed(speed + 10);
 		}
+
+		//自訂建構式
+		Car(){
+			speed = 70;
+		}
+
+		Car(int n){
+			setSpeed(n);
+		}
+
 };
 
 int main() {
-	Car bmw;	
-	bmw.setSpeed(58);
-	cout << "現在的速度=" << bmw.getSpeed() << endl;
-	bmw.setSpeed(102);
-	cout << "現在的速度=" << bmw.getSpeed() << endl;
-	bmw.turbo();
-	cout << "現在速度=" << bmw.getSpeed() << endl; 
+	Car bmw;
+	cout << "執行Car bmw建立物件後,速度=" << bmw.getSpeed() << endl;
+
+	Car bmw1(45);
+	cout << "執行Car bmw1建立物件後,速度=" << bmw1.getSpeed() << endl;
 }

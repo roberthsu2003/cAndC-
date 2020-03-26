@@ -26,5 +26,11 @@ class Car{
 };
 
 int main() {
-
+	Car bmw;	
+	bmw.setSpeed(58);
+	cout << "現在的速度=" << bmw.getSpeed() << endl;
+	bmw.setSpeed(102);
+	cout << "現在的速度=" << bmw.getSpeed() << endl;
+	bmw.turbo();
+	cout << "現在速度=" << bmw.getSpeed() << endl; 
 }

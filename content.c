@@ -1,32 +1,24 @@
 #include <iostream>
 using namespace std;
-namespace Human{
-	class Person{
-		public:
-		int tall;
-		string name;
+class Car{
 
-		//實體的方法
-		void walk(int var){
-			cout << name << "每小時可以跑多少" << var << "公里" << endl;
+	public:
+		void turbo(int sp){
+			speed = sp;
+			cout << "現在的速度是" << speed << endl;
 		}
+	private:
+		int speed;
+	protected:
 
-	};
-}
 
-using namespace Human;
+};
 
 int main() {
-	Person david;
-	david.name = "David";
-	david.tall = 170;
-	david.walk(20);
-
-	Person robert;
-	robert.name = "Robert";
-	robert.tall = 183;
-	robert.walk(25);
-
-	cout << david.name << "身高=" << david.tall << endl;
-	cout << robert.name << "身高=" << robert.tall << endl;
+ Car car1;
+ car1.turbo(50);
+ car1.turbo(90);
+ 
+ Car car2;
+ car2.turbo(80);
 }

@@ -1,11 +1,16 @@
+#define LED 3
 void setup() {
   // put your setup code here, to run once:
-  pinMode(13,OUTPUT);
+  pinMode(LED,OUTPUT);
+  Serial.begin(115200);
 }
 
 void loop() {
-  digitalWrite(13,HIGH);
+  digitalWrite(LED,HIGH);
+  Serial.println("open");
   delay(1000);
-  digitalWrite(13,LOW);
+  digitalWrite(LED,LOW);
+  Serial.println("close");
   delay(1000);
+  
 }

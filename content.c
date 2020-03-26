@@ -1,24 +1,30 @@
 #include <iostream>
 using namespace std;
-class Car{
 
-	public:
-		void turbo(int sp){
-			speed = sp;
-			cout << "現在的速度是" << speed << endl;
-		}
+class Car{
 	private:
 		int speed;
-	protected:
 
+	public:
+		void setSpeed(int sp){
+			if(sp < 60){
+				speed = 60;
+			}else if(sp > 100){
+				speed = 100;
+			}else{
+				speed = sp;
+			}
+		}
 
+		int getSpeed(){
+			return  speed;
+		}
+
+		void turbo(){
+			setSpeed(speed + 10);
+		}
 };
 
 int main() {
- Car car1;
- car1.turbo(50);
- car1.turbo(90);
- 
- Car car2;
- car2.turbo(80);
+
 }

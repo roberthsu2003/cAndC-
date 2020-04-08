@@ -2,6 +2,8 @@ from tkinter import *
 import random
 #自訂的function
 
+
+
 def getSevenNumber():
     luckyNums = []
     numbers = list(range(1, 50))
@@ -9,18 +11,22 @@ def getSevenNumber():
         luckyIndex = random.randint(0,len(numbers)-1)
         luckyNum = numbers.pop(luckyIndex)
         luckyNums.append(luckyNum)
-    print(sorted(luckyNums))
+
+    specialNum = luckyNums.pop()
+    labelText.set('號碼:{},\n特別號:{}'.format(sorted(luckyNums),specialNum))
 
 
 
 root = Tk()
-root.title("抽獎活動")
+root.title("大樂透中獎號碼")
 #root.geometry("300x400")
 root.option_add("*Font",("verdana", 18))
 mainFrame = Frame(root)
-btn = Button(mainFrame, text="抽獎", padx=100, pady=20,command=getSevenNumber)
+btn = Button(mainFrame, text="大樂透號碼", padx=100, pady=20,command=getSevenNumber)
 btn.pack(expand=YES, fill=BOTH,padx=40, pady=40)
-answerLabel = Label(mainFrame,text="號碼:",font=("Helvetica", 16),anchor=W)
+labelText = StringVar()
+labelText.set("號碼")
+answerLabel = Label(mainFrame,textvariable=labelText,font=("Helvetica", 16),anchor=W)
 answerLabel.pack(expand=YES, fill=BOTH,padx=40, pady=40)
 mainFrame.pack(expand=YES, fill=BOTH)
 

@@ -603,3 +603,128 @@ int month_total(int money, int year, float rate){
 }
 ```
 
+```c++
+//擲骰子
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+
+using namespace std;
+//function 原形
+int run();
+int main() {
+	
+	char keyin;
+	
+	do{
+	cout << "第一位參賽者請擲骰子<請按任意鍵,結束請按q>:";
+	cin >> keyin;
+		if(keyin != 'q'){
+			int value = run();
+			if(value == 0){
+				cout << "無效的分數,請再擲一次\n";
+			}else{
+				cout << "您的分數是" << value << "\n";
+			}
+		}else{
+			break;
+		}
+	}while(true);
+	cout << "Game Over\n";
+
+}
+
+//定義一個function
+int run(){
+	srand(time(NULL));
+	int dices[4] = {0, 0, 0, 0};
+	int dotCount[7] = {0, 0, 0, 0 ,0 ,0 ,0};
+	for(int i=0; i<=3; i++){
+		dices[i] = rand()%6 + 1;
+		cout << dices[i] << '\t';
+	}
+	cout << endl;
+
+	//計分數
+	for(int i=0; i<=3; i++){
+		int index = dices[i];
+		dotCount[index] += 1;
+	}
+
+	int maxValue = 0;
+	int dotNum = 0;
+	//求最大值
+	for(int i=0; i<=6; i++){
+		if(dotCount[i] > maxValue){
+			dotNum = i;
+			maxValue = dotCount[i];
+		}
+		
+	}
+
+	//傳出value
+	int value=0;
+	switch (maxValue){
+		case 1:
+			return value;		
+		case 3:
+			return value;
+		case 4:
+			switch(dotNum){
+				case 1:
+					value = 13;
+					return value;
+				case 2:
+					value = 14;
+					return value;
+				case 3:
+					value = 15;
+					return value;
+				case 4:
+					value = 16;
+					return value;
+				case 5:
+					value = 17;
+					return value;
+				case 6:
+					value = 18;
+					return value;
+			}
+			break;
+		case 2:
+			int cellnum =0;
+			for(int i=0; i<=6; i++){
+				if (dotCount[i] > 0){
+					cellnum += 1;
+				}
+			}
+			switch (cellnum){
+				case 3:
+					for(int i=0; i<=6; i++){				
+						if (dotCount[i] == 1){					
+							value += i;
+						}				
+					}
+					return value;
+					break;
+				case 2:
+					for(int i=0; i<=6; i++){				
+						if (dotCount[i] == 2){					
+							if (i > value){
+								value = i;
+							}
+						}				
+					}
+					return value * 2;
+				
+			}		
+			
+			
+			break;
+				
+	}
+	
+	return 0;
+}
+```
+

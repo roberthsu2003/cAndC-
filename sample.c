@@ -1,44 +1,52 @@
-@interface MyClass : NSObject{
-    int num1, num2;
-}
--(void) setNum1:(int) n;
--(void) setNum2:(int) m;
+//
+//  Student.h
+//  sample3
+//
+//  Created by apple on 2020/4/17.
+//  Copyright © 2020 pu. All rights reserved.
+//
 
--(int)num1;
--(int)num2;
+#import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface Student : NSObject{
+    int chinese;
+    int english;
+    int math;
+}
+
+-(void) setChinese:(double) a setEnglish:(double) b setMath:(double) c;
 
 @end
+
+NS_ASSUME_NONNULL_END
+
 
 ===============================
-#import "MyClass.h"
+#import "Student.h"
 
-@implementation MyClass
--(void) setNum1:(int) n{
-    num1 = n;
+@implementation Student
+-(void) setChinese:(double) a setEnglish:(double) b setMath:(double) c{
+    chinese = a;
+    english = b;
+    math = c;
+    NSLog(@"Chinese=%.2d, English=%.2d, mathecatic=%.2d", chinese, english, math);
 }
--(void) setNum2:(int) m{
-    num2 = m;
-}
-
--(int)num1{
-    return num1;
-}
-
--(int)num2{
-    return num2;
-}
-
 @end
+
 
 =========================
 #import <Foundation/Foundation.h>
-#import "MyClass.h"
+#import "Student.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        MyClass *obj = [[MyClass alloc] init];
-        [obj setNum1:100];
-        [obj setNum2:200];
+        Student *stu1 = [[Student alloc] init];
+        Student *stu2 = [[Student alloc] init];
+        NSLog(@"Student John:");
+        [stu1 setChinese:78 setEnglish:89 setMath:92];
+        [stu2 setChinese:95 setEnglish:85 setMath:90];
         
     }
     return 0;

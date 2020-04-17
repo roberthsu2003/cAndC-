@@ -1,44 +1,44 @@
-@interface Car : NSObject{
+@interface MyClass : NSObject{
     int num1, num2;
 }
+-(void) setNum1:(int) n;
+-(void) setNum2:(int) m;
 
--(void) setData;
--(int) sum;
--(void) output;
+-(int)num1;
+-(int)num2;
 
 @end
 
-
 ===============================
-#import "Car.h"
+#import "MyClass.h"
 
-@implementation Car
--(void) setData{
-    num1 = 100;
-    num2 = 200;
+@implementation MyClass
+-(void) setNum1:(int) n{
+    num1 = n;
 }
--(int) sum{
-    return num1 + num2;
+-(void) setNum2:(int) m{
+    num2 = m;
 }
--(void) output{
-    NSLog(@"num1=%d, num2=%d",num1, num2)
+
+-(int)num1{
+    return num1;
+}
+
+-(int)num2{
+    return num2;
 }
 
 @end
 
 =========================
-
 #import <Foundation/Foundation.h>
-#import "Car.h"
+#import "MyClass.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        Car *car = [[Car alloc] init];
-        NSLog(@"Car is %@",car);
-        [car setData];
-        NSLog(@"sum=%i",[car sum]);
-        
-        [car output];
+        MyClass *obj = [[MyClass alloc] init];
+        [obj setNum1:100];
+        [obj setNum2:200];
         
     }
     return 0;

@@ -1,72 +1,49 @@
+//
+//  MyClass.h
+//  sample5
+//
+//  Created by apple on 2020/4/17.
+//  Copyright © 2020 pu. All rights reserved.
+//
+
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Student : NSObject
--(void) setChinese:(double) a setEnglish:(double) b setMath:(double) c;
--(void) average;
--(void)convertGrade:(double) g;
+@interface MyClass : NSObject
+{
+    int num1, num2;
+    int total;
+}
+@property int num1, num2;
 @end
 
 NS_ASSUME_NONNULL_END
 
+
 ======================================
 
-#import "Student.h"
-@interface Student(){
-        int chinese;
-        int english;
-        int math;
-}
+#import "MyClass.h"
 
-@end
+@implementation MyClass
+@synthesize num1, num2;
 
-
-@implementation Student
--(void) setChinese:(double) a setEnglish:(double) b setMath:(double) c{
-    chinese = a;
-    english = b;
-    math = c;
-    NSLog(@"Chinese=%.2d, English=%.2d, mathecatic=%.2d", chinese, english, math);
-}
-
--(void) average{
-    double aver;
-    aver = (chinese + english + math) / 3.0;
-    NSLog(@"average = %.2f", aver);
-    [self convertGrade:aver];
-}
-
--(void)convertGrade:(double) g{
-    if(g >= 85){
-        NSLog(@"您的分數是A");
-    }else if (g >= 75){
-        NSLog(@"您的分數是B");
-    }else if (g >= 65){
-        NSLog(@"您的分數是C");
-    }else{
-        NSLog(@"您的分數是D");
-        
-    }
-    
-}
 @end
 
 
 =======================
 
 #import <Foundation/Foundation.h>
-#import "Student.h"
+#import "MyClass.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        Student *stu1 = [[Student alloc] init];
-        Student *stu2 = [[Student alloc] init];
-        NSLog(@"Student John:");
-        [stu1 setChinese:78 setEnglish:65 setMath:92];
-        [stu2 setChinese:95 setEnglish:85 setMath:90];
-        [stu1 average];
-        [stu2 average];
+        MyClass *obj = [[MyClass alloc] init];
+        int total;
+        [obj setNum1:100];
+        [obj setNum2:200];
+        
+        NSLog(@"num1=%d, num2=%d", [obj num1], [obj num2])
     }
     return 0;
 }

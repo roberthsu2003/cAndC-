@@ -1,4 +1,3 @@
-
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -6,13 +5,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Student : NSObject
 -(void) setChinese:(double) a setEnglish:(double) b setMath:(double) c;
 -(void) average;
+-(void)convertGrade:(double) g;
 @end
 
 NS_ASSUME_NONNULL_END
 
-
 ======================================
-
 
 #import "Student.h"
 @interface Student(){
@@ -36,6 +34,20 @@ NS_ASSUME_NONNULL_END
     double aver;
     aver = (chinese + english + math) / 3.0;
     NSLog(@"average = %.2f", aver);
+    [self convertGrade:aver];
+}
+
+-(void)convertGrade:(double) g{
+    if(g >= 85){
+        NSLog(@"您的分數是A");
+    }else if (g >= 75){
+        NSLog(@"您的分數是B");
+    }else if (g >= 65){
+        NSLog(@"您的分數是C");
+    }else{
+        NSLog(@"您的分數是D");
+        
+    }
     
 }
 @end
@@ -51,7 +63,7 @@ int main(int argc, const char * argv[]) {
         Student *stu1 = [[Student alloc] init];
         Student *stu2 = [[Student alloc] init];
         NSLog(@"Student John:");
-        [stu1 setChinese:78 setEnglish:89 setMath:92];
+        [stu1 setChinese:78 setEnglish:65 setMath:92];
         [stu2 setChinese:95 setEnglish:85 setMath:90];
         [stu1 average];
         [stu2 average];

@@ -1,3 +1,15 @@
+@interface Car : NSObject
+    
+@end
+
+===============================
+#import "Car.h"
+
+@implementation Car
+
+@end
+=========================
+
 #import <Foundation/Foundation.h>
 
 int main(int argc, const char * argv[]) {

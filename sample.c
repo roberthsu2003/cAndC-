@@ -1,53 +1,24 @@
 //
-//  Student.h
-//  sample3
+//  ViewController.m
+//  sample4
 //
 //  Created by apple on 2020/4/17.
 //  Copyright © 2020 pu. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "ViewController.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface Student : NSObject{
-    int chinese;
-    int english;
-    int math;
-}
-
--(void) setChinese:(double) a setEnglish:(double) b setMath:(double) c;
+@interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *message;
 
 @end
 
-NS_ASSUME_NONNULL_END
+@implementation ViewController
 
-
-===============================
-#import "Student.h"
-
-@implementation Student
--(void) setChinese:(double) a setEnglish:(double) b setMath:(double) c{
-    chinese = a;
-    english = b;
-    math = c;
-    NSLog(@"Chinese=%.2d, English=%.2d, mathecatic=%.2d", chinese, english, math);
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.message.text = @"Hello! PU";
 }
+
+
 @end
-
-
-=========================
-#import <Foundation/Foundation.h>
-#import "Student.h"
-
-int main(int argc, const char * argv[]) {
-    @autoreleasepool {
-        Student *stu1 = [[Student alloc] init];
-        Student *stu2 = [[Student alloc] init];
-        NSLog(@"Student John:");
-        [stu1 setChinese:78 setEnglish:89 setMath:92];
-        [stu2 setChinese:95 setEnglish:85 setMath:90];
-        
-    }
-    return 0;
-}

@@ -1,12 +1,28 @@
-@interface Car : NSObject
-    
+
+@interface Car : NSObject{
+    int num1, num2;
+}
+
+-(void) setData;
+-(int) sum;
+-(void) output;
+
 @end
+
 
 ===============================
 #import "Car.h"
 
 @implementation Car
-
+-(void) setData{
+    
+}
+-(int) sum{
+    
+}
+-(void) output{
+    
+}
 @end
 =========================
 

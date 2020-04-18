@@ -1,50 +1,58 @@
 //
 //  main.m
-//  sample7
+//  sample8
 //
 //  Created by apple on 2020/4/18.
 //  Copyright © 2020 pu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-@interface MyClass:NSObject{
-    int num1, num2;
-    int total;
+@interface Parent:NSObject
+{
+    int num1;
 }
-@property int num1, num2;
--(MyClass *) initWith:(int) n andM:(int) m;
--(void) setNum1:(int) n andNum2:(int)m;
--(int) total;
+@property int num1;
+-(void) setData;
 @end
 
-
-@implementation MyClass
-@synthesize num1, num2;
-
-
--(MyClass *) initWith:(int) n andM:(int) m{
-    self = [super init];
-    if(self){
-        [self setNum1:n andNum2:m];
-    }
-    return self;
-}
-
--(void) setNum1:(int) n andNum2:(int)m{
-    self.num1 = n;
-    self.num2 = m;
-}
-
--(int) total{
-    return self.num1 + self.num2;
+@implementation Parent
+@synthesize  num1;
+-(void) setData{
+    num1 = 666;
 }
 @end
 
+@interface Child:Parent{
+    int num2;
+}
+@property int num2;
+-(void)setData:(int) n withNum2:(int) m;
+-(void)print;
+@end
+
+@implementation Child
+@synthesize num2;
+
+-(void)print{
+    NSLog(@"num1=%i, num2=%i", num1, num2);
+}
+
+-(void)setData:(int) n withNum2:(int) m{
+    num1 = n;
+    num2 = m;
+}
+
+@end
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        MyClass *obj = [[MyClass alloc] initWith:100 andM:200];
-        int total = [obj total];
+        Child *child = [[Child alloc] init];
+        [child setData:100 withNum2:200];
+        NSLog(@"num1=%i", child.num1);
+        NSLog(@"num2=%i", child.num2);
+        [child print];
+       
+        
     }
     return 0;
 }

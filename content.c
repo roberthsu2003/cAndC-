@@ -2,14 +2,10 @@
 using namespace std;
 
 int main() {
-	//沒有初始值的變數
-	int intA;
-	char a;
-
-	int intB = 345678;
-	char a1 = 's'; //單引號的字元
-
-	cout << "姓名\t\t座號\t\t電話\n";
-	cout << "李振聲\t\t11\t\t\t0229435437\n";
-	cout << "張四聲\t\t12\t\t\t0228478937\n";
+string str1;
+string str2 = "這是字串";
+string str3 = "這是\"C++\",非常簡單";
+cout << "\nstr1:" << str1 << "\n";
+cout << "str2:" << str2 << endl;
+cout << "str3:" << str3 << "\n";
 }

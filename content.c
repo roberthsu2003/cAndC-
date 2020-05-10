@@ -1,4 +1,3 @@
-
 #include <iostream>
 using namespace std;
 
@@ -8,4 +7,5 @@ int main() {
 	cin >> score;
 	cout << "您好\n";
 	cout << "徐國堂";
-}
+	cout << "您的分數是" << score;
+

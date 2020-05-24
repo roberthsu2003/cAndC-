@@ -3,5 +3,6 @@
 #include <time.h>
 
 int main() {
-  std::cout << rand();
+	srand((unsigned long)time(NULL));
+	std::cout << rand() % 100 + 1;
 }

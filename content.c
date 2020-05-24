@@ -2,9 +2,17 @@
 using namespace std;
 
 int main() {
-	int sum = 0;
-	for(int i=2;i<=10;i+=2){
-		sum += i;
-		cout << "i=" << i << ",總和為" << sum << "\n";
+	int n;
+	int sum=0;
+	for(int i=1;i<=7;i++){
+		if(i == 7){
+			cout << "請輸入星期日的支出:";
+		}else{
+			cout << "請輸入星期" << i << "的支出:";
+		}
+		cin >> n;
+		sum += n;
 	}
+
+	cout << "本星期的支出為:" << sum << "元\n";
 }

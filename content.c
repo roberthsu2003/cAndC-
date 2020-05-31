@@ -1,20 +1,11 @@
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+
 using namespace std;
-
 int main() {
-	const int nums = 5;
-	int scores[nums];
-	int sum=0;
-	double ave;
-	for(int i=0; i<nums; i++){
-		cout << "請輸入第" << i+1 << "位學生成績";
-		cin >> scores[i];
-	}
-
-	for(int i=0; i<nums; i++){
-		sum += scores[i];
-	}
-
-	ave = (double)sum/nums;
-	cout << "全班總成績為" << sum << "分,平均為" << ave << "分\n";
+	//C++
+	cout << "C++ Hello World!\n";
+	//c的輸出
+	printf("C Hello! World!\n");
 }

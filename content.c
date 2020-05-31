@@ -4,8 +4,10 @@
 
 using namespace std;
 int main() {
-	//C++
-	cout << "C++ Hello World!\n";
-	//c的輸出
-	printf("C Hello! World!\n");
+	int i = 10;
+	printf("這個i裏面存的值是%d\n",i);
+
+	int j = 10;
+	int k = 3;
+	printf("j的值是%d,k的值是%d\n",j,k);
 }

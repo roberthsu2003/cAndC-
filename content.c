@@ -1,26 +1,24 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
+
 using namespace std;
 
 int main() {
-	int i = 10;
-	printf("i的記憶體大小%dbyte\n",(int)sizeof(i));
+	int nums[] = {2, 5, 3, 4};
+	int numsCount = sizeof(nums)/sizeof(nums[0]);
+	for(int i=0;i<numsCount-1;i++){
+		printf("i=%d\n",i);
+		for(int j=i+1; j<numsCount;j++){
+			if(nums[i] > nums[j]){
+				int temp = nums[i];
+				nums[i] = nums[j];
+				nums[j] = temp;
+			}
+		}
+	}
 
-	float f = 10.12;
-	printf("f的記憶體大小%dbyte\n",(int)sizeof(f));
-
-	double d=10.12;
-	printf("f的記憶體大小%dbyte\n",(int)sizeof(d));
-
-	long l=10;
-	printf("l的記憶體大小%dbyte\n",(int)sizeof(l));
-
-	long long int lli=10;
-	printf("lli的記憶體大小%dbyte\n",(int)sizeof(lli));
-
-	int n[]={1, 3, 5, 7, 9, 11, 13, 15, 17,19};
-	printf("n的記憶體大小%dbyte\n",(int)sizeof(n));
-	printf("n[0]的記憶體大小%dbyte\n",(int)sizeof(n[0]));
-	printf("n的數量%d個\n",(int)(sizeof(n)/sizeof(n[0])));
+	for(int i=0; i<numsCount; i++){
+		printf("%d ",nums[i]);
+	}
 }

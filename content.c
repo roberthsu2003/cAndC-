@@ -1,8 +1,20 @@
 #include <iostream>
 using namespace std;
 
-//建立陣列,利用索引編號存值和取出值
 int main() {
-	int scores[] = {90, 80, 70};
-	cout << scores[0] << "," << scores[1] << "," << scores[2];
+	const int nums = 5;
+	int scores[nums];
+	int sum=0;
+	double ave;
+	for(int i=0; i<nums; i++){
+		cout << "請輸入第" << i+1 << "位學生成績";
+		cin >> scores[i];
+	}
+
+	for(int i=0; i<nums; i++){
+		sum += scores[i];
+	}
+
+	ave = (double)sum/nums;
+	cout << "全班總成績為" << sum << "分,平均為" << ave << "分\n";
 }

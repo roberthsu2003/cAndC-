@@ -4,16 +4,19 @@
 
 using namespace std;
 int main() {
-	int i = 47;
-	printf("%x\n",i);
-	printf("%X\n",i);
-	printf("%#x\n",i);
-	printf("%#X\n",i);
+	char letter;
+	int age;
+	char url[30];
+	float price;
 
-	int a =0, b =0, c=0, d=0;
-	scanf("%d", &a);
-	scanf("%d", &b);
-	printf("a+b=%d\n", a+b);
-	scanf("%d %d", &c, &d);
-	printf("c*d=%d", c*d);
+	printf("請輸入字元:");
+	scanf("%c", &letter);
+	printf("請輸入age:");
+	scanf("%d",&age);
+	printf("請輸入字串:");
+	scanf("%s", url);
+	printf("請輸入價格:");
+	scanf("%f", &price);
+	printf("這是字元:%c\n",letter);
+	printf("這是整數:%d,這是字串:%s,這是浮點數:%f\n",age, url, price);
 }

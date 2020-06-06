@@ -2,11 +2,16 @@
 using namespace std;
 
 int main() {
-	char chrB;
-	chrB = 'A';
-	cout << "chrB內放的值是:" << chrB << "\n";
+	bool bolA = true;
+	bool bolB = false;
 
-	char chrS;
-	chrS = 97;
-	cout << "chrS內放的值是:" << chrS << "\n";
+	cout << bolA << "\n";
+	cout << bolB << endl;
+
+	bool bolC = -156;
+	bool bolD = 0;
+
+	cout << bolC << "\n";
+	cout << bolD << endl;
+
 }

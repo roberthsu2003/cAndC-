@@ -1,26 +1,22 @@
 #include <iostream>
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 using namespace std;
 
-void showArray(int tempary[], int count){
-	for(int i=0; i<count;i++){
-		printf("ary[%d]=%d\t",i,tempary[i]);
-	}
-	printf("\n");
-}
-
-void sub2(int tempary[],int count){
-	for(int i=0; i<count; i++){
-		tempary[i] *= 2;
+int factorial(int n){
+	if(n==0){
+		return 1;
+	}else{
+		return n * factorial(n-1);
 	}
 }
 
 int main() {
-int ary[] = {212, 328, 765, 986};
-int count = sizeof(ary) / sizeof(ary[0]);
-printf("呼叫showArray\n");
-showArray(ary, count);
-sub2(ary, count);
-showArray(ary, count);
+	int n;
+	unsigned long long int total;
+	printf("請輸入數字n:");
+	scanf("%d", &n);
+	total = factorial(n);
+	printf("%d! = %lld",n,total);
+	return 0;
 }

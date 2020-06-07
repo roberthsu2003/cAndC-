@@ -2,11 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 using namespace std;
-char runAgain;
+
 
 int main() {
+	char runAgain;
 	do{
-		printf("程式還要繼續嗎?(輸入N....結束))\n");
-		scanf("%c",&runAgain);
+		
+		printf("程式還要繼續嗎?(輸入N....結束))\n");	
+		scanf("%s",&runAgain);
 	}while(runAgain != 'N');
 }

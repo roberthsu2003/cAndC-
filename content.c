@@ -1,15 +1,24 @@
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 using namespace std;
 
-int area(int side){
-	return side * side;
-}
+int n;
 
-int area(int side, int anotherSide){
-	return side * anotherSide;
+void showNum(){
+	//value為區域變數
+	int value = n;
+	cout << "=========================\n";
+	for(int n=value;n >= 1; n--){
+		//n區塊變數
+		cout << "區塊變數 n=" << n << endl;
+	}
+	cout << "=======================\n";
+	cout << "結束for迴圈後 全域變數n=" << n << endl;
 }
 
 int main() {
-	cout << "正方形=" << area(10) << endl;
-	cout << "矩形面積=" << area(10, 15);
+	cout << "請輸入全域變數 n=";
+	cin >> n;
+	showNum();
 }

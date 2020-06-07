@@ -8,5 +8,14 @@ float temperature(int value){
 }
 
 int main() {
+	int value;
+	float result;
 	cout << "攝氏10度轉華氏溫度=" << temperature(10) << endl;
+	printf("----------------------------\n");
+
+	printf("請輸入攝氏溫度:");
+	scanf("%d",&value);
+	result = temperature(value);
+	printf("華氏溫度=%.2f",result);
+	return 0;
 }

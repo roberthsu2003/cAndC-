@@ -3,9 +3,8 @@
 #include <stdio.h>
 using namespace std;
 
-float temperature(int value){
-	return 1.8 * value + 32;
-}
+//function的原型
+float temperature(int);
 
 int main() {
 	int value;
@@ -18,4 +17,8 @@ int main() {
 	result = temperature(value);
 	printf("華氏溫度=%.2f",result);
 	return 0;
+}
+
+float temperature(int value){
+	return 1.8 * value + 32;
 }

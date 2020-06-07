@@ -1,20 +1,15 @@
 #include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
 using namespace std;
 
-int add(int a, int b){
-	return a + b;
+int area(int side){
+	return side * side;
 }
 
-string add(string a, string b){
-	return a + b;
+int area(int side, int anotherSide){
+	return side * anotherSide;
 }
 
 int main() {
-	printf("add(2,3)=%d\n",add(2,3));
-	printf("===============================\n");
-	cout << "add(\"Nice\", \"Play\") = " << add("Nice", "Play") << endl;
-	return 0;
-;
+	cout << "正方形=" << area(10) << endl;
+	cout << "矩形面積=" << area(10, 15);
 }

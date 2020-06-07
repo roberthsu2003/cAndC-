@@ -1,24 +1,17 @@
 #include <iostream>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 using namespace std;
 
-void showNum(int n){
-	int i = 1;
-	while(true){
-		if(i > n){
-			return;
-		}
-		cout << i << " ";
-		i++;
+void showArray(int tempary[], int count){
+	for(int i=0; i<count;i++){
+		printf("ary[%d]=%d\t",i,tempary[i]);
 	}
 }
 
 int main() {
-	int inputNum;
-	printf("請輸入數字n:");
-	scanf("%d", &inputNum);
-	showNum(inputNum);
-	printf("\n");
-	return 0;
+ int ary[] = {212, 328, 765, 986};
+ int count = sizeof(ary) / sizeof(ary[0]);
+	printf("呼叫showArray\n");
+	showArray(ary, count);
 }

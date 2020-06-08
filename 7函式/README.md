@@ -423,7 +423,7 @@ void showNum(){
 		cout << "區塊變數 n=" << n << endl;
 	}
 	cout << "=======================" << endl;
-	cout << "結束for 巡圈後 全域變數n=" << n << endl;
+	cout << "結束for 迴圈後 全域變數n=" << n << endl;
 }
 int main() {
 	cout << "請輸入全域變數 n=";

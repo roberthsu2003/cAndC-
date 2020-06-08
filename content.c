@@ -1,11 +1,19 @@
 #include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
 using namespace std;
+static int total = 0;
+
+void getData(string name){
+	static int n = 0;
+	n++;
+	cout << "第" << n << "位候選人是:" << name << endl;
+	total ++;
+}
 
 int main() {
-	//宣告變數
-	int englishScore;
-	englishScore = 0; //指定值給變數
-	cout << "請輸入您的英文分數:"; //輸出控制台
-	cin >> englishScore;
-	cout << "您的英文分數是:" << englishScore;
+	getData("David");
+	getData("Amy");
+	getData("Tony");
+	cout << "共有" << total << "位登記" << endl;
 }

@@ -1,19 +1,18 @@
+//讓使用者輸入梯形的上底、下底及高，程式會計算梯形的面積(上底加下底乘以高除以2)
 #include <iostream>
-//讓使用者輸入三個任意數，程式會顯示三數中的最大數。
 using namespace std;
 
 int main() {
-	float in1, in2, in3, max;
-	cout << "請輸入第一個數值:";
-	cin >> in1;
+	float top, bottom, height, area;
+	cout << "請輸入梯形的上底(公分):";
+	cin >> top;
 
-	cout << "請輸入第二個數值:";
-	cin >> in2;
+	cout << "請輸入梯形的下底(公分):";
+	cin >> bottom;
 
-	max = in1 > in2 ? in1 : in2;
-	cout << "請輸入第三個數值:";
-	cin >> in3;
+	cout << "請輸入梯形的高(公分):";
+	cin >> height;
 
-	max = max > in3 ? max : in3;
-	cout << "輸入三個數中最大的數為:" << max << "\n";
+	area = (top + bottom) * height / 2;
+	cout << "梯形的面積:" << area << "平方公分\n";
 }

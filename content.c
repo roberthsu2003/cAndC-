@@ -1,12 +1,15 @@
-//輸入半徑,計算出圓面積
+
+//讓使用者輸入被除數(整數)及除數(整數，不可以是零)，程式會顯示兩數相除的商及餘數。
 
 #include <iostream>
-#define PI 3.14159
 using namespace std;
 
 int main() {
-	double radius;
-	cout << "請輸入圓半徑:";
-	cin >> radius;
-	cout << "半徑" << radius << "的圓面積是" << radius * radius * PI;
-}
+	int n=0, m=0;
+
+	cout << "請輸入被除數(整數):";
+	cin >> n;
+	cout << "請輸入除數(整數,不可以為0):";
+	cin >> m;
+	cout << "商:" << n/m << "餘數:" << n%m << "\n";
+ }

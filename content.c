@@ -1,9 +1,11 @@
 #include <iostream>
 #include <stdio.h>
+#define PI 3.14159
 
+using namespace std;
 
 int main() {
-	const float PI = 3.14159;
-	std::cout << "我的圓周率" << PI;
-	//printf("我的圓周率:%f",PI);
+	//const double PI = 3.14159;
+	cout << "我的圓周率" << PI << endl;
+	printf("我的圓周率為%f",PI);
 }

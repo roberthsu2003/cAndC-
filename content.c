@@ -1,13 +1,19 @@
 #include <iostream>
+//讓使用者輸入三個任意數，程式會顯示三數中的最大數。
 using namespace std;
-int main() {
-char a = 1;
-int b = 1;
-float c = 1;
-double d = 1;
 
-cout << "char佔" << sizeof(a) << "bytes\n";
-cout << "int佔" << sizeof(b) << "bytes\n";
-cout << "float佔" << sizeof(c) << "bytes\n";
-cout << "double佔" << sizeof(d) << "bytes\n";
+int main() {
+	float in1, in2, in3, max;
+	cout << "請輸入第一個數值:";
+	cin >> in1;
+
+	cout << "請輸入第二個數值:";
+	cin >> in2;
+
+	max = in1 > in2 ? in1 : in2;
+	cout << "請輸入第三個數值:";
+	cin >> in3;
+
+	max = max > in3 ? max : in3;
+	cout << "輸入三個數中最大的數為:" << max << "\n";
 }

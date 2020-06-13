@@ -1,15 +1,20 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
+using namespace std;
 
 int main() {
-	//c 語言的輸出
-	printf("Hello World!\n");
+int a=0, b=0, c=0, d=0;
+cout << "請輸入a:";
+scanf("%d", &a);
+printf("您輸入的a是%d\n", a);
 
-	int i = 10;
-	printf("%d\n",i);
+printf("請輸入b:");
+scanf("%d",&b);
+printf("您輸入的b是%d\n", b);
 
-	int j = 3;
-	printf("i=%d j=%d\n",i, j);
-
+printf("請輸入c和d的值(格式:c-d):");
+scanf("%d-%d",&c,&d);
+printf("您輸入的c是%d\n", c);
+printf("您輸入的d是%d\n", d);
 }

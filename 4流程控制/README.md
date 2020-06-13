@@ -255,17 +255,17 @@ int main() {
 		cout << "num1+num2=" << num1+num2 << "\n";
 		break;
 	case '-':
-			cout << "num1-num2=" << num1-num2 << "\n";
-			break;
+		cout << "num1-num2=" << num1-num2 << "\n";
+		break;
 	case '*':
-			cout << "num1*num2=" << num1*num2 << "\n";
-			break;
+		cout << "num1*num2=" << num1*num2 << "\n";
+		break;
 	case '/':
-			cout << "num1/num2=" << num1/num2 << "\n";
-			break;
+		cout << "num1/num2=" << num1/num2 << "\n";
+		break;
 	default:
-			cout << "無法執行運算!\n";
-			break;
+		cout << "無法執行運算!\n";
+		break;
 	}
 	return 0;
 }

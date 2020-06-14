@@ -325,8 +325,35 @@ void sub1(int a, int &b){
 ![h3](pic/h3.JPG)
 ![h4](pic/h4.JPG)
 ![h5](pic/h5.JPG)
-![h6](pic/h6.JPG)
-### 
+![h6](pic/h6.JPG)  
+### callbyvalue
+```c++
+//================================================
+//Name        :callByValue.cpp
+
+#include <iostream>
+using namespace std;
+
+int turbo(int);
+
+int main() {
+	int speed;
+	cout << "請輸入初始速度:";
+	cin >> speed;
+	speed = turbo(speed);
+	cout << "加速後速度:" << speed << endl;
+}
+
+//call by value
+int turbo(int mySpeed){
+	cout << "加速前速度:" << mySpeed << endl;
+	mySpeed += 10;
+	return mySpeed;
+}
+```
+
+### call By Reference
+
 ```c++
 //============================================================================
 // Name        : callByRef1.cpp
@@ -348,7 +375,9 @@ void turbo(int &mySpeed){
 }
 ```
 ![call by Reference](pic/pic5.png)
-	
+
+### call by address
+
 ```c++
 //============================================================================
 // Name        : callByAddress1.cpp

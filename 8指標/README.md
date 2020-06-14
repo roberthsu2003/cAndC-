@@ -274,7 +274,30 @@ int main() {
 ```
 [解題](https://repl.it/@roberthsu2003/arrayPoint)
 
-### 使用call By value和 call By Reference
+### 使用call By value和 call By Reference傳遞參數  
+```c++
+
+#include <iostream>
+using namespace std;
+void sub1(int, int &);
+
+int main() {
+  int a = 10;
+  int b = 20;
+  cout << "a=" << a << endl;
+  cout << "b=" << b << endl;
+  sub1(a,b);
+  cout << "a=" << a << endl;
+  cout << "b=" << b << endl;
+
+}
+
+void sub1(int x, int &y){
+	x = 100;
+	y = 200;
+}
+```
+
 ### 傳遞陣列元素，使用call By Value和call By Reference
 ```c++
 //============================================================================

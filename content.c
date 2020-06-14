@@ -1,19 +1,22 @@
+//================================================
+//Name        :callByValue.cpp
+
 #include <iostream>
 using namespace std;
-void sub1(int, int &);
+
+int turbo(int);
 
 int main() {
-  int a = 10;
-  int b = 20;
-  cout << "a=" << a << endl;
-  cout << "b=" << b << endl;
-  sub1(a,b);
-  cout << "a=" << a << endl;
-  cout << "b=" << b << endl;
-
+	int speed;
+	cout << "請輸入初始速度:";
+	cin >> speed;
+	speed = turbo(speed);
+	cout << "加速後速度:" << speed << endl;
 }
 
-void sub1(int x, int &y){
-	x = 100;
-	y = 200;
+//call by value
+int turbo(int mySpeed){
+	cout << "加速前速度:" << mySpeed << endl;
+	mySpeed += 10;
+	return mySpeed;
 }

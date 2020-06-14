@@ -274,6 +274,7 @@ int main() {
 ```
 [解題](https://repl.it/@roberthsu2003/arrayPoint)
 
+### 使用call By value和 call By Reference
 ### 傳遞陣列元素，使用call By Value和call By Reference
 ```c++
 //============================================================================

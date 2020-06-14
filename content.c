@@ -1,25 +1,10 @@
 #include <iostream>
 using namespace std;
 
-void swap(int*, int*);
-
 int main() {
-	int a = 666;
-	int b = 777;
-	cout << "a=" << a << endl;
-	cout << "b=" << b << endl;
-	//交換值
-	swap(&a, &b);
-
-	cout << "a=" << a << endl;
-	cout << "b=" << b << endl;
-
-}
-
-void swap(int *m, int *n){
-//交換值
-	int temp = *m;
-	*m = *n;
-	*n = temp;
-
+	int array[] = {1, 2, 3, 4, 5};
+	cout << "使用陣列變數取出值" << array[1] << endl;
+	cout << "使用陣列變數取出位址" << &array[1] << endl;
+	cout << "使用指標變數取出位址" << (array+1) << endl;
+	cout << "使用指標變數取出值" << *(array+1) << endl;
 }

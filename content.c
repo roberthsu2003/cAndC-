@@ -1,18 +1,15 @@
 #include <iostream>
 using namespace std;
 
-void turbo(int&);
-
 int main() {
-	int speed;
-	cout << "請輸入初始速度:";
-	cin >> speed;
-	turbo(speed);
-	cout << "加速後速度:" << speed << endl;
-}
+	char p[] = "Hello";
+	cout << "字串=" << p << endl;
+	
+	cout << "p大小" << sizeof(p) << endl;
+	int count = sizeof(p) / sizeof(p[0]) -1;
+	for(int i=count-1; i >=0; i--){
+		cout << *(p+i);
+	}
+	cout << endl;
 
-//call by reference
-void turbo(int &mySpeed){
-	cout << "加速前速度:" << mySpeed << endl;
-	mySpeed += 10;	
 }

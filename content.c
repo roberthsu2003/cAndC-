@@ -2,18 +2,14 @@
 using namespace std;
 
 int main() {
-	int n, sum=0;
+	char p[] = "Hello";
+	cout << "字串=" << p << endl;
 	
-	for(int i=1; i<=7; i++){
-		if(i == 7){
-			cout << "請輸入星期日的支出:";
-		}else{
-			cout << "請輸入星期" << i << "的支出:";
-		}
-		
-		cin >> n;
-		sum += n;
+	cout << "p大小" << sizeof(p) << endl;
+	int count = sizeof(p) / sizeof(p[0]) -1;
+	for(int i=count-1; i >=0; i--){
+		cout << *(p+i);
 	}
+	cout << endl;
 
-	cout << "本星期的支出為:" << sum <<"元\n";
 }

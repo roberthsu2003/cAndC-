@@ -108,12 +108,14 @@ int main() {
 	return 0;
 }
 ```
+
 ```
 「*」有2個不同的用途，可以宣告指標變數，也可以當作取用，雖然用法相同，但意義是不一樣
 「int *p」代表p是整數指標變數，所以p是另一個變數的位址。
 「*記憶體位址」代表取得記憶體位址所儲存的內容，所以「*p」表示取得位址p所指向的儲存值。
 ```
 ![*符號的使用](pic/pic1.png)
+
 ### 
 ```c++
 //============================================================================
@@ -159,6 +161,7 @@ int main() {
 }
 ```
 ![在指標變數內，可以動態儲存不同的記憶體位址](pic/pic2.png)
+
 ```
 *問題 pointAdd.cpp
 輸入變數x,y的值，以指標將2數相加並顯示兩數相加的結果?
@@ -168,6 +171,30 @@ int main() {
 20 + 30 = 50
 ```
 [解題](https://repl.it/@roberthsu2003/pointAdd)
+
+### 指標的應用
+```c++
+//============================================================================
+// Name        : swap.cpp
+//兩數交換
+#include <iostream>
+using namespace std;
+void swap(int*, int*);
+int main() {
+	int a = 666,b = 777;
+	cout << "a=" << a << ",b=" << b << endl;
+	swap(&a,&b);
+	cout << "a=" << a << ",b=" << b << endl;
+	return 0;
+}
+void swap(int *n, int *m){
+	int temp = *n;
+	*n = *m;
+	*m = temp;
+}
+```
+![2數交換](pic/pic7.png)
+
 ### 一維陣列與指標
 ```
 要存取陣列元素語法有:  
@@ -181,29 +208,23 @@ int array[]={1,2,3};
 cout << array[2];
 cout << *(array+2);
 ```
-![指標變數存取陣列](pic/pic3.png)
+
 ```c++
-//============================================================================
-// Name        : p_array1.cpp
-//定義整數一維陣列，以陣列與指取得陣列位址和陣例元素內容
+
 #include <iostream>
 using namespace std;
+
 int main() {
-int n[3] = {1,2,3};
-cout << "陣列元素 \t\t 位      址 \t \t值 \n";
-cout << "-------------------------------------------\n";
-for(int i=0; i<3; i++){
-	cout << "n[" << i << "]\t\t" << &n[i] << "\t\t" << n[i] << endl;
-}
-//以指標變數的語法
-cout << "陣列指標 \t\t 位      址 \t\t值 \n";
-cout << "-------------------------------------------\n";
-for(int i=0; i<3; i++){
-	cout << "n+" << i << "\t\t" << n+i << "\t\t" << *(n+i) << endl;
-}
-return 0;
+	int array[] = {1, 2, 3, 4, 5};
+	cout << "使用陣列變數取出值" << array[1] << endl;
+	cout << "使用陣列變數取出位址" << &array[1] << endl;
+	cout << "使用指標變數取出位址" << (array+1) << endl;
+	cout << "使用指標變數取出值" << *(array+1) << endl;
 }
 ```
+
+![指標變數存取陣列](pic/pic3.png)
+
 ### 一維字元陣列與指標
 ![使用陣列變數和指標變數存取字元陣列](pic/pic4.png)
 ```c++
@@ -214,7 +235,9 @@ return 0;
 using namespace std;
 
 int main() {
+  //指標變數
 	const char* str1 = "one";
+	//陣列變數
 	char str2[] = "Two";
 	cout << "以陣列顯示str1字串" << endl;
 	for(int i=0; i<3; i++){
@@ -239,6 +262,7 @@ int main() {
 
 }
 ```
+
 ```
 *問題 陣列與指標的存取
 宣告int n[] = {1,2,3}，分別利用陣列和指標求陣列元素的總和。
@@ -249,6 +273,31 @@ int main() {
 總和 total = 6
 ```
 [解題](https://repl.it/@roberthsu2003/arrayPoint)
+
+### 使用call By value和 call By Reference傳遞參數  
+```c++
+
+#include <iostream>
+using namespace std;
+void sub1(int, int &);
+
+int main() {
+  int a = 10;
+  int b = 20;
+  cout << "a=" << a << endl;
+  cout << "b=" << b << endl;
+  sub1(a,b);
+  cout << "a=" << a << endl;
+  cout << "b=" << b << endl;
+
+}
+
+void sub1(int x, int &y){
+	x = 100;
+	y = 200;
+}
+```
+
 ### 傳遞陣列元素，使用call By Value和call By Reference
 ```c++
 //============================================================================
@@ -276,8 +325,35 @@ void sub1(int a, int &b){
 ![h3](pic/h3.JPG)
 ![h4](pic/h4.JPG)
 ![h5](pic/h5.JPG)
-![h6](pic/h6.JPG)
-### 
+![h6](pic/h6.JPG)  
+### callbyvalue
+```c++
+//================================================
+//Name        :callByValue.cpp
+
+#include <iostream>
+using namespace std;
+
+int turbo(int);
+
+int main() {
+	int speed;
+	cout << "請輸入初始速度:";
+	cin >> speed;
+	speed = turbo(speed);
+	cout << "加速後速度:" << speed << endl;
+}
+
+//call by value
+int turbo(int mySpeed){
+	cout << "加速前速度:" << mySpeed << endl;
+	mySpeed += 10;
+	return mySpeed;
+}
+```
+
+### call By Reference
+
 ```c++
 //============================================================================
 // Name        : callByRef1.cpp
@@ -299,7 +375,9 @@ void turbo(int &mySpeed){
 }
 ```
 ![call by Reference](pic/pic5.png)
-	
+
+### call by address
+
 ```c++
 //============================================================================
 // Name        : callByAddress1.cpp
@@ -322,6 +400,7 @@ void turbo(int *mySpeed){
 ```
 	
 ![call by address](pic/pic6.png)
+
 ```c++
 //============================================================================
 // Name        : array21.cpp
@@ -351,29 +430,10 @@ void sub2(int tempAry[]){
  }
 }
 ```
-### 指標的應用
-```c++
-//============================================================================
-// Name        : swap.cpp
-//兩數交換
-#include <iostream>
-using namespace std;
-void swap(int*, int*);
-int main() {
-	int a = 666,b = 777;
-	cout << "a=" << a << ",b=" << b << endl;
-	swap(&a,&b);
-	cout << "a=" << a << ",b=" << b << endl;
-	return 0;
-}
-void swap(int *n, int *m){
-	int temp = *n;
-	*n = *m;
-	*m = temp;
-}
-```
 	
-![2數交換](pic/pic7.png)
+
+### 指標的應用
+
 ```c++
 //============================================================================
 // Name        : reverse.cpp
@@ -392,6 +452,7 @@ int main() {
 	return 0;
 }
 ```
+
 ```c++
 //============================================================================
 // Name        : listString.cpp
@@ -412,6 +473,7 @@ int main() {
   
 }
 ```
+
 ```
 *問題 reverse.cpp
 輸入任意字串(最多100個字元)，利用指標p輸入字倒印。
@@ -420,14 +482,17 @@ int main() {
 字串倒印 = elpmaS
 ```
 [解題](https://repl.it/@roberthsu2003/revert)
-### new,delete 運算子
+
+### new,delete 運算子  
 指標宣告後若未明確指向實體變數的記憶體位址，它就像一艘漂泊未靠岸的般隻，無法裝載任何的貨品，因此，不可以將一個數值放進未取很位址的指標中。
+
 ```
 //錯誤
 int *p;
 *p=10;
 ```
 ![沒有實體的指標](pic/pic8.png)
+
 ```
 //解決方法1
 int n;
@@ -435,7 +500,8 @@ int *p = &n;
 *p=10;
 cout << *p;
 ```
-#### 宣告分配指標變數記憶體空位址，並設定初始值
+
+#### 宣告分配指標變數記憶體空位址，並設定初始值  
 ```
 語法:
 資料型態 *指標變數 = new 資料型態(初始值)
@@ -465,7 +531,8 @@ int main() {
 	return 0;
 }
 ```
-### 建立動態陣列，並配置動態記憶體空間
+
+### 建立動態陣列，並配置動態記憶體空間  
 ```
 語法:
 資料型態 *指標變數 = new 資料型態[一維陣列大小];
@@ -495,6 +562,7 @@ int main() {
 	return 0;
 }
 ```
+
 ```
 *問題 p_reverse2.cpp
 字串輸入後將輸入字串倒印

@@ -1,36 +1,17 @@
 #include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+
 using namespace std;
 
 int main() {
-	int nums;
-	cout << "請輸入要排序的數值個數:";
-	cin >> nums;
-	float array[nums];
-
-	for(int i=0; i<nums; i++){
-		cout << "請輸入第" << i+1 << "個數值:";
-		cin >> array[i];
-	}
-
-	cout << "排序前:\n";
-	for(int i=0; i<nums; i++){
-		
-		cout << array[i] << " ";
-	}
-	int temp;
-	for(int i=0; i<nums-1; i++){
-		for(int j=i+1; j < nums;j++){
-			if(array[i] < array[j]){
-				temp = array[i];
-				array[i] = array[j];
-				array[j] = temp;
-			}
-		}
-	}
-
-	cout << "\n";
-	cout << "排序後:\n";
-	for(int i=0; i<nums; i++){		
-		cout << array[i] << " ";
-	}
+	//c++ 字串
+	string str = "DevC++";
+	//c語言的字元陣列
+	char str1[] = {'D', 'e', 'v', 'C', '+', '+', '\0'};
+	char str2[] = "DevC++";
+	printf("%s\n",str1);
+	cout << str << endl;
+	cout << str1 << endl;
+	printf("%s\n",str2);
 }

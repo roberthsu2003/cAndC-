@@ -1,15 +1,11 @@
+//計算2 - 10所有偶數的總和
 #include <iostream>
 using namespace std;
 
 int main() {
-	char p[] = "Hello";
-	cout << "字串=" << p << endl;
-	
-	cout << "p大小" << sizeof(p) << endl;
-	int count = sizeof(p) / sizeof(p[0]) -1;
-	for(int i=count-1; i >=0; i--){
-		cout << *(p+i);
-	}
-	cout << endl;
-
+	int sum = 0;
+    for(int i=2; i<=10; i+=2){
+		sum += i;
+	    cout << "第" << i/2 << " 次迴圈的 i=" << i << ",總和為" << sum << endl;
+  }
 }

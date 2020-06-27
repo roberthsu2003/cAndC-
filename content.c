@@ -2,14 +2,19 @@
 using namespace std;
 
 int main() {
-	int scores[5];
-	scores[0] = 70;
-	scores[1] = 80;
-	scores[2] = 90;
-	scores[3] = 100;
-	scores[4] = 60;
-
-	for(int i=0; i<=4; i++){
-		cout << "scores[" << i << "]=" << scores[i] << endl;
+	const int nums = 5;
+	int scores[nums];
+	int sum=0;
+	int ave=0;
+	for(int i=0; i<nums; i++){
+		cout << "請輸入第" << i+1 << "位學生的成績";
+		cin >> scores[i];
 	}
+
+	for(int i=0; i<nums; i++){
+		sum += scores[i];
+	}
+
+	ave = (float)sum/nums;
+	cout << "全班總成績為:" << sum << "分,平均為" << ave << "分\n";
 }

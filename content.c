@@ -1,15 +1,17 @@
 #include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+
 using namespace std;
 
 int main() {
-	char p[] = "Hello";
-	cout << "字串=" << p << endl;
-	
-	cout << "p大小" << sizeof(p) << endl;
-	int count = sizeof(p) / sizeof(p[0]) -1;
-	for(int i=count-1; i >=0; i--){
-		cout << *(p+i);
-	}
-	cout << endl;
-
+	//c++ 字串
+	string str = "DevC++";
+	//c語言的字元陣列
+	char str1[] = {'D', 'e', 'v', 'C', '+', '+', '\0'};
+	char str2[] = "DevC++";
+	printf("%s\n",str1);
+	cout << str << endl;
+	cout << str1 << endl;
+	printf("%s\n",str2);
 }

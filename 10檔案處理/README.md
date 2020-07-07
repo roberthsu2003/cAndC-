@@ -40,3 +40,54 @@ int main(int argc, char** argv) {
 安聯投信產品經理胡韡耀透露，企業盈餘修正的狀況有趨緩跡象，
 建議投資人要分散風險，不妨考慮向一流企業領特別收益。
 ```
+
+```c++
+
+//使用get()方法，一個字元一個字元讀入
+#include <iostream>
+#include <fstream>
+system("pause") or input loop */
+using namespace std;
+
+int main(int argc, char** argv) {
+	fstream file;
+	char ch;
+	file.open("readme.txt",ios::in);
+	if(!file){
+		cout << "檔案無法開啟";
+	}else{
+		while(file.get(ch))
+			cout << ch;
+		cout << endl;
+		file.close();
+	}
+	system("pause");
+	return 0;
+}
+```
+
+```c++
+//使用getline(),一行一行的讀取
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main(int argc, char** argv) {
+	fstream file;
+	char buffer[80];
+	file.open("readme.txt",ios::in);
+	if(!file){
+		cout << "檔案無法開啟";
+	}else{
+		do{
+			file.getline(buffer,sizeof(buffer));
+			cout << buffer << endl;	
+		}while(!file.eof());
+		file.close();
+	}
+	system("pause");
+	return 0;
+}
+```
+

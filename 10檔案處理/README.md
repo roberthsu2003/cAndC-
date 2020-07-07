@@ -46,7 +46,6 @@ int main(int argc, char** argv) {
 //使用get()方法，一個字元一個字元讀入
 #include <iostream>
 #include <fstream>
-system("pause") or input loop */
 using namespace std;
 
 int main(int argc, char** argv) {

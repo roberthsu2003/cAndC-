@@ -1,8 +1,13 @@
 #include <iostream>
 using namespace std;
+
+//自訂function
+void sayHello(){
+	cout << "歡迎光臨!";
+}
+
 int main() {
-	string name;
-	cout << "請輸入您的中文姓名:";
-	cin >> name;
-	cout << "Hello!" << name;
+//呼叫function
+ sayHello();
+ return 0;
 }

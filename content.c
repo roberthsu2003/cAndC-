@@ -1,18 +1,27 @@
+//============================================================================
+// Name        : variable1.cpp
+//區域變數,區塊變數,全域變數
+
 #include <iostream>
 using namespace std;
-//多載(overloading)
-int add(int a, int b){
-	return a + b;
-}
+//全域變數n
+int n;
 
-string add(string a, string b){
-	return a + b;
+void showNum(){
+	//value為區域變數
+	int value = n;
+	cout << "============================" << endl;
+	for(int n = value; n >= 1; n--){
+		//n是區塊變數
+		cout << "區塊變數 n=" << n << endl;
+	}
+	cout << "=======================" << endl;
+	cout << "結束for 迴圈後 全域變數n=" << n << endl;
 }
-
 
 int main() {
-	cout << "add(2, 3)=" << add(2, 3) << endl;
-	cout << "=================\n";
-	cout << "add()=" << add("Nice", "play") << endl;
+	cout << "請輸入全域變數 n=";
+	cin >> n;
+	showNum();
 	return 0;
 }

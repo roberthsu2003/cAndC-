@@ -1,27 +1,33 @@
+/*
+// Name        : return1.cpp
+//自鍵盤輸入一個數字n,顯示1...n。
+//=============================
+
+請輸入數字 n:10
+1 2 3 4 5 6 7 8 9 10
+
+===============================//
+*/
 #include <iostream>
 using namespace std;
-
-//函式原型
-float temperature(int);
+void showNum(int);
 
 int main() {
-	int value;
-	float result=0.0;
-	string runAgain;
-	cout << "攝氏10度轉萃氏溫度=" <<  temperature(10) << endl;
-	cout << "===================\n";
-	do{
-		cout << "請輸入攝氏溫度:";
-		cin >> value;
-		result = temperature(value);
-		cout << "華氏溫度=" << result << endl;
-		cout << "程式還要繼續嗎?(輸入N....結束)";
-		cin >> runAgain;
-	}while(runAgain != "N");
-	cout << "程式結束";	
+	int inputNum;
+	cout << "請輸入數字 n:";
+	cin >> inputNum;
+	showNum(inputNum);
+	cout << endl;
 	return 0;
 }
 
-float temperature(int value){
-	return 1.8 * value + 32;
+void showNum(int n){
+	int i = 1;
+	while(true){
+		if(i > n){
+			return;
+		}
+		cout << i << " ";
+		i++;
+	}
 }

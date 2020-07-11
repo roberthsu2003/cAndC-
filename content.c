@@ -5,5 +5,6 @@
 int main() {
 	//c語言的字元陣列
 	char name[] = "robert";
-	printf("Hello C++ %s",name);
+	char age[] = "18";
+	printf("Hello C++ %s age=%s",name,age);
 }

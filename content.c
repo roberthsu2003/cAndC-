@@ -1,9 +1,8 @@
 #include <iostream>
 using namespace std;
 
-float temperature(int value){
-	return 1.8 * value + 32;
-}
+//函式原型
+float temperature(int);
 
 int main() {
 	int value;
@@ -15,4 +14,8 @@ int main() {
 	result = temperature(value);
 	cout << "華氏溫度=" << result << endl;
 	return 0;
+}
+
+float temperature(int value){
+	return 1.8 * value + 32;
 }

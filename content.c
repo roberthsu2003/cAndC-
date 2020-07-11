@@ -1,17 +1,20 @@
+//遞迴(Recursive)
 #include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
 using namespace std;
-void turbo(int&);
 
-int main() {
-	int speed;
-	cout << "請輸入初始速度:";
-	cin >> speed;
-	turbo(speed);
-	cout << "加速後的速度:" << speed << endl;
-	return 0;
+double factorial(double n){
+	if(n==0){
+		return 1;
+	}else{
+		return n * factorial(n-1);
+	}
 }
 
-void turbo(int& speed){
-	cout << "加速前的速度:" << speed << endl;
-	speed += 10;
+int main() {
+	double n, total;
+	cin >> n;
+	total = factorial(n);
+	printf("%.0f! = %.0f\n",n,total);
 }

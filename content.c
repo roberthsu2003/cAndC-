@@ -1,33 +1,19 @@
-/*
-// Name        : return1.cpp
-//自鍵盤輸入一個數字n,顯示1...n。
-//=============================
+//call by value
 
-請輸入數字 n:10
-1 2 3 4 5 6 7 8 9 10
-
-===============================//
-*/
 #include <iostream>
 using namespace std;
-void showNum(int);
+int turbo(int);
 
 int main() {
-	int inputNum;
-	cout << "請輸入數字 n:";
-	cin >> inputNum;
-	showNum(inputNum);
-	cout << endl;
-	return 0;
+	int speed;
+	cout << "請輸入初始速度:";
+	cin >> speed;
+	speed = turbo(speed);
+	cout << "加速後的速度:" << speed << endl;
+	return 0; 
 }
 
-void showNum(int n){
-	int i = 1;
-	while(true){
-		if(i > n){
-			return;
-		}
-		cout << i << " ";
-		i++;
-	}
+int turbo(int speed){
+	cout << "加速前的速度:" << speed << endl;
+	return speed += 10;
 }

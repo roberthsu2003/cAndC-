@@ -14,6 +14,7 @@ int main() {
 }
 
 int turbo(int speed){
-	cout << "加速前的速度:" << speed << endl;
-	return speed += 10;
+	cout << "加速前的速度:" << speed << endl;	 
+	speed += 10;
+	return speed;
 }

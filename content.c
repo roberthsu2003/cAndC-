@@ -1,32 +1,25 @@
 #include <iostream>
 using namespace std;
 
-struct student{
-	int id;
-	const char *name;
-	int chinese, math, english;
-};
+typedef struct student{
+	string name;
+	int score;
+}student;
 
 int main() {
-	struct student david;
-	david.id = 99001;
-	david.name = "David";
-	david.math = 87;
-	david.chinese = 94;
-	david.english = 92;
+	student stus[3] = {{"robert", 93},{"david", 91},{"alice", 94}};
+	int stuCount = sizeof(stus) / sizeof(stus[0]);
 
-	cout << "david的id " << david.id << endl;
-	cout << "david的name " << david.name << endl;
-	cout << "david的chinese " << david.chinese << endl;
-	cout << "david的english " << david.english << endl;
-	cout << "david的math " << david.math << endl;
-	cout << "============================\n\n";
-	
-	struct student robert = {99002, "robert", 87, 86, 93};
+	for(int i=0; i<stuCount; i++){
+		cout << "第" << i+1 << "位學生是" << stus[i].name << ",分數是" << stus[i].score << endl;
+	}
+	cout << "=============================\n\n";
 
-	cout << "robert的id " << robert.id << endl;
-	cout << "robert的name " << robert.name << endl;
-	cout << "robert的chinese " << robert.chinese << endl;
-	cout << "robert的english " << robert.english << endl;
-	cout << "rober的math " << robert.math << endl;
+	int total=0;
+	for(int i=0; i<stuCount; i++){
+		total += stus[i].score;
+	}
+
+	cout << "學生總分是:" << total << endl;
+	cout << "學生平均是:" << total/3.0 << endl;
 }

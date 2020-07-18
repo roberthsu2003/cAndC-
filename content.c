@@ -1,20 +1,18 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-	int n = 10;
-	int m = 20;
-	int* p;
-	p = &n;
-	
-	cout << "變數n的值=" << n << endl;
-	cout << "指標p指向的記憶體位址=" << p << endl;
-	cout << "*p的值=" << *p << endl;
-	cout << "======================\n";
+void swap(int*, int*);
 
-	p = &m;
-	cout << "變數m的值=" << m << endl;
-	cout << "指標p指向的記憶體位址=" << p << endl;
-	cout << "*p的值=" << *p << endl;
-	cout << "======================\n";	
+int main() {
+	int a = 666, b = 777;
+	cout << "a=" << a << ",b=" << b << endl;
+	swap(&a, &b);
+	cout << "a=" << a << ",b=" << b << endl;
+
+}
+
+void swap(int *n, int *m){
+	int temp = *n;
+	*n = *m;
+	*m = temp;
 }

@@ -1,27 +1,14 @@
-//============================================================================
-// Name        : variable1.cpp
-//區域變數,區塊變數,全域變數
-
+//宣告變數 double m=5, int n = 10, 顯示變數m,n的值，位址和記憶體大小。
 #include <iostream>
 using namespace std;
-//全域變數n
-int n;
-
-void showNum(){
-	//value為區域變數
-	int value = n;
-	cout << "============================" << endl;
-	for(int n = value; n >= 1; n--){
-		//n是區塊變數
-		cout << "區塊變數 n=" << n << endl;
-	}
-	cout << "=======================" << endl;
-	cout << "結束for 迴圈後 全域變數n=" << n << endl;
-}
 
 int main() {
-	cout << "請輸入全域變數 n=";
-	cin >> n;
-	showNum();
-	return 0;
+	double m = 5;
+	int n = 10;
+	cout << "變數m的值=" << m << endl;
+	cout << "變數n的值=" << n << endl;
+	cout << "變數&m的位址=" << &m << endl;
+	cout << "變數&n的位址=" << &n << endl;
+	cout << "變數m的記憶體=" << sizeof(m) << "Bytes" << endl;
+	cout << "變數n的記憶體=" << sizeof(n) << "Bytes" << endl;
 }

@@ -1,18 +1,19 @@
 #include <iostream>
 using namespace std;
 
-void swap(int&, int&);
+int turbo(int);
 
 int main() {
-	int a = 666, b = 777;
-	cout << "a=" << a << ",b=" << b << endl;
-	swap(a, b);
-	cout << "a=" << a << ",b=" << b << endl;
-
+  int speed;
+  cout << "請輸入初始速度:";
+  cin >> speed;
+  speed = turbo(speed);
+  cout << "加速後速度:" << speed << endl;
 }
 
-void swap(int &n, int &m){
-	int temp = n;
-	n = m;
-	m = temp;
+//call by value
+int turbo(int mySpeed){
+	cout << "加速前速度:" << mySpeed << endl;
+	mySpeed += 10;
+	return mySpeed;
 }

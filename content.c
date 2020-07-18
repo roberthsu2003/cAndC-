@@ -1,18 +1,9 @@
 #include <iostream>
 using namespace std;
 
-void turbo(int&);
-
 int main() {
-  int speed;
-  cout << "請輸入初始速度:";
-  cin >> speed;
-  turbo(speed);
-  cout << "加速後速度:" << speed << endl;
-}
-
-//call by reference
-void turbo(int &mySpeed){
-	cout << "加速前速度:" << mySpeed << endl;
-	mySpeed += 10;	
+	int array[] = {1, 2, 3};
+	cout << "array[2]=" << array[2] << endl;
+	int *pary = array;
+	cout << "*(pary+2)=" << *(pary+2) << endl;
 }

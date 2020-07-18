@@ -1,37 +1,19 @@
+//設計一個投票統計表，包含計算各四位歌手3個地區投票數及總得票數，最後顯示得票數和得票率(計算至小數2位)
+
 #include <iostream>
 using namespace std;
-
-typedef struct student{
+//定義結構
+typedef struct singer{
 	string name;
-	int score;
-}student;
+	int area1;
+	int area2;
+	int area3;
+}singer;
 
 int main() {
-	int stuCount = 3;
-	student stus[stuCount];
+	singer allSinger[] = {{"周華見",713,600,310},{"劉得華",999, 512,215},{"張學有",543, 689, 287},{"梁朝為",1125, 387, 769}};
 
-	for(int i=0; i<stuCount; i++){
-		string myName;
-		int myScore;
-		cout << "第" << i+1 << "位學生的姓名:";
-		cin >> myName;
-		cout << "第" << i+1 << "位學生的分數:";
-		cin >> myScore;
-		stus[i] = {myName, myScore};
+	for(int i=0; i<4; i++){
+		cout << allSinger[i].name << endl;
 	}
-
-	cout << "=============================\n\n";
-	
-	for(int i=0; i<stuCount; i++){
-		cout << "第" << i+1 << "位學生是" << stus[i].name << ",分數是" << stus[i].score << endl;
-	}
-	cout << "=============================\n\n";
-
-	int total=0;
-	for(int i=0; i<stuCount; i++){
-		total += stus[i].score;
-	}
-
-	cout << "學生總分是:" << total << endl;
-	cout << "學生平均是:" << total/3.0 << endl;
 }

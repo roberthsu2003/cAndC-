@@ -11,8 +11,27 @@ typedef struct singer{
 }singer;
 
 int main() {
-	singer allSinger[] = {{"周華見",713,600,310},{"劉得華",999, 512,215},{"張學有",543, 689, 287},{"梁朝為",1125, 387, 769}};
+	singer allSinger[4];
+	
+	for(int i=0; i<4; i++){
+		string myName;
+		cout << "請輸入姓名:";
+		cin >> myName;
+		cout << "請輸入第一區得票數:";
+		int myArea1;
+		cin >> myArea1;
+		cout << "請輸入第二區得票數:";
+		int myArea2;
+		cin >> myArea2;
+		cout << "請輸入第三區得票數:";
+		int myArea3;
+		cin >> myArea3;
 
+		allSinger[i] = {myName, myArea1, myArea2, myArea3};
+		cout << "===========================\n";
+	}
+
+	cout << "===========================\n\n";
 	int total=0;
 	for(int i=0; i<4; i++){
 		singer user = allSinger[i];

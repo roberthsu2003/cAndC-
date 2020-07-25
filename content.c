@@ -9,6 +9,7 @@ using namespace std;
 			void turbo(int);
 	};
 
+	//靜態成員變數一定要在外部給預設值
 	int Car::turboCount = 0;
 
 	void Car::turbo(int s){
@@ -25,7 +26,7 @@ using namespace std;
 int main() {
 	Car car1;
 	car1.speed = 70;
-	cout << "現在的速度=" << car1.speed << endl;
+	cout << "car1現在的速度=" << car1.speed << endl;
 	car1.turbo(1);
 	car1.turbo(1);
 	car1.turbo(1);
@@ -33,6 +34,16 @@ int main() {
 	car1.turbo(1);
 	car1.turbo(1);
 	cout << "加速後的速度=" << car1.speed << endl;
-	cout << "已經加速多少次:" << Car::turboCount << endl;
+	
+
+	Car car2;
+	car2.speed = 30;
+	cout << "car1現在的速度=" << car1.speed << endl;
+	car2.turbo(1);
+	car2.turbo(1);
+	car2.turbo(1);
+	cout << "加速後的速度=" << car1.speed << endl;
+
+	cout << "加速了多少次:" << Car::turboCount << endl;
 	
 }

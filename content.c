@@ -1,46 +1,22 @@
 #include <iostream>
 using namespace std;
-
-namespace Human{
-	class Person{
-	public:
-		string name;
-		int tall;
-		int weight;
-		void walk(int); //將方法定義在類別的外面
-		float bmi(void);
+namespace Ford{
+	class Car{
+		public:
+			int speed;
+			void turbo(int);
 	};
-	//:: 類別範圍解析子
-	void Person::walk(int var){
-			cout << name << "每小時可跑" << var << "公里" << endl;
+
+	void Car::turbo(int s){
+		speed += s;
 	}
 
-	float Person::bmi(){
-		float myBmi = weight / ((tall / 100.0) * (tall / 100.0));
-		return myBmi;
-	}
 }
 
-using namespace Human;
-
 int main() {
-	Person david;
-	david.name = "David";
-	david.tall = 170;
-	david.weight = 60;
-	cout << "david's name:" << david.name << endl;
-	cout << "david's tall:" << david.tall << endl;
-	david.walk(20);
-	cout << "david's bmi:" << david.bmi() << endl;
-
-	cout << "===========================\n";
-	
-	Person robert;
-	robert.name = "Robert";
-	robert.tall = 180;
-	robert.weight = 75;
-	cout << "robert's name:" << robert.name << endl;
-	cout << "robert's tall:" << robert.tall << endl;
-	robert.walk(30);
-	cout << "robert's bmi:" << robert.bmi() << endl; 
+	Ford::Car car1;
+	car1.speed = 70;
+	cout << "現在的速度=" << car1.speed << endl;
+	car1.turbo(10);
+	cout << "加速後的速度=" << car1.speed << endl;
 }

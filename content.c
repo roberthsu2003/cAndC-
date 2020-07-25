@@ -38,11 +38,11 @@ int main() {
 
 	Car car2;
 	car2.speed = 30;
-	cout << "car1現在的速度=" << car1.speed << endl;
+	cout << "car1現在的速度=" << car2.speed << endl;
 	car2.turbo(1);
 	car2.turbo(1);
 	car2.turbo(1);
-	cout << "加速後的速度=" << car1.speed << endl;
+	cout << "加速後的速度=" << car2.speed << endl;
 
 	cout << "加速了多少次:" << Car::turboCount << endl;
 	

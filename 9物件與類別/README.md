@@ -356,27 +356,29 @@ int main() {
 ```c++
 //============================================================================
 // Name        : method1.cpp
-//建立方法,設定一個Turbo()方法，可以將speed的屬性加1
+//建立方法,設定一個Turbo()方法，可以改變speed的屬性
 
 #include <iostream>
 using namespace std;
+namespace Ford{
+	class Car{
+		public:
+			int speed;
+			void turbo(int);
+	};
 
-class Car{
-	public:
-		int speed;
-		void turbo(){
-			this -> speed = this -> speed+1;
-		}
-};
+	void Car::turbo(int s){
+		speed += s;
+	}
 
+}
 
 int main() {
-	Car BMW;
-	BMW.speed = 70;
-	cout << "現在速度=" << BMW.speed << endl;
-	BMW.turbo();
-	cout << "現在速度=" << BMW.speed << endl;
-	return 0;
+	Ford::Car car1;
+	car1.speed = 70;
+	cout << "現在的速度=" << car1.speed << endl;
+	car1.turbo(10);
+	cout << "加速後的速度=" << car1.speed << endl;
 }
 ```
 

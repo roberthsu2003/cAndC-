@@ -432,40 +432,32 @@ int main() {
 #include <iostream>
 using namespace std;
 
-class Car{
-	private:
-	 int speed;
+namespace Ford{
+	class Car{
+		private:
+			int speed=0;
 
-	public:
-		void turbo(){
-			this -> speed = this -> speed+1;
-		}
+		public:
+			void turbo(int);
+			int getSpeed();
+	};
 
-		void setSpeed(int var){
-			if(var < 60){
-				speed = 60;
-			}else if (var > 100){
-				speed = 100;
-			}else{
-				speed = var;
-			}
+	void Car::turbo(int s){
+		speed += s;
+	}
 
-		}
-
-		int getSpeed(){
-			return speed;
-		}
-};
-
+	int Car::getSpeed(){
+		return speed;
+	}
+}
 
 int main() {
-	Car BMW;
-	BMW.setSpeed(58);
-	cout << "現在速度=" << BMW.getSpeed()<< endl;
-	BMW.turbo();
-	cout << "現在速度=" << BMW.getSpeed() << endl;
-	return 0;
+	Ford::Car car1;
+	cout << "尚未加速前的速度:" << car1.getSpeed() << endl;
+	car1.turbo(30);
+	cout << "加速後的速度:" << car1.getSpeed() << endl;
 }
+
 ```
 
 ```

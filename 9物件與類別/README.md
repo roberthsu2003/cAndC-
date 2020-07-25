@@ -470,12 +470,99 @@ int main() {
 顯示================
 半徑 = 10
 圓面積=314.159
+
+
+
+#include <iostream>
+#define PI 3.14159
+
+using namespace std;
+
+namespace Shape{
+	class Circle{
+		private:
+			int _radius;
+
+		public:
+			void setRadius(int);
+			int getRadius(void);		
+			float area(void);
+	};
+
+	float Circle::area(){
+		return PI * _radius * _radius;
+	}
+	void Circle::setRadius(int r){
+		_radius = r;
+	}
+
+	int Circle::getRadius(void){
+		return _radius;
+	}
+}
+
+Shape::Circle circle;
+
+int main() {
+	circle.setRadius(10);
+	cout << "半徑=" << circle.getRadius() << endl;
+	cout << "圓面積=" << circle.area() << endl;
+}
+```
+
+### 實體方法的多載
+- 相同的方法名稱
+- 有不同數量的參數
+- 不同資料類型的參數
+- 
+```c++
+#include <iostream>
+#define PI 3.14159
+
+using namespace std;
+
+namespace Shape{
+	class Circle{
+		private:
+			int _radius;
+
+		public:
+			void setRadius(int);
+			void setRadius(void);
+			int getRadius(void);		
+			float area(void);
+	};
+
+	float Circle::area(){
+		return PI * _radius * _radius;
+	}
+	//多載
+	void Circle::setRadius(int r){
+		_radius = r;
+	}
+	//多載
+	void Circle::setRadius(){
+		_radius = 100;
+	}
+
+	int Circle::getRadius(void){
+		return _radius;
+	}
+}
+
+Shape::Circle circle;
+
+int main() {
+	circle.setRadius();
+	cout << "半徑=" << circle.getRadius() << endl;
+	cout << "圓面積=" << circle.area() << endl;
+}
 ```
 
 ### 建構式
-類別中有一個特殊的方法，稱為建構式，其名稱和類別相同。
-當使用者建立新的學件時，會自動執行此建構式。
-建構式常來做為物件的初始化動作
+類別中有一個特殊的方法，稱為建構式，其名稱和類別相同。  
+當使用者建立新的學件時，會自動執行此建構式。  
+建構式常來做為物件的初始化動作  
 
 ```c++
 //============================================================================

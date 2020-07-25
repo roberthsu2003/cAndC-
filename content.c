@@ -1,28 +1,26 @@
 #include <iostream>
+#define PI 3.14159
+
 using namespace std;
 
-namespace Ford{
-	class Car{
+namespace Shape{
+	class Circle{
 		private:
-			int speed=0;
+			int _radius;
 
 		public:
-			void turbo(int);
-			int getSpeed();
+			void setRadius(int);		
+			float area(void);
 	};
 
-	void Car::turbo(int s){
-		speed += s;
+	float Circle::area(){
+		return PI * _radius * _radius;
 	}
-
-	int Car::getSpeed(){
-		return speed;
+	void Circle::setRadius(int r){
+		_radius = r;
 	}
 }
 
 int main() {
-	Ford::Car car1;
-	cout << "尚未加速前的速度:" << car1.getSpeed() << endl;
-	car1.turbo(30);
-	cout << "加速後的速度:" << car1.getSpeed() << endl;
+	
 }

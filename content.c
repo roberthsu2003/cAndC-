@@ -10,6 +10,7 @@ namespace Shape{
 
 		public:
 			void setRadius(int);
+			void setRadius(void);
 			int getRadius(void);		
 			float area(void);
 	};
@@ -17,8 +18,13 @@ namespace Shape{
 	float Circle::area(){
 		return PI * _radius * _radius;
 	}
+	//多載
 	void Circle::setRadius(int r){
 		_radius = r;
+	}
+	//多載
+	void Circle::setRadius(){
+		_radius = 100;
 	}
 
 	int Circle::getRadius(void){
@@ -29,7 +35,7 @@ namespace Shape{
 Shape::Circle circle;
 
 int main() {
-	circle.setRadius(10);
+	circle.setRadius();
 	cout << "半徑=" << circle.getRadius() << endl;
 	cout << "圓面積=" << circle.area() << endl;
 }

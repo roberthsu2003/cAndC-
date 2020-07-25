@@ -1,67 +1,58 @@
-#include "Person.h"
-
-
-#include <iostream>
-
-using namespace std;
-int main() {
-	int radius = 10;
-	float area = SQUARE(radius) * PI;
-	cout << "面積是:" << area << endl;
-
-	Person person1;
-	person1.walk(50);
-	cout << add(3,5) << endl;
-	cout << "class method:" << Person::sub(10, 3) << endl;
-	Person::count = 20;
-	cout << "class static field=" << Person::count;
-}
-
-
-
-
-Person.h
-
-
-#define PI 3.14159
-#define SQUARE(x) (x) * (x)
-
-//預防被重覆的#include
-#ifndef PERSON_H_
-#define PERSON_H_
-
 #include <iostream>
 using namespace std;
 
-class Person{
+class Vehicle{
 	public:
-	static int count;	
-	int tall;
-	string name;
-	void walk(int); //輸出走路的速度
-	int static sub(int a, int b){
-		return a - b;
-	}
+		int a1;
+		Vehicle();
+		void methodA();
 	
+	private:
+		int a2;
+	
+	protected:
+		int a3;
 };
 
-int add(int, int);
-
-#endif
-
-
-
-
-
-
-Person.cpp
-#include "Person.h"
-
-int Person::count = 0;
-void Person::walk(int w){
-	cout << name << "每小時可跑" << w << "公里" << endl;
+Vehicle::Vehicle(){
+	a1 = 1;
 }
 
-int add(int a, int b){
-	return a + b;
+void Vehicle::methodA(){
+	cout << "這是Vehicle的methodA" << endl;
+}
+
+
+
+
+
+
+
+class Car:public Vehicle{
+	public:
+		int b1;
+		void methodB();
+};
+
+void Car::methodB(){
+	a1 = 8;	
+	a3 = 7;
+}
+
+
+
+
+
+
+int main() {
+	Vehicle vehicle;
+	Car car;
+	cout << "vehicle 中的a1的值:" << vehicle.a1 << endl;
+	cout << "car 中的a1的值:" << car.a1 << endl;
+	//cout << "car 中的a3的值:" << car.a3 << endl; //錯誤
+
+	car.methodA();
+	car.methodB();
+	cout << "Vehicle 中的a1的值:" << vehicle.a1 << endl;
+	cout << "Car中的a1的值:" << car.a1 << endl;
 }

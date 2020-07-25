@@ -1,5 +1,4 @@
 #include "Person.h"
-#include "Person.h"
 
 
 #include <iostream>
@@ -13,21 +12,14 @@ int main() {
 	Person person1;
 	person1.walk(50);
 	cout << add(3,5) << endl;
+	cout << "class method:" << Person::sub(10, 3) << endl;
 }
 
 
 
 
 
-
 Person.h
-
-#define PI 3.14159
-#define SQUARE(x) (x) * (x)
-
-//預防被重覆的#include
-#ifndef PERSON_H_
-#define PERSON_H_
 
 #include <iostream>
 using namespace std;
@@ -37,15 +29,15 @@ class Person{
 	int tall;
 	string name;
 	void walk(int); //輸出走路的速度
+	int static sub(int a, int b){
+		return a - b;
+	}
 };
 
 int add(int, int);
 
 #endif
 
-
-
-#endif
 
 
 

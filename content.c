@@ -1,14 +1,18 @@
 #include <iostream>
 using namespace std;
 
-class Person{
+namespace Human{
+	class Person{
 	public:
 		string name;
 		int tall;
 		void walk(int var){
 			cout << name << "每小時可跑" << var << "公里" << endl;
 		}
-};
+	};
+}
+
+using namespace Human;
 
 int main() {
 	Person david;

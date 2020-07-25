@@ -6,10 +6,12 @@ namespace Human{
 	public:
 		string name;
 		int tall;
-		void walk(int var){
-			cout << name << "每小時可跑" << var << "公里" << endl;
-		}
+		void walk(int); //將方法定義在類別的外面
 	};
+
+	void Person::walk(int var){
+			cout << name << "每小時可跑" << var << "公里" << endl;
+	}
 }
 
 using namespace Human;

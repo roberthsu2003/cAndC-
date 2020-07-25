@@ -358,6 +358,7 @@ int main() {
 // Name        : method1.cpp
 //建立方法,設定一個Turbo()方法，可以改變speed的屬性
 //類別的欄位(靜態成員變數)
+//類別方法的建立
 
 #include <iostream>
 using namespace std;
@@ -368,6 +369,11 @@ using namespace std;
 			static int turboCount;
 			int speed;
 			void turbo(int);
+			//類別的方法(靜態方法)
+			//必需實作在class內
+			int static getCount(){
+				return turboCount;
+			}
 	};
 
 	//靜態成員變數一定要在外部給預設值
@@ -379,6 +385,7 @@ using namespace std;
 		//使用this的寫法
 		//this -> speed += s;
 	}
+	
 	
 
 
@@ -405,10 +412,10 @@ int main() {
 	car2.turbo(1);
 	cout << "加速後的速度=" << car2.speed << endl;
 
-	cout << "加速了多少次:" << Car::turboCount << endl;
+	cout << "加速了多少次(靜態成員變數):" << Car::turboCount << endl;
+	cout << "加速了多少次:(靜態方法)" << Car::getCount() << endl;
 	
 }
-
 ```
 
 ### public 欄位的保護

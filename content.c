@@ -1,58 +1,34 @@
 #include <iostream>
 using namespace std;
 
-class Vehicle{
+class Rectangle{
 	public:
-		int a1;
-		Vehicle();
-		void methodA();
-	
-	private:
-		int a2;
-	
+		int width;
+		int getArea(){
+			return width * height;
+		}
 	protected:
-		int a3;
+		int height;
 };
 
-Vehicle::Vehicle(){
-	a1 = 1;
-}
-
-void Vehicle::methodA(){
-	cout << "這是Vehicle的methodA" << endl;
-}
-
-
-
-
-
-
-
-class Car:public Vehicle{
+class Triangle:public Rectangle{
 	public:
-		int b1;
-		void methodB();
+		Triangle(){
+			width = 5;
+			height = 6;
+		}
+
+		int getArea2(){
+			return (width * height) / 2;
+		}
 };
-
-void Car::methodB(){
-	a1 = 8;	
-	a3 = 7;
-}
-
-
-
-
-
 
 int main() {
-	Vehicle vehicle;
-	Car car;
-	cout << "vehicle 中的a1的值:" << vehicle.a1 << endl;
-	cout << "car 中的a1的值:" << car.a1 << endl;
-	//cout << "car 中的a3的值:" << car.a3 << endl; //錯誤
+	Rectangle rectangle;
+	cout << rectangle.getArea() << endl;
 
-	car.methodA();
-	car.methodB();
-	cout << "Vehicle 中的a1的值:" << vehicle.a1 << endl;
-	cout << "Car中的a1的值:" << car.a1 << endl;
+	Triangle triangle;
+	cout << "矩形面積 = " << triangle.getArea() << endl;
+	cout << "===================" << endl;
+	cout << "三角形面積 = " << triangle.getArea2() << endl;
 }

@@ -1,41 +1,22 @@
 #include <iostream>
-#define PI 3.14159
-
 using namespace std;
 
-namespace Shape{
-	class Circle{
-		private:
-			int _radius;
-
+namespace Ford{
+	class Car{
 		public:
-			void setRadius(int);
-			void setRadius(void);
-			int getRadius(void);		
-			float area(void);
+			int speed;
+			//預設的建構
+			//建構式不要宣告傳出值
+			Car();
 	};
 
-	float Circle::area(){
-		return PI * _radius * _radius;
-	}
-	//多載
-	void Circle::setRadius(int r){
-		_radius = r;
-	}
-	//多載
-	void Circle::setRadius(){
-		_radius = 100;
-	}
-
-	int Circle::getRadius(void){
-		return _radius;
+	Car::Car(){
+		speed = 70;
 	}
 }
 
-Shape::Circle circle;
 
 int main() {
-	circle.setRadius();
-	cout << "半徑=" << circle.getRadius() << endl;
-	cout << "圓面積=" << circle.area() << endl;
+	Ford::Car car1;
+	cout << "使用Car()建構式建立後,速度是:" << car1.speed << endl;
 }

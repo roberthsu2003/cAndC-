@@ -4,7 +4,7 @@
 using namespace std;
 int main() {
 	int radius = 10;
-	float area = radius * radius * PI;
+	float area = SQUARE(radius) * PI;
 	cout << "面積是:" << area << endl;
 }
 
@@ -14,3 +14,4 @@ int main() {
 
 Person.h
 #define PI 3.14159
+#define SQUARE(x) (x) * (x)

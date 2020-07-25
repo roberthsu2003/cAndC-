@@ -712,7 +712,7 @@ int main() {
 ```
 
 ```c++
-typedef
+//typedef
 
 typedef int INTEGER;
 
@@ -744,6 +744,10 @@ int main() {
  *      Author: t1
  */
 
+#define PI 3.14159
+#define SQUARE(x) (x) * (x)
+
+//預防被重覆的#include
 #ifndef PERSON_H_
 #define PERSON_H_
 
@@ -752,12 +756,20 @@ using namespace std;
 
 class Person{
 	public:
-		int tall;
-		string name;
-		void walk(int);
+	static int count;	
+	int tall;
+	string name;
+	void walk(int); //輸出走路的速度
+	int static sub(int a, int b){
+		return a - b;
+	}
+	
 };
 
-#endif /* PERSON_H_ */
+int add(int, int);
+
+#endif
+
 ```
 	
 ### 
@@ -769,8 +781,13 @@ class Person{
 
 #include "Person.h"
 
-void Person::walk(int var){
-			cout << name << "每小時可跑" << var << " 公里" << endl;
+int Person::count = 0;
+void Person::walk(int w){
+	cout << name << "每小時可跑" << w << "公里" << endl;
+}
+
+int add(int a, int b){
+	return a + b;
 }
 ```
 	
@@ -786,14 +803,23 @@ void Person::walk(int var){
 
 #include "Person.h"
 
+
+#include <iostream>
+
+using namespace std;
 int main() {
-	Person david;
-	david.tall = 183;
-	david.name = "David";
-	cout << david.name << " 身高=" << david.tall << endl;
-	david.walk(20);
-	return 0;
+	int radius = 10;
+	float area = SQUARE(radius) * PI;
+	cout << "面積是:" << area << endl;
+
+	Person person1;
+	person1.walk(50);
+	cout << add(3,5) << endl;
+	cout << "class method:" << Person::sub(10, 3) << endl;
+	Person::count = 20;
+	cout << "class static field=" << Person::count;
 }
+
 ```
 
 

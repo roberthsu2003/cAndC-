@@ -1,16 +1,16 @@
-/*
-	typedef
-	幫現在的資料類型建立小名
-*/
+#include "Person.h"
 #include <iostream>
-
-typedef int INTERGER;
-typedef int* POINTER;
 
 using namespace std;
 int main() {
-INTERGER x = 100, y = 200;
-POINTER ptr = &x;
-cout << x << "+" << y << "=" << x+y <<endl;
-cout << "*ptr=" << *ptr << endl;
+	int radius = 10;
+	float area = radius * radius * PI;
+	cout << "面積是:" << area << endl;
 }
+
+
+
+
+
+Person.h
+#define PI 3.14159

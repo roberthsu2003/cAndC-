@@ -1,14 +1,14 @@
 /*
-#ifdef ... #else  #endif
+#ifndef ....#else .... #endif
 */
-
 #include <iostream>
-#define MAC 
 
-#ifdef MAC
-#define OS "MAC_OS_VERSION_10_0"
-#else
+#define MAC
+
+#ifndef MAC
 #define OS "Window10"
+#else
+#define OS "MAC_OS_Version"
 #endif
 
 using namespace std;

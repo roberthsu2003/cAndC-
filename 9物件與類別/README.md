@@ -620,7 +620,7 @@ int main() {
   cout << "請輸入您有多少美金:";
   cin >> us;
   nt = us * RATE;
-  cout << "您有" << nt << "台幣";
+  cout << "您有" << nt << "台幣" << endl;
 }
 ```
 

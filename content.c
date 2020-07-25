@@ -1,4 +1,5 @@
 #include "Person.h"
+#include "Person.h"
 
 
 #include <iostream>
@@ -11,13 +12,16 @@ int main() {
 
 	Person person1;
 	person1.walk(50);
+	cout << add(3,5) << endl;
 }
 
 
 
 
 
+
 Person.h
+
 #define PI 3.14159
 #define SQUARE(x) (x) * (x)
 
@@ -35,6 +39,11 @@ class Person{
 	void walk(int); //輸出走路的速度
 };
 
+int add(int, int);
+
+#endif
+
+
 
 #endif
 
@@ -46,4 +55,8 @@ Person.cpp
 
 void Person::walk(int w){
 	cout << name << "每小時可跑" << w << "公里" << endl;
+}
+
+int add(int a, int b){
+	return a + b;
 }

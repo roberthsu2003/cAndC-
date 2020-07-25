@@ -1,16 +1,17 @@
-#include <iostream>
-//marco 巨集
-using namespace std;
-//#define SQUARE(x) x * x
-#define SQUARE(x) (x) * (x)
-int main() {
-	int s, result;
-	cout << "請輸入數字:";
-	cin >> s;
-	result = SQUARE(s);
-	cout << s << "的平方為:" << result << endl;
+/*
+#ifdef ... #else  #endif
+*/
 
-	result = SQUARE(s+1);
-	//result = (5+1) * (5+1);
-	cout << s+1 << "的平方為:" << result << endl;	
+#include <iostream>
+#define MAC 
+
+#ifdef MAC
+#define OS "MAC_OS_VERSION_10_0"
+#else
+#define OS "Window10"
+#endif
+
+using namespace std;
+int main() {
+	cout << OS << endl;
 }

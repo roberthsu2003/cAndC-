@@ -1,17 +1,16 @@
 /*
-#ifndef ....#else .... #endif
+	typedef
+	幫現在的資料類型建立小名
 */
 #include <iostream>
 
-#define MAC
-
-#ifndef MAC
-#define OS "Window10"
-#else
-#define OS "MAC_OS_Version"
-#endif
+typedef int INTERGER;
+typedef int* POINTER;
 
 using namespace std;
 int main() {
-	cout << OS << endl;
+INTERGER x = 100, y = 200;
+POINTER ptr = &x;
+cout << x << "+" << y << "=" << x+y <<endl;
+cout << "*ptr=" << *ptr << endl;
 }

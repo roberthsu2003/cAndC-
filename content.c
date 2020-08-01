@@ -1,34 +1,8 @@
 #include <iostream>
-using namespace std;
 
-class Rectangle{
-	public:
-		int width;
-		int getArea(){
-			return width * height;
-		}
-	protected:
-		int height;
-};
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-class Triangle:public Rectangle{
-	public:
-		Triangle(){
-			width = 5;
-			height = 6;
-		}
-
-		int getArea2(){
-			return (width * height) / 2;
-		}
-};
-
-int main() {
-	Rectangle rectangle;
-	cout << rectangle.getArea() << endl;
-
-	Triangle triangle;
-	cout << "矩形面積 = " << triangle.getArea() << endl;
-	cout << "===================" << endl;
-	cout << "三角形面積 = " << triangle.getArea2() << endl;
+int main(int argc, char** argv) {
+	std::cout << "Hello! C";
+	return 0;
 }

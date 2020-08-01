@@ -1,9 +1,7 @@
 #include <iostream>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
-int main(int argc, char** argv) {
-	std::cout << "Hello! C" << std::endl;
-	system("pause");
-	return 0;
+int main() {
+  std::cout << "Hello C" << std::endl;
+  std::cout << "我在巨匠東區認證" << std::endl;
+  
 }

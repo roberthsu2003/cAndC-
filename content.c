@@ -1,15 +1,14 @@
+//讓使用者輸入被除數(整數)及除數(整數，不可以是零)，程式會顯示兩數相除的商及餘數。
 #include <iostream>
-#define PI 3.14159
-#define TAX1 0.06
-#define TAX2 0.13
- 
 using namespace std;
 
 int main() {
-	//const double TAX1 = 0.06;
-	//const double TAX2 = 0.13;
-	//const double PI = 3.14159;
+	int n,m;
+	cout << "請輸入被除數(整數):";
+	cin >> n;
 
-	cout << "TAX1的內容是" << TAX1 << ",TAX_2=" << TAX2 << endl;
-	cout << "PI的內容是" << PI << endl;
-}
+	cout << "請輸入除數(整數,不可以為0):";
+	cin >> m;
+
+	cout << "商:" << n/m  << "餘數:" << n % m << "\n";
+ }

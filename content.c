@@ -1,12 +1,22 @@
+//範例:請讓使用者輸入三科成績後，自動計算其總分及平均
+
 #include <iostream>
 using namespace std;
 
 int main() {
-	float PI = 3.14159;
-	int radius = 10;
-	cout << "圓面積=" << PI * radius * radius << endl; //自動轉換
-	cout << "圓面積=" << (int)(PI * radius * radius) << endl;//手動轉換
-	cout << "圓面積=" << (int)PI * radius * radius << endl;//手動轉換
-	cout << PI << endl;
-	cout << radius << endl;
-}
+	unsigned short chinese = 0, english=0, math=0;
+	float average;
+
+	cout << "請輸入國文成績(0~100):";
+	cin >> chinese;
+
+	cout << "請輸入英文成績(0~100):";
+	cin >> english;
+
+	cout << "請輸入數學成績(0~100):";
+	cin >> math;
+
+	int sum = chinese + english + math;
+	//average = (float)sum/3;
+	average = sum/3.0;
+	cout << "您的總分為:" << sum << "分,平均為" << average << "分\n";

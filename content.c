@@ -1,18 +1,24 @@
-//讓使用者輸入密碼,如果輸入的密碼正確(1234), 要顯示「密碼正確!歡迎光臨!」。如果不正確就不做任何事
+//輸入顧客購買金額，若金額在100000元打8折，50000打85折，30000打9折，10000打95折
 #include <iostream>
 using namespace std;
 
 int main() {
-	string password;
-	cout << "請輸入密碼:";
-	cin >> password;
+	int money;
+	int payMoney;
+	cout << "請輸入購買金額:";
+	cin >> money;
 
-	if(password == "1234"){
-		//true程式區段
-		cout << "密碼正確!歡迎光臨";
+	if(money >= 100000){
+		payMoney = money * 0.8;
+	}else if(money >=50000){
+		payMoney = money * 0.85;
+	}else if(money >= 30000){
+		payMoney = money * 0.9;
+	}else if(money >= 10000){
+		payMoney = money * 0.95;
 	}else{
-		cout << "密碼錯誤!\n";
-		cout << "請重新輸入!\n";
+		payMoney = money;
 	}
-	
+
+	cout << "實付金額是:" << payMoney << "元\n";
 }

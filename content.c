@@ -1,21 +1,21 @@
-//請以(複合指定運算子)設計程式,讓用者輸入三個任意數，程式會顯示3數相加的總和(float)
+//讓使用者輸入三個任意數，程式會顯示三數中的最大數。
 #include <iostream>
 using namespace std;
 
 int main() {
-	float num,result=0.0;
+	float in1, in2, in3, max=0.0;
 	cout << "請輸入第一個數:";
-	cin >> num;
-	result += num;
+	cin >> in1;
 
 	cout << "請輸入第二個數:";
-	cin >> num;
-	result += num;
+	cin >> in2;
+
+	max = in1 > in2 ? in1 : in2;
 
 	cout << "請輸入第三個數:";
-	cin >> num;
-	result += num;
-	
-	printf("三個數的總和為:%.2f\n", result);
+	cin >> in3;
 
+	max = max > in3 ? max : in3;
+
+	cout << "輸入三個數中最大的數為:" << max << "\n";
 }

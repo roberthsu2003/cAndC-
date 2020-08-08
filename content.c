@@ -1,15 +1,21 @@
-
-//請使用者輸入一個任意數，程式會顯示此數的平方值及立方值
+//請以(複合指定運算子)設計程式,讓用者輸入三個任意數，程式會顯示3數相加的總和(float)
 #include <iostream>
 using namespace std;
 
 int main() {
 	float num,result=0.0;
-	printf("請輸入任意數:");
+	cout << "請輸入第一個數:";
 	cin >> num;
-	result = num;
-	result *= num;
-	printf("此數的平方是%.2f\n",result);
-	result *= num;
-	printf("此數的立方是%.0f\n",result);
+	result += num;
+
+	cout << "請輸入第二個數:";
+	cin >> num;
+	result += num;
+
+	cout << "請輸入第三個數:";
+	cin >> num;
+	result += num;
+	
+	printf("三個數的總和為:%.2f\n", result);
+
 }

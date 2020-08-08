@@ -1,17 +1,15 @@
-//讓使用者輸入梯形的上底、下底及高，程式會計算梯形的面積(上底加下底乘以高除以2)
+//讓使用者輸入密碼,如果輸入的密碼正確(1234), 要顯示「密碼正確!歡迎光臨!」。如果不正確就不做任何事
 #include <iostream>
 using namespace std;
+
 int main() {
-	float top, bottom, height, area=0.0;
-	cout << "請輸入梯形的上底(公分):";
-	cin >> top;
+	string password;
+	cout << "請輸入密碼:";
+	cin >> password;
 
-	cout << "請輸入梯形的下底(公分):";
-	cin >> bottom;
-
-	cout << "請輸入梯形的高(公分):";
-	cin >> height;
-
-	area = (top + bottom) * height / 2;
-	printf("梯形的面積:%.2f平方公分\n", area);
+	if(password == "1234"){
+		//true程式區段
+		cout << "密碼正確!歡迎光臨";
+	}
+	
 }

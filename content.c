@@ -1,24 +1,21 @@
+//建立一個包含五個元素的整數陣列，讓使用者輸入五位學生的成績，然後計算班級總成績及平均成績
 #include <iostream>
 using namespace std;
 
 int main() {
-	int scores[3] = {70, 80, 90};
-	printf("%d,%d,%d\n", scores[0], scores[1], scores[2]);
-}
-
-
-
-
-
-#include <iostream>
-using namespace std;
-
-int main() {
-	string fruits[] = {"香蕉","蘋果","鳳梨"};
-	//查詢陣列的數量
-	int nums = sizeof(fruits) / sizeof(fruits[0]);
-	for(int i=0; i<nums;i++){
-		cout << "我喜歡的第"<< i+1 <<"種水果:";
-		cout << fruits[i] << endl;
+	const int nums = 5;
+	unsigned short scores[nums];
+	int sum=0;
+	float ave;
+	for(int i=0; i<nums; i++){
+		printf("請輸入第%d位學生的成績:",i+1);
+		scanf("%hd",&scores[i]);
 	}
+
+	for(int i=0; i<nums; i++){
+		sum += scores[i];
+	}
+	ave = (float)sum / nums;
+	printf("全班成績為:%d分,平均為%.2f分\n",sum,ave);
+
 }

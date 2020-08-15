@@ -2,10 +2,12 @@
 using namespace std;
 
 int main() {
-	string password;
-	do{
-		cout << "請輸入密碼:";
-		cin >> password;
-	}while(password != "1234");
-	cout << "恭喜!您的密碼正確了!請進";
+	int scores[3];
+	scores[0] = 70;
+	scores[1] = 80;
+	scores[2] = 90;
+
+	cout << scores[0] << "," << scores[1] << "," << scores[2] << endl;
+	printf("%d,%d,%d\n",scores[0], scores[1], scores[2]);
+	return 0;
 }

@@ -32,6 +32,9 @@ int main() {
 		cout << array[i] << " ";
 	}
 
-	cout << "\n";
+	cout << "\n\n";
 	cout << "由大到小排序\n";
+	for(int i=nums-1; i>=0;i--){
+		cout << array[i] << " ";
+	}
 }

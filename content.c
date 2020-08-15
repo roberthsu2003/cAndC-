@@ -1,12 +1,19 @@
 #include <iostream>
 using namespace std;
-//自訂一個function
-void sayHello(){
-	printf("歡迎光臨!\n");
+
+float temperature(int value){
+	return value * 1.8 + 32;
 }
 
 int main() {
-	//呼叫function
-	sayHello();
+	cout << "攝氏10度轉華氏溫度=" << temperature(10) << endl;
+	cout << "----------------------------\n";
+
+	int value;
+	float result;
+	cout << "請輸入攝氏溫度:";
+	cin >> value;
+	result = temperature(value);
+	cout << "華氏溫度=" << result << endl;
 	return 0;
 }

@@ -1,32 +1,12 @@
 #include <iostream>
-#include <time.h>
-
 using namespace std;
+//自訂一個function
+void sayHello(){
+	printf("歡迎光臨!\n");
+}
 
 int main() {
-	int lot[49];
-	int num = 7;
-	int choose[7];
-	int maxIndex = 48;
-
-	for(int i=0; i<49; i++){
-		lot[i] = i + 1;
-		printf("%d,", lot[i]);
-	}
-	srand(time(NULL));
-	for(int i=0; i<num; i++){
-		int randIndex = rand() % (maxIndex+1);
-		choose[i] = lot[randIndex];
-		lot[randIndex] = lot[maxIndex];
-		maxIndex--;
-	}
-
-	cout << "本期大樂透電腦選號號碼如下:\n\n";
-	for(int i=0; i<num; i++){
-		cout << choose[i] << " ";
-	}
-
-	cout << "\n\n特別號" << choose[6] << "\n\n";
-
-	
+	//呼叫function
+	sayHello();
+	return 0;
 }

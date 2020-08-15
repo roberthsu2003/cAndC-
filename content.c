@@ -1,17 +1,12 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-	string str1="DevC++";
-	cout << "str1:" << str1 << endl;
-
-	char str2[] = {'D', 'e', 'v', 'C', '+', '+','\0'};
-	cout << "str2:" << str2 << endl;
-
-	char str3[] = "DevC++";
-	cout << "str3:" << str3 << endl;
-	str1 = "VirtureC++";
-	cout << "str1:" << str1 << endl;
-
-	//str2 = "VirtureC++"
+	int main() {
+	int scores[2][5] = {{85, 82, 90, 74, 69},{94, 67, 25, 67, 89}};
+	for(int i=0; i<2; i++){
+		for(int j=0; j<5; j++){
+			printf("第%d位學生第%d科成績:%d\n",i+1, j+1, scores[i][j]);
+			cout << "==============================================\n";
+		}
+	}
 }

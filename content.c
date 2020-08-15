@@ -1,5 +1,5 @@
 #include <iostream>
-int turbo(int);
+void turbo(int&);
 
 using namespace std;
 
@@ -7,12 +7,12 @@ int main() {
 	int speed;
 	cout << "請輸入初始速度:";
 	cin >> speed;
-	speed = turbo(speed);
+	turbo(speed);
 	cout << "加速後的速度:" << speed << endl;
 	return 0;
 }
 
-int turbo(int speed){
+void turbo(int &speed){
 	cout << "加速前的速度:" << speed << endl;
-	return speed += 10;
+	speed += 10;
 }

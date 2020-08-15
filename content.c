@@ -1,40 +1,29 @@
 #include <iostream>
 using namespace std;
 
+
 int main() {
-	int nums;
-	cout << "請輸入要排序的數值個數:";
-	cin >> nums;
-	float array[nums],temp;
-
-	for(int i=0;i<nums;i++){
-		printf("請輸入第%d個數值:", i+1);
-		cin >> array[i];
-	}
-
-	cout << "排序前\n";
-	for(int i=0;i<nums;i++){
-		cout << array[i] << " ";
-	}
-
-	for(int i=0; i<nums-1;i++){
-		for(int j=i+1; j<nums; j++){
-			if(array[i] > array[j]){
-					temp = array[i];
-					array[i] = array[j];
-					array[j] = temp;
-			}
+	int nums[] = {256, 731, 943, 389, 142, 645, 829, 945, 371, 418};
+	string names[] = {"stu1","stu2","stu3","stu4","stu5","stu6","stu7","stu8","stu9","stu10"};
+	int inputNum;
+	int i;
+	int n = sizeof(nums) / sizeof(nums[0]);
+	bool isFound = false;
+	cout << "請輸入中獎者的編號";
+	cin >> inputNum;
+	for(i=0; i<n; i++){
+		if(nums[i] == inputNum){
+			isFound = true;
+			break;
 		}
 	}
-	cout << "\n";
-	cout << "由小到大排序\n";
-	for(int i=0;i<nums;i++){
-		cout << array[i] << " ";
+
+	if(isFound == true){
+		cout << "中獎者的姓名為:" << names[i];
+	}else{
+		cout << "無此中獎號碼!";
 	}
 
-	cout << "\n\n";
-	cout << "由大到小排序\n";
-	for(int i=nums-1; i>=0;i--){
-		cout << array[i] << " ";
-	}
+	cout << "(共比對" << i << "次)\n";
+
 }

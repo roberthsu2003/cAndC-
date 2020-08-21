@@ -2,7 +2,8 @@
 using namespace std;
 
 int main() {
-	cout << "Hello! 徐國堂!" << endl;
-	cout << "這是我的第一堂C語言課程" << endl;
-	cout << "這也是我第一次的線上課程" << endl;
+	int a; //建立變數
+	a = 10; //將10儲存進變數a
+	cout << "a=" << a << endl;
+
 }

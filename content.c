@@ -2,8 +2,9 @@
 using namespace std;
 
 int main() {
-	int a; //建立變數
-	a = 10; //將10儲存進變數a
-	cout << "a=" << a << endl;
+	int englishScore = 60;
+	cout << "請輸入您的英文分數:";
+	cin >> englishScore;
+	cout << "Hello! 您的英文分數是:" << englishScore << endl;
 
 }

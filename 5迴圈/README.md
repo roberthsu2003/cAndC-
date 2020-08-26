@@ -342,7 +342,7 @@ using namespace std;
 int main() {
 	int guess;
 	int min = 1;
-	int max = 99;
+	int max = 100;
 	int keyin;
 	int count = 0;
 	srand(time(NULL));

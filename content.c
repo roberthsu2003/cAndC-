@@ -1,44 +1,35 @@
+//百貨公司舉辦週年抽獎活動，將顧客的抽獎編號及姓名分別儲存於陣列中，使用者輸入編號，程式會搜尋出該編號的姓名並顯示。若查詢不到也會顯示無此編號的訊息
+
 #include <iostream>
 using namespace std;
 
 int main() {
-	int nums;
-	float temp;
-	cout << "請輸入要排序的數值個數:";
-	cin >> nums;
-	float array[nums];
+	int nums[] = {256, 731, 943, 389, 142, 645, 829, 945, 371, 418};
+	string names[] = {"stu1","stu2","stu3","stu4","stu5","stu6","stu7","stu8","stu9","stu10"};
+	int inputNum;
+	bool isFound = false;
 
-	for(int i=0; i < nums; i++){
-		cout << "請輸入第" << i+1 << "個數值:";
-		cin >> array[i];
-	}
+	int n = sizeof(nums) / sizeof(nums[2]);
 
-	cout << "排序前:\n";
-	for(int i=0; i<nums;i++){
-		cout << array[i] << " ";
-	}
+	cout << "請輸入中獎者的編號:";
+	cin >> inputNum;
 
-	//陣列排序
-	for(int i=0; i < nums-1; i++){
-		for(int j=i+1;j<nums;j++){
-			if(array[i] > array[j]){
-				temp = array[i];
-				array[i] = array[j];
-				array[j] = temp;
-			}
+	int i;
+	for(i=0; i<n; i++){
+		if(inputNum == nums[i]){
+			isFound = true;
+			break;
 		}
 	}
 
-	cout << "\n排序後由小到大:\n";
-	for(int i=0; i<nums;i++){
-		cout << array[i] << " ";
+	if(isFound == true){
+		cout << "中獎者的姓名為:" << names[i];
+		i++;
+	}else{
+		cout << "無此中獎號碼!";
 	}
 
-	//陣列排序
-	
+	cout << "(共比對" << i << "次)\n\n";
 
-	cout << "\n排序後由大到小:\n";
-	for(int i=0; i<nums;i++){
-		cout << array[i] << " ";
-	}
+
 }

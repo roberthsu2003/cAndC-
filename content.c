@@ -2,10 +2,7 @@
 using namespace std;
 
 int main() {
-	int scores[3];
-	scores[0] = 70;
-	scores[1] = 80;
-	scores[2] = 90;
-
+	//建立陣列時，同時給值
+	int scores[] = {70, 80, 90};
 	cout << scores[0] << "," << scores[1] << "," << scores[2] << endl;
 }

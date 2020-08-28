@@ -1,15 +1,12 @@
+//建立一個包含五個元素的整數陣列,使用sizeof計算陣列元素的個數,再使用for迴圈顯示陣列內容。
+
 #include <iostream>
 using namespace std;
 
 int main() {
-	int a = 0, b = 0, c =0, d=0;
-	printf("請輸入a的值:");
-	scanf("%d", &a);
-	printf("請輸入b的值:");
-	scanf("%d", &b);
-	printf("a+b=%d\n", a+b);
-
-	printf("請輸入c和d的值格式為 c,d:");
-	scanf("%d,%d", &c, &d);
-	printf("c*d=%d\n", c*d);
+	int n[] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23};
+	int totalSize = sizeof(n);
+	int oneSize = sizeof(n[0]);
+	int counts = totalSize/oneSize;
+	cout << "陣列大小為:" << totalSize << ",一個元素的大小是" << oneSize << ",陣列的數量是" << counts;
 }

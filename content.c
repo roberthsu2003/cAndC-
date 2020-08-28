@@ -33,4 +33,12 @@ int main() {
 	for(int i=0; i<nums;i++){
 		cout << array[i] << " ";
 	}
+
+	//陣列排序
+	
+
+	cout << "\n排序後由大到小:\n";
+	for(int i=0; i<nums;i++){
+		cout << array[i] << " ";
+	}
 }

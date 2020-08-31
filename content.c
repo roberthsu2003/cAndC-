@@ -1,13 +1,32 @@
-//建立一個2*3的二維陣列並初始化，用來儲存2個學生各三科成績，再以2層巢狀迴圈將所有成績顯示出來。
 
+//撰寫一個大樂透電腦自動選號程式，程式執行會以亂數的方式顯示1-49之間八個不重複的大樂透號碼。
 #include <iostream>
+#include <time.h>
 using namespace std;
+
 int main() {
-	int scores[2][3] = {{85, 82, 90}, {76, 95, 89}};
-	for(int i=0; i<2; i+=1){
-		for(int j=0; j<3; j++){
-			cout << "第" << i+1 << "位學生第" << j+1 << "科成績:" << scores[i][j] << endl;
-		}
-		cout << "==================================\n";
+	int lot[49];
+	int maxIndex = 48; //最大的索引
+	int num = 8; //取出8個數
+	int choose[8];
+	for(int i=0;i<49;i++){
+		lot[i] = i+1;
 	}
+
+	srand(time(NULL));
+	for(int i=0; i<num ; i++){
+		int randIndex = rand() % (maxIndex+1);
+		choose[i] = lot[randIndex];
+		lot[randIndex] = lot[maxIndex];
+		maxIndex--;
+	}
+
+	cout << "本期大樂透電腦選號號碼如下:\n\n";
+	for(int i=0; i<7; i++){
+		cout << choose[i] << " ";
+	}
+
+	cout << "\n\n特別號" << choose[7] << "\n\n";
+
+	
 }

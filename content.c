@@ -1,9 +1,7 @@
 #include <iostream>
 using namespace std;
-
-float temperature(int celsius){
-	return 1.8 * celsius + 32;
-}
+//function原型
+float temperature(int);
 
 int main() {
 	cout << "攝氏10度轉華氏溫度" << temperature(10) << endl;
@@ -15,4 +13,8 @@ int main() {
 	result = temperature(v1);
 	cout << "華氏溫度=" << result << endl;
 	return 0;
+}
+
+float temperature(int celsius){
+	return 1.8 * celsius + 32;
 }

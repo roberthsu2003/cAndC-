@@ -1,21 +1,20 @@
-//建立一個包含五個元素的整數陣列，讓使用者輸入五位學生的成績，然後計算班級總成績及平均成績
 #include <iostream>
 using namespace std;
+//function原型
+float temperature(int);
 
 int main() {
-	const int nums = 5;
-	unsigned short scores[nums];
-	int sum=0;
-	float ave;
-	for(int i=0; i<nums; i++){
-		printf("請輸入第%d位學生的成績:",i+1);
-		scanf("%hd",&scores[i]);
-	}
+	cout << "攝氏10度轉華氏溫度" << temperature(10) << endl;
+	cout << "==================\n";
+	int v1;
+	float result;
+	cout << "請輸入攝氏溫度:";
+	cin >> v1;
+	result = temperature(v1);
+	cout << "華氏溫度=" << result << endl;
+	return 0;
+}
 
-	for(int i=0; i<nums; i++){
-		sum += scores[i];
-	}
-	ave = (float)sum / nums;
-	printf("全班成績為:%d分,平均為%.2f分\n",sum,ave);
-
+float temperature(int celsius){
+	return 1.8 * celsius + 32;
 }

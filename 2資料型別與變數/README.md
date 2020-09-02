@@ -125,16 +125,24 @@ cout << "area =" << area;
 ```
 
 ```c++
-short a = 3000;
-int b;
-b = a; //可以小轉大
-char c;
-c = b; //大轉小，資料會遺失
+#include <iostream>
+
+int main() {
+	unsigned short a = 3000;
+	int b;
+	b = a;//可以小轉大
+	printf("b=%d\n", b);
+
+	char c;
+	c = a;//由大轉小，資料會移失
+	printf("c=%d\n", c);
+}
 ```
 
 ## 強制轉換
 
 ```
+語法:
 (資料型別) 變數名稱;
 ```
 

@@ -174,8 +174,9 @@ int main() {
 ```
 [解題](https://repl.it/@roberthsu2003/employee)
 
+### 巢狀的if-else敘述 
+
 ```c++
-*question
 試用巢狀的if-else敘述，撰寫一個可以判斷輸入數字為正負數以及奇偶數的的程式
 
 顯示=================
@@ -190,8 +191,34 @@ if...
 else...
     if...
     else...
+================================
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int inputNumber;
+	cout << "請輸入數字:";
+	string message;
+	cin >> inputNumber;
+	if(inputNumber < 0){
+		if (inputNumber % 2 == 0)
+			message = "負偶數";
+		else
+			message = "負奇數";
+	}else{
+		if (inputNumber % 2 == 0)
+			message = "正偶數";
+		else
+			message = "正奇數";
+	}
+
+	cout << "您輸入的" << inputNumber << "是" + message << endl;
+
+
+}
 ```
-[解題](https://repl.it/@roberthsu2003/nagativeandpositive)
+
 
 ```c++  triangle.cpp
 輸入三角形2邊，再輸入斜邊，然後判斷三角形的種類

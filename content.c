@@ -1,6 +1,6 @@
-#include <stdio.h>
+#include <iostream>
 
-int main(void) {
-  printf("Hello! C語言!這是printf()方法輸出的\n");
-  return 0;
+int main() {
+	int englishScore = 80;
+	std::cout << "英文分數:" << englishScore << "\n";
 }

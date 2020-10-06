@@ -1,16 +1,10 @@
+#include <iostream>
+using namespace std;
 
 int main() {
-	//c語言字元陣列
-	char name[] = "robert";
-	printf("name=%s\n",name);
-
-	//string
-	string myName = "robert";
-	cout << "myName="<< myName << "\n";
-	cout << "name=" << name << "\n";
-	//printf("%s\n", myName);
-
-	string myMotherName = "alice";
-	string mySisterName = "jenny";
-	cout << "mother=" << myMotherName << ",sister=" << mySisterName << "\n";
+	int radius;
+	float pi = 3.14159;
+	cout << "請輸入半徑:";
+	cin >> radius;
+	cout << "圓面積=" << radius * radius * pi << "\n";
 }

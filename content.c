@@ -16,6 +16,8 @@ int main() {
 	
 	sum = chinese + english + math;
 	average = (float)sum / 3;
-
+	//c++語言
 	cout << "您的總分為:" << sum << "分, 平均為" << average << "分\n";
+	//c語言
+	printf("您的總分為:%i分, 平均為%.2f分\n",sum,average);
 }

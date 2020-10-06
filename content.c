@@ -1,13 +1,16 @@
-#include <iostream>
-using namespace std;
 
 int main() {
-	char characterA;
-	characterA = 'A';
-	cout << characterA << "\n";
+	//c語言字元陣列
+	char name[] = "robert";
+	printf("name=%s\n",name);
 
+	//string
+	string myName = "robert";
+	cout << "myName="<< myName << "\n";
+	cout << "name=" << name << "\n";
+	//printf("%s\n", myName);
 
-	char characterB;
-	characterB = 67;
-	cout << characterB << "\n";
+	string myMotherName = "alice";
+	string mySisterName = "jenny";
+	cout << "mother=" << myMotherName << ",sister=" << mySisterName << "\n";
 }

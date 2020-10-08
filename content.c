@@ -1,23 +1,13 @@
-//範例:請讓使用者輸入三科成績後，自動計算其總分及平均
+//讓使用者輸入被除數(整數)及除數(整數，不可以是零)，程式會顯示兩數相除的商及餘數。
+
 #include <iostream>
 using namespace std;
 
 int main() {
-	unsigned short chinese, english, math;
-	int sum;
-	float average;
-
-	cout << "請輸入國文成績(0~100):";
-	cin >> chinese;
-	cout << "請輸入英文成績(0~100):";
-	cin >> english;
-	cout << "請輸入數文成績(0~100):";
-	cin >> math;
-	
-	sum = chinese + english + math;
-	average = (float)sum / 3;
-	//c++語言
-	cout << "您的總分為:" << sum << "分, 平均為" << average << "分\n";
-	//c語言
-	printf("您的總分為:%i分, 平均為%.2f分\n",sum,average);
+	int n=0,m=0;
+	printf("請輸入被除數(整數):");
+	cin >> n;
+	printf("請輸入除數(整數,不可以為0):");
+	cin >> m;
+	printf("商:%i,餘數:%i\n",n/m,n%m);
 }

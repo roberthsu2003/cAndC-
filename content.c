@@ -1,6 +1,8 @@
 #include <iostream>
 
 int main() {
-	int a = 2, b = 2;
-	printf("a==b:%d\n",a==b);
+	int n = 0;
+	//n = n + 1;
+	n += 20;
+	printf("n=%i\n",n);
 }

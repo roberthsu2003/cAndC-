@@ -1,21 +1,16 @@
 #include <iostream>
-using namespace std;
 
 int main() {
-	float in1, in2, in3, max;
-	string q1 = "請輸入第一個數:";
-	cout << q1;
-	scanf("%f", &in1);
+	float top, bottom, height, area;
+	printf("請輸入梯形的上底(公分):");
+	scanf("%f", &top);
 
-	printf("請輸入第二個數:");
-	scanf("%f", &in2);
+	printf("請輸入梯形的下底(公分):");
+	scanf("%f", &bottom);
 
-	max = in1 > in2 ? in1 : in2;
+	printf("請輸入梯形的高(公分):");
+	scanf("%f", &height);
 
-	printf("請輸入第三個數:");
-	scanf("%f", &in3);
-
-	max = max > in3 ? max : in3;
-
-	printf("輸入三個數中最大的數為:%.2f\n",max);
+	area = (top + bottom) * height / 2;
+	printf("梯形的面積:%.2f", area);
 }

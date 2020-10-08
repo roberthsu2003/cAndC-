@@ -1,20 +1,20 @@
+//讓使用者輸入密碼,如果輸入的密碼正確(1234), 要顯示「密碼正確!歡迎光臨!」。
+//如果不正確就顯示密碼錯誤訊息
 #include <iostream>
-using namespace std;
-//function原型
-float temperature(int);
+#include <string.h>
+//using namespace std;
 
 int main() {
-	cout << "攝氏10度轉華氏溫度" << temperature(10) << endl;
-	cout << "==================\n";
-	int v1;
-	float result;
-	cout << "請輸入攝氏溫度:";
-	cin >> v1;
-	result = temperature(v1);
-	cout << "華氏溫度=" << result << endl;
-	return 0;
-}
+	char password[20];
+	printf("請輸入密碼:");
+	scanf("%s", password);
 
-float temperature(int celsius){
-	return 1.8 * celsius + 32;
+	if(strcmp(password, "1234")){
+		//true程式區塊
+		printf("歡迎光臨!\n");
+	}else{
+		//false程式區塊
+		printf("密碼錯誤!\n");
+		printf("請重新輸入!\n");
+	}
 }

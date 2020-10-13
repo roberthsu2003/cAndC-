@@ -1,25 +1,20 @@
-//輸入顧客購買金額，若金額在100000元打8折，50000打85折，30000打9折，10000打95折
+/*
+讓使用者輸入成績, 若成績在90分以上就顯示「優等」, 80-89分顯示「甲等」，70-79分顯示「乙等」，60-69分顯示「丙等」，60分以上顯示「丁等」。
+
+顯示:
+請輸入成績(0-100):89
+甲等
+
+*/
 #include <iostream>
 using namespace std;
 
 int main() {
-	int money;
-	int payMoney;
-	printf("請輸入購買金額:");
-	scanf("%i", &money);
-	if(money >= 100000){
-		payMoney = money * 0.8;
-	}else if(money >= 50000){
-		payMoney = money * 0.85;
-			
-	}else if(money >= 30000){
-		payMoney = money * 0.9;
-
-	}else if(money >= 10000){
-		payMoney = money * 0.95;
-
-	}else{
-		payMoney = money;
+	int score;
+	printf("請輸入成績(0-100):");
+	scanf("%i",&score);
+	string message;
+	if(score >= 90){
+		message = "優等";
 	}
-	printf("實付金額是:%i元\n",payMoney);
 }

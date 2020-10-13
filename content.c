@@ -9,12 +9,15 @@ int main() {
 	scanf("%i", &money);
 	if(money >= 100000){
 		payMoney = money * 0.8;
-	}else if(money >= 50000 && money < 100000){
+	}else if(money >= 50000){
 		payMoney = money * 0.85;
-	}else if(money >= 30000 && money < 50000){
+			
+	}else if(money >= 30000){
 		payMoney = money * 0.9;
-	}else if(money >= 10000 && money < 30000){
+
+	}else if(money >= 10000){
 		payMoney = money * 0.95;
+
 	}else{
 		payMoney = money;
 	}

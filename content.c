@@ -1,9 +1,8 @@
 #include <iostream>
 
 int main() {
-	int scores[3];
-	scores[0] = 70;
-	scores[1] = 80;
-	scores[2] = 90;
-	printf("%i,%i,%i\n", scores[0], scores[1], scores[2]);
+	int scores[3] = {70, 80, 90};	
+	for(int i=0; i<3; i++){
+		printf("%i\n", scores[i]);
+	}
 }

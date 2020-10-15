@@ -1,15 +1,16 @@
-/*
-for(int i=0; i<=5; i++)
-{
-	cout << "這是第" << i << "次迴圈";
-}
-*/
 #include <iostream>
+using namespace std;
 
 int main() {
-	int i=0;
-	while(i<=5){
-		printf("%i\n",i);
-		i++;
+	string defaultPassword = "5678";
+	string password;
+	printf("請輸入密碼:");
+	cin >> password;
+	while(password != defaultPassword){
+			printf("請輸入密碼:");
+			cin >> password;
 	}
+
+	printf("恭喜!你的密碼正確了!請進");
+
 }

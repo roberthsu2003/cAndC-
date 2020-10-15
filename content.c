@@ -1,8 +1,7 @@
 #include <iostream>
 
 int main() {
-	int scores[3] = {70, 80, 90};	
-	for(int i=0; i<3; i++){
-		printf("%i\n", scores[i]);
-	}
+	//char name[10] = {'r', 'o', 'b', 'e', 'r', 't','\0','z','z','z'};
+	char name[20] = "robert";
+	printf("%s\n", name);
 }

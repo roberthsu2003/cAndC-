@@ -1,18 +1,19 @@
-//小美是一位教師，請你以while迴圈方式為小美設計一個輸入成績的程式，如果輸入負數表示成績輸入結束，在輸入成績結束後顯示班上總成績及平均成績。請使用break
+//請設計一個程式，讓使用者輸入數值，只有加總正偶數值，不加總正奇數值，如果輸入負數，結束程式。
 #include <iostream>
 
 int main() {
 	int sum = 0;
-	int num = 0;
-	int score=0;
-	do{		
-		printf("請輸入第%i位學生的成績:",num+1);
-		scanf("%i", &score);
-		if(score<0)	break;
-		sum += score;
-		num += 1;		
-	}while(true);
+	int num=1;
+	int inputNum=0;
+	do{
+		printf("請輸入第%i個數值", num);
+		scanf("%i", &inputNum);
+		if(inputNum < 0) break;
+		num++;
+		if(inputNum % 2 == 1) continue;
+		sum += inputNum;
 
-	printf("全班總成績為:%i ,平均分數為:%.2f", sum, (float)sum/num);
+	}while(true);
+	printf("所有輸入的正偶數的加總是:%i", sum);
 
 }

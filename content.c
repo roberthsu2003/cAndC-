@@ -14,11 +14,23 @@ int main() {
 		scanf("%i",&keyin);
 		count += 1;
 		if(keyin >= min && keyin <= max){
-			printf("正確的範圍\n");
+			if(keyin == guess){
+				printf("賓果!猜對了,答案是%i\n", guess);
+				printf("您猜了%i次\n", count);
+				break;
+			}else if(keyin < guess){
+				min = keyin + 1;
+				printf("再大一點");
+			}else if(keyin > guess){
+				max = keyin - 1;
+				printf("再小一點");
+			}
+			printf("您猜了%i次\n\n", count);
 		}else{
 			printf("請輸入提示範圍內的數字! \n");
 		}
-		break;
+		
 	}while(true);
+
 	printf("遊戲結束\n");
 }

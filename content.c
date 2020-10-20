@@ -1,31 +1,10 @@
-//循序搜尋
 #include <iostream>
 
 int main() {
-	int nums[] = {256, 731, 943, 389, 142, 645, 829, 945, 371, 418};
-	const char *names[] = {"stu1","stu2","stu3","stu4","stu5","stu6","stu7","stu8","stu9","stu10"};
-
-	int inputNum;
-	int n = sizeof(nums) /sizeof(nums[0]);
-	int foundNum;
-	bool isFound = false;
-	printf("請輸入中獎者的編號");
-
-	scanf("%i", &inputNum);
-
-	for(int i=0; i<n; i++){
-		if(nums[i] == inputNum){
-			foundNum = i;
-			isFound = true;
-			break;
+	int score[2][3] = {{85, 82, 90},{76, 95, 89}};
+	for(int i=0; i<2; i++){
+		for(int j=0; j<3; j++){
+			printf("第%i位學生第%i科成績:%i\n", i+1, j+1, score[i][j]);
 		}
 	}
-
-
-	if(isFound == true){
-		printf("中獎者的姓名為:%s\n", names[foundNum]);
-	}else{
-		printf("沒有中獎\n");
-	}
-
 }

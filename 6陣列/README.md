@@ -89,7 +89,7 @@ int main() {
 	int sum=0;
 	double ave;
 	for(int i=0;i<nums;i++){
-		cout << "請輸入第" << i+1 << "位學的成績";
+		cout << "請輸入第" << i+1 << "位學生的成績";
 		cin >> scores[i];
 	}
 

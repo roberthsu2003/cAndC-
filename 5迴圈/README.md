@@ -359,10 +359,10 @@ int main() {
 				cout << "您猜了" << count << "次\n\n";
 				break;
 			}else if (keyin > guess){
-				max = keyin;
+				max = keyin + 1 ;
 				cout << "再小一點!";
 			}else if (keyin < guess){
-				min = keyin;
+				min = keyin - 1;
 				cout << "再大一點!";
 			}
 			cout << "您猜了" << count << "次\n\n";
@@ -372,7 +372,8 @@ int main() {
 
 
 	}while(true);
-
+	
+	cout << "遊戲結束\n";
 }
 ```
 

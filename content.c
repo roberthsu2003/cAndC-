@@ -1,36 +1,20 @@
+//建立一個包含五個元素的整數陣列，讓使用者輸入五位學生的成績，然後計算班級總成績及平均成績
 #include <iostream>
 
 int main() {
-	int min = 1;
-	int max = 100;
-	int keyin;
-	int count=0;	
-	srand(time(NULL));
-	int guess = rand() % max + min;
+	int nums = 5;
+	int scores[nums];
+	int sum = 0;
+	double ave;
+	for(int i=0; i<nums; i++){
+		printf("請輸入第%i位學生的成績",i+1);
+		scanf("%i", &scores[i]);
+	}
 
-	printf("===============猜數字遊戲=================:\n\n");
-	do{
-		printf("猜數字範圍%i~%i:",min, max);
-		scanf("%i",&keyin);
-		count += 1;
-		if(keyin >= min && keyin <= max){
-			if(keyin == guess){
-				printf("賓果!猜對了,答案是%i\n", guess);
-				printf("您猜了%i次\n", count);
-				break;
-			}else if(keyin < guess){
-				min = keyin + 1;
-				printf("再大一點");
-			}else if(keyin > guess){
-				max = keyin - 1;
-				printf("再小一點");
-			}
-			printf("您猜了%i次\n\n", count);
-		}else{
-			printf("請輸入提示範圍內的數字! \n");
-		}
-		
-	}while(true);
+	for(int i=0; i<nums; i++){
+		sum += scores[i];
+	}
 
-	printf("遊戲結束\n");
+	ave = (double)sum / nums;
+	printf("全班總成績為:%i分,平均為%.2f分\n",sum, ave);
 }

@@ -10,4 +10,21 @@ int main() {
  for (int i=0; i< nums; i++){
 	 printf("%i ", arrays[i]);
  }
+
+ //陣列排序
+ for(int start=0; start < nums-1; start++){
+	 for(int end=start+1; end < nums; end++){
+		 if(arrays[start] > arrays[end]){
+			 int temp = arrays[start];
+			 arrays[start] = arrays[end];
+			 arrays[end] = temp;
+		 }
+	 }
+ }
+ 
+ printf("\n排序後:\n");
+ for (int i=0; i< nums; i++){
+	 printf("%i ", arrays[i]);
+ }
+
 }

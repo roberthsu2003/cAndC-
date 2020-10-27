@@ -1,19 +1,19 @@
 #include <iostream>
-
+using namespace std;
 //原型
 float temperature(int);
 
 int main() {
 	int value;
 	float result;
-	std::string runAgain;
+	string runAgain;
 	do{
-		std::cout << "請輸入攝氏溫度:";
-		std::cin >> value;
+		cout << "請輸入攝氏溫度:";
+		cin >> value;
 		result = temperature(value);
-		std::cout << "華氏溫度=" << result << std::endl;
-		std::cout << "程式還要繼續嗎?(輸入N...結束):";
-		std::cin >> runAgain;
+		cout << "華氏溫度=" << result << endl;
+		cout << "程式還要繼續嗎?(輸入N...結束):";
+		cin >> runAgain;
 		if(runAgain == "N"){
 			break;
 		}

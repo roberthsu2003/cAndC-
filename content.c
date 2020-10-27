@@ -1,11 +1,12 @@
 #include <iostream>
 
+//沒有參數,沒有傳出值的function
+void sayHello(){ //定義function
+	std::cout << "歡迎光臨!" << std::endl;
+}
+
 int main() {
-	//c的輸出
-	int score;
-	scanf("%i",&score);
-	printf("C的輸出=%i\n",score);
-	//c++輸出
-	std::cin >> score;
-	std::cout << "C++的輸出=" << score << std::endl;
+  std::cout << "robert";
+  sayHello(); //呼叫function
+  return 0;
 }

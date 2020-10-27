@@ -1,12 +1,15 @@
 #include <iostream>
 
-//沒有參數,沒有傳出值的function
-void sayHello(){ //定義function
-	std::cout << "歡迎光臨!" << std::endl;
+float temperature(int value){
+	return value * (9/5.0) + 32;
 }
 
 int main() {
-  std::cout << "robert";
-  sayHello(); //呼叫function
-  return 0;
+	int value;
+	float result;
+	std::cout << "請輸入攝氏溫度:";
+	std::cin >> value;
+	result = temperature(value);
+	std::cout << "華氏溫度=" << result << std::endl;
+	return 0;
 }

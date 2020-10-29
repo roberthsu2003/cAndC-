@@ -16,6 +16,11 @@ int main() {
 
 
 tools.h
+float temperature(int);
+
+
+tools.cpp
+#include "tools.h"
 
 float temperature(int value){
 	return 1.8 * value + 32;

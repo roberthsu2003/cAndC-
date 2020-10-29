@@ -268,6 +268,22 @@ int turbo(int passSpeed){
 }
 ```
 	
+### 陣列變數內儲存的是記憶體位址
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	int ary[] = {212, 328, 765, 986};
+	cout << "陣列變數內的值" << ary << endl;
+	cout << "ary[0]的記憶體位址" << &ary[0] << endl;
+	cout << "ary[1]的記憶體位址" << &ary[1] << endl;
+	cout << "ary[2]的記憶體位址" << &ary[2] << endl;
+	cout << "ary[3]的記憶體位址" << &ary[3] << endl;
+}
+```
+
 ### 陣列參數
 ```c++
 //============================================================================
@@ -287,7 +303,7 @@ void showArray(int tempary[], int count){
 
 
 void sub2(int tempary[], int count){
-	for(int i=0; i<count; i++){
+	for(int i=0; i<count; i++){  
 		tempary[i] *= 2;
 	}
 }

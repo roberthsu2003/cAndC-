@@ -2,10 +2,13 @@
 using namespace std;
 
 int main() {
-	double m = 5;
-	int n = 10;
-	cout << "m的值" << m << endl;
-	cout << "n的值" << n << endl;
-	cout << "m的位址" << &m << endl;
-	cout << "n的位址" << &n << endl;
+	int n=10;
+	int* p = &n;
+	cout << "p的儲存的值是" << p << endl;
+	cout << "p的記憶體位址" << &p << endl;
+	cout << "由n取出值" << n << endl;
+	*p = 20;
+	cout << "由n取出值" << n << endl;
+	n = 10;
+	cout << "由p取出值" << *p << endl;
 }

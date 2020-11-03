@@ -1,13 +1,17 @@
 #include <iostream>
 using namespace std;
 
+void swap(int*, int*);
 int main() {
-	int n = 10;
-	int m = 20;
-	int *p;
-	p = &n;
-	cout << "*p的值" << *p << endl;
-	p = &m;
-	cout << "*p的值" << *p << endl;
+	int a = 666;
+	int b = 888;
+	swap(a, b);
+	cout << "a=" << a << endl;
+	cout << "b=" << b << endl;
+}
 
+void swap(int *m, int *n){
+	int temp = *m;
+	*m = *n;
+	*n = temp;
 }

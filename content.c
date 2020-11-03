@@ -5,7 +5,7 @@ void swap(int*, int*);
 int main() {
 	int a = 666;
 	int b = 888;
-	swap(a, b);
+	swap(&a, &b);
 	cout << "a=" << a << endl;
 	cout << "b=" << b << endl;
 }

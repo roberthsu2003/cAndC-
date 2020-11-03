@@ -1,27 +1,11 @@
 #include <iostream>
-#include "tools.h"
-
 using namespace std;
 
 int main() {
-	int value;
-	float result;
-	cout << "請輸入攝氏溫度:";
-	cin >> value;
-	result = temperature(value);
-	cout << "華氏溫度=" << result << endl;
-	return 0;
-}
-
-
-
-tools.h
-float temperature(int);
-
-
-tools.cpp
-#include "tools.h"
-
-float temperature(int value){
-	return 1.8 * value + 32;
+	double m = 5;
+	int n = 10;
+	cout << "m的值" << m << endl;
+	cout << "n的值" << n << endl;
+	cout << "m的位址" << &m << endl;
+	cout << "n的位址" << &n << endl;
 }

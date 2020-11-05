@@ -1,18 +1,24 @@
 #include <iostream>
 using namespace std;
 
-void swap(int&, int*);
+typedef struct rectangle{
+	string name;
+	int width;
+	int height;
+} Rectangle;
 
 int main() {
-	int a=666;
-	int b=888;
-	swap(a, &b);
-	cout << "a=" << a << endl;
-	cout << "b=" << b << endl;
-}
+	Rectangle recs[] = {{"rec1", 56, 35}, {"rec2", 74, 26}, {"rec3", 93, 14}};
 
-void swap(int& m, int* n){
-	int temp = m;
-	m = *n;
-	*n = temp;
+	int count = sizeof(recs) / sizeof(recs[0]);
+
+	for(int i=0; i<count; i++){
+		Rectangle rec = recs[i];
+		cout << "矩型名稱:" << rec.name << endl;
+		cout << "寬度:" << rec.width << endl;
+		cout << "長度:" << rec.height << endl;
+		cout << "面積:" << rec.width * rec.height << endl;
+		cout << "================================\n";		
+ 	}
+
 }

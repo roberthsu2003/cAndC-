@@ -2,13 +2,13 @@
 
 //#define MAC 101
 
-#ifdef MAC
+#ifndef MAC
 
-#define OS "MAC_OS_VERSION_10_0"
+#define OS "Windows"
 
 #else
 
-#define OS "Window10"
+#define OS "MAC_OS"
 
 #endif
 

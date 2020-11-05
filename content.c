@@ -1,18 +1,27 @@
 #include <iostream>
-
-//#define MAC 101
-
-#ifndef MAC
-
-#define OS "Windows"
-
-#else
-
-#define OS "MAC_OS"
-
-#endif
+#include "pro.h"
+#include "pro.h"
 
 using namespace std;
+
 int main() {
-	cout << OS << endl;
+  cout << RATE << endl;
 }
+
+
+pro.h
+//不會重覆#define
+#include <iostream>
+using namespace std;
+
+#ifndef RATE
+
+#define RATE 32.21
+class Abc{
+	public:
+	int tall;
+	string name;
+};
+
+#endif
+	

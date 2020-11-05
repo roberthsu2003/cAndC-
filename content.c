@@ -8,15 +8,8 @@ struct student{
 };
 
 int main() {
-	//建立結構變數
-	struct student david;
-
-	//設定成員的值
-	david.id = 99001;
-	david.name = "robert";
-	david.chinese = 75;
-	david.english = 86;
-	david.math = 90;
+	//建立結構變數,同時設定成員值
+	struct student david = {99001, "robert", 75, 86, 90};	
 
 	//取出值
 	cout << david.id << endl;

@@ -1,18 +1,27 @@
 #include <iostream>
 using namespace std;
-
-void swap(int&, int*);
+//自訂一個結構
+struct student{
+	int id;
+	const char *name;
+	int chinese,math,english;
+};
 
 int main() {
-	int a=666;
-	int b=888;
-	swap(a, &b);
-	cout << "a=" << a << endl;
-	cout << "b=" << b << endl;
-}
+	//建立結構變數
+	struct student david;
 
-void swap(int& m, int* n){
-	int temp = m;
-	m = *n;
-	*n = temp;
+	//設定成員的值
+	david.id = 99001;
+	david.name = "robert";
+	david.chinese = 75;
+	david.english = 86;
+	david.math = 90;
+
+	//取出值
+	cout << david.id << endl;
+	cout << david.name << endl;
+	cout << david.chinese << endl;
+	cout << david.english << endl;
+	cout << david.math << endl;
 }

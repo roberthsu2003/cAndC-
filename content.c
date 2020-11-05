@@ -1,20 +1,24 @@
 #include <iostream>
 using namespace std;
 
-typedef struct student{
+typedef struct rectangle{
 	string name;
-	int score;
-}Student;
+	int width;
+	int height;
+} Rectangle;
 
 int main() {
-	//建立3位學生,放在陣列內
-	Student stus[] = {{"robert", 94},{"david", 91},{"alice", 94},{"jenny", 68}};
-	
-	int stuCount = sizeof(stus) / sizeof(stus[0]);
+	Rectangle recs[] = {{"rec1", 56, 35}, {"rec2", 74, 26}, {"rec3", 93, 14}};
 
-	for(int i=0; i<stuCount; i++){
-		Student stu=stus[i];
-		cout << "第" << i+1 << "位學生是" << stu.name << "分數是" << stu.score << endl;
-	}
+	int count = sizeof(recs) / sizeof(recs[0]);
+
+	for(int i=0; i<count; i++){
+		Rectangle rec = recs[i];
+		cout << "矩型名稱:" << rec.name << endl;
+		cout << "寬度:" << rec.width << endl;
+		cout << "長度:" << rec.height << endl;
+		cout << "面積:" << rec.width * rec.height << endl;
+		cout << "================================\n";		
+ 	}
 
 }

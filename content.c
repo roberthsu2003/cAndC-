@@ -15,6 +15,9 @@ int main() {
 }
 
 Human.h
+#ifndef __HUMAN__
+#define __HUMAN__
+
 #include <iostream>
 using namespace std;
 
@@ -29,6 +32,9 @@ namespace Human{
 
 	};	
 }
+
+#endif
+
 
 Human.cpp
 #include "Human.h"

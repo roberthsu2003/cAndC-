@@ -5,6 +5,9 @@ class Person{
 	public:
 		string name;
 		int tall;
+		void walk(int var){
+			cout << name << "每小時可跑" << var << "公里" << endl;
+ 		}
 };
 
 int main() {
@@ -12,4 +15,5 @@ int main() {
 	david.name = "David";
 	david.tall = 180;
 	cout << david.name << " 身高=" << david.tall << endl;
+	david.walk(20);
 }

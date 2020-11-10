@@ -3,27 +3,22 @@ using namespace std;
 
 namespace Human{
 	class Person{
-	public:
-		string name;
-		int tall;
-		void walk(int var){
-			cout << name << "每小時可跑" << var << "公里" << endl;
- 		}
+		public:
+			string name;
+			int height;
+			int weight;
+			void walk(int var){
+				cout << name << "每小時可跑" << var << "公里" << endl;
+			}
+
+			float bmi(void){
+				return weight / ((height/100.0) * (height/100));
+			}
+
 	};
 }
 
-using namespace Human;
 
 int main() {
-	Person david;
-	david.name = "David";
-	david.tall = 180;
-	cout << david.name << " 身高=" << david.tall << endl;
-	david.walk(20);
-
-	Person robert;
-	robert.name = "Robert";
-	robert.tall = 183;
-	cout << robert.name << " 身高=" << robert.tall << endl;
-	robert.walk(40);
+  std::cout << "Hello World!\n";
 }

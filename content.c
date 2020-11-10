@@ -1,7 +1,4 @@
-#include <iostream>
 #include "Human.h"
-
-using namespace std;
 using namespace Human;
 
 int main() {
@@ -17,7 +14,6 @@ int main() {
 
 }
 
-
 Human.h
 #include <iostream>
 using namespace std;
@@ -31,11 +27,11 @@ namespace Human{
 			void walk(int);//原型宣告
 			float bmi(void);//原型宣告		
 
-	};
-	
-	
+	};	
 }
 
+Human.cpp
+#include "Human.h"
 using namespace Human;
 
 

@@ -1,50 +1,35 @@
-#include "Human.h"
-using namespace Human;
-
-int main() {
-	Person david;
-	david.name = "David";
-	david.height = 180;
-	david.weight = 60;
-	cout << "david's name:" << david.name << endl;
-	cout << "david's height:" << david.height << endl;
-	david.walk(40);
-	cout << "david'd bmi:" << david.bmi() << endl;
-	printf("david'd bmi:%.2f\n", david.bmi());
-
-}
-
-Human.h
-#ifndef __HUMAN__
-#define __HUMAN__
-
 #include <iostream>
+#include "Car.h"
+
 using namespace std;
 
-namespace Human{
-	class Person{
-		public:
-			string name;
-			int height;
-			int weight;
-			void walk(int);//原型宣告
-			float bmi(void);//原型宣告		
-
-	};	
+int main() {
+	Car car1;
+	car1.speed = 70;
+	cout << "car1現在的速度=" << car1.speed << endl;
+	car1.turbo(1);
+	car1.turbo(1);
+	car1.turbo(1);
+	car1.turbo(1);
+	car1.turbo(1);
+	car1.turbo(1);
+	cout << "car1加速後的速度=" << car1.speed << endl;
 }
 
-#endif
+Car.h
+#include <iostream>
 
 
-Human.cpp
-#include "Human.h"
-using namespace Human;
+class Car{
+	public:
+		int speed;
+		void turbo(int);
+};
 
 
-void Person::walk(int var){
-	cout << name << "每小時可跑" << var << "公里" << endl;
-}
+Car.cpp
+#include "Car.h"
 
-float Person::bmi(void){
-	return weight / ((height/100.0) * (height/100.0));
+void Car::turbo(int s){
+	speed += s;
 }

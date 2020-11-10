@@ -18,7 +18,17 @@ namespace Human{
 	};
 }
 
+using namespace Human;
 
 int main() {
-  std::cout << "Hello World!\n";
+	Person david;
+	david.name = "David";
+	david.height = 180;
+	david.weight = 60;
+	cout << "david's name:" << david.name << endl;
+	cout << "david's height:" << david.height << endl;
+	david.walk(40);
+	cout << "david'd bmi:" << david.bmi() << endl;
+	printf("david'd bmi:%.2f\n", david.bmi());
+
 }

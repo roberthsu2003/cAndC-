@@ -7,18 +7,25 @@ namespace Human{
 			string name;
 			int height;
 			int weight;
-			void walk(int var){
-				cout << name << "每小時可跑" << var << "公里" << endl;
-			}
-
-			float bmi(void){
-				return weight / ((height/100.0) * (height/100));
-			}
+			void walk(int);//原型宣告
+			float bmi(void);//原型宣告		
 
 	};
+	
+	
 }
 
 using namespace Human;
+
+void Person::walk(int var){
+	cout << name << "每小時可跑" << var << "公里" << endl;
+}
+
+float Person::bmi(void){
+	return weight / ((height/100.0) * (height/100.0));
+}
+
+
 
 int main() {
 	Person david;

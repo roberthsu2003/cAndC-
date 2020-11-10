@@ -16,4 +16,10 @@ int main() {
 	david.tall = 180;
 	cout << david.name << " 身高=" << david.tall << endl;
 	david.walk(20);
+
+	Person robert;
+	robert.name = "Robert";
+	robert.tall = 183;
+	cout << robert.name << " 身高=" << robert.tall << endl;
+	robert.walk(40);
 }

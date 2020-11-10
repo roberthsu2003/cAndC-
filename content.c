@@ -4,9 +4,11 @@
 using namespace std;
 
 int main() {
-	Car car1;
-	cout << "car1現在的速度=" << car1.speed << endl;
-	car1.speed = 70;
+	Car car0;
+	cout << "car0現在的速度=" << car0.speed << endl;
+	
+
+	Car car1(70);
 	cout << "car1現在的速度=" << car1.speed << endl;
 	car1.turbo(1);
 	car1.turbo(1);
@@ -26,7 +28,9 @@ class Car{
 	public:
 		int speed;
 		void turbo(int);
+		//建構式overload
 		Car();
+		Car(int);
 };
 
 
@@ -35,6 +39,10 @@ Car.cpp
 
 Car::Car(){
 	speed = 20;
+}
+
+Car::Car(int s){
+	speed = s;
 }
 
 void Car::turbo(int s){

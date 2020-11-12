@@ -17,7 +17,7 @@ Car.h
 #include <iostream>
 using namespace std;
 
-#idndef __CAR__
+#ifndef __CAR__
 #define __CAR__
 
 class Car{

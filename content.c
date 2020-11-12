@@ -14,7 +14,7 @@ int main() {
 
 	Car car4(70);
 
-	cout << "目前Car實體的數量是=" << Car::instanceCount << endl;
+	cout << "目前Car實體的數量是=" << Car::getCount() << endl;
 }
 
 
@@ -28,12 +28,18 @@ using namespace std;
 class Car{
 	public:
 		static int instanceCount;
+		//類別方法,必需在class內實作
+		int static getCount(){
+			return instanceCount;
+		}
+
 		int speed;
 		Car();
 		Car(int speed);
 };
 
 #endif
+
 
 
 

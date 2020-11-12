@@ -5,9 +5,12 @@ using namespace std;
 int main() {
 	Car car1;
 	//car1.speed = -20;
+	car1.setSpeed(-20);
+	cout << "car1現在的速度是" << car1.getSpeed() << endl;
 
 	Car* car2 = new Car();
-	//car2->speed = 70;
+	car2->setSpeed(70);
+	cout << "car2現在的速度是" << car2->getSpeed() << endl;
 
 	Car* car3 = new Car(70);
 	//car3->speed = 90;
@@ -42,6 +45,12 @@ class Car{
 		
 		Car();
 		Car(int speed);
+		
+		//欄位的setter
+		void setSpeed(int speed);
+		//欄位的getter
+		int getSpeed();
+
 };
 
 #endif
@@ -63,4 +72,16 @@ Car::Car(){
 Car::Car(int speed){
 	_speed = speed;
 	Car::_instanceCount += 1;
+}
+
+void Car::setSpeed(int speed){
+	if(speed < 0){
+		_speed = 0;
+	}else{
+		_speed = speed;
+	}
+}
+
+int Car::getSpeed(){
+	return _speed;
 }

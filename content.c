@@ -14,9 +14,10 @@ int main() {
 
 	Car car4(70);
 
+	//Car::instanceCount = 10;
+
 	cout << "目前Car實體的數量是=" << Car::getCount() << endl;
 }
-
 
 Car.h
 #include <iostream>
@@ -26,8 +27,11 @@ using namespace std;
 #define __CAR__
 
 class Car{
-	public:
+	private:
+		//static 欄位,類別欄位
 		static int instanceCount;
+	public:
+		
 		//類別方法,必需在class內實作
 		int static getCount(){
 			return instanceCount;

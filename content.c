@@ -1,7 +1,9 @@
 #include <iostream>
 
 int main() {
-	printf("Hello! C++\n");
-	system("pause");
-	return 0;
+  int englishScore = 60;
+  std::cout << "請輸入您的英文分數:";
+  std::cin >> englishScore;
+  std::cout << "Hello ! 您的英文分數是:" << englishScore;
+  return 0;
 }

@@ -123,10 +123,17 @@ false 代表 0
 ```c++
 運算式中若含有不同的數值型別，編譯器會自動以值域較大的型別為轉換依據
 
-float PI = 3.14159;
-int radius = 10;
-//PI * radius * radius 自動轉換為float
-cout << "圓面積=" << PI * radius * radius; 
+#include <iostream>
+#include "stdlib.h"
+
+using namespace std;
+
+int main() {
+	double PI = 3.1415915987;
+	int radius = 9;
+	cout << "圓面積=" << PI * radius * radius << endl;
+	printf("圓面積=%.2f\n",PI * radius * radius);
+}
 ```
 
 ```c++

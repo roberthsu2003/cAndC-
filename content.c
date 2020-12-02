@@ -1,14 +1,24 @@
 #include <iostream>
-#include "stdlib.h"
-
 using namespace std;
 
 int main() {
-	double PI = 3.1415915987;
-	int radius = 9;
-	cout << "圓面積=" << PI * radius * radius << endl;
-	printf("圓面積=%.2f\n",PI * radius * radius);
+	unsigned short chinese, english, math;
+	int sum;
+	float average;
 
-	int x = 3.14159 * radius;
-	cout << "x=" << x << endl;
+	cout << "請輸入國文成績(0~100):";
+	cin >> chinese;
+
+	cout << "請輸入英文成績(0~100):";
+	cin >> english;
+
+	cout << "請輸入數學成績(0~100):";
+	cin >> math;
+
+	sum = chinese + english + math;
+	//average = (float)sum / 3;
+	//average = (float)(sum/3);
+	average = sum / 3.0;
+
+	printf("您的總分為:%d分,平均為%.2f分",sum, average);
 }

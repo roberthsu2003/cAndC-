@@ -2,9 +2,11 @@
 using namespace std;
 
 int main() {
-	string name;
-	cout << "請輸入中文姓名:";
-	cin >> name;
-	cout << "Hello! " << name;
-	return 0;
+	char characterA;
+	characterA = 'A';
+	cout << characterA << "\n";
+
+	char characterB;
+	characterB = 65;
+	cout << characterB << "\n";
 }

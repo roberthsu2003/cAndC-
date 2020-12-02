@@ -8,4 +8,7 @@ int main() {
 	int radius = 9;
 	cout << "圓面積=" << PI * radius * radius << endl;
 	printf("圓面積=%.2f\n",PI * radius * radius);
+
+	int x = 3.14159 * radius;
+	cout << "x=" << x << endl;
 }

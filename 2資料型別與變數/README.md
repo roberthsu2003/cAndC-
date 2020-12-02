@@ -78,15 +78,28 @@ int main() {
   cout << characterB << "\n";
 }
 ```
-## 字串型別(string)
+## 字串型別(string和字元陣列)
 ```c++
-string str1;
-string str2 = "這是字串";
-string str3 = "這是 \" C++ \",非常簡單";
-cout << "\nstr1:" << str1 << "\n";
-cout << "str2:" << str2 << endl;
-cout << "str3:" << str3 << "\n";
+#include <iostream>
+#include <stdlib.h>
 
+using namespace std;
+
+int main() {
+	//c++ 型別
+	string str1 = "這是字串1";
+
+	//c語言的字元陣列
+	const char* str2 = "這是字串2";
+
+	//cout輸出
+	cout << str1 << endl;
+	cout << str2 << endl;
+
+	//printf()
+	printf("%s\n",str2);
+	
+}
 ```
 
 ## 布林型別(bool)

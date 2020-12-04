@@ -4,18 +4,16 @@
 using namespace std;
 
 int main() {
-	float top,bottom,height,area;
-	printf("請輸入梯形的上底(公分):");
-	cin >> top;
-
-	printf("請輸入梯形的下底(公分):");
-	cin >> bottom;
-
-	printf("請輸入梯形的高(公分):");
-	cin >> height;
-
-	area = (top + bottom) * height / 2;
-
-	printf("梯形的面積:%.2f平方公分\n",area);
+	string pass;
+	printf("請輸入密碼:");
+	cin >> pass;
+	
+	if(pass == "1234"){
+		printf("歡迎光臨\n");
+	}else{
+		printf("密碼錯誤\n");
+		printf("請重新輸入\n");
+	}
+	printf("程式結束\n");
 	return 0;
 }

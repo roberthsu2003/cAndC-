@@ -4,13 +4,20 @@
 using namespace std;
 
 int main() {
-	float num,result;
-	printf("請輸入任意數:");
-	cin >> num;
-	result = num;
-	result *= num;
-	printf("此數的平方是%.2f\n",result);
-	result *= num;
-	printf("此數的立方是%.2f\n",result);
-	return 0;
+	float in1,in2,in3,max;
+
+	printf("請輸入第一個數:");
+	cin >> in1;
+
+	printf("請輸入第二個數:");
+	cin >> in2;
+
+	max = in1 > in2 ? in1 : in2;
+
+	printf("請輸入第三個數:");
+	cin >> in3;
+
+	max = max > in3 ? max : in3;
+
+	printf("輸入三個數中最大的數為:%.2f\n", max);
 }

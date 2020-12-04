@@ -4,6 +4,13 @@
 using namespace std;
 
 int main() {
-	printf("%d\n", 3 == 3);
-	printf("%d\n", 3 != 3);
+	float num,result;
+	printf("請輸入任意數:");
+	cin >> num;
+	result = num;
+	result *= num;
+	printf("此數的平方是%.2f\n",result);
+	result *= num;
+	printf("此數的立方是%.2f\n",result);
+	return 0;
 }

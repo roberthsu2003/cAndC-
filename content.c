@@ -1,9 +1,19 @@
 #include <iostream>
+#include <stdio.h>
+using namespace std;
 
 int main() {
-	int sum = 0;
-	for(int i=2; i<=10; i+=2){
-		sum += i;
-		printf("第%d次迴圈的 i = %d,總和為 %d \n", i/2, i, sum); 
+	int n, sum=0;
+	for(int i=1; i<=7; i++){
+		if(i == 7){
+			cout << "請輸入星期日的支出:";
+		}else{
+			cout << "請輸入星期" << i << "的支出:";
+		}
+		
+		scanf("%d", &n);
+		sum += n;
 	}
+
+	cout << "本星期的支出為:" << sum << "元\n";
 }

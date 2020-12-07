@@ -1,29 +1,9 @@
 #include <iostream>
-#include <stdio.h>
-using namespace std;
 
 int main() {
-	char op;
-	int num1 = 20, num2 = 4;
-	printf("num1=20,num2=4\n");
-	printf("請輸入要執行的運算(+-*/):");
-	scanf("%c", &op);
-	switch(op){
-		case '+':
-			cout << "num1+num2=" << num1+num2 << "\n";
-			break;
-		case '-':
-			cout << "num1-num2=" << num1-num2 << "\n";
-			break;
-		case '*':
-			cout << "num1*num2=" << num1*num2 << "\n";
-			break;
-		case '/':
-			cout << "num1/num2=" << num1/num2 << "\n";
-			break;
-		default:
-			cout << "無法執行運算!\n";
+	int sum = 0;
+	for(int i=2; i<=10; i+=2){
+		sum += i;
+		printf("第%d次迴圈的 i = %d,總和為 %d \n", i/2, i, sum); 
 	}
-
-	return 0;
 }

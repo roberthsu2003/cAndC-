@@ -1,19 +1,22 @@
 #include <iostream>
-#include <stdio.h>
-
 using namespace std;
 
 int main() {
-	string pass;
-	printf("請輸入密碼:");
-	cin >> pass;
-	
-	if(pass == "1234"){
-		printf("歡迎光臨\n");
+	int money,payMoney;
+	printf("請輸入購買金額:");
+	cin >> money;
+	if (money >= 100000){
+		payMoney = money * 0.8;
+	}else if(money >= 50000){
+		payMoney = money * 0.85;
+	}else if(money >= 30000){
+		payMoney = money * 9;
+	}else if(money >=10000){
+		payMoney = money * 95;
 	}else{
-		printf("密碼錯誤\n");
-		printf("請重新輸入\n");
+		payMoney = money;
 	}
-	printf("程式結束\n");
+
+	printf("實體金額是:%d\n", payMoney);
 	return 0;
 }

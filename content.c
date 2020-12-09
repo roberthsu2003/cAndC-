@@ -1,12 +1,23 @@
 #include <iostream>
-using namespace std;
+#include <stdio.h>
 
 int main() {
-	string password;
-  do{
-	  cout << "請輸入密碼:";
-	  cin >> password;
-  }while(password != "5678");
+	int num=0;
+	int inputNum;
+	int sum = 0;
+	do{
+		num += 1;		
+		printf("請輸入第%d個數值:", num);
+		scanf("%d", &inputNum);
+		if(inputNum < 0){
+			break;
+		}else if(inputNum % 2 == 1){
+			continue;
+		}
 
-  cout << "恭喜!您的密碼正確!請進";
+		sum += inputNum;
+
+	}while(true);
+
+	printf("所有輸入的正偶數的加總是:%d\n", sum);
 }

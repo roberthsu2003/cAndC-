@@ -4,6 +4,8 @@
 #include <time.h>
 
 int main() {
-	srand(time(NULL));
+	long long int time1 = time(NULL);
+	printf("%lld\n",time1);
+	srand(time1);
 	printf("亂數值是%d\n", rand() % 100 + 1);
 }

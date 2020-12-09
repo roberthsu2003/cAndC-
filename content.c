@@ -19,7 +19,21 @@ int main() {
 		printf("猜數字範圍%d~%d:",min, max);
 		scanf("%d", &keyin);
 		count++;
-
-		printf("亂數值是%d,使用者輸入是%d,次數是%d\n", guess, keyin, count);
-	}while(count <= 3);
+		if(keyin >= min && keyin <= max){
+			if(keyin == guess){
+				printf("賓果!猜對了,答案是%d\n", guess);
+				printf("您猜了%d次\n", count);
+				break;
+			}else if(keyin > guess){
+				max = keyin - 1;
+				printf("再小一點");
+			}else if(keyin < guess){
+				min = keyin + 1;
+				printf("再大一點");
+			}
+			printf("您猜了%d次\n\n", count);
+		}else{
+			printf("請輸入提示範圍內的數字! \n");
+		}
+	}while(true);
 }

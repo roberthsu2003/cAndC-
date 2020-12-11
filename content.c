@@ -1,19 +1,19 @@
 #include <iostream>
 using namespace std;
-//遞迴
-//Recursive
-int factorial(int n){
-	if(n == 0){
-		return 1;
-	}else{
-		return n * factorial(n-1);
-	}
-}
+
+//宣告原型
+int add(int, int);
+int mul(int, int);
 
 int main() {
-	int n,total;
-	cout << "請輸入數字 n:";
-	cin >> n;
-	total = factorial(n);
-	cout << n << "!=" << total << endl;
+	cout << "add(2, 3)=" << add(2, 3) << endl;
+	cout << "mul(2, 3)=" << mul(2, 3) << endl;
+}
+
+int add(int a, int b){
+	return a + b;
+}
+
+int mul(int a, int b){
+	return a * b;
 }

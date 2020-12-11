@@ -1,17 +1,19 @@
 #include <iostream>
 using namespace std;
-//定義function
-float temperature(int value){
-	return value * 1.8 + 32;
+//遞迴
+//Recursive
+int factorial(int n){
+	if(n == 0){
+		return 1;
+	}else{
+		return n * factorial(n-1);
+	}
 }
 
 int main() {
-	int valueC;
-	float result;
-
-	cout << "請輸入攝氏溫度:";
-	cin >> valueC;
-	//呼叫function
-	result = temperature(valueC);
-	cout << "華氏溫度=" << result << endl;
+	int n,total;
+	cout << "請輸入數字 n:";
+	cin >> n;
+	total = factorial(n);
+	cout << n << "!=" << total << endl;
 }

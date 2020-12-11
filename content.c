@@ -2,9 +2,11 @@
 using namespace std;
 
 int main() {
-	int n[] = {1, 3, 5, 7, 9, 11, 13};
-	int totalSize = sizeof(n);
-	int oneSize = sizeof(n[0]);
-	int counts = totalSize / oneSize;
-	printf("陣列的大小為:%d,一個元素的大小是%d,陣列的數量是%d", totalSize, oneSize, counts);
+	//c++ 字串
+	string str1 = "DevC++";
+	cout << "str1:" << str1 << endl;
+	char str2[] = {'D', 'e', 'v', 'C', '+', '+', '\0'};
+	cout << "str2:" << str2 << endl;
+	char str3[] = "DevC++";
+	printf("str3:%s\n",str3);
 }

@@ -1,10 +1,17 @@
 #include <iostream>
+using namespace std;
+//定義function
+float temperature(int value){
+	return value * 1.8 + 32;
+}
 
 int main() {
-	int scores[2][3] = {{85, 82, 90},{76, 95, 89}};
-	for(int i=0; i<2; i++){
-		for(int j=0; j<3; j++){
-			printf("第位%d學生第%d科成績:%d\n", i+1, j+1,scores[i][j]);
-		}
-	}
+	int valueC;
+	float result;
+
+	cout << "請輸入攝氏溫度:";
+	cin >> valueC;
+	//呼叫function
+	result = temperature(valueC);
+	cout << "華氏溫度=" << result << endl;
 }

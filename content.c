@@ -1,23 +1,10 @@
 #include <iostream>
+using namespace std;
 
 int main() {
-	const int nums = 5;
-	int scores[nums];
-	int sum=0;
-	double ave;
-	//printf("scores陣列bytes大小:%d\n",(int)sizeof(scores));
-	//printf("元素bytes大小:%d\n",(int)sizeof(scores[0]));
-
-	for(int i=0; i<nums; i++){
-		printf("請輸入第%d位學生的成績:",i+1);
-		scanf("%d", &scores[i]);
-	}
-
-	for (int i=0; i<nums; i++){
-		sum += scores[i];
-	}
-
-	ave = (double)sum / nums;
-
-	printf("全班總成績為:%d分,平均為%.2f分\n",sum,ave);
+	int n[] = {1, 3, 5, 7, 9, 11, 13};
+	int totalSize = sizeof(n);
+	int oneSize = sizeof(n[0]);
+	int counts = totalSize / oneSize;
+	printf("陣列的大小為:%d,一個元素的大小是%d,陣列的數量是%d", totalSize, oneSize, counts);
 }

@@ -25,6 +25,10 @@ tool.h
 //宣告function的原型
 float temperature(int);
 
+
+tool.cpp
+#include "tool.h"
+
 float temperature(int value){
 	return 1.8 * value + 32;
 }

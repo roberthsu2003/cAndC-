@@ -6,6 +6,7 @@ main.cpp
 
 
 
+
 int main() {
 	int inputValue;
 	float result;
@@ -16,11 +17,16 @@ int main() {
 	std::cout << "華氏溫度=" << result << std::endl;
 	//c語言輸出
 	printf("華氏溫度=%.2f\n",result);
+	std::cout << "PI=" << PI << std::endl;
 	return 0;
 }
 
 
+
+
 tool.h
+
+#define PI 3.14159
 
 //宣告function的原型
 float temperature(int);

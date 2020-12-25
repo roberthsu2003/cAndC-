@@ -1,21 +1,22 @@
 #include <iostream>
-#include <stdio.h>
-
 using namespace std;
 
 int main() {
-	//c++ 的字串輸入
 	/*
-	string name;
-	cout << "請輸入姓名:";
-	cin >> name;
-	cout << name << endl;
+	int n;	
+	int *p = &n;
+	*p = 10;	
+	cout << *p;
 	*/
 
-	//c語言的字串輸入
-	char p1[50];
-	cout << "請輸入字串:";
-	fgets(p1, sizeof(p1), stdin);
-	cout << p1 << endl;
-	return 0;
+	int *p = new int;
+	*p = 10;
+	cout << *p << endl;
+	
+
+	int *a = new int[50];
+	a[0] = 1;
+	a[2] = 2;
+	cout << *(a+0) << endl;
+	cout << *(a+1) << endl;
 }

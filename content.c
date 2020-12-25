@@ -24,4 +24,6 @@ int main() {
 	cout << "國文:" << david.chinese << endl;
 	cout << "數學:" << david.math << endl;
 	cout << "英文:" << david.english << endl;
+
+	struct student *students = new struct student[50]; 
 }

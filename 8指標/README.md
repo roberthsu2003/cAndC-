@@ -417,7 +417,7 @@ void turbo(int *mySpeed){
 #include <iostream>
 using namespace std;
 void showAry(int *);
-void sub2(int *);
+void sub2(int[]);
 int main() {
 	int ary[] = {1, 2, 3};
 	cout << "1指標變數當參數:" << endl;
@@ -429,14 +429,14 @@ int main() {
 }
 void showAry(int *tempAry){
 	for(int i=0; i<=2; i++){
-		cout << "ary[" << i << "]=" << tempAry[i] << "\t";
-		cout << "\n-----------------------------" << endl;
+		cout << "ary[" << i << "]=" << tempAry[i] << "\t";		
 	}
+	cout << "\n-----------------------------" << endl;
 }
 void sub2(int tempAry[]){
  for(int i=0; i<=2; i++){
-	 tempAry[i] *= 2;
- }
+		*(tempAry + i) *= 2;
+	}
 }
 ```
 	
@@ -448,13 +448,14 @@ void sub2(int tempAry[]){
 // Name        : reverse.cpp
 //字串倒印
 #include <iostream>
+#include <cstring>
 using namespace std;
 int main() {
-	char p[] = "Hello";
+	const char *p = "Hello";
 	cout << "字串=" << p << endl;
-	cout << "p大小" << sizeof(p) << endl;
-	int count = sizeof(p) / sizeof(p[0]) - 1;
-	for (int i=count-1; i >= 0; i--){
+	cout << "p大小" << strlen(p) << endl;
+	int count = strlen(p) - 1;
+	for (int i=count; i >= 0; i--){
 		cout << *(p+i);
 	}
 	cout << endl;
@@ -466,20 +467,27 @@ int main() {
 //============================================================================
 // Name        : listString.cpp
 //使用者輸入字串，輸出字串
+//c語言的字串輸入
+
 #include <iostream>
 #include <stdio.h>
+
 using namespace std;
+
 int main() {
-  char p1[50];
-  cout << "請輸入字串:";
-  fgets(p1, sizeof(p1), stdin);
-  //puts("輸入的字串為:");
-  //puts(p1);
-  //cout << "輸入的字串為:";
-  //cout << p1;
-  printf("輸入的字串為:\n");
-  printf("%s",p1);
-  
+	//c++ 的字串輸入	
+	string name;
+	cout << "請輸入姓名:";
+	cin >> name;
+	cout << name << endl;
+	
+
+	//c語言的字串輸入
+	char p1[50];
+	cout << "請輸入字串:";
+	fgets(p1, sizeof(p1), stdin);
+	cout << p1 << endl;
+	return 0;
 }
 ```
 
@@ -546,6 +554,7 @@ int main() {
 語法:
 資料型態 *指標變數 = new 資料型態[一維陣列大小];
 ```
+
 ```
 int *p = new int[3];
 ```

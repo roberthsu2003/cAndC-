@@ -1,11 +1,11 @@
+main.c
+
 #include <iostream>
+#include "tool.h"
+
 using namespace std;
 
-//定義一個結構
-typedef struct student{
-	const char *name;
-	int chinese, math, english;
-} student;
+
 
 int main() {
 	/*
@@ -22,3 +22,10 @@ int main() {
 	cout << david.math << endl;
 	cout << david.english << endl;
 }
+
+tool.h
+//定義一個結構
+typedef struct student{
+	const char *name;
+	int chinese, math, english;
+} student;

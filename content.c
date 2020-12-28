@@ -2,13 +2,20 @@
 #include "tool.h"
 
 using namespace std;
+#define MAC
+
+#ifdef MAC
+
+#define OS "MAC_OS_VERSION_10_0"
+
+#else
+
+#define OS "window10"
+
+#endif
 
 int main() {
-	int s, result;
-	cout << "請輸入數字:";
-	cin >> s;
-	result = SQUARE(s+1);
-	cout << s << "的平方為:" << result << endl;
+	cout << OS << endl;
 }
 
 tool.h

@@ -1,34 +1,23 @@
-#include <iostream>
-#include "tool.h"
+Person.h
 
-using namespace std;
-#define MAC
+#ifndef __Person__
+#define __Person__
 
-#ifdef MAC
-
-#define OS "MAC_OS_VERSION_10_0"
-
-#else
-
-#define OS "window10"
+class Person{
+};
 
 #endif
+
+
+Person.cpp
+#include "Person.h"
+
+
+
+main.cpp
+#include <iostream>
+#include "Person.h"
 
 int main() {
-	cout << OS << endl;
+	Person david;
 }
-
-tool.h
-#ifndef __tool__
-#define __tool__
-
-#define RATE 32.78
-//marco 巨集
-#define SQUARE(x) (x) * (x)
-//定義一個結構
-typedef struct student{
-	const char *name;
-	int chinese, math, english;
-} student;
-
-#endif

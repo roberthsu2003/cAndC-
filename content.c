@@ -1,29 +1,24 @@
 #include <iostream>
 using namespace std;
 
-struct student{
-	string id;
-	string name;
+//定義一個結構
+typedef struct student{
+	const char *name;
 	int chinese, math, english;
-};
+} student;
 
 int main() {
 	/*
-	struct student david;
-	david.id = "A10001";
+	student david;
 	david.name = "david";
-	david.chinese = 78;
-	david.math = 98;
-	david.english = 65;
+	david.chinese = 80;
+	david.english = 98;
+	david.math = 68; 
 	*/
-
-	struct student david = {"A10001", "david", 78, 98, 65};
-
-	cout << "學號:" << david.id << endl;
-	cout << "姓名:" << david.name << endl;
-	cout << "國文:" << david.chinese << endl;
-	cout << "數學:" << david.math << endl;
-	cout << "英文:" << david.english << endl;
-
-	struct student *students = new struct student[50]; 
+	//建立一個結構變數
+	student david = {"david",80,68,98};
+	cout << david.name << endl;
+	cout << david.chinese << endl;
+	cout << david.math << endl;
+	cout << david.english << endl;
 }

@@ -174,6 +174,60 @@ int main() {
 }
 ```
 
+### 列舉
+
+列舉 (enum 或 enumeration) 是另一種複合型別，主要是用在宣告僅有少數值的型別，像是一星期內的日期 (day of week) 或是一年內的月份等。
+
+```c
+enum direction {
+    North,
+    South,
+    East,
+    West
+};
+
+int main(void)
+{
+    enum direction dest = East;
+    
+    return 0;
+```
+
+列舉同樣可用 typedef 簡化型別名稱，如下例：
+
+```c
+typedef enum direction Direction;
+
+enum direction {
+    North,
+    South,
+    East,
+    West
+};
+
+int main(void)
+{
+    Direction dest = East;
+    
+    return 0;
+}
+```
+
+```c
+enum DAY            /* Defines an enumeration type    */
+{
+    saturday,       /* Names day and declares a       */
+    sunday = 0,     /* variable named workday with    */
+    monday,         /* that type                      */
+    tuesday,
+    wednesday,      /* wednesday is associated with 3 */
+    thursday,
+    friday
+};
+
+enum DAY today = wednesday;
+```
+
 ### 前端處理程式
 
 ```c++

@@ -1,4 +1,5 @@
 Student.h
+
 #ifndef __STUDENT__
 #define __STUDENT__
 
@@ -14,6 +15,7 @@ namespace Human{
 			int english;
 			int math;
 			Student(void);
+			Student(string,string);
 			Student(string, string, int, int, int);
 			int sum(void);
 			float average(void);
@@ -35,6 +37,15 @@ Student::Student(void){
 	english = 0;
 	math = 0;
 }
+
+Student::Student(string name,string id){
+	this->name = name;
+	this->id = id;
+	chinese = 50;
+	english = 50;
+	math = 50;
+}
+
 Student::Student(string name, string id, int chinese, int english, int math){
 	this->name = name;
 	this->id = id;
@@ -53,6 +64,7 @@ float Student::average(){
 
 
 
+
 main.cpp
 
 #include <iostream>
@@ -63,7 +75,7 @@ using namespace std;
 using namespace Human;
 
 int main() {
-	Student stu1("stu1", "A10001", 87, 96, 76);	
+	Student stu1("stu1", "A10001");	
 
 	cout << "學生姓名:" << stu1.name << endl;
 	cout << "學號:" << stu1.id << endl;
@@ -72,8 +84,5 @@ int main() {
 	cout << "數學:" << stu1.math << endl;
 	cout << "總分:" << stu1.sum() << endl;
 	printf("平均:%.2f\n",stu1.average());
-
-
-	Student stu2;
 
 }

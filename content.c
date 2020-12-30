@@ -2,6 +2,9 @@ Student.h
 #ifndef __STUDENT__
 #define __STUDENT__
 
+#include <iostream>
+using namespace std;
+
 namespace Human{
 	class Student{
 		public:
@@ -12,17 +15,12 @@ namespace Human{
 			int math;
 			int sum(void);
 			float average(void);
-	};
-
-	int Student::sum(){
-			return chinese + english + math;
-	}
-	float Student::average(){
-			return sum() / 3.0;
-	}
+	};	
 }
 
 #endif
+
+
 
 
 main.cpp

@@ -21,6 +21,18 @@ namespace Human{
 #endif
 
 
+Student.cpp
+#include "Student.h"
+using namespace Human;
+
+int Student::sum(){
+		return chinese + english + math;
+}
+
+float Student::average(){
+		return sum() / 3.0;
+}
+
 
 
 main.cpp

@@ -15,7 +15,7 @@ namespace Human{
 			int english;
 			int math;
 			Student(void);
-			Student(string,string);
+			Student(string,string,int);
 			Student(string, string, int, int, int);
 			int sum(void);
 			float average(void);
@@ -41,10 +41,10 @@ Student::Student(void){
 	math = 0;
 }
 
-Student::Student(string name,string id){
+Student::Student(string name,string id,int i){
 	this->name = name;
 	this->id = id;
-	srand(time(NULL));	
+	srand(time(NULL) + i);	
 	chinese = 50 + rand() % 51;	
 	english = 50 + rand() % 51;	
 	math = 50 + rand() % 51;
@@ -81,7 +81,7 @@ using namespace Human;
 
 int main() {
 	
-	Student stu1("stu1", "A10001");
+	Student stu1("stu1", "A10001",1);
 	cout << "學生姓名:" << stu1.name << endl;
 	cout << "學號:" << stu1.id << endl;
 	cout << "國文:" << stu1.chinese << endl;
@@ -90,7 +90,7 @@ int main() {
 	cout << "總分:" << stu1.sum() << endl;
 	printf("平均:%.2f\n",stu1.average());
 	
-	Student stu2("stu2", "A10002");	
+	Student stu2("stu2", "A10002",2);	
 	cout << "學生姓名:" << stu2.name << endl;
 	cout << "學號:" << stu2.id << endl;
 	cout << "國文:" << stu2.chinese << endl;

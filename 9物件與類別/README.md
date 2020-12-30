@@ -368,7 +368,9 @@ int main() {
 	- 缺點-檔案大，效能較差
 
 ### 建立實體物件的語法為:
-- 類別名稱 物件變數名稱; //根據類別建立實體物件
+- 類別名稱 物件變數名稱;  
+//根據類別建立實體物件
+
 - 例如以Person 類別建立 robert
 	- Person robert
 - 要建立物件前，必需先有類別，有了類別才能產生物件，類別就像建築的藍圖，而物件是依據藍圖所建出的一棟棟的房子
@@ -389,31 +391,78 @@ class 類別名稱{
 	
 	
 ```c++
+#include <iostream>
 using namespace std;
-//定義class
+
 class Person{
 	public:
-	int tall;
-	string name;
-	void walk(int var){
-		cout << name << "每小時可跑" << var << "公里" << endl;
-	}
-
+		int tall;
+		string name;
+		void walk(int var){
+			cout << name << "每小時可跑" << var << "公里" << endl;
+		}
 };
-
 
 int main() {
 	Person david;
 	david.tall = 180;
 	david.name = "David";
-	cout << david.name << " 身高=" << david.tall << endl ;
+	cout << david.name << " 身高=" << david.tall << endl;
 	david.walk(15);
 
 	Person robert;
 	robert.tall = 183;
 	robert.name = "Robert";
 	cout << robert.name << " 身高=" << robert.tall << endl;
-	robert.walk(20);
+	robert.walk(15);
+
+	Person *john = new Person();
+	john->tall = 170;
+	john->name = "John";
+	cout << john->name << " 身高=" << john->tall << endl;
+	john->walk(15);
+	return 0;
+}
+```
+
+```c++
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+
+using namespace std;
+
+class Student{
+	public:
+		string name;
+		string id;
+		int chinese;
+		int english;
+		int math;
+		int sum(){
+			return chinese + english + math;
+		}
+
+		float average(){
+			return sum() / 3.0;
+		}
+};
+
+int main() {
+	Student stu1;
+	stu1.name = "stu1";
+	stu1.id = "A10001";
+	stu1.chinese = 87;
+	stu1.english = 96;
+	stu1.math = 76;
+
+	cout << "學生姓名:" << stu1.name << endl;
+	cout << "學號:" << stu1.id << endl;
+	cout << "國文:" << stu1.chinese << endl;
+	cout << "英文:" << stu1.english << endl;
+	cout << "數學:" << stu1.math << endl;
+	cout << "總分:" << stu1.sum() << endl;
+	printf("平均:%.2f\n",stu1.average());
 	return 0;
 }
 ```

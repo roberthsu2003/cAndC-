@@ -3,22 +3,25 @@
 #include <stdlib.h>
 
 using namespace std;
+namespace Human{
+	class Student{
+		public:
+			string name;
+			string id;
+			int chinese;
+			int english;
+			int math;
+			int sum(){
+				return chinese + english + math;
+			}
 
-class Student{
-	public:
-		string name;
-		string id;
-		int chinese;
-		int english;
-		int math;
-		int sum(){
-			return chinese + english + math;
-		}
+			float average(){
+				return sum() / 3.0;
+			}
+	};
+}
 
-		float average(){
-			return sum() / 3.0;
-		}
-};
+using namespace Human;
 
 int main() {
 	Student stu1;

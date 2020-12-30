@@ -1,8 +1,7 @@
-#include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
+Student.h
+#ifndef __STUDENT__
+#define __STUDENT__
 
-using namespace std;
 namespace Human{
 	class Student{
 		public:
@@ -23,6 +22,16 @@ namespace Human{
 	}
 }
 
+#endif
+
+
+main.cpp
+
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include "Student.h"
+using namespace std;
 using namespace Human;
 
 int main() {

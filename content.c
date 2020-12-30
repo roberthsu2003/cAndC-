@@ -1,23 +1,15 @@
-Person.h
-
-#ifndef __Person__
-#define __Person__
+#include <iostream>
+using namespace std;
 
 class Person{
+	public:
+		int tall;
+		string name;
 };
-
-#endif
-
-
-Person.cpp
-#include "Person.h"
-
-
-
-main.cpp
-#include <iostream>
-#include "Person.h"
 
 int main() {
 	Person david;
+	david.tall = 180;
+	david.name = "David";
+	cout << david.name << " 身高=" << david.tall << endl;
 }

@@ -27,6 +27,9 @@ namespace Human{
 Student.cpp
 #include <iostream>
 #include "Student.h"
+#include <stdlib.h>
+#include <time.h>
+
 using namespace Human;
 using namespace std;
 
@@ -41,9 +44,10 @@ Student::Student(void){
 Student::Student(string name,string id){
 	this->name = name;
 	this->id = id;
-	chinese = 50;
-	english = 50;
-	math = 50;
+	srand(time(NULL));	
+	chinese = 50 + rand() % 51;	
+	english = 50 + rand() % 51;	
+	math = 50 + rand() % 51;
 }
 
 Student::Student(string name, string id, int chinese, int english, int math){
@@ -65,6 +69,7 @@ float Student::average(){
 
 
 
+
 main.cpp
 
 #include <iostream>
@@ -75,8 +80,8 @@ using namespace std;
 using namespace Human;
 
 int main() {
-	Student stu1("stu1", "A10001");	
-
+	
+	Student stu1("stu1", "A10001");
 	cout << "學生姓名:" << stu1.name << endl;
 	cout << "學號:" << stu1.id << endl;
 	cout << "國文:" << stu1.chinese << endl;
@@ -84,5 +89,14 @@ int main() {
 	cout << "數學:" << stu1.math << endl;
 	cout << "總分:" << stu1.sum() << endl;
 	printf("平均:%.2f\n",stu1.average());
+	
+	Student stu2("stu2", "A10002");	
+	cout << "學生姓名:" << stu2.name << endl;
+	cout << "學號:" << stu2.id << endl;
+	cout << "國文:" << stu2.chinese << endl;
+	cout << "英文:" << stu2.english << endl;
+	cout << "數學:" << stu2.math << endl;
+	cout << "總分:" << stu2.sum() << endl;
+	printf("平均:%.2f\n",stu2.average());
 
 }

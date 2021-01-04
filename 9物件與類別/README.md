@@ -774,26 +774,25 @@ main.cpp
 using namespace std;
 using namespace Human;
 
-int main() {
-	
-	Student stu1("stu1", "A10001",1);
-	cout << "學生姓名:" << stu1.name << endl;
-	cout << "學號:" << stu1.id << endl;
-	cout << "國文:" << stu1.chinese << endl;
-	cout << "英文:" << stu1.english << endl;
-	cout << "數學:" << stu1.math << endl;
-	cout << "總分:" << stu1.sum() << endl;
-	printf("平均:%.2f\n",stu1.average());
-	
-	Student stu2("stu2", "A10002",2);	
-	cout << "學生姓名:" << stu2.name << endl;
-	cout << "學號:" << stu2.id << endl;
-	cout << "國文:" << stu2.chinese << endl;
-	cout << "英文:" << stu2.english << endl;
-	cout << "數學:" << stu2.math << endl;
-	cout << "總分:" << stu2.sum() << endl;
-	printf("平均:%.2f\n",stu2.average());
+int main() {	
+	Student students[50];
+	for(int i=0; i<50; i++){
+		string name = "stu" + to_string(i+1);
+		string id = "A000" + to_string(i+1);
+		students[i] = Student(name, id, i);
+	}
 
+	for(int i=0; i<50; i++){
+		Student stu = students[i];
+		cout << "學生姓名:" << stu.name << endl;
+		cout << "學生學號:" << stu.id << endl;
+		cout << "國文:" << stu.chinese << endl;
+		cout << "英文:" << stu.english << endl;
+		cout << "數學:" << stu.math << endl;
+		cout << "學生總分:" << stu.sum() << endl;
+		printf("平均%.2f\n", stu.average());
+		cout << "===============================\n";
+	}
 }
 ```
 

@@ -694,6 +694,109 @@ int main() {
 }
 ```
 
+### 實例練習50位學生，儲存至陣列中
+
+```c++
+//Student.h
+#ifndef __STUDENT__
+#define __STUDENT__
+
+#include <iostream>
+using namespace std;
+
+namespace Human{
+	class Student{
+		public:
+			string name;
+			string id;
+			int chinese;
+			int english;
+			int math;
+			Student(void);
+			Student(string,string,int);
+			Student(string, string, int, int, int);
+			int sum(void);
+			float average(void);
+	};	
+}
+
+#endif
+
+//Student.cpp
+#include <iostream>
+#include "Student.h"
+#include <stdlib.h>
+#include <time.h>
+
+using namespace Human;
+using namespace std;
+
+Student::Student(void){
+	name = "name";
+	id = "A10001";
+	chinese = 0;
+	english = 0;
+	math = 0;
+}
+
+Student::Student(string name,string id,int i){
+	this->name = name;
+	this->id = id;
+	srand(time(NULL) + i);	
+	chinese = 50 + rand() % 51;	
+	english = 50 + rand() % 51;	
+	math = 50 + rand() % 51;
+}
+
+Student::Student(string name, string id, int chinese, int english, int math){
+	this->name = name;
+	this->id = id;
+	this->chinese = chinese;
+	this->english = english;
+	this->math = math;
+}
+
+int Student::sum(){
+		return chinese + english + math;
+}
+
+float Student::average(){
+		return sum() / 3.0;
+}
+
+
+
+main.cpp
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include "Student.h"
+using namespace std;
+using namespace Human;
+
+int main() {
+	
+	Student stu1("stu1", "A10001",1);
+	cout << "學生姓名:" << stu1.name << endl;
+	cout << "學號:" << stu1.id << endl;
+	cout << "國文:" << stu1.chinese << endl;
+	cout << "英文:" << stu1.english << endl;
+	cout << "數學:" << stu1.math << endl;
+	cout << "總分:" << stu1.sum() << endl;
+	printf("平均:%.2f\n",stu1.average());
+	
+	Student stu2("stu2", "A10002",2);	
+	cout << "學生姓名:" << stu2.name << endl;
+	cout << "學號:" << stu2.id << endl;
+	cout << "國文:" << stu2.chinese << endl;
+	cout << "英文:" << stu2.english << endl;
+	cout << "數學:" << stu2.math << endl;
+	cout << "總分:" << stu2.sum() << endl;
+	printf("平均:%.2f\n",stu2.average());
+
+}
+```
+
 ### public 欄位的保護
 物件的另一個特點是封裝，封裝是為了保護物件，避免物件因為外界不正當的存取而破壞。使用自訂的方法對資料成員作保護。如此可以保護物件的正當存取。
 

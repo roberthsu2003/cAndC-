@@ -1243,3 +1243,4 @@ int main() {
 1*2*3...*n = 120
 ```
 
+## 實作練習[Tinkercad](https://www.tinkercad.com)

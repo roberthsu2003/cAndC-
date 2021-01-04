@@ -30,6 +30,13 @@ int Car::getSpeed(){
 
 
 //main.cpp
+#include <iostream>
+#include "Car.h"
+using namespace Ford;
+using namespace std;
 
-
+int main() {
+	Car car1;
+	car1.turbo(50);
+	cout << car1.getSpeed() << endl;
 }

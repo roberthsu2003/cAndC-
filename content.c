@@ -1,7 +1,5 @@
 #include <iostream>
-#include <stdio.h>
 
 int main() {
-	int i = 10;
-	printf("%d\n", i);
+	std::cout << "請輸入您的中文姓名:";
 }

@@ -1,8 +1,9 @@
 #include <iostream>
+using namespace std;
 
 int main() {
-	std::string name;
-	std::cout << "請輸入您的中文姓名:";
-	std::cin >> name;
-	std::cout << "Hello!" << name << "\n";
+	string name;
+	cout << "請輸入您的中文姓名:";
+	cin >> name;
+	cout << "Hello!" << name << endl;
 }

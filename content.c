@@ -2,9 +2,11 @@
 using namespace std;
 
 int main() {
-	int englishScore;
-	cout << "請輸入您的英文分數:";
-	cin >> englishScore;
-	cout << "Hello! 您的英文分數是:" << englishScore << endl;
+	int scores[3];
+	scores[0] = 70;
+	scores[1] = 80;
+	scores[2] = 90;
+	cout << scores[0] << "," << scores[1] << "," << scores[2] << endl;
+
 	return 0;
 }

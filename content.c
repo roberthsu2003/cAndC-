@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
 	unsigned int nums;
-	int min;
+	int max;
 	cout << "請輸入數值數量:";
 	cin >> nums;
 
@@ -17,13 +17,13 @@ int main() {
 	for(int i=0; i< nums; i++){
 		cout << values[i] << " - ";
 	}
-	min = values[0];
+	max = values[0];
 
 	for(int i=1; i<nums; i++){
-		min = min <= values[i] ? min: values[i];
+		max = max >= values[i] ? max: values[i];
 	}
 
-	cout << "最小值是:" << min << endl;
+	cout << "最大值是:" << max << endl;
 
 
 }

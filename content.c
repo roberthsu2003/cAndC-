@@ -2,11 +2,10 @@
 using namespace std;
 
 int main() {
-	int scores[3] = {70, 80, 90};
-	for(int i=0; i < 3; i++){
-		cout << scores[i] << ",";
+	const int nums = 5;
+	int scores[nums];
+	for(int i=0; i<nums; i++){
+		cout << "請輸入第" << i+1 << "位學生的成績:";
+		cin >> scores[i];
 	}
-	cout << endl;
-
-	return 0;
 }

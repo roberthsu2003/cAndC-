@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
-
 int main() {
-	int n[] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21};
-	int totalSize = sizeof(n);
-	int oneSize = sizeof(n[0]);
-	int counts = totalSize / oneSize;
-	cout << "陣列的大小為:" << totalSize << ",一個元素的大小是" << oneSize << ",陣列的數量是" << counts;
-	return 0;
+	const int nums = 4;
+	int values[nums] = {43, 21, 54, 17};
+	for(int i=0; i < nums-1; i++){
+		for(int j=i+1; j < nums; j++){
+			cout << "前面的值是:" << values[i] << ",後面的數值是:" << values[j] << endl;
+		}
+	}
 }

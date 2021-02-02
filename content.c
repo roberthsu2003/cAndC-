@@ -2,19 +2,15 @@
 using namespace std;
 
 int main() {
-	const int nums = 5;
-	int scores[nums];
-	int sum = 0;
-	float ave;
+	unsigned int nums;
+	cout << "請輸入數值數量:";
+	cin >> nums;
+
+	int values[nums];
 
 	for(int i=0; i<nums; i++){
-		cout << "請輸入第" << i+1 << "位學生的成績:";
-		cin >> scores[i];
+		cout << "請輸入第" << i+1 << "數值:";
+		cin >> values[i];
 	}
-
-	for(int i=0; i<nums; i++){
-		sum += scores[i];
-	}
-	ave = (float)sum / nums;
-	cout << "全班總成績為:" << sum << "分,平均為" << ave << endl;
+	cout << "程式結束";
 }

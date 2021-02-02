@@ -2,28 +2,10 @@
 using namespace std;
 
 int main() {
-	unsigned int nums;
-	int max;
-	cout << "請輸入數值數量:";
-	cin >> nums;
-
-	int values[nums];
-
-	for(int i=0; i<nums; i++){
-		cout << "請輸入第" << i+1 << "數值:";
-		cin >> values[i];
-	}
-	cout << "陣列內的值有";
-	for(int i=0; i< nums; i++){
-		cout << values[i] << " - ";
-	}
-	max = values[0];
-
-	for(int i=1; i<nums; i++){
-		max = max >= values[i] ? max: values[i];
-	}
-
-	cout << "最大值是:" << max << endl;
-
-
+	int n[] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21};
+	int totalSize = sizeof(n);
+	int oneSize = sizeof(n[0]);
+	int counts = totalSize / oneSize;
+	cout << "陣列的大小為:" << totalSize << ",一個元素的大小是" << oneSize << ",陣列的數量是" << counts;
+	return 0;
 }

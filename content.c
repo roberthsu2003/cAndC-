@@ -1,8 +1,15 @@
 #include <iostream>
 using namespace std;
 int main() {
-	const int nums = 4;
-	int values[nums] = {43, 21, 54, 17};
+	int nums;
+	cout << "請輸入要排序的數值個數:";
+	cin >> nums;
+	int values[nums];
+
+	for(int i=0; i<nums; i++){
+		cout << "請輸入第" << i+1 << "個數值:";
+		cin >> values[i];
+	}
 
 	cout << "排序前:\n";
 	for(int i=0; i<nums; i++){

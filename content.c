@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void ltoGenerator(){
+void ltoGenerator(int n){
 	int num = 7;
 	int lot[49];
 	int choose[num];
@@ -13,7 +13,7 @@ void ltoGenerator(){
 	for(int i=0; i<49; i++){
 		lot[i] = i+1;
 	}
-	srand(time(NULL));
+	srand(time(NULL)+n);
 	for(int i=0; i<num; i++){
 		int randIndex = rand() % (maxIndex+1);
 		choose[i] = lot[randIndex];
@@ -21,18 +21,20 @@ void ltoGenerator(){
 		maxIndex--;
 	}
 	
-	cout << "本期大樂透電腦選號號碼如下:\n\n";
+	
 	
 	for(int i=0; i<num-1; i++){
 		cout << choose[i] << " ";
 	}
 
-	cout << "\n\n特別號:" << choose[num-1] << "\n\n";
+	cout << "\n特別號:" << choose[num-1] << "\n\n";
 }
 
 
-int main() {	
-	ltoGenerator();
-	ltoGenerator();
+int main() {
+	cout << "本期大樂透電腦選號號碼如下:\n\n";	
+	ltoGenerator(1);
+	ltoGenerator(2);
+	ltoGenerator(3);
 	return 0;	
 }

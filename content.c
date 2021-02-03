@@ -2,31 +2,10 @@
 using namespace std;
 
 int main() {
-	//c 語言的字元陣列
-	char str[] = {'D','e','v', 'C', '+', '+', '\0'};
-	cout << "str字元陣列:" << str << endl;
-	char str1[] = "DevC++";	
-	cout << "str1字元陣列:" << str1 << endl;
-
-	const char *str2 = "DevC++";
-	cout << "str2字元陣列:" << str2 << endl;
-
-	//c++ 語言string
-	string str3 = "DevC++";
-	cout << "str3字串:" << str3 << endl;
-
-
-	//c 語言的字元陣列可以修改內容
-	str1[3] = 'G';
-	cout << "str1字元陣列:" << str1 << endl;
-
-	//c 語言的字元陣列無法更換整串內容
-	//str1 = "VirtualC++";
-
-	str2 = "VirtualC++";
-	cout << "str2字元陣列:" << str2 << endl;
-
-	str3 = "VirtualC++";
-	cout << "str3字串:" << str3 << endl;
-
+	int scores[2][3] = {{85, 82, 90},{76, 95, 89}};
+	for(int i=0; i<2; i++){
+		for(int j=0; j<3; j++){
+			cout << "第" << i+1 << "位學生第" << j+1 << "科成績:" << scores[i][j] << endl;
+		}
+	}
 }

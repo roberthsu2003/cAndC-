@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main() {
-  std::cout << "Hello World!\n";
+using namespace std;
+
+int main() {	
+	srand(time(NULL));
+	cout << (rand() % 50) + 1 << endl;
 }

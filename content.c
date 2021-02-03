@@ -1,38 +1,17 @@
 #include <iostream>
 using namespace std;
+
 int main() {
-	int nums;
-	cout << "請輸入要排序的數值個數:";
-	cin >> nums;
-	int values[nums];
+	//c 語言的字元陣列
+	char str[] = {'D','e','v', 'C', '+', '+', '\0'};
+	cout << "str字元陣列:" << str << endl;
+	char str1[] = "DevC++";
+	cout << "str1字元陣列:" << str1 << endl;
+	const char *str2 = "DevC++";
+	cout << "str2字元陣列:" << str2 << endl;
 
-	for(int i=0; i<nums; i++){
-		cout << "請輸入第" << i+1 << "個數值:";
-		cin >> values[i];
-	}
+	//c++ 語言string
+	string str3 = "DevC++";
+	cout << "str3字串:" << str3 << endl;
 
-	cout << "排序前:\n";
-	for(int i=0; i<nums; i++){
-		cout << values[i] << " ";
-	}
-	cout << endl;
-
-
-	for(int i=0; i < nums-1; i++){
-		for(int j=i+1; j < nums; j++){
-			//cout << "前面的值是:" << values[i] << ",後面的數值是:" << values[j] << endl;
-
-			if(values[i] > values[j]){
-				int temp = values[i];
-				values[i] = values[j];
-				values[j] = temp;
-			}
-		}
-	}
-
-	cout << "排序後:\n";
-	for(int i=0; i<nums; i++){
-		cout << values[i] << " ";
-	}
-	cout << endl;
 }

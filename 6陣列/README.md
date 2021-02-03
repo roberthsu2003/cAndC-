@@ -609,29 +609,30 @@ int main() {
 using namespace std;
 
 int main() {
-	int lot[49];
-	int choose[8];
 	int num = 7;
+	int lot[49];
+	int choose[num];
 	int maxIndex = 48;
 
-	for(int i=0;i<49;i++){
-		lot[i] = i+1;		
+	for(int i=0; i<49; i++){
+		lot[i] = i+1;
 	}
 	srand(time(NULL));
-	for(int i=0;i<num;i++){
-		int randIndex = rand()%(maxIndex+1);
+	for(int i=0; i<num; i++){
+		int randIndex = rand() % (maxIndex+1);
 		choose[i] = lot[randIndex];
 		lot[randIndex] = lot[maxIndex];
 		maxIndex--;
 	}
-
+	
 	cout << "本期大樂透電腦選號號碼如下:\n\n";
-	for(int i=0; i<num; i++){
+	
+	for(int i=0; i<num-1; i++){
 		cout << choose[i] << " ";
 	}
-	cout << "\n\n特別號" << choose[6] << "\n\n";
 
-
+	cout << "\n\n特別號:" << choose[num-1] << "\n\n";
+	
 }
 ```
 
@@ -683,3 +684,4 @@ int ages[] = {56, 45, 51, 48, 35, 57};
 35     45     48      51     56     57
 ```
 [解題](https://repl.it/@roberthsu2003/ageSorted)
+

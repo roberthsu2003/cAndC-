@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int main() {
+void ltoGenerator(){
 	int num = 7;
 	int lot[49];
 	int choose[num];
@@ -28,5 +28,11 @@ int main() {
 	}
 
 	cout << "\n\n特別號:" << choose[num-1] << "\n\n";
-	
+}
+
+
+int main() {	
+	ltoGenerator();
+	ltoGenerator();
+	return 0;	
 }

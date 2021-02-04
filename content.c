@@ -1,24 +1,14 @@
 #include <iostream>
-#include "tools.h"
-
 using namespace std;
 
 int main() {
-	int speed;
-	cout << "請輸入初始速度:";
-	cin >> speed;
-	speed = turbo(speed);
-	cout << "加速後的速度:" << speed << endl;
-	return 0;	
-}
-
-
-tools.h
-#include <iostream>
-using namespace std;
-
-int turbo(int);
-int turbo(int speed){
-	speed += 10;
-	return speed;
+	int n = 10;
+	double m = 5;
+	cout << "變數n的值:" << n << endl;
+	cout << "變數m的值:" << m << endl;
+	cout << "變數n的記憶體位址:" << &n << endl;
+	cout << "變數m的記憶體位址:" << &m << endl;
+	cout << "變數n的記憶體=" << sizeof(n) << "Bytes" << endl;
+	cout << "變數m的記憶體=" << sizeof(m) << "Bytes" << endl;
+	
 }

@@ -184,7 +184,7 @@ int main() {
 ```c++
 //============================================================================
 // Name        : swap.cpp
-//t
+//
 #include <iostream>
 using namespace std;
 void swap(int*, int*);

@@ -250,21 +250,21 @@ void turbo(int& speed){
 
 #include <iostream>
 using namespace std;
-int turbo(int);
+void turbo(int*);
 
 int main() {
 	int currentSpeed;
 	cout << "請輸入初始速度:";
 	cin >> currentSpeed;
-	currentSpeed = turbo(currentSpeed);
+	currentSpeed = turbo(&currentSpeed);
 	cout << "加速後的速度:" << currentSpeed << endl;
 	return 0;
 }
 
 //call by value
-int turbo(int passSpeed){
-	cout << "加速之前的速度是" << passSpeed << endl;
-	return passSpeed += 10;
+void turbo(int *passSpeed){
+	cout << "加速之前的速度是" << *passSpeed << endl;
+   *passSpeed += 10;
 }
 ```
 	

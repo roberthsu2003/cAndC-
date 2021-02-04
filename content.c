@@ -1,18 +1,8 @@
 #include <iostream>
 using namespace std;
-
-void swap(int*, int*);
-
 int main() {
-	int a = 666, b= 888;
-	cout << "a=" << a << ",b=" << b << endl;
-	swap(&a, &b);
-	cout << "a=" << a << ",b=" << b << endl;
-
-}
-
-void swap(int* n, int* m){
-	int temp = *n;
-	*n = *m;
-	*m = temp;
+	int array[] = {1,2,3};
+	cout << array[1] << endl;
+	cout << array+1 << endl;
+	cout << *(array+1) << endl;
 }

@@ -1,5 +1,4 @@
-#include <iostream>
-#include "tools.h"
+"
 #include <iostream>
 #include "tools.h"
 using namespace std;

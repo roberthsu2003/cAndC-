@@ -1,4 +1,3 @@
-"
 #include <iostream>
 #include "tools.h"
 using namespace std;
@@ -14,7 +13,9 @@ int main() {
 	}
 }
 
-tools
+
+
+tools.h
 
 #include <iostream>
 using namespace std;

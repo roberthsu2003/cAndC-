@@ -1,23 +1,29 @@
 #include <iostream>
 using namespace std;
 
+void showAry(int*);
+void sub2(int[]);
+
 int main() {
 	int ary[] = {1, 2, 3};
-	const char *name = "robert";
+	cout << "以指標變數當參數:"  << endl;
+	showAry(ary);
+	cout << "以陣列變數當作參數:" << endl;
+	sub2(ary);
+	showAry(ary);
+	return 0;
+}
 
+void showAry(int *tempAry){
 	for(int i=0; i<3; i++){
-		cout << ary[i] << endl;
+		cout << "ary[" << i << "]=" << tempAry[i] << "\t";
 	}
 
-	for(int i=0; i<6; i++){
-		cout << *(name+i) << endl;
-	}
+	cout << "\n---------------------------" << endl;
+}
 
+void sub2(int tempAry[]){
 	for(int i=0; i<3; i++){
-		cout << *(ary+i) << endl;
-	}
-
-	for(int i=0; i<6; i++){
-		cout << name[i] << endl;
+		*(tempAry+i) *= 2;
 	}
 }

@@ -1,18 +1,19 @@
 #include <iostream>
 #include "tools.h"
+#include <iostream>
+#include "tools.h"
 using namespace std;
 
 
 int main() {
-	student john = {"張三", 78.0, 95, 84};	
-	student alice = {"李四", 81, 83, 85};
+	student students[2] = {{"張三", 57, 97, 76},{"李四", 87, 65,82}};
+	cout << "姓名\t國文\t英文\t數學\t" << endl;
 	
-
-	cout << john.name << "總分是:" << sum(john) <<",平均是" << average(john) << endl;
-
-	cout << alice.name << "總分是:" << sum(alice) <<",平均是" << average(alice) << endl;
+	for(int i=0;i<2;i++){
+		student s = students[i];
+		cout << s.name << "\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << endl;
+	}
 }
-
 
 tools
 

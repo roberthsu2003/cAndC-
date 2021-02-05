@@ -4,12 +4,16 @@ using namespace std;
 
 
 int main() {
-	student students[2] = {{"張三", 57, 97, 76},{"李四", 87, 65,82}};
-	cout << "姓名\t國文\t英文\t數學\t" << endl;
-	
-	for(int i=0;i<2;i++){
+	int studentCount = 10;
+	student students[studentCount];
+	for(int i=0; i<studentCount; i++){
+		students[i] = {"張三", 67, 87, 95};
+	}
+	cout << "姓名\t國文\t英文\t數學\t總分\t平均" << endl;
+
+	for(int i=0;i<studentCount;i++){
 		student s = students[i];
-		cout << s.name << "\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << endl;
+		cout << s.name << "\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << "\t\t" << sum(s) << "\t\t" << average(s) << endl;
 	}
 }
 

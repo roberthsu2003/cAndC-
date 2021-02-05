@@ -7,7 +7,7 @@ int main() {
 	int studentCount = 10;
 	student students[studentCount];
 	for(int i=0; i<studentCount; i++){
-		students[i] = {"張三", 67, 87, 95};
+		students[i] = createStudent();
 	}
 	cout << "姓名\t國文\t英文\t數學\t總分\t平均" << endl;
 
@@ -16,7 +16,6 @@ int main() {
 		cout << s.name << "\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << "\t\t" << sum(s) << "\t\t" << average(s) << endl;
 	}
 }
-
 
 
 tools.h
@@ -30,6 +29,15 @@ typedef struct student{
 	float english;
 	float math;
 } student;
+
+student createStudent(){
+	student s;
+	s.name = "張三";
+	s.chinese = 98;
+	s.english = 74;
+	s.math = 58;
+	return s;
+}
 
 float sum(student s){
 	return s.chinese + s.english + s.math;

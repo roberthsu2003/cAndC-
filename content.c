@@ -1,4 +1,22 @@
 #include <iostream>
+#include "tools.h"
+using namespace std;
+
+
+int main() {
+	struct student john = {"張三", 78.0, 95, 84};	
+	struct student alice = {"李四", 81, 83, 85};
+	
+
+	cout << john.name << "總分是:" << sum(john) <<",平均是" << average(john) << endl;
+
+	cout << alice.name << "總分是:" << sum(alice) <<",平均是" << average(alice) << endl;
+}
+
+
+tools
+
+#include <iostream>
 using namespace std;
 
 struct student{
@@ -8,20 +26,11 @@ struct student{
 	float math;
 };
 
-int main() {
-	struct student john;
-	john.name = "張三";
-	john.chinese = 78.0;
-	john.english = 95;
-	john.math = 84;
+float sum(struct student s){
+	return s.chinese + s.english + s.math;
+}
 
-	struct student alice;
-	alice.name = "李四";
-	alice.chinese = 81;
-	alice.english = 83;
-	alice.math = 85;
-
-	cout << john.name << "總分是:" << john.chinese + john.english + john.math <<",平均是" << (john.chinese + john.english + john.math) / 3 << endl;
-
-	cout << alice.name << "總分是:" << alice.chinese + alice.english + alice.math <<",平均是" << (alice.chinese + alice.english + alice.math) / 3 << endl;
+float average(struct student s){
+	float mySum = sum(s);
+	return mySum / 3.0;
 }

@@ -36,18 +36,22 @@ class Student{
 		float average(){
 			return sum() / 3.0;
 		}
+
+		void description(){
+			cout << "學生姓名:" << name << endl;
+			cout << "學號:" << id << endl;
+			cout << "國文:" << chinese << endl;
+			cout << "英文:" << english << endl;
+			cout << "數學:" << math << endl;
+			cout << "總分:" << sum() << endl;
+			printf("平均:%.2f\n",average());
+			cout << "===================" << endl;
+		}
 };
 
 int main() {
 	for(int i=1; i<=50; i++){
-		Student stu(i);
-		cout << "學生姓名:" << stu.name << endl;
-		cout << "學號:" << stu.id << endl;
-		cout << "國文:" << stu.chinese << endl;
-		cout << "英文:" << stu.english << endl;
-		cout << "數學:" << stu.math << endl;
-		cout << "總分:" << stu.sum() << endl;
-		printf("平均:%.2f\n",stu.average());
-		cout << "===================" << endl;
+		Student stu(i);	
+		stu.description();
 	}	
 }

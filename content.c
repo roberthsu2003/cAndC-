@@ -4,14 +4,15 @@ using namespace std;
 
 
 int main() {
-	for(int i=1; i<=50; i++){
-		Student stu(i);	
-		stu.description();
-	}	
+	int num = 50;
+	Student students[50];
 }
 
 
 Student.h
+#ifndef __STUDENT__
+#define __STUDENT__
+
 #include <iostream>
 using namespace std;
 
@@ -22,6 +23,8 @@ class Student{
 		int chinese;
 		int english;
 		int math;
+
+		Student()
 
 		Student(string i, string n, int chin, int eng, int ma);
 
@@ -34,6 +37,7 @@ class Student{
 		void description();
 };
 
+#endif
 
 Student.cpp
 #include "Student.h"
@@ -42,6 +46,14 @@ Student.cpp
 #include <time.h>
 
 using namespace std;
+
+Student::Student(){
+	id = "";
+	name = "";
+	chinese = 0;
+	english = 0;
+	math = 0;
+}
 
 Student::Student(string i, string n, int chin, int eng, int ma){
 			id = i;

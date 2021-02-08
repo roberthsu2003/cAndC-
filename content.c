@@ -6,6 +6,11 @@ using namespace std;
 int main() {
 	int num = 50;
 	Student students[50];
+
+	for(int i=0; i<num; i++){
+		students[i] = Student(i+1);
+	}
+	students[0].description();
 }
 
 

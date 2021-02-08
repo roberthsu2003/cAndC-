@@ -11,5 +11,13 @@ class Person{
 };
 
 int main() {
+	Person david;
+	david.tall = 180;
+	david.name = "大衛";
+	david.walk(20);
 
+	Person robert;
+	robert.name = "羅伯";
+	robert.tall = 170;
+	robert.walk(25);
 }

@@ -39,23 +39,15 @@ class Student{
 };
 
 int main() {
-	Student stu1(1);
-	cout << "學生姓名:" << stu1.name << endl;
-	cout << "學號:" << stu1.id << endl;
-	cout << "國文:" << stu1.chinese << endl;
-	cout << "英文:" << stu1.english << endl;
-	cout << "數學:" << stu1.math << endl;
-	cout << "總分:" << stu1.sum() << endl;
-	cout << "平均:" << stu1.average() << endl;
-
-	cout << "===================" << endl;
-
-	Student stu2(2);
-	cout << "學生姓名:" << stu2.name << endl;
-	cout << "學號:" << stu2.id << endl;
-	cout << "國文:" << stu2.chinese << endl;
-	cout << "英文:" << stu2.english << endl;
-	cout << "數學:" << stu2.math << endl;
-	cout << "總分:" << stu2.sum() << endl;
-	cout << "平均:" << stu2.average() << endl;
+	for(int i=1; i<=50; i++){
+		Student stu(i);
+		cout << "學生姓名:" << stu.name << endl;
+		cout << "學號:" << stu.id << endl;
+		cout << "國文:" << stu.chinese << endl;
+		cout << "英文:" << stu.english << endl;
+		cout << "數學:" << stu.math << endl;
+		cout << "總分:" << stu.sum() << endl;
+		printf("平均:%.2f\n",stu.average());
+		cout << "===================" << endl;
+	}	
 }

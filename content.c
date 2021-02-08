@@ -24,7 +24,7 @@ class Student{
 		int english;
 		int math;
 
-		Student()
+		Student();
 
 		Student(string i, string n, int chin, int eng, int ma);
 

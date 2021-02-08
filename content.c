@@ -1,4 +1,7 @@
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
+
 using namespace std;
 
 class Student{
@@ -8,6 +11,23 @@ class Student{
 		int chinese;
 		int english;
 		int math;
+
+		Student(string i, string n, int chin, int eng, int ma){
+			id = i;
+			name = n;
+			chinese = chin;
+			english = eng;
+			math = ma;
+		}
+
+		Student(int i){
+			srand(time(NULL) + i);
+			id = "A100000" + to_string(i);
+			name = "student" + to_string(i);
+			chinese = random() %  51 + 50;
+			english = random() %  51 + 50;
+			math = random() %  51 + 50;
+		}
 		
 		int sum(){
 			return chinese + english + math;
@@ -19,13 +39,7 @@ class Student{
 };
 
 int main() {
-	Student stu1;
-	stu1.id = "A1016554";
-	stu1.name = "國堂";
-	stu1.chinese = 78;
-	stu1.english = 98;
-	stu1.math = 76;
-
+	Student stu1(1);
 	cout << "學生姓名:" << stu1.name << endl;
 	cout << "學號:" << stu1.id << endl;
 	cout << "國文:" << stu1.chinese << endl;
@@ -36,13 +50,7 @@ int main() {
 
 	cout << "===================" << endl;
 
-	Student stu2;
-	stu2.id = "A1016666";
-	stu2.name = "瑞影";
-	stu2.chinese = 85;
-	stu2.english = 90;
-	stu2.math = 66;
-
+	Student stu2(2);
 	cout << "學生姓名:" << stu2.name << endl;
 	cout << "學號:" << stu2.id << endl;
 	cout << "國文:" << stu2.chinese << endl;

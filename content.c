@@ -10,7 +10,13 @@ int main() {
 	for(int i=0; i<num; i++){
 		students[i] = Student(i+1);
 	}
-	students[0].description();
+	
+	cout << "學生姓名\t" << "學號\t\t" << "國文\t" << "英文\t" << "數學\t" << "總分\t" << "平均" << endl;
+
+	for(int i=0; i<num; i++){
+		cout << students[i].name << "\t" << students[i].id << "\t" << students[i].chinese << "\t\t" << students[i].english << "\t\t" << students[i].math << "\t\t" << students[i].sum() << "\t\t";
+		printf("%.2f\n", students[i].average());
+	}
 }
 
 

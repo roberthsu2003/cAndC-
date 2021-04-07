@@ -1,11 +1,20 @@
-#include <stdio.h> //使用c語言的輸入輸出工具
-#include <iostream> //使用c++輸入輸出
-
+#include <iostream>
 using namespace std;
 
 int main() {
-  printf("Hello! Robert\n"); // c的輸出
+	int chinese;
+	int english;
+	int math;
 
-  cout << "Hello! Susan\n";  // c++
+	cout << "請輸入國文分數:";
+	cin >> chinese;
 
+	cout << "請輸入英文分數:";
+	cin >> english;
+
+	cout << "請輸入數學分數:";
+	cin >> math;
+
+	cout << "學生總分為:" << chinese + english + math;
+  	return 0;
 }

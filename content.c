@@ -1,6 +1,11 @@
-#include <stdio.h>
+#include <iostream>
 
-int main(void) {
-  printf("Hello 徐國堂\n");
-  return 0;
+using namespace std;
+
+int main() {
+	int englishScore = 60;
+	cout << "請輸入您的英文分數:";
+	cin >> englishScore;
+	cout << "Hello! 您的英文分數是:" << englishScore;
+	return 0;
 }

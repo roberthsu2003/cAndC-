@@ -1,14 +1,12 @@
 #include <iostream>
+#include <stdio.h>
 using namespace std;
 
 int main() {
-	//c++ 型別
-	string str1 = "這是字串1";
+	double PI = 3.1415987;
+	int radius = 9;
+	
+	cout << "圓面積=" << PI * radius * radius << endl;
+	printf("圓面積=%.2f\n半徑是=%d\n", PI * radius * radius, radius);
 
-	//c語言
-	const char* str2 = "這是c語言的字元陣列";
-
-	cout << "str1:" << str1 << "\n"; 
-	cout << "str2:" << str2 << "\n";
-	return 0;
 }

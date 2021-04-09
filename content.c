@@ -2,11 +2,13 @@
 using namespace std;
 
 int main() {
-	char characterA;
-	characterA = 'A';
-	cout << characterA << "\n";
+	//c++ 型別
+	string str1 = "這是字串1";
 
-	char characterB;
-	characterB = 65;
-	cout << characterB << "\n";
+	//c語言
+	const char* str2 = "這是c語言的字元陣列";
+
+	cout << "str1:" << str1 << "\n"; 
+	cout << "str2:" << str2 << "\n";
+	return 0;
 }

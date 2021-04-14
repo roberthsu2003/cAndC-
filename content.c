@@ -6,7 +6,10 @@ int main() {
 	do{
 		cout << "請輸入密碼:";
 		cin >> password;
-	}while(password != "1234");	
+		if(password == "1234"){
+			break;
+		}
+	}while(true);	
 
 	cout << "恭喜!你的密碼正確了!請進";
 }

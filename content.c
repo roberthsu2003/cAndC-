@@ -21,6 +21,9 @@ int main() {
 
 
 tools.h
+#include <iostream>
+using namespace std;
+
 void sayHello(){
 	cout << "歡迎光臨!" << endl;
 }

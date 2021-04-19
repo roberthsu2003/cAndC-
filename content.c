@@ -1,12 +1,16 @@
 #include <iostream>
+#include "tools.h"
+
 using namespace std;
 
-int main() {
+
+
+int main() { 
 	int nums,temp;
 	cout << "請輸入要排序的數值個數:";
 	cin >> nums;
 
-	float array[nums];
+	int array[nums];
 	for(int i=0; i < nums; i++){
 		cout << "請輸入第" << i+1 << "個數值:";
 		cin >> array[i];
@@ -16,20 +20,47 @@ int main() {
 	for(int i=0; i < nums; i++){
 		cout << array[i] << " ";
 	}
+		
+	//smallToBig(array,nums);
+	bigToSmall(array,nums);
 
-	//陣列排序
-	for(int i=0; i<nums-1; i++){
-		for(int j=i+1; j < nums; j++){
-			if (array[i] > array[j]){
-				temp = array[i];
-				array[i] = array[j];
-				array[j] = temp;
-			}
-		}
-	}
 	cout << "\n";
 	cout << "排序後:\n";
 	for(int i=0; i < nums; i++){
 		cout << array[i] << " ";
+	}
+
+	
+}
+
+
+
+
+tools.h
+#include <iostream>
+
+void smallToBig(int arr[],int nums){
+	int temp;
+	for(int i=0; i<nums-1; i++){
+		for(int j=i+1; j < nums; j++){
+			if (arr[i] > arr[j]){
+				temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
+}
+
+void bigToSmall(int arr[],int nums){
+	int temp;
+	for(int i=0; i<nums-1; i++){
+		for(int j=i+1; j < nums; j++){
+			if (arr[i] < arr[j]){
+				temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
 	}
 }

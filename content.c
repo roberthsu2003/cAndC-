@@ -1,66 +1,31 @@
 #include <iostream>
-#include "tools.h"
-
+#include <stdlib.h>
+#include <time.h>
 using namespace std;
 
+int main() {
+	int num = 7;
+	int lot[49];
+	int choose[num];
+	int maxIndex = 48;
 
-
-int main() { 
-	int nums,temp;
-	cout << "請輸入要排序的數值個數:";
-	cin >> nums;
-
-	int array[nums];
-	for(int i=0; i < nums; i++){
-		cout << "請輸入第" << i+1 << "個數值:";
-		cin >> array[i];
+	for(int i=0; i<=maxIndex; i++){
+		lot[i] = i+1;
 	}
 
-	cout << "排序前:\n";
-	for(int i=0; i < nums; i++){
-		cout << array[i] << " ";
-	}
-		
-	//smallToBig(array,nums);
-	bigToSmall(array,nums);
+	srand(time(NULL));
 
-	cout << "\n";
-	cout << "排序後:\n";
-	for(int i=0; i < nums; i++){
-		cout << array[i] << " ";
+	for(int i=0; i<num; i++){
+		int randIndex = rand() % (maxIndex+1);
+		choose[i] = lot[randIndex];
+		lot[randIndex] = lot[maxIndex];
+		maxIndex--;
 	}
 
-	
-}
+	cout << "本期大樂透電腦選號號碼如下:\n\n";
 
-
-
-
-tools.h
-#include <iostream>
-
-void smallToBig(int arr[],int nums){
-	int temp;
-	for(int i=0; i<nums-1; i++){
-		for(int j=i+1; j < nums; j++){
-			if (arr[i] > arr[j]){
-				temp = arr[i];
-				arr[i] = arr[j];
-				arr[j] = temp;
-			}
-		}
+	for(int i=0; i<num-1; i++){
+		cout << choose[i] << " ";
 	}
-}
-
-void bigToSmall(int arr[],int nums){
-	int temp;
-	for(int i=0; i<nums-1; i++){
-		for(int j=i+1; j < nums; j++){
-			if (arr[i] < arr[j]){
-				temp = arr[i];
-				arr[i] = arr[j];
-				arr[j] = temp;
-			}
-		}
-	}
+	cout << "\n\n特別號:" << choose[num-1] << "\n\n";
 }

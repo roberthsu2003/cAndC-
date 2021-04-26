@@ -3,8 +3,8 @@
 using namespace std;
 
 int randomScore(){
-	return rand();
-}
+	return rand() % 51 + 50;
+} 
 
 int main() {
 	srand(time(NULL));

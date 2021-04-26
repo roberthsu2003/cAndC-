@@ -1,10 +1,9 @@
 #include <iostream>
 
 int main() {
-	//c語言的輸出
-	int scores = 78;
-	printf("學生的分數是%d\n",scores);
-
-	//c++輸出
-	std::cout << "學生的分數是" << scores << "\n";
+	//c++的字串型別
+	std::string str1 = "DevC++";
+	std::cout << "str1=" << str1 << std::endl;
+	str1 = "Java";
+	std::cout << "str1=" << str1 << std::endl;
 }

@@ -3,14 +3,17 @@
 using namespace std;
 
 int randomScore(){
-	return rand() % 51 + 50;
+	return rand() % 41 + 60;
 } 
 
 int main() {
 	srand(time(NULL));
-	int scores[] = {randomScore(),randomScore(),randomScore(),randomScore(),randomScore()};
-	for(int i=0;i<5;i++){
-		cout << scores[i] << " ";
+	int students[50][5];
+	for(int i=0; i<50; i++){
+		for(int j=0; j<5; j++){
+			students[i][j] = randomScore();
+			cout << students[i][j] << " ";
+		}
+		cout << endl;
 	}
-	cout << endl;
 }

@@ -524,6 +524,31 @@ int main() {
 ### 二維陣列
 
 ```c++
+//50學生
+//5個分數
+
+#include <iostream>
+#include <time.h>
+using namespace std;
+
+int randomScore(){
+	return rand() % 41 + 60;
+} 
+
+int main() {
+	srand(time(NULL));
+	int students[50][5];
+	for(int i=0; i<50; i++){
+		for(int j=0; j<5; j++){
+			students[i][j] = randomScore();
+			cout << students[i][j] << " ";
+		}
+		cout << endl;
+	}
+}
+```
+
+```c++
 //============================================================================
 // Name        : vote.cpp
 //設計一個投票統計表，包含計算各四位歌手3個地區投票數及總得票數，最後顯示得票數和得票率(計算至小數2位)

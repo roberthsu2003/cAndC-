@@ -1,20 +1,23 @@
 #include <iostream>
 using namespace std;
+//多載(overloading)
+int area(int a){
+	return a * a;
+}
 
-int factorial(int n){
-	int total = 1;
-	for(int i=2; i<=n; i++){
-		total *= i;
-	}
-	return total;	
+int area(int a, int b){
+	return a * b;
 }
 
 int main() {
-  int n;
-  long long int total;
-  cout << "請輸入數字n:";
-  cin >> n;
-  total = factorial(n);
-  printf("%d! = %lld\n",n,total);
-  return 0;
+	int side1;
+	int side2;
+	int side3;
+	cout << "請輸入正方形的邊:";
+	cin >> side1;
+	cout << "正方形的面積是:" << area(side1) << endl;
+	cout << "請輸入長方形的2邊(x,y):";
+	scanf("%d,%d",&side2,&side3);
+	cout << "矩形面積是=" << area(side2, side3) << endl; 
+	return 0;
 }

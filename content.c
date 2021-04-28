@@ -1,23 +1,16 @@
 #include <iostream>
 using namespace std;
-//n是全域變數
-int n;
-
-void showNum(){
-	int value = n;
-	cout << "========================" << endl;
-	for(int n=value; n>=1; n--){
-		//n是區域變數
-		cout << "區域變數 n=" << n << endl;
-	}
-	cout << "========================" << endl;
-	cout << "結速for 迴圈後全域變數n=" << n << endl;
-
-}
+//&變數,使用取址運算子
 
 int main() {
-	cout << "請輸入全域變數n=";
-	cin >> n;
-	showNum();
+	int n = 10;
+	double m = 5;
+	cout << "變數m的值=" << m << endl;
+	cout << "變數n的值=" << n << endl;
+	cout << "變數m的記憶體位址=" << &m << endl;
+	cout << "變數n的記憶體位址=" << &n << endl;
+	//sizeof()
+	cout << "變數m的記憶體=" << sizeof(m) << "Bytes" << endl;
+	cout << "變數n的記憶體=" << sizeof(n) << "Bytes" << endl;
 	return 0;
 }

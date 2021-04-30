@@ -1,8 +1,12 @@
 #include <iostream>
 using namespace std;
 
-int add(int s[]){
-	return s[0] + s[1] + s[2] + s[3] + s[4];
+int add(int *address){
+	int total=0;
+	for(int i=0; i<5; i++){
+		total += *(address+i);
+	}
+	return total;
 }
 
 int main() {

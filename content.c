@@ -1,16 +1,9 @@
 #include <iostream>
 using namespace std;
 
-void swap(int *n, int *m){
-	int temp = *n;
-	*n = *m;
-	*m = temp;
-}
-
 int main() {
-	int a=666, b=777;
-	cout << "a=" << a << ",b=" << b << endl;
-	swap(&a, &b);
-	cout << "a=" << a << ",b=" << b << endl;
-	return 0;
+	int array[] = {1,2,3,4,5};
+	cout << "取出array第一個值:" << array[0] << endl;
+	cout << "取出array第一個值的記憶體位址" << array + 0 << endl;
+	cout << "做用指標變數操作法取出第一個的值" << *(array+0) << endl;
 }

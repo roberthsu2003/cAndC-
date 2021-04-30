@@ -1,10 +1,17 @@
 #include <iostream>
 using namespace std;
+//callByValue
+
+int turbo(int mySpeed){
+	cout << "加速前的速度:" << mySpeed << endl;
+	mySpeed += 10;
+	return mySpeed;
+}
 
 int main() {
-	int x = 10;
-	int *p = &x;
-	cout << "一般變數x=" << x << endl;
-	cout << "指標變數p=" << p << endl;
-	cout << "*p=" << *p << endl;
+	int speed;
+	cout << "請輸入初始速度:";
+	cin >> speed;
+	speed = turbo(speed);
+	cout << "加速後的速度:" << speed << endl;
 }

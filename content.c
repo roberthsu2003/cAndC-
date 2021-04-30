@@ -2,12 +2,9 @@
 using namespace std;
 
 int main() {
-	int n[3] = {1, 2, 3};
-	cout << "陣列n的位址=" << n << endl;
-	cout << "陣列n[0]的位址=" << &n[0] << endl;
-	cout << "陣列n[1]的位址=" << &n[1] << endl;
-	cout << "陣列n[2]的位址=" << &n[2] << endl;
-	cout << "陣列n[0]的位址=" << n+0 << endl;
-	cout << "陣列n[1]的位址=" << n+1 << endl;
-	cout << "陣列n[2]的位址=" << n+2 << endl;
+	int x = 10;
+	int *p = &x;
+	cout << "一般變數x=" << x << endl;
+	cout << "指標變數p=" << p << endl;
+	cout << "*p=" << *p << endl;
 }

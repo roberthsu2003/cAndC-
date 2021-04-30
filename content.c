@@ -1,19 +1,12 @@
 #include <iostream>
 using namespace std;
+
+int add(int s[]){
+	return s[0] + s[1] + s[2] + s[3] + s[4];
+}
+
 int main() {
-	char str1[] = "two";
-	cout << str1 << endl;
-	//陣列變數無法換新的內容
-	//str1 = "three";
-
-	const char *str2 = "two";
-	cout << str2 << endl;
-	str2 = "three";
-	cout << str2 << endl;
-	//指標變數可以更換的內容
-	//str1 = "three";
-
-	string str3 = "two";
-	str3 = "thress";
-	cout << str3 << endl;
+	int scores[] = {67, 85, 74, 92, 72};
+	int total = add(scores);
+	cout << "總分為" << total << endl;
 }

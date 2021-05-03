@@ -1,22 +1,16 @@
 #include <iostream>
 using namespace std;
-//定義結構
-typedef struct student{
-	int id;
-	const char *name;
-	int chinese,math,english;
-} Student;
+
+typedef struct Rectangle{
+	int width;
+	int height;
+} Rectangle;
 
 int main() {
-	//建立結構變數
-	Student david = {990011, "robert", 75, 86, 90};
-
-	
-	//取出結構變數的值
-	cout << "id=" << david.id << endl;
-	cout << "name=" << david.name << endl;
-	cout << "chinese=" << david.chinese << endl;
-	cout << "math=" << david.math << endl;
-	cout << "english=" << david.english << endl;
-
+	Rectangle five[] = {{20,20},{30,30},{40,40},{50,50},{60,60}};
+	for(int i=0; i<5; i++){
+		Rectangle rect = five[i];
+		int area = rect.width * rect.height;
+		cout << "第" << i+1 << "個的矩形面績是" << area << endl;
+	}
 }

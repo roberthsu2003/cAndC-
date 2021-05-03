@@ -26,7 +26,7 @@ struct 結構名稱 結構變數;
 例如:
 struct student david;
 david.id = 99001;
-david.name=”robert;”
+david.name="robert";
 david.chinese = 75;
 david.math = 86;
 david.english = 90;

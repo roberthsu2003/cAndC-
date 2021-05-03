@@ -1,11 +1,28 @@
 #include <iostream>
 using namespace std;
-int main() {
-	int *a = new int(10);
-	int *b = new int(30);
+//定義結構
+struct student{
+	int id;
+	const char *name;
+	int chinese,math,english;
+};
 
-	cout <<  "a=" << a << endl;
-	cout << "b=" << b << endl;
-	int total = *a + *b;
-	cout << "total=" << total << endl;
+int main() {
+	//建立結構變數
+	struct student david;
+
+	//結構變數給值
+	david.id = 990011;
+	david.name = "robert";
+	david.chinese = 75;
+	david.math = 86;
+	david.english = 90;
+
+	//取出結構變數的值
+	cout << "id=" << david.id << endl;
+	cout << "name=" << david.name << endl;
+	cout << "chinese=" << david.chinese << endl;
+	cout << "math=" << david.math << endl;
+	cout << "english=" << david.english << endl;
+
 }

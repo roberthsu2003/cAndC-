@@ -6,13 +6,19 @@ using namespace std;
 
 int main() {
 	srandom(time(NULL));
-	Student s = createStudent(25);
-	cout << "學生姓名:" << s.name << endl;
-	cout << "國文:" << s.chinese << endl;
-	cout << "英文:" << s.english << endl;
-	cout << "數學:" << s.math << endl;
+	Student students[50];
+	for(int i=0; i<50; i++){
+		students[i] = createStudent(i+1);
+	}
+
+	cout << "姓名\t國文\t英文\t數學" << endl;
+	for (int i=0; i<50; i++){
+		Student s = students[i];
+		cout << s.name << "\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << endl;
+	}
 	return 0;
 }
+
 
 
 

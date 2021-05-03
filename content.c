@@ -1,16 +1,24 @@
 #include <iostream>
 using namespace std;
 
-typedef struct Rectangle{
-	int width;
-	int height;
-} Rectangle;
+typedef struct Student{
+	string name;
+	int scores[5];
+} Student;
 
 int main() {
-	Rectangle five[] = {{20,20},{30,30},{40,40},{50,50},{60,60}};
-	for(int i=0; i<5; i++){
-		Rectangle rect = five[i];
-		int area = rect.width * rect.height;
-		cout << "第" << i+1 << "個的矩形面績是" << area << endl;
+	Student stus[3] = {
+		{"robert",{78, 98, 78, 63,83}},
+		{"david",{78, 82, 78, 73,83}},
+		{"alice",{78, 69, 99, 73,73}}
+		};
+	int stuCount = sizeof(stus) / sizeof(stus[0]);
+
+	for(int i=0; i<stuCount; i++){
+		int sum = 0;
+		for(int j=0; j<5; j++){
+			sum += stus[i].scores[j];
+		}
+		cout << "第" << i+1 << "位學生是" << stus[i].name << "總分數是" << sum << endl;
 	}
 }

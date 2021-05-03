@@ -1,24 +1,45 @@
 #include <iostream>
+#include "tools.h"
+#include <time.h>
+
 using namespace std;
 
-typedef struct Student{
+int main() {
+	srandom(time(NULL));
+	Student s = createStudent(25);
+	cout << "學生姓名:" << s.name << endl;
+	cout << "國文:" << s.chinese << endl;
+	cout << "英文:" << s.english << endl;
+	cout << "數學:" << s.math << endl;
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+typedef struct student{
 	string name;
-	int scores[5];
+	int chinese;
+	int english;
+	int math;
 } Student;
 
-int main() {
-	Student stus[3] = {
-		{"robert",{78, 98, 78, 63,83}},
-		{"david",{78, 82, 78, 73,83}},
-		{"alice",{78, 69, 99, 73,73}}
-		};
-	int stuCount = sizeof(stus) / sizeof(stus[0]);
-
-	for(int i=0; i<stuCount; i++){
-		int sum = 0;
-		for(int j=0; j<5; j++){
-			sum += stus[i].scores[j];
-		}
-		cout << "第" << i+1 << "位學生是" << stus[i].name << "總分數是" << sum << endl;
-	}
+Student createStudent(int num){
+	Student s;
+	s.name = "學生" + to_string(num);
+	s.chinese = 50 + random() % 51;
+	s.english = 50 + random() % 51;
+	s.math = 50 + random() % 51;
+	return s;
 }

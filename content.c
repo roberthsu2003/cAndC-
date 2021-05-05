@@ -29,6 +29,9 @@ int main() {
 
 
 
+#ifndef __TOOLS__
+#define __TOOLS__
+
 #include <iostream>
 using namespace std;
 
@@ -56,3 +59,5 @@ float average(student s){
 	int mySum = sum(s);
 	return mySum / 3.0;
 }
+
+#endif

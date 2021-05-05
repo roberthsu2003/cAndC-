@@ -1,29 +1,13 @@
 #include <iostream>
 using namespace std;
 
-typedef enum direction{
-	North,
-	South,
-	East,
-	West
-} direction;
-
-typedef enum Day{
-	saturday = 6,
-	sunday = 0,
-	monday,
-	tuesday,
-	wednesday,
-	thursday,
-	friday
-}Day;
+#define RATE 32.78
 
 int main() {
-	direction dest = East;
-	cout << dest << endl;
-
-
-	Day today = wednesday;
-	cout << today << endl;
+	double us, nt;
+	cout << "請輸入您有多少美金:";
+	cin >> us;
+	nt = us * RATE;
+	cout << "您有" << nt << "台幣" << endl;
 	return 0;
 }

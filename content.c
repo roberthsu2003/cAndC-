@@ -1,23 +1,36 @@
 #include <iostream>
 using namespace std;
 
-class Car{
+class Student{
+	private:
+	int _chinese;
+
 	public:
-	int speed;
-	//自訂的建構式，就是要讓所有欄位一開始就有值
-	Car(){
-		speed = 70;
+	Student(int c){
+		setChinese(c);
 	}
 
-	Car(int s){
-		speed = s;
+	//_chinese的setter
+	void setChinese(int c){
+		if(c > 100){
+			_chinese = 100;
+		}else if(c < 0){
+			_chinese = 0;
+		}else{
+			_chinese = c;
+		}
+
 	}
+
+	//_chinese的getter
+	int getChinese(){
+		return _chinese;
+	}
+
 };
 
-int main() {
-	Car car1;		
-	cout << car1.speed << endl;
 
-	Car car2(60);
-	cout << car2.speed << endl;
+int main() {
+	Student stu1(-10);
+	cout << stu1.getChinese() << endl;
 }

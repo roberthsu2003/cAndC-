@@ -1,18 +1,21 @@
 #include <iostream>
 using namespace std;
+namespace Human{
+	class Person{
+		private:
+		public:
+			//field欄位
+			string name;
+			int tall;
+			//method方法
+			void walk(int var){
+				cout << name << "每小時可以跑多少" << var << "公里" << endl;
+			}
 
-class Person{
-	private:
-	public:
-		//field欄位
-		string name;
-		int tall;
-		//method方法
-		void walk(int var){
-			cout << name << "每小時可以跑多少" << var << "公里" << endl;
-		}
+	};
+}
 
-};
+using namespace Human;
 
 int main() {
 	Person david;

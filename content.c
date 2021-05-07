@@ -33,4 +33,9 @@ class Student{
 int main() {
 	Student stu1(-10);
 	cout << stu1.getChinese() << endl;
+
+	Student *stu2 = new Student(80);
+	cout << stu2->getChinese() << endl;
+	stu2 -> setChinese(100);
+	cout << stu2->getChinese() << endl;
 }

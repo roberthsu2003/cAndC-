@@ -27,6 +27,9 @@ int main() {
 
 
 //sourc.h
+#ifndef __SOURCE__
+#define __SOURCE__
+
 #include <iostream>
 using namespace std;
 namespace Human{
@@ -39,11 +42,16 @@ namespace Human{
 			int weight;
 			//method方法
 			//定義方法原型,告知有這個method,但定義在類別外面
+			//walk會傳出列印時速
 			void walk(int);
+			//bmi是計算bmi
 			float bmi(void);
 	};
 }
+
+#endif
 	
+
 //sourc.cpp
 #include "source.h"
 using namespace Human;

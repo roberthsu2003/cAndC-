@@ -9,15 +9,20 @@ namespace Human{
 			int tall;
 			int weight;
 			//method方法
-			void walk(int var){
+			//定義方法原型,告知有這個method,但定義在類別外面
+			void walk(int);
+			float bmi(void);
+	};
+	
+	//這是Person類別內的方法
+	void Person::walk(int var){
 				cout << name << "每小時可以跑多少" << var << "公里" << endl;
 			}
 
-			float bmi(void){
-				return weight / ((tall/100.0) * (tall/100.0));
-			}
-
-	};
+	//這是Person類別內的方法
+	float Person::bmi(void){
+		return weight / ((tall/100.0) * (tall/100.0));
+	}
 }
 
 using namespace Human;

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
 int main(void) {
-  printf("Hello C語言\n");
+  printf("請輸入您姓名:\n");
   return 0;
 }

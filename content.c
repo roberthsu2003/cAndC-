@@ -1,18 +1,20 @@
 #include <iostream>
-#include <stdio.h>
-
 using namespace std;
-
 int main() {
-	double PI = 3.1415915987;
-	double radius;
-	cout << "請輸入半徑:";
-	cin >> radius;
-	//int area = radius * radius * PI;
-	double area = radius * radius * PI;
-	//c++的輸出
-	cout << "圓面積=" << area << endl;
+	int chinese,english,math,sum;
+	float average;
+	cout << "請輸入國文成績(0~100):";
+	cin >> chinese;
 
-	//c的輸出
-	printf("圓面積=%.2f", area);
+	cout << "請輸入英文成績(0~100):";
+	cin >> english;
+
+	cout << "請輸入數學成績(0~100):";
+	cin >> math;
+
+	sum = chinese + english + math;
+	//average = sum / 3.0; //自動轉換
+	average = (float)sum / 3; //強制轉換
+	cout << "您的總分為:" << sum << "分,平均為" << average << "分\n";
+	return 0;
 }

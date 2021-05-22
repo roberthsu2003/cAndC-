@@ -5,10 +5,14 @@ using namespace std;
 
 int main() {
 	double PI = 3.1415915987;
-	int radius = 9;
+	double radius;
+	cout << "請輸入半徑:";
+	cin >> radius;
+	//int area = radius * radius * PI;
+	double area = radius * radius * PI;
 	//c++的輸出
-	cout << "圓面積=" << radius * radius * PI << endl;
+	cout << "圓面積=" << area << endl;
 
 	//c的輸出
-	printf("圓面積=%.2f",radius * radius * PI);
+	printf("圓面積=%.2f", area);
 }

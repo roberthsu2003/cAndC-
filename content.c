@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stdio.h>
+
 using namespace std;
 int main() {
 	int score1 = 100;
@@ -17,4 +19,15 @@ int main() {
 	cout << "pi1=" << pi1 << endl;
 	cout << "pi2=" << pi2 << endl;
 	cout << "=====================" << endl;
+
+	printf("score1=%d\n",score1);
+	printf("score2=%d\n",score2);
+	printf("score3=%d\n",score3);
+	printf("score4=%d\n",score4);
+	printf("score5=%lld\n",score5);
+	printf("pi1=%f\n",pi1);
+	printf("pi2=%f\n",pi2);
+	printf("pi1=%.3f\n",pi1);
+	printf("pi2=%.1f\n",pi2);
+
 }

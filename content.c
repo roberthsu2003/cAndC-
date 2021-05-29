@@ -2,20 +2,22 @@
 using namespace std;
 
 int main() {
-	int money,payMoney;
-	cout << "請輸入購買金額";
-	cin >> money;
-	if (money>=100000){
-		payMoney=money * 0.8;
-	}else if(money >= 50000){
-		payMoney=money * 0.85;
-	}else if(money >= 30000){
-		payMoney=money * 0.9;
-	}else if(money >= 10000){
-		payMoney=money * 0.95;
-	}else{
-		payMoney=money;
-	}
+ int chinese, math, bonus=0;
+ cout << "請輸入國文成績:";
+ cin >> chinese;
+ cout << "請輸入數學成績:";
+ cin >> math;
+ if(chinese==100){
+	 if(math==100){
+		 bonus = 1000;
+	 }else{
+		bonus = 500; 
+	 }
+ }else{
+	 if (math==100){
+		 bonus = 500;
+	 }
+ }
 
-	cout << "實付金額是:" << payMoney << "元\n";
+ cout << "獎金是" << bonus << endl;
 }

@@ -2,14 +2,18 @@
 using namespace std;
 
 int main() {
-	float num,result;
-	cout << "請輸入任意數:";
-	cin >> num;
-	//使用複合指定運算字
-	result = num;
-	result *= num;
-	cout << "此數的平方是:" << result << "\n";
-	result *= num;
-	cout << "此數的立方是:" << result << "\n";
+	//前置
+	int x = 1;
+	int y = ++x;
+	//x = x + 1
+	// y = x
+	printf("x=%d,y=%d\n",x, y);
+
+	//後置
+	int m = 1;
+	int n = m++;
+	// n = m
+	// m = m + 1
+	printf("m=%d,n=%d\n",m,n);
 	return 0;
 }

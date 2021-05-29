@@ -2,18 +2,19 @@
 using namespace std;
 
 int main() {
-	//前置
-	int x = 1;
-	int y = ++x;
-	//x = x + 1
-	// y = x
-	printf("x=%d,y=%d\n",x, y);
+	float top, bottom, height, area;
+	cout << "請輸入梯形的上底(公分):";
+	cin >> top;
 
-	//後置
-	int m = 1;
-	int n = m++;
-	// n = m
-	// m = m + 1
-	printf("m=%d,n=%d\n",m,n);
+	cout << "請輸入梯形的下底(公分):";
+	cin >> bottom;
+
+	cout << "請輸入梯形的高(公分):";
+	cin >> height;
+
+	area = (top + bottom) * height / 2;
+	cout << "梯形的面積:" << area << "平方公分\n";
+	
 	return 0;
+
 }

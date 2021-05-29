@@ -7,17 +7,13 @@ int main() {
  cin >> chinese;
  cout << "請輸入數學成績:";
  cin >> math;
- if(chinese==100){
-	 if(math==100){
-		 bonus = 1000;
-	 }else{
-		bonus = 500; 
-	 }
- }else{
-	 if (math==100){
-		 bonus = 500;
-	 }
+ 
+ if(chinese == 100 && math == 100){
+	 bonus = 1000;
+ }else if (chinese==100 || math == 100){
+	 bonus = 500;
  }
 
  cout << "獎金是" << bonus << endl;
+ return 0;
 }

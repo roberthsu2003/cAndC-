@@ -2,16 +2,18 @@
 using namespace std;
 
 int main() {
-	string password;
-	cout << "請輸入密碼:";
-	cin >> password;
+	int inputNumber;
+	string message;
+	cout << "請輸入數字:";
+	cin >> inputNumber;
 
-	if(password=="1234"){
-		cout << "密碼正確!歡迎光臨!" << endl;
+	if(inputNumber % 2 == 0){
+		message = "偶數";
 	}else{
-		cout << "密碼錯誤" << endl;
+		message = "奇數";
 	}
 
-	cout << "程式結束";
+	cout << "您輸入的" << inputNumber << "是"<< message << endl;
+
 	return 0;
 }

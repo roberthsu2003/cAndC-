@@ -1,20 +1,13 @@
 #include <iostream>
 using namespace std;
+
 int main() {
-	int chinese,english,math,sum;
-	float average;
-	cout << "請輸入國文成績(0~100):";
-	cin >> chinese;
-
-	cout << "請輸入英文成績(0~100):";
-	cin >> english;
-
-	cout << "請輸入數學成績(0~100):";
-	cin >> math;
-
-	sum = chinese + english + math;
-	//average = sum / 3.0; //自動轉換
-	average = (float)sum / 3; //強制轉換
-	cout << "您的總分為:" << sum << "分,平均為" << average << "分\n";
+	int n=0, m=0;
+	cout << "請輸入被除數(整數):";
+	cin >> n;
+	cout << "請輸入除數(整數,不可以為0):";
+	cin >> m;
+	
+	cout << "商:" << n/m << ",餘數:" << n % m << "\n";
 	return 0;
 }

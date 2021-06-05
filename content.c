@@ -1,18 +1,12 @@
-#include <stdio.h>
-//一維字元陣列
-int main(void) {
-  //char name[] = {'R', 'o', 'b', 'e', 'r', 't','\0'};
- 
-  char name[] = "Robert";
-  printf("%s\n",name); 
-  //使用字元陣列，無法更改值 
-  //name = "Jenny";
+#include <iostream>
+using namespace std;
 
-  //使用指標變數來定義字元陣列
-  const char* myName = "Robert";
-  printf("%s\n",myName);
-  myName = "Jenny";
-  printf("%s\n",myName);
-
-  return 0;
+int main() {
+	int score[2][3] = {{85, 82, 90},{76, 95, 89}};
+	for(int i=0; i<2; i++){
+		for(int j=0; j<3; j++){
+			printf("第%d位學生第%d科成績:%d\n",i+1,j+1,score[i][j]);
+		}
+		cout << "=========================\n" ;
+	}
 }

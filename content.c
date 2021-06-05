@@ -1,20 +1,18 @@
 #include <stdio.h>
-
+//一維字元陣列
 int main(void) {
-  const int NUMS = 5;
-  int scores[NUMS];
-  int sum = 0;
-  double ave;
-  for(int i=0; i< NUMS; i++){
-	  printf("請輸入第%d位學生的成績",i+1);
-	  scanf("%d",&scores[i]);
-  }
+  //char name[] = {'R', 'o', 'b', 'e', 'r', 't','\0'};
+ 
+  char name[] = "Robert";
+  printf("%s\n",name); 
+  //使用字元陣列，無法更改值 
+  //name = "Jenny";
 
-  for(int i=0;i < NUMS; i++){
-	  sum += scores[i];
-  }
+  //使用指標變數來定義字元陣列
+  const char* myName = "Robert";
+  printf("%s\n",myName);
+  myName = "Jenny";
+  printf("%s\n",myName);
 
-  ave = (double)sum / NUMS;
-  printf("全班總成績為:%d分,平均為%.2f分\n",sum,ave);
   return 0;
 }

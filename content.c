@@ -1,7 +1,13 @@
 #include <stdio.h>
 
 int main(void) {
-  printf("Hello C語言\n");
-  printf("現在正在學習C語言\n");
+  int intA;
+  intA = 100;
+
+  int intB;
+  intB = 120;
+
+  printf("%d\n",intA);
+  printf("%d\n",intB);
   return 0;
 }

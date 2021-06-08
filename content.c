@@ -7,7 +7,7 @@ int main(void) {
   int intB;
   intB = 120;
 
-  printf("%d\n",intA);
-  printf("%d\n",intB);
+  printf("intA內放的是%d\n",intA);
+  printf("intB=%d\n",intB);
   return 0;
 }

@@ -1,6 +1,6 @@
-#include <stdio.h>
+#include <iostream>
 
-int main(void) {
+int main() {
   int intA;
   intA = 100;
 

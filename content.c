@@ -1,12 +1,14 @@
 #include <iostream>
 
 int main() {
-  int intA;
-  intA = 100;
+	int intA;
+	printf("請輸入國文成績:");
+	std::cin >> intA;
 
-  int intB;
-  intB = 120;
+	int intB;
+	printf("請輸入數學成績:");
+	std::cin >> intB;
 
-  printf("intA內放的是%d\nintB=%d\n",intA,intB);  
-  return 0;
+	printf("國文分數是%d\n數學分數是%d\n",intA,intB);  
+	return 0;
 }

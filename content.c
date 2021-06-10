@@ -1,14 +1,8 @@
-#include <iostream>
+#include <stdio.h>
 
-int main() {
-	int intA;
-	printf("請輸入國文成績:");
-	std::cin >> intA;
-
-	int intB;
-	printf("請輸入數學成績:");
-	std::cin >> intB;
-
-	printf("國文分數是%d\n數學分數是%d\n",intA,intB);  
-	return 0;
+int main(void) {
+  printf("姓名\t\t座號\t電話\n");
+  printf("李振聲\t\t11\t\t0229435437\n");
+  printf("張四聲\t\t21\t\t0729449437\n");
+  return 0;
 }

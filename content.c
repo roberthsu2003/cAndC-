@@ -1,11 +1,11 @@
 #include <iostream>
+#include <stdio.h>
 
 int main() {
-  const char* cname = "徐國堂";
-  printf("我的名字是%s\n",cname);
-
-  //c++
-  std::string anotherName = "robert";
-  std::cout << anotherName << "\n";
-  std::cout << cname << "\n";
+	double PI = 3.1415987;
+	int radius;
+	std::cout << "請輸入半徑:";
+	std::cin >> radius;
+	std::cout << "圓面積=" << PI * radius * radius << std::endl;
+	printf("圓面積=%.5f\n", PI * radius * radius);
 }

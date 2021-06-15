@@ -2,19 +2,19 @@
 using namespace std;
 
 int main() {
-	float num;
-	float result=0;
-	cout << "請輸入第一個數:";
-	cin >> num;
-	result += num;
+	int top, bottom, height;
+	float area;
+	cout << "請輸入梯形的上底(公分):";
+	cin >> top;
 
-	cout << "請輸入第二個數:";
-	cin >> num;
-	result += num;
+	cout << "請輸入梯形的下底(公分):";
+	cin >> bottom;
 
-	cout << "請輸入第三個數:";
-	cin >> num;
-	result += num;
+	cout << "請輸入梯形的高(公分):";
+	cin >> height;
 
-	cout << "三個數的總和為:" << result << endl;
+	area = (top + bottom) * height / 2.0;
+
+	cout << "梯形的面積:" << area << "平方公分\n";
+	return 0;
 }

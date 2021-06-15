@@ -2,12 +2,17 @@
 using namespace std;
 
 int main() {
-	int inputNumber;
-	cout << "請輸入數字:";
-	cin >> inputNumber;
-	if(inputNumber % 2 == 0){
-		cout << "偶數" << endl;
-	}else{
-		cout << "奇數" << endl;
-	}
+ int scores;
+ cout << "請輸入學生分數:";
+ cin >> scores;
+
+ if(scores>=80){
+	 cout << "特優" << endl;
+  }else if(scores >= 60){
+	 cout << "優" << endl;
+  }else{
+	 cout << "有待改進" << endl;
+  }
+
+  cout << "程式結束" << endl;
 }

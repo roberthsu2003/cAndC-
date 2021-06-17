@@ -1,13 +1,11 @@
 #include <iostream>
 using namespace std;
 int main() {
-	int deposit=0,num=0, inputNum;
-	while(deposit < 30000){
-		num++;
-		cout << "請輸入第" << num << "個月的存款:";
-		cin >> inputNum;
-		deposit += inputNum;
-	}
-	cout << "恭喜!已經存夠了,存了" << num << "個月的總存款為:" << deposit << "元。";
+	string password;
+	do{
+		cout << "請輸入密碼:";
+		cin >> password;
+	}while(password != "5678");	
+	cout << "恭喜!你的密碼正確了!請進";
 	return 0;
 }

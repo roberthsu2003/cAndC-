@@ -1,24 +1,23 @@
 #include <iostream>
-using namespace std;
+#include <stdio.h>
 
 int main() {
-	int money;
-	int payMoney;
-	cout << "請輸入購買金額:";
-	cin >> money;
-
-	//多向選擇
-	if(money >= 100000){
-		payMoney = money * 0.8;
-	}else if(money >= 50000){
-		payMoney = money * 0.85;
-	}else if(money >= 30000){
-		payMoney = money * 0.9;
-	}else if (money >= 10000){
-		payMoney = money * 0.95;
+	int chinese;
+	int math;
+	int bonus=0;
+	printf("請同時輸入國文成績和數學成績(國文,數學):");
+	scanf("%d,%d", &chinese, &math);
+	//巢狀判斷
+	if(chinese == 100){
+		if(math==100){
+			bonus = 1000;
+		}else{
+			bonus = 500;
+		}
 	}else{
-		payMoney = money;
+		if(math==100){
+			bonus = 500;
+		}
 	}
-
-	cout << "實付金額是:" << payMoney << "元\n";
+	printf("獎金是:%d\n", bonus);
 }

@@ -1,13 +1,13 @@
 #include <iostream>
-#include <stdio.h>
-
 using namespace std;
-//巢狀迴圈
 int main() {
-	for(int i=1; i<=9; i++){
-		for(int j=1; j<=9; j++){
-			printf("%d*%d=%d\t",i,j,i*j);
-		}
-		printf("\n");
+	int deposit=0,num=0, inputNum;
+	while(deposit < 30000){
+		num++;
+		cout << "請輸入第" << num << "個月的存款:";
+		cin >> inputNum;
+		deposit += inputNum;
 	}
+	cout << "恭喜!已經存夠了,存了" << num << "個月的總存款為:" << deposit << "元。";
+	return 0;
 }

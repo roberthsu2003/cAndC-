@@ -1,18 +1,34 @@
 #include <iostream>
-#include <stdio.h>
+using namespace std;
 
 int main() {
-	int chinese;
-	int math;
-	int bonus=0;
-	printf("請同時輸入國文成績和數學成績(國文,數學):");
-	scanf("%d,%d", &chinese, &math);
-	//邏輯運算子
-	if(math==100 && chinese==100){
-		bonus = 1000;
-	}else if (math == 100 || chinese == 100){
-		bonus = 500;
-	}
+	char op;
+	int num1 = 20, num2 = 4;
+	cout << "num2=20,num2=4\n";
+	cout << "請輸入要執行的運算(+-*/):";
+	cin >> op;
 	
-	printf("獎金是:%d\n", bonus);
+	switch(op){
+		case '+':
+		cout << "num1+num2=" << num1 + num2 << endl;
+		break;
+
+		case '-':
+		cout << "num1-num2=" << num1 - num2 << endl;
+		break;
+
+		case '*':
+		cout << "num1*num2=" << num1 * num2 << endl;
+		break;
+
+		case '/':
+		cout << "num1/num2=" << num1 / num2 << endl;
+		break;
+
+		default:
+		cout << "無法執行運算\n";
+
+		return 0;
+		
+	}
 }

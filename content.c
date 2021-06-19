@@ -8,8 +8,8 @@ int main() {
 	int array[nums];
 	int temp;
 	for(int i=0; i < nums; i++){
-		cout << "請輸入第" << i+1 << "個數值:";
-		cin >> array[i];
+		//cout << "請輸入第" << i+1 << "個數值:";
+		array[i] = random() % 100;
 	}
 
 	cout <<  "排序前:\n";

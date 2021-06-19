@@ -1,4 +1,8 @@
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
 using namespace std;
 
 int main() {
@@ -7,6 +11,7 @@ int main() {
 	cin >> nums;
 	int array[nums];
 	int temp;
+	srandom(time(NULL));
 	for(int i=0; i < nums; i++){
 		//cout << "請輸入第" << i+1 << "個數值:";
 		array[i] = random() % 100;

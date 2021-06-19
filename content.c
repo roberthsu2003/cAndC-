@@ -2,9 +2,9 @@
 using namespace std;
 
 int main() {
-	//c++的輸入和輸出
-	int englishScore;
-	cout << "請輸入您的英文分數:";
-	cin >> englishScore;
-	cout << "Hello! 您的英文分數是:" << englishScore << endl;
+	//建立陣列，同時給值
+	int scores[3] = {78, 90, 92};
+	cout << "國文分數:" << scores[0] << endl;
+	cout << "英文分數:" << scores[1] << endl;
+	cout << "數文分數:" << scores[2] << endl;
 }

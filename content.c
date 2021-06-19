@@ -1,11 +1,9 @@
 #include <iostream>
 
 int main() {
-	int apples = 3;
-	int oranges = 5;
-	//c語言的輸出
-	printf("apples有%d個,oranges有%d個\n",apples,oranges);
-
-	//c++的輸出
-	std::cout << "apples有" << apples << "個,oranges有" << oranges << "個\n";
+	//c++的輸入和輸出
+	int englishScore;
+	std::cout << "請輸入您的英文分數:";
+	std::cin >> englishScore;
+	std::cout << "Hello! 您的英文分數是:" << englishScore << std::endl;
 }

@@ -12,20 +12,29 @@ typedef struct student{
 
 int main() {
 	srandom(time(NULL));
+	int studentNum = 10;
+	student oneClass[studentNum];
+	for(int i=0;i<studentNum;i++){
+		struct student stu;	
+		stu.name = "Stu" + to_string(i+1);
+		stu.id = "A100" + to_string(i+1);
+		stu.chinese = (random() % 51) + 50;
+		stu.english = (random() % 51) + 50;
+		stu.math = (random() % 51) + 50;
+
+		oneClass[i] = stu;
+	}
 	
-	struct student david;
-	david.name = "Davie";
-	david.id = "A1001";
-	david.chinese = (random() % 51) + 50;
-	david.english = (random() % 51) + 50;
-	david.math = (random() % 51) + 50;
 	
 	/*
 	student david = {"David","A1001",78,98,87};
 	*/
-	cout << "學生姓名:" << david.name << endl;
-	cout << "學生學號:" << david.id << endl;
-	cout << "國文:" << david.chinese << endl;
-	cout << "英文:" << david.english << endl;
-	cout << "數學:" << david.math << endl;
+	for(int i=0;i<studentNum;i++){
+		cout << "學生姓名:" << oneClass[i].name << endl;
+		cout << "學生學號:" << oneClass[i].id << endl;
+		cout << "國文:" << oneClass[i].chinese << endl;
+		cout << "英文:" << oneClass[i].english << endl;
+		cout << "數學:" << oneClass[i].math << endl;
+		cout << "===========================\n";
+	}
 }

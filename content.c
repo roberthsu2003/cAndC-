@@ -8,6 +8,7 @@ int main() {
 	//建立陣列，同時給值
 	int scores[3];
 	int sum=0;
+	double average;
 	//利用迴圈讀取陣列所有元素的值
 	for(int i=0; i<3;i++){
 		cout << "請輸入分數:";
@@ -19,5 +20,6 @@ int main() {
 	cout << "數文分數:" << scores[2] << endl;
 	cout << "總分為:" << sum << endl;
 	//cout << "平均:" << sum/3.0 << endl; 
-	printf("平均:%.2f\n", sum/3.0);
+	average = sum/3.0;
+	printf("平均:%.2f\n", average);
 }

@@ -189,8 +189,7 @@ using namespace std;
 int main() {
 	int deposit=0, num=0, inputNum;
 	while(deposit < 30000){
-		num++;
-		cout << "請輸入第" << num << "個月份的存款:";
+		cout << "請輸入第" << ++num << "個月份的存款:";
 		cin >> inputNum;
 		deposit += inputNum;
 	}
@@ -311,12 +310,12 @@ int main() {
 	int inputNum;
 	int sum=0;
 	do{
-		cout << "請輸入第" << num + 1 << "個數值:";
+		cout << "請輸入第" << ++num << "個數值:";
 		cin >> inputNum;
 		if(inputNum < 0){
 			break;
 		}
-		num ++;
+		
 		if(inputNum % 2 == 1){
 			continue;
 		}

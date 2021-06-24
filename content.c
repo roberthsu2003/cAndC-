@@ -3,8 +3,20 @@ main.cpp
 #include <iostream>
 #include "game.h"
 
+using namespace std;
 int main() {
-	playGame();
+	char go;
+	do{
+		playGame();
+		cout << "還要繼續玩嗎?(y 或 n):";
+		cin >> go;
+		if(go=='y'){
+			continue;
+		}else{
+			break;
+		}
+	}while(true);
+	
 	return 0;
 }
 

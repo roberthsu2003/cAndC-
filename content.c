@@ -1,10 +1,20 @@
 #include <iostream>
+
 using namespace std;
 
+int factorial(int n){
+	if(n==0){
+		return 1;
+	}else{
+		return n * factorial(n-1);
+	}
+}
+
 int main() {
-	const char* cName = "robert";
-	string arialName = "alice";
-	cout << "c的字串" << cName << endl;
-	cout << "c++的字串" << arialName << endl;
+	int n, total;
+	cout << "請輸入數字n:";
+	cin >> n;
+	total = factorial(n);
+	cout << "total=" << total << endl;
 	return 0;
 }

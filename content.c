@@ -1,13 +1,16 @@
-main.c
+main.cpp
 
+#include <iostream>
 #include <stdio.h>
 #include "tool.h"
+using namespace std;
 
-int main(void) {
+
+int main() {
   int c;
   float result;
-  printf("請輸入攝氏溫度:");
-  scanf("%d",&c);
+  cout << "請輸入攝氏溫度:";
+  cin >> c;
   result = temperature(c); //呼叫function
   printf("華氏溫度=%.2f\n",result);
   return 0;
@@ -20,7 +23,7 @@ tool.h
 float temperature(int);
 
 
-tool.c
+tool.cpp
 //定義function
 float temperature(int value){
 	return value * 1.8 + 32;

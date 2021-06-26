@@ -8,19 +8,19 @@ main.cpp
 using namespace std;
 int main() {
 	srand(time(NULL));
-	int studentCount = 20;
+	int studentCount = 50;
 	Student students[studentCount];
 	
 	for(int i=0;i<studentCount;i++){
 		students[i] = createStudent(i+1);
 	}
-
-	cout << "姓名\t國文\t英文\t數學\t總分\t平均" << endl;
+	sortStudent(students,studentCount);
+	cout << "姓名\t國文\t英文\t數學\t總分\t平均\t名次" << endl;
 
 	for(int i=0; i<studentCount; i++){
 		Student s = students[i];
 		cout << s.name << "\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << "\t\t" << sum(s) << "\t\t";
-		
+
 		printf("%.2f\n", average(s));
 	}
 	
@@ -50,6 +50,13 @@ int sum(Student);
 //計算學生平均
 float average(Student);
 
+//排序
+void sortStudent(Student*,int);
+
+
+
+
+
 
 data.cpp
 
@@ -72,4 +79,15 @@ float average(Student s){
 	return sum(s) / 3.0;
 }
 
-
+void sortStudent(Student s[],int nums){
+	Student temp;
+	for(int i=0; i < nums-1; i++){
+		for(int j=i+1; j < nums; j++){
+			if (sum(s[i]) < sum(s[j])){
+				temp = s[i];
+				s[i] = s[j];
+				s[j] = temp;
+			}
+		}
+	}
+}

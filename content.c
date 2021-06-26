@@ -15,15 +15,16 @@ int main() {
 		students[i] = createStudent(i+1);
 	}
 
-	cout << "姓名\t國文\t英文\t數學\t總分" << endl;
+	cout << "姓名\t國文\t英文\t數學\t總分\t平均" << endl;
 
 	for(int i=0; i<studentCount; i++){
 		Student s = students[i];
-		cout << s.name << "\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << "\t\t" << sum(s) << endl;
+		cout << s.name << "\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << "\t\t" << sum(s) << "\t\t";
+		
+		printf("%.2f\n", average(s));
 	}
 	
 }
-
 
 
 data.h
@@ -53,4 +54,6 @@ int sum(Student s){
 	return s.chinese + s.english + s.math;
 }
 
-
+float average(Student s){
+	return sum(s) / 3.0;
+}

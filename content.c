@@ -2,11 +2,12 @@
 using namespace std;
 
 long long int factorial(int n){
-	if (n==0){
-		return 1;
-	}else{
-		return n * factorial(n-1);
+	int t=1;
+	for(int i=1; i<=n; i++){
+		t *= i;
 	}
+
+	return t;
 }
 
 int main() {

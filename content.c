@@ -5,7 +5,20 @@ main.cpp
 
 using namespace std;
 int main() {
-	playGame();
+	char go;
+	do{
+		playGame();
+		cout << "重新開始(y or n)" << endl;
+		cin >> go;
+		if(go=='y'){
+			continue;
+		}else if(go=='n'){
+			break;
+		}else{
+			break;
+		}
+	}while(true);
+	
 	return 0;
 }
 

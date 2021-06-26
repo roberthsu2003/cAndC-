@@ -22,4 +22,9 @@ tools.h
 void swap(int*, int*);
 
 
-
+tools.cpp
+void swap(int *n, int *m){
+	int temp = *n;
+	*n = *m;
+	*m = temp;
+}

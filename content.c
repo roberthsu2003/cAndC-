@@ -5,14 +5,9 @@ main.cpp
 
 using namespace std;
 int main() {
-	int a = 666, b = 777;
-	cout << "a=" << a << ",b=" << b << endl;
-	//呼叫swap的function
-	swap(&a,&b);
-	cout << "a=" << a << ",b=" << b << endl;
+	playGame();
 	return 0;
 }
-
 
 tools.h
 
@@ -21,10 +16,50 @@ tools.h
 //這是做2個整數的交換內容
 void swap(int*, int*);
 
+//猜數子遊戲
+void playGame();
+
+
 
 tools.cpp
+#include <iostream>
+using namespace std;
+
 void swap(int *n, int *m){
 	int temp = *n;
 	*n = *m;
 	*m = temp;
+}
+
+void playGame(){
+	int max = 100;
+	int min = 1;
+	int keyin;
+	int count = 0;
+	srand(time(NULL));
+	int guess = rand() % max + min;
+	cout << "===============猜數字遊戲=================:\n\n";
+	do{
+		cout << "猜數字範圍" << min << "~" << max << ":";
+		cin >> keyin;
+		count++;
+		if(keyin >= min && keyin <= max){
+			if(keyin == guess){
+				cout << "賓果!猜對了,答案是" << guess << endl;
+				cout << "您猜了" << count << "次\n\n";
+				break;
+			}else if(keyin > guess){
+				max = keyin;
+				cout << "再小一點";
+			}else if (keyin < guess){
+				min = keyin;
+				cout << "再大一點";
+			}
+			cout << "您猜了" << count << "次\n\n"; 
+		}else{
+			cout << "請輸入提示範圍內的數字";
+		}
+
+	}while(true);
+	cout << "遊戲結束\n";
 }

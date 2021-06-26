@@ -1,20 +1,20 @@
 #include <iostream>
 using namespace std;
-/*
-void turbo(int *s){
-	*s += 20;
-}
-*/
 
-int turbo(int s){
-	return s + 20;
+long long int factorial(int n){
+	if (n==0){
+		return 1;
+	}else{
+		return n * factorial(n-1);
+	}
 }
 
 int main() {
-	int speed;
-	cout << "請輸入初始速度:";
-	cin >> speed;
-	speed = turbo(speed);
-	cout << "加速後的速度:" << speed << endl;
+	int n;
+	long long int result;
+	cout << "請輸入數字 n:";
+	cin >> n;
+	result = factorial(n);
+	cout << "結果是:" << result << endl;
 	return 0;
 }

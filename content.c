@@ -17,4 +17,12 @@ int main() {
 }
 
 
+rectangle.h
+
+typedef struct Rectangle{
+	int width;
+	int height;
+}Rectangle;
+
+
 

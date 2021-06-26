@@ -17,8 +17,9 @@ int main() {
 tools.h
 
 //定義function
-void swap(int *n, int *m){
-	int temp = *n;
-	*n = *m;
-	*m = temp;
-}
+//function的原型
+//這是做2個整數的交換內容
+void swap(int*, int*);
+
+
+

@@ -41,19 +41,13 @@ typedef struct student{
 	int math;
 }Student;
 
-Student createStudent(int num){
-	Student s;
-	s.name = "學生" + to_string(num);
-	s.chinese = 50 + (rand() % 51);
-	s.english = 50 + (rand() % 51);
-	s.math = 50 + (rand() % 51);
-	return s;
-}
+//建立一個學生
+Student createStudent(int);
 
-int sum(Student s){
-	return s.chinese + s.english + s.math;
-}
+//計算學生總分
+int sum(Student);
 
-float average(Student s){
-	return sum(s) / 3.0;
-}
+//計算學生平均
+float average(Student);
+
+

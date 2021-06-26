@@ -51,3 +51,25 @@ int sum(Student);
 float average(Student);
 
 
+data.cpp
+
+#include "data.h"
+
+Student createStudent(int num){
+	Student s;
+	s.name = "學生" + to_string(num);
+	s.chinese = 50 + (rand() % 51);
+	s.english = 50 + (rand() % 51);
+	s.math = 50 + (rand() % 51);
+	return s;
+}
+
+int sum(Student s){
+	return s.chinese + s.english + s.math;
+}
+
+float average(Student s){
+	return sum(s) / 3.0;
+}
+
+

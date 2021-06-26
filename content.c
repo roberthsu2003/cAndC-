@@ -8,13 +8,21 @@ main.cpp
 using namespace std;
 int main() {
 	srand(time(NULL));
-	Student std = createStudent(1);
-	cout << "姓名:" << std.name << endl;
-	cout << "國文:" << std.chinese << endl;
-	cout << "數學:" << std.math << endl;
-	cout << "英文:" << std.english << endl;
-}
+	int studentCount = 20;
+	Student students[studentCount];
+	
+	for(int i=0;i<studentCount;i++){
+		students[i] = createStudent(i+1);
+	}
 
+	cout << "姓名\t國文\t英文\t數學" << endl;
+
+	for(int i=0; i<studentCount; i++){
+		Student s = students[i];
+		cout << s.name << "\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << endl;
+	}
+	
+}
 
 
 data.h

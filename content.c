@@ -15,14 +15,15 @@ int main() {
 		students[i] = createStudent(i+1);
 	}
 
-	cout << "姓名\t國文\t英文\t數學" << endl;
+	cout << "姓名\t國文\t英文\t數學\t總分" << endl;
 
 	for(int i=0; i<studentCount; i++){
 		Student s = students[i];
-		cout << s.name << "\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << endl;
+		cout << s.name << "\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << "\t\t" << sum(s) << endl;
 	}
 	
 }
+
 
 
 data.h
@@ -48,5 +49,8 @@ Student createStudent(int num){
 	return s;
 }
 
+int sum(Student s){
+	return s.chinese + s.english + s.math;
+}
 
 

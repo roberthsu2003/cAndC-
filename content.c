@@ -1,20 +1,13 @@
 #include <iostream>
-
 using namespace std;
 
-int factorial(int n){
-	if(n==0){
-		return 1;
-	}else{
-		return n * factorial(n-1);
-	}
-}
-
 int main() {
-	int n, total;
-	cout << "請輸入數字n:";
-	cin >> n;
-	total = factorial(n);
-	cout << "total=" << total << endl;
-	return 0;
+	int n[3] = {10, 20 ,30};
+	cout << "陣列n的位址=" << n << endl;
+	cout << "陣列元素n[0]的位址=" << &n[0] << endl;
+	cout << "陣列元素n[1]的位址=" << &n[1] << endl;
+	cout << "陣列元素n[2]的位址=" << &n[2] << endl;
+	cout << "陣列元素n+0的位址=" << n+0 << endl;
+	cout << "陣列元素n+1的位址=" << n+1 << endl;
+	cout << "陣列元素n+2的位址=" << n+2 << endl;
 }

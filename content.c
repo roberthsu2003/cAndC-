@@ -1,13 +1,16 @@
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
+
 using namespace std;
 
-int main() {
-	int length = 5;
+int main() {	
+	srand(time(NULL));
+	int length = 4;
 	int scores[length];
 
-	for(int i=0; i<length; i++){
-		cout << "請輸入分數:";
-		cin >> scores[i];
+	for(int i=0; i<length; i++){		
+		scores[i] = (rand() % 100) + 1;
 	}
 
 	for(int i=0; i<length; i++){

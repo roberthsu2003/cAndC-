@@ -2,7 +2,18 @@
 using namespace std;
 
 int main() {
-	int scores[3] = {70, 80, 90};
-	cout << scores[0] << "," << scores[1] << "," << scores[2] << endl;
+	int length = 5;
+	int scores[length];
+
+	for(int i=0; i<length; i++){
+		cout << "請輸入分數:";
+		cin >> scores[i];
+	}
+
+	for(int i=0; i<length; i++){
+		cout << scores[i] << " ";
+	}
+
+	cout << endl;
 	return 0;
 }

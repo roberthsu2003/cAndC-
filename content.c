@@ -4,11 +4,12 @@
 using namespace std;
 
 int main() {
-	Rectangle rec1;
-	rec1.width = 10;
-	rec1.height = 20;
+	Rectangle rec1(10,20);
+	
 
-	cout << "rec1的寬是" << rec1.width << "rec1的高是" << rec1.height << "rec1的面積是" << rec1.area() << endl;
+	cout << " rec1的寬是" << rec1.width << endl;
+	cout << " rec1的高是" << rec1.height << endl;
+	cout << " rec1的面積是" << rec1.area() << endl;
 
 }
 
@@ -23,6 +24,12 @@ class Rectangle{
 	//field欄位
 	int width;
 	int height;
+
+	//建構式
+	Rectangle(int w, int h){
+		width = w;
+		height = h;
+	}
 
 	//method方法
 	int area(){

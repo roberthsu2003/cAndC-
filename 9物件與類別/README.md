@@ -174,30 +174,37 @@ int main() {
 }
 ```
 
-```c
-//建立50個學生，計算平均和總分
+```c++
+//建立50個學生，計算平均和總分和排名
 #include <iostream>
-#include "tools.h"
+#include "data.h"
+#include <stdlib.h>
+#include <time.h>
+
 using namespace std;
-
-
 int main() {
+	srand(time(NULL));
 	int studentCount = 50;
-	student students[studentCount];
-	for(int i=0; i<studentCount; i++){
+	Student students[studentCount];
+	
+	for(int i=0;i<studentCount;i++){
 		students[i] = createStudent(i+1);
 	}
-	cout << "姓名\t國文\t英文\t數學\t總分\t平均" << endl;
+	sortStudent(students,studentCount);
+	cout << "姓名\t國文\t英文\t數學\t總分\t平均\t名次" << endl;
 
-	for(int i=0;i<studentCount;i++){
-		student s = students[i];
-		cout << s.name << "\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << "\t\t" << sum(s) << "\t\t" << average(s) << endl;
+	for(int i=0; i<studentCount; i++){
+		Student s = students[i];
+		cout << s.name << "\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << "\t\t" << sum(s) << "\t\t";
+
+		printf("%.2f\n", average(s));
 	}
+	
 }
 
 
+data.h
 
-tools.h
 #include <iostream>
 #include <stdlib.h>
 
@@ -205,27 +212,55 @@ using namespace std;
 
 typedef struct student{
 	string name;
-	float chinese;
-	float english;
-	float math;
-} student;
+	int chinese;
+	int english;
+	int math;
+}Student;
 
-student createStudent(int num){
-	student s;
+//建立一個學生
+Student createStudent(int);
+
+//計算學生總分
+int sum(Student);
+
+//計算學生平均
+float average(Student);
+
+//排序
+void sortStudent(Student*,int);
+
+
+data.cpp
+#include "data.h"
+
+Student createStudent(int num){
+	Student s;
 	s.name = "學生" + to_string(num);
-	s.chinese = 50 + (random() % 51);
-	s.english = 50 + (random() % 51);
-	s.math = 50 + (random() % 51);
+	s.chinese = 50 + (rand() % 51);
+	s.english = 50 + (rand() % 51);
+	s.math = 50 + (rand() % 51);
 	return s;
 }
 
-float sum(student s){
+int sum(Student s){
 	return s.chinese + s.english + s.math;
 }
 
-float average(student s){
-	float mySum = sum(s);
-	return mySum / 3.0;
+float average(Student s){
+	return sum(s) / 3.0;
+}
+
+void sortStudent(Student s[],int nums){
+	Student temp;
+	for(int i=0; i < nums-1; i++){
+		for(int j=i+1; j < nums; j++){
+			if (sum(s[i]) < sum(s[j])){
+				temp = s[i];
+				s[i] = s[j];
+				s[j] = temp;
+			}
+		}
+	}
 }
 ```
 

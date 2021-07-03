@@ -32,60 +32,82 @@ class People{
 	People(){		
 	}
 
-	People(string n, bool s, int h, int w){
+	People(string n, bool s, int h, int w);
+	
+
+	//name getter,setter
+	string getName();
+
+	//height getter,setter
+	int getHeight();
+
+	void setHeight(int h);
+
+	//weight getter,setter
+	int getWeight();
+
+	void setWeight(int w);
+
+	//bmi method
+	void infomation();
+};
+
+#endif
+
+
+
+people.cpp
+
+#include "people.h"
+
+People::People(string n, bool s, int h, int w){
 		name = n;
 		man = s;
 		setHeight(h);	
 		setWeight(w);
 	}
 
-	//name getter,setter
-	string getName(){
+string People::getName(){
 		return name;
-	}
+}
 
 	//height getter,setter
-	int getHeight(){
-		return height;
-	}
+int People::getHeight(){
+	return height;
+}
 
-	void setHeight(int h){
-		if(h<100){
-			height = 100;
-		}else if(h>230){
-			height = 230;
-		}else{
-			height = h;
-		}
+void People::setHeight(int h){
+	if(h<100){
+		height = 100;
+	}else if(h>230){
+		height = 230;
+	}else{
+		height = h;
 	}
+}
 
-	//weight getter,setter
-	int getWeight(){
-		return weight;
+int People::getWeight(){
+	return weight;
+}
+
+void People::setWeight(int w){
+	if(w < 30){
+		weight = 30;
+	}else if (w > 250){
+		weight = 250;
+	}else{
+		weight = w;
 	}
+}
 
-	void setWeight(int w){
-		if(w < 30){
-			weight = 30;
-		}else if (w > 250){
-			weight = 250;
-		}else{
-			weight = w;
-		}
+void People::infomation(){
+	float bmi = weight/((height/100.0) * (height/100.0));
+	cout << "bmi=" << bmi << endl;
+	if(bmi < 18.5){
+		cout << "體重過輕" << endl;			
+	}else if(bmi < 24){
+		cout << "正常範圍" << endl;
+	}else{
+		cout << "異常範圍" << endl;
 	}
-
-	//bmi method
-	void infomation(){
-		float bmi = weight/((height/100.0) * (height/100.0));
-		cout << "bmi=" << bmi << endl;
-		if(bmi < 18.5){
-			cout << "體重過輕" << endl;			
-		}else if(bmi < 24){
-			cout << "正常範圍" << endl;
-		}else{
-			cout << "異常範圍" << endl;
-		}
-	}
-};
-
-#endif
+}

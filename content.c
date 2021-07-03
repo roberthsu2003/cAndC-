@@ -1,18 +1,27 @@
 #include <iostream>
 #include "student.h"
+#include "time.h"
 
 using namespace std;
 
 int main() {
-	Student stu1("stu1","A10012");
-	cout << stu1.name << endl;
-	cout << stu1.id << endl;
-	cout << stu1.chinese << endl;
-	cout << stu1.english << endl;
-	cout << stu1.math << endl;
+	srand(time(NULL));
+	int num = 50;
+	Student students[50];
+
+	for(int i=0; i<num; i++){
+		string name = "stu" + to_string(i+1);
+		cout << name << endl;
+		string id = "A00000" + to_string(i+1);
+		students[i] = Student(name, id);
+	}
+
 }
 
+
+
 student.h
+
 
 #ifndef __STUDENT__
 #define __STUDENT__
@@ -27,6 +36,11 @@ class Student{
 	int chinese;
 	int english;
 	int math;
+
+	//建構式
+	Student(){
+		
+	}
 
 	//建構式
 	Student(string n,string i){

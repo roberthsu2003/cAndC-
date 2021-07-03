@@ -13,3 +13,21 @@ int main() {
 }
 
 
+rectangle.h
+
+#ifndef __RECTANGLE__H
+#define __RECTANGLE__H
+
+class Rectangle{
+	public:
+	//field欄位
+	int width;
+	int height;
+
+	//method方法
+	int area(){
+		return width * height;
+	}
+};
+
+#endif

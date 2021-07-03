@@ -1,40 +1,32 @@
 #include <iostream>
-#include <stdlib.h>
-#include <time.h>
-
 using namespace std;
 
-int main() {	
-	srand(time(NULL));
-	int length = 10;
-	int scores[length];
-	int temp;
+typedef enum direction{
+	North,
+	South,
+	East,
+	West
+}Direction;
 
-	for(int i=0; i<length; i++){		
-		scores[i] = (rand() % 100) + 1;
-	}
-	cout << "初始值:\n";
-	for(int i=0; i<length; i++){		
-		cout << scores[i] << " ";
-	}
-	cout << endl;
+int main() {
+	Direction dest = West;
+	switch(dest){
+		case North:
+		cout << "北" << endl;
+		break;
+		case South:
+		cout << "南" << endl;
+		break;
+		case East:
+		cout << "東" << endl;
+		break;
+		case West:
+		cout << "西" << endl;
+		break;
+		default:
+		cout << "其它" << endl;
 
-	//排序
-	for(int i=0; i<length-1; i++){
-		for(int j=i+1; j<length; j++){
-			if (scores[i] > scores[j]){
-				temp = scores[i];
-				scores[i] = scores[j];
-				scores[j] = temp;
-			}
-		}
-	}
-
-	cout << "排序後:\n";
-	for(int i=0; i<length; i++){		
-		cout << scores[i] << " ";
 	}
 
-	cout << endl;
-	return 0;
+
 }

@@ -2,13 +2,14 @@
 #include "people.h"
 
 using namespace std;
+
 int main() {
-	People p1("Robert", true, 250, 300);	
+	People p1("Robert", true, 183, 78);	
 	cout << p1.getName() << endl;
 	cout << p1.getHeight() << endl;
 	cout << p1.getWeight() << endl;
+	p1.infomation();
 }
-
 
 
 People.h
@@ -70,6 +71,19 @@ class People{
 			weight = 250;
 		}else{
 			weight = w;
+		}
+	}
+
+	//bmi method
+	void infomation(){
+		float bmi = weight/((height/100.0) * (height/100.0));
+		cout << "bmi=" << bmi << endl;
+		if(bmi < 18.5){
+			cout << "體重過輕" << endl;			
+		}else if(bmi < 24){
+			cout << "正常範圍" << endl;
+		}else{
+			cout << "異常範圍" << endl;
 		}
 	}
 };

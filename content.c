@@ -1,113 +1,40 @@
 #include <iostream>
-#include "people.h"
+#include "student.h"
 
 using namespace std;
 
 int main() {
-	People p1("Robert", true, 183, 78);	
-	cout << p1.getName() << endl;
-	cout << p1.getHeight() << endl;
-	cout << p1.getWeight() << endl;
-	p1.infomation();
+	Student stu1("stu1","A10012");
+	cout << stu1.name << endl;
+	cout << stu1.id << endl;
+	cout << stu1.chinese << endl;
+	cout << stu1.english << endl;
+	cout << stu1.math << endl;
 }
 
+student.h
 
-People.h
-#ifndef __PEOPLE__
-#define __PEOPLE__
+#ifndef __STUDENT__
+#define __STUDENT__
 
 #include <iostream>
 using namespace std;
 
-class People{
-	private:
+class Student{
+	public:
 	string name;
-	int height;
-	int weight;
+	string id;
+	int chinese;
+	int english;
+	int math;
 
-	public:	
-	bool man;
-	
 	//建構式
-	People(){		
-	}
-
-	People(string n, bool s, int h, int w);
-	
-
-	//name getter,setter
-	string getName();
-
-	//height getter,setter
-	int getHeight();
-
-	void setHeight(int h);
-
-	//weight getter,setter
-	int getWeight();
-
-	void setWeight(int w);
-
-	//bmi method
-	void infomation();
-};
-
-#endif
-
-
-
-people.cpp
-
-#include "people.h"
-
-People::People(string n, bool s, int h, int w){
+	Student(string n,string i){
 		name = n;
-		man = s;
-		setHeight(h);	
-		setWeight(w);
+		id = i;
+		chinese = 50 + rand() % 51;
+		english = 50 + rand() % 51;
+		math = 50 + rand() % 51;
 	}
-
-string People::getName(){
-		return name;
-}
-
-	//height getter,setter
-int People::getHeight(){
-	return height;
-}
-
-void People::setHeight(int h){
-	if(h<100){
-		height = 100;
-	}else if(h>230){
-		height = 230;
-	}else{
-		height = h;
-	}
-}
-
-int People::getWeight(){
-	return weight;
-}
-
-void People::setWeight(int w){
-	if(w < 30){
-		weight = 30;
-	}else if (w > 250){
-		weight = 250;
-	}else{
-		weight = w;
-	}
-}
-
-void People::infomation(){
-	float bmi = weight/((height/100.0) * (height/100.0));
-	cout << "bmi=" << bmi << endl;
-	if(bmi < 18.5){
-		cout << "體重過輕" << endl;			
-	}else if(bmi < 24){
-		cout << "正常範圍" << endl;
-	}else{
-		cout << "異常範圍" << endl;
-	}
-}
+};
+#endif

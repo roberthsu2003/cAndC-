@@ -4,8 +4,9 @@
 using namespace std;
 int main() {
 	People p1("Robert", true, 172, 72);	
-	cout << p1.name << endl;
+	cout << p1.getName() << endl;
 }
+
 
 
 People.h
@@ -16,8 +17,10 @@ People.h
 using namespace std;
 
 class People{
-	public:
+	private:
 	string name;
+
+	public:	
 	bool man;
 	int height;
 	int weight;
@@ -30,6 +33,11 @@ class People{
 		man = s;
 		height = h;
 		weight = w;
+	}
+
+	//getter,setter
+	string getName(){
+		return name;
 	}
 };
 

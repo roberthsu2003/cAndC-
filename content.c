@@ -1,23 +1,15 @@
-#include <stdio.h>
+#include <iostream>
 #include "rectangle.h"
 
-int main(void) {
-  Rec rec1;
-  rec1.width = 10;
-  rec1.height = 20;
-  printf("矩型的寬是%d,高是%d,面積是%d\n",rec1.width,rec1.width,area(rec1));
-  return 0;
+using namespace std;
+
+int main() {
+	Rectangle rec1;
+	rec1.width = 10;
+	rec1.height = 20;
+
+	cout << "rec1的寬是" << rec1.width << "rec1的高是" << rec1.height << "rec1的面積是" << rec1.area() << endl;
+
 }
 
 
-
-rectangle.h
-
-typedef struct rec{
-	int width;
-	int height;
-}Rec;
-
-int area(Rec r){
-	return r.width * r.height;
-}

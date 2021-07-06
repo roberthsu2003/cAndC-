@@ -2,10 +2,12 @@
 using namespace std;
 
 int main() {
-	int n=10;
-	int *p = &n;
-	cout << "n的值是" << n << endl;
-	cout << "p指向的值" << *p << endl;
-	*p = 20;
-	cout << "改變後n的值是" << n << endl;
+	int a = 666;
+	int b = 777;
+	cout << "a=" << a << ",b=" << b << endl;
+	//2數交換
+	int temp = a;
+	a = b;
+	b = temp;
+	cout << "a=" << a << ",b=" << b << endl;
 }

@@ -1,22 +1,11 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
+#include "tools.h"
 
 using namespace std;
 
-void sorted(int *a,int length){
-	int temp;
-	for(int i=0; i<length-1; i++){
-		for(int j=i+1; j<length; j++){
-			if (a[i] < a[j]){
-				temp = a[i];
-				a[i] = a[j];
-				a[j] = temp;
-			}
-		}
-	}
 
-}
 
 int main() {	
 	srand(time(NULL));
@@ -42,4 +31,25 @@ int main() {
 
 	cout << endl;
 	return 0;
+}
+
+
+tools.h
+void sorted(int *a,int length);
+
+
+
+tools.cpp
+void sorted(int *a,int length){
+	int temp;
+	for(int i=0; i<length-1; i++){
+		for(int j=i+1; j<length; j++){
+			if (a[i] < a[j]){
+				temp = a[i];
+				a[i] = a[j];
+				a[j] = temp;
+			}
+		}
+	}
+
 }

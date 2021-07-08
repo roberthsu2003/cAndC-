@@ -1,29 +1,12 @@
 #include <iostream>
-#include "data.h"
-
 using namespace std;
-
-
-
 int main() {
-	Stu students[50];
-	students[0].name = "robert";
-	students[0].id = "A1234567";
-	students[0].chinese = 89;
-	students[0].english = 90;
-	students[0].math = 76;
+	int arr[] = {10, 20 , 30};
+	cout << arr[0] << "," << arr[1] << "," << arr[2] << endl;
 
-
+	int *ptr = arr;
+	cout << "ptr+0=" << ptr+0 << endl;
+	cout << "ptr+1=" << ptr+1 << endl;
+	cout << "ptr+2=" << ptr+2 << endl;
+	cout << *(ptr+0) << "," << *(ptr+1) << "," << *(ptr+2) << endl;
 }
-
-data.h
-#include <iostream>
-using namespace std;
-
-typedef struct Student{
-	string name;
-	string id;
-	int chinese;
-	int english;
-	int math;
-}Stu;

@@ -15,4 +15,17 @@ int main() {
 	
 }
 
+student.h
+
+#include <iostream>
+
+using namespace std;
+
+typedef struct student{
+	string name;
+	string id;
+	int chinese;
+	int english;
+	int math;
+}Student;
 

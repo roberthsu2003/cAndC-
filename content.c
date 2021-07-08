@@ -1,15 +1,21 @@
 #include <iostream>
 using namespace std;
 
-void listArray(int *a){
-	//陣列變數的操作法
-	cout << a[0] << "," << a[1] << "," << a[2] << endl;
-
-	//指標變數的操作
-	cout << *(a+0) << "," << *(a+1) << "," << *(a+2) << endl;
-}
-
 int main() {
-	int arr[] = {10, 20 , 30};
-	listArray(arr);
+	char str[] = {'D', 'e', 'v', 'C', '+', '+','\0'};
+	cout << str << endl;
+	const char *name = str;
+	cout << name << endl;
+	name = "robert";
+	cout << name << endl;
+
+	//c語言的字串
+	const char* myName = "Hello! C++";
+	cout << myName << endl;
+	myName = "Hello! C";
+	cout << myName << endl;
+	
+	//c++語言的字串
+	string yourName = "Learning C++";
+	cout << yourName << endl;
 }

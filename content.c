@@ -1,30 +1,37 @@
 #include <iostream>
 #include "student.h"
 #include "stdio.h"
+#include "stdlib.h"
+#include "time.h"
 
 using namespace std;
 
 Student createStudent(int num){
 	Student s;
-	s.name = "robert";
+	s.name = "stu" + to_string(num);
 	s.id = "A0001" + to_string(num);
-	s.chinese = 89;
-	s.english = 75;
-	s.math = 95;
+	s.chinese = rand() % 41 + 60;
+	s.english = rand() % 41 + 60;;
+	s.math = rand() % 41 + 60;;
 	return s;
 };
 
 int main() {
 	Student students[50];
+	//建立亂數種子
+	srand(time(NULL));
 	for(int i=0; i<50; i++){
-		students[i] = createStudent(i);
+		students[i] = createStudent(i+1);
 	}
 
-	cout << students[1].name << endl;
-	cout << students[1].id << endl;
-	cout << students[1].chinese << endl;
-	cout << students[1].english << endl;
-	cout << students[1].math << endl;	
+	cout << "姓名\t學號\t國文\t英文\t數學" << endl;
+
+	for(int i=0; i<50; i++){
+		Student s = students[i];
+		cout << s.name << "\t" << s.id << "\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << endl;
+	}
+
+	
 }
 
 

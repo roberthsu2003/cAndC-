@@ -3,17 +3,31 @@
 #include "stdio.h"
 
 using namespace std;
+
+Student createStudent(int num){
+	Student s;
+	s.name = "robert";
+	s.id = "A0001" + to_string(num);
+	s.chinese = 89;
+	s.english = 75;
+	s.math = 95;
+	return s;
+};
+
 int main() {
-	Student stu1 = {"robert","A10003",78, 90,85};
-	cout << "name=" << stu1.name << endl;
-	cout << "id=" << stu1.id << endl;
-	cout << "國文=" << stu1.chinese << endl;
-	cout << "英文=" << stu1.english << endl;
-	cout << "數學=" << stu1.math << endl;
-	cout << "總分=" << stu1.chinese + stu1.english + stu1.math << endl;
-	printf("平均=%.2f\n", (stu1.chinese + stu1.english + stu1.math)/3.0);
-	
+	Student students[50];
+	for(int i=0; i<50; i++){
+		students[i] = createStudent(i);
+	}
+
+	cout << students[1].name << endl;
+	cout << students[1].id << endl;
+	cout << students[1].chinese << endl;
+	cout << students[1].english << endl;
+	cout << students[1].math << endl;	
 }
+
+
 
 student.h
 

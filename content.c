@@ -1,5 +1,8 @@
 #include <iostream>
 #include "tools.h"
+#include "tools.h"
+#include "tools.h"
+#include "tools.h"
 
 using namespace std;
 
@@ -17,4 +20,20 @@ int main() {
 
 tools.h
 
+#ifndef __TOOLS_H__
+#define __TOOLS_H__
+
+#include <iostream>
 #define SQUARE(x) (x) * (x)
+
+using namespace std;
+
+typedef struct Student{
+	string name;
+	string id;
+	int chinese;
+	int math;
+	int english;
+}Student;
+
+#endif

@@ -1,5 +1,6 @@
 #include <iostream>
-#define RATE 32.78
+#include "tools.h"
+
 
 using namespace std;
 
@@ -10,3 +11,5 @@ int main() {
 	nt = us * RATE;
 	cout << "您有" << nt << "台幣" << endl;
 }
+
+

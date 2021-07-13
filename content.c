@@ -40,3 +40,36 @@ int main() {
 
 	
 }
+
+
+student.h
+
+#include <iostream>
+
+using namespace std;
+
+typedef struct student{
+	string name;
+	string id;
+	int chinese;
+	int english;
+	int math;
+}Student;
+
+Student createStudent(int num){
+	Student s;
+	s.name = "stu" + to_string(num);
+	s.id = "A0001" + to_string(num);
+	s.chinese = rand() % 41 + 60;
+	s.english = rand() % 41 + 60;;
+	s.math = rand() % 41 + 60;;
+	return s;
+};
+
+int sum(Student s){
+	return s.chinese + s.english + s.math;
+}
+
+float average(Student s){
+	return sum(s) / 3.0;
+}

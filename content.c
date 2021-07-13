@@ -4,34 +4,22 @@
 #include "stdlib.h"
 #include "time.h"
 
+#define NUM 20  //學生的數量
 using namespace std;
 
-void sorted(Student s[],int length){
-	Student temp;
-	for(int i=0; i<length-1; i++){
-		for(int j=i+1; j<length; j++){
-			if (sum(s[i]) < sum(s[j])){
-				temp = s[i];
-				s[i] = s[j];
-				s[j] = temp;
-			}
-		}
-	}
-}
-
-
 int main() {
-	Student students[50];
+	
+	Student students[NUM];
 	//建立亂數種子
 	srand(time(NULL));
-	for(int i=0; i<50; i++){
+	for(int i=0; i<NUM; i++){
 		students[i] = createStudent(i+1);
 	}
 
-	sorted(students,50);
+	sorted(students,NUM);
 	cout << "姓名\t學號\t國文\t英文\t數學\t總分\t平均\t名次" << endl;
 
-	for(int i=0; i<50; i++){
+	for(int i=0; i<NUM; i++){
 		Student s = students[i];
 		cout << s.name << "\t" << s.id << "\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << "\t\t" << sum(s);
 		printf("\t\t%.2f",average(s));
@@ -72,4 +60,17 @@ int sum(Student s){
 
 float average(Student s){
 	return sum(s) / 3.0;
+}
+
+void sorted(Student s[],int length){
+	Student temp;
+	for(int i=0; i<length-1; i++){
+		for(int j=i+1; j<length; j++){
+			if (sum(s[i]) < sum(s[j])){
+				temp = s[i];
+				s[i] = s[j];
+				s[j] = temp;
+			}
+		}
+	}
 }

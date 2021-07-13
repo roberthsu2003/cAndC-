@@ -44,6 +44,23 @@ typedef struct student{
 	int math;
 }Student;
 
+//建立Student結構的function
+Student createStudent(int num);
+
+//計算學生總分
+int sum(Student s);
+
+//計算學生平均
+float average(Student s);
+
+//排序學生陣列
+void sorted(Student s[],int length);
+
+
+student.cpp
+
+#include "student.h"
+
 Student createStudent(int num){
 	Student s;
 	s.name = "stu" + to_string(num);

@@ -18,11 +18,14 @@ circle.h
 
 
 
+#ifndef __CIRCLE_H__
+#define __CIRCLE_H__
+
 class Circle{
 	public:
 		//field欄位
 		int radius;
-		
+
 		//建構式
 		Circle(int r);
 
@@ -30,6 +33,8 @@ class Circle{
 		float areas();	
 		float circumference();
 };
+
+#endif
 
 
 

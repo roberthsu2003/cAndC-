@@ -14,3 +14,40 @@ int main() {
 }
 
 
+circle.h
+
+
+
+class Circle{
+	public:
+		//field欄位
+		int radius;
+		
+		//建構式
+		Circle(int r);
+
+		//method方法
+		float areas();	
+		float circumference();
+};
+
+
+
+circle.cpp
+#include <cmath>
+#include "circle.h"
+
+//建構式
+Circle::Circle(int r){
+	radius = r;
+}
+//method方法
+float Circle::areas(){
+	return M_PI * radius * radius;
+}
+
+float Circle::circumference(){
+	return radius * 2 * M_PI;
+}
+
+

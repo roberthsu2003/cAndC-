@@ -14,26 +14,3 @@ int main() {
 }
 
 
-
-circle.h
-
-
-#include <cmath>
-
-class Circle{
-	public:
-		//field欄位
-		int radius;
-		//建構式
-		Circle(int r){
-			radius = r;
-		}
-		//method方法
-		float areas(){
-			return M_PI * radius * radius;
-		}
-	
-		float circumference(){
-			return radius * 2 * M_PI;
-		}
-};

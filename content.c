@@ -1,59 +1,27 @@
 #include <iostream>
-#include "circle.h"
-
 
 using namespace std;
 
-
-
-int main() {
-	Circle c1(20);
-	cout << "圓半徑是" << c1.radius << endl;
-	cout << "圓周是" << c1.circumference() << endl;
-	cout << "圓面積" << c1.areas() << endl;
-}
-
-
-circle.h
-
-
-
-#ifndef __CIRCLE_H__
-#define __CIRCLE_H__
-
-class Circle{
+class Person{
 	public:
-		//field欄位
-		int radius;
-
-		//建構式
-		Circle(int radius);
-
-		//method方法
-		float areas();	
-		float circumference();
+	string name;
+	int height;
+	int weight;
+	Person(string name,int height, int weight){
+		this -> name = name;
+		this -> height = height;
+		this -> weight = weight;
+	}
 };
 
-#endif
+int main() {
+	Person p1("徐國堂",179, 80);
+	cout << "姓名:" << p1.name << endl;
+	cout << "身高:" << p1.height << endl;
+	cout << "體重:" << p1.weight << endl;
 
-
-
-circle.cpp
-
-#include <cmath>
-#include "circle.h"
-
-//建構式
-Circle::Circle(int radius){
-	this -> radius = radius;
+	Person p2("robert",170, 72);
+	cout << "姓名:" << p2.name << endl;
+	cout << "身高:" << p2.height << endl;
+	cout << "體重:" << p2.weight << endl;
 }
-//method方法
-float Circle::areas(){
-	return M_PI * radius * radius;
-}
-
-float Circle::circumference(){
-	return radius * 2 * M_PI;
-}
-
-

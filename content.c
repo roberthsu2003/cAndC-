@@ -27,7 +27,7 @@ class Circle{
 		int radius;
 
 		//建構式
-		Circle(int r);
+		Circle(int radius);
 
 		//method方法
 		float areas();	
@@ -43,7 +43,7 @@ circle.cpp
 #include "circle.h"
 
 //建構式
-Circle::Circle(int r){
+Circle::Circle(int radius){
 	radius = r;
 }
 //method方法

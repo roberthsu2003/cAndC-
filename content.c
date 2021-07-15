@@ -1,15 +1,18 @@
 #include <iostream>
+#include <cmath>
+
+
 using namespace std;
 
 class Circle{
 	public:
 		int radius;
 		float areas(){
-			return 3.14159 * radius * radius;
+			return M_PI * radius * radius;
 		}
 	
 		float circumference(){
-			return radius * 2 * 3.14159;
+			return radius * 2 * M_PI;
 		}
 };
 

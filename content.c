@@ -6,7 +6,13 @@ using namespace std;
 
 class Circle{
 	public:
+		//field欄位
 		int radius;
+		//建構式
+		Circle(int r){
+			radius = r;
+		}
+		//method方法
 		float areas(){
 			return M_PI * radius * radius;
 		}
@@ -17,8 +23,7 @@ class Circle{
 };
 
 int main() {
-	Circle c1;
-	c1.radius = 10;
+	Circle c1(20);
 	cout << "圓半徑是" << c1.radius << endl;
 	cout << "圓周是" << c1.circumference() << endl;
 	cout << "圓面積" << c1.areas() << endl;

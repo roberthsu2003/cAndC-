@@ -39,12 +39,13 @@ class Circle{
 
 
 circle.cpp
+
 #include <cmath>
 #include "circle.h"
 
 //建構式
 Circle::Circle(int radius){
-	radius = r;
+	this -> radius = radius;
 }
 //method方法
 float Circle::areas(){

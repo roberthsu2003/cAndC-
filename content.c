@@ -22,4 +22,10 @@ int main() {
 	robert.tall = 170;
 	cout << robert.name << " 身高=" << robert.tall << endl;
 	robert.walk(15);
+
+	Person *john= new Person();
+	john -> name = "John";
+	john -> tall = 178;
+	cout << john -> name << " 身高=" << john -> tall << endl;
+	john -> walk(15);
 }

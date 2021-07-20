@@ -11,6 +11,10 @@ class Student{
 	int english;
 	int math;
 
+	Student(){
+
+	}
+	
 	Student(string n, string i){
 		name = n;
 		id = i;
@@ -24,7 +28,7 @@ int main() {
 	srand(time(NULL));
 	int num = 50;
 	Student students[num];
-	
+
 	for(int i=0; i<num; i++){
 		string name = "stu" + to_string(i+1);
 		string id = "A0" + to_string(i+1);

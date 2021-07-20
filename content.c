@@ -22,10 +22,20 @@ class Student{
 
 int main() {
 	srand(time(NULL));
-	Student stu1("robert", "A10034");
-	cout << stu1.name << endl;
-	cout << stu1.id << endl;
-	cout << stu1.chinese << endl;
-	cout << stu1.english << endl;
-	cout << stu1.math << endl;
+	int num = 50;
+	Student students[num];
+	
+	for(int i=0; i<num; i++){
+		string name = "stu" + to_string(i+1);
+		string id = "A0" + to_string(i+1);
+		students[i] = Student(name,id);
+	}
+
+	cout << "學生姓名\t學號\t國文\t英文\t數學" << endl;
+	
+	for(int i=0; i<num; i++){
+		Student s = students[i];
+		cout << s.name << "\t\t" << s.id << "\t\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << endl;
+	}
+
 }

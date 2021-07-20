@@ -1,27 +1,26 @@
 #include <iostream>
 #include "person.h"
-
 using namespace std;
 
-
-
 int main() {
-	Person p1("徐國堂",179, 75);
-	cout << "姓名:" << p1.name << endl;
-	cout << "身高:" << p1.height << endl;
-	cout << "體重:" << p1.weight << endl;
-	cout << "BMI:" << p1.getBmi() << endl;
-	p1.suggestion();
+	Person p1;
+	cout << "請輸入姓名:";
+	cin >> p1.name;
+	cout << "請輸入身高(cm):";
+	cin >> p1.height;
+	cout << "請輸入體重(kg):";
+	cin >> p1.weight;
 
-	Person p2("robert",170, 100);
-	cout << "姓名:" << p2.name << endl;
-	cout << "身高:" << p2.height << endl;
-	cout << "體重:" << p2.weight << endl;
-	cout << "BMI:" << p2.getBmi() << endl;
-	p2.suggestion();
+	cout << p1.name << "您好:" << endl;
+	printf("您的bmi是%.2f\n",p1.getBmi());
+	p1.suggestion();
+	
+	
 }
 
+
 person.h
+
 #include <iostream>
 using namespace std;
 
@@ -32,14 +31,15 @@ class Person{
 	int weight;
 
 	Person(string name,int height, int weight);
-	
+	Person();
+
 	float getBmi();
 	void suggestion();
 };
 
 
-person.cpp
 
+person.cpp
 
 #include <math.h>
 #include "person.h"
@@ -48,6 +48,10 @@ Person::Person(string name,int height, int weight){
 		this -> name = name;
 		this -> height = height;
 		this -> weight = weight;
+}
+
+Person::Person(){
+	
 }
 
 float Person::getBmi(){
@@ -72,4 +76,3 @@ void Person::suggestion(){
 		}
 		cout << "提醒:" << message << endl;
 }
-

@@ -31,4 +31,84 @@ int main() {
 }
 
 
+person.h
 
+#include <iostream>
+using namespace std;
+
+class Person{
+	private:
+	int height;
+	int weight;
+
+	public:
+	string name;
+	bool setHeight(int h);
+	bool setWeight(int w);
+	
+
+	Person(string name,int height, int weight);
+	Person();
+
+	float getBmi();
+	void suggestion();
+};
+
+
+person.cpp
+
+#include <math.h>
+#include "person.h"
+
+Person::Person(string name,int height, int weight){
+		this -> name = name;
+		this -> height = height;
+		this -> weight = weight;
+}
+
+Person::Person(){
+	
+}
+
+bool Person::setHeight(int h){
+	if(h >= 250 || h <= 100){
+		cout << "輸入的值超出範圍,請重新輸入" << endl;
+		return false;
+	}else{
+		height = h;
+		return true;
+	}
+}
+
+bool Person::setWeight(int w){
+	if(w >= 200 || w <= 30){
+		cout << "輸入的值超出範圍,請重新輸入" << endl;
+		return false;
+	}else{
+		weight = w;
+		return true;
+	}
+}
+
+float Person::getBmi(){
+		return weight / pow((height/100.0),2);
+}
+
+void Person::suggestion(){
+		float bmi = getBmi();
+		string message;
+		if(bmi<18.5){
+			message = "體重過輕";
+		}else if(bmi < 24){
+			message = "正常範圍";
+		}else if(bmi < 27){
+			message = "過重";
+		}else if(bmi < 30){
+			message = "輕度肥胖";
+		}else if(bmi < 35){
+			message = "中度肥胖";
+		}else{
+			message = "重度肥胖";
+		}
+		cout << "提醒:" << message << endl;
+}

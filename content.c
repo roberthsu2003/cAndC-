@@ -1,69 +1,55 @@
 #include <iostream>
-#include "student.h"
-#include "time.h"
+#include <math.h>
 
 using namespace std;
 
-int main() {
-	srand(time(NULL));
-	int num = 50;
-	Student students[50];
-
-	for(int i=0; i<num; i++){
-		string name = "stu" + to_string(i+1);
-		cout << name << endl;
-		string id = "A0" + to_string(i+1);
-		students[i] = Student(name, id);
-	}
-	cout << "學生姓名\t學號\t國文\t英文\t數學\t總分\t平均" << endl;
-	for(int i=0; i<num; i++){
-		Student s = students[i];
-		cout << s.name << "\t\t" << s.id << "\t\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << "\t\t" << s.sum() << "\t\t" << s.average() << endl;
-	}
-
-}
-
-
-
-student.h
-
-
-#ifndef __STUDENT__
-#define __STUDENT__
-
-#include <iostream>
-using namespace std;
-
-class Student{
+class Person{
 	public:
 	string name;
-	string id;
-	int chinese;
-	int english;
-	int math;
-
-	//建構式
-	Student(){
-
+	int height;
+	int weight;
+	Person(string name,int height, int weight){
+		this -> name = name;
+		this -> height = height;
+		this -> weight = weight;
 	}
 
-	//建構式
-	Student(string n,string i){
-		name = n;
-		id = i;
-		chinese = 50 + rand() % 51;
-		english = 50 + rand() % 51;
-		math = 50 + rand() % 51;
+	float getBmi(){
+		return weight / pow((height/100.0),2);
 	}
 
-	//method
-	int sum(){
-		return chinese + english + math;
-	}
-
-	float average(){
-		return sum() / 3.0;
+	void suggestion(){
+		float bmi = getBmi();
+		string message;
+		if(bmi<18.5){
+			message = "體重過輕";
+		}else if(bmi < 24){
+			message = "正常範圍";
+		}else if(bmi < 27){
+			message = "過重";
+		}else if(bmi < 30){
+			message = "輕度肥胖";
+		}else if(bmi < 35){
+			message = "中度肥胖";
+		}else{
+			message = "重度肥胖";
+		}
+		cout << "提醒:" << message << endl;
 	}
 };
-#endif
 
+int main() {
+	Person p1("徐國堂",179, 75);
+	cout << "姓名:" << p1.name << endl;
+	cout << "身高:" << p1.height << endl;
+	cout << "體重:" << p1.weight << endl;
+	cout << "BMI:" << p1.getBmi() << endl;
+	p1.suggestion();
+
+	Person p2("robert",170, 100);
+	cout << "姓名:" << p2.name << endl;
+	cout << "身高:" << p2.height << endl;
+	cout << "體重:" << p2.weight << endl;
+	cout << "BMI:" << p2.getBmi() << endl;
+	p2.suggestion();
+}

@@ -1,5 +1,7 @@
 #include <iostream>
 
+using namespace std;
+
 int main() {
 	//宣告變數
 	int chinese;
@@ -18,8 +20,8 @@ int main() {
 	printf("總分是%d\n",total);
 	*/
 
-	std::cout << "國文分數是" << chinese << "\n";
-	std::cout << "英文分數是" << english << "\n";
-	std::cout << "總分是" << total << std::endl;
+	cout << "國文分數是" << chinese << "\n";
+	cout << "英文分數是" << english << "\n";
+	cout << "總分是" << total << endl;
   	return 0;
 }

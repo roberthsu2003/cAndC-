@@ -12,8 +12,8 @@ int main(void) {
 	int total;
 	total = chinese + english;
 
-	printf("國文分數是\n");
-	printf("英文分數是\n");
-	printf("總分是\n");
+	printf("國文分數是%d\n",chinese);
+	printf("英文分數是%d\n",english);
+	printf("總分是%d\n",total);
   return 0;
 }

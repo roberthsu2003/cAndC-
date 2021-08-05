@@ -2,12 +2,14 @@
 using namespace std;
 
 int main() {
-	char chrB;
-	chrB = 'A';
-	cout << "chrB=" << chrB << endl;
+	//c++ string
+	string str1 = "這是c++建的字串";
 
-	char chrC;
-	chrC = 123;
-	cout << "chrC=" << chrC << endl;
+	//c const char*
+	const char* str2 = "這是c建立的字串";
+
+	cout << str1 << endl;
+	cout << str2 << endl;
+
 	return 0;
 }

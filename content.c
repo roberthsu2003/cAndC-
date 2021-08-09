@@ -1,6 +1,9 @@
 #include <stdio.h>
 
 int main(void) {
-  printf("Hello  徐國堂\n");
+  int chinese = 96;
+  int english = 75;
+  int sum = chinese + english;
+  printf("您的總分是:\n");
   return 0;
 }

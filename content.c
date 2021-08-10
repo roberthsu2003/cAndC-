@@ -1,15 +1,15 @@
 #include <iostream>
 using namespace std;
+
 int main() {
-	int chinese = 96;
-	int english = 75; 
-	/*  
-	printf("您的國文:%d\n",chinese);
-	printf("你的英文是:%d\n",english);
-	printf("總分是%d\n",chinese+english);
-	*/
-	cout << "您的國文:" << chinese << endl;
-	cout << "您的英文是:" << english << endl;
-	cout << "總分是" << chinese+english << endl;
+	int chinese;
+	int math;
+	cout << "請輸入國文分數:";
+	cin >> chinese;
+	cout << "請輸入數學分數:";
+	cin >> math;
+	cout << "您的國文分數是" << chinese << endl;
+	cout << "您的數學分數是" << math << endl;
+	cout << "您的總分是" << chinese + math << endl;
 	return 0;
 }

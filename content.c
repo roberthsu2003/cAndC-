@@ -2,14 +2,7 @@
 using namespace std;
 
 int main() {
-	int chinese;
-	int math;
-	cout << "請輸入國文分數:";
-	cin >> chinese;
-	cout << "請輸入數學分數:";
-	cin >> math;
-	cout << "您的國文分數是" << chinese << endl;
-	cout << "您的數學分數是" << math << endl;
-	cout << "您的總分是" << chinese + math << endl;
-	return 0;
+	cout << "姓名\t座號\t電話\n";
+	cout << "李振聲\t11\t\t029824567\n";
+	cout << "李四聲\t13\t\t028827369\n";
 }

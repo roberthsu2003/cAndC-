@@ -2,15 +2,14 @@
 using namespace std;
 
 int main() {
-	string password;
-	cout << "請輸入密碼:";
-	cin >> password;
-	if(password == "1234"){
-		cout << "密碼正確!歡迎光臨" << endl;		
+	int score;
+	cout << "請輸入英文分數:";
+	cin >> score;
+	if(score >= 60){
+		cout << "及格!" << endl;
 	}else{
-		cout << "密碼錯誤!請重新輸入" << endl;
+		cout << "不及格!" << endl;
 	}
-
-	cout << "程式結束" << endl;
+	cout << "程式結束";
 	return 0;
 }

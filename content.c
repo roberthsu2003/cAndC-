@@ -1,23 +1,12 @@
 #include <iostream>
 using namespace std;
+
 int main() {
-	int money;
-	int payMoney;
-	cout << "請輸入購買金額:";
-	cin >> money;
-
-	if(money >= 100000){
-		payMoney = money * 0.8;
-	}else if(money >=50000){
-		payMoney = money * 0.85;
-	}else if(money >= 30000){
-		payMoney = money * 0.9;
-	}else if(money >= 10000){
-		payMoney = money * 0.95;
-	}else{
-		payMoney = money;
-	}
-
-	cout << "實付金額是:" << payMoney << "元\n";
+	int n,m;
+	cout << "請輸入被除數(整數):";
+	cin >> n;
+	cout << "請輸入除數(整數,不可以為0):";
+	cin >> m;
+	cout << "商:" << n/m << "餘數:"<< n % m<< endl;
 	return 0;
 }

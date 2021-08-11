@@ -7,6 +7,8 @@ int main() {
 	cin >> password;
 	if(password == "1234"){
 		cout << "密碼正確!歡迎光臨" << endl;		
+	}else{
+		cout << "密碼錯誤!請重新輸入" << endl;
 	}
 
 	cout << "程式結束" << endl;

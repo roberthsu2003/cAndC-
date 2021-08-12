@@ -2,31 +2,17 @@
 using namespace std;
 
 int main() {
-	char op;
-	int num1 = 20, num2 = 4;
-	cout << "num1=20, num2=4\n";
-	cout << "請輸入要執行的運算(+-*/):";
-	cin >> op;
-	switch(op){
-		case '+':
-		cout << "num1+num2=" << num1 + num2 << endl;
-		break;
-
-		case '-':
-		cout << "num1-num2=" << num1 - num2 << endl;
-		break;
-
-		case '*':
-		cout << "num1*num2=" << num1 * num2 << endl;
-		break;
-
-		case '/':
-		cout << "num1/num2=" << num1 / num2 << endl;
-		break;
-
-		default:
-		cout << "無法運算\n";
+	int daily,total=0;
+	for(int i=1; i<=7; i+=1){
+		if(i==7){
+			cout << "請輸入星期日的支出:";
+		}else{
+			cout << "請輸入星期" << i << "的支出:";
+		}
+		
+		cin >> daily;
+		total += daily;
 	}
-
+	cout << "本星期的支出為:" << total << "元\n";
 	return 0;
 }

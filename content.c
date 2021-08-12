@@ -1,13 +1,11 @@
 #include <iostream>
-using namespace std;
 
 int main() {
-	int deposit=0, inputNum;
-	while(deposit < 30000){
-		cout << "請輸入這個月份的存款:";
-		cin >> inputNum;
-		deposit += inputNum;
-	}
-	cout << "恭喜!已經存夠了，存了" << deposit << endl;
+	int chinese;
+	int math;
+	printf("請輸入國文成績和數學成績(國文,數學):");
+	scanf("%d,%d",&chinese,&math);
+	printf("國文為%d\n",chinese);
+	printf("數學為%d\n",math);
 	return 0;
 }

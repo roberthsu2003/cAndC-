@@ -1,14 +1,16 @@
 #include <iostream>
 using namespace std;
 
-//沒有傳出值
-//沒有參數
-
-void sayHello(){
-	cout << "歡迎光臨!" << endl;
+float temperature(int value){
+	return value * 1.8 + 32;
 }
 
 int main() {
-  sayHello();
-  return 0;
+	int cValue;
+	float fValue;
+	cout << "請輸入攝氏溫度:";
+	cin >> cValue;
+	fValue=temperature(cValue);
+	cout << "華氏溫度=" << fValue << endl;
+	return 0;
 }

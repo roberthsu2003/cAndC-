@@ -1,19 +1,3 @@
-tool.h
-
-void sorted(int array[],int nums){
-	int temp;
-	for(int i=0;i<nums-1;i+=1){
-		for(int j=i+1;j<nums;j+=1){
-			if(array[i] < array[j]){
-				temp = array[i];
-				array[i] = array[j];
-				array[j] = temp;
-			}
-		}
-	}
-}
-
-
 main.cpp
 
 #include <iostream>
@@ -39,7 +23,7 @@ int main() {
 	}
 
 	//陣列排序
-	sorted(array,nums);
+	sorted(array,nums,true);
 	
 	cout << "\n";
 	cout << "排序後:\n";
@@ -47,4 +31,46 @@ int main() {
 		cout << array[i] << " ";
 	}
 	return 0;
+}
+
+
+tools.h
+
+//第一個參數要放陣列,nums要放陣列的元素數量
+void sorted(int array[],int nums){
+	int temp;
+	for(int i=0;i<nums-1;i+=1){
+		for(int j=i+1;j<nums;j+=1){
+			if(array[i] < array[j]){
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+		}
+	}
+}
+
+//overload
+void sorted(int array[],int nums,bool asc){
+	int temp;
+	for(int i=0;i<nums-1;i+=1){
+		for(int j=i+1;j<nums;j+=1){
+			if (asc){
+				//由大到小
+				if(array[i] < array[j]){
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+				}
+			}else{
+				//由小到大
+				if(array[i] > array[j]){
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+				}
+			}
+			
+		}
+	}
 }

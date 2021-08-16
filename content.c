@@ -6,6 +6,7 @@ int main() {
 	cout << "請輸入要排序的數值個數:";
 	cin >> nums;
 	int array[nums];
+	int temp;
 
 	for(int i=0; i<nums; i+=1){
 		cout << "請輸入第" << i+1 << "個數值:";
@@ -18,5 +19,19 @@ int main() {
 	}
 
 	//陣列排序
+	for(int i=0;i<nums-1;i+=1){
+		for(int j=i+1;j<nums;j+=1){
+			if(array[i] < array[j]){
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+		}
+	}
+	cout << "\n";
+	cout << "排序後:\n";
+	for(int i=0; i<nums; i+=1){
+		cout << array[i] << " ";
+	}
 	return 0;
 }

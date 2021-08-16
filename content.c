@@ -1,22 +1,22 @@
 #include <iostream>
 using namespace std;
+
 int main() {
-	int scores[5];
-	int sum = 0;
-	float ave;
+	int nums;
+	cout << "請輸入要排序的數值個數:";
+	cin >> nums;
+	int array[nums];
 
-	for(int i=0; i<5; i+=1){
-		cout << "請輸入第" << i+1 << "位學生的成績";
-		cin >> scores[i];
+	for(int i=0; i<nums; i+=1){
+		cout << "請輸入第" << i+1 << "個數值:";
+		cin >> array[i];
 	}
 
-	for(int i=0; i<5; i+=1){
-		sum += scores[i];
+	cout << "排序前:\n";
+	for(int i=0; i<nums; i+=1){
+		cout << array[i] << " ";
 	}
 
-	ave = sum / 5.0;
-
-	cout << "全班總成績為:" << sum << "分,平均為" << ave << "分\n";
+	//陣列排序
 	return 0;
-
 }

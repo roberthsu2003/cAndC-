@@ -15,8 +15,10 @@ int main() {
 	for(int i=0; i<nums; i+=1){		
 		scores[i] = rand() % (max - min + 1) + min;
 	}
+	sorted(scores,nums);
+	cout << "名次\t分數\n";
 	for(int i=0; i<nums;i+=1){
-		cout << scores[i] << " ";
+		cout << i+1 << "\t\t" << scores[i] << endl;
 	}
 	cout << endl;
 	return 0;

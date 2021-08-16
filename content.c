@@ -1,22 +1,12 @@
-main.cpp
-
-#include <iostream>
-#include "tools.h"
-
-using namespace std;
-
-int main() {
-	int cValue;
-	float fValue;
-	cout << "請輸入攝氏溫度:";
-	cin >> cValue;
-	fValue=temperature(cValue);
-	cout << "華氏溫度=" << fValue << endl;
-	return 0;
-}
-
-tools.h
-
-float temperature(int value){
-	return value * 1.8 + 32;
+void sorted(int array[],int nums){
+	int temp;
+	for(int i=0;i<nums-1;i+=1){
+		for(int j=i+1;j<nums;j+=1){
+			if(array[i] < array[j]){
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+		}
+	}
 }

@@ -1,25 +1,20 @@
 #include <iostream>
-#include "tools.h"
-#include <time.h>
-
 using namespace std;
-
 int main() {
-	int nums;
-	int max=600;
-	int min=450;
-	srand(time(NULL));	
-	cout << "請輸入班級學生數:";
-	cin >> nums;
-	int scores[nums];
-	for(int i=0; i<nums; i+=1){		
-		scores[i] = rand() % (max - min + 1) + min;
+	int score;
+	int num = 0;
+	int sum = 0;
+	while(true){
+		cout << "請輸入" << num+1 << "學生的成績:";
+		cin >> score;
+		if(score < 0){
+			break;
+		}
+		//當不是負數時，執行的程式區段
+		sum += score;
+		num += 1;
 	}
-	sorted(scores,nums);
-	cout << "名次\t分數\n";
-	for(int i=0; i<nums;i+=1){
-		cout << i+1 << "\t\t" << scores[i] << endl;
-	}
-	cout << endl;
-	return 0;
+
+	cout << "全班總成績為:" << sum << "平均分數為" << (float)sum/num << endl;
+
 }

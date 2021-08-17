@@ -1,21 +1,18 @@
 #include <iostream>
 using namespace std;
-
 int main() {
-	int nums = 5;
-	int scores[nums];
-	int sum=0;
-	float ave;
-	for(int i=0; i<nums; i+=1){
-		cout << "請輸入第" << i+1 << "位學生的成績";
-		cin >> scores[i];
-	}
+	short s = 10000;
+	int i = 8976;
+	long long int lli = 8765430;
+	int n[] = {1, 3, 5, 7, 9};
+	int total = sizeof(n);
+	int oneSize = sizeof(n[0]);
 
-	for(int i=0; i<nums; i+=1){
-		sum += scores[i];
-	}
-
-	ave = (float)sum / nums;
-	cout << "全班總成績為:" << sum << "分,平均為" << ave << "分\n";
+	cout << "short的大小" << sizeof(s) << endl;
+	cout << "int的大小" << sizeof(i) << endl;
+	cout << "long long int" << sizeof(lli) << endl;
+	cout << "n陣列所佔用的bytes數" << total << endl;
+	cout << "n[0]元素所佔用bytes數" << oneSize << endl;
+	cout << "n陣列的元素數量是" << total/oneSize << endl;
 	return 0;
 }

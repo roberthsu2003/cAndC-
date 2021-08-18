@@ -15,10 +15,10 @@ int main() {
 			students[i][j] = rand() % (max-min+1) + min;
 		}
 	}
-
+	cout << "國文\t英文\t數學\t自然\t地理" << endl;
 	for (int i=0; i<50; i+=1){
 		for(int j=0; j<5; j+=1){
-			cout << students[i][j] << " ";
+			cout << students[i][j] << "\t\t";
 		}
 		cout << endl;
 	}

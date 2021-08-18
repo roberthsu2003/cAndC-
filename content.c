@@ -2,17 +2,23 @@
 #include <time.h>
 using namespace std;
 
-int main() {
-	srand(time(NULL));
+//傳出亂數分數
+int randomScore(){
 	int max = 100;
 	int min = 60;
+	return rand() % (max-min+1) + min;
+}
+
+int main() {
+	srand(time(NULL));
+	
 	int students[50][5];
 	cout << "students佔的記憶體大小是:" << sizeof(students) << endl;
 
 	//給學生亂數分數
 	for (int i=0; i<50; i+=1){
 		for(int j=0; j<5; j+=1){
-			students[i][j] = rand() % (max-min+1) + min;
+			students[i][j] = randomScore();
 		}
 	}
 	cout << "國文\t英文\t數學\t自然\t地理\t總分\t平均" << endl;

@@ -4,9 +4,8 @@
 
 using namespace std;
 
-int studentScore(){
-	//450~600
-	return rand() % (600 - 450 + 1) + 450;
+int studentScore(int min, int max){
+	return rand() % (max - min + 1) + min;
 }
 
 int main() {
@@ -16,7 +15,7 @@ int main() {
 	cin >> nums;
 	int students[nums];
 	for(int i=0; i<nums; i++){
-		students[i] = studentScore();
+		students[i] = studentScore(200, 600);
 	}
 
 	sorted(students, nums, true);

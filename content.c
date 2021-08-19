@@ -17,21 +17,20 @@ int main() {
 	}
 
 	cout << "排序前:\n";
-	for(int i=0; i<nums; i+=1){
-		cout << array[i] << " ";
-	}
+	displayArray(array, nums);
 
 	sorted(array, nums);
-	
+
 	cout << endl;
 	cout << "排序後:\n";
-	for(int i=0; i<nums; i+=1){
-		cout << array[i] << " ";
-	}
+	displayArray(array, nums);
 	return 0;
 }
 
 tools.h
+
+#include <iostream>
+using namespace std;
 
 void sorted(int a[], int n){
 	//泡沫排序
@@ -45,4 +44,11 @@ void sorted(int a[], int n){
 		}
 	}
 }
+
+void displayArray(int a[], int n){
+	for(int i=0; i<n; i+=1){
+		cout << a[i] << " ";
+	}
+}
+
 	

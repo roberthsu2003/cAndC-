@@ -1,36 +1,20 @@
 #include <iostream>
-#include <time.h>
 using namespace std;
 
-//傳出亂數分數
-int randomScore(){
-	int max = 100;
-	int min = 60;
-	return rand() % (max-min+1) + min;
+int factorial(int n){
+	if(n == 0){
+		return 1;
+	}else{
+		return n * factorial(n-1);
+	}
 }
 
 int main() {
-	srand(time(NULL));
-	
-	int students[50][5];
-	cout << "students佔的記憶體大小是:" << sizeof(students) << endl;
-
-	//給學生亂數分數
-	for (int i=0; i<50; i+=1){
-		for(int j=0; j<5; j+=1){
-			students[i][j] = randomScore();
-		}
-	}
-	cout << "國文\t英文\t數學\t自然\t地理\t總分\t平均" << endl;
-	for (int i=0; i<50; i+=1){
-		int sum=0;
-		for(int j=0; j<5; j+=1){
-			sum += students[i][j];
-			cout << students[i][j] << "\t\t";
-		}
-		cout << sum << "\t\t";
-		printf("%.2f",sum/5.0);
-		cout << endl;
-	}
+	int n;
+	long long int total;
+	cout << "請輸入數字n:";
+	cin >> n;
+	total = factorial(n);
+	cout << n << "! = " << total << endl; 
 	return 0;
 }

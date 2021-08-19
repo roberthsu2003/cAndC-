@@ -19,7 +19,7 @@ int main() {
 	cout << "排序前:\n";
 	displayArray(array, nums);
 
-	sorted(array, nums);
+	sorted(array, nums, true);
 
 	cout << endl;
 	cout << "排序後:\n";
@@ -32,6 +32,7 @@ tools.h
 #include <iostream>
 using namespace std;
 
+
 void sorted(int a[], int n){
 	//泡沫排序
 	for(int i=0; i<n-1; i+=1){
@@ -41,6 +42,28 @@ void sorted(int a[], int n){
 				a[i] = a[j];
 				a[j] = temp;
 			}
+		}
+	}
+}
+//相同的function名稱,不同的參數,overload(覆載)
+void sorted(int a[], int n, bool asc){
+	//泡沫排序
+	for(int i=0; i<n-1; i+=1){
+		for(int j=i+1;j<n; j+=1){
+			if(asc == true){
+				if(a[i] < a[j]){
+					int temp = a[i];
+					a[i] = a[j];
+					a[j] = temp;
+				}
+			}else{
+				if(a[i] > a[j]){
+					int temp = a[i];
+					a[i] = a[j];
+					a[j] = temp;
+				}
+			}
+			
 		}
 	}
 }

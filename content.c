@@ -8,6 +8,10 @@ int multiply(int a, int b){
 	return a * b;
 }
 
+void sayHello(){
+	cout << "Hello!" << endl;
+}
+
 int main() {
 	int first;
 	int second;
@@ -17,5 +21,6 @@ int main() {
 	cin >> second;
 	cout << first << "+" << second << "=" << add(first,second) << endl;
 	cout << first << "*" << second << "=" << multiply(first,second) << endl;
+	sayHello();
   return 0;
 }

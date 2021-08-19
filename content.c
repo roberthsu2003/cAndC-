@@ -1,16 +1,9 @@
+main.cpp
+
 #include <iostream>
+#include "tools.h"
 using namespace std;
-int add(int a, int b){
-	return a + b;
-}
 
-int multiply(int a, int b){
-	return a * b;
-}
-
-void sayHello(){
-	cout << "Hello!" << endl;
-}
 
 int main() {
 	int first;
@@ -23,4 +16,22 @@ int main() {
 	cout << first << "*" << second << "=" << multiply(first,second) << endl;
 	sayHello();
   return 0;
+}
+
+
+tools.h
+
+#include <iostream>
+using namespace std;
+
+int add(int a, int b){
+	return a + b;
+}
+
+int multiply(int a, int b){
+	return a * b;
+}
+
+void sayHello(){
+	cout << "Hello!" << endl;
 }

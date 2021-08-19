@@ -1,34 +1,20 @@
 #include <iostream>
 using namespace std;
 
-void changeValue(int a[]){
-	for(int i=0; i<5; i++){
-		a[i] *= 5;
-	}
-}
-
-void changeValue1(int *a){
-	//使用陣列變數的操作法
-	for(int i=0; i<5; i++){
-		a[i] *= 5;
-	}
-}
-
-void changeValue2(int *a){
-	//使用指標變數的操作法
-	for(int i=0; i<5; i++){
-		*(a + i) *= 5;
-	}
-}
-
-
 int main() {
-	int array[] = {1, 2, 3, 4, 5};	
-	changeValue2(array);
+	int nums;
+	cout << "請輸入要排序的數值個數:";
+	cin >> nums;
 
-	for(int i=0; i<5; i++){
-		cout << array[i] << ",";
+	int array[nums];
+	for(int i=0; i<nums; i+=1){
+		cout << "請輸入第" << i+1 << "個數值:";
+		cin >> array[i];
 	}
-	cout << endl;
+
+	cout << "排序前:\n";
+	for(int i=0; i<nums; i+=1){
+		cout << array[i] << " ";
+	}
 	return 0;
 }

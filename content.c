@@ -1,13 +1,12 @@
 #include <iostream>
 using namespace std;
 
-void sub(int* n){
-	*n = 100;
-}
-
 int main() {
-  int a = 10;
-  sub(&a);
-  cout << "a變數的值是" << a << endl;
-  return 0;
+	int a = 666, b = 777;
+	cout << "交換前 a=" << a << ",b=" << b << endl; 
+	int temp = a;
+	a = b;
+	b = temp;
+	cout << "交換後 a=" << a << ",b=" << b << endl; 
+	return 0;
 }

@@ -1,16 +1,12 @@
 #include <iostream>
 using namespace std;
-int n;
-
-void showNum(){
-	int value = n*2;
-	cout << "value的區域變數是" << value << endl;
-}
 
 int main() {
-	cout << "請輸入全域變數n=";
-	cin >> n;
-	cout << "全域變數n是" << n << endl;
-	showNum();
+	int n = 10;
+	double m = 5;
+	cout << "變數n的值=" << n << endl;
+	cout << "變數n的記憶體位址=" << &n << endl;
+	cout << "變數m的值=" << m << endl;
+	cout << "變數m的記憶體位址=" << &m << endl;
 	return 0;
 }

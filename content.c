@@ -1,20 +1,16 @@
 #include <iostream>
 using namespace std;
+int n;
 
-int factorial(int n){
-	if(n == 0){
-		return 1;
-	}else{
-		return n * factorial(n-1);
-	}
+void showNum(){
+	int value = n*2;
+	cout << "value的區域變數是" << value << endl;
 }
 
 int main() {
-	int n;
-	long long int total;
-	cout << "請輸入數字n:";
+	cout << "請輸入全域變數n=";
 	cin >> n;
-	total = factorial(n);
-	cout << n << "! = " << total << endl; 
+	cout << "全域變數n是" << n << endl;
+	showNum();
 	return 0;
 }

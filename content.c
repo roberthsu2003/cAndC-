@@ -29,9 +29,11 @@ int main() {
 		students[i].average = students[i].sum / 3.0;
 	}
 	//排名次
-	
+	studentSorted(students,3);
+
 	//輸出
 	for(int i=0;i<3;i+=1){
+		cout << "名次:" << i+1 << endl;
 		cout << "姓名:" << students[i].name << endl;
 		cout << "國文:" << students[i].chinese << endl;
 		cout << "英文:" << students[i].english << endl;
@@ -62,7 +64,11 @@ void studentSorted(student s[],int nums){
 	//泡沫排序法
 	for(int i=0; i < nums-1; i++){
 		for(int j=i+1; j < nums; j++){
-			
+			if(s[i].sum < s[j].sum){
+				student temp = s[i];
+				s[i] = s[j];
+				s[j] = temp;
+			}
 		}
 	}
 }

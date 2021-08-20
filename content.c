@@ -6,8 +6,8 @@ main.cpp
 
 using namespace std;
 
-int studentScore(){
-	return rand() % 41 + 60;
+int studentScore(int min, int max){
+	return rand() % (max - min + 1) + min;
 }
 
 int main() {
@@ -21,9 +21,9 @@ int main() {
 	//給學生姓名和國文,英文,數學
 	for(int i=0;i<nums;i+=1){
 		students[i].name = "stu" + to_string(i+1);
-		students[i].chinese = studentScore();
-		students[i].english = studentScore();
-		students[i].math = studentScore();
+		students[i].chinese = studentScore(60,100);
+		students[i].english = studentScore(50,100);
+		students[i].math = studentScore(55,100);
 	}
 
 
@@ -32,6 +32,7 @@ int main() {
 		students[i].sum = students[i].chinese + students[i].english + students[i].math;
 		students[i].average = students[i].sum / 3.0;
 	}
+
 	//排名次
 	studentSorted(students,nums);
 

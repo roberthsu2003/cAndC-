@@ -1,28 +1,23 @@
 #include <iostream>
-#include "tools.h"
-#include <time.h>
-
 using namespace std;
 
-int studentScore(int min, int max){
-	return rand() % (max - min + 1) + min;
-}
+struct student{
+	string name;
+	int chinese;
+	int english;
+	int math;
+};
 
 int main() {
-	srand(time(NULL));
-	int nums;
-	cout << "請輸入班級學生的人數:";
-	cin >> nums;
-	int students[nums];
-	for(int i=0; i<nums; i++){
-		students[i] = studentScore(200, 600);
-	}
+	struct student david;
+	david.name = "David";
+	david.chinese = 78;
+	david.english = 65;
+	david.math = 98;
 
-	sorted(students, nums, true);
-	displayArray(students, nums);
-
+	cout << "學生姓名是:" << david.name << endl;
+	cout << "國文分數是:" << david.chinese << endl;
+	cout << "英文分數是:" << david.english << endl;
+	cout << "數學分數是是:" << david.math << endl;
 	return 0;
-
-
-
 }

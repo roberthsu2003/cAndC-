@@ -1,4 +1,4 @@
-main.h
+main.cpp
 
 #include <iostream>
 #include "data.h"
@@ -28,9 +28,10 @@ int main() {
 		cout << "國文:" << students[i].chinese << endl;
 		cout << "英文:" << students[i].english << endl;
 		cout << "數學:" << students[i].math << endl;
-		int sum = students[i].chinese + students[i].english + students[i].math;
-		cout << "總分:" << sum << endl;
-		printf("%.2f\n\n\n",sum/3.0);
+		students[i].sum = students[i].chinese + students[i].english + students[i].math;
+		cout << "總分:" << students[i].sum << endl;
+		students[i].average = students[i].sum / 3.0;
+		printf("平均:%.2f\n\n\n",students[i].average);
 	}
 	return 0;
 
@@ -46,6 +47,8 @@ typedef struct student{
 	int chinese;
 	int english;
 	int math;
+	int sum;
+	float average;
 }student;
 
 void studentSorted(student s[],int nums){

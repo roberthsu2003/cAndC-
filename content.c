@@ -25,7 +25,10 @@ int main() {
 		cout << "姓名:" << students[i].name << endl;
 		cout << "國文:" << students[i].chinese << endl;
 		cout << "英文:" << students[i].english << endl;
-		cout << "數學:" << students[i].math << "\n\n\n";
+		cout << "數學:" << students[i].math << endl;
+		int sum = students[i].chinese + students[i].english + students[i].math;
+		cout << "總分:" << sum << endl;
+		printf("%.2f\n\n\n",sum/3.0);
 	}
 	return 0;
 

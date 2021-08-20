@@ -1,15 +1,12 @@
+main.cpp
+
 #include <iostream>
+#include "data.h"
+
 using namespace std;
 
-struct student{
-	string name;
-	int chinese;
-	int english;
-	int math;
-};
-
 int main() {
-	struct student david;
+	student david;
 	david.name = "David";
 	david.chinese = 78;
 	david.english = 65;
@@ -21,3 +18,16 @@ int main() {
 	cout << "數學分數是是:" << david.math << endl;
 	return 0;
 }
+
+
+data.h
+
+#include <iostream>
+using namespace std;
+
+typedef struct student{
+	string name;
+	int chinese;
+	int english;
+	int math;
+}student;

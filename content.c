@@ -37,14 +37,15 @@ int main() {
 	studentSorted(students,nums);
 
 	//輸出
+	cout << "名次\t姓名\t國文\t英文\t數學\t總分\t平均" << endl;
 	for(int i=0;i<nums;i+=1){
-		cout << "名次:" << i+1 << endl;
-		cout << "姓名:" << students[i].name << endl;
-		cout << "國文:" << students[i].chinese << endl;
-		cout << "英文:" << students[i].english << endl;
-		cout << "數學:" << students[i].math << endl;	
-		cout << "總分:" << students[i].sum << endl;		
-		printf("平均:%.2f\n\n\n",students[i].average);
+		cout << i+1 << "\t\t";
+		cout << students[i].name << "\t";
+		cout << students[i].chinese << "\t\t";
+		cout << students[i].english << "\t\t";
+		cout << students[i].math << "\t\t";	
+		cout <<  students[i].sum << "\t\t";		
+		printf("%.2f\n",students[i].average);
 	}
 	return 0;
 

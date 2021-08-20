@@ -2,37 +2,41 @@ main.cpp
 
 #include <iostream>
 #include "data.h"
+#include "time.h"
 
 using namespace std;
 
+int studentScore(){
+	return rand() % 41 + 60;
+}
+
 int main() {
-	//建立3個學生
-	student students[3];
-	students[0].name = "David";
-	students[0].chinese = 87;
-	students[0].english = 97;
-	students[0].math = 78;
+	srand(time(NULL));
+	//建立學生
+	int nums;
+	cout << "請輸入學生人數:";
+	cin >> nums;
+	student students[nums];
 
-	students[1].name = "Alice";
-	students[1].chinese = 76;
-	students[1].english = 97;
-	students[1].math = 73;
+	//給學生姓名和國文,英文,數學
+	for(int i=0;i<nums;i+=1){
+		students[i].name = "stu" + to_string(i+1);
+		students[i].chinese = studentScore();
+		students[i].english = studentScore();
+		students[i].math = studentScore();
+	}
 
-	students[2].name = "Jenny";
-	students[2].chinese = 91;
-	students[2].english = 92;
-	students[2].math = 65;
 
 	//計算總分和平均
-	for(int i=0;i<3;i+=1){
+	for(int i=0;i<nums;i+=1){
 		students[i].sum = students[i].chinese + students[i].english + students[i].math;
 		students[i].average = students[i].sum / 3.0;
 	}
 	//排名次
-	studentSorted(students,3);
+	studentSorted(students,nums);
 
 	//輸出
-	for(int i=0;i<3;i+=1){
+	for(int i=0;i<nums;i+=1){
 		cout << "名次:" << i+1 << endl;
 		cout << "姓名:" << students[i].name << endl;
 		cout << "國文:" << students[i].chinese << endl;

@@ -6,7 +6,15 @@ main.cpp
 using namespace std;
 
 int main() {
-	guessNumber();
+	bool playagain;
+	do{
+		guessNumber();
+		string inputString;
+		cout << "請問還要繼續玩嗎?(輸入y或n)";
+		cin >> inputString;
+		playagain = (inputString == "y") ? true : false ;
+	}while(playagain);
+	
 	return 0;
 }
 
@@ -40,6 +48,7 @@ void guessNumber(){
 	int count = 0;
 	srand(time(NULL));
 	guess = rand() % max + min;
+	cout << guess << endl;
 	cout << "===============猜數字遊戲=================:\n\n";
 	do{
 		cout << "猜數字範圍" << min << "~" << max << ":";

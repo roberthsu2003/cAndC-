@@ -1,26 +1,23 @@
-main.c
+main.cpp
 
-#include <stdio.h>
+#include <iostream>
 #include "tools.h"
 
-int main(void) {
-	int value1,value2;
-	int result;
-  	printf("請輸入第1個數:");
-	scanf("%d",&value1);
-	printf("請輸入第2個數:");
-	scanf("%d",&value2);
-	result = add(value1,value2);
-	printf("2數相加的值是:%d\n",result);
-    return 0;
+using namespace std;
+
+int main() {
+	cout << "100+200=" << add(100,200) << endl;
+	return 0;
 }
 
 tools.h
 #ifndef _TOOLS_H_
 #define _TOOLS_H_
+//定義function的原型
+int add(int,int);
+#endif
 
+tools.cpp
 int add(int a,int b){
 	return a+b;
 }
-
-#endif

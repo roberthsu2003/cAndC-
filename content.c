@@ -1,17 +1,21 @@
-#include <iostream>
+main.c
 
-#define MAC
+#include <stdio.h>
+#include "tools.h"
 
-#ifndef MAC
+int main(void) {
+	int value1,value2;
+	int result;
+  	printf("請輸入第1個數:");
+	scanf("%d",&value1);
+	printf("請輸入第2個數:");
+	scanf("%d",&value2);
+	result = add(value1,value2);
+	printf("2數相加的值是:%d\n",result);
+    return 0;
+}
 
-#define OS "Window10"
-
-#else 
-
-#define OS "MAC_OS_VERSION_10_0"
-
-#endif
-
-int main() {
-  std::cout << OS << std::endl;
+tools.h
+int add(int a,int b){
+	return a+b;
 }

@@ -1,26 +1,9 @@
+main.cpp
+
 #include <iostream>
+#include "human.h"
+
 using namespace std;
-
-namespace Human{
-	class Person{
-	public:
-		//實體欄位
-		string name;
-		int tall;
-		int weight;
-
-		//實體方法
-		void walk(int var){
-			cout << name << "每小時可以跑" << var << "公里" << endl;
-		}
-
-		float bmi(){
-			float myBmi = weight / ((tall/100.0) * (tall/100.0));
-			return myBmi;
-		}
-	};
-}
-
 using namespace Human;
 
 int main() {
@@ -57,3 +40,32 @@ int main() {
 
 	return 0;
 }
+
+
+human.h
+#ifndef _HUMAN_H_
+#define _HUMAN_H_
+
+#include <iostream>
+using namespace std;
+namespace Human{
+	class Person{
+	public:
+		//實體欄位
+		string name;
+		int tall;
+		int weight;
+
+		//實體方法
+		void walk(int var){
+			cout << name << "每小時可以跑" << var << "公里" << endl;
+		}
+
+		float bmi(){
+			float myBmi = weight / ((tall/100.0) * (tall/100.0));
+			return myBmi;
+		}
+	};
+}
+
+#endif

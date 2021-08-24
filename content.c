@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-class Person{
+namespace Human{
+	class Person{
 	public:
 		//實體欄位
 		string name;
@@ -11,7 +12,10 @@ class Person{
 		void walk(int var){
 			cout << name << "每小時可以跑" << var << "公里" << endl;
 		}
-};
+	};
+}
+
+using namespace Human;
 
 int main() {
 	Person david;

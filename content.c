@@ -6,24 +6,10 @@ main.cpp
 
 int main() {
 	Student::begin();
-	Student stu1("robert");
-	cout << stu1.name << endl;
-	cout << stu1.chinese << endl;
-	cout << stu1.english << endl;
-	cout << stu1.math << endl;
-	cout << stu1.sum() << endl;
-	cout << stu1.average() << endl;
-
-	Student stu2("jenny");
-	cout << stu2.name << endl;
-	cout << stu2.chinese << endl;
-	cout << stu2.english << endl;
-	cout << stu2.math << endl;
-	cout << stu2.sum() << endl;
-	cout << stu2.average() << endl;
+	Student students[50];
+	
 	return 0;
 }
-
 
 student.h
 
@@ -34,8 +20,6 @@ student.h
 #include <time.h>
 
 using namespace std;
-
-
 
 
 class Student{
@@ -53,6 +37,10 @@ class Student{
 			chinese = rand() % 41 + 60;
 			english = rand() % 41 + 60;
 			math = rand() % 41 + 60;
+		}
+		//自訂的建構式()
+		Student(){
+			
 		}
 
 		//type method

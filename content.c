@@ -20,5 +20,11 @@ int main() {
 
 	cout << robert.name << " 身高=" << robert.tall << endl;
 
+	Person* john = new Person();
+	john->name = "John";
+	john->tall = 175;
+
+	cout << john->name << " 身高=" << john -> tall << endl;
+
 	return 0;
 }

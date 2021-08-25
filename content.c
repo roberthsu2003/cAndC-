@@ -9,14 +9,14 @@ int main() {
 	cin >> nums;
 	Student students[nums];
 	for(int i=0; i<nums; i+=1){
-		students[i] = Student("stu"+to_string(i+1));
-		cout << "學生姓名:" << students[i].name << endl;
-		cout << "國文分數:" << students[i].chinese << endl;
-		cout << "數學分數:" << students[i].math << endl;
-		cout << "英文分數:" << students[i].english << endl;
-		cout << "總分:" << students[i].sum() << endl;
-		cout << "平均:" << students[i].average() << endl;
-		cout << "=====================" << endl;
+		students[i] = Student("stu"+to_string(i+1));		
+	}
+
+	cout << "學生姓名\t國文\t數學\t英文\t總分\t平均" << endl; 
+
+	for(int i=0; i<nums; i+=1){
+		Student s = students[i];
+		cout << s.name << "\t\t" << s.chinese << "\t\t" << s.math << "\t\t" << s.english << "\t\t" << s.sum() << "\t\t" << s.average() << endl;
 	}
 	return 0;
 }

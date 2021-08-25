@@ -1,65 +1,32 @@
-main.cpp
-
 #include <iostream>
-#include "student.h"
+#define PI 3.14159
 
+class Circle{
+	public:
+		int radius;
+		float area(){
+			return PI * radius * radius;
+		}
+};
 
-int main() {
-	Student::begin();
-	Student students[50];
-	
-	return 0;
+float getCirceArea(int radius){
+	return PI * radius * radius;
 }
-
-student.h
-
-#ifndef _STUDENT_H_
-#define _STUDENT_H_
-
-#include <iostream>
-#include <time.h>
 
 using namespace std;
 
+int main() {
+	Circle c1;
+	c1.radius = 10;
+	cout << "半徑是:" << c1.radius << ",面積是:" << c1.area() << endl;
 
-class Student{
-	public:
-		//自訂的建構式(4個參數)
-		Student(string n,int c, int e, int m){
-			name = n;
-			chinese = c;
-			english = e;
-			math = m;
-		}
-		//自訂的建構式(1個參數)
-		Student(string n){					
-			name = n;
-			chinese = rand() % 41 + 60;
-			english = rand() % 41 + 60;
-			math = rand() % 41 + 60;
-		}
-		//自訂的建構式()
-		Student(){
-			
-		}
+	Circle c2;
+	c2.radius = 20;
+	cout << "半徑是:" << c2.radius << ",面積是:" << c2.area() << endl;
 
-		//type method
-		//使用Student時，必需先執行Student::begin()
-		static void begin(){
-			srand(time(NULL));
-		}
-		
-		string name;
-		int chinese;
-		int english;
-		int math;
-
-		int sum(){
-			return chinese + english + math;
-		}
-
-		float average(){
-			return sum() / 3.0;
-		}
-};
-#endif
+	int radius;
+	cout << "請輸入半徑:";
+	cin >> radius;
+	cout << "半徑是:" << radius << ",面積是:" << getCirceArea(radius) << endl;
+	return 0; 
+}

@@ -37,4 +37,29 @@ class People{
 
 #endif
 
+People.cpp
+#include "People.h"
 
+int People::height(){
+	return _height;
+}
+
+void People::setHeight(int h){
+	if(h<100 || h>230){
+		_height = 160;
+	}else{
+		_height = h;
+	}
+}
+
+int People::weight(){
+	return _weight;
+}
+
+void People::setWeight(int w){
+	if(w<30 || w>200){
+		_weight = 60;
+	}else{
+		_weight = w;
+	}
+}

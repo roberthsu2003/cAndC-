@@ -850,68 +850,95 @@ int main() {
 ```c++
 #include <iostream>
 #include "student.h"
-#include "time.h"
-
 using namespace std;
 
+void sortedStudents(Student *s,int nums){
+	Student temp;
+	for(int i=0; i < nums-1; i++){
+		for(int j=i+1; j < nums; j++){
+			if (s[i].sum() < s[j].sum()){
+				temp = s[i];
+				s[i] = s[j];
+				s[j] = temp;
+			}
+		}
+	}
+
+}
+
 int main() {
-	srand(time(NULL));
-	int num = 50;
-	Student students[50];
-
-	for(int i=0; i<num; i++){
-		string name = "stu" + to_string(i+1);
-		cout << name << endl;
-		string id = "A0" + to_string(i+1);
-		students[i] = Student(name, id);
+	int nums;
+	Student::begin();
+	cout << "請輸入學生人數:";
+	cin >> nums;
+	Student students[nums];
+	for(int i=0; i<nums; i+=1){
+		students[i] = Student("stu"+to_string(i+1));		
 	}
-	cout << "學生姓名\t學號\t國文\t英文\t數學\t總分\t平均" << endl;
-	for(int i=0; i<num; i++){
+
+	//依總分排序
+	sortedStudents(students,nums);
+
+	cout << "學生姓名\t國文\t數學\t英文\t總分\t平均\t名次" << endl; 
+
+	for(int i=0; i<nums; i+=1){
 		Student s = students[i];
-		cout << s.name << "\t\t" << s.id << "\t\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << "\t\t" << s.sum() << "\t\t" << s.average() << endl;
+		cout << s.name << "\t\t" << s.chinese << "\t\t" << s.math << "\t\t" << s.english << "\t\t" << s.sum() << "\t\t" << s.average() << "\t\t" << i+1 << endl;
 	}
-
+	return 0;
 }
 
 
 student.h
 
-#ifndef __STUDENT__
-#define __STUDENT__
+#ifndef _STUDENT_H_
+#define _STUDENT_H_
 
 #include <iostream>
+#include <time.h>
+
 using namespace std;
+
 
 class Student{
 	public:
-	string name;
-	string id;
-	int chinese;
-	int english;
-	int math;
+		//自訂的建構式(4個參數)
+		Student(string n,int c, int e, int m){
+			name = n;
+			chinese = c;
+			english = e;
+			math = m;
+		}
+		//自訂的建構式(1個參數)
+		Student(string n){					
+			name = n;
+			chinese = rand() % 41 + 60;
+			english = rand() % 41 + 60;
+			math = rand() % 41 + 60;
+		}
+		//自訂的建構式()
+		Student(){
+			
+		}
 
-	//建構式
-	Student(){
+		//type method
+		//使用Student時，必需先執行Student::begin()
+		static void begin(){
+			srand(time(NULL));
+		}
+		
+		string name;
+		int chinese;
+		int english;
+		int math;
 
-	}
+		int sum(){
+			return chinese + english + math;
+		}
 
-	//建構式
-	Student(string n,string i){
-		name = n;
-		id = i;
-		chinese = 50 + rand() % 51;
-		english = 50 + rand() % 51;
-		math = 50 + rand() % 51;
-	}
-
-	//method
-	int sum(){
-		return chinese + english + math;
-	}
-
-	float average(){
-		return sum() / 3.0;
-	}
+		float average(){
+			return sum() / 3.0;
+		}
 };
 #endif
 ```

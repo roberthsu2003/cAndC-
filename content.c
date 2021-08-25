@@ -14,8 +14,10 @@ int main() {
 	cout << "p1的體重是:" << p1.weight() << endl;
 }
 
-
 People.h
+
+#ifndef _PEOPLE_H_
+#define _PEOPLE_H_
 
 #include <iostream>
 using namespace std;
@@ -26,28 +28,13 @@ class People{
 		int _weight;
 	public:
 		string name;
-		int height(){
-			return _height;
-		}
-
-		void setHeight(int h){
-			if(h<100 || h>230){
-				_height = 160;
-			}else{
-				_height = h;
-			}
-		}
-
-		int weight(){
-			return _weight;
-		}
-
-		void setWeight(int w){
-			if(w<30 || w>200){
-				_weight = 60;
-			}else{
-				_weight = w;
-			}
-		}
+		int height();
+		void setHeight(int h);
+		int weight();
+		void setWeight(int w);
 		
 };
+
+#endif
+
+

@@ -1,65 +1,109 @@
 main.cpp
 
 #include <iostream>
-#include "People.h"
+#include "student.h"
 using namespace std;
 
+void sortedStudents(Student *s,int nums){
+	Student temp;
+	for(int i=0; i < nums-1; i++){
+		for(int j=i+1; j < nums; j++){
+			if (s[i].sum() < s[j].sum()){
+				temp = s[i];
+				s[i] = s[j];
+				s[j] = temp;
+			}
+		}
+	}
 
-int main() {
-	People p1;
-	p1.name = "robert";
-	p1.setHeight(-1);
-	p1.setWeight(-1);
-	cout << "p1的高是:" << p1.height() << endl;
-	cout << "p1的體重是:" << p1.weight() << endl;
 }
 
-People.h
+int main() {
+	int nums;
+	Student::begin();
+	cout << "請輸入學生人數:";
+	cin >> nums;
+	Student students[nums];
+	for(int i=0; i<nums; i+=1){
+		students[i] = Student("stu"+to_string(i+1));		
+	}
 
-#ifndef _PEOPLE_H_
-#define _PEOPLE_H_
+	//依總分排序
+	sortedStudents(students,nums);
+
+	cout << "學生姓名\t國文\t數學\t英文\t總分\t平均\t名次" << endl; 
+
+	for(int i=0; i<nums; i+=1){
+		Student s = students[i];
+		cout << s.name << "\t\t" << s.chinese << "\t\t" << s.math << "\t\t" << s.english << "\t\t" << s.sum() << "\t\t" << s.average() << "\t\t" << i+1 << endl;
+	}
+	return 0;
+}
+
+student.h
+
+#ifndef _STUDENT_H_
+#define _STUDENT_H_
 
 #include <iostream>
+#include <time.h>
+
 using namespace std;
 
-class People{
-	private:
-		int _height;
-		int _weight;
-	public:
-		string name;
-		int height();
-		void setHeight(int h);
-		int weight();
-		void setWeight(int w);
-		
-};
 
+class Student{
+	public:
+		//自訂的建構式(4個參數)
+		Student(string n,int c, int e, int m);
+		//自訂的建構式(1個參數)
+		Student(string n);
+		//自訂的建構式()
+		Student();
+
+		//type method
+		//使用Student時，必需先執行Student::begin()
+		static void begin(){
+			srand(time(NULL));
+		}
+		
+		string name;
+		int chinese;
+		int english;
+		int math;
+		int sum();
+		float average();
+};
 #endif
 
 People.cpp
-#include "People.h"
 
-int People::height(){
-	return _height;
+#include "student.h"
+#include <iostream>
+using namespace std;
+
+Student::Student(string n,int c, int e, int m){
+	name = n;
+	chinese = c;
+	english = e;
+	math = m;
+}
+//自訂的建構式(1個參數)
+Student::Student(string n){					
+	name = n;
+	chinese = rand() % 41 + 60;
+	english = rand() % 41 + 60;
+	math = rand() % 41 + 60;
+}
+//自訂的建構式()
+Student::Student(){
+	
 }
 
-void People::setHeight(int h){
-	if(h<100 || h>230){
-		_height = 160;
-	}else{
-		_height = h;
-	}
+int Student::sum(){
+	return chinese + english + math;
 }
 
-int People::weight(){
-	return _weight;
+float Student::average(){
+	return sum() / 3.0;
 }
 
-void People::setWeight(int w){
-	if(w<30 || w>200){
-		_weight = 60;
-	}else{
-		_weight = w;
-	}
-}

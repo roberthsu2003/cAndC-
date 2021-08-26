@@ -2,8 +2,12 @@
 #include <time.h>
 using namespace std;
 
+void begin(){
+	srand(time(NULL));
+}
 
 void lot(){
+	//要執行lot時,必需先執行一次begin()
 	int lot[49];
 	int num = 7;
 	int maxIndex = 48;
@@ -11,7 +15,7 @@ void lot(){
 	for(int i=0; i<49; i+=1){
 		lot[i] = i+1;
 	}
-	srand(time(NULL));
+	
 	for(int i=0; i<num; i+=1){
 		int randIndex = rand() % (maxIndex+1);
 		choose[i] = lot[randIndex];
@@ -26,6 +30,7 @@ void lot(){
 }
 
 int main() {
+	begin();
 	int nums;
 	cout << "請輸入要產生電腦選號的組數:";
 	cin >> nums;

@@ -2,7 +2,8 @@
 #include <time.h>
 using namespace std;
 
-int main() {
+
+void lot(){
 	int lot[49];
 	int num = 7;
 	int maxIndex = 48;
@@ -22,5 +23,8 @@ int main() {
 		cout << choose[i] << " ";
 	}
 	cout << "特別號" << choose[num-1] << endl;
-	return 0;
+}
+
+int main() {
+	lot();
 }

@@ -1,16 +1,25 @@
 #include <iostream>
+#include <time.h>
 using namespace std;
+
 int main() {
-	int scores[5]; //建立陣列
-	cout << "請輸入5位學生的分數" << endl;
-	//給每個元素元素值
-	for(int i=0; i<5;i+=1){
-		cout << "請輸入第" << i+1 << "學生的分數:";
-		cin >> scores[i];
+	int lot[49];
+	int num = 7;
+	int maxIndex = 48;
+	int choose[num];
+	for(int i=0; i<49; i+=1){
+		lot[i] = i+1;
 	}
-	//輸出元素值
-	for(int i=0; i<5; i+=1){
-		cout << "第" << i+1 << "位學生的分數是:" << scores[i] << endl;
+	srand(time(NULL));
+	for(int i=0; i<num; i+=1){
+		int randIndex = rand() % (maxIndex+1);
+		choose[i] = lot[randIndex];
+		lot[randIndex] = lot[maxIndex];
+		maxIndex -= 1;
+	}
+
+	for(int i=0; i<num; i++){
+		cout << choose[i] << endl;
 	}
 	return 0;
 }

@@ -18,8 +18,9 @@ int main() {
 		maxIndex -= 1;
 	}
 
-	for(int i=0; i<num; i++){
-		cout << choose[i] << endl;
+	for(int i=0; i<num-1; i++){
+		cout << choose[i] << " ";
 	}
+	cout << "特別號" << choose[num-1] << endl;
 	return 0;
 }

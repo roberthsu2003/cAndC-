@@ -23,6 +23,21 @@ int main() {
 students.h
 
 
+
+void addData(int s[][5],int nums);
+/*----------------*/
+/*這是將陣列填滿亂數資料*/
+/*----------------*/
+
+
+
+void displayScores(int s[][5], int nums);
+/*----------------*/
+/*這是將陣列資料輸出*/
+/*----------------*/
+
+
+students.cpp
 #include <iostream>
 using namespace std;
 

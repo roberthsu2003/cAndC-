@@ -11,12 +11,16 @@ void addData(int s[][5],int nums){
 }
 
 void displayScores(int s[][5], int nums){
-	cout << "國文\t英文\t數學\t歷史\t地理" << endl;
+	cout << "國文\t英文\t數學\t歷史\t地理\t總分\t平均" << endl;
 	for(int i=0; i<nums; i+=1){
+		int total = 0;
 		for(int j=0; j<5; j+=1){
 			cout << s[i][j] << "\t\t";
+			total += s[i][j];
 		}
-		cout << endl;
+		cout << total << "\t\t";
+		cout << total/5.0 << endl;
+		
 	}
 }
 

@@ -10,6 +10,18 @@ void addData(int s[][5],int nums){
 	}
 }
 
+void displayScores(int s[][5], int nums){
+	cout << "國文\t英文\t數學\t歷史\t地理" << endl;
+	for(int i=0; i<nums; i+=1){
+		for(int j=0; j<5; j+=1){
+			cout << s[i][j] << "\t\t";
+		}
+		cout << endl;
+	}
+}
+
+
+
 int main() {
 	srand(time(NULL));
 	int nums;
@@ -17,11 +29,7 @@ int main() {
 	cin >> nums;
 	int students[nums][5];
 	addData(students, nums);
-	for(int i=0; i<nums; i++){
-		for(int j=0; j<5; j++){
-			cout<< students[i][j] << " ";
-		}
-		cout << endl;
-	}
+	displayScores(students, nums);
+	
 }
 	

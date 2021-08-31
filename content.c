@@ -1,5 +1,29 @@
+main.cpp
+
 #include <iostream>
 #include <time.h>
+#include "students.h"
+using namespace std;
+
+
+
+
+
+int main() {
+	srand(time(NULL));
+	int nums;
+	cout << "請輸入學生的數量:";
+	cin >> nums;
+	int students[nums][5];
+	addData(students, nums);
+	displayScores(students, nums);	
+}
+	
+
+students.h
+
+
+#include <iostream>
 using namespace std;
 
 void addData(int s[][5],int nums){
@@ -23,17 +47,3 @@ void displayScores(int s[][5], int nums){
 		
 	}
 }
-
-
-
-int main() {
-	srand(time(NULL));
-	int nums;
-	cout << "請輸入學生的數量:";
-	cin >> nums;
-	int students[nums][5];
-	addData(students, nums);
-	displayScores(students, nums);
-	
-}
-	

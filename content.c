@@ -2,10 +2,10 @@ main.cpp
 
 #include <iostream>
 #include "student.h"
-#include "time.h"
+
 using namespace std;
 int main() {
-	srand(time(NULL));
+	begin();
 	int studentCount = 50;
 	Student students[studentCount];
 	for(int i=0; i< studentCount; i+=1){
@@ -21,9 +21,12 @@ int main() {
 	}
 }
 
+
 student.h
 
 #include <iostream>
+#include <time.h>
+
 using namespace std;
 
 typedef struct student{
@@ -32,6 +35,10 @@ typedef struct student{
 	int english;
 	int math;
 }Student;
+
+void begin(){
+	srand(time(NULL));
+}
 
 Student createStudent(int i){
 	Student s;	

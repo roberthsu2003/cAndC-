@@ -7,10 +7,8 @@ typedef struct student{
 }Student;
 
 int main() {
-	Student stu[3];
-	stu[0] = {"robert", 94};
-	stu[1] = {"david", 91};
-	stu[2] = {"alice", 94};
+	Student stu[3] = {{"robert", 94},{"david", 91},{"alice", 94}};
+	
 
 	for(int i=0; i<3; i+=1){
 		Student student = stu[i];

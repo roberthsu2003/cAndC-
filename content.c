@@ -5,7 +5,6 @@ main.cpp
 
 using namespace std;
 int main() {
-	begin();
 	int studentCount = 50;
 	Student students[studentCount];
 	for(int i=0; i< studentCount; i+=1){
@@ -28,6 +27,7 @@ student.h
 #include <time.h>
 
 using namespace std;
+bool start = false;
 
 typedef struct student{
 	string name;
@@ -36,11 +36,16 @@ typedef struct student{
 	int math;
 }Student;
 
-void begin(){
-	srand(time(NULL));
-}
+
+	
+
 
 Student createStudent(int i){
+	if(start == false){
+		srand(time(NULL));
+		start = true;
+	}
+	
 	Student s;	
 	s.name = "stu" + to_string(i+1);
 	s.chinese = rand() % (100 - 50 + 1) + 50;

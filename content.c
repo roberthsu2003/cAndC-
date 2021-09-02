@@ -2,16 +2,16 @@
 using namespace std;
 
 //定義一個結構
-struct student{
+typedef struct student{
 	int id;
 	string name;
 	int chinese, math, english;
-};
+}Student;
 
 
 int main() {
 	//建立一個結構變數
-	struct student david;
+	Student david;
 	david.id = 99001;
 	david.name = "David";
 	david.chinese = 75;
@@ -25,7 +25,7 @@ int main() {
 	cout << "數學" << david.math << endl;
 
 	cout << "=======================" << endl;
-	struct student robert;
+	Student robert;
 	robert.id = 99002;
 	robert.name = "Robert";
 	robert.chinese = 76;

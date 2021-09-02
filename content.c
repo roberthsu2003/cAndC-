@@ -11,12 +11,8 @@ typedef struct student{
 
 int main() {
 	//建立一個結構變數
-	Student david;
-	david.id = 99001;
-	david.name = "David";
-	david.chinese = 75;
-	david.english = 98;
-	david.math = 87;
+	Student david = {99001, "David", 75, 87, 98};
+	
 
 	cout << "學生id" << david.id << endl;
 	cout << "學生姓名" << david.name << endl;
@@ -25,12 +21,7 @@ int main() {
 	cout << "數學" << david.math << endl;
 
 	cout << "=======================" << endl;
-	Student robert;
-	robert.id = 99002;
-	robert.name = "Robert";
-	robert.chinese = 76;
-	robert.english = 93;
-	robert.math = 92;
+	Student robert = {99002, "Robert", 76, 92, 93};	
 
 	cout << "學生id" << robert.id << endl;
 	cout << "學生姓名" << robert.name << endl;

@@ -1,19 +1,13 @@
 #include <iostream>
 using namespace std;
-
 typedef struct student{
 	string name;
-	int score;
+	int scores[5];
 }Student;
 
 int main() {
-	Student stu[3] = {{"robert", 94},{"david", 91},{"alice", 94}};
-	
-
-	for(int i=0; i<3; i+=1){
-		Student student = stu[i];
-		cout << "學生姓名:" << student.name << endl;
-		cout << "學生分數:" << student.score << endl;
-		cout << "================" << endl;
-	}
+	Student stus[] = {{"robert",{78, 98, 78, 63, 83}},{"david",{78, 98, 58, 73, 73}},{"alice", {68, 98, 74, 63, 82}}};
+	int stuCount = sizeof(stus) / sizeof(stus[0]);
+	cout << "stus陣列的元素數量是" << stuCount << endl;
+	return 0;
 }

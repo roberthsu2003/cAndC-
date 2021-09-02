@@ -37,7 +37,9 @@ typedef struct student{
 }Student;
 
 
-	
+int randomScore(int min, int max){
+	return rand() % (max - min + 1) + min;
+}	
 
 
 Student createStudent(int i){
@@ -48,8 +50,8 @@ Student createStudent(int i){
 	
 	Student s;	
 	s.name = "stu" + to_string(i+1);
-	s.chinese = rand() % (100 - 50 + 1) + 50;
-	s.english = rand() % (100 - 50 + 1) + 50;
-	s.math= rand() % (100 - 50 + 1) + 50;
+	s.chinese = randomScore(50,100);
+	s.english = randomScore(60,100);
+	s.math= randomScore(60,100);
 	return s;
 }

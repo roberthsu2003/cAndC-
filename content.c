@@ -9,6 +9,28 @@ typedef enum direction{
 using namespace std;
 
 int main() {
-	Direction direct = East;
-	cout << "方向是" << direct << endl;
+	Direction direct = West;
+	cout << "方向是:";
+
+	switch(direct){
+		case North:
+		cout << "北方" << endl;
+		break;
+
+		case South:
+		cout << "南方" << endl;
+		break;
+
+		case East:
+		cout << "東方" << endl;
+		break;
+
+		case West:
+		cout << "西方" << endl;
+		break;
+
+		default:
+		cout << "無資訊" << endl;
+	}
+	return 0;
 }

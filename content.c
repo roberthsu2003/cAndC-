@@ -1,15 +1,14 @@
 #include <iostream>
 using namespace std;
-#define SQUARE(x) (x) * (x)
+
+#define MAC
+
+#ifdef MAC
+#define OS "MAC_OS_VERSION_10_0"
+#else
+#define OS "WINDOW11"
+#endif
 
 int main() {
-	int s, result;
-	cout << "請輸入數字:";
-	cin >> s;
-	result = SQUARE(s);
-	cout << s << "的平方為:" << result << endl;
-
-	result = SQUARE(s+1);
-	cout << s+1 << "的平方為:" << result << endl;
-	return 0;
+	cout << OS << endl;
 }

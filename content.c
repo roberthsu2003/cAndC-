@@ -3,11 +3,13 @@ using namespace std;
 
 class Tools{
 	public:
-	int static add(int a, int b){
-		return a + b;
-	}
+	int static add(int a, int b);
 
 };
+
+int Tools::add(int a, int b){
+	return a + b;
+}
 
 
 int main() {

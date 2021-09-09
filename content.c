@@ -1,27 +1,23 @@
 #include <iostream>
 using namespace std;
 
-class Tools{
+class Car{
 	public:
-	int static add(int a, int b);
-
+	static int total;
+	Car();
 };
 
-int Tools::add(int a, int b){
-	return a + b;
+int Car::total = 0;
+
+Car::Car(){
+	total += 1;
 }
 
-
-int main() {
-	int first;
-	int second;
-
-	cout << "請輸入第一個數值";
-	cin >> first;
-
-	cout << "請輸入第二個數值";
-	cin >> second;
-
-	cout << "2數相加是" << Tools::add(first, second) << endl;
+int main() {	
+	cout << "一開始建立車的數量是" << Car::total << endl;
+	Car car1;
+	Car car2;
+	Car car3;
+	cout << "已經建立車的數量是" << Car::total << endl;
 	return 0;
 }

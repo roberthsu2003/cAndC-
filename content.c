@@ -2,15 +2,23 @@
 using namespace std;
 
 class BMI{
+	private:
+	float bmi();
+
 	public:
 	string name;
 	unsigned short weight;
 	unsigned short height;
-	float bmi();
+	void suggestion();
 };
 
 float BMI::bmi(){
 	return weight / ((height/100.0) * (height/100.0));
+}
+
+void BMI::suggestion(){
+	float bmi = BMI::bmi();
+	cout << name + "的bmi是" << bmi << endl;
 }
 
 int main() {
@@ -24,6 +32,6 @@ int main() {
 	cout << "姓名是" << p1.name << endl;
 	cout << p1.name + "的身高是" << p1.height << endl;
 	cout << p1.name + "的體重是" << p1.weight << endl;
-	cout << p1.name + "的bmi是" << p1.bmi() << endl;
+	p1.suggestion();
 	return 0;
 }

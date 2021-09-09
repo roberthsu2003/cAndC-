@@ -19,6 +19,22 @@ float BMI::bmi(){
 void BMI::suggestion(){
 	float bmi = BMI::bmi();
 	cout << name + "的bmi是" << bmi << endl;
+
+	string suggest;
+	if(bmi< 18.5){
+		suggest = "體重過輕";
+	}else if(bmi<24){
+		suggest = "體重正常";
+	}else if(bmi < 27){
+		suggest = "過重";
+	}else if(bmi < 30){
+		suggest = "輕度肥胖";
+	}else if(bmi < 35){
+		suggest = "中度肥胖";
+	}else{
+		suggest = "重度肥胖";		
+	}
+	cout << "提醒:" << suggest << endl;
 }
 
 int main() {

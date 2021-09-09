@@ -1,26 +1,43 @@
 #include <iostream>
 using namespace std;
-class Car{
+class Student{
 	public:
+	//建構式
+	Student(string,string,int,int,int);
 	//實體欄位
-	int speed;
-	//自訂的建構式
-	Car();
-	Car(int s);
+	string name;
+	string id;
+	int chinese;
+	int english;
+	int math;
+	//實體方法
+	int sum();
+	float average();
 };
-//實作建構式
-Car::Car(){
-	speed = 20;
+
+Student::Student(string n,string d,int c,int e,int m){
+	name = n;
+	id = d;
+	chinese = c;
+	english = e;
+	math = m;
 }
-Car::Car(int s){
-	speed = s;
+
+int Student::sum(){
+	return chinese + english + math;
+}
+float Student::average(){
+	return sum()/3.0;
 }
 
 int main() {
-	Car car1(70); //呼叫建構式
-	cout << "car1的速度是" << car1.speed << endl;
-
-	Car car2; //呼叫建構式
-	cout << "car2的速度是" << car2.speed << endl; 
+	Student stu1("stu1", "A10001", 87, 96, 76);
+	cout << "學生姓名:" << stu1.name << endl;
+	cout << "學號:" << stu1.id << endl;
+	cout << "國文:" << stu1.chinese << endl;
+	cout << "英文:" << stu1.english << endl;
+	cout << "數學:" << stu1.math << endl;
+	cout << "總分:" << stu1.sum() << endl;
+	printf("平均:%.2f\n",stu1.average());
 	return 0;
 }

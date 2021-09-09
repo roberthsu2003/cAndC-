@@ -1,39 +1,22 @@
 #include <iostream>
 using namespace std;
-class Student{
+
+class BMI{
 	public:
-	//實體欄位
 	string name;
-	string id;
-	int chinese;
-	int english;
-	int math;
-	//實體方法
-	int sum();
-	float average();
+	unsigned short weight;
+	unsigned short height;
 };
 
-int Student::sum(){
-	return chinese + english + math;
-}
-float Student::average(){
-	return sum()/3.0;
-}
-
 int main() {
-	Student stu1;
-	stu1.name = "stu1";
-	stu1.id = "A10001";
-	stu1.chinese = 87;
-	stu1.english = 96;
-	stu1.math = 76;
-
-	cout << "學生姓名:" << stu1.name << endl;
-	cout << "學號:" << stu1.id << endl;
-	cout << "國文:" << stu1.chinese << endl;
-	cout << "英文:" << stu1.english << endl;
-	cout << "數學:" << stu1.math << endl;
-	cout << "總分:" << stu1.sum() << endl;
-	printf("平均:%.2f\n",stu1.average());
-	return 0;
+	BMI p1;
+	cout << "請輸入姓名:";
+	cin >> p1.name;
+	cout << "請輸入身高:";
+	cin >> p1.height;
+	cout << "請輸入體重:";
+	cin >> p1.weight;
+	cout << "姓名是" << p1.name << endl;
+	cout << p1.name + "的身高是" << p1.height << endl;
+	cout << p1.name + "的體重是" << p1.weight << endl;
 }

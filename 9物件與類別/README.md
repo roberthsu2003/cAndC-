@@ -737,6 +737,7 @@ using namespace std;
 			void turbo(int);
 			//類別的方法(靜態方法)
 			//必需實作在class內
+			//也可以實作在外部，在外部實作時，省略static關鍵字
 			int static getCount(){
 				return turboCount;
 			}

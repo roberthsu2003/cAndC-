@@ -11,14 +11,15 @@ void setup()
 
 void loop()
 {
-  blink();
+  if(Serial.available() > 0){
+    char inputValue = Serial.read();
+    if(inputValue == '1'){
+      digitalWrite(RED_LED, HIGH);
+    }else if(inputValue == '0'){
+      digitalWrite(RED_LED, LOW);
+    }
+  }
+ 
 }
 
-void blink(){
-  digitalWrite(RED_LED, HIGH);
-  Serial.println("HIGH");
-  delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(RED_LED, LOW);
-  Serial.println("LOW");
-  delay(1000); // Wait for 1000 millisecond(s)
-}
+

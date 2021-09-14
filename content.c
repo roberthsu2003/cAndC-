@@ -1,50 +1,32 @@
-// C++ code
-//
-
+#define BLUE_LED 4
+#define GREEN_LED 7
 #define RED_LED 13
-
-class LED{
-  public:
-  static void blinkOne();
-  static void blinkTwo();
-};
-
-void LED::blinkOne(){
-  digitalWrite(RED_LED, HIGH);
-  delay(1000);
-  digitalWrite(RED_LED, LOW);
-  delay(1000);
-}
-
-void LED::blinkTwo(){
-  digitalWrite(RED_LED, HIGH);
-  delay(1000);
-  digitalWrite(RED_LED, LOW);
-  delay(1000);
-  
-  digitalWrite(RED_LED, HIGH);
-  delay(1000);
-  digitalWrite(RED_LED, LOW);
-  delay(1000);
-}
 
 void setup()
 {
+  pinMode(BLUE_LED, OUTPUT);
+  pinMode(GREEN_LED, OUTPUT);
   pinMode(RED_LED, OUTPUT);
-  Serial.begin(9600);
 }
 
 void loop()
 {
-  if(Serial.available() > 0){
-    char inputValue = Serial.read();
-    if(inputValue == '1'){
-      LED::blinkOne();
-    }else if(inputValue == '0'){
-      LED::blinkTwo();
-    }
-  }
- 
+  blink();
 }
 
-
+void blink(){
+  digitalWrite(RED_LED, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(RED_LED, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+  
+  digitalWrite(GREEN_LED, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(GREEN_LED, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+  
+  digitalWrite(BLUE_LED, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(BLUE_LED, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+}

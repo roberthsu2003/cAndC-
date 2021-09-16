@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int main(void) {
-  printf("這是我的第一個C語言的程式\n");
-  return 0;
+	int englishScore = 78;
+  	printf("您的英文分數是%d分\n",englishScore);
+  	return 0;
 }

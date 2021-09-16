@@ -7,5 +7,6 @@ int main(void) {
   	printf("您的英文分數是%d分\n", englishScore);
 	printf("您的中文分數是%d分\n", chineseScore);
 	printf("您的數學分數是%d分\n", mathScore);
+	printf("國文:%d,英文:%d,數學:%d\n",chineseScore,englishScore,mathScore);
   	return 0;
 }

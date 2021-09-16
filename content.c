@@ -12,5 +12,6 @@ int main(void) {
   printf("您的第二個數值是%d\n",second);
 
   printf("2數相加是:%d\n",first + second);
+  printf("2數相乘的結果:%d\n", first * second);
   return 0;
 }

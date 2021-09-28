@@ -1,10 +1,12 @@
 #include <iostream>
 using namespace std;
-
 int main() {
-	int i = 10;
-	int y = i++;
-	cout << "i:" << i << endl;
+	int x = 10;
+	x += 1;
+	cout << "x:" << x << endl;
+
+	int y = 10;
+	y *= 2;
 	cout << "y:" << y << endl;
 	return 0;
 }

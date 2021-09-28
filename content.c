@@ -1,12 +1,23 @@
 #include <iostream>
 using namespace std;
-int main() {
-	int x = 10;
-	x += 1;
-	cout << "x:" << x << endl;
 
-	int y = 10;
-	y *= 2;
-	cout << "y:" << y << endl;
+int main() {
+	float result=0;
+	float num;
+
+	cout << "請輸入第一個數:";
+	cin >> num;
+	result += num;
+
+	cout << "請輸入第二個數:";
+	cin >> num;
+	result += num;
+
+	cout << "請輸入第三個數:";
+	cin >> num;
+	result += num;
+
+	cout << "3數的總和是" << result << endl;
 	return 0;
+
 }

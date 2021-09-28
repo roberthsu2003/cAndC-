@@ -2,22 +2,22 @@
 using namespace std;
 
 int main() {
-	float result=0;
-	float num;
+	int in1,in2,in3;
+	int max=0;
 
 	cout << "請輸入第一個數:";
-	cin >> num;
-	result += num;
+	cin >> in1;
 
 	cout << "請輸入第二個數:";
-	cin >> num;
-	result += num;
+	cin >> in2;
+
+	max = in1 > in2 ? in1 : in2 ;
 
 	cout << "請輸入第三個數:";
-	cin >> num;
-	result += num;
+	cin >> in3;
 
-	cout << "3數的總和是" << result << endl;
+	max = in3 > max ? in3 : max;
+
+	cout << "輸入三個數中，最大的數為:" << max << endl;
 	return 0;
-
 }

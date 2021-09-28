@@ -1,12 +1,14 @@
 #include <iostream>
-//前端處理程式
-#define PI 3.14159
 
 using namespace std;
 
 int main() {
-	//建立常數
-	//const float PI = 3.14159;
-	cout << "常數PI內的值是:" << PI << endl;
+	int n,m;
+	cout << "請輸入被除數(整數):";
+	cin >> n;
+	cout << "請輸入除數(整數,不可以為0):";
+	cin >> m;
+
+	cout << "商:" << n/m << ",餘數:" << n % m << endl;
 	return 0;
 }

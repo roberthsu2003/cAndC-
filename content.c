@@ -1,18 +1,23 @@
 #include <iostream>
 using namespace std;
-
 int main() {
-	string password;
-	cout << "請輸入密碼:";
-	cin >> password;
+	int money;
+	int paymoney=0;
+	cout << "請輸入購買金額:";
+	cin >> money;
 
-	if(password == "1234"){
-		cout << "密碼正確!歡迎光臨!" << endl;
+	if(money >= 100000){
+		paymoney = money * 0.8;
+	}else if(money >= 50000){
+		paymoney = money * 0.85;
+	}else if(money >= 30000){
+		paymoney = money * 0.9;
+	}else if(money >= 10000){
+		paymoney = money * 0.95;
 	}else{
-		cout << "密碼錯誤!\n";
-		cout << "請重新輸入\n";
+		paymoney = money;
 	}
 
-	cout << "程式結束" << endl;
+	cout << "實付金額是:" << paymoney << "元\n";
 	return 0;
 }

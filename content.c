@@ -9,6 +9,9 @@ int main() {
 		cin >> score;
 		if(score < 0){
 			break;
+		}else if(score > 100){
+			cout << "超出範圍,請重新輸入\n";
+			continue;
 		}
 		sum += score;
 	}

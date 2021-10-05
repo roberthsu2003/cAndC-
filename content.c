@@ -1,19 +1,33 @@
 #include <iostream>
+
 using namespace std;
 
 int main() {
-	int score;
-	int sum = 0;
-	while(true){
-		cout << "請輸入學生的成績:";
-		cin >> score;
-		if(score < 0){
-			break;
-		}else if(score > 100){
-			cout << "超出範圍,請重新輸入\n";
-			continue;
-		}
-		sum += score;
+	char op;
+	int num1 = 20, num2 = 4;
+	cout << "num1=20,num2=4" << endl;
+	cout << "請輸入要執行的運算(+ - * /):";
+	cin >> op;
+	switch(op){
+		case '+':
+		cout << "num1+num2=" << num1+num2 << endl;
+		break;
+
+		case '-':
+		cout << "num1-num2=" << num1-num2 << endl;
+		break;
+
+		case '*':
+		cout << "num1*num2=" << num1*num2 << endl;
+		break;
+
+		case '/':
+		cout << "num1/num2=" << num1/num2 << endl;
+		break;
+
+		default:
+		cout << "無法執行運算!";
+		break;
 	}
-	cout << "全班總成績為:" << sum << "分\n";
+	return 0;
 }

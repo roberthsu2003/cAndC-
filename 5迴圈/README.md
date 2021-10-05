@@ -334,46 +334,48 @@ break可以跳出迴圈
 //猜數字遊戲
 #include <iostream>
 #include <stdlib.h>
+#include <stdio.h>
 #include <time.h>
 
 using namespace std;
-
 int main() {
 	int guess;
-	int min = 1;
-	int max = 100;
 	int keyin;
 	int count = 0;
-	srand(time(NULL));
-	guess = rand() % max + min;
-	cout << "===============猜數字遊戲=================:\n\n";
-	do{
-		cout << "猜數字範圍" << min << "~" << max << ":";
-		cin >> keyin;
-		count++;
+	int max = 99;
+	int min = 1;
 
-		if(keyin >=min && keyin <=max){
+	srand(time(NULL));
+	guess = rand() % (max-min+1) + min;	
+	cout << "==============猜數字遊戲===============\n\n";
+	while(true){
+		printf("猜數字範圍%d~%d:",min,max);
+		cin >> keyin;
+		count += 1;
+
+		if(keyin >= min && keyin <= max){
+			//輸入的範圍正確
 			if(keyin == guess){
 				cout << "賓果!猜對了,答案是" << guess << endl;
-				cout << "您猜了" << count << "次\n\n";
+				cout << "您猜了" << count << "次" << endl;
 				break;
-			}else if (keyin > guess){
-				max = keyin - 1 ;
-				cout << "再小一點!";
-			}else if (keyin < guess){
+			}else if(keyin > guess){
+				max = keyin - 1;
+				cout<< "再小一點!";
+			}else if(keyin < guess){
 				min = keyin + 1;
-				cout << "再大一點!";
-			}
-			cout << "您猜了" << count << "次\n\n";
+				cout << "再大一點!";			}
+			cout << "您已經猜了" << count << "次" << endl;
 		}else{
-			cout << "請輸入提示範圍內的數字! \n";
+			//輸入的範圍不正確
+			cout << "請輸入提示範圍內的數字!\n";
+			continue;
 		}
-
-
-	}while(true);
-	
-	cout << "遊戲結束\n";
+		
+	};
+	return 0;
 }
+
 ```
 
 ```c++

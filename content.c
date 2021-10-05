@@ -1,12 +1,23 @@
 #include <iostream>
 using namespace std;
-//定義一個function
-int add(int a, int b){
-	return a+b;
-}
 
 int main() {
-	//呼叫function
-	cout << add(5,10) << endl;
-	return 0;
+	int num;
+	bool isPrimeNumber=true;
+	cout << "請輸入一個數值:";
+	cin >> num;
+
+	for(int i=2;i < num; i++){
+		if(num % i == 0){
+			isPrimeNumber = false;
+			break;
+		}
+	}
+
+	if(isPrimeNumber){
+		cout << "質數" << endl;
+	}else{
+		cout << "不是質數" << endl;
+	}
+
 }

@@ -12,5 +12,17 @@ int main() {
 	return 0;
 }
 
+tools.h
+
+bool isPrimeNumber(int num){
+	bool isPrimeNumber=true;
+	for(int i=2;i < num; i++){
+		if(num % i == 0){
+			isPrimeNumber = false;
+			break;
+		}
+	}
+	return isPrimeNumber;
+}
 
 

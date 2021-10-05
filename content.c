@@ -1,16 +1,6 @@
 #include <iostream>
+#include "tools.h"
 using namespace std;
-
-bool isPrimeNumber(int num){
-	bool isPrimeNumber=true;
-	for(int i=2;i < num; i++){
-		if(num % i == 0){
-			isPrimeNumber = false;
-			break;
-		}
-	}
-	return isPrimeNumber;
-}
 
 int main() {
 	int num;	
@@ -21,3 +11,6 @@ int main() {
 	cout << num << message << endl;
 	return 0;
 }
+
+
+

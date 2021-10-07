@@ -1,6 +1,18 @@
 #include <iostream>
 using namespace std;
 
+void sorted(int arr[],int n){
+	for(int i=0; i<n-1; i++){
+		for(int j=i+1; j<n; j++){
+			if(arr[i] < arr[j]){
+				int temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
+}
+
 int main() {
 	int nums;
 	cout << "請輸入要排序的數值個數:";
@@ -20,15 +32,8 @@ int main() {
 	cout << endl;
 
 	//泡沫排序
-	for(int i=0; i<nums-1; i++){
-		for(int j=i+1; j<nums; j++){
-			if(array[i] > array[j]){
-				int temp = array[i];
-				array[i] = array[j];
-				array[j] = temp;
-			}
-		}
-	}
+	sorted(array,nums);
+	
 
 	cout << "排序後" << endl;
 	for(int i=0; i<nums; i++){

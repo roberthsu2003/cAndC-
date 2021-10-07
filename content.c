@@ -1,13 +1,25 @@
+//50個學生
+//5個分數
+
 #include <iostream>
+#include <time.h>
 using namespace std;
 
-int main() {
-	int scores[2][3] = {{85, 82, 90},{76, 95, 89}};
-	for(int i=0; i<2; i++){
-		for(int j=0; j<3; j++){
-			cout << "第" << i+1 << "位學生第" << j+1 << "科成績:" << scores[i][j] << endl;
-		}
-	}
+int randomScore(){
+	int max=100;
+	int min=60;
+	
+	return rand() % (max-min+1) + min;
+}
 
-	return 0;
+int main() {
+	srand(time(NULL));
+	int students[50][5];
+	for(int i=0; i<50; i++){
+		for(int j=0; j<5; j++){
+			students[i][j] = randomScore();
+			cout << students[i][j] << " ";
+		}
+		cout << endl;
+	}
 }

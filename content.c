@@ -1,6 +1,12 @@
 #include <iostream>
 using namespace std;
 
+void display(int arr[], int n){
+	for(int i=0; i<n; i++){
+		cout << arr[i] << " ";
+	}
+}
+
 void sorted(int arr[],int n){
 	for(int i=0; i<n-1; i++){
 		for(int j=i+1; j<n; j++){
@@ -26,9 +32,7 @@ int main() {
 	}
 
 	cout << "排序前" << endl;
-	for(int i=0; i<nums; i++){
-		cout << array[i] << " ";
-	}
+	display(array,nums);
 	cout << endl;
 
 	//泡沫排序
@@ -36,8 +40,6 @@ int main() {
 	
 
 	cout << "排序後" << endl;
-	for(int i=0; i<nums; i++){
-		cout << array[i] << " ";
-	}
+	display(array,nums);
 	cout << endl;
 }

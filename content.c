@@ -2,23 +2,12 @@
 using namespace std;
 
 int main() {
-	const int nums=5;
-	int sum = 0;
-	float average;
-	int scores[nums];
-
-	for(int i=0; i<nums; i++){
-		cout << "請輸入第" << i+1 << "位學生的成績";
-		cin >> scores[i];
+	int scores[2][3] = {{85, 82, 90},{76, 95, 89}};
+	for(int i=0; i<2; i++){
+		for(int j=0; j<3; j++){
+			cout << "第" << i+1 << "位學生第" << j+1 << "科成績:" << scores[i][j] << endl;
+		}
 	}
-
-	for(int i=0; i<nums; i++){
-		cout << "第" << i+1 << "學生的分數是:" << scores[i] << endl;
-		sum += scores[i];
-	}
-
-	average = (float)sum / nums;
-	cout << "全班總成績為:" << sum << "分,平均為" << average << "分\n";
 
 	return 0;
 }

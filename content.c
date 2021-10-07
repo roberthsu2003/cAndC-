@@ -1,23 +1,8 @@
 #include <iostream>
+#include "tools.h"
 using namespace std;
 
-void display(int arr[], int n){
-	for(int i=0; i<n; i++){
-		cout << arr[i] << " ";
-	}
-}
 
-void sorted(int arr[],int n){
-	for(int i=0; i<n-1; i++){
-		for(int j=i+1; j<n; j++){
-			if(arr[i] < arr[j]){
-				int temp = arr[i];
-				arr[i] = arr[j];
-				arr[j] = temp;
-			}
-		}
-	}
-}
 
 int main() {
 	int nums;
@@ -42,4 +27,28 @@ int main() {
 	cout << "排序後" << endl;
 	display(array,nums);
 	cout << endl;
+}
+
+
+tools.h
+
+#include <iostream>
+using namespace std;
+
+void display(int arr[], int n){
+	for(int i=0; i<n; i++){
+		cout << arr[i] << " ";
+	}
+}
+
+void sorted(int arr[],int n){
+	for(int i=0; i<n-1; i++){
+		for(int j=i+1; j<n; j++){
+			if(arr[i] < arr[j]){
+				int temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
 }

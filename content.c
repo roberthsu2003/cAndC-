@@ -2,8 +2,16 @@
 using namespace std;
 
 int main() {
-	int scores[3] = {70, 80, 90};
-	cout << scores[0] << "," << scores[1] << "," << scores[2] << endl;
+	const int nums=5;
+	int scores[nums];
+	for(int i=0; i<nums; i++){
+		cout << "請輸入第" << i+1 << "位學生的成績";
+		cin >> scores[i];
+	}
+
+	for(int i=0; i<nums; i++){
+		cout << "第" << i+1 << "學生的分數是:" << scores[i] << endl;
+	}
 
 	return 0;
 }

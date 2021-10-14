@@ -1,8 +1,8 @@
 #include <iostream>
 #include <time.h>
-
 using namespace std;
-int main() {
+
+void lotGenerator(){
 	int num = 7;
 	int lot[49];
 	int minIndex = 0;
@@ -31,5 +31,9 @@ int main() {
 	cout << endl;
 
 	cout << "特別號是:" << choose[num-1] << endl;
+}
+
+int main() {
+	lotGenerator();
 	return 0;
 }

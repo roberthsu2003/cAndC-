@@ -24,9 +24,12 @@ int main() {
 		maxIndex -= 1;
 	}
 	
-	for(int i=0; i<num; i++){
+	cout << "本期大樂透電腦選號號碼如下:" << endl;
+	for(int i=0; i<num-1; i++){
 		cout << choose[i] << " ";
 	}
 	cout << endl;
+
+	cout << "特別號是:" << choose[num-1] << endl;
 	return 0;
 }

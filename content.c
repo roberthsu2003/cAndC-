@@ -2,8 +2,7 @@
 #include <time.h>
 using namespace std;
 
-void lotGenerator(){
-	int num = 7;
+void lotGenerator(int num){	
 	int lot[49];
 	int minIndex = 0;
 	int maxIndex = 48;
@@ -41,7 +40,7 @@ int main() {
 	cin >> set;
 	for(int i=0; i<set;i++){
 		cout << "第" << i+1 << "組:" << endl;
-		lotGenerator();
+		lotGenerator(8);
 	}
 	
 	return 0;

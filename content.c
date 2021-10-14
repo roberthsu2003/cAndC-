@@ -2,6 +2,9 @@
 
 using namespace std;
 int main() {
-  cout << "Hello World!" << endl;
-  return 0;
+	int englishScore;
+	cout << "請輸入您的英文分數:";
+	cin >> englishScore;
+	cout << "Hello! 您的英文分數是:" << englishScore << endl;
+	return 0;
 }

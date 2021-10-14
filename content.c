@@ -15,7 +15,7 @@ void lotGenerator(){
 	}
 
 	
-	srand(time(NULL));
+	
 	//建立亂數7次，不會重覆的
 	for(int i=0; i<num; i++){
 		int randIndex = rand() % (maxIndex-minIndex+1) + minIndex;
@@ -24,16 +24,25 @@ void lotGenerator(){
 		maxIndex -= 1;
 	}
 	
-	cout << "本期大樂透電腦選號號碼如下:" << endl;
+	
 	for(int i=0; i<num-1; i++){
 		cout << choose[i] << " ";
 	}
 	cout << endl;
 
 	cout << "特別號是:" << choose[num-1] << endl;
+	cout << endl;
 }
 
 int main() {
-	lotGenerator();
+	srand(time(NULL));
+	int set;
+	cout << "請輸入需要幾組號碼:";
+	cin >> set;
+	for(int i=0; i<set;i++){
+		cout << "第" << i+1 << "組:" << endl;
+		lotGenerator();
+	}
+	
 	return 0;
 }

@@ -2,14 +2,14 @@
 #include <time.h>
 using namespace std;
 
-void lotGenerator(int num){	
-	int lot[49];
+void lotGenerator(int num,int max){	
+	int lot[max];
 	int minIndex = 0;
-	int maxIndex = 48;
+	int maxIndex = max-1;
 	int choose[num];
 
 	//建立1~49的值
-	for(int i=0; i<49; i++){
+	for(int i=0; i<max; i++){
 		lot[i] = i+1;
 	}
 
@@ -40,7 +40,7 @@ int main() {
 	cin >> set;
 	for(int i=0; i<set;i++){
 		cout << "第" << i+1 << "組:" << endl;
-		lotGenerator(8);
+		lotGenerator(8,99);
 	}
 	
 	return 0;

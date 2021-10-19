@@ -1,47 +1,16 @@
+//宣告變數 double m=5, int n = 10, 顯示變數m,n的值，位址和記憶體大小。
 #include <iostream>
-#include <time.h>
 using namespace std;
 
-void lotGenerator(int num,int max){	
-	int lot[max];
-	int minIndex = 0;
-	int maxIndex = max-1;
-	int choose[num];
-
-	//建立1~49的值
-	for(int i=0; i<max; i++){
-		lot[i] = i+1;
-	}
-
-	
-	
-	//建立亂數7次，不會重覆的
-	for(int i=0; i<num; i++){
-		int randIndex = rand() % (maxIndex-minIndex+1) + minIndex;
-		choose[i] = lot[randIndex];
-		lot[randIndex] = lot[maxIndex];
-		maxIndex -= 1;
-	}
-	
-	
-	for(int i=0; i<num-1; i++){
-		cout << choose[i] << " ";
-	}
-	cout << endl;
-
-	cout << "特別號是:" << choose[num-1] << endl;
-	cout << endl;
-}
-
 int main() {
-	srand(time(NULL));
-	int set;
-	cout << "請輸入需要幾組號碼:";
-	cin >> set;
-	for(int i=0; i<set;i++){
-		cout << "第" << i+1 << "組:" << endl;
-		lotGenerator(8,99);
-	}
-	
+	double m = 5;
+	int n = 10;
+	cout << "變數m的值=" << m << endl;
+	cout << "變數n的值=" << n << endl;
+	cout << "變數m的位址=" << &m << endl;
+	cout << "變數n的位址=" << &n << endl;
+	cout << "變數m的記憶體=" << sizeof(m) << "Bytes" << endl;
+	cout << "變數n的記憶體=" << sizeof(n) << "Bytes" << endl;
+
 	return 0;
 }

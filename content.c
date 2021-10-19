@@ -1,14 +1,12 @@
 #include <iostream>
 using namespace std;
-void add(int x, int y, int *ptr){
-	*ptr = x+y;	
-}
 
 int main() {
-  int n = 10;
-  int m = 20;
-  int sum;
-  add(n, m, &sum);
-  cout << "sum=" << sum << endl;
-  return 0;
+	int a=666, b=777;
+	cout << "a=" << a << ",b=" << b << endl;
+	int temp = a;
+	a = b;
+	b = temp;
+	cout << "a=" << a << ",b=" << b << endl;
+	return 0;
 }

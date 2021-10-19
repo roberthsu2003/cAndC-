@@ -180,6 +180,8 @@ int main() {
 ```
 [解題](https://repl.it/@roberthsu2003/pointAdd)
 
+### 指標的應用
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -197,7 +199,7 @@ int main() {
 }
 ```
 
-### 指標的應用
+
 ```c++
 //============================================================================
 // Name        : swap.cpp

@@ -1,14 +1,22 @@
 #include <iostream>
 using namespace std;
-
 int main() {
-	int n[3] = {10, 20 , 30};
-	cout << "陣列n的位址=" << n << endl;
-	cout << "陣列元素n[0]的位址=" << &n[0] << endl;
-	cout << "陣列元素n[1]的位址=" << &n[1] << endl;
-	cout << "陣列元素n[2]的位址=" << &n[2] << endl;
-	cout << "陣列元素n+0的位址=" << n+0 << endl;
-	cout << "陣列元素n+1的位址=" << n+1 << endl;
-	cout << "陣列元素n+2的位址=" << n+2 << endl;
+	/*
+	char name[] = {'R','o','b','e','r','t','\0'};
+	cout << "name:" << name << endl;
+	*/
+
+	/*
+	char name[] = "Robert";
+	cout << "name:" << name << endl;
+	//name = "davie";
+	*/
+
+	//c 語言的字串
+	const char *name = "Robert";
+	cout << "name:" << name << endl;
+	name = "David";
+	cout << "name:" << name << endl; 
+	
 	return 0;
 }

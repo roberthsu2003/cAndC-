@@ -1,19 +1,19 @@
+//多載overloading
+//建立Add()函式多載，分別處理數值和字串相加。
 #include <iostream>
-
 using namespace std;
 
-int factorial(int n){
-	if(n == 0){
-		return 1;
-	}else{
-		return n * factorial(n-1);
-	}
+int add(int a, int b){
+	return a + b;
 }
+
+string add(string a,string b){
+	return a + b;
+}
+
 int main() {
-	int n, total;
-	cout << "請輸入數字 n:";	
-	cin >> n;
-	total=factorial(n);
-	cout << n << "!=" << total << endl;
+	cout << "add(2,3)=" << add(2,3) << endl;
+	cout << "====================" << endl;
+	cout << "add(\"Nice\", \"Play\") = " << add("Nice","Play") << endl;
 	return 0;
 }

@@ -10,11 +10,16 @@ typedef struct student{
 }Student;
 
 int main() {
-	Student david = {99001, "David", 75, 86, 90};
+	Student stu[]={{99001,"david",78,84,91},{99001,"alex",78,84,91},{99001,"jenny",78,84,91}};
+
+	for(int i=0; i<3; i++){
+		cout << "學生id:" << stu[i].id << endl;
+		cout << "學生name:" << stu[i].name << endl;
+		cout << "學生chinese:" << stu[i].chinese << endl;
+		cout << "學生math:" << stu[i].math << endl;
+		cout << "學生english:" << stu[i].english << endl;
+		cout << "=========================" << endl;
+	}
+
 	
-	cout << "學生id:" << david.id << endl;
-	cout << "學生name:" << david.name << endl;
-	cout << "學生chinese:" << david.chinese << endl;
-	cout << "學生math:" << david.math << endl;
-	cout << "學生english:" << david.english << endl;
 }

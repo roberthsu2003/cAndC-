@@ -8,11 +8,11 @@ struct student{
 };
 
 int main() {
-	struct student david;
-	david.id = 99001;
-	david.name = "David";
-	david.chinese = 75;
-	david.math = 86;
-	david.english = 90;
+	struct student david = {99001, "David", 75, 86, 90};
 	
-}
+	cout << "學生id:" << david.id << endl;
+	cout << "學生name:" << david.name << endl;
+	cout << "學生chinese:" << david.chinese << endl;
+	cout << "學生math:" << david.math << endl;
+	cout << "學生english:" << david.english << endl;
+	}

@@ -1,6 +1,8 @@
 data.h
-
+//要使用這個h檔,必需要先執行begin()
 #include <iostream>
+#include "time.h"
+
 using namespace std;
 
 typedef struct student{
@@ -10,14 +12,21 @@ typedef struct student{
 	int math;
 }Student;
 
+void begin(){
+	srand(time(NULL));
+}
+
 Student createStudent(int num){
 	Student s;
 	s.name = "學生" + to_string(num);
-	s.chinese = 70;
-	s.english = 80;
-	s.math = 90;
+	s.chinese = rand() % (100-50+1) + 50;
+	s.english = rand() % (100-50+1) + 50;
+	s.math = rand() % (100-50+1) + 50;
 	return s;
 }
+
+
+
 
 
 main.cpp
@@ -26,8 +35,11 @@ main.cpp
 #include "data.h"
 
 int main() {
-	Student stu1 = createStudent(1);
-	cout << stu1.name << endl;
-	cout << stu1.chinese << endl;
+	begin();
+	int studentCount = 50;
+	Student students[studentCount];
+	for(int i=0; i<studentCount; i++){
+		students[i] = createStudent(i+1);
+	}
 	return 0;
 }

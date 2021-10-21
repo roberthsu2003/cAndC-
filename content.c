@@ -29,6 +29,11 @@ int sum(Student s){
 	return s.chinese + s.english + s.math;
 }
 
+float average(Student s){
+	return sum(s) / 3.0;
+}
+
+
 
 
 
@@ -39,7 +44,7 @@ main.cpp
 
 int main() {
 	begin();
-	int studentCount = 50;
+	int studentCount = 100;
 	Student students[studentCount];
 	for(int i=0; i<studentCount; i++){
 		students[i] = createStudent(i+1);
@@ -48,6 +53,7 @@ int main() {
 		Student oneStudent = students[i];
 		cout << oneStudent.name << endl;
 		cout << "總分是:" << sum(oneStudent) << endl;
+		cout << "平均是:" << average(oneStudent) << endl;
 		cout << "==================" << endl;
 	}
 	return 0;

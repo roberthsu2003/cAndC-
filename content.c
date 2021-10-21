@@ -1,19 +1,18 @@
 #include <iostream>
 using namespace std;
-//全域變數
-int total = 0;
 
-void getData(){
-	//靜態變數
-	static int a = 0;
-	a++;
-	cout << "a=" << a << endl;
-	total++;
-}
+struct student{
+	int id;
+	string name;
+	int chinese, english, math;
+};
 
 int main() {
-  getData();
-  getData();
-  getData();
-  cout << "total是" << total << endl;
+	struct student david;
+	david.id = 99001;
+	david.name = "David";
+	david.chinese = 75;
+	david.math = 86;
+	david.english = 90;
+	
 }

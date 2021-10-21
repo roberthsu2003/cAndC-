@@ -25,6 +25,9 @@ Student createStudent(int num){
 	return s;
 }
 
+int sum(Student s){
+	return s.chinese + s.english + s.math;
+}
 
 
 
@@ -40,6 +43,12 @@ int main() {
 	Student students[studentCount];
 	for(int i=0; i<studentCount; i++){
 		students[i] = createStudent(i+1);
+	}
+	for(int i=0;i<studentCount;i++){
+		Student oneStudent = students[i];
+		cout << oneStudent.name << endl;
+		cout << "總分是:" << sum(oneStudent) << endl;
+		cout << "==================" << endl;
 	}
 	return 0;
 }

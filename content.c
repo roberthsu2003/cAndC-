@@ -1,19 +1,20 @@
+//宣告Rectangle結構，並建立結構變數Height,Width表示長和寬，輸入矩形的長和寬後計算面積
+
 #include <iostream>
 using namespace std;
 
-typedef struct student{
-	string name;
-	int scores[5];
-}Student;
+typedef struct rectangle{
+	int width;
+	int height;
+}Rectangle;
 
 int main() {
-	Student stu[3] = {{"robert",{78, 98, 78, 78, 83}},{"david",{78, 98, 78, 63, 83}},{"alis",{69, 98, 78, 63, 83}}};
+	Rectangle rec;
 
-	for(int i=0; i<3; i++){
-		int sum = 0;
-		for(int j=0; j<5; j++){
-			sum += stu[i].scores[j];
-		}
-		cout << "學生:" << stu[i].name << "總分數是" << sum << endl;
-	}
+	cout << "請輸入矩形的寬:";
+	cin >> rec.width;
+	cout << "請輸入矩形的高:";
+	cin >> rec.height;
+	cout << "矩形的面績是:" << rec.width * rec.height << endl;
+	return 0;
 }

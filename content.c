@@ -1,26 +1,20 @@
-main.c
+#include <iostream>
+using namespace std;
 
-#include <stdio.h>
-#include "tools.h"
-#include "tools.h"
+class Person{
+	public:
+		string name;
+};
 
-int main(void) {
-	int a = 10;
-	int b = 5;
-	int result = add(a, b);
-  	printf("相加的結果是%d\n",result);
-  return 0;
+
+
+int main() {
+	Person p1;
+	p1.name="robert";
+
+	Person p2;
+	p2.name = "david";
+
+	cout << "p1的名字是:" << p1.name << endl;
+	cout << "p2的名字是:" << p2.name << endl;
 }
-
-
-tools.h
-
-//避免被重複#include
-#ifndef __TOOLS_H__
-#define __TOOLS_H__
-
-int add(int a,int b){
-	return a+b;
-}
-
-#endif

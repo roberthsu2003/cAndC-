@@ -7,13 +7,17 @@ class Student{
 		int chinese;
 		int english;
 		int math;
-		int sum(){
-			return chinese + english + math;
-		}
-		float average(){
-			return sum() / 3.0;
-		}
+		int sum();
+		float average();
 };
+//實作method在class的外部
+int Student::sum(){
+	return chinese + english + math;
+}
+
+float Student::average(){
+	return sum() / 3.0;
+}
 
 int main() {
 	Student stu1;

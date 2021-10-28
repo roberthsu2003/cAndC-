@@ -3,7 +3,14 @@ main.cpp
 #include <iostream>
 #include "bmi.h"
 
+void getNormal(BMI b,int *t){
+	if(b.bmi() >= 18.5 && b.bmi() < 24){
+		*t += 1;
+	}
+}
+
 int main() {
+	int total = 0;
 	BMI::begin();
 	BMI students[50];
 	for(int i=0; i<50; i++){
@@ -13,7 +20,10 @@ int main() {
 		cout << students[i].weight << endl;
 		students[i].suggestion();
 		cout << "======================" << endl;
+		getNormal(students[i], &total);
 	}
+
+	cout << "全班正常範圍的人數是:" << total << endl;
 	
 } 
 

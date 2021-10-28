@@ -4,7 +4,17 @@ main.cpp
 #include "bmi.h"
 
 int main() {
+	BMI::begin();
 	BMI students[50];
+	for(int i=0; i<50; i++){
+		students[i] = BMI("stu"+to_string(i+1));
+		cout << students[i].name << endl;
+		cout << students[i].height << endl;
+		cout << students[i].weight << endl;
+		students[i].suggestion();
+		cout << "======================" << endl;
+	}
+	
 } 
 
 bmi.h

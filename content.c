@@ -1,16 +1,28 @@
 #include <iostream>
+#include "time.h"
 using namespace std;
 
 class BMI{
 	public:
+		BMI(string n);
 		BMI(string n, int h, int w);
 		string name;
 		int height;
 		int weight;
+		static void begin(){
+			srandom(time(NULL));
+		}
+		
 		float bmi();
 		void suggestion();
 
 };
+
+BMI::BMI(string n){
+	name = n;
+	height = rand() % (180-150+1) + 150;
+	weight = rand() % (90-55+1) + 55;
+}
 
 BMI::BMI(string n, int h, int w){
 	name = n;
@@ -44,10 +56,17 @@ void BMI::suggestion(){
 
 
 int main() {
+	BMI::begin();
 	BMI user1("robert",175,80);
 	cout << "name=" << user1.name << endl;
 	cout << "height=" << user1.height << endl;
 	cout << "weight=" << user1.weight << endl;
 	user1.suggestion();
+	cout << "=====================" << endl;
+	BMI user2("alice");
+	cout << "name=" << user2.name << endl;
+	cout << "height=" << user2.height << endl;
+	cout << "weight=" << user2.weight << endl;
+	user2.suggestion();
 	return 0;
 } 

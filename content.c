@@ -1,23 +1,9 @@
+main.cpp
+
 #include <iostream>
+#include "student.h"
 using namespace std;
 
-class Student{
-	public:
-		string name;
-		int chinese;
-		int english;
-		int math;
-		int sum();
-		float average();
-};
-//實作method在class的外部
-int Student::sum(){
-	return chinese + english + math;
-}
-
-float Student::average(){
-	return sum() / 3.0;
-}
 
 int main() {
 	Student stu1;
@@ -30,3 +16,34 @@ int main() {
 	cout << "學生平均是:" << stu1.average() << endl;
 	return 0;
 } 
+
+
+student.h
+
+#include <iostream>
+using namespace std;
+
+class Student{
+	public:
+		string name;
+		int chinese;
+		int english;
+		int math;
+		int sum();
+		float average();
+};
+
+
+student.cpp
+
+
+#include "student.h"
+
+//實作method在class的外部
+int Student::sum(){
+	return chinese + english + math;
+}
+
+float Student::average(){
+	return sum() / 3.0;
+}

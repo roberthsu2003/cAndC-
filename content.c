@@ -1,8 +1,15 @@
 #include <stdio.h>
 
 int main(void) {
-  printf("姓名\t座號\t電話\n");
-  printf("李振聲\t11\t\t0229435437\n");
-  printf("張四聲\t13\t\t0229435467\n");
-  return 0;
+	char characterA;
+	characterA = 'A';
+	printf("characterA:%c\n",characterA);
+
+	char characterB;
+	characterB = 65;
+	printf("characterB:%c\n",characterB);
+
+	unsigned char numberA = 200;
+	printf("numberA:%d\n",numberA);
+	return 0;
 }

@@ -1,13 +1,19 @@
 #include <stdio.h>
 
 int main(void) {
-  double PI = 3.14159876;
-  int radius;
-  double area;
-  printf("請輸入整數半徑:");
-  scanf("%d",&radius);
-  //自動轉換型別
-  area = PI * radius * radius;
-  printf("圓面積=%.2f\n",area);
+	int chinese,english,math;
+  	printf("請輸入國文成積(0-100):");
+	scanf("%d", &chinese);
+
+	printf("請輸入英文成積(0-100):");
+	scanf("%d", &english);
+
+	printf("請輸入數學成積(0-100):");
+	scanf("%d", &math);
+
+	unsigned long sum = chinese + english + math;
+	//float average = (float)sum / 3;
+	float average = sum / 3.0;
+	printf("average=%.2f\n",average);
   return 0;
 }

@@ -1,10 +1,9 @@
 #include <stdio.h>
 
 int main(void) {
-  int a = 2151;
-  printf("%d\n",a);
-  a = 300;
-  printf("%d\n",a);
-  
-  return 0;
+	int englishScore;	
+	printf("請輸入英文分數格式是(分數):");
+	scanf("(%d)",&englishScore);
+	printf("您的英文分數是%d\n",englishScore);
+	return 0;
 }

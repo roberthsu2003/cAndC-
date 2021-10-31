@@ -1,9 +1,11 @@
 #include <stdio.h>
 
 int main(void) {
-	int englishScore;	
-	printf("請輸入英文分數格式是(分數):");
-	scanf("(%d)",&englishScore);
-	printf("您的英文分數是%d\n",englishScore);
-	return 0;
+  int first,second;
+  printf("請輸入第一個數值:");
+  scanf("%d",&first);
+  printf("請輸入第二個數值:");
+  scanf("%d",&second);
+  printf("%d+%d=%d\n",first,second,first + second);
+  return 0;
 }

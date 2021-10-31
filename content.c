@@ -1,11 +1,8 @@
 #include <stdio.h>
 
 int main(void) {
-  int first,second;
-  printf("請輸入第一個數值:");
-  scanf("%d",&first);
-  printf("請輸入第二個數值:");
-  scanf("%d",&second);
-  printf("%d+%d=%d\n",first,second,first + second);
+  printf("姓名\t座號\t電話\n");
+  printf("李振聲\t11\t\t0229435437\n");
+  printf("張四聲\t13\t\t0229435467\n");
   return 0;
 }

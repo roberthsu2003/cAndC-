@@ -1,80 +1,18 @@
-main.cpp
-
 #include <iostream>
-#include "student.h"
-using namespace std;
+class Car{
+	private:
+		int speed=0;
 
-
-
-
-int main() {
-	int nums = 50;
-	Student::begin();
-	Student stu1 = Student();
-	Student students[nums];
-	for(int i=0; i<nums; i++){
-		students[i] = Student("stu"+to_string(i+1));
-	}
-
-	cout << "學生姓名\t國文\t數學\t英文\t總分\t平均" << endl;
-	for(int i=0; i<nums; i++){
-		Student s = students[i];
-		cout << s.name << "\t\t" << s.chinese << "\t\t" << s.math << "\t\t" << s.english << "\t\t" << s.sum() << "\t\t";
-		printf("%.2f\n",s.average()); 
-	}
-	return 0;
-} 
-
-
-student.h
-
-#ifndef __STUDENT_H__
-#define __STUDENT_H__
-#include <iostream>
-
-class Student{
 	public:
-		//建構式
-		Student();
-		Student(std::string n);
-		static void begin(){
-			srandom(time(NULL));
-		}
-		std::string name;
-		//實體欄位
-		int chinese;
-		int english;
-		int math;
-		//實體方罄
-		int sum();
-		float average();
+		Car(int s);
+
 };
 
-#endif
-
-
-student.cpp
-
-#include <iostream>
-#include "student.h"
-using namespace std;
-//建構式
-Student::Student(){
-
-}
-//建構式
-Student::Student(string n){
-	int max = 100;
-	int min = 60;	
-	name = n;
-	chinese = random() % (max-min+1) + min;
-	english = random() % (max-min+1) + min;
-	math = random() % (max-min+1) + min;
+Car::Car(int s){
+	speed = s;
 }
 
-int Student::sum(){
-	return chinese + english + math;
-}
-float Student::average(){
-	return sum() / 3.0;
-}
+int main() {
+	Car car1 = Car(50);
+	
+} 

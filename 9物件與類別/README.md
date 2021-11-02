@@ -1263,47 +1263,56 @@ int main() {
 
 顯示====================================
 
-矩形面積 = 30
-===================
-三角形面積 = 15
+正方型的面積是100
+矩型的面積是500
+三角型的面積是250
 
 ========================================
 
-
 #include <iostream>
-using namespace std;
 
-class Rectangle{
+class Square{
 	public:
 		int width;
-		int getArea(){
-			return width * height;
+		virtual int getArea(){
+			return width * width;
 		}
-	protected:
+};
+
+class Rectangle:public Square{
+	public:
 		int height;
+		int getArea() override{
+			return width* height;
+		}
 };
 
 class Triangle:public Rectangle{
 	public:
-		Triangle(){
-			width = 5;
-			height = 6;
-		}
-
-		int getArea2(){
-			return (width * height) / 2;
-		}
+	int getArea() override{
+		return (width*height) / 2;
+	}
 };
 
+using namespace std;
 int main() {
-	Rectangle rectangle;
-	cout << rectangle.getArea() << endl;
+	Square sq = Square();
+	sq.width = 10;
+	cout << "正方型的面積是" << sq.getArea() << endl;
 
-	Triangle triangle;
-	cout << "矩形面積 = " << triangle.getArea() << endl;
-	cout << "===================" << endl;
-	cout << "三角形面積 = " << triangle.getArea2() << endl;
-}
+	Rectangle rec = Rectangle();
+	rec.width = 10;
+	rec.height = 50;
+	cout << "矩型的面積是" << rec.getArea() << endl;
+
+	Triangle tri = Triangle();
+	tri.width = 10;
+	tri.height = 50;
+	cout << "三角型的面積是" << tri.getArea() << endl;
+ } 
+
+
+
 ```
 
 ```c++

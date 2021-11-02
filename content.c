@@ -1,15 +1,46 @@
+main.cpp
+
 #include <iostream>
+#include "student.h"
 using namespace std;
+
+
+
+
+int main() {
+	int nums = 50;
+	Student::begin();
+	Student stu1 = Student();
+	Student students[nums];
+	for(int i=0; i<nums; i++){
+		students[i] = Student("stu"+to_string(i+1));
+	}
+
+	cout << "學生姓名\t國文\t數學\t英文\t總分\t平均" << endl;
+	for(int i=0; i<nums; i++){
+		Student s = students[i];
+		cout << s.name << "\t\t" << s.chinese << "\t\t" << s.math << "\t\t" << s.english << "\t\t" << s.sum() << "\t\t";
+		printf("%.2f\n",s.average()); 
+	}
+	return 0;
+} 
+
+
+student.h
+
+#ifndef __STUDENT_H__
+#define __STUDENT_H__
+#include <iostream>
 
 class Student{
 	public:
 		//建構式
 		Student();
-		Student(string n);
+		Student(std::string n);
 		static void begin(){
 			srandom(time(NULL));
 		}
-		string name;
+		std::string name;
 		//實體欄位
 		int chinese;
 		int english;
@@ -18,6 +49,15 @@ class Student{
 		int sum();
 		float average();
 };
+
+#endif
+
+
+student.cpp
+
+#include <iostream>
+#include "student.h"
+using namespace std;
 //建構式
 Student::Student(){
 
@@ -38,22 +78,3 @@ int Student::sum(){
 float Student::average(){
 	return sum() / 3.0;
 }
-
-
-int main() {
-	int nums = 50;
-	Student::begin();
-	Student stu1 = Student();
-	Student students[nums];
-	for(int i=0; i<nums; i++){
-		students[i] = Student("stu"+to_string(i+1));
-	}
-
-	cout << "學生姓名\t國文\t數學\t英文\t總分\t平均" << endl;
-	for(int i=0; i<nums; i++){
-		Student s = students[i];
-		cout << s.name << "\t\t" << s.chinese << "\t\t" << s.math << "\t\t" << s.english << "\t\t" << s.sum() << "\t\t";
-		printf("%.2f\n",s.average()); 
-	}
-	return 0;
-} 

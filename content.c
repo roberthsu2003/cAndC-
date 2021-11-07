@@ -1,7 +1,12 @@
 #include <iostream>
 
 int main() {
-	int n = 10;
-	n += 10; 
-	std::cout << "n=" << n << std::endl;
-}
+	int num,result;
+	printf("請輸入一個數值:");
+	scanf("%d",&num);
+	result = num;
+	result *= num;
+	printf("%d的平方是%d\n",num, result);
+	result *= num;
+	printf("%d的立方是%d\n",num, result);
+} 

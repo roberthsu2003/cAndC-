@@ -1,20 +1,22 @@
-
-//讓使用者輸入密碼,如果輸入的密碼正確(1234), 要顯示「密碼正確!歡迎光臨!」。如果不正確就顯示密碼錯誤訊息
 #include <iostream>
 using namespace std;
-
 int main() {
-	string password;
-	cout << "請輸入密碼:";
-	cin >> password;
+	int money;
+	int payMoney;
+	cout << "請輸入購買金額:";
+	cin >> money;
 
-	if(password=="a1234"){
-		//true
-		cout << "密碼正確" << endl;
+	if(money >= 100000){
+		payMoney = money * 0.8;
+	}else if(money >= 50000){
+		payMoney = money * 0.85;
+	}else if(money >= 30000){
+		payMoney = money * 0.9;
+	}else if(money >= 10000){
+		payMoney = money * 0.95;
 	}else{
-		//false
-		cout << "密碼錯誤,請重新輸入" << endl;
+		payMoney = money;
 	}
 
-	cout << "程式結束" << endl;
+	cout << "實付金額是:"  << payMoney << "元\n"; 
 } 

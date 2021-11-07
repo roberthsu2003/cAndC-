@@ -1,21 +1,20 @@
+
+//讓使用者輸入密碼,如果輸入的密碼正確(1234), 要顯示「密碼正確!歡迎光臨!」。如果不正確就顯示密碼錯誤訊息
 #include <iostream>
 using namespace std;
 
 int main() {
-	int top,bottom,height;
-	float area;
-	cout << "請輸入梯形的上底(公分):";
-	cin >> top;
+	string password;
+	cout << "請輸入密碼:";
+	cin >> password;
 
-	cout << "請輸入梯形的下底(公分):";
-	cin >> bottom;
+	if(password=="a1234"){
+		//true
+		cout << "密碼正確" << endl;
+	}else{
+		//false
+		cout << "密碼錯誤,請重新輸入" << endl;
+	}
 
-	cout << "請輸入梯形的高(公分):";
-	cin >> height;
-
-	area = (top + bottom) * height / 2.0;
-
-	cout << "梯形面積是:" << area << "平方公分" << endl;
-
-
+	cout << "程式結束" << endl;
 } 

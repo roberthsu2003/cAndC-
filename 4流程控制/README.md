@@ -188,7 +188,7 @@ int main() {
 	int chinese;
 	int math;
 	int bonus = 0;
-	printf("請輸入國文成績和數學成績(國文,英文):");
+	printf("請輸入國文成績和數學成績(國文,數學):");
 	scanf("%i,%i",&chinese,&math);
 	if(chinese == 100){
 		if(math == 100){
@@ -209,7 +209,7 @@ int main() {
 
 ```
 
-### 使用邏輯運子
+### 使用邏輯運算子
 
 ```c++
 //國文100同時數學100,獎金1000

@@ -1,13 +1,11 @@
 #include <iostream>
 #define SUBNUM 6
 using namespace std;
-int main() {	
-	int stuNum;
-	
+
+void studentScore(){
+	int stuNum;	
 	cout << "請輸入學生數:";
 	cin >> stuNum;
-	
-
 	srand(time(NULL));
 	int students[stuNum][SUBNUM];
 	cout << "國文\t英文\t數學\t歷史\t地理\t理化\t總分\t平均" << endl;	
@@ -22,5 +20,10 @@ int main() {
 		printf("%.2f",float(sum)/SUBNUM);
 		cout << endl;
 	}
+}
+
+int main() {	
+	studentScore();
+	return 0;
 	
 } 

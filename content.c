@@ -2,9 +2,13 @@
 using namespace std;
 int main() {
 	srand(time(NULL));
-	int scores[6];
-	for(int i=0; i<6; i++){
-		scores[i] = random() % (100-50+1) + 50;
-		cout << scores[i] << endl;
+	int students[35][6];	
+	for(int i=0; i<35; i++){
+		for(int j=0;j<6;j++){
+			students[i][j] = random() % (100-50+1) + 50;
+			cout << students[i][j] << " ";
+		}
+		cout << endl;
 	}
+	
 } 

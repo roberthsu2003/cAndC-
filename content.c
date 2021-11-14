@@ -1,19 +1,20 @@
 #include <iostream>
+#define SUBNUM 6
 using namespace std;
 int main() {	
 	int stuNum;
-	int subjectNum;
+	
 	cout << "請輸入學生數:";
 	cin >> stuNum;
-	cout << "請輸入科目數:";
-	cin >> subjectNum;
+	
 
 	srand(time(NULL));
-	int students[stuNum][subjectNum];	
+	int students[stuNum][SUBNUM];
+	cout << "國文\t英文\t數學\t歷史\t地理\t理化" << endl;	
 	for(int i=0; i<stuNum; i++){
-		for(int j=0;j<subjectNum;j++){
+		for(int j=0;j<SUBNUM;j++){
 			students[i][j] = random() % (100-50+1) + 50;
-			cout << students[i][j] << " ";
+			cout << students[i][j] << "\t\t";
 		}
 		cout << endl;
 	}

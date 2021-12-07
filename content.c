@@ -1,36 +1,6 @@
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 
-void add(int a, int b, int &total){
-	total = a + b;
+int main(void) {
+  printf("這是我c語言的第一個程式\n");
+  return 0;
 }
-
-void add(int a, int b, int *total){
-	*total  = a + b;
-}
-
-int add(int a, int b){
-	return a+b;
-}
-
-int main() {
-	int a = 10;
-	int b = 20;
-	int sum;
-	
-	
-	
-	
-	
-	/*
-	sum = add(a,b); 
-	*/
-
-	/*
-	add(a, b, &sum);
-	*/
-
-	add(a,b,sum);
-
-	cout << sum << endl;
-} 

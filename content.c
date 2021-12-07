@@ -9,6 +9,15 @@ int main(void) {
 	a1 = 52;
 	a2 = 28;
 
-	
+	//建立變數
+	int a3;
+
+	a3 = a1 + a2;
+
+	//輸出
+
+	printf("a1+a2=%d\n",a3);
+
+
 	return 0;
 }

@@ -1,10 +1,21 @@
 #include <stdio.h>
 
 int main(void) {
-  double PI = 3.14159678;
-  double area;
-  int radius = 9;
-  area = radius * radius * PI;
-  printf("圓面積是%.2f\n",area);
+  int chinese, english, math;
+  int sum;
+  printf("請輸入國文成績:");
+  scanf("%d",&chinese);
+
+  printf("請輸入英文成績:");
+  scanf("%d",&english);
+
+  printf("請輸入數學成績:");
+  scanf("%d",&math);
+
+  sum = chinese + english + math;
+  printf("3科總分是%d",sum);
+  //強制轉換為float
+  printf("3科平均是%.2f\n",(float)sum/3);
+
   return 0;
 }

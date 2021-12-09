@@ -1,16 +1,12 @@
 #include <stdio.h>
 
 int main(void) {
-  char charB;
-  charB = 'a';
-  printf("%c\n",charB);
+  const char* name;
+  name = "徐國堂";
 
-  char charC;
-  charC = 97;
-  printf("%c\n",charC);
+  printf("%s\n",name);
 
-  char charD;
-  charD = 97;
-  printf("%d\n",charD);
+  name = "robert";
+  printf("%s\n",name);
   return 0;
 }

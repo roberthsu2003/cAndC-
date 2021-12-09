@@ -1,15 +1,10 @@
+#include <stdio.h>
+
 int main(void) {
-  double PI = 3.1415915987;
-  printf("PI=%f\n",PI);
-  printf("PI=%.2f\n",PI);
-  printf("PI=%.10f\n",PI);
-
-  unsigned int a = 20;
-  printf("a=%ud\n",a);
-
-  long long int b = 100;
-  printf("b=%lld\n",b);
-
-
+  double PI = 3.14159678;
+  double area;
+  int radius = 9;
+  area = radius * radius * PI;
+  printf("圓面積是%.2f\n",area);
   return 0;
 }

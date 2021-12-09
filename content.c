@@ -1,21 +1,8 @@
 #include <stdio.h>
 
 int main(void) {
-	int first;
-	int second;
-	int total;
-
-  	printf("請輸入第一個數值:");
-	scanf("%d",&first);
-	printf("first變數的內容是%d\n",first);
-
-	printf("請輸入第2個數值:");
-	scanf("%d",&second);
-	printf("second變數是內容是:%d\n",second);
-
-	total = first * second;
-
-	printf("%d * %d = %d\n",first,second,total);
-
-  	return 0;
+  printf("姓名\t\t座號\t電話\n");
+  printf("李\"振\"聲\t11\t\t0229435437\n");
+  printf("張四聲\t\t13\t\t0229435467\n");
+  return 0;
 }

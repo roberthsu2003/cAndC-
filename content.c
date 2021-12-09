@@ -1,12 +1,9 @@
 #include <stdio.h>
 
 int main(void) {
-  const char* name;
-  name = "徐國堂";
-
-  printf("%s\n",name);
-
-  name = "robert";
-  printf("%s\n",name);
+  double PI = 3.1415915987;
+  printf("PI=%f\n",PI);
+  printf("PI=%.2f\n",PI);
+  printf("PI=%.10f\n",PI);
   return 0;
 }

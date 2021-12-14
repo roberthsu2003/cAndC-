@@ -2,13 +2,24 @@
 using namespace std;
 
 int main() {
-	int n,m;
-	cout << "請輸入除數(整數):";
-	cin >> n;
+	int x = 5;
+	x = x + 1;
+	cout << "x:"<< x << endl;
 
-	cout << "請輸入除數(整數,不可以為0):";
-	cin >> m;
+	int y = 1;
+	y++; 
+	cout << "y:" <<y << endl;
 
-	cout << "商:" << n/m << ",餘數:" << n%m << endl;
 
+	int y1 = 1;
+	++y;
+	cout << "y1:" << y1 << endl;
+
+	int n = 1;
+	n--;
+	cout << "n:" << n  << endl;
+
+	int n1 = 1;
+	--n1;
+	cout << "n1:" << n1 << endl;
 } 

@@ -1,25 +1,18 @@
 #include <iostream>
 using namespace std;
-
 int main() {
-	int top, bottom, height;
-	float area;
+	string password;
+	cout << "請輸入密碼:";
+	cin >> password;
 
-	cout << "請輸入梯形的上底(公分):";
-	cin >> top;
+	if(password == "1234"){
+		//true的程式區塊
+		cout << "歡迎光臨!\n";
+	}else{
+		//false的程式區塊
+		cout << "密碼錯誤!\n";
+		cout << "請重新輸入!\n";
+	}
 
-	cout << "請輸入梯形的下底(公分):";
-	cin >> bottom;
-
-	cout << "請輸入梯形的高(公分):";
-	cin >> height;
-
-	area = (top + bottom) * height / 2.0;
-
-	cout << "梯形的面積:" << area << "平方公分\n";
 	return 0;
-
-
-
-
 } 

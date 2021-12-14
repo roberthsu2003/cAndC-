@@ -2,13 +2,21 @@
 using namespace std;
 
 int main() {
-	int num, result;
-	cout << "請輸入任意值:";
-	cin >> num;
-	result = num;
-	result *= num;
-	cout << "此數的平方是:" << result << endl;
-	result *= num;
-	cout << "此數的立方是:" << result << endl;
-	return 0;
+  	int in1, in2, in3;
+  	int max;
+
+	cout << "請輸入第1個數:";
+	cin >> in1;
+
+	cout << "請輸入第2個數:";
+  	cin >> in2;
+	
+	max = in1 > in2 ? in1 : in2 ;
+
+	cout << "請輸入第3個數:";
+    cin >> in3;
+
+	max = max > in3 ? max : in3;
+
+	cout << "輸入三個數中最大的數為:" << max << endl;
 } 

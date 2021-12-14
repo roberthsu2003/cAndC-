@@ -12,7 +12,7 @@ int main() {
 
 
 	int y1 = 1;
-	++y;
+	++y1;
 	cout << "y1:" << y1 << endl;
 
 	int n = 1;

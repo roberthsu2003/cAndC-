@@ -14,7 +14,7 @@ int main() {
 	max = in1 > in2 ? in1 : in2 ;
 
 	cout << "請輸入第3個數:";
-    cin >> in3;
+    	cin >> in3;
 
 	max = max > in3 ? max : in3;
 

@@ -2,15 +2,13 @@
 using namespace std;
 
 int main() {
-	int x = 1;
-	int y;
-	y = x++;
-
-	cout << "x=" << x << ",y=" << y << endl;
-
-
-	int n = 1;
-	int m;
-	m = ++n;
-	cout << "n=" << n << ",m=" << m << endl;
+	int num, result;
+	cout << "請輸入任意值:";
+	cin >> num;
+	result = num;
+	result *= num;
+	cout << "此數的平方是:" << result << endl;
+	result *= num;
+	cout << "此數的立方是:" << result << endl;
+	return 0;
 } 

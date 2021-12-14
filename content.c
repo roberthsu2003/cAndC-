@@ -1,22 +1,27 @@
 #include <iostream>
+using namespace std;
 
 int main() {
 	int chinese, english, math;
 	int sum;
-	printf("請輸入國文成績:");
-	scanf("%d",&chinese);
+	
+	cout << "請輸入國文成績:";
+	cin >> chinese;
 
-	printf("請輸入英文成績:");
-	scanf("%d",&english);
+	
 
-	printf("請輸入數學成績:");
-	scanf("%d",&math);
+	cout << "請輸入英文成績:";
+	cin >> english;
+
+	
+
+	cout << "請輸入數學成績:";
+	cin >> math;
 
 	sum = chinese + english + math;
-	printf("3科總分是%d\n",sum);
-	//強制轉換為float
-	// printf("3科平均是%.2f\n",(float)sum/3);
-	printf("3科平均是%.2f\n",sum/3.0);
-
+	
+	cout << "3科總分是" << sum << endl;
+	//cout << "3科平均是" << sum/3.0 << endl;
+	printf("3科平均是%.2f\n", sum/3.0);
 	return 0;
 } 

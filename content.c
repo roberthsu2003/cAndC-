@@ -6,18 +6,11 @@ int main() {
 	int payMoney;
 	cout << "請輸入購買金額:";
 	cin >> money;
-	if(money < 10000){
-		payMoney = money;
-	}else if(money < 30000){
-		payMoney = money * 0.95;
-	}else if(money < 50000){
-		payMoney = money * 0.9;
-	}else if(money < 100000){
-		payMoney = money * 0.85;
+	if(money >= 45000 && money <= 46000){
+		cout << "得獎" << endl;
 	}else{
-		payMoney = money * 0.8;
+		cout << "沒有得獎" << endl;
 	}
-
-	cout << "實付金額是:" << payMoney << "元\n";
+	
 	return 0;
 } 

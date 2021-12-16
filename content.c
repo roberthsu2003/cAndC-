@@ -1,16 +1,21 @@
+//國文100同時數學100,獎金1000
+//國文100或者數學100,獎金500
+
 #include <iostream>
 using namespace std;
 
 int main() {
-	int money;
-	int payMoney;
-	cout << "請輸入購買金額:";
-	cin >> money;
-	if(money >= 45000 && money <= 46000){
-		cout << "得獎" << endl;
+	int chinese,math;
+	int bonus;
+	cout << "請輸入國文成績和數學成績(國文,數學):";
+	scanf("%i,%i",&chinese,&math);
+	if(chinese == 100 && math == 100){
+		bonus = 1000;
+	}else if(chinese == 100 || math == 100){
+		bonus = 500;
 	}else{
-		cout << "沒有得獎" << endl;
+		bonus = 0;
 	}
-	
-	return 0;
+
+	cout << "獎金是:" << bonus << endl;
 } 

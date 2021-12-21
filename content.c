@@ -2,13 +2,13 @@
 using namespace std;
 
 int main() {
-	for(int i=0; i<5; i++){
-		cout << "i=" << i << endl;
-	}
+	string password;
+	do{
+		cout << "請輸入密碼:";
+		cin >> password;
+	}while(password != "5678");
 
-	int j = 0;
-	while(j<5){
-		cout << "j=" << j << endl;
-		j++;
-	}
+	cout << "恭喜!你的密碼正確了!請進";
+	return 0;
+
 } 

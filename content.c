@@ -5,7 +5,8 @@ int main() {
 	int score;
 	int sum=0;
 	int num = 0;
-	do{		
+	
+	while(true){		
 		cout << "請輸入第" << num+1 << "位學生的成績:";
 		cin >> score;
 		if(score<0){
@@ -13,7 +14,7 @@ int main() {
 		}
 		num += 1;
 		sum += score;
-	}while(score >= 0);
+	}
 
 	cout << "學生人數是" << num << endl;
 	cout << "全班總成績為:" << sum << endl;

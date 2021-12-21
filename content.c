@@ -17,10 +17,14 @@ int main() {
 		cin >> guessValue;
 		if(guessValue >= min && guessValue <= max){
 			if(guessValue == randomValue){
-				cout << "猜中了" << endl;
+				cout << "賓果!猜對了,答案是" << guessValue << endl;
 				break;
+			}else if(guessValue > randomValue){
+				max = guessValue - 1;
+				cout << "再小一點!";
 			}else{
-				cout << "沒有猜中" << endl;
+				min = guessValue + 1;
+				cout << "再大一點!";
 			}
 		}else{
 			cout << "請輸入提示範圍內的數字!\n";

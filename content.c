@@ -5,6 +5,9 @@
 using namespace std;
 
 int main() {
+	int max = 99;
+	int min = 1;
 	srandom(time(NULL));
-	cout << random() << endl;
+	int randomValue = random() % (max-min+1) + min;
+	cout << randomValue << endl;
 } 

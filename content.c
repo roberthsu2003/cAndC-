@@ -2,13 +2,17 @@
 using namespace std;
 
 int main() {
-	string password;
+	int score;
+	int sum=0;
 	do{
-		cout << "請輸入密碼:";
-		cin >> password;
-	}while(password != "5678");
+		cout << "請輸入學生的成績:";
+		cin >> score;
+		if(score<0){
+			break; //直接跳出迴圈
+		}
+		sum += score;
+	}while(score >= 0);
 
-	cout << "恭喜!你的密碼正確了!請進";
+	cout << "全班總成績為:" << sum << endl;
 	return 0;
-
 } 

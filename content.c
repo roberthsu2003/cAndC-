@@ -8,7 +8,7 @@ int main() {
 	char doagain;
 	
 
-	do{
+	while(true){
 		cout << "請輸入攝氏溫度:";
 		cin >> fvalue;
 		result = temperature(fvalue); //呼叫function
@@ -16,7 +16,11 @@ int main() {
 		
 		cout << "請要繼續輸入嗎?(y or n))";
 		cin >> doagain;
-	}while(doagain == 'y');
+		if(doagain != 'y'){
+			break;
+		}
+	};
+
 	cout << "應用程式結束" << endl;
 	return 0;
 } 

@@ -2,12 +2,18 @@
 using namespace std;
 
 int main() {
-	//宣告陣列變數,同時給值
-	int scores[] = {78,95,63};
+	//宣告陣列變數
+	int count = 3;
+	int scores[count];
+	for(int i=0; i<count; i++){
+		cout << "請輸入第"<< i+1 << "個分數:";
+		cin >> scores[i];
+	}
 
 	
 
 	//取出元素值
-	cout << scores[0] <<","<< scores[1] << "," << scores[2] << endl;
-	printf("%d,%d,%d\n",scores[0],scores[1],scores[2]);
+	for(int i=0;i<count;i++){
+		cout << "第" << i+1 << "個分數是:" << scores[i] << endl;
+	}
 } 

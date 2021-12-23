@@ -2,13 +2,10 @@
 using namespace std;
 
 int main() {
-	//宣告陣列變數
-	int scores[3];
+	//宣告陣列變數,同時給值
+	int scores[] = {78,95,63};
 
-	//給元素值
-	scores[0] = 78;
-	scores[1] = 89;
-	scores[2] = 91;
+	
 
 	//取出元素值
 	cout << scores[0] <<","<< scores[1] << "," << scores[2] << endl;

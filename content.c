@@ -6,7 +6,18 @@ main.cpp
 using namespace std;
 
 int main() {
-	number_game();
+	while(true){
+		number_game();
+		char doagain;
+		cout << "還要繼續嗎?(y,n)";
+		cin >> doagain;
+		if(doagain != 'y'){
+			continue;			
+		}else{		
+			cout << "遊戲結束" << endl;
+			break;
+		}
+	}
 } 
 
 

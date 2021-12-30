@@ -1,13 +1,9 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
-int main(void) {
-  int x = 1;
-  int y = ++x;
-  printf("x=%d,y=%d\n",x,y);
-  
-  int m = 1;
-  int n = m++;
-  printf("m=%d,n=%d\n",m,n);
-  
-  return 0;
-}
+int main() {
+	string name;
+	cout << "請輸入您的姓名:";
+	cin >> name;
+	cout << "我的姓名是:" << name << endl;
+} 

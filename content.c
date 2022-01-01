@@ -2,31 +2,36 @@
 using namespace std;
 
 int main() {
-	int chinese,math;
-	int bouns;
-	cout << "請輸入國文分數:";
-	cin >> chinese;
-	cout << "請輸入數學分數:";
-	cin >> math;
+	char op;
+	int num1 = 20;
+	int num2 = 4;
+	int result;
+	cout << "請輸入要執行的運算(+-*/):";
+	cin >> op;
+	switch(op){
+		case '+':
+		result = num1 + num2;
+		cout << "結果是" << result << endl;
+		break;
 
-	if(chinese == 100){
-		if(math == 100){
-			bouns = 1000;
-		}else{
-			bouns = 500;
-		}
+		case '-':
+		result = num1 - num2;
+		cout << "結果是" << result << endl;
+		break;
 
-	}else{
 
-		if(math == 100){
-			bouns = 5000;
-		}else{
-			bouns = 0;
-		}
+		case '*':
+		result = num1 * num2;
+		cout << "結果是" << result << endl;
+		break;
+
+		case '/':
+		result = num1 / num2;
+		cout << "結果是" << result << endl;
+		break;
+
+		default:
+			cout << "無法執行運算!\n";
 
 	}
-
-	cout << "獎金是:" << bouns << endl;
-
-
 } 

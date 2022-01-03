@@ -2,11 +2,19 @@
 using namespace std;
 
 int main() {
-	double PI = 3.1415915987;
-	int radius = 9;
-	double area;
-	area = PI * radius * radius;
-	cout << "圓面積=" << area << endl;
+	int chinese,english,math;
+	int sum;
+	float average;
+	cout << "請輸入國文成績:";
+	cin >> chinese;
 
-	return 0;
-} 
+	cout << "請輸入英文成績:";
+	cin >> english;
+
+	cout << "請輸入數學成績:";
+	cin >> math;
+
+	sum = chinese + english + math;
+	average = (float)sum / 3;
+
+	cout << "總分是" << sum << "平均是" << average << endl;

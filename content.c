@@ -2,19 +2,12 @@
 using namespace std;
 
 int main() {
-	int chinese,english,math;
-	int sum;
-	float average;
-	cout << "請輸入國文成績:";
-	cin >> chinese;
+	int n,m;
+	cout << "請輸入被除數:";
+	cin >> n;
 
-	cout << "請輸入英文成績:";
-	cin >> english;
+	cout << "請輸入除數:";
+	cin >> m;
 
-	cout << "請輸入數學成績:";
-	cin >> math;
-
-	sum = chinese + english + math;
-	average = (float)sum / 3;
-
-	cout << "總分是" << sum << "平均是" << average << endl;
+	cout << n << "/" << m << ",商=" << n/m << ",餘數=" << n % m << endl;
+} 

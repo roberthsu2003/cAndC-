@@ -2,12 +2,19 @@
 using namespace std;
 
 int main() {
-	int n,m;
-	cout << "請輸入被除數:";
-	cin >> n;
+	float inputValue;
+	float sum = 0;
+	cout << "請輸入第1個數值:";
+	cin >> inputValue;
+	sum += inputValue;
 
-	cout << "請輸入除數:";
-	cin >> m;
+	cout << "請輸入第2個數值:";
+	cin >> inputValue;
+	sum += inputValue;
 
-	cout << n << "/" << m << ",商=" << n/m << ",餘數=" << n % m << endl;
+	cout << "請輸入第3個數值:";
+	cin >> inputValue;
+	sum += inputValue;
+
+	cout << "sum=" << sum << endl;
 } 

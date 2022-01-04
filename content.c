@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-void showArray(int n[]){
+void showArray(int *n){
 	for(int i=0; i<3; i++){
-		cout << n[i] << endl;
+		n[i] *= 3;
 	}
 }
 
@@ -12,4 +12,8 @@ int main() {
 	cout << nums << endl;
 
 	showArray(nums);
+
+	for(int i=0; i<3; i++){
+		cout << nums[i] << endl;
+	}
 } 

@@ -1,16 +1,17 @@
 #include <iostream>
-
 using namespace std;
 
-//定義function
-void modify(int* n){
-	*n = 100;
+void swap(int* n, int* m){
+	//取值運算子
+	//2數對調
+	int temp = *n;
+	*n = *m;
+	*m = temp;
 }
 
 int main() {
-	//呼叫function
-	int a = 699;	
-	cout << "a=" << a << endl;
-	modify(&a);
-	cout << "a=" << a << endl;
+	int a=666, b=777;
+	cout << "a=" << a << ",b=" << b << endl;
+	swap(&a,&b);//取址運算子
+	cout << "a=" << a << ",b=" << b << endl;
 } 

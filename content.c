@@ -1,17 +1,15 @@
 #include <iostream>
 using namespace std;
 
-void swap(int* n, int* m){
-	//取值運算子
-	//2數對調
-	int temp = *n;
-	*n = *m;
-	*m = temp;
+void showArray(int n[]){
+	for(int i=0; i<3; i++){
+		cout << n[i] << endl;
+	}
 }
 
 int main() {
-	int a=666, b=777;
-	cout << "a=" << a << ",b=" << b << endl;
-	swap(&a,&b);//取址運算子
-	cout << "a=" << a << ",b=" << b << endl;
+	int nums[3] ={111,222,333};
+	cout << nums << endl;
+
+	showArray(nums);
 } 

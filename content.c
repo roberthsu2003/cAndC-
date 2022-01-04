@@ -3,11 +3,14 @@
 using namespace std;
 
 //定義function
-int add(int n, int m){
-	return n + m;
+void modify(int* n){
+	*n = 100;
 }
 
 int main() {
 	//呼叫function
-	cout << add(699,971) << endl;
+	int a = 699;	
+	cout << "a=" << a << endl;
+	modify(&a);
+	cout << "a=" << a << endl;
 } 

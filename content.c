@@ -24,6 +24,23 @@ int main() {
 
 mysort.h
 
+/*-------------------------------
+sortedArrayAscending(int num, int *scores)
+這是由小到大排序，num是陣列元素的數量，scores是陣列
+*/
+void sortedArrayAscending(int, int*);
+
+/*-------------------------------
+void sortedArrayDescending(int num, int *scores)
+這是由大到小排序，num是陣列元素的數量，scores是陣列
+*/
+void sortedArrayDescending(int , int*);
+
+
+mysort.cpp
+
+#include "mysort.h"
+
 void sortedArrayAscending(int num, int *scores){
 	for(int i=0;i<num-1;i++){		
 		for(int j=i+1;j<num;j++){			

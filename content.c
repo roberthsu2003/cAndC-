@@ -1,16 +1,13 @@
 #include <iostream>
-using namespace std;
-int total = 0;
+#include <math.h>
 
-void getData(string name){
-	static int n = 0;
-	n++;
-	cout << "第" << n << "位候選人是:" << name << endl;
-	total ++;
-}
+using namespace std;
 
 int main() {
-	getData("David");
-	getData("Amy");
-	getData("Tony");
+	int value;
+	cout << "請輸入要開根號的值:";
+	cin >> value;
+	cout << value << "開根號的值是" << sqrt(value) << endl;
+	cout << max(10,5) << endl;
+	cout << min(10,5) << endl;
 } 

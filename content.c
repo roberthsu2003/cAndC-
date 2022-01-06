@@ -1,28 +1,22 @@
-//自鍵盤輸入一個數字n, 利用遞迴來計算n階層(n!)
 #include <iostream>
 using namespace std;
 
-int factorial(int n){
-	if (n ==0){
-		return 1;
-	}else{
-		return n * factorial(n-1);
-	}
-	
+int add(int a, int b){
+	return a + b;
 }
 
-int factorial1(int n){
-	int t = 1;
-	for(int i=1; i<=n; i++){
-		t *= i;
-	}
-	return t;
+//overloading
+double add(double a, double b){
+	return a + b;
+}
+
+//overloading
+string add(string a, string b){
+	return a + b;
 }
 
 int main() {
-	int n,total;
-	cout << "請輸入數字n:";
-	cin >> n;
-	total = factorial1(n);
-	cout << n << "!是" << total << endl;
+	cout << add(5,6) << endl;
+	cout << add(5.5, 7.1) << endl;
+	cout << add("Hello! ", "World") << endl;
 } 

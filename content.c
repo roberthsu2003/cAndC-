@@ -11,10 +11,18 @@ int factorial(int n){
 	
 }
 
+int factorial1(int n){
+	int t = 1;
+	for(int i=1; i<=n; i++){
+		t *= i;
+	}
+	return t;
+}
+
 int main() {
 	int n,total;
 	cout << "請輸入數字n:";
 	cin >> n;
-	total = factorial(n);
+	total = factorial1(n);
 	cout << n << "!是" << total << endl;
 } 

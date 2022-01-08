@@ -1,20 +1,31 @@
 #include <iostream>
-#include <math.h>
-#include <string.h>
-
 using namespace std;
 
-
 int main() {
-	int value;
-	cout << "請輸入要開根號的值:";
-	cin >> value;
-	cout << value << "開根號的值是" << sqrt(value) << endl;
-	cout << max(10,5) << endl;
-	cout << min(10,5) << endl;
-	cout << pow(13,3) << endl;
+	char op;
+	int num1 = 20, num2 = 4;
+	cout << "請輸入要執行的運算(+-*/):";
+	cin >> op;
 
-	for(int i=1; i<=50; i++){
-		cout << "學號" + to_string(i) << endl;
+	switch(op){
+		case '+':
+		cout << "num1+num2=" << num1 + num2 << endl;	
+		break;
+
+		case '-':
+		cout << "num1-num2=" << num1 - num2 << endl;	
+		break;
+
+		case '*':
+		cout << "num1*num2=" << num1 * num2 << endl;	
+		break;
+
+		case '/':
+		cout << "num1/num2=" << num1 / num2 << endl;	
+		break;
+
+		default:
+		cout << "輸入不正確的字元" << endl;
+
 	}
 } 

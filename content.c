@@ -1,23 +1,13 @@
+//前端處理程式
 #include <iostream>
+#define RATE 28.9 
 
-typedef enum direction{
-	North,
-	South,
-	East,
-	West
-}Direction;
-
-typedef enum day{
-	saturday,
-	sunday,
-	monday,
-	tuesday,
-	wednesday,
-	thursday,
-	friday
-}Day;
+using namespace std;
 
 int main() {
-	Direction destenation = North;
-	Day today = wednesday;
+	double us,nt;
+	cout << "請輸入您有多少美金:";
+	cin >> us;
+	nt = us * RATE;
+	cout << "您有" << nt << "台幣" << endl;
 } 

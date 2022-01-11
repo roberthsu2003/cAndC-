@@ -1,24 +1,23 @@
 #include <iostream>
 using namespace std;
+//定義矩形結構
+typedef struct rectangle{
+	int width;
+	int height;
+}Rectangle;
 
-typedef struct student{
-	string id;
-	string name;
-	int chinese,math,english;
-}Student;
+typedef struct point{
+	int x;
+	int y;
+}Point;
+
 
 int main() {
-	Student david;
-	david.id = "99001";
-	david.name = "David";
-	david.chinese = 85;
-	david.math = 86;
-	david.english = 90;
 
-	Student robert = {"99002","Robert",76, 95, 73};
-	cout << "name:" << robert.name << endl;
-	cout << "id:" << robert.id << endl;
-	cout << "chinese:" << robert.chinese << endl;
-	cout << "math:" << robert.math << endl;
-	cout << "english:" << robert.english << endl;
+Rectangle rec1 = {76, 45};
+Point po1 = {5, 10};
+cout << "矩形的寬是:" << rec1.width << endl;
+cout << "矩形的高是:" << rec1.height << endl;
+cout << "矩形的面績是:" << rec1.width * rec1.height <<  endl;
+
 } 

@@ -1,18 +1,27 @@
+//確保檔案不會被重覆include
+#ifndef __DATA_H__
+#define __DATA_H__
+
 #include <iostream>
 using namespace std;
 
-#define W 
+typedef struct student{
+	string name;
+	int chinese;
+	int english;
+	int math;
+}Student;
 
-#ifdef MAC
+int createScore(int min, int max){
+	return random() % (max-min+1) + min;
+}
 
-#define OS "MAC_OS_VERSION"
+int sum(Student s){
+	return s.chinese + s.english + s.math;
+}
 
-#else 
-
-#define OS "Window10"
+float average(Student s){
+	return sum(s) / 3.0;
+}
 
 #endif
-
-int main() {
-  cout << OS << endl;
-} 

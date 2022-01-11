@@ -12,9 +12,9 @@ int main() {
 	Student students[50];
 	for(int i=0; i<50; i++){
 		students[i].name = "stu" + to_string(i+1);
-		students[i].chinese = random() % (100-60+1) + 60;
-		students[i].english = random() % (100-60+1) + 60;
-		students[i].math = random() % (100-60+1) + 60;
+		students[i].chinese = createScore(60,100);
+		students[i].english = createScore(50, 100);
+		students[i].math = createScore(55,100);
 	}
 
 	for(int i=0; i< 50; i++){
@@ -39,3 +39,7 @@ typedef struct student{
 	int english;
 	int math;
 }Student;
+
+int createScore(int min, int max){
+	return random() % (max-min+1) + min;
+}

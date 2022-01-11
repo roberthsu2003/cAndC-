@@ -22,6 +22,8 @@ int main() {
 		cout << students[i].chinese << endl;
 		cout << students[i].english << endl;
 		cout << students[i].math << endl;
+		cout << "總分是:" << sum( students[i]) << endl;
+		cout << "平均是:" << average(students[i]) << endl;
 		cout << "===================" << endl;
 	}
 } 
@@ -42,4 +44,12 @@ typedef struct student{
 
 int createScore(int min, int max){
 	return random() % (max-min+1) + min;
+}
+
+int sum(Student s){
+	return s.chinese + s.english + s.math;
+}
+
+float average(Student s){
+	return sum(s) / 3.0;
 }

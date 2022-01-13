@@ -1,26 +1,32 @@
 #include <iostream>
 using namespace std;
 
-class Circle{
+class Student{
 	public:
-	int radius;
-	const float PI = 3.14159;
-	float area(){
-		return radius*radius*PI;
+	string name;
+	string id;
+	int chinese;
+	int english;
+	int math;
+	
+	int sum(){
+		return chinese + english + math;
+	}
+
+	float average(){
+		return sum() / 3.0;
 	}
 };
 
 int main() {
-	cout << "請輸入圓的半徑";
-	/* 參考變數
-	Circle oneCircle;
-	cin >> oneCircle.radius;
-	cout << "圓的半徑是" << oneCircle.radius << ",面積是" << oneCircle.area() << endl;
-	*/
+	Student stu1;
+	stu1.name = "stu1";
+	stu1.id = "A100001";
+	stu1.chinese = 87;
+	stu1.english = 97;
+	stu1.math = 67;
 
-	//指標變數操控實體
-	Circle *twoCircle = new Circle();
-	cin >> twoCircle -> radius;
-	cout << "圓的半徑是" << twoCircle->radius << ",面積是" << twoCircle -> area() << endl;
-	
+	cout << stu1.name << endl;
+	cout << "總分:" << stu1.sum() << endl;
+	cout << "總分:" << stu1.average() << endl;
 } 

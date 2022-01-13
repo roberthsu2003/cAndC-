@@ -15,7 +15,7 @@ int main() {
 	cout << "矩形面積是:" << rectangleArea(100, 150) << endl;
 } 
 
-tools.h
+tool.h
 // #define
 // function
 // 類別

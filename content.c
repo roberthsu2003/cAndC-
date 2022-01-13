@@ -1,27 +1,17 @@
-//確保檔案不會被重覆include
-#ifndef __DATA_H__
-#define __DATA_H__
-
 #include <iostream>
 using namespace std;
+//自訂一個Person類別
+class Person{
+	public:
+		string name;
+};
 
-typedef struct student{
-	string name;
-	int chinese;
-	int english;
-	int math;
-}Student;
+int main() {
+	Person david; //建立Person實體
+	Person robert;
+	david.name = "David";
+	robert.name = "Robert";
 
-int createScore(int min, int max){
-	return random() % (max-min+1) + min;
-}
-
-int sum(Student s){
-	return s.chinese + s.english + s.math;
-}
-
-float average(Student s){
-	return sum(s) / 3.0;
-}
-
-#endif
+	cout << "david實體的name是" << david.name << endl;
+	cout << "robert實體的name是" << robert.name << endl;
+} 

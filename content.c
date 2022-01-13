@@ -28,18 +28,30 @@ class BMI{
 	int height;
 	int weight;
 	//建構式
-	BMI(string name,int height,int weight){
+	BMI(string,int,int);
+
+	//實體方法,取得bmi
+	float getBMI();
+
+	//實體方法,提醒使用者
+	string suggestion();
+};
+
+
+bmi.cpp
+#include "bmi.h"
+
+BMI::BMI(string name,int height,int weight){
 		this -> name = name;
 		this -> height = height;
 		this -> weight = weight;
-	}
-	//實體方法
-	float getBMI(){
-		return weight / pow(height/100.0,2);
-	}
+}
 
-	//實體方法
-	string suggestion(){
+float BMI::getBMI(){
+		return weight / pow(height/100.0,2);
+}
+
+string BMI::suggestion(){
 		float bmi = getBMI();
 		string message;
 
@@ -59,5 +71,3 @@ class BMI{
 
 		return message;
 	}
-
-};

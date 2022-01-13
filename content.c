@@ -1,25 +1,19 @@
 #include <iostream>
 using namespace std;
-//自訂一個Person類別
-class Person{
+
+class Circle{
 	public:
-		//實體欄位
-		string name;
-		
-		//實體方法
-		void walk(int var){
-			cout << name << "每小時可跑" << var << "公里" << endl;
-		}
+	int radius;
+	const float PI = 3.14159;
+	float area(){
+		return radius*radius*PI;
+	}
 };
 
 int main() {
-	Person david; //建立Person實體
-	Person robert;
-	david.name = "David";
-	robert.name = "Robert";
-
-	cout << "david實體的name是" << david.name << endl;
-	cout << "robert實體的name是" << robert.name << endl;
-	david.walk(20);
-	robert.walk(15);
+	cout << "請輸入圓的半徑";
+	Circle oneCircle;
+	cin >> oneCircle.radius;
+	cout << "圓的半徑是" << oneCircle.radius << ",面積是" << oneCircle.area() << endl;
+	
 } 

@@ -8,6 +8,15 @@ class Student{
 	int chinese;
 	int english;
 	int math;
+
+	//自訂的建構式
+	Student(string n,string i,int ch, int en, int ma){
+		name = n;
+		id = i;
+		chinese = ch;
+		english = en;
+		math = ma;
+	}
 	
 	int sum(){
 		return chinese + english + math;
@@ -19,14 +28,8 @@ class Student{
 };
 
 int main() {
-	Student stu1;
-	stu1.name = "stu1";
-	stu1.id = "A100001";
-	stu1.chinese = 87;
-	stu1.english = 97;
-	stu1.math = 67;
-
+	Student stu1("stu1", "A100001", 87, 97, 67);
 	cout << stu1.name << endl;
 	cout << "總分:" << stu1.sum() << endl;
-	cout << "總分:" << stu1.average() << endl;
+	cout << "平均:" << stu1.average() << endl;
 } 

@@ -1,45 +1,30 @@
 main.cpp
 
 #include <iostream>
-#include "tool.h"
-using namespace std;
-
-
+#include "bmi.h"
 
 int main() {
-	int radius;
-	cout << "請輸入半徑:";
-	cin >> radius;
-	cout << "圓面積是:" <<  Tools::circleArea(radius) << endl;
-
-	cout << "矩形面積是:" << rectangleArea(100, 150) << endl;
+	BMI stu1("Robert",178, 78);
+	cout << stu1.name << endl;
+	
 } 
 
-tool.h
-// #define
-// function
-// 類別
+bmi.h
 
+#include <iostream>
+using namespace std;
 
-float circleArea(int radius){
-		return radius * radius * 3.14159;
-}
-
-float rectangleArea(int width, int height){
-		return width * height;
-}
-
-class Tools{
+class BMI{
 	public:
-	static float circleArea(int radius){
-		return radius * radius * 3.14159;
+	//建立欄位
+	string name;
+	int height;
+	int weight;
+	//建構式
+	BMI(string name,int height,int weight){
+		this -> name = name;
+		this -> height = height;
+		this -> weight = weight;
 	}
 
-	static int add(int a, int b){
-		return a + b;
-	}
-
-	static float rectangleArea(int width, int height){
-		return width * height;
-	}
 };

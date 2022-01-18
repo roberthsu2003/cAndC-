@@ -1,56 +1,25 @@
 main.cpp
 
 #include <iostream>
-using namespace std;
+#include "circle.h"
 
-#include "student.h"
+using namespace std;
 
 int main() {
-	Student stu1("robert","A10001",78,93,78);
-	cout << "學生總分為:" << stu1.sum() << endl;
-	cout << "學生平均為:" << stu1.average() << endl;
+	Circle c1;
+	cout << c1._radius << endl;
 } 
 
-student.h
 
-#ifndef __STUDENT_H__
-#define __STUDENT_H__
+circle.h
 
-#include <iostream>
-using namespace std;
+#ifndef __CIRCLE_H__
+#define __CIRCLE_H__
 
-class Student{
-	public:
-		string name;
-		string id;
-		int chinese;
-		int english;
-		int math;
-		Student(string n,string id,int c, int e, int m);
-		int sum();
-		float average();
+#define PI 3.14159
+class Circle{
+	private:
+		int _radius;
 };
 
 #endif
-
-
-student.cpp
-
-#include "student.h"
-
-
-Student::Student(string n,string id,int c, int e, int m){
-			name = n;
-			this -> id = id;
-			chinese = c;
-			english = e;
-			math = m;
-		}
-
-int Student::sum(){
-	return chinese + english + math;
-}
-
-float Student::average(){
-	return sum() / 3.0;
-}

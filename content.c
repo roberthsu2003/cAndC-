@@ -1,69 +1,40 @@
-main.cpp
-
 #include <iostream>
-#include "circle.h"
-
-using namespace std;
-
-int main() {
-	Circle c1(10);
-	c1.setRadius();
-	cout << c1.getRadius() << endl;
-	cout << c1.area() << endl;
-} 
-
-
-circle.h
-
-#ifndef __CIRCLE_H__
-#define __CIRCLE_H__
-
-#include <iostream>
-using namespace std;
-
-#define PI 3.14159
-class Circle{
-	private:
-		int _radius;
+class Square{
 	public:
-		Circle(int);
-		int getRadius(void);
-		void setRadius(int);
-		void setRadius(void);
-
-		/*-----------
-		* area是傳出圓的面積
-		-----------*/
-		float area(void);
+		int width;
+		int getSquareArea(){
+			return width * width;
+		}
 };
 
-Circle::Circle(int r){
-	setRadius(r);
-}
+class Rectangle:public Square{
+	public:
+		int height;
+		int getRectangleArea(){
+			return width * height;
+		}
+};
 
-int Circle::getRadius(void){
-	return _radius;
-}
+class Triangle:public Rectangle{
+	public:
+		int getTriangleArea(){
+			return width * height / 2.0;
+		}
+};
 
-void Circle::setRadius(int r){
-	if(r > 100){
-		_radius = 100;
-		cout << "radius被設為100" << endl;
-	}else if(r<=0){
-		_radius = 1;
-		cout << "radius被設為1" << endl;
-	}else{
-		_radius = r;
-	}
-}
+using namespace std;
+int main() {
+	Square sq;
+	sq.width = 10;
+	cout << "正方型的面積是" << sq.getSquareArea() << endl;
 
-void Circle::setRadius(void){
-	_radius = 100;
-}
+	Rectangle rec;
+	rec.width = 10;
+	rec.height = 50;
+	cout << "矩型面積是:" << rec.getRectangleArea() << endl;
 
-float Circle::area(void){
-	return PI * _radius * _radius;
-}
-
-#endif
-
+	Triangle tri;
+	tri.width = 10;
+	tri.height = 50;
+	cout << "三角型的面積是:" << tri.getTriangleArea() << endl;
+} 

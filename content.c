@@ -7,12 +7,11 @@ using namespace std;
 
 int main() {
 	Circle c1(10);
-	c1.setRadius(120);
-	c1.setRadius(-10);
-	c1.setRadius(50);
+	c1.setRadius();
 	cout << c1.getRadius() << endl;
 	cout << c1.area() << endl;
 } 
+
 
 circle.h
 
@@ -30,6 +29,7 @@ class Circle{
 		Circle(int);
 		int getRadius(void);
 		void setRadius(int);
+		void setRadius(void);
 
 		/*-----------
 		* area是傳出圓的面積
@@ -57,8 +57,13 @@ void Circle::setRadius(int r){
 	}
 }
 
+void Circle::setRadius(void){
+	_radius = 100;
+}
+
 float Circle::area(void){
 	return PI * _radius * _radius;
 }
 
 #endif
+

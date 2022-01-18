@@ -11,6 +11,7 @@ int main() {
 	c1.setRadius(-10);
 	c1.setRadius(50);
 	cout << c1.getRadius() << endl;
+	cout << c1.area() << endl;
 } 
 
 circle.h
@@ -29,10 +30,15 @@ class Circle{
 		Circle(int);
 		int getRadius(void);
 		void setRadius(int);
+
+		/*-----------
+		* area是傳出圓的面積
+		-----------*/
+		float area(void);
 };
 
 Circle::Circle(int r){
-	_radius = r;
+	setRadius(r);
 }
 
 int Circle::getRadius(void){
@@ -49,6 +55,10 @@ void Circle::setRadius(int r){
 	}else{
 		_radius = r;
 	}
+}
+
+float Circle::area(void){
+	return PI * _radius * _radius;
 }
 
 #endif

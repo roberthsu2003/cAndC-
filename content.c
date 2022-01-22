@@ -1,16 +1,29 @@
 #include <iostream>
 using namespace std;
 
+int add(int n, int m){
+	int total = n + m;
+	return total;
+}
+
+void swap(int n, int m){
+	int temp = n;
+	n = m;
+	m = temp;
+}
+
 int main() {
-	int* m = new int(10);
-	cout << "*m指向的值是:" << *m << endl;
+	int n = 10;
+	int m = 20;
+	cout << "n=" << n << endl;
+	cout << "m=" << m << endl;
+	cout << "2數相加後的值是;" << endl;
+	int total = add(n,m);
+	cout << "2數相加後的值是;" << total << endl;
 
-	double* n = new double(20.5);
-	cout << "*n指向的值是:" << *n << endl;
-	//cout << "*m + *n" << *m + *n << endl;
-	double total = *m + *n;
-	cout << "totol一般變數的值是" << total << endl;
+	cout << "2數交換後的值是:" << endl;
+	swap(n,m);
+	cout << "n=" << n << endl;
+	cout << "m=" << m << endl;
 
-	double *totalptr = &total;
-	cout << "*totol指標變數指向的值是" << *totalptr << endl;
 } 

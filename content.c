@@ -2,14 +2,14 @@
 using namespace std;
 
 int main() {
-	int scores[5];
-	scores[0] = 87;
-	scores[1] = 78;
-	scores[2] = 87;
-	scores[3] = 95;
-	scores[4] = 76;
-
-	for(int i=0;i<5;i++){
-		cout << scores[i] << endl;
+	srandom(time(NULL));
+	int students[50][5]; //2維陣列
+	for(int i=0;i<50;i++){
+		cout << "第" << i+1 << "位學生:";
+		for(int j=0;j<5;j++){
+			students[i][j] = random() % (100-60+1) + 60;
+			cout << students[i][j] << " ";
+		}
+		cout << endl;
 	}
 } 

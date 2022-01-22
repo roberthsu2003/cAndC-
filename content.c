@@ -2,16 +2,15 @@
 using namespace std;
 int main() {
 	int n[3] = {10, 20, 30};
-	cout << "變數n的值:" << n << endl;
-	cout << "n[0]=" << n[0] << endl;
-	cout << "n[0]的記憶體位址=" << &n[0] << endl;
-	cout << "n[1]=" << n[1] << endl;
-	cout << "n[1]的記憶體位址=" << &n[1] << endl;
-	cout << "n[2]=" << n[2] << endl;
-	cout << "n[2]的記憶體位址=" << &n[2] << endl;
-	cout << "*n=" << *n << endl;
-	cout << "n+0=" << n+0 << endl;
-	cout << "*(n+0)=" << *(n+0) << endl;
-	cout << "*(n+1)=" << *(n+1) << endl;
-	cout << "*(n+2)=" << *(n+2) << endl;
+	
+	//陣列變數操作
+	for(int i=0; i<3; i++){
+		cout << n[0] << endl;
+	}	
+	cout << "===========" << endl;
+	//指標變數操作
+	for(int i=0; i<3; i++){
+		cout << *(n+i) << endl; 
+	}
+
 } 

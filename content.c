@@ -4,7 +4,7 @@ int main(void) {
   unsigned char chinese = 78;
   unsigned char english = 97;
   unsigned char math = 85;
-  printf("國文分數%d,英文分數%d,數學分數%d\n",chinese,english,math);
+  printf("\'國文分數\':%d\t\"英文分數\":%d\t數學分數:%d\n",chinese,english,math);
 
   unsigned short sum;
   sum = chinese + english + math;

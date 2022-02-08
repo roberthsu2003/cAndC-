@@ -1,13 +1,9 @@
 #include <stdio.h>
 
 int main(void) {
-	int chinese; //建立變數
-	chinese = 78; //給變數值
-
-	int math;
-	math = 97;
-
-	printf("我的國文分數是%d\n", chinese); //輸出字串和變數內容
-	printf("我的數學分數是%d\n", math); //輸出字串和變數內容
-	return 0;
+  unsigned char chinese = 78;
+  unsigned char english = 98;
+  unsigned char math = 85;
+  printf("國文分數%d,英文分數%d,數學分數%d\n",chinese,english,math);
+  return 0;
 }

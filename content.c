@@ -1,18 +1,8 @@
 #include <stdio.h>
 
 int main(void) {
-  unsigned char chinese = 78;
-  unsigned char english = 97;
-  unsigned char math = 85;
-  printf("\'國文分數\':%d\t\"英文分數\":%d\t數學分數:%d\n",chinese,english,math);
-
-  unsigned short sum;
-  sum = chinese + english + math;
-  printf("3科總分是%d\n", sum);
-
-  float average;
-  average = sum / 3.0;
-
-  printf("平均為:%f\n", average);
+  printf("姓名\t座號\t電話\n");
+  printf("李振聲\t11\t\t0229435437\n");
+  printf("張四聲\t12\t\t0229498737\n");
   return 0;
 }

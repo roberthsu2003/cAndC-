@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int main(void) {
-  printf("姓名\t座號\t電話\n");
-  printf("李振聲\t11\t\t0229435437\n");
-  printf("張四聲\t12\t\t0229498737\n");
+  double PI = 3.14159787;
+  int radius = 9;
+  printf("圓面積:%.2f\n",radius * radius * PI); //自動轉換型別
   return 0;
 }

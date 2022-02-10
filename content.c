@@ -1,9 +1,8 @@
 #include <stdio.h>
 
 int main(void) {
-  double PI = 3.14159787;
-  int radius = 9;
-  double area = radius * radius * PI;
-  printf("圓面積:%.2f\n",area); 
+  int chinese = 95;
+  printf("國文成績是%d\n",chinese);
+  printf("chinese變數的記憶體位址是%x\n",&chinese);
   return 0;
 }

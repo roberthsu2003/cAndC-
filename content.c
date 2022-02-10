@@ -1,26 +1,29 @@
-#include <stdio.h>
-
-int main(void) {
+#include <iostream>
+using namespace std;
+int main() {
+  //使用c++ 的輸入和輸出
   int chinese;
   int english;
   int math;
   int sum;
 
-  printf("請輸入國文成績:"); //提示使用者輸入
-  scanf("%d",&chinese); //接收使用者輸入的值
+  cout << "請輸入國文成績:"; //提示使用者輸入  
+  cin >> chinese;
 
-  printf("請輸入英文成績:"); //提示使用者輸入
-  scanf("%d",&english); //接收使用者輸入的值
+  cout << "請輸入英文成績:"; //提示使用者輸入  
+  cin >> english;
 
-  printf("請輸入數學成績:"); //提示使用者輸入
-  scanf("%d",&math); //接收使用者輸入的值
+  cout << "請輸入數學成績:"; //提示使用者輸入  
+  cin >> math;
 
   sum = chinese + english + math;
 
-  printf("國文成績是%d\n",chinese);
-  printf("英文成績是%d\n",english);
-  printf("數學成績是%d\n",math);
-  printf("===================\n");
-  printf("總分是%d\n",sum);
+  
+  cout << "國文成績是" << chinese << endl;  
+  cout << "英文成績是" << english << endl;  
+  cout << "數學成績是" << math << endl;
+  cout << "====================\n";
+  
+  cout << "總分是" << sum << endl;
   return 0;
 }

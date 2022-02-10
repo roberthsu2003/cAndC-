@@ -6,6 +6,7 @@ int main() {
   int english;
   int math;
   int sum;
+  float average;
 
   cout << "請輸入國文成績:"; //提示使用者輸入  
   cin >> chinese;
@@ -17,7 +18,8 @@ int main() {
   cin >> math;
 
   sum = chinese + english + math;
-
+  //average = (float)sum / 3;
+  average = sum / 3.0;
   
   cout << "國文成績是" << chinese << endl;  
   cout << "英文成績是" << english << endl;  
@@ -25,5 +27,7 @@ int main() {
   cout << "====================\n";
   
   cout << "總分是" << sum << endl;
+  //cout << "平均是" << average << endl;
+  printf("平均是%.2f\n", average);
   return 0;
 }

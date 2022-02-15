@@ -2,14 +2,8 @@
 using namespace std;
 
 int main() {
-	int x = 1;
-	int y = ++x;
-	cout << "x=" << x << endl;
-	cout << "y=" << y << endl;
-
-	int m = 1;
-	int n = m++;
-
-	cout << "m=" << m << endl;
-	cout << "n=" << n << endl;
+	int n = 5;
+	cout << (n == 5) << endl;
+	cout << (n != 5) << endl;
+	return 0;
 }

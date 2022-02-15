@@ -2,19 +2,22 @@
 using namespace std;
 
 int main() {
-	float value;
-	float result = 0.0;
-    cout << "請輸入第一個數:";
-	cin >> value;
-	result += value;
+	//三元運算子
+	float in1,in2,in3,max;
+	cout << "請輸入第1個數:";
+	cin >>  in1;
 
-	cout << "請輸入第二個數:";
-	cin >> value;
-	result += value;
+	cout << "請輸入第2個數:";
+	cin >> in2;
 
-	cout << "請輸入第三個數:";
-	cin >> value;
-	result += value;
+	max = in1 > in2 ? in1 : in2;
 
-	cout << "三個數的總和為:" << result << endl;
+	cout << "請輸入第3個數:";
+	cin >> in3;
+
+	max = max > in3  ? max : in3;
+
+	cout << "輸入三個數中最大的數為:" << max << endl;
+
+	return 0;
 }

@@ -2,17 +2,12 @@
 using namespace std;
 
 int main() {
-	string password;
-	cout << "請輸入密碼";
-	cin >> password;
-
-	if(password == "abcde"){ //單向選擇
-		cout << "密碼正確!歡迎光臨!" << endl;
+	int num;
+	cout << "請輸入數字:";
+	cin >> num;
+	if( num % 2 == 0){
+		cout << "您輸入的數字是偶數" << endl;
 	}else{
-		cout << "密碼錯誤!" << endl;
+		cout << "您輸入的數字是奇數" << endl;
 	}
-
-	cout << "程式結束" << endl;
-	return 0;
-	
 }

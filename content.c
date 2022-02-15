@@ -2,22 +2,17 @@
 using namespace std;
 
 int main() {
-	//三元運算子
-	float in1,in2,in3,max;
-	cout << "請輸入第1個數:";
-	cin >>  in1;
+	float top, bottom, height, area;
+	cout << "請輸入梯形的上底(公分):";
+	cin >> top;
 
-	cout << "請輸入第2個數:";
-	cin >> in2;
+	cout << "請輸入梯形的下底(公分):";
+	cin >> bottom;
 
-	max = in1 > in2 ? in1 : in2;
+	cout << "請輸入梯形的高(公分):";
+	cin >> height;
 
-	cout << "請輸入第3個數:";
-	cin >> in3;
-
-	max = max > in3  ? max : in3;
-
-	cout << "輸入三個數中最大的數為:" << max << endl;
-
+	area = (top + bottom) * height /2;
+	cout << "梯形的面積:" << area << "平方公分\n";
 	return 0;
 }

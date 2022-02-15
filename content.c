@@ -1,11 +1,12 @@
 #include <iostream>
-using namespace std;
+using namespace std; //c++使用
 
-int main() {
-  int r;
-  cout << "Radius of the circle: ";
-  cin >> r;
-  float area;
-  area = 3.14*r*r;
-  printf("Area of the circle = %.2f\n", area); 
+int main()  {
+	int n=0, m=0;
+  	cout << "請輸入被除數(整數):";
+  	cin >> n;
+	cout << "請輸入除數(整數,不可以為0):";
+	cin >> m;
+	cout << "商:" << n/m << ",餘數:" << n % m << endl;
+	return 0;
 }

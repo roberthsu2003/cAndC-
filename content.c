@@ -2,9 +2,23 @@
 using namespace std;
 
 int main() {
-	//如果是c++,操控unsigned char,不要使用cin,cout
-	unsigned char score;
-	cout << "請輸入分數:";
-	scanf("%hhu", &score);
-	printf("%hhu\n", score);
+	int money;
+	int payMoney;
+
+	cout << "請輸入購買金額:";
+	cin >> money;
+
+	if(money >= 100000){
+		payMoney = money * 0.8;
+	}else if(money >= 50000){
+		payMoney = money * 0.85;
+	}else if(money >= 30000){
+		payMoney = money * 0.9;
+	}else if(money >= 10000){
+		payMoney = money * 0.95;
+	}else{
+		payMoney = money;
+	}
+
+	cout << "實付金額是:" << payMoney << "元\n";
 }

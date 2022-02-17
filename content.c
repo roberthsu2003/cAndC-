@@ -2,12 +2,21 @@
 using namespace std;
 
 int main() {
-	int num;
-	cout << "請輸入數字:";
-	cin >> num;
-	if( num % 2 == 0){
-		cout << "您輸入的數字是偶數" << endl;
+	int score;
+	cout << "請輸入學生分數:";
+	cin >> score;
+	
+	if(score >= 90){
+		cout << "優等" << endl;
+	}else if(score >= 80){
+		cout << "甲等" << endl;
+	}else if(score >= 70){
+		cout << "乙等" << endl;		
+	}else if(score >= 60){
+		cout << "丙等" << endl;
 	}else{
-		cout << "您輸入的數字是奇數" << endl;
+		cout << "丁等" << endl;
 	}
+	
+	return 0;
 }

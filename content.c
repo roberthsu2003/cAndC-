@@ -14,9 +14,11 @@ int main() {
 	}
 
 	for(int i=0; i<students; i++){
+		int sum = 0;
 		for(int j=0; j<scores; j++){
 			cout << allStudents[i][j] << "\t";
+			sum += allStudents[i][j];
 		}
-		cout << endl;
+		cout << "\t" << sum << endl;
 	}
 }

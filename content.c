@@ -3,18 +3,20 @@ using namespace std;
 
 int main() {
 	srandom(time(NULL));
-	int min = 60;
-	int max = 100;
-	int nums = 250;
-	int scores[nums];
-	int sum = 0;
-	for(int i=0; i<nums; i++){		
-		scores[i] = random() % (max-min+1) + min;
-		sum += scores[i];
-		cout << scores[i] << "\t";
-		if ((i+1) % 5 == 0){
-			cout << "\t" << sum << "\t" << sum / 5.0 << endl;
-			sum = 0;
-		}		
-	}	
+	int students = 50;
+	int scores = 5;
+	//2維陣列
+	int allStudents[students][scores];
+	for(int i=0; i<students; i++){
+		for(int j=0; j<scores; j++){
+			allStudents[i][j] = random() % (100-60+1) + 60;
+		}
+	}
+
+	for(int i=0; i<students; i++){
+		for(int j=0; j<scores; j++){
+			cout << allStudents[i][j] << "\t";
+		}
+		cout << endl;
+	}
 }

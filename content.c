@@ -1,24 +1,43 @@
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
 using namespace std;
-
 int main() {
-	srandom(time(NULL));
-	int students = 50;
-	int scores = 5;
-	//2維陣列
-	int allStudents[students][scores];
-	for(int i=0; i<students; i++){
-		for(int j=0; j<scores; j++){
-			allStudents[i][j] = random() % (100-60+1) + 60;
+	srand(time(NULL));
+	char again;
+	do{
+		int max = 99;
+		int min = 1;
+		int keyin;
+		int count = 0;
+		int guess = random() % (max-min+1) + min;
+		cout << guess << endl;
+		cout << "=========猜數字遊戲==============\n\n";
+		while(true){
+			printf("猜數字範圍%d~%d:",min,max);
+			cin >> keyin;
+			count += 1;
+			if(keyin >= min && keyin <= max){
+				if(keyin == guess){
+					cout << "賓果!猜對了,答案是" << guess << endl;
+					cout << "您猜了" << count << "次" << endl;
+					break;
+				}else if(keyin > guess){
+					max = keyin;
+					cout << "再小一點!";
+				}else if(keyin < guess){
+					min = keyin;
+					cout << "再大一點!";
+				}
+				cout << "您已經猜了" << count << "次" << endl;
+			}else{
+				cout << "請輸入提示範圍內的數字!\n";
+			}
 		}
-	}
-
-	for(int i=0; i<students; i++){
-		int sum = 0;
-		for(int j=0; j<scores; j++){
-			cout << allStudents[i][j] << "\t";
-			sum += allStudents[i][j];
-		}
-		cout << "\t" << sum << "\t" << sum / 5.0 << endl;
-	}
+		cout << "還要繼續嗎?(y,n)";
+		cin >> again;
+	}while(again == 'y');
+	cout << "遊戲結束" << endl;
 }

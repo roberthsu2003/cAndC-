@@ -2,9 +2,13 @@
 using namespace std;
 
 int main() {
-	int scores[3] = {70, 80, 90};
-	for(int i=0; i < 3; i++){
+	srandom(time(NULL));
+	int min = 60;
+	int max = 100;
+	int nums = 5;
+	int scores[nums];
+	for(int i=0; i<nums; i++){
+		scores[i] = random() % (max-min+1) + min;
 		cout << scores[i] << endl;
-	}
-	return 0;
+	}	
 }

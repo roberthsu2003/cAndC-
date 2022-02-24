@@ -19,6 +19,6 @@ int main() {
 			cout << allStudents[i][j] << "\t";
 			sum += allStudents[i][j];
 		}
-		cout << "\t" << sum << endl;
+		cout << "\t" << sum << "\t" << sum / 5.0 << endl;
 	}
 }

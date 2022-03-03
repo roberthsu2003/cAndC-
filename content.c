@@ -56,5 +56,15 @@ int main() {
 		cout << scores[i] << "\t";
 	}
 	cout << endl;
+
+	//程式區
+
+
+	cout << "由大到小的排序是:" << endl;	
+	//輸出陣列元素的值
+	for(int i=0; i < num; i++){
+		cout << scores[i] << "\t";
+	}
+	cout << endl;
 	
 }

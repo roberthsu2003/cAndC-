@@ -57,7 +57,17 @@ int main() {
 	}
 	cout << endl;
 
-	//程式區
+	//泡沫排序
+	for(int i=0; i < num-1; i++){
+		for(int j=i+1; j < num; j++){
+			if(scores[i] < scores[j]){
+				//2數對換
+				int temp = scores[i];
+				scores[i] = scores[j];
+				scores[j] = temp;
+			}
+		}
+	}
 
 
 	cout << "由大到小的排序是:" << endl;	

@@ -1,10 +1,12 @@
 #include <iostream>
-
+using namespace std;
 int main() {
-	int chinese;
-	printf("Hello! World!\n");
-	std::cout << "Hello! C++" << std::endl ;
-	std::cout << "請輸入中文分數:";
-	std::cin >> chinese;
-	std::cout << "您的中文分數是:" << chinese << std::endl;
+	int scores[3];
+	scores[0] = 80;
+	scores[1] = 90;
+	scores[2] = 100;
+
+	for(int i=0;i<=2;i++){
+		cout << scores[i] << endl;
+	}
 }

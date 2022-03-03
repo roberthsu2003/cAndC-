@@ -37,5 +37,24 @@ int main() {
 
 	cout << "最大的元素值是:" << max << endl;
 	cout << "最小的元素值是:" << min << endl;
+
+	//泡沫排序
+	for(int i=0; i < num-1; i++){
+		for(int j=i+1; j < num; j++){
+			if(scores[i] > scores[j]){
+				//2數對換
+				int temp = scores[i];
+				scores[i] = scores[j];
+				scores[j] = temp;
+			}
+		}
+	}
+
+	cout << "由小到大的排序是:" << endl;	
+	//輸出陣列元素的值
+	for(int i=0; i < num; i++){
+		cout << scores[i] << "\t";
+	}
+	cout << endl;
 	
 }

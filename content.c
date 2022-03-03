@@ -40,11 +40,14 @@ void guessGame(){
 int main() {
 	//呼叫function
 	char playAgain;
-	do{
+	while(true){
 		guessGame();
 		cout << "繼續嗎?(y,n):";
 		cin >> playAgain;
-	}while(playAgain == 'y');
+		if(playAgain == 'n'){
+			break;
+		}
+	};
 		
 	cout << "遊戲結束" << endl;
 }

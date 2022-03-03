@@ -39,6 +39,12 @@ void guessGame(){
 
 int main() {
 	//呼叫function
-	guessGame();	
+	char playAgain;
+	do{
+		guessGame();
+		cout << "繼續嗎?(y,n):";
+		cin >> playAgain;
+	}while(playAgain == 'y');
+		
 	cout << "遊戲結束" << endl;
 }

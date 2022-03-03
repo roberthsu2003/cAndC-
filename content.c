@@ -1,12 +1,10 @@
 #include <iostream>
 using namespace std;
-int main() {
-	int scores[3];
-	scores[0] = 80;
-	scores[1] = 90;
-	scores[2] = 100;
 
-	for(int i=0;i<=2;i++){
-		cout << scores[i] << endl;
-	}
+int main() {
+	int num;
+	cout << "請輸元素的數量:";
+	cin >> num;
+	int scores[num];
+	cout << num << "個元素陣列scores已經建立" << endl;
 }

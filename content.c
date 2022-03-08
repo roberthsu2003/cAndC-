@@ -1,16 +1,27 @@
 #include <iostream>
 using namespace std;
-int sum(int *m){ //call by reference
-	int total=0;
-	for (int i=0; i<3; i++){
-		total += m[i];
+
+void sort(int *array,int nums){
+	int temp;
+	for(int i=0; i < nums-1; i++){
+		for(int j=i+1; j < nums; j++){
+			if (array[i] < array[j]){
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+		}
 	}
-	return total;
 }
 
-int main() {
-	int n[3] = {10, 20, 30};
-	int total = sum(n);
-	cout << "加總後的值是:" << total << endl;
+int main() {	
+	cout << "請輸入要排序的數值個數:";
+	int n[3] = {20, 10, 50};
+	sort(n,3);
+	for(int i=0; i<3; i++){
+		cout << n[i] << "  ";
+	}
+	cout << endl;
+	
 	
 }

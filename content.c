@@ -14,10 +14,15 @@ int main() {
 	create_random_array(n,nums);
 	cout << "排序前的值:" << endl;
 	display_array(n, nums);
-	//排序
-	sort(n,nums);
-	cout << "排序後的值:" << endl;
-	display_array(n,nums);	
+	
+	cout << "由小到大的排序後的值:" << endl;
+	//由小到大的排序
+	sort(n,nums,false);
+	display_array(n,nums);
+
+	cout << "由大到小的排序後的值:" << endl;
+	sort(n,nums,true);
+	display_array(n,nums);
 }
 
 
@@ -29,11 +34,33 @@ void sort(int array[],int nums){
 	int temp;
 	for(int i=0; i < nums-1; i++){
 		for(int j=i+1; j < nums; j++){
-			if (array[i] < array[j]){
+			if (array[i] > array[j]){
 				temp = array[i];
 				array[i] = array[j];
 				array[j] = temp;
 			}
+		}
+	}
+}
+
+void sort(int array[],int nums,bool desc){
+	int temp;
+	for(int i=0; i < nums-1; i++){
+		for(int j=i+1; j < nums; j++){
+			if(desc==false){
+				if (array[i] > array[j]){
+					temp = array[i];
+					array[i] = array[j];
+					array[j] = temp;
+				}
+			}else{
+				if (array[i] < array[j]){
+					temp = array[i];
+					array[i] = array[j];
+					array[j] = temp;
+				}
+			}
+			
 		}
 	}
 }

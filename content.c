@@ -1,22 +1,21 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
-float circle_area(float radius);
-float circle_area(int radius);
+//全域變數
+int n;
+
+void showNum(){
+	int value = n;
+	cout << "=================" << endl;
+	for(int n=value; n>=1; n--){
+		//n是區塊變數
+		cout << "區塊變數n=" << n << endl;
+	}
+	cout << "===============" << endl;
+	cout << "結束for迴圈後,全域變數n=" << n << endl;
+}
 
 int main() {
-	int radius;
-	float area;
-	cout << "請輸內圓半徑:";
-	cin >> radius;
-	area = circle_area(radius);
-	cout << "圓面積是:" << area << endl;
-}
-
-float circle_area(float radius){
-	return M_PI * pow(radius,2); //內建的function
-}
-
-float circle_area(int radius){
-	return M_PI * pow(radius,2); //內建的function
+	cout << "請輸入全域變數 n=";
+	cin >> n;
+	showNum();
 }

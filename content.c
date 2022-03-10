@@ -1,21 +1,14 @@
 #include <iostream>
 using namespace std;
-//全域變數
-int n;
 
-void showNum(){
-	int value = n;
-	cout << "=================" << endl;
-	for(int n=value; n>=1; n--){
-		//n是區塊變數
-		cout << "區塊變數n=" << n << endl;
-	}
-	cout << "===============" << endl;
-	cout << "結束for迴圈後,全域變數n=" << n << endl;
+void change_value(){
+	static int n = 0; //靜態變數
+	n++;
+	cout << "n的值是:" << n << endl;
 }
 
 int main() {
-	cout << "請輸入全域變數 n=";
-	cin >> n;
-	showNum();
+	change_value();
+	change_value();
+	change_value();
 }

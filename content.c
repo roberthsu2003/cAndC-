@@ -30,6 +30,40 @@ tools.h
 #include <iostream>
 using namespace std;
 
+//宣告function原型->說明
+/*----------------------------
+void sort(int array[],int nums),
+array是要給陣列
+nums是要給這個陣列的元素數值
+是由小到大的排序
+-----------------------------*/
+void sort(int array[],int nums);
+
+
+/*----------------------------
+void sort(int array[],int nums,bool desc)
+說明
+-----------------------------*/
+void sort(int array[],int nums,bool desc);
+
+
+/*----------------------------
+void display_array(int array[], int nums)
+說明
+-----------------------------*/
+void display_array(int array[], int nums);
+
+
+/*----------------------------
+void create_random_array(int array[],int nums)
+說明
+-----------------------------*/
+void create_random_array(int array[],int nums);
+
+
+
+
+
 void sort(int array[],int nums){
 	int temp;
 	for(int i=0; i < nums-1; i++){

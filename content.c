@@ -15,6 +15,13 @@ void sort(int array[],int nums){
 	}
 }
 
+void display_array(int array[], int nums){
+	for(int i=0; i<nums; i++){
+		cout << array[i] << "  ";
+	}
+	cout << endl;
+}
+
 int main() {
 	srandom(time(NULL));
 	int nums;
@@ -25,12 +32,12 @@ int main() {
 	for(int i=0; i<nums; i++){
 		n[i] = 	random() % 100 + 1;
 	}
+	cout << "排序前的值:" << endl;
+	display_array(n, nums);
 	//排序
-	sort(n,nums);	
-	for(int i=0; i<nums; i++){
-		cout << n[i] << "  ";
-	}
-	cout << endl;
+	sort(n,nums);
+	cout << "排序後的值:" << endl;
+	display_array(n,nums);
 	
 	
 }

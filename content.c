@@ -22,22 +22,25 @@ void display_array(int array[], int nums){
 	cout << endl;
 }
 
-int main() {
+void create_random_array(int array[],int nums){
 	srandom(time(NULL));
+	for(int i=0; i<nums; i++){
+		array[i] = 	random() % 100 + 1;
+	}
+}
+
+int main() {	
 	int nums;
 	cout << "請輸入要排序的數值個數:";
 	cin >> nums;
 	int n[nums];
-	//給陣列值
-	for(int i=0; i<nums; i++){
-		n[i] = 	random() % 100 + 1;
-	}
+	//建立亂數
+	create_random_array(n,nums);
 	cout << "排序前的值:" << endl;
 	display_array(n, nums);
 	//排序
 	sort(n,nums);
 	cout << "排序後的值:" << endl;
-	display_array(n,nums);
-	
+	display_array(n,nums);	
 	
 }

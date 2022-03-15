@@ -4,10 +4,11 @@ using namespace std;
 void swap(int* x, int* y);
 
 int main() {
-	int n = 666, m = 777;
-	swap(&n,&m);
-	cout << "n=" << n << endl;
-	cout << "m=" << m << endl;
+	int* np = new int(666);
+	int* mp = new int(777);
+	swap(np,mp);
+	cout << "n=" << *np << endl;
+	cout << "m=" << *mp << endl;
 }
 
 void swap(int* x, int* y){

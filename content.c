@@ -27,9 +27,10 @@ int main() {
 		students[i] = createStudent(i);
 	}
 
-	cout << students[0].name << endl;
-	cout << students[0].chinese << endl;
-	cout << students[0].english << endl;
-	cout << students[0].math << endl;
+	cout << "姓名\t國文\t英文\t數學" << endl;
+	for(int i=0; i<nums; i++){
+		Student s = students[i];
+		cout << s.name << "\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << endl;
+	}
 	
 }

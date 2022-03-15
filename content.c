@@ -17,6 +17,14 @@ Student createStudent(int num){
 	return s;
 }
 
+int sum(Student s){
+	return s.chinese + s.english + s.math;
+}
+
+float average(Student s){
+	return sum(s) / 3.0;
+}
+
 int main() {
 	srandom(time(NULL));
 	int nums;
@@ -27,10 +35,11 @@ int main() {
 		students[i] = createStudent(i);
 	}
 
-	cout << "姓名\t國文\t英文\t數學" << endl;
+	cout << "姓名\t國文\t英文\t數學\t總分\t平均" << endl;
 	for(int i=0; i<nums; i++){
 		Student s = students[i];
-		cout << s.name << "\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << endl;
+		cout << s.name << "\t" << s.chinese << "\t\t" << s.english << "\t\t" << s.math << "\t\t" << sum(s) << "\t\t" ;
+		printf("%.2f\n",average(s));
 	}
 	
 }

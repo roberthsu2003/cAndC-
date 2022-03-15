@@ -15,3 +15,22 @@ int main() {
 	cout << "stu2的平均" << average(stu2) << endl;
 }
 
+student.h
+#include <iostream>
+using namespace std;
+//定義一個變生的結構
+typedef struct student{
+	int id;
+	string name;
+	int chinese;
+	int math;
+	int english;
+} Student;
+
+int sum(Student stu){
+	return stu.chinese + stu.english + stu.math;
+}
+
+float average(Student stu){
+	return sum(stu) / 3.0;
+}

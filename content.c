@@ -25,6 +25,18 @@ float average(Student s){
 	return sum(s) / 3.0;
 }
 
+void sortStudent(Student* stus,int nums){
+	for(int i=0; i < nums-1; i++){
+		for(int j=i+1; j < nums; j++){
+			if (sum(stus[i]) < sum(stus[j])){
+				Student temp = stus[i];
+				stus[i] = stus[j];
+				stus[j] = temp;
+			}
+		}
+	}
+}
+
 int main() {
 	srandom(time(NULL));
 	int nums;
@@ -34,7 +46,7 @@ int main() {
 	for (int i=0; i<nums; i++){
 		students[i] = createStudent(i);
 	}
-
+	sortStudent(students,nums);
 	cout << "姓名\t國文\t英文\t數學\t總分\t平均" << endl;
 	for(int i=0; i<nums; i++){
 		Student s = students[i];

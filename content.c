@@ -1,23 +1,17 @@
-main.c
+#include <iostream>
+class Rectangle{
+	public:
+		int width;
+		int height;
+		int area(){
+			return width * height;
+		}
+};
 
-#include <stdio.h>
-#include "tools.h"
-#include "tools.h"
-
-int main(void) {
-  printf("Hello World\n");
-  return 0;
+using namespace std;
+int main() {
+	Rectangle rec1;
+	rec1.width = 50;
+	rec1.height = 100;
+	cout << "面積是" << rec1.area() << endl;
 }
-
-
-tools.h
-
-//使用#ifndef的語法,預防tools.h被重覆include
-#ifndef __TOOLS_H__
-#define __TOOLS_H__
-
-int add(int a, int b){
-	return  a+b;
-}
-
-#endif

@@ -5,20 +5,25 @@ class Rectangle{
 	public:
 		int width;
 		int height;
+
+		//自訂的建構式
+		Rectangle(int w, int h){
+			width = w;
+			height = h;
+		}
 		
 		int area(){
 			return width * height;
 		}
 };
 
-
 int main() {
-	Rectangle* rec1 = new Rectangle();//使用指標變數控制實體
-	cout << "請輸入矩形的寬:";
-	cin >> rec1 -> width;
-	cout << "請輸入矩形的高:";
-	cin >> rec1 -> height;		
-	cout << "面積是" << rec1 -> area() << endl;
-
+	int width,height;
+	cout << "請輸入width:";
+	cin >> width;
+	cout << "請輸入height:";
+	cin >> height;
 	
+	Rectangle rec1(width,height);
+	cout << "面積是" << rec1.area() << endl;
 }

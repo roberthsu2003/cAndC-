@@ -1,14 +1,12 @@
 #include <iostream>
-#define SQUARE(x) (x) * (x)
-
 using namespace std;
-int main() {
-	int s,result;	
-	cout << "請輸入數字:";
-	cin >> s;
-	result = SQUARE(s);
-	cout << s << "的平方為:" << result << endl;
 
-	result = SQUARE(s+1);
-	cout << s << "的平方為:" << result << endl;
+typedef int INTEGER;
+typedef int* POINTER;
+
+int main() {
+	INTEGER x = 100, y = 200;
+	POINTER ptr = &x;
+	x = y;
+	cout << "*ptr的值是" << *ptr << endl;
 }

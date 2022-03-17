@@ -1,16 +1,17 @@
-#include <iostream>
+main.c
 
-#define MAC
+#include <stdio.h>
+#include "tools.h"
+#include "tools.h"
 
-#ifdef MAC
-int i = 10;
-#else
-int i = 5;
-#endif
+int main(void) {
+  printf("Hello World\n");
+  return 0;
+}
 
 
-using namespace std;
+tools.h
 
-int main() {
-	cout << i << endl;
+int add(int a, int b){
+	return  a+b;
 }

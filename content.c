@@ -23,20 +23,33 @@ int BMI::getWeight(){
     return weight;
 }
 void BMI::setWeight(int weight){
-     this->weight = weight;
+     if(weight > 200){
+        this->weight = 200;    
+	 }else if (weight < 40){
+		 this->weight = 40;
+	 }else{
+		 this -> weight = weight;
+	 }
+     
 }
 
 int BMI::getHeight(){
     return height;
 }
 void BMI::setHeight(int height){
-    this->height = height; 
+    if(height > 200){
+        this->height = 200;    
+	 }else if (height < 140){
+		 this->height = 140;
+	 }else{
+		 this -> height = height;
+	 } 
 }
 
 BMI::BMI(string name, int weight, int height){
 	this->name = name;
-	this->weight = weight;
-	this->height = height;
+	setWeight(weight);
+	setHeight(height);
 }
 
 float BMI::getBMI(){

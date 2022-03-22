@@ -7,22 +7,25 @@ class Student{
 	int chinese;
 	int english;
 	int math;
-
-	Student(string n, int c, int e, int m){
-		name = n;
-		chinese = c;
-		english = e;
-		math = m;
-	}
-
-	int sum(){
-		return chinese + english + math;
-	}
-
-	float average(){
-		return sum() / 3.0;
-	}
+	Student(string name, int chinese, int english, int math);
+    int sum();
+    float average();
 };
+
+Student::Student(string name, int chinese, int english, int math){
+		this->name = name;
+		this->chinese = chinese;
+		this->english = english;
+		this->math = math;
+}
+
+int Student::sum(){
+	return chinese + english + math;
+}
+
+float Student::average(){
+	return sum() / 3.0;
+}
 
 int main() {
 	//reference 

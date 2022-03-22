@@ -1,51 +1,47 @@
 #include <iostream>
-#include "rectangle.h"
 using namespace std;
 
-
-
-int main() {
-	int width,height;
-	cout << "請輸入width:";
-	cin >> width;
-	cout << "請輸入height:";
-	cin >> height;
-	
-	Rectangle rec1(width,height);
-	cout << "面積是" << rec1.area() << endl;
-
-	
-}
-
-
-rectangle.h
-
-#ifndef __RECTANGLE_H__
-#define __RECTANGLE_H__
-
-
-
-class Rectangle{
+class Student{
 	public:
-		int width;
-		int height;					
+	string name;
+	int chinese;
+	int english;
+	int math;
 
-		//自訂的建構式
-		Rectangle(int w, int h);		
-		int area();
+	Student(string n, int c, int e, int m){
+		name = n;
+		chinese = c;
+		english = e;
+		math = m;
+	}
+
+	int sum(){
+		return chinese + english + math;
+	}
+
+	float average(){
+		return sum() / 3.0;
+	}
 };
 
-#endif
+int main() {
+	//reference 
+	Student stu1("stu1", 89, 76, 92);
+	cout << stu1.name << endl;
+	cout << stu1.chinese << endl;
+	cout << stu1.english << endl;
+	cout << stu1.math << endl;
+	cout << stu1.sum() << endl;
+	cout << stu1.average() << endl;
 
 
-rectangle.cpp
-#include "rectangle.h"
 
-Rectangle::Rectangle(int w, int h){
-			width = w;
-			height = h;
-		}
-		
-int Rectangle::area(){
-	return width * height;
+
+	Student *stu2 = new Student("stu2", 87, 66, 90);
+	cout << stu2->name << endl;
+	cout << stu2->chinese << endl;
+	cout << stu2->english << endl;
+	cout << stu2->math << endl;
+	cout << stu2->sum() << endl;
+	cout << stu2->average() << endl;
 }

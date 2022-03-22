@@ -3,14 +3,35 @@
 using namespace std;
 
 class BMI{
-	public:
-	string name;
-	int weight;
+	private:
+    int weight;
 	int height;
+	public:
+	string name;	
 	BMI(string name, int weight, int height);
+
+    int getWeight();
+    void setWeight(int weight);
+    int getHeight();
+    void setHeight(int height);
+
 	float getBMI();
     string suggestion();
 };
+
+int BMI::getWeight(){
+    return weight;
+}
+void BMI::setWeight(int weight){
+     this->weight = weight;
+}
+
+int BMI::getHeight(){
+    return height;
+}
+void BMI::setHeight(int height){
+    this->height = height; 
+}
 
 BMI::BMI(string name, int weight, int height){
 	this->name = name;
@@ -58,8 +79,8 @@ int main() {
 	
 	BMI p1(name,weight,height);
     cout << p1.name << endl;
+    cout << p1.getHeight() << endl;
+    cout << p1.getWeight() << endl;
 	cout << p1.getBMI() << endl;
 	cout << p1.suggestion() << endl;
-
-	
 }

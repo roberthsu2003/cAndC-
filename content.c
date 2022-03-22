@@ -1,17 +1,25 @@
 #include <iostream>
-#include "student.h"
+#include <math.h>
 using namespace std;
 
-void printStudent(Student s){
-	cout << s.name << endl;
-	cout << s.chinese << endl;
-	cout << s.english << endl;
-	cout << s.math << endl;
-	cout << s.sum() << endl;
-	cout << s.average() << endl;
+class BMI{
+	string name;
+	int weight;
+	int height;
+	BMI(string name, int weight, int height);
+	float getBMI();
+};
+
+BMI::BMI(string name, int weight, int height){
+	this->name = name;
+	this->weight = weight;
+	this->height = height;
+}
+
+float BMI::getBMI(){
+	return weight / pow(height/100.0, 2);
 }
 
 int main() {
-	Student stu1("stu1",87, 97, 78);
-	printStudent(stu1);
+  std::cout << "Hello World!\n";
 }

@@ -30,6 +30,9 @@ int main() {
 
 student.h
 
+#ifndef __STUDENT_H__
+#define __STUDENT_H__
+
 #include <iostream>
 using namespace std;
 
@@ -43,6 +46,8 @@ class Student{
     int sum();
     float average();
 };
+
+#endif
 
 
 student.cpp

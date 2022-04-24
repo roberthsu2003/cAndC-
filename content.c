@@ -1,8 +1,13 @@
 #include <stdio.h>
 
 int main(void) {
-  printf("Hello C語言\n");
-  printf("這是我的第一個程式\n");
-  printf("這是我的c語言程式\n");
-  return 0;
+	int chinese;
+	chinese = 80;
+
+	int english;
+	english = 95;
+
+	printf("國文的分數是80,英文的分數是95\n");
+  
+  	return 0;
 }

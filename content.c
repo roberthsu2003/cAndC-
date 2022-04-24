@@ -1,22 +1,6 @@
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 
-
-class Tools{
-    public:
-	static int add(int a, int b){
-		return  a + b;
-	}
-
-   static int sub(int a, int b){
-        return a - b;
-   }
-};
-
-
-
-int main() {
-cout << Tools::add(10, 20) << endl;
-cout << Tools::sub(50, 20) << endl;
-
+int main(void) {
+  printf("Hello C語言\n");
+  return 0;
 }

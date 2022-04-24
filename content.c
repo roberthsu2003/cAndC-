@@ -1,13 +1,12 @@
 #include <stdio.h>
 
 int main(void) {
-	int chinese;
-	chinese = 79;
+  	int chinese = 86;
+	int math = 85;
+	int english = 92;
 
-	int english;
-	english = 94;
-
-	printf("國文的分數是%d,英文的分數是%d\n",chinese,english);
-  
-  	return 0;
+	int total;
+	total = chinese + math + english;
+	printf("總分是%d\n",total);
+  return 0;
 }

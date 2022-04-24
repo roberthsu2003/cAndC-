@@ -2,11 +2,10 @@
 using namespace std;
 
 int main() {
-	int year;
-	int westernYear;
+	float PI = 3.14159;
+	float radius;
+	cout << "請輸半徑(可以有小數點):";
+	cin >> radius;
+	cout << "圓面積是:" <<  radius * radius * PI << endl;
 	
-	cout << "請輸入出生民國年份:";
-	cin >> year;
-	westernYear = 1911 + year;
-	cout << "您的西元年份是" << westernYear << endl;
 }

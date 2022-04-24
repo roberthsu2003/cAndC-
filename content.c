@@ -9,6 +9,9 @@ int main(void) {
 
 	int total;
 	total = chinese + english + math;
+	printf("國文是%d\n",chinese);
+	printf("英文是%d\n",english);
+	printf("數學是%d\n",math);	
 	printf("總分為是%d\n",total);
   	return 0;
 }

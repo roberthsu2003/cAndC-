@@ -1,8 +1,10 @@
 #include <iostream>
 using namespace std;
+
 int main() {
 	int x = 5;
-	int y = 6;
-	cout << "x == y:" << (x == y) << endl;
-	cout << "x != y:" << (x != y) << endl;
+	x += 5;
+	x -= 3;
+	x *= 3;
+	cout << x << endl;
 }

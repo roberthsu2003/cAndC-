@@ -8,6 +8,11 @@ int main() {
 	cin >> someone;
 	
 	for(int i=1;i <= someone; i++){
-		sum += i;
+		if(i % 2 == 0){
+			cout << i << " ";			
+			sum += i;
+		}		
 	}
-	cout << "1~" << someone <<"的總合是:" << sum << endl;
+	cout << endl;
+	cout << "1~" << someone <<"的偶數的總合是:" << sum << endl;
+}

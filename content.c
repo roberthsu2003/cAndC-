@@ -1,20 +1,18 @@
 #include <iostream>
+//讓使用者輸入被除數(整數)及除數(整數，不可以是零)，程式會顯示兩數相除的商及餘數。
+
 using namespace std;
+
 int main() {
-	int chinese,english,math;
-	float average;
+	int n,m;	
+	cout << "請輸入被除數(整數):";
+	cin >> n;
 
-	cout << "請輸入國文成績(0~100):";
-	cin >> chinese;
+	cout << "請輸入除數(整數,不可以為0):";
+	cin >> m;
 
-	cout << "請輸入英文成績(0~100):";
-	cin >> english;
+	cout << "商:" << n/m << " 餘數:" << n % m << endl;
 
-	cout << "請輸入數學成績(0~100):";
-	cin >>	math;
-
-	int sum  = chinese + english + math;
-	average = sum / 3.0;
-	cout << "您的總分是:" << sum << "分,平均為" << average << "分\n";
+	return 0;
 	
 }

@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-//請計算1~某一個正整數的總合
+//請計算1~某一個正整數內,所有偶數的的總和
 int main() {
 	int sum=0;
 	int someone=0;
@@ -11,4 +11,3 @@ int main() {
 		sum += i;
 	}
 	cout << "1~" << someone <<"的總合是:" << sum << endl;
-}

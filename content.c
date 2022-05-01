@@ -12,6 +12,12 @@ int main() {
 	cin >> chinese;
 	cout << "請輸入數學分數:";
 	cin >> math;
+
+	if(chinese == 100 && math == 100){
+		bonus = 1000;
+	}else if(chinese == 100 || math == 100){
+		bonus = 500;
+	}
 	
 	cout << "獎金是:" << bonus << endl;
 }

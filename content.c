@@ -1,18 +1,16 @@
 #include <iostream>
 using namespace std;
-//請計算1~某一個正整數內,所有偶數的的總和
+
 int main() {
 	int sum=0;
-	int someone=0;
-	cout << "請輸入某一正整數:";
-	cin >> someone;
-	
-	for(int i=1;i <= someone; i++){
-		if(i % 2 == 0){
-			cout << i << " ";			
-			sum += i;
-		}		
+	int scores;
+	int num;
+	cout << "請輸入學生的人數:";
+	cin >> num;
+	for(int i=1; i<=num; i++){
+		cout << "請輸入第" << i << "位學生的總分:";
+		cin >> scores;
+		sum += scores;
 	}
-	cout << endl;
-	cout << "1~" << someone <<"的偶數的總合是:" << sum << endl;
+	cout << "全班總共有" << num << "學生,總分為" << sum << endl;
 }

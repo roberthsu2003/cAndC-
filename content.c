@@ -7,6 +7,8 @@ int main() {
 	int payMoney;
 	cout << "請輸入購買金額:";
 	cin >> money;
+	
+	/*----------由大到小------------
 	if(money >= 100000){
 		payMoney = money * 0.8;
 	}else if(money >= 50000){
@@ -17,6 +19,19 @@ int main() {
 		payMoney = money * 0.95;
 	}else{
 		payMoney = money;
+	}
+	*/
+
+	if(money < 10000){
+		payMoney = money;
+	}else if(money < 30000){
+		payMoney = money * 0.95;
+	}else if(money < 50000){
+		payMoney = money * 0.9;
+	}else if(money < 100000){
+		payMoney = money * 0.85;
+	}else{
+		payMoney = money * 0.8;
 	}
 
 	cout << "實付金額是:" << payMoney << "元\n";

@@ -1,15 +1,17 @@
 #include <iostream>
-//試用if-else敘述，選寫一個判斷輸入的數字為奇數或偶數的程式
-
+/*
+成績及格判斷
+請使用者輸入成績，若成績大於等於60分，則顯示及格，否則顯示不及格。
+*/
 using namespace std;
-int main() {
-	int inputValue;	
-	cout << "請輸入一個數字:";
-	cin >> inputValue;
 
-	if (inputValue % 2 == 0){
-		cout << "您輸入的" << inputValue << "是偶數" << endl;
+int main() {
+	int score;
+	cout << "請輸入成績:";
+	cin >> score;
+	if(score >= 60){
+		cout << "及格!" << endl;
 	}else{
-		cout << "您輸入的" << inputValue << "是奇數" << endl;
+		cout << "不及格!" << endl;
 	}
 }

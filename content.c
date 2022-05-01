@@ -1,12 +1,8 @@
 #include <iostream>
 using namespace std;
 int main() {
-  	int x = 1;
-	int y = ++x;
-	cout << "x=" << x << ",y=" << y << endl;
-
-	int n = 1;
-	int m = n++;
-	cout << "n=" << n << ",m=" << m << endl;
-	return 0;
+	int x = 5;
+	int y = 6;
+	cout << "x == y:" << (x == y) << endl;
+	cout << "x != y:" << (x != y) << endl;
 }

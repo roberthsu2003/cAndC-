@@ -1,19 +1,15 @@
 #include <iostream>
-//讓使用者輸入梯形的上底、下底及高，程式會計算梯形的面積(上底加下底乘以高除以2)
+//試用if-else敘述，選寫一個判斷輸入的數字為奇數或偶數的程式
+
 using namespace std;
-
 int main() {
-	float top, bottom, height, area;
-	cout << "請輸入梯形的上底(公分):";
-	cin >> top;
+	int inputValue;	
+	cout << "請輸入一個數字:";
+	cin >> inputValue;
 
-	cout << "請輸入梯形的下底(公分):";
-	cin >> bottom;
-
-	cout << "請輸入梯形的高(公分):";
-	cin >> height;
-
-	area = (top + bottom) * height / 2;
-	cout << "梯形的面積:" << area << "平方公分\n";	
-
+	if (inputValue % 2 == 0){
+		cout << "您輸入的" << inputValue << "是偶數" << endl;
+	}else{
+		cout << "您輸入的" << inputValue << "是奇數" << endl;
+	}
 }

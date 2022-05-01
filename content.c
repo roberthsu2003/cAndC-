@@ -1,23 +1,22 @@
 #include <iostream>
-//請以(複合指定運算子)設計程式,讓用者輸入三個任意數，程式會顯示3數相加的總和(float)
 using namespace std;
+//讓使用者輸入三個任意數，程式會顯示三數中的最大數。
 
 int main() {
-	float inputValue;	
-	float sum=0;
+	
+	int in1, in2, in3, max;
 	
 	cout << "請輸入第一個數:";
-	cin >> inputValue;
-	sum += inputValue;
+	cin >> in1;
 	
 	cout << "請輸入第二個數:";
-	cin >> inputValue;
-	sum += inputValue;
+	cin >> in2;
+	max = in1 > in2 ? in1 : in2;
 	
-	cout << "請輸入第三個數:";
-	cin >> inputValue;
-	sum += inputValue;
+	cout << "請輸入第三個數:";	
+	cin >> in3;
 
-	cout << "三個數的總和為:" << sum << endl;
+	max = max > in3 ? max : in3;
+	cout << "輸入三個數中最的的數為:" << max << endl;
 	
 }

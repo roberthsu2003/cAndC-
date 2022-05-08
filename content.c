@@ -2,15 +2,10 @@
 using namespace std;
 
 int main() {
-	int sum=0;
-	int scores;
-	int num;
-	cout << "請輸入學生的人數:";
-	cin >> num;
-	for(int i=1; i<=num; i++){
-		cout << "請輸入第" << i << "位學生的總分:";
-		cin >> scores;
-		sum += scores;
+	for(int i=1; i<=9; ++i){
+		cout << "i=" << i << endl;
+		for(int j=1; j<=9; j++){
+			cout << "j=" << j << endl;
+		}
 	}
-	cout << "全班總共有" << num << "學生,總分為" << sum << endl;
 }

@@ -15,7 +15,7 @@ int main() {
 	}
 
 	//輸出值
-	for(int i=0; i<<totols; i++){
+	for(int i=0; i<totols; i++){
 		cout << scores[i] << endl;
 	}
 }

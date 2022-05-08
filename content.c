@@ -4,8 +4,8 @@ using namespace std;
 
 int main() {
 	srand(time(NULL));
-	int studentNum = 50;
-	int scoresNum = 5;
+	int studentNum = 10;
+	int scoresNum = 8;
 	int totols = studentNum * scoresNum;
 	//50個學生每個學生5個分數
 	int scores[totols]; //建立陣列
@@ -22,7 +22,8 @@ int main() {
 			cout << scores[i*scoresNum + j] << " ";
 			sum += scores[i*scoresNum + j];
 		}
-		cout << "總分:" << sum;
+		cout << "總分:" << sum << " ";
+		cout << "平均:" << sum/(float)scoresNum;
 		cout << "\n";
 	}
 }

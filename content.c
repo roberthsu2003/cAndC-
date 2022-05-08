@@ -1,17 +1,15 @@
 #include <iostream>
-//小明想要存錢買一輛機車,機車每輛30000元，他將每月存的錢輸入，當存款足夠買機車時，就顯示提示訊息告知。
-
-//每次改變的量都不一定時,就不知道要執行的次數
+//預設的密碼為5678，使用者若輸入的密碼錯誤，將不斷出現輸入密碼訊息，直到輸入的密碼正確才顯示正確訊息
 using namespace std;
 int main() {
-	int deposit=0;
-	int inputValue;
-	int num = 0;
-	while(deposit<30000){
-		
-		cout << "請輸入第" << ++num << "個月分的存款";
-		cin >> inputValue;
-		deposit += inputValue;
+	string password;
+	cout << "請輸入密碼:";
+	cin >> password;
+	
+	while(password != "5678"){
+		cout << "密碼錯誤,請重新輸入:";
+		cin >> password;		
 	}
-	cout << "恭喜!已經存夠了,存了"<< num << "個月的總存款為:" << deposit << "元" << endl;
+
+	cout << "恭喜!你的密碼正確了!請進" << endl;
 }

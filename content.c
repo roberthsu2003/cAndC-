@@ -10,9 +10,12 @@ int main() {
 	scores[4] = 82;
 
 	//輸出值
-	cout << scores[0] << ",";
-	cout << scores[1] << ",";
-	cout << scores[2] << ",";
-	cout << scores[3] << ",";
-	cout << scores[4] << "\n";
+	for(int i=0; i<5; i++){
+		cout << scores[i];
+		if(i==4){
+			cout << "\n";
+		}else{
+			cout << ",";
+		}
+	}
 }

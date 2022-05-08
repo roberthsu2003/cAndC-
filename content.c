@@ -6,6 +6,9 @@ using namespace std;
 int main() {
 	int guess;
 	srand(time(NULL));
-	guess = (rand() % 10) + 1;
+	//1~99
+	int max = 99;
+	int min = 1;
+	guess = rand() % (max - min + 1) + min;
 	cout << guess << endl;  	
 }

@@ -17,11 +17,16 @@ int main() {
 		cout << "猜數字範圍" << min << "~" << max << ":";
 		cin >> keyin;
 		if(keyin >= min && keyin <= max){
-			cout << "在範圍內" << endl;
+			if(keyin == guess){
+				cout << "賓果!猜對了,答案是" << guess << endl;
+				break;
+			}else{
+				cout << "猜錯了" << endl;
+			}
 		}else{
-			cout << "請輸入提示範圍內的數字!\n" << endl;
-			continue;
+			cout << "請輸入提示範圍內的數字!\n" << endl;			
 		}
-		break;
+		
 	}
+	cout << "遊戲結束" << endl;
 }

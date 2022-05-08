@@ -20,11 +20,15 @@ int main() {
 			if(keyin == guess){
 				cout << "賓果!猜對了,答案是" << guess << endl;
 				break;
-			}else{
-				cout << "猜錯了" << endl;
+			}else if(keyin > guess){
+				max = keyin;
+				cout << "再小點" << endl;				
+			}else if(keyin < guess){
+				min = keyin;
+				cout << "再大一點" << endl;
 			}
 		}else{
-			cout << "請輸入提示範圍內的數字!\n" << endl;			
+			cout << "請輸入提示範圍內的數字!\n" << endl;
 		}
 		
 	}

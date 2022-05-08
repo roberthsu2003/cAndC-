@@ -4,6 +4,8 @@
 using namespace std;
 
 int main() {
+	int guess;
 	srand(time(NULL));
-  	cout << rand() << endl;
+	guess = (rand() % 10) + 1;
+	cout << guess << endl;  	
 }

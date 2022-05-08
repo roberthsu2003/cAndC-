@@ -1,13 +1,14 @@
 #include <iostream>
+#include <time.h>
 using namespace std;
 int main() {
+	srand(time(NULL));
+	//1個學生的分數
 	int scores[5]; //建立陣列
 	//給值
-	scores[0] = 93;
-	scores[1] = 75;
-	scores[2] = 94;
-	scores[3] = 65;
-	scores[4] = 82;
+	for(int i=0; i<5; i++){
+		scores[i] = rand() % (100-60+1) + 60;
+	}
 
 	//輸出值
 	for(int i=0; i<5; i++){

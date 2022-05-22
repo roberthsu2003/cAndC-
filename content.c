@@ -4,18 +4,14 @@ using namespace std;
 
 int main() {
 	srand(time(NULL));
-	int studentsNum = 50; //學生人數
-	int scoresNum = 5; //每個學生的分數
-	int scores[studentsNum][scoresNum]; //建立所有學生分數的2維陣列
-
-	for(int f=0;f < studentsNum; f++){
-		cout << "第" << f+1 << "學生:";
-		for(int l=0; l < scoresNum; l++){
-			scores[f][l] = rand() % (100-60+1) + 60;
-			cout << scores[f][l] << "   ";
-		}
-		cout << endl;
-	}	
-	
-	
+	int nums;
+	cout << "請輸入要排序的數值個數:";
+	cin >> nums;
+	cout << "排序前:" << endl;
+	int array[nums];
+	for (int i=0; i<nums; i++){
+		array[i] = rand() % (999-1+1) + 1;
+		cout << array[i] << " ";
+	}
+	cout << endl;
 }

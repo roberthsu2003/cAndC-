@@ -12,7 +12,7 @@ void getLots(){
 		lot[i] = i+1;
 	}
 
-	srand(time(NULL));
+	
 	for(int i=0; i<num; i++){
 		int randIndex = rand() % (maxIndex+1);
 		choose[i] = lot[randIndex];
@@ -29,6 +29,7 @@ void getLots(){
 }
 
 int main() {
+	srand(time(NULL));
 	int nums;
    	cout << "請輸入電腦選號的組數:";
 	cin >> nums;

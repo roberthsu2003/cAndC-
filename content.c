@@ -1,8 +1,9 @@
 #include <iostream>
 #include <time.h>
 using namespace std;
-int main() {
-   	int num = 7;
+
+void getLots(){
+	int num = 7;
    	int choose[num];
    	int lot[49];
 	int maxIndex = 48;
@@ -25,4 +26,15 @@ int main() {
 	}
 
 	cout << "\n\n特別號:" << choose[num-1] << "\n\n";
+}
+
+int main() {
+	int nums;
+   	cout << "請輸入電腦選號的組數:";
+	cin >> nums;
+	for(int i=1; i<=nums; i++){
+		cout << "第" << i << "組號碼是:" << endl;
+		getLots();
+		cout << "\n\n";
+	}
 }

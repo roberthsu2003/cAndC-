@@ -14,4 +14,24 @@ int main() {
 		cout << array[i] << " ";
 	}
 	cout << endl;
+
+	//泡沫排序
+	for(int i=0;i < nums-1; i++){
+		for(int j=i+1;j<nums;j++){
+			if(array[i] > array[j]){
+				//交換2數
+				int temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+		}
+	}
+
+	cout << "排序後:" << endl;
+	for (int i=0; i<nums; i++){		
+		cout << array[i] << " ";
+	}
+
+	cout << endl;
+	
 }

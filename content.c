@@ -6,7 +6,8 @@
 #include <time.h>
 
 using namespace std;
-int main() {
+
+void play_game(){
 	int guess;
 	int keyin;
 	int count = 0;
@@ -42,5 +43,21 @@ int main() {
 		}
 		
 	};
+}
+
+int main() {
+	bool play_again = false;
+	do{
+		play_game();
+		string answer;
+		cout << "請問還繼續玩嗎?(yes,no)";
+		cin >> answer;
+		if(answer == "yes"){
+			play_again = true;
+		}else{
+			play_again = false;
+		}
+	}while(play_again == true);
+	cout << "遊戲結束" << endl;
 	return 0;
 }

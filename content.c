@@ -15,6 +15,7 @@ int main() {
 	for(int i=0; i<num; i++){
 		int randIndex = rand() % (maxIndex+1);
 		choose[i] = lot[randIndex];
+		lot[randIndex] = lot[maxIndex];	
 		maxIndex--;
 	}
 

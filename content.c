@@ -1,21 +1,10 @@
 #include <iostream>
 using namespace std;
-
-
-//array是陣列變數call by Reference
-int add(int array[]){
-	int total;
-	total = array[0] + array[1];
-	return total;
-}
-
 int main() {
-	int total;
-	int scores[2];
-	cout << "請輸入國文成績:";
-	cin >> scores[0];
-	cout << "請輸入英文成績:";
-	cin >> scores[1];		
-	total = add(scores);
-	cout << "總分是:" << total << endl;
+	int scores[] = {72, 85, 92, 57, 42, 92, 76, 85, 54};
+	cout << "陣列所有的記憶體:" << sizeof(scores) << endl;
+	cout << "陣列內1個元素的大小:" << sizeof(scores[0]) << endl;
+	//動態查詢陣列內元素的數量
+	int count = sizeof(scores) / sizeof(scores[0]);
+	cout << "陣列元素的數量為:" << count << endl;
 }

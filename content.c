@@ -22,6 +22,7 @@ int main() {
 
 
 tools.h
+
 #include <iostream>
 #include <time.h>
 using namespace std;
@@ -53,7 +54,8 @@ void print_students(Student *s,int num){
 	cout << "英文" << "\t";	
 	cout << "數學" << "\t";
 	cout << "總分" << "\t";
-	cout << "平均" << endl;
+	cout << "平均" << "\t";
+	cout << "名次" << endl;
 	
 	for(int i=0; i<num; i++){
 		Student stu = s[i];
@@ -62,7 +64,8 @@ void print_students(Student *s,int num){
 		cout << stu.english << "\t\t";
 		cout << stu.math << "\t\t";
 		cout << stu.sum << "\t\t";
-		cout << stu.average << endl;
+		printf("%.2f\t\t", stu.average);
+		cout << i+1 << endl;
 		
 	}
 	

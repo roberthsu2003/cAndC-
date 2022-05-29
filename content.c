@@ -1,20 +1,17 @@
 #include <iostream>
+#include <time.h>
+
 using namespace std;
 
-void swap(int* x, int* y){
-	int temp = *x;
-	*x = *y;
-	*y = temp;
-}
-
 int main() {
-	int m = 666;
-	int n = 888;
-	cout << "原本的數:m=" << m;
-	cout << ",n=" << n << endl;
-
-	swap(&m,&n);
-
-	cout << "swap後:m=" << m;
-	cout << ",n=" << n << endl;
+	srand(time(NULL));
+	int num;
+	cout << "請輸入學生考試科目是數量:";
+	cin >> num;
+	int scores[num];
+	for(int i=0; i<num; i++){
+		scores[i] = rand() % (100-60+1) + 60;
+		cout << scores[i] << " ";
+	}
+	cout << endl;
 }

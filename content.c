@@ -1,34 +1,16 @@
 #include <iostream>
-#include <time.h>
-
 using namespace std;
-void create_scores(int scores[],int num){
-	for(int i=0; i<num; i++){
-		scores[i] = rand() % (100-60+1) + 60;
-		cout << scores[i] << " ";
-	}
-	cout << endl;
+//call by Reference
+void swap(int &x, int &y){
+	int temp = x;
+	x = y;
+	y = temp;
 }
-
-void sum_average(int scores[], int num){
-	int sum=0;
-	for(int i=0; i<num; i++){
-		sum += scores[i];
-	}	
-	cout << "學生總分是:" << sum << endl;
-	cout << "學生平均是:" << (float)sum/num << endl;
-}
-
-
 
 int main() {
-	srand(time(NULL));
-	int num;
-	cout << "請輸入學生考試科目是數量:";
-	cin >> num;
-	int scores[num];
-	//建立學生分數
-	create_scores(scores,num);
-	sum_average(scores,num);
-	
+	int n = 666;
+	int m = 888;
+	cout << "原始值n=" << n << ",m=" << m << endl;
+	swap(n,m);
+	cout << "交換後n=" << n << ",m=" << m << endl;
 }

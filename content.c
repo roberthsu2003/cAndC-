@@ -8,15 +8,27 @@ typedef struct student{
 	int english;
 }Student;
 
-int main() {
-	Student stu1;
-	stu1.name = "Robert";
-	stu1.chinese = 78;
-	stu1.english = 85;
-	stu1.math = 76;
+void add_student_info(Student *s,int num){
+	for(int i=0; i<num; i++){
+		s[i].name= "robert";
+		s[i].chinese = 89;
+		s[i].english = 90;
+		s[i].math = 65;
+	}
+}
 
-	cout << stu1.name << endl;
-	cout << stu1.chinese << endl;
-	cout << stu1.english << endl;
-	cout << stu1.math << endl;
+
+
+int main() {
+	//建立陣列
+	Student students[50];
+
+	//將陣列內所有的結構給值
+	add_student_info(students,50);
+	
+	//輸出第一位學生的資料
+	cout << students[0].name << endl;
+	cout << students[0].chinese << endl;
+	cout << students[0].english << endl;
+	cout << students[0].math << endl;
 }

@@ -1,29 +1,16 @@
 #include <iostream>
 using namespace std;
-
-void add10(int array[],int count){	
-	//讓每分數加10分,超出100分,就只給100
-	cout << "加完10分後的分數是:" << endl;
-	for(int i=0; i<count;i++){
-		int newScore = array[i]+10;
-		if(newScore > 100){
-			array[i] = 100;
-		}else{
-			array[i] = newScore;
-		}
-		cout << array[i] << " ";
-	}
-}
+// int* 建立指標變數
+// &m 取址運算子
+// *記憶體位置 取值運算子
 
 int main() {
-	int scores[] = {72, 85, 92, 57, 42, 92,};
-	cout << "陣列所有的記憶體:" << sizeof(scores) << endl;
-	cout << "陣列內1個元素的大小:" << sizeof(scores[0]) << endl;
-	//動態查詢陣列內元素的數量
-	int count = sizeof(scores) / sizeof(scores[0]);
-	cout << "陣列元素的數量為:" << count << endl;
-	//讓每分數加10分,超出100分,就只給100
-	add10(scores,count);
 	
-	cout << endl;
+	//int* ptrX;
+	int *ptrX;
+	int m = 100;
+	ptrX = &m;
+	cout << "ptrX的記憶體位置是:" << ptrX << endl;
+	cout << "透過m取出值是:" << m << endl;
+	cout << "透過指標變數取出的值:" << *ptrX << endl;	
 }

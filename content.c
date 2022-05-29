@@ -1,3 +1,27 @@
+main.cpp
+
+#include <iostream>
+#include "tools.h"
+using namespace std;
+
+int main() {
+	//建立陣列
+	int num;
+	cout << "請輸入學生數量:";
+	cin >> num;
+	//建立學生陣列
+	Student students[num];
+
+	//將陣列內所有的結構給值
+	add_student_info(students,num);
+	
+	//輸出學生的資料
+	print_students(students, num);
+}
+
+
+
+tools.h
 #include <iostream>
 #include <time.h>
 using namespace std;
@@ -42,19 +66,4 @@ void print_students(Student *s,int num){
 		
 	}
 	
-}
-
-int main() {
-	//建立陣列
-	int num;
-	cout << "請輸入學生數量:";
-	cin >> num;
-	//建立學生陣列
-	Student students[num];
-
-	//將陣列內所有的結構給值
-	add_student_info(students,num);
-	
-	//輸出學生的資料
-	print_students(students, num);
 }

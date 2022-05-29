@@ -19,21 +19,34 @@ void add_student_info(Student *s,int num){
 	}
 }
 
+void print_students(Student *s,int num){
+	cout << "姓名" << "\t";
+	cout << "國文" << "\t";
+	cout << "英文" << "\t";
+	cout << "數學" << endl;
 
+	for(int i=0; i<num; i++){
+		Student stu = s[i];
+		cout << stu.name << "\t";
+		cout << stu.chinese << "\t\t";
+		cout << stu.english << "\t\t";
+		cout << stu.math << "\t";
+		cout << endl;
+	}
+	
+}
 
 int main() {
 	//建立陣列
 	int num;
 	cout << "請輸入學生數量:";
 	cin >> num;
+	//建立學生陣列
 	Student students[num];
 
 	//將陣列內所有的結構給值
 	add_student_info(students,num);
 	
-	//輸出第一位學生的資料
-	cout << students[0].name << endl;
-	cout << students[0].chinese << endl;
-	cout << students[0].english << endl;
-	cout << students[0].math << endl;
+	//輸出學生的資料
+	print_students(students, num);
 }

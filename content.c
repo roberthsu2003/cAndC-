@@ -1,16 +1,31 @@
 #include <iostream>
 using namespace std;
-//call by Reference
-void swap(int &x, int &y){
-	int temp = x;
-	x = y;
-	y = temp;
-}
 
 int main() {
-	int n = 666;
-	int m = 888;
-	cout << "原始值n=" << n << ",m=" << m << endl;
-	swap(n,m);
-	cout << "交換後n=" << n << ",m=" << m << endl;
+	int array[] = {100, 200, 300};
+	//透過陣列變數取出值
+	for(int i=0; i<3; i++){
+		cout<< array[i] << " ";
+	}
+	cout << endl;
+
+	//透過陣列變數取出元素記憶體位置
+	for(int i=0; i<3; i++){
+		cout << &array[i] << " ";
+	}
+	cout << endl;
+
+	//透過指標變數取出記憶體位置
+	int *ptr_array = array;
+	for(int i=0; i<3; i++){
+		cout << ptr_array + i << " ";
+	}
+	cout << endl;
+
+	//透過指標變數取出元素值
+	
+	for(int i=0; i<3; i++){
+		cout << *(ptr_array + i) << " ";
+	}
+	cout << endl;
 }

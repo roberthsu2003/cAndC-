@@ -1,20 +1,17 @@
 #include <iostream>
 using namespace std;
-
-long long int factorial(int n){
-	int total = 1;
-	for(int i=n; i>0; i--){
-		total *= i;
-	}
+int add(int a, int b){
+	int total;
+	total = a + b;
 	return total;
-	
 }
 
 int main() {
-	int n;
-	long long int result;
-	cout << "請輸入階層:";
-	cin >> n;
-	result = factorial(n);
-	cout << n << "!=" << result << endl;
+	int total,chinese,english;
+	cout << "請輸入國文成績:";
+	cin >> chinese;
+	cout << "請輸入英文成績:";
+	cin >> english;		
+	total = add(chinese, english);
+	cout << "總分是:" << total << endl;
 }

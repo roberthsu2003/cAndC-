@@ -1,30 +1,10 @@
 #include <iostream>
-
-typedef enum direction{
-	North,
-	South,
-	East,
-	West
-} Direction;
+#define PI 3.14159
 
 using namespace std;
-
 int main() {
-	Direction desc = South;
-	desc = West;
-
-	switch(desc){
-		case North:
-			cout << "北" << endl;
-			break;
-		case South:
-			cout << "南" << endl;
-			break;
-		case East:
-			cout << "東" << endl;
-			break;
-		case West:
-			cout << "西" << endl;
-			break;
-	}
+	int r;
+	cout << "請輸入半徑:" << endl;
+	cin >> r;
+	cout << "面積是:" << PI * r * r << endl;
 }

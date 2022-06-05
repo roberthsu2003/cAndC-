@@ -1,11 +1,11 @@
 #include <iostream>
-#define PI 3.14159
-#define SQUARE(x) (x) * (x)
+#define WINDOWS
 
 using namespace std;
 int main() {
-	int r;
-	cout << "請輸入半徑:" << endl;
-	cin >> r;
-	cout << "面積是:" << PI * SQUARE(r) << endl;
+	#ifdef MAC
+	cout << "這台電腦是mac" << endl;
+	#else
+	cout << "這台電腦是windows" << endl;
+	#endif
 }

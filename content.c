@@ -57,8 +57,18 @@ main.cpp
 #include "BMI.h"
 
 using namespace std;
+
+void add(BMI bmi){
+	float newWeight = bmi.getWeight() + 1;
+	float newHeight = bmi.getHeight() + 1;
+	bmi.setWeight(newWeight);
+	bmi.setHeight(newHeight);
+}
+
 int main() {
-	BMI bmi1(210, 270);
+	BMI bmi1(78, 170);
+	add(bmi1);
 	cout << "bmi1的身高是" << bmi1.getHeight() << endl;
 	cout << "bmi1的體重是" << bmi1.getWeight() << endl;
+}
 }

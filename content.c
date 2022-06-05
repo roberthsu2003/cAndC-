@@ -39,17 +39,22 @@ class People{
 		int height;
 		int weight;
 		
-		//實體方法
-		float bmi(){
+		//實體方法的原型
+		float bmi();
+		//自訂建構式原型
+		People(string n, int h, int w);
+};
+
+//實作原型
+float People::bmi(){
 			return weight / SQUARE(height/100.0);
-		}
-		//自訂建構式
-		People(string n, int h, int w){
+}
+
+//實作建構式原型
+People::People(string n, int h, int w){
 			name = n;
 			height = h;
 			weight = w;
-		}
-};
-
+}
 
 #endif

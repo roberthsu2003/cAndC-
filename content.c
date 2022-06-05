@@ -1,51 +1,21 @@
-BMI.h
+tools.h
 
-#ifndef __BMI_H__
-#define __BMI_H__
+#ifndef __TOOLS_H__
+#define __TOOLS_H__
 
-class BMI{
-	private:
-		float height;
-		float weight;
-
+class Square{
 	public:
-		BMI(float weight, float Height);
-		float getHeight();
-		float getWeight();
-		void setHeight(float height);
-		void setWeight(float weight);
+		int width;
+		Square(int width);
+		int area();
 };
 
-void BMI::setHeight(float height){
-	if(height < 50){
-		this->height = 50;
-	}else if(height > 250){
-		this->height = 250;
-	}else{
-		this->height = height;
-	}
-}
-void BMI::setWeight(float weight){
-	if(weight < 30){
-		this->weight = 30;
-	}else if(weight > 200){
-		this->weight = 200;
-	}else{
-		this->weight = weight;
-	}
+Square::Square(int width){
+	this->width = width;
 }
 
-BMI::BMI(float weight, float height){
-	setWeight(weight);
-	setHeight(height);
-}
-
-float BMI::getHeight(){
-	return height;
-}
-
-float BMI::getWeight(){
-	return weight;
+int Square::area(){
+	return width * width;
 }
 #endif
 
@@ -54,20 +24,10 @@ float BMI::getWeight(){
 main.cpp
 
 #include <iostream>
-#include "BMI.h"
+#include "tools.h"
 
 using namespace std;
-
-void add(BMI *bmi){
-	float newWeight = bmi->getWeight() + 1;
-	float newHeight = bmi->getHeight() + 1;
-	bmi->setWeight(newWeight);
-	bmi->setHeight(newHeight);
-}
-
 int main() {
-	BMI *bmi1 = new BMI(78, 170);
-	add(bmi1);
-	cout << "bmi1的身高是" << bmi1->getHeight() << endl;
-	cout << "bmi1的體重是" << bmi1->getWeight() << endl;
+	Square s(10);
+	cout << "s的面積是:" << s.area() << endl;
 }

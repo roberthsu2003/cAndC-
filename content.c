@@ -1,9 +1,42 @@
+BMI.h
+
+#ifndef __BMI_H__
+#define __BMI_H__
+
+class BMI{
+	private:
+		float height;
+		float weight;
+
+	public:
+		BMI(float weight, float Height);
+		float getHeight();
+		float getWeight();
+};
+
+BMI::BMI(float weight, float height){
+	this -> weight = weight;
+	this -> height = height;
+}
+
+float BMI::getHeight(){
+	return height;
+}
+
+float BMI::getWeight(){
+	return weight;
+}
+#endif
+
+
+
+main.cpp
 #include <iostream>
-#include "tools.h"
+#include "BMI.h"
 
 using namespace std;
 int main() {
-	Square *s1 = new Square(10);
-	cout << "s1的寬是:" << s1->width << endl;
-	cout << "s1的面積是:" << s1->getArea() << endl;
+	BMI bmi1(78, 170);
+	cout << "bmi1的身高是" << bmi1.getHeight() << endl;
+	cout << "bmi1的體重是" << bmi1.getWeight() << endl;
 }

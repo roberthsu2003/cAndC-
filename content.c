@@ -32,6 +32,20 @@ Rectangle::Rectangle(int width, int height):Square(width){
 int Rectangle::area(){
 	return width * height;
 }
+
+class Triangle:public Rectangle{
+	public:
+	Triangle(int width, int height);
+	float area();
+};
+
+Triangle::Triangle(int width, int height):Rectangle(width,height){
+	
+}
+
+float Triangle::area(){
+	return width * height / 2.0;
+}
 #endif
 
 
@@ -43,8 +57,11 @@ main.cpp
 using namespace std;
 int main() {
 	Square s(10);
-	cout << "s的面積是:" << s.area() << endl;
+	cout << "s正方形的面積是:" << s.area() << endl;
 
 	Rectangle r(30, 20);
-	cout << "r的面積是:" << r.area() << endl;
+	cout << "r矩形的面積是:" << r.area() << endl;
+
+	Triangle t(30,20);
+	cout << "t三角形的面積是:" << t.area() << endl;
 }

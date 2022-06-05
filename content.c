@@ -3,23 +3,20 @@ main.h
 #include <iostream>
 #include "tools.h"
 
-People p1;
-People p2;
+#include <iostream>
+#include "tools.h"
+
+People p1("robert",170, 76);
+People p2("john", 180, 80);
 using namespace std;
 
-int main() {
-	p1.name = "robert";
-	p1.height = 170;
-	p1.weight = 76;
+int main() {	
 
 	cout << p1.name << endl;
 	cout << p1.height << endl;
 	cout << p1.weight << endl;
 	cout << p1.bmi() << endl;
-
-	p2.name = "john";
-	p2.height = 180;
-	p2.weight = 80;
+	
 
 	cout << p2.name << endl;
 	cout << p2.height << endl;
@@ -45,7 +42,13 @@ class People{
 		//實體方法
 		float bmi(){
 			return weight / SQUARE(height/100.0);
-		}		
+		}
+		//自訂建構式
+		People(string n, int h, int w){
+			name = n;
+			height = h;
+			weight = w;
+		}
 };
 
 

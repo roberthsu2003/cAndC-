@@ -3,6 +3,7 @@ main.c
 #include <stdio.h>
 #include <stdlib.h>
 #include "tools.h"
+#include "tools.h"
 
 int main(void) {
 	int n = 20;
@@ -12,7 +13,11 @@ int main(void) {
 	return 0;
 }
 
+
 tools.h
+#ifndef __TOOLS_H__
+#define __TOOLS_H__
+
 int add(int a, int b){
 	return a + b;
 }
@@ -21,3 +26,4 @@ int subtract(int a, int b){
 	return a - b;
 }
 
+#endif

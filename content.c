@@ -17,8 +17,22 @@ Square::Square(int width){
 int Square::area(){
 	return width * width;
 }
-#endif
 
+class Rectangle:public Square{
+	public:
+	int height;
+	Rectangle(int width, int height);
+	int area();
+};
+
+Rectangle::Rectangle(int width, int height):Square(width){	
+	this -> height = height;
+}
+
+int Rectangle::area(){
+	return width * height;
+}
+#endif
 
 
 main.cpp
@@ -30,4 +44,7 @@ using namespace std;
 int main() {
 	Square s(10);
 	cout << "s的面積是:" << s.area() << endl;
+
+	Rectangle r(30, 20);
+	cout << "r的面積是:" << r.area() << endl;
 }

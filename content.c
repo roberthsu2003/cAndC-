@@ -15,6 +15,7 @@ int main() {
 	cout << p1.name << endl;
 	cout << p1.height << endl;
 	cout << p1.weight << endl;
+	cout << p1.bmi() << endl;
 
 	p2.name = "john";
 	p2.height = 180;
@@ -23,6 +24,7 @@ int main() {
 	cout << p2.name << endl;
 	cout << p2.height << endl;
 	cout << p2.weight << endl;
+	cout << p2.bmi() << endl;
 }
 
 tools.h
@@ -30,13 +32,20 @@ tools.h
 #define __TOOLS_H__
 
 #include <iostream>
+#define SQUARE(x) ((x)*(x))
 using namespace std;
 
 class People{
 	public:
+		//實體欄位
 		string name;
 		int height;
 		int weight;
+		
+		//實體方法
+		float bmi(){
+			return weight / SQUARE(height/100.0);
+		}		
 };
 
 

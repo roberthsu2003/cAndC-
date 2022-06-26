@@ -1,12 +1,9 @@
 #include <stdio.h>
 
 int main(void) {
-	char myChar = 127;
-	unsigned char myUnsigedChar = 255;
-	int myInt = -21000000;
-	printf("myChar=%d\n",myChar);
-	printf("myUnsigedChar=%d\n",myUnsigedChar);
-	printf("myInt=%d\n",myInt);
-	
+	float myPi = 3.14159;
+	double myDouble = 3.141596743;
+	printf("myPi=%.2f\n",myPi);
+	printf("myDoube=%.9f\n",myDouble);
 	return 0;
 }

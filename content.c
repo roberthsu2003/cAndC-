@@ -2,11 +2,9 @@
 
 int main(void) {
 	int x,y,total;
-	printf("請輸入x的值:");
-	scanf("%d",&x);
+	printf("請輸入x和y的值(x,y):");
+	scanf("%d,%d",&x,&y);
 
-	printf("請輸入y的值:");
-	scanf("%d",&y);
 
 	total = x + y;
 

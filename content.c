@@ -3,11 +3,11 @@
 int main(void) {
 	int a;
 	a = 12345;
-
+	
 	int b;
 	b = 45678;
 
 	int c = a + b;
-	printf("a+b得到:%d\n",c);
+	printf("%d+%d得到:%d\n",a,b,c);
 	return 0;
 }

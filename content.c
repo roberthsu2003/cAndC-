@@ -1,10 +1,15 @@
 #include <iostream>
 using namespace std;
+
 int main() {
-	//c 語言的字串
-	const char* name = "徐國堂";
-	printf("我的名字是%s\n",name);
+	int x,y,total;
+	cout << "請輸入x的值:";
+	cin >> x;
+
+	cout << "請輸入y的值:";
+	cin >> y;
+
+	total = x + y;
+	cout << x << "+" << y << "=" << total << endl;
 	
-	string englishName = "robert";
-	cout << englishName << endl;
 }

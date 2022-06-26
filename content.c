@@ -1,13 +1,8 @@
 #include <stdio.h>
 
 int main(void) {
-	int x,y,total;
-	printf("請輸入x和y的值(x,y):");
-	scanf("%d,%d",&x,&y);
-
-
-	total = x + y;
-
-	printf("%d+%d=%d\n",x,y,total);
-	return 0;
+	//這是c語言的字串
+	const char* name = "徐國堂";
+	printf("我的名字是%s\n",name);
+  return 0;
 }

@@ -1,12 +1,17 @@
 #include <iostream>
 using namespace std;
-//讓使用者輸入被除數(整數)及除數(整數，不可以是零)，程式會顯示兩數相除的商及餘數。
 int main() {
-	int n;
-	int m;
-	cout << "請輸入被除數(整數):";
-	cin >> n;
-	cout << "請輸入除數(整數，不可以是零):";
-	cin >> m;
-	cout << "商:" << n/m << "餘數:" << n%m << endl;
+	int x = 5;
+	int y = 5;
+	x++;
+	cout << "x=" << x << endl;
+
+	y--;
+	cout << "y=" << y << endl;
+
+	++x;
+	cout << "x=" << x << endl;
+
+	--y;
+	cout << "y=" << y << endl;
 }

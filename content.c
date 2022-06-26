@@ -1,13 +1,12 @@
 #include <stdio.h>
 
 int main(void) {
-	int a;
-	a = 12345;
+	char myChar = 127;
+	unsigned char myUnsigedChar = 255;
+	int myInt = -21000000;
+	printf("myChar=%d\n",myChar);
+	printf("myUnsigedChar=%d\n",myUnsigedChar);
+	printf("myInt=%d\n",myInt);
 	
-	int b;
-	b = 45678;
-
-	int c = a + b;
-	printf("%d+%d得到:%d\n",a,b,c);
 	return 0;
 }

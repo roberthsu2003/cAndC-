@@ -1,13 +1,18 @@
 #include <iostream>
 using namespace std;
+
 int main() {
-	//請使用者輸入一個任意數，程式會顯示此數的平方值及立方值
-	float num,result;
-	cout << "請輸入任意數:";
-	cin >> num;
-	result = num;
-	result *= num;
-	cout << "此數的平方是:" << result << "\n";
-	result *= num;
-	cout << "此數的立方是:" << result << "\n";
+	//比較運算子
+	int a = 2, b = 2;
+	cout << "a==b " << (a==b) << endl;
+
+	//
+	cout << "not 運算子:" << !false  << endl;
+
+	int x = 10, y = 10, z = 20;
+	cout << "x=10同時y=10嗎?===>" << (x==10 && y==10) << endl;
+	cout << "x=10同時z=10嗎?===>" << (x==10 && z==10) << endl;
+
+	cout << "x=10或者y=10嗎?====>" << (x==10 || y==10) << endl;
+	cout << "x=10或者z=10嗎?====>" << (x==10 || z==10) << endl;
 }

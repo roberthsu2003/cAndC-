@@ -1,19 +1,24 @@
 #include <iostream>
-//讓使用者輸入成績, 若成績在90分以上就顯示「優等」, 80-89分顯示「甲等」，70-79分顯示「乙等」，60-69分顯示「丙等」，60分以下顯示「丁等」。
+//輸入顧客購買金額，若金額在100000元打8折，50000打85折，30000打9折，10000打95折
 using namespace std;
+
 int main() {
-	int score;
-	cout << "請輸入成績:";
-	cin >> score;
-	if(score >= 90){
-		cout << "優等\n";
-	}else if (score >= 80){
-		cout << "甲等\n";
-	}else if (score >= 70){
-		cout << "乙等\n";
-	}else if (score >= 60){
-		cout << "丙等\n";
+	int money;
+	int payMoney;
+	cout << "請輸入購買金額:";
+	cin >> money;
+
+	if(money < 10000){
+		payMoney = money;
+	}else if(money < 30000){
+		payMoney = money * 0.95;
+	}else if(money < 50000){
+		payMoney = money * 0.9;
+	}else if(money < 100000){
+		payMoney = money * 0.85;
 	}else{
-		cout << "丁等\n";
+		payMoney = money * 0.8;
 	}
+
+	cout << "實付金額是:" << payMoney << "元\n";
 }

@@ -7,7 +7,11 @@ int main() {
 	cin >> password;
 	//單項選擇
 	if (password == "1234"){
+		//true的程式區塊
 		cout << "密碼正確!歡迎光臨!" << endl;
+	}else{
+		//false程式區塊
+		cout << "密碼錯誤!" << endl;
 	}
 
 }

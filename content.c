@@ -1,18 +1,21 @@
 #include <iostream>
+//讓使用者輸入三個任意數，程式會顯示三數中的最大數。
+
 using namespace std;
-
 int main() {
-	//比較運算子
-	int a = 2, b = 2;
-	cout << "a==b " << (a==b) << endl;
+	float in1, in2, in3, max;
+	cout << "請輸入第一個:";
+	cin >> in1;
 
-	//
-	cout << "not 運算子:" << !false  << endl;
+	cout << "請輸入第2個數:";
+	cin >> in2;
 
-	int x = 10, y = 10, z = 20;
-	cout << "x=10同時y=10嗎?===>" << (x==10 && y==10) << endl;
-	cout << "x=10同時z=10嗎?===>" << (x==10 && z==10) << endl;
+	max = in1 > in2 ? in1 : in2;
 
-	cout << "x=10或者y=10嗎?====>" << (x==10 || y==10) << endl;
-	cout << "x=10或者z=10嗎?====>" << (x==10 || z==10) << endl;
+	cout << "請輸入第3個數:";
+	cin >> in3;
+
+	max = max > in3 ? max : in3;
+
+	cout << "輸入三個數中最大的數為:" << max << endl;
 }

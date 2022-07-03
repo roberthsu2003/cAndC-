@@ -1,17 +1,11 @@
 #include <iostream>
 using namespace std;
 int main() {
-	int x = 5;
-	int y = 5;
-	x++;
+	int x = 10;
+	int y = 20;
+	x = x + 10;
 	cout << "x=" << x << endl;
 
-	y--;
-	cout << "y=" << y << endl;
-
-	++x;
-	cout << "x=" << x << endl;
-
-	--y;
+	y += 10;
 	cout << "y=" << y << endl;
 }

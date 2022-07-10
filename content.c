@@ -11,7 +11,7 @@ int main() {
 	srandom(time(NULL));
 	guess = random() % (max-min+1) + min;
 	cout << "================猜數字遊戲=================\n\n";
-	cout << "數字:" << guess << endl;
+	//cout << "數字:" << guess << endl;
 	while(true){
 		printf("猜數字範圍%d~%d:",min,max);		
 		cin >> keyin;
@@ -22,9 +22,15 @@ int main() {
 				cout << "賓果!猜對了,答案是:" << guess << endl;
 				cout << "您猜了" << count << "次" << endl;
 				break;
-			}else{
-				cout << "錯了!您已經猜了" << count << "次" << endl;
+			}else if(keyin > guess){
+				max = keyin - 1;
+				cout << "再小一點!";				
+			}else if(keyin < guess){
+				min = keyin + 1;
+				cout << "再大一點!";				
 			}
+			cout << "您已經猜了" << count << "次" << endl;
+			
 		}else{
 			//輸入的範圍不正確
 			cout << "請輸入提示範圍內的數字!" << endl;

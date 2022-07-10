@@ -1,17 +1,21 @@
 #include <iostream>
+#include <time.h>
 using namespace std;
 
 int main() {
 	//建立一個學生的分數
 	//宣告的同時給值
-	//由使用者手動輸入分數
-	int num = 5;
+	//由亂數建立分數
+	srandom(time(NULL));
+	int num;
+	cout << "請輸入學生的科目數量";
+	cin >> num;
+	
 	int scores[num];
 	int sum = 0;	
-
-	for(int i=0; i<num;i++){
-		cout << "請輸入第" << i+1 << "學生的分數:";
-		cin >> scores[i];		
+	
+	for(int i=0; i<num;i++){		
+		scores[i] = random() % (100-50+1) + 50; //50~100的亂數 	
 	}	
 	
 	for(int i=0; i<num; i++){

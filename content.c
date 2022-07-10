@@ -18,7 +18,7 @@ int main() {
 	num = studentNum * subjectNum;
 	
 	int scores[num];
-	int sum = 0;	
+		
 	
 	for(int i=0; i<num;i++){		
 		scores[i] = random() % (100-50+1) + 50; //50~100的亂數 	
@@ -26,11 +26,13 @@ int main() {
 
 	for(int i=0; i<studentNum; i++){
 		cout << "學生" << i+1 << "分數:" << endl;
+		int sum = 0;
 		for(int j=0;j<subjectNum;j++){
 			int scores_index = i * subjectNum + j;
-			cout << scores[scores_index] << "\t";						
+			cout << scores[scores_index] << "\t";							sum += scores[scores_index];
 		}
-		cout << endl;
+		cout << sum << "\t";
+		cout << (float)sum / subjectNum << endl;
 	}
 	
 }

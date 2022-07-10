@@ -1,12 +1,16 @@
 #include <iostream>
+#include <time.h>
+
 using namespace std;
 int main() {
-	int nums = 4;
+	srandom(time(NULL));
+	int nums;
+	cout << "請輸入要排序的數值個數:";
+	cin >> nums;
 	int array[nums];
 	
 	for(int i=0; i<nums; i++){
-		cout << "請輸入第" << i+1 << "個數值:";
-		cin >> array[i];
+		array[i] = random() % (100-1+1) + 1;
 	}
 
 	//排序後的順序

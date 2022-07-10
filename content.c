@@ -29,7 +29,8 @@ int main() {
 		int sum = 0;
 		for(int j=0;j<subjectNum;j++){
 			int scores_index = i * subjectNum + j;
-			cout << scores[scores_index] << "\t";							sum += scores[scores_index];
+			cout << scores[scores_index] << "\t";
+			sum += scores[scores_index];
 		}
 		cout << sum << "\t";
 		cout << (float)sum / subjectNum << endl;

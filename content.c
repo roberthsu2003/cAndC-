@@ -24,13 +24,12 @@ int main() {
 		scores[i] = random() % (100-50+1) + 50; //50~100的亂數 	
 	}	
 
-	for(int i=0; i<num; i++){
-		cout << scores[i] << "\t";
-		sum += scores[i];
+	for(int i=0; i<studentNum; i++){
+		cout << "學生" << i+1 << endl;
+		for(int j=0;j<subjectNum;j++){
+			cout << "科目" << j+1 << "\t";
+		}
+		cout << endl;
 	}
-	cout << endl;
-
-	cout << "所有學生總分是:" << sum << endl;
-	cout << "所有學生平均分數是" << (float)sum / num << endl;
 	
 }

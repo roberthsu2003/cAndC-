@@ -362,6 +362,17 @@ int main() {
 ```
 
 ```c++
+#define Min(x, y) (x)>=(y)?(y):(x)
+
+void tryDefineMin()
+{
+int a=3, b=8;
+  printf("Min(%d, %d)= %d", a, b, Min(a, b));
+}
+// Min(a, b) => (a)>=(b)?(b):(a)
+```
+
+```c++
 //前端處理程式
 #ifdef ... #else ... #endif
 

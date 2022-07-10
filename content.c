@@ -40,4 +40,13 @@ int main() {
 		cout << array[i] << "\t";
 	}
 	cout << endl;
+
+	//有重覆的數值是
+	cout << "重覆的數值有:";
+	for(int i=0; i<nums-1; i++){	
+		if(array[i] == array[i+1]){
+			cout << array[i] << "\t";			
+		}
+		
+	}
 }

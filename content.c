@@ -25,9 +25,10 @@ int main() {
 	}	
 
 	for(int i=0; i<studentNum; i++){
-		cout << "學生" << i+1 << endl;
+		cout << "學生" << i+1 << "分數:" << endl;
 		for(int j=0;j<subjectNum;j++){
-			cout << "科目" << j+1 << "\t";
+			int scores_index = i * subjectNum + j;
+			cout << scores[scores_index] << "\t";						
 		}
 		cout << endl;
 	}

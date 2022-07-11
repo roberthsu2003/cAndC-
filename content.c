@@ -1,19 +1,24 @@
 #include <iostream>
-//讓使用者輸入三個任意數，程式會顯示三數中的最大數。
+//讓使用者輸入成績, 若成績在90分以上就顯示「優等」, 80-89分顯示「甲等」，70-79分顯示「乙等」，60-69分顯示「丙等」，60分以下顯示「丁等」。
 using namespace std;
+
 int main() {
-	int in1,in2,in3,max;
-	cout << "請輸入第一個數:";
-	cin >> in1;
-	cout << "請輸入第二個數:";
-	cin >> in2;
+	int score;
+	string message;
+	cout << "請輸入成績(0-100):";
+	cin >> score;
 
-	max = in1 > in2 ? in1 : in2;
+	if(score >= 90){
+		message = "優等";
+	}else if(score >= 80){
+		message = "甲等";
+	}else if(score >= 70){
+		message = "乙等";
+	}else if(score >= 60){
+		message = "丙等";
+	}else{
+		message = "丁等";
+	}
 
-	cout << "請輸入第三個數:";
-	cin >> in3;
-
-	max = max > in3 ? max : in3;
-
-	cout << "輸入三個數中最大的數為:" << max << "\n";
+	cout << "成績是:" << message << endl;
 }

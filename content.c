@@ -1,12 +1,14 @@
 #include <iostream>
-//讓使用者輸入被除數(整數)及除數(整數，不可以是零)，程式會顯示兩數相除的商及餘數。
+//請使用者輸入一個任意數，程式會顯示此數的平方值及立方值
 using namespace std;
-
 int main() {
-	int n,m;
- 	cout << "請輸入被除數(整數):";
-	cin >>	n;
-	cout << "請輸入除數(整數,不可以為0):";
-	cin >> m;
-	cout << "商:" << n/m << "餘數:" << n%m << "\n";
+	int num, result;
+	cout << "請輸入任意數:";
+	cin >> num;
+	result = num;
+	result *= num;
+	cout << "此數的平方是:" << result << "\n";
+	result *= num;
+	cout << "此數的立方是:" << result << "\n";
+	
 }

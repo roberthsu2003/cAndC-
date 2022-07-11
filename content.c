@@ -1,15 +1,10 @@
 #include <iostream>
-#include <time.h>
-#include <math.h>
-
 using namespace std;
+
 int main() {
-	int a=10;
-	double pi=3.141596253;
-	
-	cout << "Hello c++!" << endl;
-	printf("Hello! C語言\n");
-	cout << "a=" << a << endl;
-	cout << "pi=" << pi << endl;
-	printf("a=%d,pi=%.9f\n",a,pi);
+	double PI = 3.141596253;
+	int radius = 9;
+	double area = PI * radius * radius;
+	cout << "圓面積=" << area  << endl;
+	printf("圓面積=%.2f\n",area);
 }

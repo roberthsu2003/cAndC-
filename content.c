@@ -1,52 +1,15 @@
 #include <iostream>
 #include <time.h>
+#include <math.h>
 
 using namespace std;
 int main() {
-	srandom(time(NULL));
-	int nums;
-	cout << "請輸入要排序的數值個數:";
-	cin >> nums;
-	int array[nums];
+	int a=10;
+	double pi=3.141596253;
 	
-	for(int i=0; i<nums; i++){
-		array[i] = random() % (100-1+1) + 1;
-	}
-
-	//排序後的順序
-	cout << "排序前:" << endl;
-	for(int i=0; i<nums; i++){
-		cout << array[i] << "\t";
-	}
-	cout << endl;
-
-	//開始排序(泡沫排序法)
-	for(int i=0; i<nums-1; i++){
-		for(int j=i+1; j<nums; j++){
-			int head = array[i];
-			int end = array[j];
-			if(head > end){
-				int temp = head;
-				array[i] = end;
-				array[j] = temp;
-			}
-		}
-		
-	}
-
-	//排序後的順序
-	cout << "排序後:" << endl;
-	for(int i=0; i<nums; i++){
-		cout << array[i] << "\t";
-	}
-	cout << endl;
-
-	//有重覆的數值是
-	cout << "重覆的數值有:";
-	for(int i=0; i<nums-1; i++){	
-		if(array[i] == array[i+1]){
-			cout << array[i] << "\t";			
-		}
-		
-	}
+	cout << "Hello c++!" << endl;
+	printf("Hello! C語言\n");
+	cout << "a=" << a << endl;
+	cout << "pi=" << pi << endl;
+	printf("a=%d,pi=%.9f\n",a,pi);
 }

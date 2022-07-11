@@ -22,6 +22,11 @@ int main(void) {
 
 	c = b / a;
 	printf("b/10=%d\n",c);
+
+	int d = 10;
+	int e = 20;
+	int f = d + e;
+	printf("%d + %d = %d\n",d,e,f);
 	
   return 0;
 }

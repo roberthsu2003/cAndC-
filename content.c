@@ -1,32 +1,14 @@
 #include <stdio.h>
 
 int main(void) {
-	int a;
-	a = 10;
-	printf("a=%d\n",a);
-	//單行註解
-	//現在要建立變數b
-	int b;
-	b = 123450;
-	printf("b=%d\n",b);
+	//c語言的輸入輸出
+	int chinese,english;
+	printf("請輸入中文成績:");
+	scanf("%d", &chinese);
+	printf("請輸入英文成績:");
+	scanf("%d",&english);
 
-	int c;
-	c = a + b;
-	printf("a+b=%d\n", c);
-	
-	c = a - b;
-	printf("a-b=%d\n",c);
-
-	c = a * b;
-	printf("a*b=%d\n",c);
-
-	c = b / a;
-	printf("b/10=%d\n",c);
-
-	int d = 10;
-	int e = 20;
-	int f = d + e;
-	printf("%d + %d = %d\n",d,e,f);
+	printf("您的中文分數是%d,英文分數是%d\n",chinese,english);
 	
   return 0;
 }

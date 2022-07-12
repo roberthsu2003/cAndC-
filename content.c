@@ -14,7 +14,7 @@ int main() {
 
 	int sum = chinese + english + math;
 	//強制轉換
-	float average = (float)sum / 3;
+	float average = sum / 3.0;
 	cout << "您的總分為" << sum << "分,平均為" << average << "分\n";
 	
 }

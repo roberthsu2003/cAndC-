@@ -1,15 +1,22 @@
 #include <stdio.h>
 
 int main(void) {
-  //c語言的輸入輸出
-	int chinese,english;
-	printf("請輸入中文和英文成績(國文,英文):");
-	scanf("%d,%d",&chinese,&english);
-	printf("您的中文分數是%d,英文分數是%d\n",chinese,english);
+  	unsigned char myChar = 100;
+	printf("myChar:%u\n",myChar);
 
-	int total = chinese + english;
-	int average = total / 2;
-	printf("總分是%d,平均是%d\n",total, average);
-	return 0;
-	
+	unsigned short myShort = 60000;
+	printf("myShort:%u\n", myShort);
+
+	int myInt = 210000000;
+	printf("myInt:%d\n",myInt);
+
+	long long myLong = 21000000000000000;
+	printf("myLong:%lld\n", myLong);
+
+	float myFloat = 3.145;
+	printf("myFloat:%.2f\n", myFloat);
+
+	double myDouble = 35689.34567;
+	printf("myDouble:%.4f\n", myDouble);
+  return 0;
 }

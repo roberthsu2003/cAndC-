@@ -1,28 +1,11 @@
 #include <iostream>
-
 using namespace std;
+
 int main() {
-	unsigned char myChar = 100;
-	printf("myChar:%u\n",myChar);
-	cout << "myChar:" << myChar << "\n";
-
-	unsigned short myShort = 60000;
-	printf("myShort:%u\n", myShort);
-	cout << "myShort:" << myShort << endl;
-
-	int myInt = 210000000;
-	printf("myInt:%d\n",myInt);
-	cout << "myInt:" << myInt << endl;
-
-	long long myLong = 21000000000000000;
-	printf("myLong:%lld\n", myLong);
-	cout << "myLong:" << myLong << endl;
-
-	float myFloat = 3.145;
-	printf("myFloat:%.2f\n", myFloat);
-	cout << "myFloat:" << myFloat << endl;
-
-	double myDouble = 35689.34567;
-	printf("myDouble:%.4f\n", myDouble);
-	cout << "myDouble:" << myDouble << endl;
+	int year;
+	cout << "請輸入出生民國年份:";
+	cin >> year;
+	int westernYear = year + 1911;
+	int age = 2022 - westernYear;
+	cout << "西元年份:" << westernYear << "今年" << age << "歲" << endl;
 }

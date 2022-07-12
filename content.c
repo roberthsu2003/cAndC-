@@ -1,7 +1,7 @@
-#include <stdio.h>
+#include <iostream>
 
-int main(void) {
-  	unsigned char myChar = 100;
+int main() {
+	unsigned char myChar = 100;
 	printf("myChar:%u\n",myChar);
 
 	unsigned short myShort = 60000;
@@ -18,5 +18,4 @@ int main(void) {
 
 	double myDouble = 35689.34567;
 	printf("myDouble:%.4f\n", myDouble);
-  return 0;
 }

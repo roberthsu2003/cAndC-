@@ -1,21 +1,19 @@
 #include <iostream>
 using namespace std;
-//讓使用者輸入三個任意數，程式會顯示三數中的最大數。
 
 int main() {
-	double input1, input2, input3, max;
-	cout << "請輸入第一個數:";
-	cin >> input1;
+	int scores;	
+	bool add;
+	cout << "請輸入學生的分數:";
+	cin >> scores;
+	cout << "學生符合加分條件嗎? yes請輸入1,no請輸入0:";
+	cin >> add;
+	if (add) {
+		scores *= 1.05;
+		if (scores > 300){
+			scores = 300;
+		}
+	}
 
-	cout << "請輸入第二個數:";
-	cin >> input2;
-
-	max = input1 > input2 ? input1 : input2;
-
-	cout << "請輸入第三個數:";
-	cin >> input3;
-
-	max = max > input3 ? max : input3;	
-
-	cout << "輸入三個數中最大的數為:" << max << endl;
+	cout << "學生分數是:" << scores << endl;
 }

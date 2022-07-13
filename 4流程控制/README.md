@@ -15,19 +15,25 @@ if(條件式){
 
 ```c++
 // Name        : password.cpp
-//讓使用者輸入密碼,如果輸入的密碼正確(1234), 要顯示「密碼正確!歡迎光臨!」。如果不正確就不做任何事
+//學生符合加分條件就加5%分,如果超過300分,就以300為主。
 #include <iostream>
 using namespace std;
 
 int main() {
-	string password;
-	cout << "請輸入密碼:";
-	cin >> password;
-
-	if (password == "1234"){
-		cout << "密碼正確!歡迎光臨!";
+	int scores;	
+	bool add;
+	cout << "請輸入學生的分數:";
+	cin >> scores;
+	cout << "學生符合加分條件嗎? yes請輸入1,no請輸入0:";
+	cin >> add;
+	if (add) {
+		scores *= 1.05;
+		if (scores > 300){
+			scores = 300;
+		}
 	}
-	return 0;
+
+	cout << "學生分數是:" << scores << endl;
 }
 ```
 

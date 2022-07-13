@@ -2,15 +2,11 @@
 using namespace std;
 
 int main() {
-	int x = 10;
-	x = x + 1;
-	cout << "x=" << x << endl;
+	int x = 1;
+	int y = ++x; //前置遞增
+	cout << "x=" << x << ",y=" << y << endl;
 
-	int y = 10;
-	y++;
-	cout << "y=" << y << endl;
-
-	int z = 10;
-	z--;
-	cout << "z=" << z << endl;
+	int m = 1;
+	int n = m++; //後置遞增
+	cout << "m=" << m << ",n=" << n << endl;
 }

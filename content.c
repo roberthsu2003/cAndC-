@@ -1,12 +1,14 @@
 #include <iostream>
 using namespace std;
-
+//請使用者輸入一個任意數，程式會顯示此數的平方值及立方值
+//使用複合指定運算子
 int main() {
-	int x = 1;
-	int y = ++x; //前置遞增
-	cout << "x=" << x << ",y=" << y << endl;
-
-	int m = 1;
-	int n = m++; //後置遞增
-	cout << "m=" << m << ",n=" << n << endl;
+	int num,result;
+	cout << "請輸入任意數:";
+	cin >> num;
+	result = num;
+	result *= num;
+	cout << "此數的平方是:" << result << "\n";
+	result *= num;
+	cout << "此數的立方值是:" << result << "\n";
 }

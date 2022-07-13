@@ -1,14 +1,22 @@
 #include <iostream>
+//讓使用者輸入梯形的上底、下底及高，程式會計算梯形的面積(上底加下底乘以高除以2)
+
 using namespace std;
-//請使用者輸入一個任意數，程式會顯示此數的平方值及立方值
-//使用複合指定運算子
+
 int main() {
-	int num,result;
-	cout << "請輸入任意數:";
-	cin >> num;
-	result = num;
-	result *= num;
-	cout << "此數的平方是:" << result << "\n";
-	result *= num;
-	cout << "此數的立方值是:" << result << "\n";
+	int top, bottom , height;
+	float area;
+	cout << "請輸入梯形的上底(公分):";
+	cin >> top;
+
+	cout << "請輸入梯形的下底(公分):";
+	cin >> bottom;
+
+	cout << "請輸入梯形的高(公分):";
+	cin >> height;
+
+	area = (top + bottom) * height / 2.0;
+
+	cout << "梯形的面積:" << area << "平方公分\n";
+	
 }

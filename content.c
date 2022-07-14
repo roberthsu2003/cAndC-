@@ -1,14 +1,17 @@
 #include <iostream>
-//預設的密碼為5678，使用者若輸入的密碼錯誤，將不斷出現輸入密碼訊息，直到輸入的密碼正確才顯示正確訊息
+//小美是一位教師，請你以while迴圈方式為小美設計一個輸入成績的程式，如果輸入負數表示成績輸入結束，在輸入成績結束後顯示班上總成績及平均成績。
 using namespace std;
-
 int main() {
-	string password;
-		
+	int score;
+	int sum = 0;
 	do{
-		cout << "請輸入密碼:";
-		cin >> password;
-	}while(password != "5678");
-
-	cout << "恭喜!您的密碼正確了!請進" << endl;
+		cout << "請輸入學生的成績:";		
+		cin >> score;
+		if (score < 0){
+			break;
+		}		
+		sum += score;
+		
+	}while(score >=0);
+	cout << "全班總成績為:" << sum << endl;
 }

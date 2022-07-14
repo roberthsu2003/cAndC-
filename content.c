@@ -7,6 +7,7 @@ int main() {
 	for(int deg=0; deg<=180; deg+=15){
 		cout << "角度:" << deg;
 		cout << ",弳度是" << deg * PI / 180;
-		cout << ",sin(角度" << deg << ")" << sin(deg * PI / 180) << endl;
+		cout << ",sin(角度" << deg << ")=";
+		printf("%.2f\n",sin(deg * PI / 180));
 	}
 }

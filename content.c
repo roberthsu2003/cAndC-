@@ -1,10 +1,12 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
 int main() {
-	for(int i=1; i<=9; i++){		
-		for(int j=1; j<=9; j++){
-			cout << i << "*" << j << "=" << i * j << "\t";
-		}
-		cout << endl;
+	const double PI = 3.141592653;
+	
+	for(int deg=0; deg<=180; deg+=15){
+		cout << "角度:" << deg;
+		cout << ",弳度是" << deg * PI / 180;
+		cout << ",sin(角度" << deg << ")" << sin(deg * PI / 180) << endl;
 	}
 }

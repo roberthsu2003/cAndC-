@@ -1,20 +1,32 @@
-//國文100同時數學100,獎金1000
-//國文100或者數學100,獎金500
+#include <iostream>
+//讓使用者輸入加、減、乘、除運算子, 就會顯示運算結果
 using namespace std;
 
 int main() {
-	int chinese, math, bonus = 0;
-	cout << "請輸入國文成績:";
-	cin >> chinese;
-	cout << "請輸入數學成績:";
-	cin >> math;
+	char op;
+	int num1 = 20, num2 = 4;
+	cout << "num1=20, num2 = 4" << endl;
+	cout << "請輸入要執行的運算(+-*/):";
+	cin >> op;
+	switch (op){
+		case '+':
+		cout << "num1+num2=" << num1 + num2 << endl;
+		break;
 
-	if(math==100 && chinese==100){
-		bonus = 1000;
-	}else if(math == 100 || chinese == 100){
-		bonus = 500;
+		case '-':
+		cout << "num1-num2=" << num1 - num2 << endl;
+		break;
+
+		case '*':
+		cout << "num1*num2=" << num1 * num2 << endl;
+		break;
+
+		case '/':
+		cout << "num1/num2=" << num1 / num2 << endl;
+		break;
+
+		default:
+		cout << "無法執行運算" << endl;
+		
 	}
-
-	cout << "獎金是:" << bonus << endl;
-	
 }

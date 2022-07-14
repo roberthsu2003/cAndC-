@@ -239,20 +239,16 @@ do{
 
 #include <iostream>
 using namespace std;
+
 int main() {
 	string password;
-	bool firstInput = true;
-	
-	do{		
-		if(firstInput == true){
-			cout << "請輸入密碼:";
-			firstInput = false;
-		}else{
-			cout << "密碼錯誤,請重新輸入:";			
-		}
-		cin >> password;		
+		
+	do{
+		cout << "請輸入密碼:";
+		cin >> password;
 	}while(password != "5678");
-	cout << "恭喜!你的密碼正確了!請進" << endl;
+
+	cout << "恭喜!您的密碼正確了!請進" << endl;
 }
 ```
 

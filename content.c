@@ -4,14 +4,15 @@ using namespace std;
 int main() {
 	int score;
 	int sum = 0;
-	do{
+	
+	while(true){
 		cout << "請輸入學生的成績:";		
 		cin >> score;
 		if (score < 0){
 			break;
 		}		
-		sum += score;
-		
-	}while(score >=0);
+		sum += score;		
+	}
+	
 	cout << "全班總成績為:" << sum << endl;
 }

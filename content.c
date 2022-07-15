@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
 	srandom(time(NULL));
-	int nums = 5;
+	int nums = 250;
 	int scores[nums];
 	for(int i=0; i<nums; i++){		
 		scores[i] = random() % (100-60+1) + 60;

@@ -21,7 +21,7 @@ int main() {
 				cout << "猜錯了" << endl;
 			}
 		}else{
-			cout << "超出min~max的範圍";
+			cout << "超出min~max的範圍" << endl;
 		}
 		
 	}

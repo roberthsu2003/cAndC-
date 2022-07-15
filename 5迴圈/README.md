@@ -465,3 +465,43 @@ M*1 + M*2 + M*3 + ......+ M*N = 50
 ```
 [解題](https://repl.it/@roberthsu2003/commonfactor)
 
+
+```c++ 
+*問題 commonfactor.cpp
+設計一個程式，可以由鍵盤輸入1個數值，並求出2至這個數值的所有值數
+
+顯示======================================
+請輸入一個數值:100
+
+2~100的質數有:
+2   3   5   7   11  13  17  19  23  2931   37  41  43  47  53  59  61  67  7173   79  83  89  97  
+=================================================
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int end_value;	
+	cout << "請輸入一個數值:";
+	cin >> end_value;
+	cout << "2~" << end_value << "的質數有:" << endl;
+	for(int i=2;i<=end_value;i++){
+		//取出要檢查的數值
+		int check_value = i;
+		bool is_prime = true;
+		for(int j=2;j<check_value;j++){
+			//檢查是否為值數
+			if(check_value % j == 0){
+				is_prime = false;
+				break;
+			}
+		}
+		if (is_prime){
+			cout << check_value << "\t";
+		}
+		
+	}
+}
+
+```
+

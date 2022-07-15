@@ -1,13 +1,13 @@
 #include <iostream>
+#include <time.h>
 using namespace std;
 
 int main() {
-	//手動給分數
+	srandom(time(NULL));
 	int nums = 5;
 	int scores[nums];
-	for(int i=0; i<nums; i++){
-		cout << "請輸入第" << i+1 << "個分數:";
-		cin >> scores[i];
+	for(int i=0; i<nums; i++){		
+		scores[i] = random() % (100-60+1) + 60;
 	}
 	
 	

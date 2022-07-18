@@ -28,6 +28,7 @@ int main() {
 			sum += scores[index];
 		}
 		cout << sum << "\t";
+		printf("%.2f",sum/(float)score_num);
 		cout << endl;
 	}
 }

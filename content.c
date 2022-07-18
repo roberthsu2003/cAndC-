@@ -20,6 +20,11 @@ int main() {
 
 	//取出陣列內的值
 	for(int i=0;i<students;i++){
-		cout << "學生" << i+1 << endl;
+		cout << "學生" << i+1 << "\t";
+		for(int j=0; j<score_num; j++){
+			int index = i*score_num + j;
+			cout << scores[index] << "\t";
+		}
+		cout << endl;
 	}
 }

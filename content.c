@@ -1,36 +1,37 @@
 #include <iostream>
 #include <time.h>
 using namespace std;
-
 int main() {
 	srandom(time(NULL));
-	int groups;
-	cout << "請輸入大樂透電腦選號組數:";
-	cin >> groups;
+	int nums;
+	int temp;
+	cout << "請輸入要排序的數值個數:";
+	cin >> nums;
+	int array[nums];
 
-	for(int j=0; j<groups; j++){
-		int lot[49];
-		int choose[7];
-		int max_index = 48;
-		for(int i=0; i<49; i++){
-			lot[i] = i+1;
-		}
-	
-		
-		for(int i=0; i<7; i++){
-			int randIndex = random() % (max_index+1);
-			choose[i] = lot[randIndex];
-			lot[randIndex] = lot[max_index];
-			max_index -= 1;
-		}
-	
-		cout << "本期大樂透電腦選號第" << j+1 << "組\n";
-		for(int i=0; i<7;i++){
-			cout << choose[i] << " ";
-		}
-		cout << "\n\n\n";
+	cout << "排序前:\n";
+	for(int i=0; i<nums; i++){
+		array[i] = random() % (99-1+1) + 1;
+		cout << array[i] << " ";
 	}
-	
+	cout << endl;
 
+	//陣列排序
+	for(int i=0; i<nums-1; i++){
+		for(int j=i+1;j<nums;j++){
+			if(array[i] > array[j]){
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+		}
+		
+	}
+
+	cout << "排序後:\n";
+	for(int i=0; i<nums; i++){		
+		cout << array[i] << " ";
+	}
+	cout << endl;
 	
 }

@@ -19,13 +19,7 @@ int main() {
 	
 
 	//取出陣列內的值
-	int sum=0;
-	cout << "學生分數是:" << endl;
-	for(int i=0;i<nums;i++){
-		cout << scores[i] << "\t";
-		sum += scores[i];
+	for(int i=0;i<students;i++){
+		cout << "學生" << i+1 << endl;
 	}
-	cout << endl;
-	cout << "總分為:" << sum << endl;
-	cout << "平均是" << (float)sum / nums << endl;
 }

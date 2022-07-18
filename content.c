@@ -1,29 +1,28 @@
 #include <iostream>
 #include <time.h>
-
 using namespace std;
 
 int main() {
+	int lot[49];
+	int choose[7];
+	int max_index = 48;
+	for(int i=0; i<49; i++){
+		lot[i] = i+1;
+	}
+
 	srandom(time(NULL));
-	int nums[20];
-	int lucky_num;
-	int match_num=0;
-	for(int i=0;i<20;i++){
-		nums[i] = random() % (99-1+1) + 1;
-		cout << nums[i] << "\t"; 
+	for(int i=0; i<7; i++){
+		int randIndex = random() % (max_index+1);
+		choose[i] = lot[randIndex];
+		lot[randIndex] = lot[max_index];
+		max_index -= 1;
+	}
+
+	cout << "本期大樂透電腦選號號碼如下:\n\n";
+	for(int i=0; i<7;i++){
+		cout << choose[i] << " ";
 	}
 	cout << endl;
 
-	cout << "請輸入一個幸運號碼:";
-	cin >> lucky_num;
-	//循序搜尋
-	for(int i=0; i<20; i++){
-		if(lucky_num == nums[i]){
-			match_num += 1;
-		}
-	}
-
-	cout << "符合號碼的有" << match_num << "個" << endl;
-	
 	
 }

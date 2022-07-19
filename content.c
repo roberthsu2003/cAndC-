@@ -1,14 +1,17 @@
 #include <iostream>
-//小明想要存錢買一輛機車,機車每輛30000元，他將每月存的錢輸入，當存款足夠買機車時，就顯示提示訊息告知
-
+//小美是一位教師，請你以while迴圈方式為小美設計一個輸入成績的程式，如果輸入負數表示成績輸入結束，在輸入成績結束後顯示班上總成績及平均成績。
 using namespace std;
 int main() {
-	int deposit=0,num=0,inputNum;
-	while(deposit<30000){		
-		cout << "請輸入第" << ++num << "個月份的存款:";
-		cin >> inputNum;
-		deposit += inputNum;
+	int num = 0,scores = 0,sum = 0;
+	while(true){
+		cout << "請輸入第" << num+1 << "學生的成績:";
+		cin >> scores;
+		if(scores < 0){
+			break;
+		}
+		sum += scores;
+		num++;
 	}
-	cout << "恭喜!已經存夠了，存了" << num << "個月的總存款為:" << deposit << "元。";
-	
+
+	cout << "全班總成績為:" << sum << "平均分數為" << (float)sum / num; 
 }

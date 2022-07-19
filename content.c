@@ -1,18 +1,33 @@
 #include <iostream>
-//請設計一個程式，讓使用者輸入數值，只有加總正偶數值，不加總正奇數值，如果輸入負數，結束程式。
+#include <time.h>
+
 using namespace std;
+
 int main() {
-	int num = 0, inputNum,sum;
+	int max = 60;
+	int min = 50;	
+	srandom(time(NULL));
+	int guess = random() % (max-min+1) + min;
+	int keyin;
+	int count = 0;
+	cout << guess << endl;
+
+	cout <<  "============猜數字遊戲================\n\n";
 	while(true){
-		cout << "請輸入第"<< ++num << "個數值:";
-		cin >> inputNum;
-		if(inputNum < 0){
-			break;
-		}else if(inputNum % 2 == 1){
-			continue;
+		cout << "猜數字範圍" << min << "~" << max << ":";
+		cin >> keyin;
+		count += 1;
+		if(keyin >= 50 && keyin <=60){	
+			//輸入範圍正確的
+			if(keyin == guess){
+				cout << "賓果!猜對了,答案是" << guess << endl;
+				cout << "您猜了" << count << "次" << endl;
+				break;
+			}else{
+				cout << "猜錯了!您已經猜了" << count << "次\n";
+			}
 		}else{
-			sum += inputNum;
+			cout << "請輸入提示範圍內的數字!\n";
 		}
 	}
-	cout << "所有輸入的正偶數的加總是:" << sum;
 }

@@ -1,14 +1,16 @@
 #include <iostream>
 using namespace std;
-int func2(int x, int y){
-	return x*x*x + 3*x*x*y + 3*x*y*y + y*y*y;
+
+double degree_to_radiam(int degree){
+	double pi = 3.141592653;
+	return pi / 180 * degree;
 }
 
 int main() {
-	for(int i=1; i<=4; i++){
-		for(int j=1; j<=4; j++){
-			int result = func2(i,j);
-			cout << "x=" << i << "y=" << j << "得到的結果是:" << result << endl;
-		}
-	}
+	int degree;
+  	cout << "請輸入degree:";
+	cin >> degree;
+	double radian = degree_to_radiam(degree);
+	cout << "角度" << degree << ",弳度是" << radian << endl;
+
 }

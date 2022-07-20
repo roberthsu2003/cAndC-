@@ -7,6 +7,9 @@ double circle_area(int radius){
 }
 
 int main() {
-	double my_area = circle_area(10);
-	cout << "半徑10的圓面積是" << my_area << endl;
+	int radius;
+	cout << "請輸入半徑:";
+	cin >> radius;
+	double my_area = circle_area(radius);
+	cout << "半徑" << radius << "的圓面積是" << my_area << endl;
 }

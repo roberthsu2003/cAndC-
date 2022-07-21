@@ -135,9 +135,10 @@ int main() {
 	cin >> degree;
 	double radian = degree_to_radian(degree);
 	cout << "角度" << degree << ",弳度是" << radian << endl;
-	cout << "角度" << degree << "sin(弳度)=" << display_sine(radian) << endl;
+	cout << "角度" << degree << ",sin(角度)=" << display_sine(radian) << endl;
 	return 0;
 }
+
 ```
 
 

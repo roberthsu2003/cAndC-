@@ -2,8 +2,8 @@
 #include <time.h>
 
 using namespace std;
-int main() {
-	srandom(time(NULL));
+
+void play_game(){
 	int min = 1;
 	int max = 99;
 	int guess_value = random() % (max-min+1) + min;
@@ -35,5 +35,11 @@ int main() {
 		}
 		
 	}
+}
+
+
+int main() {
+	srandom(time(NULL));
+	play_game();
 	cout << "遊戲結束\n";
 }

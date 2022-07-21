@@ -40,6 +40,16 @@ void play_game(){
 
 int main() {
 	srandom(time(NULL));
-	play_game();
+	char play_again;
+	
+	while(true){
+		play_game();
+		cout << "請問還要再玩一次嗎?(y,n):";
+		cin >> play_again;
+		if(play_again == 'n'){
+			break;
+		}
+	}
+	
 	cout << "遊戲結束\n";
 }

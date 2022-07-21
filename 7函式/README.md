@@ -71,6 +71,77 @@ int main() {
 ```
 [解題](https://repl.it/@roberthsu2003/transtemperature)
 
+### 數學題
+![](./images/pic1.png)
+
+```c++
+#include <iostream>
+using namespace std;
+int fun1(int x){
+	return x*x + 2*x + 1;
+}
+
+int main() {
+	for(int i=0; i<=10; i++){
+		int result = fun1(i);
+		cout << "如果x=" << i << "得到的值是" << result << endl; 
+	}
+}
+```
+
+### 數學題
+![](./images/pic2.png)
+
+```c++
+#include <iostream>
+using namespace std;
+int func2(int x, int y){
+	return x*x*x + 3*x*x*y + 3*x*y*y + y*y*y;
+}
+
+int main() {
+	for(int i=1; i<=4; i++){
+		for(int j=1; j<=4; j++){
+			int result = func2(i,j);
+			cout << "x=" << i << "y=" << j << "得到的結果是:" << result << endl;
+		}
+	}
+}
+
+```
+
+### 數學題
+![](./images/pic3.png)
+
+```c++
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+//建立一個function,輸入弳度，傳出sin(弳度)
+double display_sine(double radian){
+	//return sin(radian)
+	return sin(radian);
+}
+
+double degree_to_radian(int degree){
+	double pi = 3.141592653;
+	return pi / 180 * degree;
+}
+
+int main() {
+	int degree;
+  	cout << "請輸入degree:";
+	cin >> degree;
+	double radian = degree_to_radian(degree);
+	cout << "角度" << degree << ",弳度是" << radian << endl;
+	cout << "角度" << degree << "sin(弳度)=" << display_sine(radian) << endl;
+	return 0;
+}
+```
+
+
+
 ### 函式原型
 
 ```c++

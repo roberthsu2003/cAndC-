@@ -1,23 +1,8 @@
 #include <iostream>
 using namespace std;
 
-int n; // 全域變數
-
-void showNum(){
-	int value = n; //區域變數
-	cout << "=====================" << endl;
-	for(int n=value; n >= 1; n--){
-		//n是區塊變數
-		cout << "區塊變數n=" << n << endl;
-	}
-	cout << "===============" << endl;
-	cout << "結束for迴圈後,全域變數n=" << n << endl;
-	
-}
-
 int main() {
-	cout << "請輸入全域變數n=";
-	cin >> n;
-	showNum();
-	return 0;
+	int n = 10;
+	cout << "n變數的記憶體位址是" << &n << endl;
+	cout << "n變數的值是" << n << endl;
 }

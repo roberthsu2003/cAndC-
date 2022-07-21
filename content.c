@@ -1,16 +1,23 @@
 #include <iostream>
-//多載overloading
-//area()矩形面積
-int area(int width, int height){
-	return width * height;
-}
+using namespace std;
 
-//area()正方形面積
-int area(int side){
-	return side * side;
-}
+int n; // 全域變數
 
+void showNum(){
+	int value = n; //區域變數
+	cout << "=====================" << endl;
+	for(int n=value; n >= 1; n--){
+		//n是區塊變數
+		cout << "區塊變數n=" << n << endl;
+	}
+	cout << "===============" << endl;
+	cout << "結束for迴圈後,全域變數n=" << n << endl;
+	
+}
 
 int main() {
-  std::cout << "Hello World!\n";
+	cout << "請輸入全域變數n=";
+	cin >> n;
+	showNum();
+	return 0;
 }

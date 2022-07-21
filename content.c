@@ -1,19 +1,16 @@
 #include <iostream>
-using namespace std;
-
-//overloading 多載
-//相同的function名稱
-//不同的參數數量和參數型別
-
-int add(int a, int b){
-	return a + b;
+//多載overloading
+//area()矩形面積
+int area(int width, int height){
+	return width * height;
 }
 
-string add(string a, string b){
-	return a + b;
+//area()正方形面積
+int area(int side){
+	return side * side;
 }
+
 
 int main() {
-	cout << "add(2,3)=" << add(2, 3) << endl;
-	cout << "add(\"nice\",\"Play\")=" << add("nice","play") << endl;
+  std::cout << "Hello World!\n";
 }

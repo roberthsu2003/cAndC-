@@ -1,20 +1,19 @@
 #include <iostream>
 using namespace std;
-double factorial(double n){
-	if(n==1){
-		return 1;
-	}else{
-	 	return n * factorial(n-1);
-	}
-	
+
+//overloading 多載
+//相同的function名稱
+//不同的參數數量和參數型別
+
+int add(int a, int b){
+	return a + b;
 }
+
+string add(string a, string b){
+	return a + b;
+}
+
 int main() {
-	double total;
-	int n;
-	cout << "請輸入數字n:";
-	cin >> n;
-	total = factorial(n);
-	cout << total << endl;
-	printf("%d=%20.0f\n",n , total);
-	
+	cout << "add(2,3)=" << add(2, 3) << endl;
+	cout << "add(\"nice\",\"Play\")=" << add("nice","play") << endl;
 }

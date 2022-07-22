@@ -1,7 +1,15 @@
 #include <iostream>
 using namespace std;
 
-void changToZero1(int array[]) {
+void changeToZero2(int *ptr) {
+  *(ptr + 0) = 0;
+  *(ptr + 1) = 0;
+  *(ptr + 2) = 0;
+  *(ptr + 3) = 0;
+  *(ptr + 4) = 0;
+}
+
+void changeToZero1(int array[]) {
   array[0] = 0;
   array[1] = 0;
   array[2] = 0;
@@ -17,7 +25,8 @@ int main() {
   cout << endl;
 
   //內容更改為0
-  changToZero1(scores);
+  // changeToZero1(scores);
+  changeToZero2(scores);
 
   //重新輸出
   for (int i = 0; i < 5; i++) {

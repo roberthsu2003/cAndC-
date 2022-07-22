@@ -1,13 +1,16 @@
 #include <iostream>
-
 using namespace std;
-int main() {
-  int *pa = new int(333);
-  int *pb = new int(666);
-  int temp = *pa;
-  *pa = *pb;
-  *pb = temp;
 
-  cout << "pa內容是:" << *pa << endl;
-  cout << "pb內容是:" << *pb << endl;
+void swap(int mya, int myb) {
+  int temp = mya;
+  mya = myb;
+  myb = temp;
+}
+
+int main() {
+  int a = 333;
+  int b = 666;
+  swap(a, b);
+  cout << "a=" << a << endl;
+  cout << "b=" << b << endl;
 }

@@ -1,36 +1,32 @@
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
+
 using namespace std;
 
-void changeToZero2(int *ptr) {
-  *(ptr + 0) = 0;
-  *(ptr + 1) = 0;
-  *(ptr + 2) = 0;
-  *(ptr + 3) = 0;
-  *(ptr + 4) = 0;
-}
-
-void changeToZero1(int array[]) {
-  array[0] = 0;
-  array[1] = 0;
-  array[2] = 0;
-  array[3] = 0;
-  array[4] = 0;
-}
-
 int main() {
-  int scores[] = {78, 92, 63, 95, 91};
-  for (int i = 0; i < 5; i++) {
-    cout << scores[i] << "\t";
-  }
-  cout << endl;
+	int num = 7;
+	int lot[49];
+	int choose[num];
+	int maxIndex = 48;
 
-  //內容更改為0
-  // changeToZero1(scores);
-  changeToZero2(scores);
+	for(int i=0; i<49; i++){
+		lot[i] = i+1;
+	}
+	srand(time(NULL));
+	for(int i=0; i<num; i++){
+		int randIndex = rand() % (maxIndex+1);
+		choose[i] = lot[randIndex];
+		lot[randIndex] = lot[maxIndex];
+		maxIndex--;
+	}
+	
+	cout << "本期大樂透電腦選號號碼如下:\n\n";
+	
+	for(int i=0; i<num; i++){
+		cout << choose[i] << " ";
+	}
+	cout << endl;
 
-  //重新輸出
-  for (int i = 0; i < 5; i++) {
-    cout << scores[i] << "\t";
-  }
-  cout << endl;
+	
 }

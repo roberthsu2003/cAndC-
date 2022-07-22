@@ -2,15 +2,20 @@
 using namespace std;
 
 int main() {
-	const char* cName = "cRobert";
-	cout << cName << endl;
+  int scores[] = {78, 92, 63, 95, 91};
+  for (int i = 0; i < 5; i++) {
+    cout << scores[i] << "\t";
+  }
+  cout << endl;
 
-	string name = "c++Robert";
-	cout << name << endl;
+  //內容更改為0
+  for (int i = 0; i < 5; i++) {
+    scores[i] = 0;
+  }
 
-	cName = "cJenny_Hsu";
-	cout << cName << endl;
-
-	int id = 10;
-	cout << name + to_string(id) << endl;
+  //重新輸出
+  for (int i = 0; i < 5; i++) {
+    cout << scores[i] << "\t";
+  }
+  cout << endl;
 }

@@ -1,10 +1,13 @@
 #include <iostream>
 using namespace std;
-
 int main() {
-	int n=10;
-	int *p; //宣告指標變數p
-	p = &n;
-	cout << "n儲存的內容是" << n << endl;
-	cout << "p指向變數的內容" << *p << endl; //使取值運算子
+  int *pa = new int(); //動態建立int的記憶體空間和傳出記憶體位址
+  int *pb = new int();
+  cout << "請輸入a的值:";
+  cin >> *pa;
+  cout << "請輸入b的值:";
+  cin >> *pb;
+
+  int c = *pa + *pb;
+  cout << "2數相加的結果是" << c << endl;
 }

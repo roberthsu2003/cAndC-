@@ -1,22 +1,42 @@
 #include <iostream>
 #include <time.h>
-using namespace std;
 
+using namespace std;
 int main() {
+  int nums;
   srandom(time(NULL));
-  int student_num, subject_num;
-  cout << "請輸入學生人數:";
-  cin >> student_num;
-  cout << "請輸入科目數:";
-  cin >> subject_num;
-  int students[student_num][subject_num];
-  for (int i = 0; i < student_num; i++) {
-    cout << "學生" << i+1 << ":"
-         << "\t";
-    for (int j = 0; j < subject_num; j++) {
-      students[i][j] = random() % (100 - 60 + 1) + 60;
-      cout << students[i][j] << "\t";
-    }
-    cout << endl;
+  cout << "請輸入要排序的數值個數:";
+  cin >> nums;
+
+  int array[nums];
+
+  for (int i = 0; i < nums; i++) {
+    array[i] = random() % 99 + 1;
   }
+
+  //排序前
+  cout << "排序前:" << endl;
+  for (int i = 0; i < nums; i++) {
+    cout << array[i] << "\t";
+  }
+  cout << endl;
+
+  //泡沫排序
+  for (int i = 0; i < nums - 1; i++) {
+    for (int j = i + 1; j < nums; j++) {
+      if (array[i] > array[j]) {
+        int temp;
+        temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+    }
+  }
+
+  //排序後
+  cout << "排序後:" << endl;
+  for (int i = 0; i < nums; i++) {
+    cout << array[i] << "\t";
+  }
+  cout << endl;
 }

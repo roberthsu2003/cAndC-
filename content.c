@@ -1,47 +1,27 @@
 #include <iostream>
-#include <stdlib.h>
 #include <time.h>
-
 using namespace std;
 
-void sorted(int array[], int nums) {
-  //陣列排序
-  int temp;
-  for (int i = 0; i < nums - 1; i++) {
-    for (int j = i + 1; j < nums; j++) {
-      if (array[i] > array[j]) {
-        temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-      }
-    }
-  }
-}
-
 int main() {
-  int num = 7;
-  int lot[49];
-  int choose[num];
-  int maxIndex = 48;
-
-  for (int i = 0; i < 49; i++) {
-    lot[i] = i + 1;
-  }
-  srand(time(NULL));
+  srandom(time(NULL));
+  int student_num, subject_num;
+  cout << "請輸入學生人數:";
+  cin >> student_num;
+  cout << "請輸入科目數:";
+  cin >> subject_num;
+  int num = student_num * subject_num;
+  int scores[num];
   for (int i = 0; i < num; i++) {
-    int randIndex = rand() % (maxIndex + 1);
-    choose[i] = lot[randIndex];
-    lot[randIndex] = lot[maxIndex];
-    maxIndex--;
+    scores[i] = random() % (100 - 60 + 1) + 60;
+    // cout << scores[i] << endl;
   }
 
-  //排序
-  sorted(choose, 7);
-
-  cout << "本期大樂透電腦選號號碼如下:\n\n";
-
-  for (int i = 0; i < num; i++) {
-    cout << choose[i] << " ";
+  for (int i = 0; i < student_num; i++) {
+    cout << "學生" << i + 1 << endl;
+    for (int j = 0; j < subject_num; j++) {
+      int index = i * subject_num + j;
+      cout << scores[index] << "\t";
+    }
+    cout << endl;
   }
-  cout << endl;
 }

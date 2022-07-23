@@ -13,7 +13,20 @@ void sortedOfArray(int a[],int nums){
 	        a[j] = temp;
 	      }
 	    }
-  }
+    }
+}
+
+void sortedOfArray1(int *ptr, int nums){
+	for (int i = 0; i < nums - 1; i++) {
+	    for (int j = i + 1; j < nums; j++) {
+	      if (*(ptr+i) > *(ptr+j)) {
+	        int temp;
+	        temp = *(ptr+i);
+	        *(ptr+i) = *(ptr+j);
+	        *(ptr+j) = temp;
+	      }
+	    }
+    }
 }
 
 
@@ -39,7 +52,7 @@ int main() {
  
 
   //泡沫排序
-  sortedOfArray(array,nums);
+  sortedOfArray1(array,nums);
 
   //排序後
   cout << "排序後:" << endl;

@@ -2,6 +2,21 @@
 #include <time.h>
 
 using namespace std;
+
+void sortedOfArray(int a[],int nums){
+	for (int i = 0; i < nums - 1; i++) {
+	    for (int j = i + 1; j < nums; j++) {
+	      if (a[i] > a[j]) {
+	        int temp;
+	        temp = a[i];
+	        a[i] = a[j];
+	        a[j] = temp;
+	      }
+	    }
+  }
+}
+
+
 int main() {
   int nums;
   srandom(time(NULL));
@@ -21,17 +36,10 @@ int main() {
   }
   cout << endl;
 
+ 
+
   //泡沫排序
-  for (int i = 0; i < nums - 1; i++) {
-    for (int j = i + 1; j < nums; j++) {
-      if (array[i] > array[j]) {
-        int temp;
-        temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-      }
-    }
-  }
+  sortedOfArray(array,nums);
 
   //排序後
   cout << "排序後:" << endl;

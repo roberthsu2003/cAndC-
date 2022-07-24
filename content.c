@@ -44,6 +44,17 @@ void play_game(){
 }
 
 int main() {
-  play_game();
+	while(true){
+		char play_again;
+		play_game();
+		cout << "請問還要繼續嗎?:y(yes),n(no)";
+		cin >> play_again;
+		if(play_again == 'n'){
+			break;
+		}
+	}
+
+	cout << "遊戲結束" << endl;
+  	
   return 0;
 }

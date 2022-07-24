@@ -1,30 +1,21 @@
+#include <cmath>
 #include <iostream>
-#include <time.h>
+
 using namespace std;
+
+//輸入整數數值,開根號 + 10,平方
+//自訂的function
+double caculater1(int num1) {
+  double value = sqrt(num1) + 10;
+  double result = pow(value, 2);
+  return result;
+}
+
 int main() {
-  int max_index = 48;
-  int min_index = 0;
-  int number_box[49];
-  int loto[7];
-  srandom(time(NULL));
-
-  //建立1~49的值
-  for (int i = 0; i < 49; i++) {
-    number_box[i] = i + 1;
-  }
-
-  //建立loto的值
-  for (int i = 0; i < 7; i++) {
-    //建立亂數索引0~48,0~47,0~46,0~45,0~44,0~43,0~42
-    int random_index = random() % (max_index - min_index + 1) + min_index;
-    loto[i] = number_box[random_index];
-    number_box[random_index] = number_box[max_index];
-    max_index--;
-  }
-
-  cout << "本期大樂透電腦選號號碼如下:\n\n";
-  for (int i = 0; i < 7; i++) {
-    cout << loto[i] << "\t";
-  }
-  cout << endl;
+  int number;
+  cout << "請輸入一個數字(整數):";
+  cin >> number;
+  double result = caculater1(number); //呼叫function
+  cout << "公式計算完後,得到的值是" << result << endl;
+  return 0;
 }

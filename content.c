@@ -1,14 +1,18 @@
 #include <iostream>
+
+#include <iostream>
 using namespace std;
 
-// recursive遞迴
-double factorial(double n) {
-  if (n == 1) {
-    return 1;
-  } else {
-    return n * factorial(n - 1);
-  }
+// 使用for迴圈取代recursive
+double factorial(int n) {
+	double t = 1;
+	for(int i=n; i>=1; i--){
+		t *= i;
+	}
+	return t;
 }
+
+
 int main() {
   double b, total;
   cout << "請輸入數字 n:";

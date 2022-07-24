@@ -2,13 +2,22 @@
 #include <math.h>
 using namespace std;
 
-int figure(int x, int y) {
-  return pow(x, 3) + 3 * pow(x, 2) * y + 3 * x * pow(y, 2) + pow(y, 3);
+double degree_to_radian(int degree) {
+  const double PI = 3.141592653;
+  
+  return PI / 180 * degree;
 }
+
+double get_sine(int degree) {
+  double radian = degree_to_radian(degree);
+  return sin(radian);
+}
+
 int main() {
-  for (int x = 1; x < 5; x++) {
-    for (int y = 1; y < 5; y++) {
-      cout << "x=" << x << " y=" << y << ": " << figure(x, y) << endl;
-    }
+  int degrees[] = {0, 30, 45, 60, 90, 180, 360};
+  int length = sizeof(degrees) / sizeof(degrees[0]);
+  for (int i = 0; i < length; i++) {
+    cout << "角度:" << degrees[i] << " sin()值為:" << get_sine(degrees[i])
+         << endl;
   }
 }

@@ -1,21 +1,14 @@
-#include <cmath>
 #include <iostream>
-
+#include <math.h>
 using namespace std;
 
-//輸入整數數值,開根號 + 10,平方
-//自訂的function
-double caculater1(int num1) {
-  double value = sqrt(num1) + 10;
-  double result = pow(value, 2);
-  return result;
+int figure(int x, int y) {
+  return pow(x, 3) + 3 * pow(x, 2) * y + 3 * x * pow(y, 2) + pow(y, 3);
 }
-
 int main() {
-  int number;
-  cout << "請輸入一個數字(整數):";
-  cin >> number;
-  double result = caculater1(number); //呼叫function
-  cout << "公式計算完後,得到的值是" << result << endl;
-  return 0;
+  for (int x = 1; x < 5; x++) {
+    for (int y = 1; y < 5; y++) {
+      cout << "x=" << x << " y=" << y << ": " << figure(x, y) << endl;
+    }
+  }
 }

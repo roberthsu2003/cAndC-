@@ -4,7 +4,8 @@
 #include <time.h>
 
 using namespace std;
-int main() {
+
+void play_game(){
   int guess;
   int keyin;
   int count = 0;
@@ -40,5 +41,9 @@ int main() {
       continue;
     }
   };
+}
+
+int main() {
+  play_game();
   return 0;
 }

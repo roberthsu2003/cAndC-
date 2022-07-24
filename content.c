@@ -1,22 +1,31 @@
 #include <iostream>
+//建立area()函式多載,分別求正方形和矩形和三角形面積
 
-#include <iostream>
 using namespace std;
 
-// 使用for迴圈取代recursive
-double factorial(int n) {
-	double t = 1;
-	for(int i=n; i>=1; i--){
-		t *= i;
-	}
-	return t;
+int area(int square) { 
+	return square * square; 
 }
 
+int area(int width, int height) { return width * height; }
+
+double area(int top, int bottom, int height) {
+  return (top + bottom) * height / 2.0;
+}
 
 int main() {
-  double b, total;
-  cout << "請輸入數字 n:";
-  cin >> b;
-  total = factorial(b);
-  printf("%.0f!是%20.4f\n", b, total);
+  int side;
+  cout << "請輸入正方形的一邊:";
+  cin >> side;
+  cout << "正方形的面積是" << area(10) << endl;
+
+  int width, height;
+  cout << "請輸入矩形的2邊:(一次輸入2個數值,中間空格)";
+  cin >> width >> height;
+  cout << "矩形的面積是" << area(width, height) << endl;
+
+  int top, bottom;
+  cout << "請輸入三角形的上底,下底和高(一次輸入3個數值,中間空格):";
+  cin >> top >>  bottom >> height;
+  cout << "三方形的面積是" << area(top, bottom, height) << endl;
 }

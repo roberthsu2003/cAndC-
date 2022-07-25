@@ -1,17 +1,25 @@
 #include <iostream>
-#include <stdio.h>
 using namespace std;
+//定義一個point 結構
+struct point {
+  int x;
+  int y;
+};
 
 int main() {
-  // c++的string
-  string name;
-  cout << "請輸入姓名:";
-  cin >> name;
-  cout << name << endl;
+  struct point p1;
+  p1.x = 50;
+  p1.y = 100;
 
-  // c語言字元陣列
-  char my_name[50];
-  cout << "請輸入我的姓名:";
-  scanf("%s", my_name);
-  cout << my_name << endl;
+  struct point p2;
+  p2.x = 10;
+  p2.y = 20;
+
+  struct point p3;
+  p3.x = 100;
+  p3.y = 200;
+
+  cout << "(" << p1.x << "," << p1.y << ")" << endl;
+  cout << "(" << p2.x << "," << p2.y << ")" << endl;
+  cout << "(" << p3.x << "," << p3.y << ")" << endl;
 }

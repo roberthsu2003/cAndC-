@@ -1,23 +1,24 @@
 #include <iostream>
 using namespace std;
-void swap_address(int *n, int *m){
+
+void swap(int *n , int *m){
 	int temp;
 	temp = *n;
 	*n = *m;
 	*m = temp;
 }
 
-void swap_reference(int& n, int& m){
-	int temp;
-	temp = n;
-	n = m;
-	m = temp;
-}
-
 int main() {
-	int a=666,b=888;
-	swap_reference(a,b);
-	cout << "a=" << a << endl;
-	cout << "b=" << b << endl;
+  int *ptr_a;
+  ptr_a = new int(666);
+  int *ptr_b = new int(888);
+
+
+  cout << "指標變數ptr_a的內容是" << *ptr_a << endl;
+  cout << "指標變數ptr_b的內容是" << *ptr_b << endl;
+  swap(ptr_a, ptr_b);
+  cout << "指標變數ptr_a的內容是" << *ptr_a << endl;
+  cout << "指標變數ptr_b的內容是" << *ptr_b << endl;
+
 	
 }

@@ -1,24 +1,17 @@
 #include <iostream>
+#include <stdio.h>
 using namespace std;
 
-void swap(int *n , int *m){
-	int temp;
-	temp = *n;
-	*n = *m;
-	*m = temp;
-}
-
 int main() {
-  int *ptr_a;
-  ptr_a = new int(666);
-  int *ptr_b = new int(888);
+  // c++的string
+  string name;
+  cout << "請輸入姓名:";
+  cin >> name;
+  cout << name << endl;
 
-
-  cout << "指標變數ptr_a的內容是" << *ptr_a << endl;
-  cout << "指標變數ptr_b的內容是" << *ptr_b << endl;
-  swap(ptr_a, ptr_b);
-  cout << "指標變數ptr_a的內容是" << *ptr_a << endl;
-  cout << "指標變數ptr_b的內容是" << *ptr_b << endl;
-
-	
+  // c語言字元陣列
+  char my_name[50];
+  cout << "請輸入我的姓名:";
+  scanf("%s", my_name);
+  cout << my_name << endl;
 }

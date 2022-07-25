@@ -405,6 +405,85 @@ int main() {
 ```
 [解題](https://repl.it/@roberthsu2003/maxValue)
 
+###  call by value和call by address的應用
+```c++
+//大樂透組數和排序功能
+/*
+請輸入所需要的大樂透組數:5
+大樂透電腦選號號碼-第1組如下:
+21 22 30 31 40 46 49 
+
+大樂透電腦選號號碼-第2組如下:
+1 9 17 18 25 35 42 
+
+大樂透電腦選號號碼-第3組如下:
+3 12 13 29 37 43 48 
+
+大樂透電腦選號號碼-第4組如下:
+17 18 19 22 23 25 27 
+
+大樂透電腦選號號碼-第5組如下:
+7 13 16 28 31 38 44 
+*/
+
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+
+using namespace std;
+
+void sorted(int array[], int nums) {
+  //陣列排序
+  int temp;
+  for (int i = 0; i < nums - 1; i++) {
+    for (int j = i + 1; j < nums; j++) {
+      if (array[i] > array[j]) {
+        temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+    }
+  }
+}
+
+void created_loto(int array[], int nums) {
+  int lot[49];
+  int maxIndex = 48;
+  for (int i = 0; i < 49; i++) {
+    lot[i] = i + 1;
+  }
+  for (int i = 0; i < nums; i++) {
+    int randIndex = rand() % (maxIndex + 1);
+    array[i] = lot[randIndex];
+    lot[randIndex] = lot[maxIndex];
+    maxIndex--;
+  }
+}
+
+int main() {
+  int groups;
+  srand(time(NULL));
+  cout << "請輸入所需要的大樂透組數:";
+  cin >> groups;
+  for (int i = 0; i < groups; i++) {
+    int num = 7;
+    int choose[num];
+    //建立一組7個不重複號碼的樂透
+    created_loto(choose, num);
+    //建立一組7個不重複號碼的樂透
+    created_loto(choose, num);
+    //排序
+    sorted(choose, num);
+
+    cout << "大樂透電腦選號號碼-第" << i + 1 << "組如下:\n";
+    for (int i = 0; i < num; i++) {
+      cout << choose[i] << " ";
+    }
+    cout << "\n\n";
+  }
+}
+```
+
 
 ### 遞迴(Recursive)
 ```c++

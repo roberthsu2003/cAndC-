@@ -7,9 +7,16 @@ void swap_address(int *n, int *m){
 	*m = temp;
 }
 
+void swap_reference(int& n, int& m){
+	int temp;
+	temp = n;
+	n = m;
+	m = temp;
+}
+
 int main() {
 	int a=666,b=888;
-	swap_address(&a,&b);
+	swap_reference(a,b);
 	cout << "a=" << a << endl;
 	cout << "b=" << b << endl;
 	

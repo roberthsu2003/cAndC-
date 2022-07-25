@@ -18,13 +18,13 @@ void sorted(int array[], int nums) {
   }
 }
 
-void created_loto(int array[], int nums){
-	int lot[49];
-	int maxIndex = 48;
-	for (int i = 0; i < 49; i++) {
-    	lot[i] = i + 1;
-    }
-	for (int i = 0; i < nums; i++) {
+void created_loto(int array[], int nums) {
+  int lot[49];
+  int maxIndex = 48;
+  for (int i = 0; i < 49; i++) {
+    lot[i] = i + 1;
+  }
+  for (int i = 0; i < nums; i++) {
     int randIndex = rand() % (maxIndex + 1);
     array[i] = lot[randIndex];
     lot[randIndex] = lot[maxIndex];
@@ -33,18 +33,24 @@ void created_loto(int array[], int nums){
 }
 
 int main() {
-  int num = 7;  
-  int choose[num];  
+  int groups;
   srand(time(NULL));
-  //建立一組7個不重複號碼的樂透
-  created_loto(choose,num);
-  //排序
-  sorted(choose, 7);
+  cout << "請輸入所需要的大樂透組數:";
+  cin >> groups;
+  for (int i = 0; i < groups; i++) {
+    int num = 7;
+    int choose[num];
+    //建立一組7個不重複號碼的樂透
+    created_loto(choose, num);
+    //建立一組7個不重複號碼的樂透
+    created_loto(choose, num);
+    //排序
+    sorted(choose, num);
 
-  cout << "本期大樂透電腦選號號碼如下:\n\n";
-
-  for (int i = 0; i < num; i++) {
-    cout << choose[i] << " ";
+    cout << "大樂透電腦選號號碼-第" << i + 1 << "組如下:\n";
+    for (int i = 0; i < num; i++) {
+      cout << choose[i] << " ";
+    }
+    cout << "\n\n";
   }
-  cout << endl;
 }

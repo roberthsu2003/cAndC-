@@ -1,23 +1,38 @@
 #include <iostream>
 using namespace std;
 //定義一個point 結構
-struct point {
+//重新定義資料類型的名稱
+typedef struct point {
   int x;
   int y;
-};
+} Point;
+
+void zero(Point *ptr) {
+  ptr->x = 0;
+  ptr->y = 0;
+}
 
 int main() {
-  struct point p1;
+  Point p1;
   p1.x = 50;
   p1.y = 100;
 
-  struct point p2;
+  Point p2;
   p2.x = 10;
   p2.y = 20;
 
-  struct point p3;
+  Point p3;
   p3.x = 100;
   p3.y = 200;
+
+  cout << "(" << p1.x << "," << p1.y << ")" << endl;
+  cout << "(" << p2.x << "," << p2.y << ")" << endl;
+  cout << "(" << p3.x << "," << p3.y << ")" << endl;
+  cout << "====================================\n";
+
+  zero(&p1);
+  zero(&p2);
+  zero(&p3);
 
   cout << "(" << p1.x << "," << p1.y << ")" << endl;
   cout << "(" << p2.x << "," << p2.y << ")" << endl;

@@ -20,13 +20,16 @@ Student createStudent(int student_id) {
 
 int main() {
   srandom(time(NULL));
-
-  Student stu1 = createStudent(1);
-  Student stu2 = createStudent(2);
-
-  cout << stu1.name << endl;
-  cout << stu1.chinese << endl;
-
-  cout << stu2.name << endl;
-  cout << stu2.chinese << endl;
+  int student_nums;
+  cout << "請輸入學生數:";
+  cin >> student_nums;
+  Student students[student_nums];
+  for (int i = 0; i < student_nums; i++) {
+	  students[i] = createStudent(i+1);
+	  cout << students[i].name << "\t";
+	  cout << students[i].chinese << "\t";
+	  cout << students[i].english << "\t";
+	  cout << students[i].math << "\t";
+	  cout << endl;
+  }
 }

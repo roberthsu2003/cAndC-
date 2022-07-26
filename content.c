@@ -1,17 +1,12 @@
 #include <iostream>
+#define PI 3.141592653
 
 using namespace std;
-typedef enum day {
-  saturday = 10,
-  sunday,
-  monday,
-  tuesday,
-  wednesday,
-  thursday,
-  friday
-} Day;
-
 int main() {
-  Day today = wednesday;
-  cout << wednesday << endl;
+  // const double PI=3.141592653;
+  double radius, area;
+  cout << "請輸入半徑:";
+  cin >> radius;
+  area = PI * radius * radius;
+  printf("面積是%.2f\n", area);
 }

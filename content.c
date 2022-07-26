@@ -1,5 +1,7 @@
 #include <iostream>
+#include <time.h>
 using namespace std;
+
 typedef struct student{
 	string name;
 	int chinese;
@@ -8,16 +10,21 @@ typedef struct student{
 }Student;
 
 int main() {
+	srandom(time(NULL));
+	
 	Student stu1;
 	stu1.name = "robert";
-	stu1.chinese = 78;
-	stu1.math = 76;
-	stu1.english = 82;
+	stu1.chinese = 50 + random() % 51;
+	stu1.math = 50 + random() % 51;
+	stu1.english = 50 + random() % 51;
 
 
 	Student stu2;
 	stu2.name = "jenny";
-	stu2.chinese = 98;
-	stu2.english = 80;
-	stu2.math = 85;
+	stu2.chinese = 50 + random() % 51;
+	stu2.english = 50 + random() % 51;
+	stu2.math = 50 + random() % 51;
+
+	cout << stu1.chinese << endl;
+	cout << stu2.chinese << endl;
 }

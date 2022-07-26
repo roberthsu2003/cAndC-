@@ -1,12 +1,16 @@
 #include <iostream>
-#define PI 3.141592653
+#define SQUARE(x) (x) * (x)
 
 using namespace std;
+
 int main() {
-  // const double PI=3.141592653;
-  double radius, area;
-  cout << "請輸入半徑:";
-  cin >> radius;
-  area = PI * radius * radius;
-  printf("面積是%.2f\n", area);
+	int s, result;
+	cout << "請輸入數字:";
+	cin >> s;
+	result = SQUARE(s);
+	cout << s << "的平方為" << result << endl;
+
+	result = SQUARE(s+1);
+	cout << s+1 << "的平方為" << result << endl;
+
 }

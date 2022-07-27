@@ -2,11 +2,24 @@ main.cpp
 
 #include <iostream>
 #include "person.h"
-#include "person.h"
 
+
+using namespace std;
 int main() {
-	Person p1("robert", 170, 70);	
-	cout << "bmi:" << p1.bmi() << endl;
+	string name;
+	int weight,height;
+	cout << "請輸入姓名:";
+	cin >> name;
+
+	cout << "請輸入身高:";
+	cin >>	height;
+
+	cout << "請輸入體重:";
+	cin >> weight;
+	
+	Person p1(name, height, weight);
+	cout << "name:" << p1.name << endl;
+	cout << "bmi是:" << p1.bmi() << endl;
 }
 
 

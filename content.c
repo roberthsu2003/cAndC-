@@ -5,7 +5,8 @@ main.cpp
 #include "person.h"
 
 int main() {
-  std::cout << "Hello World!\n";
+	Person p1("robert", 170, 70);	
+	cout << "bmi:" << p1.bmi() << endl;
 }
 
 
@@ -24,10 +25,15 @@ public:
   string name;
   int height;
   int weight;
+	//自訂的建構式
+  Person(string n,int h, int w){
+	  name = n;
+	  height = h;
+	  weight = w;
+  }
 
   double bmi() { 
 	  return weight / pow(height / 100.0, 2); 
   }
 };
 #endif
-

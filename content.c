@@ -1,13 +1,49 @@
+main.cpp
+
 #include <iostream>
-
-#define MAC
-
-#ifdef MAC
-#define OS "MAC_OS_VERSION"
-#else
-#define OS "Windows10"
-#endif
-
 using namespace std;
 
-int main() { cout << OS << endl; }
+typedef struct student {
+  string name;
+  int chinese;
+  int english;
+  int math;
+} Student;
+
+Student createStudent(int student_id) {
+  Student s;
+  s.name = "學生" + to_string(student_id);
+  s.chinese = 50 + random() % 51;
+  s.math = 50 + random() % 51;
+  s.english = 50 + random() % 51;
+  return s;
+}
+
+int sum(Student *s) { return s->chinese + s->english + s->math; }
+
+double average(Student *s) { return (s->chinese + s->english + s->math) / 3.0; }
+
+
+tools.h
+#include <iostream>
+using namespace std;
+
+typedef struct student {
+  string name;
+  int chinese;
+  int english;
+  int math;
+} Student;
+
+Student createStudent(int student_id) {
+  Student s;
+  s.name = "學生" + to_string(student_id);
+  s.chinese = 50 + random() % 51;
+  s.math = 50 + random() % 51;
+  s.english = 50 + random() % 51;
+  return s;
+}
+
+int sum(Student *s) { return s->chinese + s->english + s->math; }
+
+double average(Student *s) { return (s->chinese + s->english + s->math) / 3.0; }

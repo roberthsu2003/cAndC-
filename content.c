@@ -1,18 +1,26 @@
+#include <iostream>
 using namespace std;
+
 int main() {
-  int array1[] = {10, 20, 30};
-  int array2[] = {90, 80, 70};
+	//c語言的使用方法
+  char name[] = {'r', 'o', 'b', 'e', 'r', 't'};
+  cout << name << endl;
+  char name1[7] = "jenny";
+  cout << name1 << endl;
+	//為何c語言要儲存字串,必需使用下面語法
+  const char *name2 = "peter";
+  cout << name2 << endl;
+  name2 = "peter hsu";
+	cout << name2 << endl;
 
-  int *ptr;
-	ptr = array1;
-  for (int i = 0; i < 3; i++) {
-		cout << *(ptr+i) << "\t";
-  }
-	cout << endl;
-
-	ptr = array2;
-	for (int i = 0; i < 3; i++) {
-		cout << *(ptr+i) << "\t";
-  }
-	cout << endl;
+	//c++字串可以由string來管理
+	cout << "c++的string" << endl;
+	
+	string name3 = "peter";
+	cout << name3 << endl;	
+	name3 = "peter hsu";
+	cout << name3 << endl;
+	name3 = "徐國堂";
+	cout << name3 << endl;
+	
 }

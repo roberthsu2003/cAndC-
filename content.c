@@ -1,29 +1,28 @@
-#include <cmath>
 #include <iostream>
+
 using namespace std;
 
-typedef struct bmi {
+typedef struct student {
   string name;
-  int height;
-  int weight;
-} BMI;
+  int scores[5];
+} Student;
+
+void creaded_student(Student *s, int id) {
+  s->name = "學生" + to_string(id);
+  s->scores[0] = 78;
+  s->scores[1] = 98;
+  s->scores[2] = 84;
+  s->scores[3] = 100;
+  s->scores[4] = 92;
+}
 
 int main() {
-  int nums;
-  cout << "========BMI計算==========" << endl;
-  cout << "請輸入要計算的人數:";
-  cin >> nums;
-  BMI bmis[nums];
-  for (int i = 0; i < nums; i++) {
-    BMI* one = &bmis[i];
-    cout << "請輸入第" << i+1 << "位的姓名,身高,體重(中間要空隔):";
-    cin >> one->name >> one->height >> one->weight;    
-  }
-
-  for (int i = 0; i < nums; i++) {
-    BMI *one = &bmis[i];
-    double bmi = one->weight / pow(one->height / 100.0, 2);
-    cout << one->name << endl;
-    printf("您的BMI是:%.2f\n\n", bmi);
-  }
+  Student s1;
+  creaded_student(&s1, 1);
+  cout << s1.name << endl;
+  cout << s1.scores[0] << endl;
+  cout << s1.scores[1] << endl;
+  cout << s1.scores[2] << endl;
+  cout << s1.scores[3] << endl;
+  cout << s1.scores[4] << endl;
 }

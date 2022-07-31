@@ -1,26 +1,23 @@
 #include <iostream>
 using namespace std;
+//定義結構point,成員有x和y
+struct point{
+	float x;
+	float y;
+};
 
-int main() {
-	//c語言的使用方法
-  char name[] = {'r', 'o', 'b', 'e', 'r', 't'};
-  cout << name << endl;
-  char name1[7] = "jenny";
-  cout << name1 << endl;
-	//為何c語言要儲存字串,必需使用下面語法
-  const char *name2 = "peter";
-  cout << name2 << endl;
-  name2 = "peter hsu";
-	cout << name2 << endl;
+int main() { 
+	struct point p1;
+	p1.x = 4.5;
+	p1.y = 6.5;
 
-	//c++字串可以由string來管理
-	cout << "c++的string" << endl;
-	
-	string name3 = "peter";
-	cout << name3 << endl;	
-	name3 = "peter hsu";
-	cout << name3 << endl;
-	name3 = "徐國堂";
-	cout << name3 << endl;
-	
+	struct point p2;
+	p2.x = 8.3;
+	p2.y = 9.6;
+
+	cout << p1.x << endl;
+	cout << p1.y << endl;
+	cout << "=================" << endl;
+	cout << p2.x << endl;
+	cout << p2.y << endl;
 }

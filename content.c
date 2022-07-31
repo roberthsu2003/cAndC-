@@ -1,4 +1,5 @@
 #include <iostream>
+#include <time.h>
 
 using namespace std;
 
@@ -8,21 +9,28 @@ typedef struct student {
 } Student;
 
 void creaded_student(Student *s, int id) {
+  int min = 50;
+  int max = 100;
   s->name = "學生" + to_string(id);
-  s->scores[0] = 78;
-  s->scores[1] = 98;
-  s->scores[2] = 84;
-  s->scores[3] = 100;
-  s->scores[4] = 92;
+  for (int i = 0; i < 5; i++) {
+    s->scores[i] = random() % (max - min + 1) + min;
+  }
+}
+
+void print_student(Student *s) {
+  cout << s->name << endl;
+  cout << s->scores[0] << endl;
+  cout << s->scores[1] << endl;
+  cout << s->scores[2] << endl;
+  cout << s->scores[3] << endl;
+  cout << s->scores[4] << endl;
+  cout << "======================" << endl;
+  cout << endl;
 }
 
 int main() {
+  srandom(time(NULL));
   Student s1;
   creaded_student(&s1, 1);
-  cout << s1.name << endl;
-  cout << s1.scores[0] << endl;
-  cout << s1.scores[1] << endl;
-  cout << s1.scores[2] << endl;
-  cout << s1.scores[3] << endl;
-  cout << s1.scores[4] << endl;
+  print_student(&s1);
 }

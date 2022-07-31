@@ -3,10 +3,9 @@ using namespace std;
 
 int main() {
 	//動態配置記憶體
-  int *n;
-  int *m;
-  n = new int();
-  m = new int();
+  int *n = new int();
+  int *m = new int();
+ 
   cout << "請輸入n的值:";
   cin >> *n;
 

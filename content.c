@@ -2,17 +2,16 @@
 using namespace std;
 
 int main() {
-	//動態配置記憶體
-  int *n = new int();
-  int *m = new int();
- 
-  cout << "請輸入n的值:";
-  cin >> *n;
+	//建立連續的記憶體空間
+	int* par = new int[5];
+	cout << "請輸入5個數值(中間空白):";
+	for(int i=0; i<5; i++){
+		cin >> *(par+i);
+	}
 
-  cout << "請輸入m的值:";
-  cin >> *m;
-
-  int sum;
-  sum = *n + *m;
-  cout << "n和m加總為:" << sum << endl;
+	//輸出
+	for(int i=0; i<5; i++){
+		cout << *(par+i) << "\t";
+	}
+	cout << endl;
 }

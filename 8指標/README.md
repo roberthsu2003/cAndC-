@@ -180,6 +180,62 @@ int main() {
 ```
 [解題](https://repl.it/@roberthsu2003/pointAdd)
 
+### 動態配置(allocate)記憶體空間給指標變數
+
+- new int()
+- new int(10)
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main() {
+	//動態配置記憶體
+  int *n;
+  int *m;
+  n = new int();
+  m = new int();
+  cout << "請輸入n的值:";
+  cin >> *n;
+
+  cout << "請輸入m的值:";
+  cin >> *m;
+
+  int sum;
+  sum = *n + *m;
+  cout << "n和m加總為:" << sum << endl;
+}
+
+//=============================
+請輸入n的值:10
+請輸入m的值:20
+n和m加總為:30
+```
+
+### 動態配置(allocate)連續記憶體空間給指標變數
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main() {
+	//建立連續的記憶體空間
+	int* par = new int[5];
+	cout << "請輸入5個數值(中間空白):";
+	for(int i=0; i<5; i++){
+		cin >> *(par+i);
+	}
+
+	//輸出
+	for(int i=0; i<5; i++){
+		cout << *(par+i) << "\t";
+	}
+	cout << endl;
+}
+```
+
+
+
 ### 指標的應用
 
 ```c++

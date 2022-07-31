@@ -23,13 +23,17 @@ using namespace std;
 vector<int> vec_a;
 ```
 
+![](./images/pic1.png)
+
 #### 建立特定長度的vector
 
 - 建立長度10,預設每個元素值為0
 
 ```c++
-vector<int> vec_c(10)
+vector<int> vec_b(10)
 ```
+
+![](./images/pic2.png)
 
 #### 指定預設元素值
 
@@ -39,6 +43,8 @@ vector<int> vec_c(10)
 vector<int> vec_c(10,8)
 ```
 
+![](./images/pic3.png)
+
 #### 直接給值
 - 注意是{}(大括號)
 
@@ -46,12 +52,380 @@ vector<int> vec_c(10,8)
 vector<int> vec_d{10, 20, 30, 40, 50}
 ```
 
+### vetcor支援c++11以後版本
+
 ### 使用vector
 
 ```c++
-vector<int> list(3);
-list[0] = 5;
-list[1] = -3;
-list[2] = 12;
-cout << list[1] << endl;
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+	vector<int> list(3);
+	list[0]=5;
+	list[1]=-3;
+	list[2]=12;
+	cout << list[1] << endl;
+}
 ```
+
+### vectors 支援所有c++的data type
+
+```c++
+vector<int> list;
+vector<double> collection{ 1.0, 3.5, 0.5, 7.2 };
+vector<char> letters{ 'a', 'b', 'c' };
+```
+
+### vectors []內所支援的語法
+- 數值:a[34]
+- 數值變數:a[x]
+- 數值運算:a[x+3]
+- 數值function:a[max(x,y)]
+
+### 讀取整個vectors
+
+```c++
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+	double sum = 0.0;
+	const int NUMBER_OF_ENTRIES = 5;
+	vector<double> numbers(NUMBER_OF_ENTRIES);
+	cout << "請輸入" << NUMBER_OF_ENTRIES << "個數值:";
+	for(int i=0;i<NUMBER_OF_ENTRIES;i++){
+		cin >> numbers[i];
+		sum += numbers[i];
+	}		
+	cout << "此vector";
+	for(int i=0;i<NUMBER_OF_ENTRIES-1;i++){
+		cout << numbers[i] << ", ";
+	}	
+	cout << numbers[NUMBER_OF_ENTRIES-1] << "的平均是" << sum / NUMBER_OF_ENTRIES << endl;
+}
+
+-----------------------------------------
+
+請輸入5個數值:5 6 7 8 9
+此vector5, 6, 7, 8, 9的平均是7
+```
+
+### 使用for(區塊變數:vector) 語法
+
+```c++
+for(type 區塊變數:vector){
+	statement
+} 
+```
+
+```c++
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+  vector<double> vec(10);
+  cout << "請輸入10個數字:";
+  for (double &elem : vec) {
+    cin >> elem;
+  }
+
+  for (double elem : vec) {
+    cout << elem << endl;
+  }
+}
+
+===============================
+
+請輸入10個數字:1 2 3 4 5 6 7 8 9 0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+```
+
+
+### vector 方法
+- push_back
+- pop_back
+- operator[]
+- at
+- size
+- empty
+- clear
+
+```c++
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+	vector<int> list;
+	list.push_back(5);
+	list.push_back(-3);
+	list.push_back(12);
+
+	for(int i=0; i<list.size(); i++){
+		cout << list.operator[](i) << endl;
+	}
+}
+
+//=======================================
+5
+-3
+12
+
+```
+
+```c++
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+  vector<int> list;
+  list.push_back(5);
+  list.push_back(-3);
+  list.push_back(12);
+  list.pop_back();
+  list.pop_back();
+
+  for (int i = 0; i < list.size(); i++) {
+    cout << list.operator[](i) << endl;
+  }
+}
+
+//==============================
+5
+```
+
+```c++
+vec.operator[](2)
+vec[2]
+```
+
+```c++
+vec.empty()
+vec.size() != 0
+```
+
+### vectors 當作參數
+
+#### void print(vector<int> v){}
+- call by value
+
+```c++
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+void print(vector<int> v) {
+  for (int elem : v) {
+    cout << elem << " ";
+  }
+  cout << endl;
+}
+
+int sum(vector<int> v){
+	int result = 0;
+	for(int elem : v){
+		result += elem;
+	}
+	return result;
+}
+
+int main() {
+	vector<int> list{2, 4, 6, 8};
+	print(list);
+	cout << sum(list) << endl;
+	int n = list.size();
+	for(int i=0; i<n; i++){
+		list[i] = 0;
+	}
+
+	print(list);
+	cout << sum(list) << endl;
+	
+}
+
+//=====================================
+2 4 6 8 
+20
+0 0 0 0 
+0
+```
+
+#### void print(const vector<int>& v){}
+- const代表不可修改v的元素內容(read only)
+- call by reference
+
+```c++
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+void print(const vector<int>& v) {
+  for (int elem : v) {
+    cout << elem << " ";
+  }
+  cout << endl;
+}
+
+int sum(const vector<int>& v){
+	int result = 0;
+	for(int elem : v){
+		result += elem;
+	}
+	return result;
+}
+
+int main() {
+	vector<int> list{2, 4, 6, 8};
+	print(list);
+	cout << sum(list) << endl;
+	int n = list.size();
+	for(int i=0; i<n; i++){
+		list[i] = 0;
+	}
+
+	print(list);
+	cout << sum(list) << endl;
+	
+}
+
+//==============================
+2 4 6 8 
+20
+0 0 0 0 
+0
+```
+
+
+```c++
+//動態改變vector的內容
+
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+
+using namespace std;
+
+void print(const vector<int>& v) {
+  for (int elem : v) {
+    cout << elem << " ";
+  }
+  cout << endl;
+}
+
+void make_random(vector<int>& v, int size){
+	v.clear();
+	int n = rand() % size + 1;
+	for(int i=0; i<n;i++){
+		v.push_back(rand());
+	}
+}
+
+int main() {
+	srand(2);
+	vector<int> list;
+	cout << "Vector initially: ";
+	print(list);
+	make_random(list,20);
+	cout << "第1次random vector:";
+	print(list);
+
+	make_random(list,5);
+	cout << "第2次random vector:";
+	print(list);
+
+	make_random(list,10);
+	cout << "第3次random vector:";
+	print(list);
+
+}
+
+//===================================
+第1次random vector:1738766719 190686788 260874575 747983061 906156498 1502820864 142559277 1261608745 1380759627 2127304342 635050179 
+第2次random vector:149585093 2039335037 820715049 693014654 2122498773 
+第3次random vector:591232730 1281246002 1194903572 1820868569 396476315 853559767 1910751391 1826393210
+```
+
+```c++
+//一個範圍內的質數
+
+#include <cmath>
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+void print(const vector<int> &v) {
+  for (int elem : v) {
+    cout << elem << " ";
+  }
+  cout << endl;
+}
+
+void make_random(vector<int> &v, int size) {
+  v.clear();
+  int n = rand() % size + 1;
+  for (int i = 0; i < n; i++) {
+    v.push_back(rand());
+  }
+}
+
+bool is_prime(int n) {
+  if (n < 2) {
+    return false;
+  } else {
+    bool result = true;
+    double r = n, root = sqrt(r);
+    for (int i = 2; result && i <= root; i++) {
+      result = (n % i != 0);
+    }
+    return result;
+  }
+}
+
+vector<int> primes(int begin, int end) {
+  vector<int> result;
+  for (int i = begin; i <= end; i++) {
+    if (is_prime(i)) {
+      result.push_back(i);
+    }
+  }
+  return result;
+}
+
+int main() {
+  int low, high;
+  cout << "請輸入最小和最大值,求之間的數值是否為質數:";
+  cin >> low >> high;
+  vector<int> prime_list = primes(low, high);
+  print(prime_list);
+}
+
+//========================================
+請輸入最小和最大值,求之間的數值是否為質數:1 100
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 
+```
+
+### 多維度vector
+
+```c++
+
+```
+

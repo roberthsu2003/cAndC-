@@ -4,38 +4,45 @@
 ![陣列和結構不同之處](pic/pic1.png)
 
 ```c++
-定義結構的語法:
+#定義結構的語法:
 struct 結構名稱{
 	資料型別 成員變數1;
 	資料型別 成員變數2;
 	資料型別 成員變數3;
 };
 
-例如:
-struct student{
-	int id;
-	char *name;
-	int chinese,math,english;
+#建立結構變數
+結構名稱 結構變數
+
+```
+
+```c++
+#include <iostream>
+using namespace std;
+//定義結構point,成員有x和y
+struct point{
+	float x;
+	float y;
 };
+
+int main() { 
+	struct point p1;
+	p1.x = 4.5;
+	p1.y = 6.5;
+
+	struct point p2;
+	p2.x = 8.3;
+	p2.y = 9.6;
+
+	cout << p1.x << endl;
+	cout << p1.y << endl;
+	cout << "=================" << endl;
+	cout << p2.x << endl;
+	cout << p2.y << endl;
+}
+
 ```
 
-```c++
-建立結構變數
-struct 結構名稱 結構變數;
-
-例如:
-struct student david;
-david.id = 99001;
-david.name="robert";
-david.chinese = 75;
-david.math = 86;
-david.english = 90;
-```
-
-```c++
-宣告結構變數David時，同時初始化
-struct Student david = {99001, "robert", 75, 86, 90};
-```
 
 #### 定義結構時同時建立結構變數
 ```c++

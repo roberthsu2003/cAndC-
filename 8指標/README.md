@@ -308,6 +308,29 @@ int main() {
 
 ![指標變數存取陣列](pic/pic3.png)
 
+### 指標變數可以改變指向的位址
+
+```c++
+using namespace std;
+int main() {
+  int array1[] = {10, 20, 30};
+  int array2[] = {90, 80, 70};
+
+  int *ptr;
+	ptr = array1;
+  for (int i = 0; i < 3; i++) {
+		cout << *(ptr+i) << "\t";
+  }
+	cout << endl;
+
+	ptr = array2;
+	for (int i = 0; i < 3; i++) {
+		cout << *(ptr+i) << "\t";
+  }
+	cout << endl;
+}
+```
+
 ### 一維字元陣列與指標
 ![使用陣列變數和指標變數存取字元陣列](pic/pic4.png)
 ```c++

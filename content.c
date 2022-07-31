@@ -1,17 +1,18 @@
 #include <iostream>
 using namespace std;
 //定義結構point,成員有x和y
-struct point{
+//typedef 重新定義資料類型的名稱
+typedef struct point{
 	float x;
 	float y;
-};
+}Point;
 
 int main() { 
-	struct point p1;
+	Point p1;
 	p1.x = 4.5;
 	p1.y = 6.5;
 
-	struct point p2;
+	Point p2;
 	p2.x = 8.3;
 	p2.y = 9.6;
 

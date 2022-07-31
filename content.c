@@ -1,30 +1,25 @@
+#include <cmath>
 #include <iostream>
 using namespace std;
-//定義結構point,成員有x和y
-//typedef 重新定義資料類型的名稱
-typedef struct point{
-	float x;
-	float y;
-}Point;
 
-typedef struct size{
-	float width;
-	float height;
-}Size;
+typedef struct bmi {
+  string name;
+  int height;
+  int weight;
+} BMI;
 
-//巢狀結構
-typedef struct rect{
-	Point p;
-	Size s;
-} Rect;
+int main() {
+  BMI b1;
+  cout << "========BMI計算==========" << endl;
+  cout << "請輸入姓名:";
+  cin >> b1.name;
+  cout << "請輸入身高(公分):";
+  cin >> b1.height;
+  cout << "請輸入體重(公斤):";
+  cin >> b1.weight;
 
-int main() { 
-	Rect r1;
-	r1.p = {4.5, 5.6};
-	r1.s = {21.5, 18.9};
+  double bmi = b1.weight / pow(b1.height / 100.0, 2);
 
-	cout << "r1的x座標:" << r1.p.x << endl;
-	cout << "r1的y座標:" << r1.p.y << endl;
-	cout << "r1的寬:" << r1.s.width<< endl;
-	cout << "r1的高:" << r1.s.height << endl;
+  cout << b1.name << endl;
+  printf("您的BMI是:%.2f\n", bmi);
 }

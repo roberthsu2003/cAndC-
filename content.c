@@ -30,7 +30,10 @@ void print_student(Student *s) {
 
 int main() {
   srandom(time(NULL));
-  Student s1;
-  creaded_student(&s1, 1);
-  print_student(&s1);
+  int nums = 30;
+  Student s[nums];
+  for (int i = 0; i < nums; i++) {
+    creaded_student(&s[i], i + 1);
+    print_student(&s[i]);
+  }
 }

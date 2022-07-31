@@ -2,12 +2,12 @@
 using namespace std;
 
 int main() {
-	double m = 5;
-	int n = 10;
-	cout << "變數m的值=" << m << endl;
-	cout << "變數n的值=" << n << endl;
-	cout << "變數m的記憶體位址:" << &m << endl;
-	cout << "變數n的記憶體位址:" << &n << endl;
-	cout << "變數m的記憶體大小:" << sizeof(m) << endl;
-	cout << "變數n的記憶體大小:" << sizeof(n) << endl;
+	int n[3] = {10, 20 , 30};
+	cout << "陣列n的位址=" << n << endl;	
+	cout << "陣列n[0]的位址=" << &n[0] << endl;
+	cout << "陣列n[1]的位址=" << &n[1] << endl;
+	cout << "陣列n[2]的位址=" << &n[2] << endl;
+	cout << "陣列n[0]的位址=" << n+0 << endl;
+	cout << "陣列n[1]的位址=" << n+1 << endl;
+	cout << "陣列n[2]的位址=" << n+2 << endl;
 }

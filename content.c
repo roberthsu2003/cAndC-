@@ -7,18 +7,24 @@ typedef struct point{
 	float y;
 }Point;
 
+typedef struct size{
+	float width;
+	float height;
+}Size;
+
+//巢狀結構
+typedef struct rect{
+	Point p;
+	Size s;
+} Rect;
+
 int main() { 
-	Point p1;
-	p1.x = 4.5;
-	p1.y = 6.5;
+	Rect r1;
+	r1.p = {4.5, 5.6};
+	r1.s = {21.5, 18.9};
 
-	Point p2;
-	p2.x = 8.3;
-	p2.y = 9.6;
-
-	cout << p1.x << endl;
-	cout << p1.y << endl;
-	cout << "=================" << endl;
-	cout << p2.x << endl;
-	cout << p2.y << endl;
+	cout << "r1的x座標:" << r1.p.x << endl;
+	cout << "r1的y座標:" << r1.p.y << endl;
+	cout << "r1的寬:" << r1.s.width<< endl;
+	cout << "r1的高:" << r1.s.height << endl;
 }

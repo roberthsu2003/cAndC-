@@ -20,11 +20,14 @@ void print(int *x, int size){
 }
 
 int main() {
-	int n[] = {10, 20, 30};
-	int nums = sizeof(n)/sizeof(n[0]);
+	int nums = 3;
+	int* n = new int[nums];
+	n[0] = 10;
+	n[1] = 20;
+	n[2] = 30;	
 	multiply10(n,nums);
 	print(n,nums);
 	division10(n, nums);
 	print(n,nums);
-	
+	delete[] n;	
 }

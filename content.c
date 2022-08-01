@@ -1,20 +1,19 @@
 #include <iostream>
 using namespace std;
-
-int* create_sequence_space(){
-	int* n = new int[3];
-	n[0] = 10;
-	n[1] = 20;
-	n[2] = 30;
-	return n;
-}
-
-
-
 int main() {
-	int* y = create_sequence_space();
+	int array1[] = {10, 20, 30};
+	int array2[] = {70, 80, 90};
+	int *x = array1;
 	for(int i=0; i<3; i++){
-		cout << y[i] << "\t";
+		cout << x[i] << "\t";
 	}
 	cout << endl;
+
+	x = array2;
+	for(int i=0; i<3; i++){
+		cout << x[i] << "\t";
+	}
+	cout << endl;
+
+	
 }

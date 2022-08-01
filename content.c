@@ -1,18 +1,16 @@
 #include <iostream>
 using namespace std;
-void swap(int *n, int *m) {
-  int temp = *n;
-  *n = *m;
-  *m = temp;
+void multiply10(int x[],int size){
+	for(int i=0; i<size; i++){
+		x[i] *= 10;
+	}
 }
 
 int main() {
-  int a = 666;
-  int b = 888;
-  cout << "a=" << a << endl;
-  cout << "b=" << b << endl;
-  cout << "2數對調" << endl;
-  swap(&a, &b);
-  cout << "a=" << a << endl;
-  cout << "b=" << b << endl;
+	int n[] = {10, 20, 30};
+	multiply10(n,sizeof(n)/sizeof(n[0]));
+	for(int i=0; i<3; i++){
+		cout << n[i] << "\t";
+	}
+	cout << endl;
 }

@@ -1,13 +1,12 @@
 #include <iostream>
 using namespace std;
-
 int main() {
-	double m = 5;
-	int n = 10;
-	cout << "m value=" << m << endl;
-	cout << "n value=" << n << endl;
-	cout << "m address=" << &m << endl;
-	cout << "n address=" << &n << endl;
-	cout << "m size=" << sizeof(m) << endl;
-	cout << "n size=" << sizeof(n) << endl;
+	int n[3];
+	cout << "陣列n的address:" << n << endl;
+	cout << "n[0]address:" << &n[0] << endl;
+	cout << "n[1]address:" << &n[1] << endl;
+	cout << "n[2]address:" << &n[2] << endl;
+	cout << "n+0 address:" << n+0 << endl;
+	cout << "n+1 address:" << n+1 << endl;
+	cout << "n+2 address:" << n+2 << endl;
 }

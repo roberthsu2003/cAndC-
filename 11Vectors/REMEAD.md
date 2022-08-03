@@ -426,6 +426,203 @@ int main() {
 ### 多維度vector
 
 ```c++
+vector<vector<int>> a(2,vector<int>(3))
+```
+
+![](./images/pic5.png)
+
+```c++
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+  vector<vector<int>> a(2, vector<int>(3));
+  a[0][0] = 5;
+  a[0][1] = 19;
+  a[0][2] = 3;
+  a[1][0] = 22;
+  a[1][1] = -8;
+  a[1][2] = 10;
+
+  for (vector<int> sub : a) {
+    //第一維
+    for (int item : sub) {
+      //第二維
+      cout << item << "\t";
+    }
+    cout << endl;
+  }
+}
+
+//============================
+5   19  3
+22  -8  10
+```
+
+
+
+```c++
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+  vector<vector<int>> a{
+												{5, 19, 3},
+												{22, -8, 10}
+												};
+  
+
+  for (vector<int> sub : a) {
+    //第一維
+    for (int item : sub) {
+      //第二維
+      cout << item << "\t";
+    }
+    cout << endl;
+  }
+}
+
+
+//============================
+5   19  3
+22  -8  10
 
 ```
+
+```c++
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void print(const vector<vector<int>>& m){
+	for(int row=0; row<m.size(); row++){
+		for(int col=0; col<m[row].size(); col++){
+			cout << m[row][col] << "\t";
+		}
+		cout << endl;
+	}
+}
+
+int main() {
+  vector<vector<int>> a{
+												{5, 19, 3},
+												{22, -8, 10}
+												};
+  
+
+  print(a);
+}
+
+//============================
+5   19  3
+22  -8  10
+
+```
+
+```c++
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void print(const vector<vector<int>>& m){
+	for(const vector<int>& row: m){
+		for(int elem: row){
+			cout << elem << "\t";
+		}
+		cout << endl;
+	}
+	
+}
+
+int main() {
+  vector<vector<int>> a{
+												{5, 19, 3},
+												{22, -8, 10}
+												};
+  
+
+  print(a);
+}
+
+//============================
+5   19  3
+22  -8  10
+
+```
+
+### 利用typedef
+
+```c++
+typedef vector<vector<int>> Matrix;
+```
+
+```c++
+#include <iostream>
+#include <vector>
+using namespace std;
+
+typedef vector<vector<int>> Matrix;
+
+void print(const Matrix& m){
+	for(const vector<int>& row: m){
+		for(int elem: row){
+			cout << elem << "\t";
+		}
+		cout << endl;
+	}
+	
+}
+
+int main() {
+  vector<vector<int>> a{
+												{5, 19, 3},
+												{22, -8, 10}
+												};
+  
+
+  print(a);
+}
+
+
+//============================
+5   19  3
+22  -8  10
+```
+
+
+```c++
+#include <iostream>
+#include <vector>
+using namespace std;
+
+typedef vector<vector<int>> Matrix;
+
+void print(const Matrix& m){
+	for(int row=0; row<m.size(); row++){
+		for(int col=0; col<m[row].size(); col++){
+			cout << m[row][col] << "\t";
+		}
+		cout << endl;
+	}
+}
+
+int main() {
+  vector<vector<int>> a{
+												{5, 19, 3},
+												{22, -8, 10}
+												};
+  
+
+  print(a);
+}
+
+//============================
+5   19  3
+22  -8  10
+
+```
+
+
 

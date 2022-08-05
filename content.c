@@ -22,12 +22,13 @@ void created_students(vector<Student> &students) {
 }
 
 void print_students(const vector<Student> &students) {
-  cout << "學生姓名"  << "\t"  << "國文"  << "\t" << "英文"  << "\t"  << "數學" << endl;
+  cout << "學生姓名"  << "\t"  << "國文"  << "\t" << "英文"  << "\t"  << "數學" << "\t" << "總分" << endl;
   for (Student s : students) {
     cout << s.name << "\t\t";
     cout << s.chinese << "\t\t";
     cout << s.english << "\t\t";
-    cout << s.math << "\t";
+    cout << s.math << "\t\t";
+		cout << s.chinese + s.english + s.math;
     cout << endl;
   }
 }

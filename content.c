@@ -1,65 +1,22 @@
 #include <iostream>
-typedef struct point {
-  float x;
-  float y;
-} Point;
-
-typedef struct size {
-  float width;
-  float height;
-} Size;
-
-typedef struct rect {
-  Point p;
-  Size s;
-} Rect;
+#include <vector>
 
 using namespace std;
-/*
-call by value
-Rect modifyRect(Rect rec,int x, int y, float width, float
- height){
-        rec.p.x = x;
-        rec.p.y = y;
-        rec.s.width = width;
-        rec.s.height = height;
-        return rec;
- }
-*/
-/*
-call by address
-void modifyRect(Rect* rec,int x, int y, float width, float height) {
-	rec -> p.x = x;
-	rec -> p.y = y;
-	rec -> s.width = width;
-	rec -> s.height = height;
-	
+
+void print(vector<double> d) {
+  for (int i = 0; i < d.size(); i++) {
+    cout << d[i] << "\t";
+  }
+  cout << endl;
 }
-*/
-/*
-call by reference
-void modifyRect(Rect& rec,int x, int y, float width, float height) {
-	rec.p.x = x;
-	rec.p.y = y;
-	rec.s.width = width;
-	rec.s.height = height;
-	
-}
-	*/
+
 int main() {
-  Rect r1;
-  r1.p = {4.5, 5.6};
-  r1.s = {21.5, 18.9};
+  vector<double> vec_d{10, 20, 30, 40, 50};
+	print(vec_d);
+	
+  for (int i = 0; i < vec_d.size(); i++) {
+    vec_d[i] = 0;
+  }
 
-  cout << "r1的x座標:" << r1.p.x << endl;
-  cout << "r1的y座標:" << r1.p.y << endl;
-  cout << "r1的width座標:" << r1.s.width << endl;
-  cout << "r1的height座標:" << r1.s.height << endl;
-
-  //修改結構
-  modifyRect(r1 , 0, 0, 100, 100);
-  cout << "r1的x座標:" << r1.p.x << endl;
-  cout << "r1的y座標:" << r1.p.y << endl;
-  cout << "r1的width座標:" << r1.s.width << endl;
-  cout << "r1的height座標:" << r1.s.height << endl;
+  print(vec_d);
 }

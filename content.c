@@ -1,16 +1,28 @@
 #include <iostream>
-using namespace std;
-
 typedef struct point{
-	double x;
-	double y;
+	float x;
+	float y;
 }Point;
 
-int main() {
-	Point p1;
-	p1.x = 10.0;
-	p1.y = 20.0;
+typedef struct size{
+	float width;
+	float height;
+}Size;
 
-	cout << p1.x << endl;
-	cout << p1.y << endl;
+typedef struct rect{
+	Point p;
+	Size s;
+}Rect;
+
+using namespace std;
+int main() {
+	Rect r1;
+	r1.p = {4.5, 5.6};
+	r1.s = {21.5, 18.9};
+
+	cout << "r1的x座標:" << r1.p.x << endl;
+	cout << "r1的y座標:" << r1.p.y << endl;
+	cout << "r1的width座標:" << r1.s.width << endl;
+	cout << "r1的height座標:" << r1.s.height << endl;
+	
 }

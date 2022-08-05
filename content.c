@@ -3,7 +3,13 @@
 
 using namespace std;
 
-void print(vector<double> d) {
+void setToZero(vector<double> &d) {
+  for (int i = 0; i < d.size(); i++) {
+    d[i] = 0;
+  }
+}
+
+void print(const vector<double> &d) {
   for (int i = 0; i < d.size(); i++) {
     cout << d[i] << "\t";
   }
@@ -12,11 +18,7 @@ void print(vector<double> d) {
 
 int main() {
   vector<double> vec_d{10, 20, 30, 40, 50};
-	print(vec_d);
-	
-  for (int i = 0; i < vec_d.size(); i++) {
-    vec_d[i] = 0;
-  }
-
+  print(vec_d);
+  setToZero(vec_d);
   print(vec_d);
 }

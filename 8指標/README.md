@@ -180,60 +180,6 @@ int main() {
 ```
 [解題](https://repl.it/@roberthsu2003/pointAdd)
 
-### 動態配置(allocate)記憶體空間給指標變數
-
-- new int()
-- new int(10)
-
-```c++
-#include <iostream>
-using namespace std;
-
-int main() {
-	//動態配置記憶體
-  int *n;
-  int *m;
-  n = new int();
-  m = new int();
-  cout << "請輸入n的值:";
-  cin >> *n;
-
-  cout << "請輸入m的值:";
-  cin >> *m;
-
-  int sum;
-  sum = *n + *m;
-  cout << "n和m加總為:" << sum << endl;
-}
-
-//=============================
-請輸入n的值:10
-請輸入m的值:20
-n和m加總為:30
-```
-
-### 動態配置(allocate)連續記憶體空間給指標變數
-
-```c++
-#include <iostream>
-using namespace std;
-
-int main() {
-	//建立連續的記憶體空間
-	int* par = new int[5];
-	cout << "請輸入5個數值(中間空白):";
-	for(int i=0; i<5; i++){
-		cin >> *(par+i);
-	}
-
-	//輸出
-	for(int i=0; i<5; i++){
-		cout << *(par+i) << "\t";
-	}
-	cout << endl;
-}
-```
-
 
 
 ### 指標的應用
@@ -652,6 +598,106 @@ int main() {
 語法:
 資料型態 *指標變數 = new 資料型態[一維陣列大小];
 ```
+
+### 動態配置(allocate)記憶體空間給指標變數
+
+- new int()
+- new int(10)
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main() {
+	//動態配置記憶體
+  int *n;
+  int *m;
+  n = new int();
+  m = new int();
+  cout << "請輸入n的值:";
+  cin >> *n;
+
+  cout << "請輸入m的值:";
+  cin >> *m;
+
+  int sum;
+  sum = *n + *m;
+  cout << "n和m加總為:" << sum << endl;
+}
+
+//=============================
+請輸入n的值:10
+請輸入m的值:20
+n和m加總為:30
+```
+
+### 動態配置(allocate)連續記憶體空間給指標變數
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main() {
+	//建立連續的記憶體空間
+	int* par = new int[5];
+	cout << "請輸入5個數值(中間空白):";
+	for(int i=0; i<5; i++){
+		cin >> *(par+i);
+	}
+
+	//輸出
+	for(int i=0; i<5; i++){
+		cout << *(par+i) << "\t";
+	}
+	cout << endl;
+}
+```
+
+```c++
+#include <iostream>
+using namespace std;
+
+void division10(int *x,int num) {
+  for (int i = 0; i < num; i++) {
+    *(x + i) /= 10;
+  }
+}
+
+void multiply10(int x[],int num) {
+  for (int i = 0; i < num; i++) {
+    x[i] *= 10;
+  }
+}
+
+void print(int x[],int num) {
+  for (int i = 0; i < num; i++) {
+    cout << x[i] << "\t";
+  }
+  cout << endl;
+}
+
+int main() {
+  int num = 3;
+	//動態配置的記憶體空間allocate
+  int *n = new int[3];
+  *(n + 0) = 10;
+  *(n + 1) = 20;
+  *(n + 2) = 30;
+  print(n,num);
+
+  multiply10(n,num);
+  print(n,num);
+
+  division10(n,num);
+  print(n,num);
+	
+	//動態配置的記憶體空間allocate,要用delete 手動刪除記憶體
+	delete [] n;	
+
+	
+}
+```
+
 
 ```
 int *p = new int[3];

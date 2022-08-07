@@ -1,9 +1,18 @@
 #include <iostream>
-#define min(a,b) (a) >= (b) ? (b) : (a)
-#define max(a,b) (a) >= (b) ? (a) : (b)
 using namespace std;
+
+#define MAC
+
+#ifndef MAC
+
+#define OS "MAC_OS_VERSION_10_0"
+
+#else
+
+#define OS "Window11"
+
+#endif
+
 int main() {
-	int x=3,y=8;
-	cout << "2數較小值是:"<< (min(x,y)) << endl;
-	cout << "2數較大值是:"<< (max(x,y)) << endl;
+	cout << OS << endl;
 }

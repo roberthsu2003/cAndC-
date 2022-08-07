@@ -20,11 +20,16 @@ void change_width(Square& s) {
 	s.width += 10; 
 }
 
+Square create_square(int width){
+	Square s;
+	s.width = width;
+	return s;
+}
+
 int main() {
-  Square s1;
-  Square s2;
-  s1.width = 10;
-  s2.width = 20;
+  Square s1 =  create_square(10);
+	Square s2 = create_square(20);
+ 
   description_square(s1);
   description_square(s2);
 

@@ -5,9 +5,12 @@ using namespace std;
 class Square {
 public:
   int width; // field,欄位
-  double area() { return width * width; }
+	Square(int w){ // 自訂建構式
+		width = w;
+	}
+  double area() { return width * width; } //method,方法
 
-  int perimeter() { return 4 * width; }
+  int perimeter() { return 4 * width; }//method,方法
 };
 
 void description_square(Square s) {
@@ -20,15 +23,11 @@ void change_width(Square& s) {
 	s.width += 10; 
 }
 
-Square create_square(int width){
-	Square s;
-	s.width = width;
-	return s;
-}
+
 
 int main() {
-  Square s1 =  create_square(10);
-	Square s2 = create_square(20);
+  Square s1(10);
+	Square s2(20);
  
   description_square(s1);
   description_square(s2);

@@ -17,10 +17,10 @@ public:
 
 void print(Student &stu) {
   cout << stu.name << "\t";
-  cout << stu.chinese << "\t";
-  cout << stu.english << "\t";
-  cout << stu.math << "\t";
-  cout << stu.sum() << "\t";
+  cout << stu.chinese << "\t\t";
+  cout << stu.english << "\t\t";
+  cout << stu.math << "\t\t";
+  cout << stu.sum() << "\t\t";
   printf("%.2f\t", stu.average());
   cout << endl;
 }
@@ -31,7 +31,7 @@ int main() {
   cout << "請輸入學生人數:";
   cin >> nums;
   Student students[nums];
-
+	cout << "姓名\t" << "國文\t" << "英文\t" << "數學\t" << "總分\t" << "平均" << endl;
   for (int i = 0; i < nums; i++) {
     Student s = students[i];
     s.name = "學生" + to_string(i + 1);

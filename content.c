@@ -9,6 +9,10 @@ public:
   int chinese;
   int english;
   int math;
+
+  int sum() { return chinese + english + math; }
+
+  double average() { return sum() / 3.0; }
 };
 
 void print(Student &stu) {
@@ -16,6 +20,8 @@ void print(Student &stu) {
   cout << stu.chinese << "\t";
   cout << stu.english << "\t";
   cout << stu.math << "\t";
+  cout << stu.sum() << "\t";
+  printf("%.2f\t", stu.average());
   cout << endl;
 }
 

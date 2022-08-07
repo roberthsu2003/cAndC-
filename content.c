@@ -1,35 +1,12 @@
 #include <iostream>
-typedef enum direction {
-	North,
-	South,
-	East,
-	West 
-} Direction;
-
+//美金換台幣的匯率
+#define RATE 32.78
 using namespace std;
+
 int main() {
-  Direction destination = West;
-  cout << destination << endl;
-
-  //檢查列舉變數的內容
-  switch (destination) {
-  case North:
-    cout << "North" << endl;
-    break;
-
-  case South:
-    cout << "South" << endl;
-    break;
-
-  case East:
-    cout << "East" << endl;
-    break;
-
-  case West:
-    cout << "West" << endl;
-    break;
-
-  default:
-    break;
-  }
+	double us,nt;
+	cout << "請輸入您有多少美金:";
+	cin >> 	us;
+	nt = RATE * us;
+	cout << "您有" << nt << "台幣" << endl;
 }

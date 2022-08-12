@@ -1,10 +1,26 @@
 #include <iostream>
-#define RATE(x) (x) * 29.1234
+#include "tools.h"
+#include "tools.h"
+
+
+
 using namespace std;
 int main() {
-  double us, nt;
-  cout << "請輸入您有多少美金:";
-  cin >> us;
-  nt = RATE(us + 1);
-  cout << "您有" << nt << "台幣" << endl;
+	int x = 10;
+	int y = 20;
+	int total = multiply(x, y);
+	cout << "total=" << total << endl;
 }
+
+
+
+
+
+#ifndef __TOOLS_H__
+#define __TOOLS_H__ 
+
+int multiply(int a, int b){
+	return a * b;
+}
+
+#endif

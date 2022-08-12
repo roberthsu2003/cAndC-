@@ -15,4 +15,8 @@ int main() {
 
   cout << "p1.name:" << p1.name << endl;
   cout << "p2.name:" << p2.name << endl;
+
+	Person *p3 = new Person();
+	p3 -> name = "john";
+	cout << "p3的name" << p3->name << endl;
 }

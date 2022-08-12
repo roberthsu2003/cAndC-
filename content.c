@@ -22,7 +22,6 @@ int main() {
 
 
 
-
 #ifndef __PERSON_H__
 #define __PERSON_H__
 
@@ -48,6 +47,14 @@ public:
 	double bmi();
 };
 
+
+#endif
+
+
+
+
+#include "person.h"
+
 Person::Person(string name,int height, int weight){ //Person的建構式
 		_name = name;
 		_height = height;
@@ -70,7 +77,3 @@ int Person::height(){
 double Person::bmi(){		
 	return _weight / ((_height/100.0) * (_height/100.0));
 }
-
-
-
-#endif

@@ -1,52 +1,39 @@
-//tools.h
-
 #include <iostream>
-using namespace std;
-
-void division10(int *x,int num) {
-  for (int i = 0; i < num; i++) {
-    *(x + i) /= 10;
-  }
-}
-
-void multiply10(int x[],int num) {
-  for (int i = 0; i < num; i++) {
-    x[i] *= 10;
-  }
-}
-
-void print(int x[],int num) {
-  for (int i = 0; i < num; i++) {
-    cout << x[i] << "\t";
-  }
-  cout << endl;
-}
-
-
-//main.cpp
-#include <iostream>
-#include "tools.h"
 
 using namespace std;
+class Person {
+public:
+  string name;
+};
 
+Person changeName(Person p,string newName){ //call by value
+	p.name = newName;
+	return p;
+}
 
+void changeName1(Person& p,string newName){ //call by reference
+	p.name = newName;
+}
+
+void changeName2(Person *p,string newName){
+	p->name = newName;
+}
 int main() {
-  int num = 3;
-	//動態配置的記憶體空間allocate
-  int *n = new int[3];
-  *(n + 0) = 10;
-  *(n + 1) = 20;
-  *(n + 2) = 30;
-  print(n,num);
+  Person p1; //預設建構式
+  p1.name = "robert";
+	p1 = changeName(p1, "Professor Robert");
+	//changeName1(p1, "Professor Robert");
 
-  multiply10(n,num);
-  print(n,num);
-
-  division10(n,num);
-  print(n,num);
+  Person p2;
+  p2.name = "Ting";
+	//p2 = changeName(p2, "Doctor Ting");
+	changeName1(p2, "Doctor Ting");
 	
-	//動態配置的記憶體空間allocate,要用delete 手動刪除記憶體
-	delete [] n;	
+  cout << "p1.name:" << p1.name << endl;
+  cout << "p2.name:" << p2.name << endl;
 
-	
+	Person *p3 = new Person();
+	p3 -> name = "john";
+	changeName2(p3, "Hello John");
+	cout << "p3的name:" << p3->name << endl;
 }

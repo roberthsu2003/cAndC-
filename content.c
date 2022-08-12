@@ -1,24 +1,18 @@
 #include <iostream>
-#include "tools.h"
+
 using namespace std;
-using namespace Robert;
+class Person {
+public:
+  string name;
+};
+
 int main() {
-	int x = 10;
-	int y = 20;
-	int total = multiply(x, y);
-	cout << "total=" << total << endl;
+  Person p1; //預設建構式
+  p1.name = "robert";
+
+  Person p2;
+  p2.name = "Ting";
+
+  cout << "p1.name:" << p1.name << endl;
+  cout << "p2.name:" << p2.name << endl;
 }
-
-
-
-
-#ifndef __TOOLS_H__
-#define __TOOLS_H__ 
-namespace Robert{
-	int multiply(int a, int b){
-		return a * b;
-	}
-}
-
-
-#endif

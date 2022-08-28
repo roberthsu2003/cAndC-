@@ -1,23 +1,16 @@
+//直角三角型
+
 #include <stdio.h>
 
 int main(void) {
-  unsigned char chinese, english, math;
-  unsigned short sum;
-  float average;
-  printf("請輸入國文成績(0~100):");
-  scanf("%hhu", &chinese);
+  int x, y;
+  printf("請輸入x:");
+  scanf("%d", &x);
 
-  printf("請輸入英文成績(0~100):");
-  scanf("%hhu", &english);
+  printf("請輸入y:");
+  scanf("%d", &y);
 
-  printf("請輸入數學成績(0~100):");
-  scanf("%hhu", &math);
-
-  sum = chinese + english + math;
-  //強制轉換
-  //average = (float)sum / 3;
-	//自動轉換
-	average = sum / 3.0F;
-  printf("您的總分為:%u分,平均為%.2f\n", sum, average);
+  printf("直角三角型,2邊為%d公分,%d公分\n", x, y);
+  printf("斜邊為");
   return 0;
 }

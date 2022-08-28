@@ -10,6 +10,7 @@ int main(void) {
   scanf("%d", &y);
 
   printf("x=%d, y=%d\n", x, y);
+	printf("x+y=%d\n",x+y);
 
   return 0;
 }

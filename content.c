@@ -1,20 +1,12 @@
-//直角三角型
-
-#include <math.h>
 #include <stdio.h>
 
 int main(void) {
-  double x, y;
-  double z;
-  printf("請輸入x:");
-  scanf("%lf", &x);
+  const char *name;
+  name = "徐國堂";
+  printf("我的姓名是:%s\n", name);
 
-  printf("請輸入y:");
-  scanf("%lf", &y);
-
-  z = sqrt(pow(x, 2) + pow(y, 2));
-
-  printf("直角三角型,2邊為%.2f公分,%.2f公分\n", x, y);
-  printf("斜邊為%.2f\n",z);
+  printf("請輸入您的新姓名:");
+  scanf("%s", &name);
+  printf("我的新姓名是:%s\n", name);
   return 0;
 }

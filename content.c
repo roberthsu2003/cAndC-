@@ -1,14 +1,21 @@
 #include <stdio.h>
 
 int main(void) {
-  //計算圓面積
-	double PI = 3.141592653;
-	int radius;
-	int area;
-	printf("請輸入半徑:");
-	scanf("%d",&radius);
-	//數值型別的自動轉換
-	area = radius * radius * PI;
-	printf("圓面積=%d\n",area);
+  unsigned char chinese, english, math;
+  unsigned short sum;
+  float average;
+  printf("請輸入國文成績(0~100):");
+  scanf("%hhu", &chinese);
+
+  printf("請輸入英文成績(0~100):");
+  scanf("%hhu", &english);
+
+  printf("請輸入數學成績(0~100):");
+  scanf("%hhu", &math);
+
+  sum = chinese + english + math;
+  //強制轉換
+  average = (float)sum / 3;
+  printf("您的總分為:%u分,平均為%.2f\n", sum, average);
   return 0;
 }

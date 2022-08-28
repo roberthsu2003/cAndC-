@@ -2,9 +2,14 @@
 
 int main(void) {
   int x;
-  printf("x變數的記憶體位址是%x\n", &x);
+  printf("請輸入x的值:");
+  scanf("%d", &x);
 
   int y;
-  printf("x變數的記憶體位址是%x\n", &y);
+  printf("請輸入y的值:");
+  scanf("%d", &y);
+
+  printf("x=%d, y=%d\n", x, y);
+
   return 0;
 }

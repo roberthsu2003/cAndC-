@@ -1,16 +1,9 @@
 #include <stdio.h>
 
 int main(void) {
-  int x;
-  printf("請輸入x的值:");
-  scanf("%d", &x);
-
-  int y;
-  printf("請輸入y的值:");
-  scanf("%d", &y);
-
-  printf("x=%d, y=%d\n", x, y);
-	printf("x+y=%d\n",x+y);
-
+  char a1 = 'z';
+  printf("a1的內容是%c\n", a1);
+  unsigned char a2 = 255;
+  printf("a2的內容是%u\n", a2);
   return 0;
 }

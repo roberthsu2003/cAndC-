@@ -1,8 +1,14 @@
 #include <stdio.h>
 
 int main(void) {
-  double sum;
-  sum = 2 + 3.5F;
-  printf("sum=%.1f\n", sum);
+  //計算圓面積
+	double PI = 3.141592653;
+	int radius;
+	double area;
+	printf("請輸入半徑:");
+	scanf("%d",&radius);
+	//數值型別的自動轉換
+	area = radius * radius * PI;
+	printf("圓面積=%.2f\n",area);
   return 0;
 }

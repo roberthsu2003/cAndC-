@@ -2,14 +2,9 @@
 
 int main(void) {
   int x;
-  x = 20;
+  printf("x變數的記憶體位址是%x\n", &x);
 
   int y;
-  y = 50;
-
-  int total;
-  total = x + y;
-
-  printf("%d + %d = %d\n", x, y, total);
+  printf("x變數的記憶體位址是%x\n", &y);
   return 0;
 }

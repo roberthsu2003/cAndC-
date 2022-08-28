@@ -55,6 +55,7 @@ int main(void) {
 |%hhu  | unsigned char |
 |%c  | 輸出字元 |
 |%f  | 輸出實數(浮點數) |
+|%lf | double |
 |%o  | 輸出八進位 |
 |%s  | 輸出字串 |
 |%x  | 輸出十六進位 |

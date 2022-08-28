@@ -15,7 +15,9 @@ int main(void) {
 
   sum = chinese + english + math;
   //強制轉換
-  average = (float)sum / 3;
+  //average = (float)sum / 3;
+	//自動轉換
+	average = sum / 3.0F;
   printf("您的總分為:%u分,平均為%.2f\n", sum, average);
   return 0;
 }

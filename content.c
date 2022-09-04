@@ -1,20 +1,22 @@
 #include <iostream>
-using namespace std;
-//學生符合加分條件就加5%分,如果超過300分,就以300為主。
-int main() {
-	int scores;
-	bool add;
-	cout << "請輸入學生分數(滿分300):";
-	cin >> scores;
-	cout << "學生符合加分條件嗎?yes請輸入1,no請輸入0:";
-	cin >> add;
-	if (add){
-		//加分
-		scores *= 1.05;
-		if(scores > 300){
-			scores = 300;
-		}
-	}
+//讓使用者輸入成績, 若成績在90分以上就顯示「優等」,
+// 80-89分顯示「甲等」，70-79分顯示「乙等」，60-69分顯示「丙等」，60分以下顯示「丁等」。
 
-	cout << "學生分數是:" << scores << endl;	
+using namespace std;
+int main() {
+  int scores;
+  cout << "請輸入學生分數:";
+  cin >> scores;
+
+  if (scores >= 90) {
+    cout << "優等" << endl;
+  } else if (scores >= 80) {
+    cout << "甲等" << endl;
+  } else if (scores >= 70) {
+    cout << "乙等" << endl;
+  } else if (scores >= 60) {
+    cout << "丙等" << endl;
+  } else {
+    cout << "丁等" << endl;
+  }
 }

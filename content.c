@@ -1,9 +1,16 @@
-#include <stdio.h>
+#include <iostream>
 
-int main(void) {
-  char name[20];
-  printf("請輸入姓名:");
-  scanf("%s", name);
-  printf("您的姓名是:%s\n", name);
-  return 0;
+using namespace std;
+int main() {
+  string name = "robert";
+  const char *name1 = "jenny";
+  int scores = 357;
+
+  // c++的輸出
+  cout << "姓名:" << name << endl;
+  cout << "姓名1:" << name1 << endl;
+  cout << "分數是:" << scores << endl;
+  // c的輸出
+  printf("姓名1:%s", name1);
+  printf("分數:%d\n", scores);
 }

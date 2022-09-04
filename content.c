@@ -1,24 +1,30 @@
-//國文100同時數學100,獎金1000
-//國文100或者數學100,獎金500
 #include <iostream>
-
 using namespace std;
 
 int main() {
-  int chinese;
-  int math;
-  int bonus;
-  cout << "請輸入國文成績和數學成績(國文 數學):";
-  //使用cin一次輸入2個值
-  cin >> chinese >> math;
+  int num1 = 20;
+  int num2 = 4;
+  char op;
+  cout << "請輸入要執行的運算(+,-,*,/):";
+  cin >> op;
+  switch (op) {
+  case '+':
+    cout << "num1 + num2 = " << num1 + num2 << endl;
+    break;
 
-  if (chinese == 100 && math == 100) {
-    bonus = 1000;
-  } else if (chinese == 100 || math == 100) {
-    bonus = 500;
-  } else {
-    bonus = 0;
+  case '-':
+    cout << "num1 - num2 = " << num1 - num2 << endl;
+    break;
+
+  case '*':
+    cout << "num1 * num2 = " << num1 * num2 << endl;
+    break;
+
+  case '/':
+    cout << "num1 / num2 = " << num1 / num2 << endl;
+    break;
+
+  default:
+    cout << "無法執行運算" << endl;
   }
-
-  cout << "獎金是:" << bonus << endl;
 }

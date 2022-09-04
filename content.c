@@ -1,15 +1,20 @@
 #include <iostream>
-//請使用者輸入成績，若成績大於等於60分，則顯示及格，否則顯示不及格。
 using namespace std;
-
+//學生符合加分條件就加5%分,如果超過300分,就以300為主。
 int main() {
-	int score;
-	cout << "請輸入成績:";
-	cin >> score;
-
-	if(score >= 60){
-		cout << "及格" << endl;
-	}else{
-		cout << "不及格" << endl;
+	int scores;
+	bool add;
+	cout << "請輸入學生分數(滿分300):";
+	cin >> scores;
+	cout << "學生符合加分條件嗎?yes請輸入1,no請輸入0:";
+	cin >> add;
+	if (add){
+		//加分
+		scores *= 1.05;
+		if(scores > 300){
+			scores = 300;
+		}
 	}
+
+	cout << "學生分數是:" << scores << endl;	
 }

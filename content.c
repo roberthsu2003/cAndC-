@@ -10,10 +10,12 @@ int main() {
     cin >> score;
     if (score < 0) {
       break;
-    }
+    }else if (score > 100){
+			continue;
+		}
     sum += score;
     num += 1;
-  };
+  }
 
   cout << "學生總成績是:" << sum << endl;
   cout << "學生的平均成績是:" << sum / num << endl;

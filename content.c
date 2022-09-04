@@ -1,23 +1,16 @@
-#//輸入顧客購買金額，若金額在100000元打8折，50000打85折，30000打9折，10000打95折
+//國文100同時數學100,獎金1000
+//國文100或者數學100,獎金500
 #include <iostream>
 
 using namespace std;
 
 int main() {
-	int money,payMoney;
-	cout << "請輸入購買金額:";
-	cin >> money;
-	if(money >= 100000){
-		payMoney = money * 0.8;
-	}else if(money >= 50000){
-		payMoney = money * 0.85;
-	}else if(money >= 30000){
-		payMoney = money * 0.9;
-	}else if(money >= 10000){
-		payMoney = money * 0.95;
-	}else{
-		payMoney = money;
-	}
+  int chinese;
+  int math;
+  cout << "請輸入國文成績和數學成績(國文,數學):";
+  //使用scanf一次輸入2個值
+  scanf("%d,%d", &chinese, &math);
 
-	cout << "實付金額是:" << payMoney << "元\n";
+  cout << "國文:" << chinese << endl;
+  cout << "數學:" << math << endl;
 }

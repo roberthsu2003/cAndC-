@@ -2,16 +2,14 @@
 #include <iostream>
 using namespace std;
 int main() {
-  int score;
+  int score = 0;
   int sum = 0;
-  cout << "請輸入學生成績:";
-  cin >> score;
 
-  while (score >= 0) {
-    sum += score;
+  do {
     cout << "請輸入學生成績:";
+    sum += score;
     cin >> score;
-  }
+  } while (score >= 0);
 
   cout << "學生總成績是:" << sum << endl;
 }

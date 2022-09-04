@@ -3,13 +3,18 @@
 using namespace std;
 int main() {
   int score = 0;
-  int sum = 0;
-
-  do {
-    cout << "請輸入學生成績:";
-    sum += score;
+  float sum = 0;
+  int num = 0;
+  while (true) {
+    cout << "請輸入第" << num + 1 << "學生成績:";
     cin >> score;
-  } while (score >= 0);
+    if (score < 0) {
+      break;
+    }
+    sum += score;
+    num += 1;
+  };
 
   cout << "學生總成績是:" << sum << endl;
+  cout << "學生的平均成績是:" << sum / num << endl;
 }

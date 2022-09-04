@@ -1,18 +1,15 @@
-//讓使用者輸入梯形的上底、下底及高，程式會計算梯形的面積(上底加下底乘以高除以2)
 #include <iostream>
-
+//請使用者輸入成績，若成績大於等於60分，則顯示及格，否則顯示不及格。
 using namespace std;
 
 int main() {
-  float top, bottom, height, area;
-  cout << "請輸入梯形的上底(公分):";
-  cin >> top;
-  cout << "請輸入梯形的下底(公分):";
-  cin >> bottom;
-  cout << "請輸入梯形的高(公分):";
-  cin >> height;
+	int score;
+	cout << "請輸入成績:";
+	cin >> score;
 
-  area = (top + bottom) * height / 2;
-  // cout << "梯形的面積:" << area << "平方公分\n";
-  printf("梯形的面積:%.2f\n", area);
+	if(score >= 60){
+		cout << "及格" << endl;
+	}else{
+		cout << "不及格" << endl;
+	}
 }

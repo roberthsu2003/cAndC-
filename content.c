@@ -1,16 +1,13 @@
+//讓使用者輸入被除數(整數)及除數(整數，不可以是零)，程式會顯示兩數相除的商及餘數。
 #include <iostream>
 
 using namespace std;
 int main() {
-  string name = "robert";
-  const char *name1 = "jenny";
-  int scores = 357;
+  int n = 0, m = 0;
+  cout << "請輸入被除數(整數):";
+  cin >> n;
+  cout << "請輸入除數(整數,不可以為0):";
+  cin >> m;
 
-  // c++的輸出
-  cout << "姓名:" << name << endl;
-  cout << "姓名1:" << name1 << endl;
-  cout << "分數是:" << scores << endl;
-  // c的輸出
-  printf("姓名1:%s", name1);
-  printf("分數:%d\n", scores);
+  cout << "商" << n / m << "餘數是:" << n % m << endl;
 }

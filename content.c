@@ -1,22 +1,21 @@
-//小美是一位教師，請你以while迴圈方式為小美設計一個輸入成績的程式，如果輸入負數表示成績輸入結束，在輸入成績結束後顯示班上總成績及平均成績。
+//請設計一個程式，讓使用者輸入數值，只有加總正偶數值，不加總正奇數值，如果輸入負數，結束程式。
 #include <iostream>
 using namespace std;
 int main() {
-  int score = 0;
-  float sum = 0;
-  int num = 0;
-  while (true) {
-    cout << "請輸入第" << num + 1 << "學生成績:";
-    cin >> score;
-    if (score < 0) {
-      break;
-    }else if (score > 100){
+	int num = 0;
+	int inputNum;
+	int sum = 0;
+	while(true){
+		num += 1;
+		cout << "請輸入第" << num << "個數值:";
+		cin >> inputNum;
+		if(inputNum < 0){
+			break;
+		}else if(inputNum % 2 == 1){
 			continue;
 		}
-    sum += score;
-    num += 1;
-  }
+		sum += inputNum;		
+	}
 
-  cout << "學生總成績是:" << sum << endl;
-  cout << "學生的平均成績是:" << sum / num << endl;
+	cout << "所有輸入的正偶數的加總是:" << sum << endl;
 }

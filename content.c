@@ -2,6 +2,19 @@
 #include <time.h>
 using namespace std;
 
+void sorted(int arr[], int nums) {
+  for (int f = 0; f < nums - 1; f++) {
+    for (int b = f + 1; b < nums; b++) {
+      if (arr[f] > arr[b]) {
+        // 2數對調
+        int temp = arr[f];
+        arr[f] = arr[b];
+        arr[b] = temp;
+      }
+    }
+  }
+}
+
 int get_number() { return random() % (100 - 1 + 1) + 1; }
 
 int main() {
@@ -16,21 +29,11 @@ int main() {
     cout << array[i] << "\t";
   }
   cout << endl;
-  //前面的索引
-  for (int f = 0; f < nums - 1; f++) {
-    for (int b = f + 1; b < nums; b++) {
-			if(array[f] > array[b]){
-				//2數對調
-				int temp = array[f];
-				array[f] = array[b];
-				array[b] = temp;
-			}
-    }
-  }
-	cout << "排序後:" << endl;
-  for (int i = 0; i < nums; i++) {    
+  //呼叫排序
+  sorted(array, nums);
+  cout << "由小到大的排序後:" << endl;
+  for (int i = 0; i < nums; i++) {
     cout << array[i] << "\t";
   }
   cout << endl;
-	
 }

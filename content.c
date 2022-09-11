@@ -2,31 +2,20 @@
 #include <time.h>
 using namespace std;
 
-int get_score() { 
-	return random() % (100 - 50 + 1) + 50; 
+int get_number(){
+	return random() % (100-1+1) + 1;
 }
 
 int main() {
-  srandom(time(NULL));
-  int stu_nums;
-  int sub_nums;
-  cout << "請輸入學生人數:";
-  cin >> stu_nums;
-  cout << "請輸入科目數:";
-  cin >> sub_nums;
-	//2維陣列
-  int students[stu_nums][sub_nums];
-	int scores[stu_nums];		
-  for (int i = 0; i < stu_nums; i++) {
-    cout << "第" << i + 1 << "位學生:\t";
-		int total = 0;
-    for (int j = 0; j < sub_nums; j++) {			
-      students[i][j] = get_score();
-			total += students[i][j];
-      cout << students[i][j] << "\t";
-    }
-		scores[i] = total;
-		cout << scores[i] << "\t";
-    cout << endl;
-  }
+	srandom(time(NULL));
+	int nums;
+	cout << "請輸入要排序的數值個數:";
+	cin >> 	nums;
+	int array[nums];
+	cout << "排序前:" << endl;
+	for(int i=0; i<nums; i++){
+		array[i] = get_number();
+		cout << array[i] << "\t";
+	}
+	cout << endl;
 }

@@ -1,15 +1,19 @@
 #include <iostream>
+#include <time.h>
+
 using namespace std;
 
-int main() {
-	int stu1[5];
-	stu1[0] = 78;
-	stu1[1] = 97;
-	stu1[2] = 65;
-	stu1[3] = 59;
-	stu1[4] = 85;
+int get_score() { 
+	return random() % (100 - 50 + 1) + 50; 
+}
 
-	for(int i=0;i < 5;i++){
-		cout << "stu1[" << i << "]的值是" << stu1[i] << endl;
-	}
+int main() {
+  srandom(time(NULL));
+  int score_num = 5;
+  int scores[score_num];
+
+  for (int i = 0; i < score_num; i++) {
+    scores[i] = get_score();
+    cout << "scores[" << i << "]的值是" << scores[i] << endl;
+  }
 }

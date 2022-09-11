@@ -9,10 +9,12 @@ int get_score() {
 
 int main() {
   srandom(time(NULL));
+	int stu_num = 50;
   int score_num = 5;
-  int scores[score_num];
+	int total_nums = stu_num * score_num;
+  int scores[total_nums];
 
-  for (int i = 0; i < score_num; i++) {
+  for (int i = 0; i < total_nums; i++) {
     scores[i] = get_score();
     cout << "scores[" << i << "]的值是" << scores[i] << endl;
   }

@@ -1,14 +1,13 @@
 #include <iostream>
-float temperature(int value){
-	return 1.8 * value + 32;
+using namespace std;
+
+int fun1(int x){
+	return x*x + 2*x + 1;
 }
 
-using namespace std;
 int main() {
-	int celsius;
-	float result;
-	cout << "請輸入攝氏溫度:";
-	cin >> celsius;
-	result = temperature(celsius);
-	cout << "華氏溫度是" << result << endl;
+	for(int i=0; i<=10; i++){
+		int result = fun1(i);
+		cout << "如果x=" << i << "得到的值是" << result << endl;
+	}
 }

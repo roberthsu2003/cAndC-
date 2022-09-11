@@ -24,6 +24,13 @@ void sorted(int arr[], int nums, bool small) {
   }
 }
 
+void printArray(int arr[], int nums){
+	for (int i = 0; i < nums; i++) {
+    cout << arr[i] << "\t";
+  }
+	cout << endl;
+}
+
 int get_number() { return random() % (100 - 1 + 1) + 1; }
 
 int main() {
@@ -32,24 +39,18 @@ int main() {
   cout << "請輸入要排序的數值個數:";
   cin >> nums;
   int array[nums];
-  cout << "排序前:" << endl;
-  for (int i = 0; i < nums; i++) {
-    array[i] = get_number();
-    cout << array[i] << "\t";
+	for (int i = 0; i < nums; i++) {
+    array[i] = get_number();    
   }
-  cout << endl;
+  cout << "排序前:" << endl;  
+	printArray(array, nums);
+  
   //呼叫排序
-  sorted(array, nums, true);
-  cout << "由小到大的排序後:" << endl;
-  for (int i = 0; i < nums; i++) {
-    cout << array[i] << "\t";
-  }
-	cout << endl;
+	cout << "由小到大的排序後:" << endl;
+  sorted(array, nums, true);  
+  printArray(array, nums);
+	
   cout << "由大到小的排序後:" << endl;
   sorted(array, nums, false);
-  for (int i = 0; i < nums; i++) {
-    cout << array[i] << "\t";
-  }
-
-  cout << endl;
+  printArray(array, nums);
 }

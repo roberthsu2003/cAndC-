@@ -1,5 +1,6 @@
+tools.h
+
 #include <iostream>
-#include <time.h>
 using namespace std;
 
 void sorted(int arr[], int nums, bool small) {
@@ -31,7 +32,18 @@ void printArray(int arr[], int nums){
 	cout << endl;
 }
 
-int get_number() { return random() % (100 - 1 + 1) + 1; }
+
+
+main.cpp
+
+#include <iostream>
+#include <time.h>
+#include "tools.h"
+using namespace std;
+
+int get_number() { 
+	return random() % (100 - 1 + 1) + 1; 
+}
 
 int main() {
   srandom(time(NULL));

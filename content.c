@@ -32,37 +32,27 @@ void printArray(int arr[], int nums){
 	cout << endl;
 }
 
+void random_value(int arr[], int nums){
+	for(int i=0; i<nums; i++){
+		arr[i] = random() % (100-1+1) + 1;
+	}
+}
 
 
 main.cpp
 
 #include <iostream>
-#include <time.h>
 #include "tools.h"
+#include <time.h>
+
 using namespace std;
-
-int get_number() { 
-	return random() % (100 - 1 + 1) + 1; 
-}
-
 int main() {
-  srandom(time(NULL));
-  int nums;
-  cout << "請輸入要排序的數值個數:";
-  cin >> nums;
-  int array[nums];
-	for (int i = 0; i < nums; i++) {
-    array[i] = get_number();    
-  }
-  cout << "排序前:" << endl;  
-	printArray(array, nums);
-  
-  //呼叫排序
-	cout << "由小到大的排序後:" << endl;
-  sorted(array, nums, true);  
-  printArray(array, nums);
-	
-  cout << "由大到小的排序後:" << endl;
-  sorted(array, nums, false);
-  printArray(array, nums);
+	srandom(time(NULL));
+	int a[10];
+	random_value(a,10);
+	cout << "排序前:" << endl;
+	printArray(a, 10);
+	cout << "排序後:" << endl;	
+	sorted(a,10,true);
+	printArray(a, 10);
 }

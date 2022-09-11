@@ -16,12 +16,17 @@ int main() {
   cin >> sub_nums;
 	//2維陣列
   int students[stu_nums][sub_nums];
+	int scores[stu_nums];		
   for (int i = 0; i < stu_nums; i++) {
     cout << "第" << i + 1 << "位學生:\t";
-    for (int j = 0; j < sub_nums; j++) {
+		int total = 0;
+    for (int j = 0; j < sub_nums; j++) {			
       students[i][j] = get_score();
+			total += students[i][j];
       cout << students[i][j] << "\t";
     }
+		scores[i] = total;
+		cout << scores[i] << "\t";
     cout << endl;
   }
 }

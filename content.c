@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void) {
-  printf("Hello c語言\n");
-	printf("這是我學習C語言的第一個程式\n");	
+  printf("我的國文成績是%d\n",89);
+	printf("我的英文成績是%d\n",92);	
   return 0;
 }

@@ -1,6 +1,12 @@
 #include <stdio.h>
 
 int main(void) {
-  printf("%d+%d=%d\n",78,22,78+22);
+  int x;
+	x = 78;
+
+	int y;
+	y = 22;
+
+	printf("%d+%d=%d\n",x,y,x+y);
   return 0;
 }

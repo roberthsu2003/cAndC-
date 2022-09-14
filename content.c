@@ -1,7 +1,7 @@
-#include <stdio.h>
+#include <iostream>
 
-int main(void) {
-  int i;
+int main() {
+	int i;
   printf("請輸入i的值:");
   scanf("%d", &i);
 

@@ -1,11 +1,18 @@
 #include <iostream>
 using namespace std;
-int main() {
-  //使用c++的輸入和輸出
-  int i;
-  cout << "請輸入i的值:";
-  cin >> i;  
 
-  cout << "i的值為" << i << endl;
-  return 0;
+int main() {
+	int chinese,english,math;
+	int sum;
+	cout << "請輸入國文成績:";
+	cin >> chinese;
+	cout << "請輸入英文成績:";
+	cin >> english;
+	cout << "請輸入數學成績:";
+	cin >> math;
+
+	sum = chinese + english + math;
+	cout << "總分為:" << sum;
+	printf(",平均為%.2f\n", sum/3.0);
+	
 }

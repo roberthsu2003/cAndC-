@@ -1,18 +1,17 @@
 #include <iostream>
 using namespace std;
-
 int main() {
-	int chinese,english,math;
-	int sum;
-	cout << "請輸入國文成績:";
-	cin >> chinese;
-	cout << "請輸入英文成績:";
-	cin >> english;
-	cout << "請輸入數學成績:";
-	cin >> math;
+	short s = 100;
+	cout << "s=" << s << endl;
+	int i = 100;
+	cout << "i=" << i << endl;
+	long long int l = 100;
+	cout << "l=" << l << endl;
 
-	sum = chinese + english + math;
-	cout << "總分為:" << sum;
-	printf(",平均為%.2f\n", sum/3.0);
-	
+	float f = 3.14;
+	cout << "f=" << f << endl;
+
+	double d = 3.1415962;
+	//cout << "d=" << d << endl;
+	printf("d=%.7f\n", d);
 }

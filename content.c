@@ -1,15 +1,13 @@
 #include <iostream>
 using namespace std;
-
 int main() {
-	char characterB;
-	characterB = 65;
-	cout << characterB << endl;
-	printf("%d\n",characterB);
+	string name;	
+	cout << "請輸入姓名:";
+	cin >> name;
+	cout << "您的姓名是:" << name << endl;
 
-
-	char characterA;
-	characterA = 'A';
-	cout << characterA << endl;
-	printf("%d\n",characterA);
+	const char *smallName = "robert";
+	cout << "您的小名是" << smallName << endl;
+	
+	
 }

@@ -1,10 +1,11 @@
 #include <iostream>
-
+using namespace std;
 int main() {
-	int i;
-  printf("請輸入i的值:");
-  scanf("%d", &i);
+  //使用c++的輸入和輸出
+  int i;
+  cout << "請輸入i的值:";
+  cin >> i;  
 
-  printf("i的值為%d\n", i);
+  cout << "i的值為" << i << endl;
   return 0;
 }

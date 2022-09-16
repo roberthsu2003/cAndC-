@@ -1,23 +1,5 @@
 #include <iostream>
-//讓使用者輸入三個任意數，程式會顯示三數中的最大數。
-//三元運算子
 using namespace std;
-int main() {
-	int in1,in2,in3,max;
-  cout << "請輸入第一個數:";
-	cin >> 	in1;
-
-	cout << "請輸入第二個數:";
-	cin >> 	in2;
-
-	max = in1 > in2 ? in1 : in2;
-
-	cout << "請輸入第三個數:";
-	cin >> in3;
-	
-	max = max > in3 ? max : in3;
-
-	cout << "輸入三個數中最大的數為:" << max << "\n";
-	return 0;
-	
-}
+//讓使用者輸入成績, 若成績在90分以上就顯示「優等」,
+//80-89分顯示「甲等」，70-79分顯示「乙等」，60-69分顯示「丙等」，60分以下顯示「丁等」。
+int main() {}

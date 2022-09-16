@@ -1,13 +1,23 @@
 #include <iostream>
-//試用if-else敘述，選寫一個判斷輸入的數字為奇數或偶數的程式
+//讓使用者輸入三個任意數，程式會顯示三數中的最大數。
+//三元運算子
 using namespace std;
 int main() {
-  int values;
-  cout << "請輸入一個數值:";
-  cin >> values;
-  if (values % 2 == 0) {
-    cout << "偶數" << endl;
-  } else {
-    cout << "奇數" << endl;
-  }
+	int in1,in2,in3,max;
+  cout << "請輸入第一個數:";
+	cin >> 	in1;
+
+	cout << "請輸入第二個數:";
+	cin >> 	in2;
+
+	max = in1 > in2 ? in1 : in2;
+
+	cout << "請輸入第三個數:";
+	cin >> in3;
+	
+	max = max > in3 ? max : in3;
+
+	cout << "輸入三個數中最大的數為:" << max << "\n";
+	return 0;
+	
 }

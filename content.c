@@ -1,27 +1,33 @@
-//試用巢狀的if-else敘述，撰寫一個可以判斷輸入數字為正負數以及奇偶數的的程式
+//讓使用者輸入加、減、乘、除運算子, 就會顯示運算結果
+//比對值是否相等
+
 #include <iostream>
-
 using namespace std;
-
 int main() {
-  int values;
-  string message;
-  cout << "請輸入數字:";
-  cin >> values;
-  if (values >= 0) {
-    if (values % 2 == 0) {
-      message = "正偶數";
-    } else {
-			message = "正偶數";
-    }
+	char op;
+	int num1=20,num2=4;
+	cout << "請輸入要執行的運算(+,-,*,/):";
+	cin >> op;
 
-  } else {
-    if (values % 2 == 0) {
-			message = "正偶數";
-    } else {
-			message = "正偶數";
-    }
-  }
+	switch(op){
+		case '+':
+		cout << "num1+num2=" << num1 + num2 << endl;
+		break;
 
-	cout << "您輸入的" << values << "是" << message << endl;	
+		case '-':
+		cout << "num1-num2=" << num1 - num2 << endl;
+		break;
+
+		case '/':
+		cout << "num1/num2=" << num1 / num2 << endl;
+		break;
+
+		case '*':
+		cout << "num1*num2=" << num1 * num2 << endl;
+		break;
+
+		default:
+		cout << "無法執行運算!" << endl;
+	}
+	
 }

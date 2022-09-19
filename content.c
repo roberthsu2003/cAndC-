@@ -1,23 +1,27 @@
-// 2個以上的條件
-//巢狀判斷
-//國文100同時數學100,獎金1000
-//國文100或者數學100,獎金500
-
+//試用巢狀的if-else敘述，撰寫一個可以判斷輸入數字為正負數以及奇偶數的的程式
 #include <iostream>
+
 using namespace std;
-int main() { 
-	int chinese, math;
-	int bonus;
-	cout << "請輸入國文成績和數學成績(國文 數學):";
-	cin >> chinese >> math;
 
-	if(chinese == 100 && math == 100){
-		bonus = 1000;
-	}else if (chinese == 100 || math == 100){
-		bonus = 500;
-	}else{
-		bonus = 0;
-	}
+int main() {
+  int values;
+  string message;
+  cout << "請輸入數字:";
+  cin >> values;
+  if (values >= 0) {
+    if (values % 2 == 0) {
+      message = "正偶數";
+    } else {
+			message = "正偶數";
+    }
 
-	cout << "獎金是" << bonus << endl;
+  } else {
+    if (values % 2 == 0) {
+			message = "正偶數";
+    } else {
+			message = "正偶數";
+    }
+  }
+
+	cout << "您輸入的" << values << "是" << message << endl;	
 }

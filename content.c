@@ -7,7 +7,12 @@ int main() {
 	int money;
 	int total=0;
 	for(int i=1; i<=7; i++){
-		cout << "請輸入星期" << i << "的支出:";
+		if(i == 7){
+			cout << "請輸入星期日的支出:";
+		}else{
+			cout << "請輸入星期" << i << "的支出:";
+		}
+		
 		cin >> 	money;
 		total += money;
 	}

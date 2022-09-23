@@ -1,14 +1,14 @@
 #include <iostream>
-
 using namespace std;
-
-int fun1(int x) { 
-	return x * x + 2 * x + 1; 
+int figure(int x, int y) { 
+	return x * x * x + 3 * x * x * y + 3*x*y*y + y*y*y; 
 }
 
-int main() { 
-	for(int i=0; i<=10; i++){
-		int result = fun1(i);
-		cout << "如果x=" << i << "得到的值是" << result << endl;
-	} 
+int main() {
+  for (int i = 1; i <= 4; i++) {
+    for (int j = 1; j <= 4; j++) {
+      int result = figure(i, j);
+      cout << "x=" << i << ",y=" << j << "得到的結果是:" << result << endl;
+    }
+  }
 }

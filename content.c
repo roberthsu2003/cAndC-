@@ -1,14 +1,17 @@
 #include <iostream>
 using namespace std;
-int figure(int x, int y) { 
-	return x * x * x + 3 * x * x * y + 3*x*y*y + y*y*y; 
-}
 
 int main() {
-  for (int i = 1; i <= 4; i++) {
-    for (int j = 1; j <= 4; j++) {
-      int result = figure(i, j);
-      cout << "x=" << i << ",y=" << j << "得到的結果是:" << result << endl;
-    }
-  }
+  int numbers[5];
+  numbers[0] = 78;
+  numbers[1] = 85;
+  numbers[2] = 92;
+  numbers[3] = 83;
+  numbers[4] = 64;
+
+  cout << numbers[0] << " ";
+  cout << numbers[1] << " ";
+  cout << numbers[2] << " ";
+  cout << numbers[3] << " ";
+  cout << numbers[4] << endl;
 }

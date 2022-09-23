@@ -11,7 +11,12 @@ int main() {
 
 	for(int i=0; i<totals; i++){
 		scores[i] = random() % (100-50+1) + 50;
-		cout << scores[i] << " ";
 	}
-	cout << endl;
+
+	for(int i=0; i<students; i++){
+		for(int j=0; j<subjects; j++){
+			cout << scores[i*subjects + j] << " ";
+		}
+		cout << endl;
+	}	
 }

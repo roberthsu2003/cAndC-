@@ -1,6 +1,3 @@
-#include <iostream>
-using namespace std;
-
 int main() {
   int numbers[5];
   numbers[0] = 78;
@@ -9,9 +6,7 @@ int main() {
   numbers[3] = 83;
   numbers[4] = 64;
 
-  cout << numbers[0] << " ";
-  cout << numbers[1] << " ";
-  cout << numbers[2] << " ";
-  cout << numbers[3] << " ";
-  cout << numbers[4] << endl;
-}
+  for(int i=0; i<5; i++){
+		cout << numbers[i] << " ";
+	}
+	cout << endl;

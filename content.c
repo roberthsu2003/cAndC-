@@ -3,18 +3,15 @@
 using namespace std;
 
 int main() {
-  srandom(time(NULL));
-  int num;
-  cout << "請輸入學生數:";
-  cin >> num;
-  int numbers[num];
-	
-  for (int i = 0; i < num; i++) {
-    numbers[i] = random() % (100 - 50 + 1) + 50;
-  }
+	srandom(time(NULL));
+	int students = 50;
+	int subjects = 5;
+	int totals = students * subjects;
+	int scores[totals];
 
-  for (int i = 0; i < num; i++) {
-    cout << numbers[i] << " ";
-  }
-  cout << endl;
+	for(int i=0; i<totals; i++){
+		scores[i] = random() % (100-50+1) + 50;
+		cout << scores[i] << " ";
+	}
+	cout << endl;
 }

@@ -10,6 +10,35 @@ void printArray(int n[], int elements) {
   cout << endl;
 }
 
+void sorted(int n[], int elements) {
+  //泡沫排序法
+  int temp;
+  for (int i = 0; i < elements - 1; i++) {
+    for (int j = i + 1; j < elements; j++) {
+      if (n[i] > n[j]) {
+        temp = n[i];
+        n[i] = n[j];
+        n[j] = temp;
+      }
+    }
+  }
+}
+
+
+void sorted1(int n[], int elements) {
+  //泡沫排序法
+  int temp;
+  for (int i = 0; i < elements - 1; i++) {
+    for (int j = i + 1; j < elements; j++) {
+      if (n[i] < n[j]) {
+        temp = n[i];
+        n[i] = n[j];
+        n[j] = temp;
+      }
+    }
+  }
+}
+
 int main() {
   srandom(time(NULL));
   int nums;
@@ -23,18 +52,11 @@ int main() {
   cout << "排序前" << endl;
   printArray(array, nums);
 
-  //泡沫排序法
-  int temp;
-  for (int i = 0; i < nums - 1; i++) {
-    for (int j = i + 1; j < nums; j++) {
-      if (array[i] > array[j]) {
-        temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-      }
-    }
-  }
-
+  sorted(array, nums);
   cout << "排序後" << endl;
   printArray(array, nums);
+
+	sorted1(array,nums);
+	cout << "排序後" << endl;
+	printArray(array, nums);
 }

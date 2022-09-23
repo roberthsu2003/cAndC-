@@ -22,7 +22,8 @@ int main() {
   for (int i = 0; i < 250; i++) {
     nums[i] = random() % (50 - 1 + 1) + 1;
   }
-  cout << "請輸入搜尋的數字(1~50):";
-  cin >> keyin;
-  search(nums, 250, keyin);
+
+	for(int i=1; i<=50; i++){
+		search(nums,250,i);
+	}
 }

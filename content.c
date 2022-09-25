@@ -27,5 +27,14 @@ void generateLot(){
 
 int main() {
   srandom(time(NULL));
-  generateLot();
+	int groups;
+	cout << "請輸大樂透電腦選號組數:";
+	cin >> groups;
+
+	for(int i=0; i<groups; i++){
+		cout << "第" << i+1 << "組:\n";
+		generateLot();
+		cout << "=====================\n";
+	}
+  
 }

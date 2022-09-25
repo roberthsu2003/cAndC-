@@ -2,9 +2,8 @@
 #include <time.h>
 using namespace std;
 
-int main() {
-  srandom(time(NULL));
-  int lot[49];
+void generateLot(){
+	int lot[49];
 
   for (int i = 0; i < 49; i++) {
     lot[i] = i + 1;
@@ -24,4 +23,9 @@ int main() {
   }
   cout << endl;
 	cout << "特別號:" << choose[num-1] << endl;
+}
+
+int main() {
+  srandom(time(NULL));
+  generateLot();
 }

@@ -2,26 +2,22 @@
 #include <time.h>
 using namespace std;
 
-void search_array(int n[],int elements,int value){	
-  int repeation = 0;
+void print_array(int n[], int elements) {
   for (int i = 0; i < elements; i++) {
-    if (n[i] == value) {
-      repeation += 1;
-    }
+    cout << n[i] << " ";
   }
-  cout << value << "的數量有" << repeation << endl;
+  cout << endl;
 }
 
 int main() {
   srandom(time(NULL));
-  int elements = 200;
+  int elements;
+  cout << "請輸入陣列元素的數量:";
+  cin >> elements;
   int arr[elements];
   for (int i = 0; i < elements; i++) {
-    arr[i] = random() % (50 - 1 + 1) + 1;
+    arr[i] = random() % (100 - 1 + 1) + 1;
   }
-
-	for(int i=1;i<=50;i++){
-		search_array(arr,elements,i);
-	}
-  
+  cout << "排序前的內容:" << endl;
+  print_array(arr, elements);
 }

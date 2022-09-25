@@ -1,9 +1,15 @@
 #include <iostream>
+#include <time.h>
 using namespace std;
 
 int main() {
-	string name;
-	cout << "請輸入您的中文姓名:";
-	cin >> name;
-	cout << "您的中文姓名是:" << name << endl;
+	srandom(time(NULL));
+	int i[5];
+	for(int a=0; a<5;a++){
+		i[a] = random() % (100-50+1) + 50;
+	}
+
+	for(int a=0; a<5;a++){
+		cout << "a[" << a << "]=" << i[a] << endl;
+	}
 }

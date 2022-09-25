@@ -1,14 +1,15 @@
 #include <iostream>
 using namespace std;
 
-void function1(int c){	
-	c++;
-	cout << "c的值是:" << c << endl;
+int function1(int c) {
+  c++;
+  cout << "c的值是:" << c << endl;
+  return c;
 }
 
 int main() {
   int a = 10;
-	int b = 20;
-	function1(a);
-	cout << "a的變數是:" << a << endl;
+  int b = 20;
+  a = function1(a);
+  cout << "a的變數是:" << a << endl;
 }

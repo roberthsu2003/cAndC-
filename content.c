@@ -3,13 +3,11 @@
 using namespace std;
 
 int main() {
-	srandom(time(NULL));
-	int i[5];
-	for(int a=0; a<5;a++){
-		i[a] = random() % (100-50+1) + 50;
-	}
-
-	for(int a=0; a<5;a++){
-		cout << "a[" << a << "]=" << i[a] << endl;
-	}
+  srandom(time(NULL));
+  int elements = 200;
+  int arr[elements];
+  for (int i = 0; i < elements; i++) {
+    arr[i] = random() % (50 - 1 + 1) + 1;
+    cout << arr[i] << " ";
+  }
 }

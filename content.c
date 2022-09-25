@@ -1,12 +1,22 @@
 #include <iostream>
 using namespace std;
 
-void functionA(int* n){
-	*n *= 10;
+void swap(int *x, int *y){
+	int temp = *x;
+	*x = *y;
+	*y = temp;
 }
 
 int main() {
-	int a = 10;
-	functionA(&a);
-	cout << "a的內容是" << a << endl;
+	int m = 666;
+	int n = 888;
+	/*
+	int temp = m;
+	m = n;
+	n = temp;
+	*/
+	swap(&m,&n);
+
+	cout << "m=" << m << endl;
+	cout << "n=" << n << endl;
 }

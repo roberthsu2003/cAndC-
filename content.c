@@ -1,22 +1,19 @@
+//靜態變數
 #include <iostream>
-//全域變數,區塊變數,區域變數
 using namespace std;
-int n; // 全域變數
+int total = 0;
 
-void showNum() {
-  int value = n; //區域變數
-  cout << "=======================\n";
-  for (int n = value; n >= 1; n--) {
-    // n是區塊變數
-    cout << "區塊變數 n=" << n << endl;
-  }
-  cout << "=================" << endl;
-  cout << "結束for迴圈後 全域變數n=" << n << endl;
+void getData(string name){
+	static int n = 0;
+	n++;
+	cout << "第" << n << "位候選人是:" << name << endl;
+	total++;
 }
 
-int main() {
-  cout << "請輸入全域變數 n=";
-  cin >> n;
-  showNum();
-  return 0;
+int main() { 
+	getData("David");
+	getData("Amy");
+	getData("Tony");
+	cout << "共有" << total << "位登記" << endl;
+	return 0;
 }

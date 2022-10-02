@@ -1,22 +1,14 @@
 #include <iostream>
 using namespace std;
-
-void swap(int *x, int *y){
-	int temp = *x;
-	*x = *y;
-	*y = temp;
+int add(int x, int y){ // call value
+	int sum = x + y;
+	return sum;
 }
 
 int main() {
-	int m = 666;
-	int n = 888;
-	/*
-	int temp = m;
-	m = n;
-	n = temp;
-	*/
-	swap(&m,&n);
-
-	cout << "m=" << m << endl;
-	cout << "n=" << n << endl;
+	int n = 10; //區域變數n
+	int m = 20;
+	int total = add(n, m);
+	cout << "total=" << total << endl;
+	return 0;
 }

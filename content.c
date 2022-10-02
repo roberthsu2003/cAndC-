@@ -1,25 +1,22 @@
 #include <iostream>
-#include <math.h>
-
+//全域變數,區塊變數,區域變數
 using namespace std;
+int n; // 全域變數
 
-int area(int side){
-	return pow(side,2);
-}
-
-int area(int w, int h){
-	return w * h;
+void showNum() {
+  int value = n; //區域變數
+  cout << "=======================\n";
+  for (int n = value; n >= 1; n--) {
+    // n是區塊變數
+    cout << "區塊變數 n=" << n << endl;
+  }
+  cout << "=================" << endl;
+  cout << "結束for迴圈後 全域變數n=" << n << endl;
 }
 
 int main() {
-	int one_side;
-	int width,height;	
-	cout << "請輸入正方形的一邊:";
-	cin >> one_side;
-	cout << "請輸入矩形的長和寬:(空一格):";
-	cin >> width >> height;
-
-	cout << "正方形的面積是" << area(one_side) << endl;
-	cout << "矩形的面積是" << area(width, height) << endl;
-	
+  cout << "請輸入全域變數 n=";
+  cin >> n;
+  showNum();
+  return 0;
 }

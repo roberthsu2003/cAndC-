@@ -1,22 +1,21 @@
 #include <iostream>
 using namespace std;
-int add(int x, int y) { // call value
-  int sum = x + y;
-  return sum;
-}
-
-void add1(int x, int y, int *sum) { 
-	*sum = x + y; 
+//遞迴(recursive)
+double factorial(int n){
+	if(n==0){
+		return 1;
+	}else{
+		return n * factorial(n-1);
+	}
+	
 }
 
 int main() {
-  int n = 10; //區域變數n
-  int m = 20;
-  int sum;
-  int total = add(n, m);
-  add1(n, m, &sum);
-
-  cout << "total=" << total << endl;
-  cout << "sum=" << sum << endl;
-  return 0;
+	int n;
+	double total;
+	cout << "請輸入數字n:";
+	cin >> n;
+	total = factorial(n);
+	cout << n << "!=" << total << endl;
+	
 }

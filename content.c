@@ -1,21 +1,20 @@
 #include <iostream>
 using namespace std;
-//遞迴(recursive)
-double factorial(int n){
-	if(n==0){
-		return 1;
-	}else{
-		return n * factorial(n-1);
+// overload
+int add(int a, int b) { 
+	return a + b; 
 	}
-	
+
+int add(int a, int b, int c) {
+	return a + b + c; 
 }
 
-int main() {
-	int n;
-	double total;
-	cout << "請輸入數字n:";
-	cin >> n;
-	total = factorial(n);
-	cout << n << "!=" << total << endl;
-	
+string add(string a, string b) {
+	return a + b; 
+}
+
+int main() { 
+	cout << add(10,20) << endl;
+	cout << add(10, 20, 30) << endl;
+	cout << add("abc", "efg") << endl;
 }

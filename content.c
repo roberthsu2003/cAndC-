@@ -1,32 +1,12 @@
 #include <iostream>
+#define RATE 34.54
+
 using namespace std;
 
-typedef enum direction { 
-	North, South, East, West 
-} Direction;
-
 int main() {
-  Direction destination = North;
-  cout << "目標=" << destination << endl;
-	switch (destination){
-		case North:
-			cout << "向北" << endl;
-			break;
-
-		case South:
-			cout << "向南" << endl;
-			break;
-
-		case East:
-			cout << "向東" << endl;
-			break;
-
-		case West:
-			cout << "向西" << endl;
-			break;
-
-		default:
-			break;
-		 
-	}
+  double us, nt;
+  cout << "請輸入您有多少美金:";
+  cin >> us;
+  nt = us * RATE;
+  cout << "您有" << nt << "台幣" << endl;
 }

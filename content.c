@@ -23,7 +23,7 @@ int sum(Student s) {
 }
 
 float average(Student s){
-	return 0.0;
+	return sum(s) / 3.0;
 }
 
 int main() {
@@ -43,6 +43,6 @@ int main() {
     cout << s.english << "\t\t";
     cout << s.math << "\t\t";
     cout << sum(s) << "\t\t";
-		cout << average(s) << endl;
+		printf("%.2f\n",average(s));
   }
 }

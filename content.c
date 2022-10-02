@@ -18,8 +18,8 @@ Student createStudent(int num) {
   return s;
 }
 
-int sum(Student s){
-	return 0;
+int sum(Student s) { 
+	return s.chinese + s.english + s.math; 
 }
 
 int main() {
@@ -31,13 +31,13 @@ int main() {
   }
 
   //輸出學生資料
-	cout << "姓名\t國文\t英文\t數學\t總分\n";
+  cout << "姓名\t國文\t英文\t數學\t總分\n";
   for (int i = 0; i < 50; i++) {
     Student s = students[i];
     cout << s.name << "\t";
     cout << s.chinese << "\t\t";
-    cout << s.english << "\t\t";		
+    cout << s.english << "\t\t";
     cout << s.math << "\t\t";
-		cout << sum(s) << endl;
+    cout << sum(s) << endl;
   }
 }

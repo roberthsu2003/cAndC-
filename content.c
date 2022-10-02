@@ -1,19 +1,17 @@
-//靜態變數
+//結構struct
 #include <iostream>
 using namespace std;
-int total = 0;
 
-void getData(string name){
-	static int n = 0;
-	n++;
-	cout << "第" << n << "位候選人是:" << name << endl;
-	total++;
-}
+struct Rectangle{
+	int width;
+	int height;
+};
 
-int main() { 
-	getData("David");
-	getData("Amy");
-	getData("Tony");
-	cout << "共有" << total << "位登記" << endl;
-	return 0;
+int main() {
+	struct Rectangle rec;
+	rec.width = 10;
+	rec.height = 20;
+
+	cout << "矩形的寬是:" << rec.width << endl;
+	cout << "矩形的高是:" << rec.height << endl;
 }

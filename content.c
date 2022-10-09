@@ -1,27 +1,42 @@
 #include <iostream>
+#include <math.h>
 #include <vector>
 
 using namespace std;
 
+class BMI {
+public:
+  string name;
+  float height;
+  float weight;
+  //實體的方法
+  float bmi() { return weight / pow((height / 100), 2); }
+};
+
 int main() {
-	vector<int> list;
-	for(int i=1; i<=10; i++){
-		list.push_back(i);
-	}
+  vector<BMI> pensons;
+  BMI b1;
+  b1.name = "robert";
+  b1.height = 170;
+  b1.weight = 75;
+  pensons.push_back(b1);
 
-	for(int elem : list){
-		cout << elem << endl;
-	}
+  BMI b2;
+  b2.name = "jenny";
+  b2.height = 150;
+  b2.weight = 50;
+  pensons.push_back(b2);
 
-	cout << "==============" << endl;
-	list.pop_back();
-	list.pop_back();
-	
-	for(int elem : list){
-		cout << elem << endl;
-	}
-	cout << "index 0:" << list.operator[](0) << endl;
-	cout << "index 0:" << list[0] << endl;
+  BMI b3;
+  b3.name = "alice";
+  b3.height = 169;
+  b3.weight = 60;
+  pensons.push_back(b3);
 
-	cout << "size:" << list.size() << endl;
+  for (BMI elem : pensons) {
+    cout << "name:" << elem.name << endl;
+    cout << "height:" << elem.height << endl;
+    cout << "weight:" << elem.weight << endl;
+    cout << "==============" << endl;
+  }
 }

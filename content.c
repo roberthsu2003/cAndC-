@@ -2,12 +2,13 @@
 //#define MAC
 using namespace std;
 
-#ifdef MAC
-#define OS "MAC_OS"
-#else
+#ifndef MAC
 #define OS "WINDOWS_OS"
+#else
+#define OS "MAC_OS"
 #endif
 
 int main() {
-  cout << "目前作業系統是:" << OS << endl;
+
+cout << "目前作業系統是:" << OS << endl;
 }

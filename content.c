@@ -1,8 +1,13 @@
 #include <iostream>
-#define MIN(x,y) (x)>=(y)?(y):(x) 
-
+//#define MAC
 using namespace std;
+
+#ifdef MAC
+#define OS "MAC_OS"
+#else
+#define OS "WINDOWS_OS"
+#endif
+
 int main() {
-	int a=9, b=8;
-	cout << "最小值為:" << (MIN(a, b)) << endl;
+  cout << "目前作業系統是:" << OS << endl;
 }

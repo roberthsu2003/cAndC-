@@ -1,14 +1,22 @@
-#include <iostream>
-//#define MAC
-using namespace std;
+main.c 
 
-#ifndef MAC
-#define OS "WINDOWS_OS"
-#else
-#define OS "MAC_OS"
-#endif
+#include <stdio.h>
+#include "a1.h"
+#include "a1.h"
+#include "a1.h"
+#include "a1.h"
 
-int main() {
-
-cout << "目前作業系統是:" << OS << endl;
+int main(void) {
+  printf("Hello World\n");
+  return 0;
 }
+
+a1.h
+#ifndef __A1_H__
+#define __A1_H__
+
+int add(int a, int b){
+	return a+b;
+}
+
+#endif

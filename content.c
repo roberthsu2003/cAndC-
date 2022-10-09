@@ -16,15 +16,18 @@ int main() {
   addTwo(tri2);
   cout << "tri1-" << tri1.x << "-" << tri1.y << endl;
   cout << "tri1的面積是" << tri1.area() << endl;
+	cout << "tri1的斜邊是" << tri1.edge() << endl;
   cout << "tri2-" << tri2.x << "-" << tri2.y << endl;
   cout << "tri2的面積是" << tri2.area() << endl;
+	cout << "tri2的斜邊是" << tri2.edge() << endl;
 }
-
 
 size.h
 
 #ifndef __SIZE_H__
 #define __SIZE_H__
+
+#include <math.h>
 
 class Size {
 public:
@@ -38,6 +41,11 @@ public:
 	//實體方法
   double area() {
 		return x * y / 2;
+	}
+
+	//實體方法
+	double edge(){
+		return sqrt(pow(x,2) + pow(y,2));
 	}
 };
 

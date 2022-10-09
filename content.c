@@ -10,17 +10,16 @@ public:
 
 using namespace Human;
 
-// call by value
-Person addData(Person person, string name, int age) {
+// call by reference
+void addData(Person &person, string name, int age) {
   person.name = name;
   person.age = age;
-  return person;
 }
 
 int main() {
   //一般變數
   Person p1;
-  p1 = addData(p1, "robert", 30);
+  addData(p1, "robert", 30);
   cout << "p1的name:" << p1.name << endl;
   cout << "p1的age:" << p1.age << endl;
 }

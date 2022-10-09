@@ -9,28 +9,25 @@ public:
   string name;
   float height;
   float weight;
+	//建構式,名稱必需和class名稱一樣
+	BMI(string n,float h,float w){
+		name = n;
+		height = h;
+		weight = w;
+	}
   //實體的方法
   float bmi() { return weight / pow((height / 100), 2); }
 };
 
 int main() {
   vector<BMI> pensons;
-  BMI b1;
-  b1.name = "robert";
-  b1.height = 170;
-  b1.weight = 75;
+  BMI b1("robert", 170, 75);  
   pensons.push_back(b1);
 
-  BMI b2;
-  b2.name = "jenny";
-  b2.height = 150;
-  b2.weight = 50;
+  BMI b2("jenny", 150, 50);  
   pensons.push_back(b2);
 
-  BMI b3;
-  b3.name = "alice";
-  b3.height = 169;
-  b3.weight = 60;
+  BMI b3("alice", 169, 60);  
   pensons.push_back(b3);
 
   for (BMI elem : pensons) {

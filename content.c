@@ -1,11 +1,8 @@
 #include <iostream>
-#define RATE 34.5
+#define MIN(x,y) (x)>=(y)?(y):(x) 
 
 using namespace std;
 int main() {
-	double us, nt;
-	cout << "請輸入您有多少美金:";
-	cin >> us;
-	nt = us * RATE;
-	cout << "您有" << nt << "台幣" << endl;
+	int a=9, b=8;
+	cout << "最小值為:" << (MIN(a, b)) << endl;
 }

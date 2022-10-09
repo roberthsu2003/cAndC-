@@ -12,4 +12,8 @@ int main() {
 	for(int i=0; i<3; i++){
 		cout << list[i] << endl;
 	}
+	cout << "=================" << endl;
+	for (int elem :list){
+		cout << elem << endl;
+	}	
 }

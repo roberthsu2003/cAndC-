@@ -1,25 +1,29 @@
 #include <iostream>
+#include <math.h>
+
 using namespace std;
-namespace Human {
-class Person {
-public:
-  string name;
-  int age;
+
+class BMI{
+	public:
+	string name;
+	float height;
+	float weight;
+	//實體的方法
+	float bmi(){
+		return weight / pow((height / 100),2);
+	}
 };
-} // namespace Human
-
-using namespace Human;
-
-// call by address
-void addData(Person *person, string name, int age) {
-  person->name = name;
-  person->age = age;
-}
 
 int main() {
-  //指標變數
-  Person *p1 = new Person();
-  addData(p1, "robert", 30);
-  cout << "p1的name:" << p1->name << endl;
-  cout << "p1的age:" << p1->age << endl;
+	BMI robert;
+	robert.name = "徐國堂";
+	robert.height = 178.0;
+	robert.weight = 78;
+	cout << robert.name << "的bmi是" << robert.bmi() << endl;
+
+	BMI jenny;
+	jenny.name = "王慧質";
+	jenny.height = 160;
+	jenny.weight = 51;
+	cout << jenny.name << "的bmi是" << jenny.bmi() << endl;
 }

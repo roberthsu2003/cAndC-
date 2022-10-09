@@ -37,6 +37,7 @@ int main() {
     cout << "name:" << elem.name << endl;
     cout << "height:" << elem.height << endl;
     cout << "weight:" << elem.weight << endl;
+		cout << "bmi:" << elem.bmi() << endl;		
     cout << "==============" << endl;
   }
 }

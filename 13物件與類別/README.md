@@ -824,8 +824,11 @@ int main() {
 #include <iostream>
 
 class Square{
-	public:
+	public:		
 		int width;
+		Square(int w){
+			width = w;
+		}
 		virtual int getArea(){
 			return width * width;
 		}
@@ -834,6 +837,9 @@ class Square{
 class Rectangle:public Square{
 	public:
 		int height;
+		Rectangle(int w,int h):Square(w){
+			height = h;
+		}
 		int getArea() override{
 			return width* height;
 		}

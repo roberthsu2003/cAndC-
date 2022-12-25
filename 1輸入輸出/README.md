@@ -60,6 +60,8 @@ int main(void) {
 |%s  | 輸出字串 |
 |%x  | 輸出十六進位 |
 
+[c datatype](https://en.wikipedia.org/wiki/C_data_types)
+
 ### 2 printf("字串格式化"，輸出参数);
 ```c
 //print2.c

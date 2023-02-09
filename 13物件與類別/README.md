@@ -149,6 +149,81 @@ int main() {
 	robert.walk(10);
 }
 ```
+
+### 出考題
+
+```c++
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Question {
+public:
+  string q;
+  int answer;
+  bool is_right = false;
+};
+
+void check(vector<Question> &list){
+	int yes = 0;
+	int no = 0;
+	for(int i=0; i<list.size(); i++){
+		if(list[i].is_right==true){
+			yes++;
+		}else{
+			no++;
+		}
+	}
+
+	cout << "您答對:" << yes << "題\n";
+	cout << "您答錯:" << no << "題\n";
+	cout << "======================\n";
+	cout << "答錯的題目是:" << endl;
+	for(int i=0; i<list.size(); i++){
+		if(list[i].is_right == false){
+			cout << "第" << i+1 << "題:";
+			cout << list[i].q << endl;
+			cout << "正確答案是:" << list[i].answer << "\n\n";
+		}
+		
+		
+	}
+}
+
+int main() {
+  Question question1;
+  question1.q = "0 + 0 =   (1) 0 (2) 1 (3) 2 (4) 3:";
+  question1.answer = 1;
+
+  Question question2;
+  question2.q = "0 + 1 =   (1) 0 (2) 1 (3) 2 (4) 3:";
+  question2.answer = 2;
+
+  Question question3;
+  question3.q = "1 + 1 =   (1) 0 (2) 1 (3) 2 (4) 3:";
+  question3.answer = 3;
+
+  Question question4;
+  question4.q = "1 + 2 =   (1) 0 (2) 1 (3) 2 (4) 3:";
+  question4.answer = 4;
+
+	vector<Question> list{question1,question2,question3,question4};
+
+	for(int i=0; i<list.size(); i++){
+		int input_value;
+		cout << "第" << i+1 << "題\n";
+		cout << list[i].q;
+		cin >> input_value;
+		if(list[i].answer == input_value){
+			list[i].is_right = true;
+		}
+		cout << endl;
+	}
+	cout << "輸入完畢" << endl;
+	check(list);
+}
+
+```
 	
 ### 在類別的外部定義方法  
 	

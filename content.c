@@ -1,5 +1,26 @@
+#main.cpp
 #include <iostream>
 #include <time.h>
+#include "games.h"
+using namespace std;
+
+int main() {
+	srandom(time(NULL));
+	char play_again;	
+	while(true){
+		play_game();
+		cout << "請問還要繼續嗎?(y,n):";
+		cin >> play_again;
+		if(play_again == 'n'){
+			break;
+		}		
+	}
+	cout << "Game Over!\n";
+}
+
+#games.h
+
+#include <iostream>
 using namespace std;
 
 void play_game(){
@@ -33,19 +54,4 @@ void play_game(){
 			continue;
 		}
 	}
-}
-
-
-int main() {
-	srandom(time(NULL));
-	char play_again;	
-	while(true){
-		play_game();
-		cout << "請問還要繼續嗎?(y,n):";
-		cin >> play_again;
-		if(play_again == 'n'){
-			break;
-		}		
-	}
-	cout << "Game Over!\n";
 }

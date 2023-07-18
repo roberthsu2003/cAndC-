@@ -5,7 +5,7 @@ using namespace std;
 int main() {
 	srandom(time(NULL));
 	int min = 1;
-	int max = 10;
+	int max = 99;
 	int keyin;
 	int count = 0;
 	int target = random() % (max-min+1) + min;
@@ -19,10 +19,14 @@ int main() {
 				cout << "賓果!猜對了,答案是" << target << endl;
 				cout << "您一共猜了" << count << "次" << endl;
 				break;
-			}else{
-				cout << "猜錯了" << endl;
-				cout << "您已經猜了" << count << "次" << endl;
+			}else if(keyin > target){
+				cout << "再小一點" << endl;
+				max = keyin - 1;				
+			}else if(keyin < target){
+				cout << "再大一點" << endl;
+				min = keyin + 1;				
 			}
+			cout << "您已經猜了" << count << "次" << endl;
 			
 		}else{
 			cout << "不正確的範圍" << endl;

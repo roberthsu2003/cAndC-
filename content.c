@@ -2,13 +2,13 @@
 #include <time.h>
 using namespace std;
 
-int main() {
-	srandom(time(NULL));
+void play_game(){
 	int min = 1;
 	int max = 99;
 	int keyin;
 	int count = 0;
 	int target = random() % (max-min+1) + min;
+	cout << target << endl;
 	cout << "==========猜數字遊戲============\n\n";
 	while(true){
 		cout << "猜數字範圍" << min << "~" << max << ":";
@@ -32,6 +32,20 @@ int main() {
 			cout << "不正確的範圍" << endl;
 			continue;
 		}
+	}
+}
+
+
+int main() {
+	srandom(time(NULL));
+	char play_again;	
+	while(true){
+		play_game();
+		cout << "請問還要繼續嗎?(y,n):";
+		cin >> play_again;
+		if(play_again == 'n'){
+			break;
+		}		
 	}
 	cout << "Game Over!\n";
 }

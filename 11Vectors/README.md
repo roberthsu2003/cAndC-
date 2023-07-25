@@ -624,6 +624,66 @@ int main() {
 
 ```
 
+### 寫入檔案
+
+```c++
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <time.h>
+
+using namespace std;
+
+void print_vector(const vector<int>& m){
+	for(const int& n:m){
+		cout << n << " ";
+	}
+	cout << endl;
+}
+
+void save_vector(const vector<int>& m){
+	string filename;
+	char append;
+	cout << "請輸入檔案名稱:";
+	cin >> filename;
+	cout << "存檔的檔案名稱是" << filename << endl;
+	
+	ofstream out;
+	cout << "是否要附加資料:(y,n)";
+	cin >> append;
+	if(append == 'y'){
+		out.open(filename,std::ios_base::app); //附加
+	}else{
+		out.open(filename); // 覆蓋原來資料
+	}
+	
+	if(out.good()){
+		for(const int& n:m){
+			out << n << " ";
+		}
+		out << endl;
+	}else{
+		cout << "存檔有問題發生" << endl;
+	}
+	
+}
+
+int main() {
+	int count;
+	srandom(time(NULL));
+	cout << "要亂數產生的數量:";
+	cin >> count;
+	vector<int> numbers(count);
+	
+	for(int& n:numbers){ //建立reference的區塊變數
+		n = random() % (100-1+1) + 1;
+	}
+
+	print_vector(numbers);
+	save_vector(numbers);
+}
+```
+
 ### 讀取codeSearch.csv檔
 
 ```c++

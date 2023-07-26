@@ -578,7 +578,7 @@ void print(const Matrix& m){
 int main() {
   vector<vector<int>> a{
    {5, 19, 3},
-	 {22, -8, 10}
+   {22, -8, 10}
   };
   
 
@@ -665,6 +665,7 @@ void save_vector(const vector<int>& m){
 	}else{
 		cout << "存檔有問題發生" << endl;
 	}
+	out.close()
 	
 }
 
@@ -684,6 +685,37 @@ int main() {
 }
 ```
 
+### 寫入a1.txt
+
+```c++
+#include <fstream>
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+  ifstream in;
+  in.open("a1.txt"); //下載檔案
+  vector<int> numbers;
+
+  if (in.good()) {
+    int value;
+    while (in >> value) { //每次讀取以空白為間隔
+      numbers.push_back(value);
+    }
+    in.close();//close
+  } else {
+    cout << "讀取檔案有問題" << endl;
+  }
+
+  for (int n : numbers) {
+    cout << n << " ";
+  }
+  cout << endl;
+}
+```
+
 ### 讀取codeSearch.csv檔
 
 ```c++
@@ -697,7 +729,7 @@ using namespace std;
  
 int main()
 {
-	string fname = "codeSearch.csv";
+	string fname = "codeSearch.csv"; //下載檔案
 	//cout<<"Enter the file name: ";
 	//cin>>fname;
  

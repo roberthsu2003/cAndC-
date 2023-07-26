@@ -719,51 +719,43 @@ int main() {
 ### 讀取codeSearch.csv檔
 
 ```c++
-#include <iostream>
 #include <fstream>
+#include <iostream>
+#include <sstream>
 #include <string>
 #include <vector>
-#include <sstream>
- 
+
 using namespace std;
- 
-int main()
-{
-	string fname = "codeSearch.csv"; //下載檔案
-	//cout<<"Enter the file name: ";
-	//cin>>fname;
- 
-	vector<vector<string>> content;
-	vector<string> row;
-	string line, word;
- 
-	fstream file (fname, ios::in);
-	if(file.is_open())
-	{
-		while(getline(file, line))
-		{
-			row.clear();
- 
-			stringstream str(line);
- 
-			while(getline(str, word, ','))
-				row.push_back(word);
-			content.push_back(row);
-		}
-	}
-	else
-		cout<<"Could not open the file\n";
- 
-	for(int i=0;i<content.size();i++)
-	{
-		for(int j=0;j<content[i].size();j++)
-		{
-			cout<<content[i][j]<<" ";
-		}
-		cout<<"\n";
-	}
- 
-	return 0;
+
+int main() {
+  string fname = "codeSearch.csv"; //下載檔案
+
+  vector<vector<string>> content;
+  vector<string> row;
+  string line, word;
+
+  ifstream file(fname);
+  if (file.is_open()) {
+    while (getline(file, line, '\n')) {
+      row.clear();
+      stringstream str(line);
+
+      while (getline(str, word, ','))
+        row.push_back(word);
+      content.push_back(row);
+    }
+  } else {
+    cout << "無法開啟檔案\n";
+  }
+
+  for (int i = 0; i < content.size(); i++) {
+    for (int j = 0; j < content[i].size(); j++) {
+      cout << content[i][j] << " ";
+    }
+    cout << "\n";
+  }
+
+  return 0;
 }
  
 ```

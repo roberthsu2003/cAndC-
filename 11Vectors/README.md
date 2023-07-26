@@ -469,8 +469,8 @@ using namespace std;
 
 int main() {
   vector<vector<int>> a{
-	 {5, 19, 3},
-	 {22, -8, 10}
+   {5, 19, 3},
+   {22, -8, 10}
   };
   
 
@@ -507,9 +507,9 @@ void print(const vector<vector<int>>& m){
 
 int main() {
   vector<vector<int>> a{
-												{5, 19, 3},
-												{22, -8, 10}
-												};
+	 {5, 19, 3},
+	 {22, -8, 10}
+  };
   
 
   print(a);
@@ -537,10 +537,10 @@ void print(const vector<vector<int>>& m){
 }
 
 int main() {
-  vector<vector<int>> a{
-												{5, 19, 3},
-												{22, -8, 10}
-												};
+	vector<vector<int>> a{
+   {5, 19, 3},
+   {22, -8, 10}
+  };
   
 
   print(a);
@@ -577,9 +577,9 @@ void print(const Matrix& m){
 
 int main() {
   vector<vector<int>> a{
-												{5, 19, 3},
-												{22, -8, 10}
-												};
+   {5, 19, 3},
+	 {22, -8, 10}
+  };
   
 
   print(a);
@@ -610,9 +610,9 @@ void print(const Matrix& m){
 
 int main() {
   vector<vector<int>> a{
-												{5, 19, 3},
-												{22, -8, 10}
-												};
+   {5, 19, 3},
+   {22, -8, 10}
+  };
   
 
   print(a);

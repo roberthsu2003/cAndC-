@@ -569,6 +569,85 @@ class Student{
 #endif
 ```
 
+### 實作練習(儲存students資料成為csv檔)
+```c++
+#include <iostream>
+#include <vector>
+#include <time.h>
+#include <fstream>
+
+using namespace std;
+class Student{
+	public:
+	int chinese;
+	int english;
+	int math;
+
+	int sum(){
+		return chinese + english + math;
+	}
+
+	double average(){
+		return sum() / 3.0;
+	}
+	
+};
+
+void generator(vector<Student>& s,int n){
+	for(int i=0;i<n;i++){
+		Student student;
+		student.chinese = random() % (100-50+1) + 50;
+		student.english = random() % (100-50+1) + 50;
+		student.math = random() % (100-50+1) + 50;
+		s.push_back(student);
+	}
+}
+
+void print_students(vector<Student>& stus){
+	cout << "國文\t英文\t數學\t總分\t平均\n";
+	for(Student& s:stus){
+		cout << s.chinese << "\t\t";
+		cout << s.english << "\t\t";
+		cout << s.math << "\t\t";
+		cout << s.sum() << "\t\t";
+		cout << s.average() << endl;
+	}
+}
+
+void save_students(vector<Student>& stus){
+	string filename;
+	cout << "請輸入檔名:";
+	cin >> filename;
+	filename += ".csv";
+	ofstream out;
+	out.open(filename);
+	if(out.good()){
+		out << "國文,英文,數學,總分,平均\n";
+		for(Student& s:stus){
+			out << s.chinese << ",";
+			out << s.english << ",";
+			out << s.math << ",";
+			out << s.sum() << ",";
+			out << s.average() << endl;
+		}
+		
+	}else{
+		cout << "存檔失敗";
+	}
+	out.close();
+}
+
+int main() {
+	srandom(time(NULL));
+	int student_nums;
+	vector<Student> students;
+	cout << "請輸入學生數:";
+	cin >> student_nums;
+	generator(students,student_nums);
+	print_students(students);
+	save_students(students);
+}
+```
 ### public 欄位的保護
 物件的另一個特點是封裝，封裝是為了保護物件，避免物件因為外界不正當的存取而破壞。使用自訂的方法對資料成員作保護。如此可以保護物件的正當存取。
 

@@ -469,9 +469,9 @@ using namespace std;
 
 int main() {
   vector<vector<int>> a{
-												{5, 19, 3},
-												{22, -8, 10}
-												};
+		{5, 19, 3},
+		{22, -8, 10}
+	};
   
 
   for (vector<int> sub : a) {

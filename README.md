@@ -14,3 +14,8 @@
 11. [Vectors](./11Vectors)
 12. [string](./12字串處理)
 13. [物件與類別](./13物件與類別)
+
+```c++
+// c++ compiler的語法
+g++ main.cpp -o main && ./main
+```

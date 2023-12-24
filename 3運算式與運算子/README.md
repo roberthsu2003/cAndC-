@@ -58,6 +58,28 @@ int main() {
 ```
 [解題](https://repl.it/@roberthsu2003/pluss)
 
+
+
+```c++
+//遞增
+#include <iostream>
+using namespace std;
+int main() {
+	int n = 0;
+	++n;
+	cout << "n=" << n << endl;
+
+	int i = 0;
+	cout << "i=" << i++ << endl;
+	cout << "i=" << i << endl;
+
+
+	int j = 0;
+	cout << "j=" << ++j << endl;
+	cout << "j=" << j << endl;
+}
+```
+
 ```c++
 //前置遞增
 int x = 1;

@@ -288,25 +288,3 @@ int main() {
 }
 ```
 
-```
-#include <iostream>
-#include <math.h>
-#define PI 3.1415926
-using namespace std;
-
-int main() {
-  int side, anotherSide;
-  double radian, degree;
-  cout << "請輸入對邊:";
-  cin >> side;
-  cout << "請輸入斜邊:";
-  cin >> anotherSide;
-  radian = asin(side / (double)anotherSide);
-  degree = radian * 180 / PI;
-
-  cout << "對邊是:" << side << endl;
-  cout << "斜邊是:" << anotherSide << endl;
-  cout << "弧度是:" << radian << endl;
-  cout << "直角三角形的角度是:" << degree << endl;
-}
-```

@@ -284,17 +284,17 @@ int main() {
 using namespace std;
 
 int main() {
-  int side, anotherSide;
+  int opposite_side, hypotenuse;
   double radian, degree;
   cout << "請輸入對邊:";
-  cin >> side;
+  cin >> opposite_side;
   cout << "請輸入斜邊:";
-  cin >> anotherSide;
-  radian = asin(side / (double)anotherSide);
+  cin >> hypotenuse;
+  radian = asin(opposite_side / (double)hypotenuse);
   degree = radian * 180 / PI;
 
-  cout << "對邊是:" << side << endl;
-  cout << "斜邊是:" << anotherSide << endl;
+  cout << "對邊是:" << opposite_side << endl;
+  cout << "斜邊是:" << hypotenuse << endl;
   cout << "弧度是:" << radian << endl;
   cout << "直角三角形的角度是:" << degree << endl;
 }

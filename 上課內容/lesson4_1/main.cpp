@@ -11,6 +11,9 @@ int main() {
   cin >> add;
   if (add) { //單項選擇
     score *= 1.05;
+		if(score > 300){ //巢狀判斷
+			score = 300;
+		}
   }
 
   cout << "學生分數是" << score << endl;

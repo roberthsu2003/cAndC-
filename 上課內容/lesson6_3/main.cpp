@@ -8,6 +8,37 @@ double getBMI(double h, double w) {
   return bmi;
 }
 
+//自訂function
+string getMessage(double bmi){
+	string message;
+	
+	if (bmi < 18.5)
+	{
+			message = "體重過輕\n";
+	}
+	else if (bmi < 24)
+	{
+			message =  "正常範圍\n";
+	}
+	else if (bmi < 27)
+	{
+			message =  "過重\n";
+	}
+	else if (bmi < 30)
+	{
+			message = "輕度肥胖\n";
+	}
+	else if (bmi < 35)
+	{
+			message =  "中度肥胖\n";
+	}
+	else
+	{
+			message =  "重度肥胖\n";
+	}
+	return message;
+}
+
 int main() {
   cout << "BMI值計算公式:    BMI = 體重(公斤) / 身高2(公尺2)" << endl;
   double weight, height;
@@ -19,4 +50,7 @@ int main() {
   BMI = getBMI(height, weight);
 
   cout << "您的BMI是:" << BMI << endl;
+	string m = getMessage(BMI);
+	cout << "您的體重:" << m << endl;
+	
 }

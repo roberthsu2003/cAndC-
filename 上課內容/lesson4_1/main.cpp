@@ -22,23 +22,26 @@ void create_student(Student *array, int m) {
   }
 }
 
+void sorted(Student *array, int m){
+	// 使用泡沫排序法依據總分由高而低排序
+	for (int i = 0; i < m - 1; i++) {
+		for (int j = 0; j < m - i - 1; j++) {
+			if (array[j].total < array[j + 1].total) {
+				Student temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
+			}
+		}
+	}
+}
+
 int main() {
   int nums;
   cout << "請輸入學生數量:";
   cin >> nums;
   Student students[nums];
   create_student(students, nums);
-
-  // 使用泡沫排序法依據總分由高而低排序
-  for (int i = 0; i < nums - 1; i++) {
-    for (int j = 0; j < nums - i - 1; j++) {
-      if (students[j].total < students[j + 1].total) {
-        Student temp = students[j];
-        students[j] = students[j + 1];
-        students[j + 1] = temp;
-      }
-    }
-  }
+	sorted(students,nums);  
 
   for (int i = 0; i < nums; i++) {
     cout << "name:" << students[i].name << endl;

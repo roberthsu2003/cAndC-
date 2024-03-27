@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
 
 class People {
@@ -20,7 +21,10 @@ public:
     cout << "姓名:" << name << endl;
     cout << "身高:" << height << "cm" << endl;
     cout << "體重:" << weight << "kg" << endl;
+		cout << "BMI:" << bmi() << endl;
   }
+
+  double bmi() { return weight / pow(height / 100.0, 2); }
 };
 
 int main() {
@@ -29,7 +33,10 @@ int main() {
   p1.height = 183;
   p1.weight = 81;
   p1.profile();
+  
+
   cout << "===================\n";
   People p2("張xx", 69, 170);
   p2.profile();
+  
 }

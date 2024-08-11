@@ -78,6 +78,37 @@ int main() {
   cout << characterB << "\n";
 }
 ```
+
+## c的字串(scanf)
+```c
+#include <stdio.h>
+
+int main(void) {
+  char name[100];
+  printf("請輸入您的姓名:");
+  scanf("%s",name);
+  printf("您的姓名是%s\n",name);
+  return 0;
+}
+```
+
+## c的字串(fgets)
+
+```c
+#include <stdio.h>
+/*=========
+使用fgets(),輸入有空白鍵的字串
+=============*/
+
+int main(void) {
+  char name[100];
+  printf("請輸入您的姓名:");
+  fgets(name,100,stdin);
+  printf("您的姓名是%s\n",name);
+  return 0;
+}
+```
+
 ## 字串型別(string和字元陣列)
 ```c++
 #include <iostream>

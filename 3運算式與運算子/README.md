@@ -56,7 +56,33 @@ int main() {
 兩個數的和是xxx.xx
 
 ```
-[解題](https://repl.it/@roberthsu2003/pluss)
+
+**[解題]**
+
+```
+/*
+*question plus_s.cpp 計算使用者輸入的2個任意數，程式會顯示2數相加的總和。
+
+顯示=======
+請輸入第一個數值:45.67
+請輸入第二個數值:67.47
+兩個數的和是xxx.xx
+
+*/
+
+
+#include <iostream>
+using namespace std;
+int main() {
+  float n = 0, m = 0;
+  cout << "請輸入第一個數值:";
+  cin >> n;
+  cout << "請輸入第二個數值:";
+  cin >> m;
+  cout << "兩個數的和是" << n + m;
+}
+```
+---
 
 
 
@@ -190,7 +216,31 @@ complex_s
 請輸入等三個數:87.5
 三個數的總和為:220.4
 ```
-[解題](https://repl.it/@roberthsu2003/complexs)
+
+**[解題]**
+
+```
+//請以(複合指定運算子)設計程式,讓用者輸入三個任意數，程式會顯示3數相加的總和(float)
+#include <iostream>
+using namespace std;
+
+int main() {
+  float num, result=0;
+  cout << "請輸入第一個數:";
+  cin >> num;
+  result += num;
+  cout << "請輸入第二個數:";
+  cin >> num;
+  result += num;
+  cout << "請輸入等三個數:";
+  cin >> num;
+  result += num;
+  cout << "三個數的總和為:" << result;
+
+}
+```
+
+---
 ## sizeof型別運算子
 ```c++
 int a = sizeof(char);   // a = 1
@@ -239,7 +289,30 @@ int main() {
 請輸入國文成績:80
 成績及格(成績不及格)
 ```
-[解題](https://repl.it/@roberthsu2003/triops)
+
+**[解題]**
+
+```
+/*
+*question triop_s
+讓使用者輸入國文成績,程式會顯示該成績是否及格(請使用3元運算式). 
+*/
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  int chinese;
+  string result;
+  cout << "請輸入國文成績:";
+  cin >> chinese;
+  result = chinese >= 60 ? "成績及格" : "成績不及格";
+  cout << result;
+}
+```
+---
+
 ### 數學算式轉換電腦運算
 
 ```c++
@@ -275,7 +348,38 @@ int main() {
 請輸入圓柱體的高(公分):5
 圓柱體的體積:xxxx立方公分
 ```
-[解題](https://repl.it/@roberthsu2003/circles)
+
+**[解題]**
+
+```
+/*
+讓使用者輸入圓柱體的半徑及高，程式會計算圓柱體的體積(圓柱體體積的公式為「圓週率乘以半徑平方再乘以高)。
+
+顯示========
+請輸入圓柱體的半徑(公分):10
+請輸入圓柱體的高(公分):5
+圓柱體的體積:xxxx立方公分
+
+*/
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    float radius;
+    float height;
+    const float PI = 3.14159;
+    cout << "請輸入圓柱體的半徑(公分):";
+    cin >> radius;
+    cout << "請輸入圓柱體的高(公分):";
+    cin >> height;
+    float area = radius * radius * PI * height;
+    cout << "圓柱體的體積:" << area << "立方公分";
+}
+```
+
+---
 
 ```
 #include <iostream>

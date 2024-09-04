@@ -85,9 +85,29 @@ int main() {
 全班總成績為: ***分，平均為89分
 
 ```
-[解題](https://repl.it/@roberthsu2003/for1s)
+
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	unsigned short studentScore;
+	unsigned int sum=0;
+
+	for(int i=1; i<=5; i++){
+		cout << "請輸入第" << i << "位學生的成績:";
+		cin >> studentScore ;
+		sum += studentScore;
+	}
+
+	cout << "全班總成績為:" << studentScore << "分" << ",平均分數為" << sum / 5.0 << "分";
+}
+```
 
 ## 巢狀迴圈
+
 ```c++
 //============================================================================
 // Name        : forNest1.cpp
@@ -387,7 +407,28 @@ int main() {
 1+2+3+~+100的總合是5050
 ```
 
-[解題](https://repl.it/@roberthsu2003/variousloop1)
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	int sum = 0;
+	for(int i=1; i<=100; i++){
+		if (i != 100){
+			cout << i << "+";
+			sum += i;
+			continue;
+		}
+		cout << i << "=";
+		sum += i;		
+	}
+	cout << "的總合是" << sum;
+}
+```
+
+---
 
 ```c++
 *問題 various_loop2.cpp
@@ -398,7 +439,27 @@ int main() {
 
 ```
 
-[解題](https://repl.it/@roberthsu2003/variousloop2)
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	int sum = 0;
+	int i = 0;
+	while(i <= 100){
+		if (i != 100){
+			cout << i << "+";
+		}else{
+			cout << i << "=";
+		}		
+		sum += i;
+		i++;		
+	}
+	cout << "的總合是" << sum;
+}
+```
 
 ```c++
 *問題 various_loop3.cpp
@@ -409,7 +470,27 @@ int main() {
 
 ```
 
-[解題](https://repl.it/@roberthsu2003/variablesloop3)
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	int sum = 0;
+	int i = 0;
+	do {
+		if (i != 100){
+			cout << i << "+";
+		}else{
+			cout << i << "=";
+		}		
+		sum += i;
+		i++;		
+	}while(i <= 100);
+	cout << "的總合是" << sum;
+}
+```
 
 
 ```c++ 
@@ -422,7 +503,29 @@ int main() {
 22
 1
 ```
-[解題](https://repl.it/@roberthsu2003/nestedLoop1)
+
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	for(int i=5; i >= 1; i--){
+		for(int j=1; j <= 5; j++){
+			if(j >= i){
+				cout << i;
+			}else{
+				cout << ' ';
+			}
+			
+		}
+		cout << endl;
+	}
+}
+```
+
+---
 
 ```c++
 *問題 nestedLoop2.cpp
@@ -436,7 +539,7 @@ int main() {
 11111 
 ```
 
-[解題](https://repl.it/@roberthsu2003/nestedLoop1)
+---
 
 ```c++
 *問題 inputLoop.cpp
@@ -448,7 +551,32 @@ int main() {
 M*1 + M*2 + M*3 + ......+ M*N = 50
 ```
 
-[解題](https://repl.it/@roberthsu2003/inputLoop)
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	unsigned short m;
+	unsigned short n;
+	unsigned int result = 0;
+
+	cout << "輸入M:";
+	cin >> m;
+	cout << "輸入N:";
+	cin >> n;
+
+	for(int i=1; i<=n;i++){
+		result += m * i;
+		if(n != i)
+			cout << "M*" << i << " + ";
+		else 
+			cout << "M*" << i << " = ";
+	}
+	cout << result;
+}
+```
 
 ```c++ 
 *問題 commonfactor.cpp
@@ -463,9 +591,44 @@ M*1 + M*2 + M*3 + ......+ M*N = 50
 14 和 35 的最大公因數:7
 14 和 35 的最小倍數是:70
 ```
-[解題](https://repl.it/@roberthsu2003/commonfactor)
 
-<<<<<<< Updated upstream
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	unsigned int inputValue1;
+	unsigned int inputValue2;
+	unsigned int min;
+	unsigned int max;
+	unsigned int maxResult=0;
+	unsigned int minResult=0;
+
+	cout << "請輸入第一個整數:";
+	cin >> inputValue1;
+	cout << "請輸入第二個整數:";
+	cin >> inputValue2;
+	min = inputValue1 < inputValue2 ? inputValue1:inputValue2 ;
+	max = inputValue1 > inputValue2 ? inputValue1: inputValue2;
+	
+	
+	for(int i=1; i<=min ; i++){
+		if((min % i) == 0 && (max % i) == 0){
+			maxResult = i;
+		}
+	}
+
+	minResult = (inputValue1 / maxResult) * (inputValue2 / maxResult) * maxResult;
+
+	cout << inputValue1 << "和" << inputValue2 << "的最大公因數:" << maxResult << endl;
+
+	cout << inputValue1 << "和" << inputValue2 << "的最小公倍數:" << minResult << endl;
+}
+```
+
+---
 
 ```c++ 
 *問題 commonfactor.cpp
@@ -478,7 +641,9 @@ M*1 + M*2 + M*3 + ......+ M*N = 50
 2   3   5   7   11  13  17  19  23  2931   37  41  43  47  53  59  61  67  7173   79  83  89  97  
 =================================================
 ```
-===
+
+---
+
 ```c++ 
 *問題 
 設計一個程式，可以由鍵盤輸入一個數值，並求出2至這個數值的所有值數

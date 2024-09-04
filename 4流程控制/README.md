@@ -84,7 +84,7 @@ int main() {
 請輸入成績:78
 及格!(不及格!)
 ```
-[解題](https://repl.it/@roberthsu2003/score)
+
 
 ```c++
 *question
@@ -94,7 +94,7 @@ int main() {
 請輸入數字:15
 您輸入的15是奇數
 ```
-[解題](https://repl.it/@roberthsu2003/oddEven)
+
 
 ```c++
 *question oddEven1.cpp
@@ -105,7 +105,25 @@ int main() {
 請輸入任意整數:50
 您這個數是:偶數
 ```
-[解題](https://repl.it/@roberthsu2003/oddEven1)
+
+**[解題]**
+
+```
+//請使用三元運算子? : 製作一個判斷奇偶數的程式，程式的執行結果。
+
+#include <iostream>
+using namespace std;
+int main() {
+	int inputValue;
+	string message;
+	cout << "請輸入任意整數:";
+	cin >> inputValue;
+	message = inputValue % 2 ? "奇數" : "偶數";
+	cout << "您這個數是:" << message;
+}
+```
+
+---
 
 
 ## 多向選擇(if ... else if..... else)
@@ -178,7 +196,34 @@ int main() {
 請輸入您的年齡:40
 您的職務是: 外勤業務員
 ```
-[解題](https://repl.it/@roberthsu2003/employee)
+
+**[解題]**
+
+```
+//某公司要將員工依年齡分配職務, 22至30歲者擔任外勤業務員，31歲至45歲者控任內勤文書，46至55歲者控任倉庫管理員，56以上強迫退休。請以if...eles if..選擇敘述撰寫此程式。
+
+#include <iostream>
+using namespace std;
+int main() {
+	unsigned short age;
+	string job;
+	cout << "請輸入您的年齡:";
+	cin >> age;
+	if(age >= 22 && age <= 30)
+		job = "外勤對務員";
+	else if (age > 30 && age <= 45)
+		job = "內勤文書";
+	else if (age > 45 && age <= 55)
+		job = "倉庫管理員";
+	else if (age > 55)
+		job = "強迫退休";
+	else 
+		job = "輸入錯誤。不在這個範圍";	
+	cout << "您的職務是:" << job << endl;
+}
+```
+
+---
 
 ### 巢狀的if-else敘述 
 
@@ -302,7 +347,60 @@ int main() {
 
 此三角形為一個鈍角三角形
 ```
-[解題](https://repl.it/@roberthsu2003/triangle)
+
+**[解題]**
+
+```
+/*
+輸入三角形2邊，再輸入斜邊，然後判斷三角形的種類
+1.若任意兩邊之和小於斜邊，則不是三角形。
+2.2邊平方相加等於斜邊平方，則為直角三角形。
+3.2邊平方相加大於斜邊平方，則為鈍角三角形。
+4.其它情形，即為銳角三角形。
+
+
+顯示====================
+1.請輸入1邊的邊長:6
+2.請輸入另1邊的邊長:7
+3.請輸入斜邊的邊長:12
+
+此三角形為一個鈍角三角形
+*/
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+	unsigned short side;
+	unsigned short anotherSide;
+	unsigned short sloping;
+	unsigned int squareOfSide;
+	unsigned int squareOfSloping;
+	string message;
+	cout << "請輸入1邊的邊長:";
+	cin >> side;
+	cout << "請輸入另一邊的邊長:";
+	cin >> anotherSide;
+	cout << "請輸入斜邊的邊長:";
+	cin >> sloping;
+
+	squareOfSide = pow(side,2)+pow(anotherSide,2);
+	squareOfSloping = pow(sloping,2);
+
+	if((side+anotherSide) < sloping){
+		message = "不是三角形";
+	}else if (squareOfSide == squareOfSloping){
+		message = "直角三角形";
+	}else if (squareOfSide > squareOfSloping){
+		message = "鈍角三角形";
+	}else{
+		message = "銳角三角形";
+	}
+	cout << "此三角形為一個" << message << endl;
+}
+```
+
+---
 
 ## switch case:
 
@@ -375,7 +473,47 @@ int main() {
 請輸入現在是第幾季(1-4):1
 現在是春天!
 ```
-[解題](https://repl.it/@roberthsu2003/seasons)
+
+**[解題]**
+
+```
+/*
+
+讓使用者入1-4的數字，由1到4分別顯示春天、夏天、秋天、冬天。
+
+顯示:
+請輸入現在是第幾季(1-4):1
+現在是春天!
+
+*/
+#include <iostream>
+using namespace std;
+
+int main() {
+    unsigned int season;
+    cout << "請輸入現在是第幾季";
+    cin >> season;
+    string message;
+    switch (season){
+        case 1:
+            message = "春季";
+            break;
+        case 2:
+            message = "夏季";
+            break;
+        case 3:
+            message = "秋季";
+            break;
+        case 4:
+            message = "冬季";
+            break;
+    }
+
+    cout << "現在是" << message << "!";
+}
+```
+
+---
 
 ```c++ 
 *question robot.cpp
@@ -388,7 +526,53 @@ int main() {
 請選擇中文的選項<1-3>:2
 英文是:good evening
 ```
-[解題](https://repl.it/@roberthsu2003/robot)
+
+**[解題]**
+
+```
+/*
+製作如下圖範例，點選中文的選項之後，會顯示對應的英文
+
+顯示===============
+1.您好嗎?
+2.晚安
+3.早安
+請選擇中文的選項<1-3>:2
+英文是:good evening
+
+*/
+#include <iostream>
+using namespace std;
+
+int main() {
+	unsigned short selected;
+	string greeting;
+	cout << "1.您好嗎?\n";
+	cout << "2.晚安\n";
+	cout << "3.早安\n";
+	cout << "請選擇中文的選項<1-3>:";
+	cin >> selected;
+	switch (selected){
+		case 1:
+			greeting = "How are you?";
+			break;
+		
+		case 2:
+			greeting = "Good evening";
+			break;
+		case 3:
+			greeting = "Good morning";
+			break;
+		
+		default:
+			greeting = "不合法的數字";
+	}
+
+	cout << "英文是:" << greeting << endl;
+}
+```
+
+---
 
 ```c++
 *question
@@ -417,7 +601,52 @@ int main() {
 4	|	2,420,001 ~ 4,530,000	  | 30%	    |  365,000
 5	|	4,530,001以上          | 40%	    |  805,000		
 
-[解題](https://repl.it/@roberthsu2003/IncomeTax)
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	int incomeTax; //綜合所得淨額
+	float taxFeepercent; //稅額(%)
+	int minusMoney;	//累進差額	
+	cout << "請輸入綜合所得淨額:";
+	cin >> incomeTax;
+
+	if (incomeTax <= 540000){
+		taxFeepercent = 0.05;
+		minusMoney = 0;
+	}else if (incomeTax <= 1200000){
+		taxFeepercent = 0.1;
+		minusMoney = 36400;
+	}else if (incomeTax <= 2420000){
+		taxFeepercent = 0.2;
+		minusMoney = 130000;
+	}else if (incomeTax <= 4530000){
+		taxFeepercent = 0.3;
+		minusMoney = 365000;
+	}else{
+		taxFeepercent = 0.4;
+		minusMoney = 805000;
+	}
+
+	int taxFee = incomeTax * taxFeepercent; //稅額 
+
+
+	cout << "綜合所得淨額:" << incomeTax << "元\n";
+	cout << "稅額:" << 100 * taxFeepercent << "%\n";
+	cout << "=================================\n";
+	cout << "稅金:" << taxFee  << "元\n";
+	cout << "累進差額:" << minusMoney << "元\n";
+	cout << "=================================\n";
+	cout << "今年應納稅額:" << taxFee - minusMoney << "元\n";
+	
+}
+	
+```
+
+---
 
 ```c++
 *question member.cpp
@@ -431,9 +660,47 @@ int main() {
 您的利率是2%
 會員等級是B級
 ```
-[解題](https://repl.it/@roberthsu2003/member)
 
+**[解題]**
 
+```
+/*
+輸入您的存款金額並給予適當的利率及會員等級.
+1存款大於等於1000000利率4%,否則利率2%
+2存款大於等於1000000為A級會員，存款500000-999999為B級會員，其他為C級會員
+
+顯示================================
+請輸入您的存款:750000
+
+您的利率是2%
+會員等級是B級
+
+*/
+#include <iostream>
+using namespace std;
+
+int main() {
+	unsigned int money;
+	short rate;
+	string level;
+	cout << "請輸入您的存款:";
+	cin >> money;
+	if (money < 500000){
+		rate = 2;
+		level = "C級會員";
+	}else if (money < 1000000){
+		rate = 2;
+		level = "B級會員";
+	}else{
+		rate = 4;
+		level = "A級會員";
+	}
+	cout << "您的利率是" << rate << "%" << endl;
+	cout << "會員等級是:" << level << endl;
+}
+```
+
+---
 
 ```c++
 
@@ -451,5 +718,53 @@ int main() {
 停車的總分數281
 停車的總費用是340
 ```
-[解題](https://repl.it/@roberthsu2003/parkingFee)
+
+**[解題]**
+
+```
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+using  namespace std;
+
+int main() {
+    int firstHour,firstMin;
+    int secondHour,secondMin;
+    int totalMins;
+    int timeSegments;
+    int payMoney = 0;
+
+    printf("請輸入進場時間:");
+    scanf("%d %d",&firstHour, &firstMin);
+
+    printf("請輸入出場時間:");
+    scanf("%d %d",&secondHour, &secondMin);
+
+    totalMins = (secondHour-firstHour) * 60 + (secondMin - firstMin);
+
+    timeSegments = totalMins / 30;
+
+    if(totalMins <= 120){
+        payMoney = timeSegments * 30;
+    }else if(totalMins <= 240){
+        payMoney += 4 * 30;
+        timeSegments -= 4;
+        payMoney += timeSegments * 40;
+    }else{
+        payMoney += 4 * 30;
+        timeSegments -= 4;
+
+        payMoney += 4 * 40;
+        timeSegments -= 4;
+        
+        payMoney += timeSegments * 60;
+    }
+
+    cout << "進場時間是" << firstHour << "-" << firstMin << endl;
+    cout << "出場時間是" << secondHour << "-" << secondMin << endl;
+
+    cout << "停車的總分數" << totalMins << endl;
+    cout << "停車的總費用是" << payMoney << endl;
+}
+```
 

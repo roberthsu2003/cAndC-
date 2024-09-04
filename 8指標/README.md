@@ -59,7 +59,22 @@ int main() {
 變數 n 的值=12
 變數 n 的位址=0x7ffeef0805a0
 ```
-[解題](https://repl.it/@roberthsu2003/number)
+
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n;
+	cout << "請輸入變數 n = ";
+	cin >> n;
+
+	cout << "變數 n 的值=" << n << endl;
+	cout << "變數 n 的位址 =" << &n << endl;
+}
+```
 
 ## 指標變數
 指標變數儲存的內容是記憶體位址
@@ -178,7 +193,29 @@ int main() {
 請輸入變數y=30
 20 + 30 = 50
 ```
-[解題](https://repl.it/@roberthsu2003/pointAdd)
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+int add(int* x, int* y){
+	int sum = *x + *y;
+	return sum;
+}
+
+int main() {
+	int x;
+	int y;
+	cout << "請輸入變數x=";
+	cin >> x;
+	cout << "請輸入變數y=";
+	cin >> y;
+	int sum = add(&x, &y);
+	cout << x << "+" << y << "=" << sum << endl;
+}
+```
+
+---
 
 
 
@@ -279,6 +316,7 @@ int main() {
 
 ### 一維字元陣列與指標
 ![使用陣列變數和指標變數存取字元陣列](pic/pic4.png)
+
 ```c++
 //============================================================================
 // Name        : p_array2.cpp
@@ -324,7 +362,35 @@ int main() {
 以指標求總和
 總和 total = 6
 ```
-[解題](https://repl.it/@roberthsu2003/arrayPoint)
+
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n[] = {1,2,3};
+	int *pointN = n;
+	int sum=0;
+	for(int i=0;i<3;i++){
+		sum += n[i];
+	}
+
+	cout << "以陣列元素求總和" << endl;
+	cout << "總和 total = " << sum << endl;
+
+	sum = 0;
+	for(int i=0; i<3; i++){
+		sum += *(n+i);
+	}
+
+	cout << "以指標求總和" << endl;
+	cout << "總和 total = " << sum << endl;
+}
+```
+
+---
 
 ### 使用call By value和 call By Reference傳遞參數  
 ```c++
@@ -351,6 +417,7 @@ void sub1(int x, int &y){
 ```
 
 ### 傳遞陣列元素，使用call By Value和call By Reference
+
 ```c++
 //============================================================================
 // Name        : array4.cpp
@@ -542,7 +609,42 @@ int main() {
 請輸入字串 s = Sample
 字串倒印 = elpmaS
 ```
-[解題](https://repl.it/@roberthsu2003/revert)
+
+**[解題]**
+
+```
+/*--------------------------
+問題 reverse.cpp
+輸入任意字串(最多100個字元)，利用指標p輸入字倒印。
+
+顯示==================================
+請輸入字串 s = Sample
+字串倒印 = elpmaS
+---------------------------*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	char *s = new char[100];
+
+	cout << "請輸入字串 s =";
+	cin >> s;
+	int i = 0;
+	
+	while(*(s+i) != '\0'){
+		i++;		
+	}
+	
+	for(i; i>=0; i--){		
+		cout << *(s+i);
+	}
+	cout << endl;
+
+}
+```
+
+---
 
 ### new,delete 運算子  
 指標宣告後若未明確指向實體變數的記憶體位址，它就像一艘漂泊未靠岸的般隻，無法裝載任何的貨品，因此，不可以將一個數值放進未取很位址的指標中。
@@ -552,6 +654,7 @@ int main() {
 int *p;
 *p=10;
 ```
+
 ![沒有實體的指標](pic/pic8.png)
 
 ```

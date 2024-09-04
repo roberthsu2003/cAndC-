@@ -69,7 +69,25 @@ int main() {
 請輸入華氏溫度:xx
 攝氏溫度=xx.xxxx
 ```
-[解題](https://repl.it/@roberthsu2003/transtemperature)
+**[解題]**
+```
+#include <iostream>
+using namespace std;
+
+float fahrenheitToCelsius(float fahrenheit){
+	float celsius = (fahrenheit - 32) / 1.8;
+	return celsius;
+}
+
+int main() {
+	float fahrenheit;
+	cout << "請輸入華氏溫度:";
+	cin >> fahrenheit;
+	cout << "攝氏溫度=" << fahrenheitToCelsius(fahrenheit);
+}
+```
+
+---
 
 ### 數學題
 ![](./images/pic1.png)
@@ -403,7 +421,31 @@ int main() {
 請輸入數值 b = 34
 較大的數是 34
 ```
-[解題](https://repl.it/@roberthsu2003/maxValue)
+
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int maxValue(int a, int b){
+	return (a > b) ? a : b;
+}
+
+int main() {
+	int aValue;
+	int bValue;
+	int max;
+	cout << "請輸入數值 a:";
+	cin >> aValue;
+	cout << "請輸入數值 b:";
+	cin >> bValue;
+	max = maxValue(aValue,bValue);
+	cout << "較大的數是:" << max << endl;
+}
+```
+
+---
 
 ###  call by value和call by address的應用
 ```c++
@@ -486,6 +528,7 @@ int main() {
 
 
 ### 遞迴(Recursive)
+
 ```c++
 //============================================================================
 // Name        : recoursive.cpp
@@ -570,7 +613,28 @@ int Area(int a,int b){
 	return a*a
 }
 ```
-[解題](https://repl.it/@roberthsu2003/area)
+
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int area(int side){
+	return side * side;
+}
+
+int area(int side, int anotherSide){
+	return side * anotherSide;
+}
+
+int main() {
+  cout << "正方形=" << area(10) << endl;
+  cout << "矩形面積=" << area(10,15);
+}
+```
+
+---
 
 
 ### 全域變數，區塊變數，區域變數
@@ -668,6 +732,8 @@ int main() {
 
 ```
 
+---
+
 ```c++
 建立0<= r <=n (0~n的亂數)
 int r = rand() % (n+1);
@@ -680,6 +746,8 @@ int r = m + rand() % (n+1 - m);
 for(int i=0; i<5; i++)
 	cout << 10 + rand()% (100-10+1) << endl;
 ```
+
+---
 
 ```c++
 擲骰子遊戲亂數模擬 random1.cpp
@@ -717,6 +785,8 @@ int main() {
 
 ```
 
+---
+
 ```
 *問題 輸入正整數n後，利用遞迴函式計算由 1 + 2 + 3 + ... + n 的和。
 
@@ -724,7 +794,29 @@ int main() {
 請輸入一個正整數:10
 1 到 10整數的總和為 55 
 ```
-[解題](https://repl.it/@roberthsu2003/recursive)
+
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int sum(int value){
+	if(value == 1)
+		return 1;
+	else
+		return value + sum(value - 1);
+}
+
+int main() {
+	int num;
+	cout << "請輸入一個正整數:";
+	cin >> num;
+	cout << "1 到 "<< num << " 整數的總和為:" << sum(num) << endl;
+}
+```
+
+---
 
 ```
 *問題 大樂透開獎:建立一個函式，以亂數產生7個1到49之間不重複整數
@@ -733,7 +825,45 @@ int main() {
 本期大樂透的開獎號碼: 35 6 39 17 4 14
 本期大樂透的特別號:26
 ```
-[解題](https://repl.it/@roberthsu2003/BiglotFunction)
+
+**[解題]**
+
+```
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+
+using namespace std;
+
+void getSevenNum(int choose[],int num){
+	int lot[49];	
+	int maxIndex = 48;
+	for(int i=0;i<49;i++){
+		lot[i] = i+1;		
+	}
+	srand(time(NULL));
+	for(int i=0;i<7;i++){
+		int randIndex = rand()%(maxIndex+1);
+		choose[i] = lot[randIndex];
+		lot[randIndex] = lot[maxIndex];
+		maxIndex--;
+	}	
+}
+
+int main() {
+	int choose[7];
+	int num = 7;
+	getSevenNum(choose,num);
+	cout << "本期大樂透電腦選號號碼如下:\n";
+	for(int i=0; i<num; i++){
+		cout << choose[i] << " ";
+	}
+	cout << "\n\n特別號" << choose[6] << "\n\n";
+
+}
+```
+
+---
 
 ```c++
 //============================================================================

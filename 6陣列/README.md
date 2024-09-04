@@ -73,7 +73,25 @@ int main() {
 我喜歡的第二種水果:xxx
 我喜歡的第三種水果:xxxx
 ```
-[解題](https://repl.it/@roberthsu2003/fruits)
+
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	string fruits[] = {"香蕉","蘋果","鳳梨"};
+	int nums = sizeof(fruits) / sizeof(fruits[0]);
+	for(int i=0;i<nums;i++){
+		cout << "我喜歡的第一種水果:";
+		cout << fruits[i] << endl;
+	}
+
+}
+```
+
+---
 
 ### 使用迴圈設定陣列
 	
@@ -114,7 +132,7 @@ int main() {
 }
 ```
 
-### 
+---
 
  ```c++
 //========================================================================
@@ -171,7 +189,29 @@ int main(void) {
 全部貨品總價為:xxxxx元
 ```
 
-[解題](https://repl.it/@roberthsu2003/sales)
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	unsigned short num;
+	unsigned long long int sum=0;
+	cout << "請輸入購買貨品件數:";
+	cin >> num;
+	unsigned short nums_array[num];
+	for(int i = 0; i<num; i++){
+		cout << "請輸入第" << i+1 << "件貨品的價格:";
+		cin >> nums_array[i];
+		sum += nums_array[i];
+	}
+	cout << "全部貨品總價為:" << sum << "元";
+
+}
+```
+
+---
 
 ```
 *問題 min.cpp
@@ -187,7 +227,35 @@ int main(void) {
 //=====================================================================
 ```
 
-[解題](https://repl.it/@roberthsu2003/min)
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	unsigned int nums;
+	unsigned int min;
+	cout << "請輸入數值:";
+	cin >> nums;
+	unsigned int values[nums];
+	for(int i=0; i<nums; i++){
+		cout << "請輸入第" << i+1 << "數值:";
+		cin >> values[i];		
+	}
+
+	min = values[0];
+
+	for(int i=1; i<nums; i++){
+		min = min <= values[i] ? min: values[i];
+		cout << values[i] << " | ";
+	}
+	cout << "最小值是:" << min;
+
+
+
+}
+```
 
 
 ### 一維陣列空間大小
@@ -287,7 +355,50 @@ int main() {
 由大到小的排序後:
 98 85 45 23 20
 ```
-[解題](https://repl.it/@roberthsu2003/bubbles)
+
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	int nums;
+	cout << "請輸入要排序的數值個數:";
+	cin >> nums;
+	float array[nums],temp;
+
+	for(int i=0; i<nums; i++){
+		cout << "請輸入第" << i+1 << "個數值:";
+		cin >> array[i];
+	}
+
+	cout << "排序前:\n";
+	for (int i=0; i < nums; i++){
+		cout << array[i] << " ";
+	}
+
+	//陣列排序
+	for(int i=0; i < nums-1; i++){
+		for(int j=i+1; j < nums; j++){
+			if (array[i] < array[j]){
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+		}
+	}
+
+	cout << "\n";
+	cout << "排序後:\n";
+		for (int i=0; i < nums; i++){
+			cout << array[i] << " ";
+		}
+
+	return 0;
+}
+
+```
 
 ### 陣列的應用:循序搜尋
 
@@ -686,7 +797,52 @@ int main() {
 
 //顯示=======================================
 ```
-[解題](https://repl.it/@roberthsu2003/sorted)
+
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	int nums;
+	cout << "請輸入10個要排序的數字\n";
+	nums = 10;
+	float array[nums],temp;
+
+	for(int i=0; i<nums; i++){
+		cout << "請輸入第" << i+1 << "個數值:";
+		cin >> array[i];
+	}
+
+	cout << "排序前:\n";
+	for (int i=0; i < nums; i++){
+		cout << array[i] << " ";
+	}
+
+	//陣列排序
+	for(int i=0; i < nums-1; i++){
+		for(int j=i+1; j < nums; j++){
+			if (array[i] > array[j]){
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+		}
+	}
+
+	cout << "\n";
+	cout << "排序後:\n";
+		for (int i=0; i < nums; i++){
+			cout << array[i] << " ";
+		}
+
+	return 0;
+}
+
+```
+
+---
 
 
 ```
@@ -708,5 +864,99 @@ int ages[] = {56, 45, 51, 48, 35, 57};
 小陳    王種    龍哥    發叔    老李    小張
 35     45     48      51     56     57
 ```
-[解題](https://repl.it/@roberthsu2003/ageSorted)
+
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	int inputValue=0;
+	int nums;
+	int temp1;
+	string temp2;
+	string names[] = {"老李", "王種", "發叔", "龍哥" ,"小陳" ,"小張"};
+	int ages[] = {56, 45, 51, 48, 35, 57};
+	nums = sizeof(ages) / sizeof(ages[0]);
+
+	cout << "尚未排序前:\n";
+	for (int i=0; i < nums; i++){
+		cout << names[i] << "\t";
+	}
+	cout << endl;
+	for (int i=0; i < nums; i++){
+		cout << ages[i] << "\t\t";
+	}
+	cout << endl << endl << endl;
+
+	cout << "1.由小到大排序\t\t2.由大到小排序\n";
+	cout << "請輸入選項:";
+	cin >> inputValue;
+	switch(inputValue){
+		case 1:
+			//陣列排序
+			//由小到大排序
+			for(int i=0; i < nums-1; i++){
+				for(int j=i+1; j < nums; j++){
+					if (ages[i] > ages[j]){
+						temp1 = ages[i];
+						ages[i] = ages[j];
+						ages[j] = temp1;
+
+						temp2 = names[i];
+						names[i] = names[j];
+						names[j] = temp2;
+					}
+				}
+			}
+
+			cout << "\n";
+			cout << "由小到大排序後:\n";
+			for (int i=0; i < nums; i++){
+				cout << names[i] << "\t";
+			}
+			cout << endl;
+			for (int i=0; i < nums; i++){
+				cout << ages[i] << "\t\t";
+			}
+			break;
+
+		case 2:
+			//陣列排序
+			//由大到小排序
+			for(int i=0; i < nums-1; i++){
+				for(int j=i+1; j < nums; j++){
+					if (ages[i] < ages[j]){
+						temp1 = ages[i];
+						ages[i] = ages[j];
+						ages[j] = temp1;
+
+						temp2 = names[i];
+						names[i] = names[j];
+						names[j] = temp2;
+					}
+				}
+			}
+
+			cout << "\n";
+			cout << "由小到大排序後:\n";
+			for (int i=0; i < nums; i++){
+				cout << names[i] << "\t";
+			}
+			cout << endl;
+			for (int i=0; i < nums; i++){
+				cout << ages[i] << "\t\t";
+			}
+			break;
+
+
+	}
+
+	
+
+	return 0;
+}
+
+```
 

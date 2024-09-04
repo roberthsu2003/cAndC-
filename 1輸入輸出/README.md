@@ -209,7 +209,33 @@ int main(void) {
 出生民國年份:69
 對應西元年份:1980，今年39歲
 ```
-[解答](https://repl.it/@roberthsu2003/age)
+
+**[解答]**
+
+```
+#include <stdio.h>
+/*
+輸入出生「民國年份」後，求取對應「西元年份」及「現在年齡」。
+公式 
+西元年份 = 民國年份59 + 1911 
+年齡 = 現在年份-西元年份 
+
+
+顯示==================================
+出生民國年份:69
+對應西元年份:1980，今年39歲
+*/
+
+int main(void) {
+  int year=0;
+  printf("出生民國年份:");
+  scanf("%d",&year);
+  int westernYear = 1911 + year;
+  int age = 2019 - westernYear;
+  printf("對應西元年份:%d,今年%d歲",westernYear,age);
+  return 0;
+}
+```
 
 ---
 ```c
@@ -226,5 +252,38 @@ int main(void) {
 三科總分:250
 三科平均:83.3
 ```
-[解答](https://repl.it/@roberthsu2003/sumAve)
+**[解答]**
+
+```/*
+題目
+//sumAve.c
+同步登錄「國文、英文、數學」學測成績， 進行三科「總分、平均」計算報告。
+提示．將「總分、平均」求取項目結果值後，輸出。
+
+顯示====================================
+科目:國文,英文,數學
+請輸入:92 85 73
+
+---計算學測分數----
+三科總分:250
+三科平均:83.3
+*/
+
+#include <stdio.h>
+
+int main(void) {
+  int chinese,english,math;
+  int sum=0;
+  float average = 0;
+  printf("科目:國文,英文,數學\n");
+  printf("請輸入:");
+  scanf("%d %d %d",&chinese,&english,&math);
+  sum = chinese + english + math;
+  average = sum / 3.0;
+  printf("三科總分:%d\n",sum);
+  printf("三科平均:%.2f",average);
+  return 0;
+}
+```
+
 

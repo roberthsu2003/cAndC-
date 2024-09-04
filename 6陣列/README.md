@@ -772,6 +772,8 @@ int main() {
 }
 ```
 
+---
+
 ```
 *問題 ninenine.cpp
 以程式建立 9 x 9 的二維整數陣列，陣列內容是九九乘法表的乘積，並將之輸出
@@ -787,8 +789,33 @@ int main() {
 8*1=8   8*2=16  8*3=24  8*4=32  8*5=40  8*6=48  8*7=56  8*8=64  8*9=72
 9*1=9   9*2=18  9*3=27  9*4=36  9*5=45  9*6=54  9*7=63  9*8=72  9*9=81
 ```
-[解題](https://repl.it/@roberthsu2003/ninenine)
 
+**[解題]**
+
+```
+#include <iostream>
+using namespace std;
+int main() {
+	unsigned short elements[9][9];
+	for(int i = 0; i<9; i++){
+		for(int j =0; j<9; j++){
+			elements[i][j] = (i+1) * (j+1);
+		}
+	}
+
+	for(int i = 0; i<9; i++){
+		for(int j =0; j<9; j++){
+			cout << i+1 << "*" << j+1 << "=" << elements[i][j] << "\t";
+		}
+		cout << endl;
+	}
+
+
+
+}
+```
+
+---
 
 
 ```
@@ -959,4 +986,3 @@ int main() {
 }
 
 ```
-

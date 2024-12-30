@@ -13,6 +13,26 @@ if(條件式){
 
 ## 雙向選擇(if ... else)
 
+#### 奇偶數
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number;
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (number % 2 == 0) {
+        printf("%d is even.\n", number);
+    } else {
+        printf("%d is odd.\n", number);
+    }
+
+    return 0;
+}
+```
+
 ```c++
 if (條件式){
     程式區塊一
@@ -99,25 +119,7 @@ int main() {
 
 ---
 
-#### 奇偶數
 
-```c
-#include <stdio.h>
-
-int main() {
-    int number;
-    printf("Enter a number: ");
-    scanf("%d", &number);
-
-    if (number % 2 == 0) {
-        printf("%d is even.\n", number);
-    } else {
-        printf("%d is odd.\n", number);
-    }
-
-    return 0;
-}
-```
 
 ## 單向選擇(if...)
 

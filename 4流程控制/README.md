@@ -11,52 +11,6 @@ if(條件式){
 }
 ```
 
-## 奇偶數
-
-```c
-#include <stdio.h>
-
-int main() {
-    int number;
-    printf("Enter a number: ");
-    scanf("%d", &number);
-
-    if (number % 2 == 0) {
-        printf("%d is even.\n", number);
-    } else {
-        printf("%d is odd.\n", number);
-    }
-
-    return 0;
-}
-```
-
-## 單向選擇(if...)
-
-```c++
-// Name        : password.cpp
-//學生符合加分條件就加5%分,如果超過300分,就以300為主。
-#include <iostream>
-using namespace std;
-
-int main() {
-	int scores;	
-	bool add;
-	cout << "請輸入學生的分數:";
-	cin >> scores;
-	cout << "學生符合加分條件嗎? yes請輸入1,no請輸入0:";
-	cin >> add;
-	if (add) {
-		scores *= 1.05;
-		if (scores > 300){
-			scores = 300;
-		}
-	}
-
-	cout << "學生分數是:" << scores << endl;
-}
-```
-
 ## 雙向選擇(if ... else)
 
 ```c++
@@ -144,6 +98,54 @@ int main() {
 ```
 
 ---
+
+#### 奇偶數
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number;
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (number % 2 == 0) {
+        printf("%d is even.\n", number);
+    } else {
+        printf("%d is odd.\n", number);
+    }
+
+    return 0;
+}
+```
+
+## 單向選擇(if...)
+
+```c++
+// Name        : password.cpp
+//學生符合加分條件就加5%分,如果超過300分,就以300為主。
+#include <iostream>
+using namespace std;
+
+int main() {
+	int scores;	
+	bool add;
+	cout << "請輸入學生的分數:";
+	cin >> scores;
+	cout << "學生符合加分條件嗎? yes請輸入1,no請輸入0:";
+	cin >> add;
+	if (add) {
+		scores *= 1.05;
+		if (scores > 300){
+			scores = 300;
+		}
+	}
+
+	cout << "學生分數是:" << scores << endl;
+}
+```
+
+
 
 
 ## 多向選擇(if ... else if..... else)

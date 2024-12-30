@@ -11,6 +11,26 @@ if(條件式){
 }
 ```
 
+## 奇偶數
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number;
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (number % 2 == 0) {
+        printf("%d is even.\n", number);
+    } else {
+        printf("%d is odd.\n", number);
+    }
+
+    return 0;
+}
+```
+
 ## 單向選擇(if...)
 
 ```c++
@@ -319,6 +339,26 @@ int main() {
 }
 ```
 
+#### Leap Year Checker
+
+```c
+#include <stdio.h>
+
+int main() {
+    int year;
+    printf("Enter a year: ");
+    scanf("%d", &year);
+
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+        printf("%d is a leap year.\n", year);
+    } else {
+        printf("%d is not a leap year.\n", year);
+    }
+
+    return 0;
+}
+```
+
 
 
 ```c++
@@ -381,6 +421,28 @@ int main() {
 此三角形為一個鈍角三角形
 ```
 
+#### Smallest of Three Numbers
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+    printf("Enter three numbers: ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    if (a < b && a < c) {
+        printf("Smallest number is %d.\n", a);
+    } else if (b < a && b < c) {
+        printf("Smallest number is %d.\n", b);
+    } else {
+        printf("Smallest number is %d.\n", c);
+    }
+
+    return 0;
+}
+```
+
 **[解題]**
 
 ```
@@ -436,6 +498,39 @@ int main() {
 ---
 
 ## switch case:
+
+#### Simple Calculator
+```c
+#include <stdio.h>
+
+int main() {
+    char operator;
+    double num1, num2;
+
+    printf("Enter an operator (+, -, *, /): ");
+    scanf(" %c", &operator);
+    printf("Enter two numbers: ");
+    scanf("%lf %lf", &num1, &num2);
+
+    if (operator == '+') {
+        printf("Result: %.2lf\n", num1 + num2);
+    } else if (operator == '-') {
+        printf("Result: %.2lf\n", num1 - num2);
+    } else if (operator == '*') {
+        printf("Result: %.2lf\n", num1 * num2);
+    } else if (operator == '/') {
+        if (num2 != 0) {
+            printf("Result: %.2lf\n", num1 / num2);
+        } else {
+            printf("Division by zero is not allowed.\n");
+        }
+    } else {
+        printf("Invalid operator.\n");
+    }
+
+    return 0;
+}
+```
 
 ```c++
 switch(表示式){

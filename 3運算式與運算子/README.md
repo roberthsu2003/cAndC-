@@ -207,7 +207,7 @@ a|>= | 大於等於
 a|<= | 小於等於 
 
 ```c++
-	#include <iostream>
+#include <iostream>
 using namespace std;
 
 int main() {

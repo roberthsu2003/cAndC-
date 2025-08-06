@@ -46,21 +46,54 @@ int 2ndScore;    // 不合法，不能以數字開頭
 
 ## 數值型別
 
-| 型別              | 記憶體大小 | 範圍                        |
-|-------------------|------------|-----------------------------|
-| char              | 1 Byte     | -128 ~ 127                  |
-| unsigned char     | 1 Byte     | 0 ~ 255                     |
-| short             | 2 Byte     | -32768 ~ 32767              |
-| unsigned short    | 2 Byte     | 0 ~ 65535                   |
-| int               | 4 Byte     | -2147483648 ~ 2147483647    |
-| unsigned int      | 4 Byte     | 0 ~ 4294967295              |
-| long              | 4 Byte     | -2147483648 ~ 2147483647    |
-| long long         | 8 Byte     | -9223372036854775808 ~ 9223372036854775807 |
-| unsigned long     | 4 Byte     | 0 ~ 4294967295              |
-| float             | 4 Byte     | 約6~7位有效數字             |
-| double            | 8 Byte     | 約15位有效數字              |
+| 型別              | 記憶體大小 | 範圍                        | 輸出格式符號 |
+|-------------------|------------|-----------------------------|-----------| 
+| char              | 1 Byte     | -128 ~ 127                  | %c, %d    |
+| unsigned char     | 1 Byte     | 0 ~ 255                     | %c, %u    |
+| short             | 2 Byte     | -32768 ~ 32767              | %hd       |
+| unsigned short    | 2 Byte     | 0 ~ 65535                   | %hu       |
+| int               | 4 Byte     | -2147483648 ~ 2147483647    | %d        |
+| unsigned int      | 4 Byte     | 0 ~ 4294967295              | %u        |
+| long              | 4 Byte     | -2147483648 ~ 2147483647    | %ld       |
+| long long         | 8 Byte     | -9223372036854775808 ~ 9223372036854775807 | %lld |
+| unsigned long     | 4 Byte     | 0 ~ 4294967295              | %lu       |
+| float             | 4 Byte     | 約6~7位有效數字             | %f, %e, %g |
+| double            | 8 Byte     | 約15位有效數字              | %lf, %le, %lg |
 
 > **備註**：不同編譯器或平台，型別大小可能略有差異。
+
+### 格式符號說明
+
+```c
+#include <stdio.h>
+
+int main() {
+    char ch = 'A';
+    int num = 123;
+    unsigned int unum = 456;
+    float pi = 3.14159f;
+    double e = 2.71828;
+    
+    printf("字元: %c (ASCII: %d)\n", ch, ch);
+    printf("整數: %d\n", num);
+    printf("無符號整數: %u\n", unum);
+    printf("浮點數: %f\n", pi);
+    printf("浮點數(科學記號): %e\n", pi);
+    printf("雙精度浮點數: %lf\n", e);
+    
+    return 0;
+}
+```
+
+**輸出結果：**
+```
+字元: A (ASCII: 65)
+整數: 123
+無符號整數: 456
+浮點數: 3.141590
+浮點數(科學記號): 3.141590e+00
+雙精度浮點數: 2.718280
+```
 
 ---
 

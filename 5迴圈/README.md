@@ -1,687 +1,539 @@
-# 迴圈
+# 迴圈 (Loops)
 
-## 執行固定次數的迴圈for
-```
-for ([變數初始化宣告]; [條件判斷]; [改變量]){
-	程式區塊
+## 目錄
+1. [迴圈的基本概念](#迴圈的基本概念)
+2. [for 迴圈](#for-迴圈)
+3. [while 迴圈](#while-迴圈)
+4. [do-while 迴圈](#do-while-迴圈)
+5. [巢狀迴圈](#巢狀迴圈)
+6. [迴圈控制語句](#迴圈控制語句)
+7. [實用範例](#實用範例)
+
+## 迴圈的基本概念
+
+迴圈是一種重複執行特定程式碼區塊的結構，當我們需要重複執行相同的操作時，使用迴圈可以讓程式更簡潔、更有效率。
+
+### 迴圈的三大要素
+1. **初始條件**：設定迴圈的起始值
+2. **終止條件**：決定迴圈何時停止
+3. **更新條件**：改變迴圈變數的值
+
+---
+
+## for 迴圈
+
+### 語法結構
+```cpp
+for (初始條件; 終止條件; 更新條件) {
+    // 要重複執行的程式碼
 }
 ```
 
-```c++
-//============================================================================
-// Name        : for1.cpp
-//計算2 - 10所有偶數的總和
-//================================================================
-第 1 次迴圈的 i = 2,總和為:2
-第 2 次迴圈的 i = 4,總和為:6
-第 3 次迴圈的 i = 6,總和為:12
-第 4 次迴圈的 i = 8,總和為:20
-第 5 次迴圈的 i = 10,總和為:30
-//=================================================================
+### 基本範例
+
+#### 範例 1：計算 1 到 10 的總和
+```cpp
 #include <iostream>
 using namespace std;
 
 int main() {
-	int sum = 0;
-	for(int i=2; i<=10; i+=2){
-		sum += i;
-		cout << "第" << i/2 << " 次迴圈的 i = " << i << ",總和為 " << sum << "\n";
-	}
-	return 0;
+    int sum = 0;
+    
+    for (int i = 1; i <= 10; i++) {
+        sum += i;
+        cout << "第 " << i << " 次迴圈，目前總和為: " << sum << endl;
+    }
+    
+    cout << "1 到 10 的總和為: " << sum << endl;
+    return 0;
 }
 ```
 
+**執行結果：**
+```
+第 1 次迴圈，目前總和為: 1
+第 2 次迴圈，目前總和為: 3
+第 3 次迴圈，目前總和為: 6
+第 4 次迴圈，目前總和為: 10
+第 5 次迴圈，目前總和為: 15
+第 6 次迴圈，目前總和為: 21
+第 7 次迴圈，目前總和為: 28
+第 8 次迴圈，目前總和為: 36
+第 9 次迴圈，目前總和為: 45
+第 10 次迴圈，目前總和為: 55
+1 到 10 的總和為: 55
+```
 
-### 
-
-```c++
-//============================================================================
-// Name        : for2.cpp
-//計算固定中的支出，媽媽每天會將家裡的花費記錄下來，並且計算本週的花費總和
-//================================================================
-請輸入星期1 的支出567
-請輸入星期2 的支出456
-請輸入星期3 的支出567
-請輸入星期4 的支出890
-請輸入星期5 的支出345
-請輸入星期6 的支出534
-請輸入星期日 的支出678
-本星期的支出為:4037元
-//==================================================================
+#### 範例 2：計算偶數總和
+```cpp
 #include <iostream>
 using namespace std;
 
 int main() {
-	int sum=0, n;
-	for(int i=1; i<=7; i++){
-		if(i==7){
-			cout << "請輸入星期日的支出:";
-		}else{
-			cout << "請輸入星期" << i << " 的支出:";
-		}
-
-		cin >> n;
-		sum += n;
-	}
-
-	cout << "本星期的支出為:" << sum << "元\n";
-	return 0;
+    int sum = 0;
+    
+    // 計算 2 到 10 所有偶數的總和
+    for (int i = 2; i <= 10; i += 2) {
+        sum += i;
+        cout << "第 " << i/2 << " 次迴圈，i = " << i << "，總和為: " << sum << endl;
+    }
+    
+    cout << "2 到 10 的偶數總和為: " << sum << endl;
+    return 0;
 }
 ```
 
-
-```
-*question for1_s
-小王班上有五位學生，請您為小王設計一個輸入成績的程式，並且在輸入成績後顯示班上總成績及平均成績。
-
-//=============================================================
-
-請輸入第1位學生的成績:89
-請輸入第2位學生的成績:89
-請輸入第3位學生的成績:89
-請輸入第4位學生的成績:89
-請輸入第5位學生的成績:89
-
-全班總成績為: ***分，平均為89分
-
-```
-
-**[解題]**
-
-```
+#### 範例 3：輸入多筆資料並計算總和
+```cpp
 #include <iostream>
 using namespace std;
 
 int main() {
-	unsigned short studentScore;
-	unsigned int sum=0;
-
-	for(int i=1; i<=5; i++){
-		cout << "請輸入第" << i << "位學生的成績:";
-		cin >> studentScore ;
-		sum += studentScore;
-	}
-
-	cout << "全班總成績為:" << studentScore << "分" << ",平均分數為" << sum / 5.0 << "分";
+    int sum = 0;
+    int expense;
+    
+    // 輸入一週七天的支出
+    for (int day = 1; day <= 7; day++) {
+        if (day == 7) {
+            cout << "請輸入星期日的支出: ";
+        } else {
+            cout << "請輸入星期" << day << " 的支出: ";
+        }
+        cin >> expense;
+        sum += expense;
+    }
+    
+    cout << "本週的總支出為: " << sum << " 元" << endl;
+    return 0;
 }
 ```
+
+---
+
+## while 迴圈
+
+### 語法結構
+```cpp
+while (條件判斷) {
+    // 要重複執行的程式碼
+    // 記得要改變條件，避免無限迴圈
+}
+```
+
+### 重要提醒
+⚠️ **注意**：while 迴圈必須在迴圈內部改變條件變數，否則會造成無限迴圈！
+
+### 基本範例
+
+#### 範例 1：存錢買機車
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int target = 30000;  // 目標金額
+    int total = 0;       // 總存款
+    int month = 0;       // 月份計數
+    int deposit;         // 每月存款
+    
+    while (total < target) {
+        month++;
+        cout << "請輸入第 " << month << " 個月的存款: ";
+        cin >> deposit;
+        total += deposit;
+    }
+    
+    cout << "恭喜！已經存夠了，存了 " << month << " 個月的總存款為: " << total << " 元" << endl;
+    return 0;
+}
+```
+
+#### 範例 2：for 迴圈轉換為 while 迴圈
+```cpp
+// 使用 for 迴圈
+for (int i = 0; i <= 5; i++) {
+    cout << "這是第 " << i << " 次迴圈" << endl;
+}
+
+// 使用 while 迴圈達到相同結果
+int i = 0;
+while (i <= 5) {
+    cout << "這是第 " << i << " 次迴圈" << endl;
+    i++;  // 重要：改變條件變數
+}
+```
+
+---
+
+## do-while 迴圈
+
+### 語法結構
+```cpp
+do {
+    // 要重複執行的程式碼
+} while (條件判斷);
+```
+
+### 特點
+- **先執行，再判斷**：程式碼至少會執行一次
+- 適用於需要先執行再判斷條件的場合
+
+### 基本範例
+
+#### 範例 1：密碼驗證
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string password;
+    string correctPassword = "5678";
+    
+    do {
+        cout << "請輸入密碼: ";
+        cin >> password;
+    } while (password != correctPassword);
+    
+    cout << "恭喜！密碼正確，歡迎進入系統！" << endl;
+    return 0;
+}
+```
+
+#### 範例 2：選單系統
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int choice;
+    
+    do {
+        cout << "\n=== 選單系統 ===" << endl;
+        cout << "1. 新增資料" << endl;
+        cout << "2. 查詢資料" << endl;
+        cout << "3. 修改資料" << endl;
+        cout << "4. 刪除資料" << endl;
+        cout << "0. 離開系統" << endl;
+        cout << "請選擇功能 (0-4): ";
+        cin >> choice;
+        
+        switch (choice) {
+            case 1: cout << "執行新增資料功能" << endl; break;
+            case 2: cout << "執行查詢資料功能" << endl; break;
+            case 3: cout << "執行修改資料功能" << endl; break;
+            case 4: cout << "執行刪除資料功能" << endl; break;
+            case 0: cout << "感謝使用，再見！" << endl; break;
+            default: cout << "無效選擇，請重新輸入" << endl;
+        }
+    } while (choice != 0);
+    
+    return 0;
+}
+```
+
+---
 
 ## 巢狀迴圈
 
-```c++
-//============================================================================
-// Name        : forNest1.cpp
-//利用2層迴圈列印「井」字，將其排列成直角三角形
-//=======================================================
-#
-##
-###
-####
-#####
-//====================================================
+巢狀迴圈是指在迴圈內部再包含另一個迴圈。
 
+### 基本範例
 
+#### 範例 1：印出直角三角形
+```cpp
 #include <iostream>
 using namespace std;
 
 int main() {
-	for(int i=1; i<=5; i++){
-		cout<< "外部第" << i << "次迴圈";
-		for(int j=1; j<=i; j++){
-			cout << "#";
-		}
-		cout << "\n";
-	}
-	return 0;
+    for (int i = 1; i <= 5; i++) {
+        cout << "第 " << i << " 行: ";
+        for (int j = 1; j <= i; j++) {
+            cout << "#";
+        }
+        cout << endl;
+    }
+    return 0;
 }
 ```
 
-### 
-```c++
-//=======================================================================
-// Name        : forNest2.cpp
-//利用2層迴圈列印九九乘法表
-//=======================================================================
-1*1=1   1*2=2   1*3=3   1*4=4   1*5=5   1*6=6   1*7=7   1*8=8   1*9=9
-2*1=2   2*2=4   2*3=6   2*4=8   2*5=10  2*6=12  2*7=14  2*8=16  2*9=18
-3*1=3   3*2=6   3*3=9   3*4=12  3*5=15  3*6=18  3*7=21  3*8=24  3*9=27
-4*1=4   4*2=8   4*3=12  4*4=16  4*5=20  4*6=24  4*7=28  4*8=32  4*9=36
-5*1=5   5*2=10  5*3=15  5*4=20  5*5=25  5*6=30  5*7=35  5*8=40  5*9=45
-6*1=6   6*2=12  6*3=18  6*4=24  6*5=30  6*6=36  6*7=42  6*8=48  6*9=54
-7*1=7   7*2=14  7*3=21  7*4=28  7*5=35  7*6=42  7*7=49  7*8=56  7*9=63
-8*1=8   8*2=16  8*3=24  8*4=32  8*5=40  8*6=48  8*7=56  8*8=64  8*9=72
-9*1=9   9*2=18  9*3=27  9*4=36  9*5=45  9*6=54  9*7=63  9*8=72  9*9=81
-	
-//=======================================================================
+**執行結果：**
+```
+第 1 行: #
+第 2 行: ##
+第 3 行: ###
+第 4 行: ####
+第 5 行: #####
+```
+
+#### 範例 2：九九乘法表
+```cpp
 #include <iostream>
 using namespace std;
 
 int main() {
-	for(int i=1; i<=9; i++){
-		for(int j=1; j<=9; j++){
-			cout << i << "*" << j << "=" << i*j << "\t";
-		}
-		cout << "\n";
-	}
-	return 0;
-}
-```
-
-## 不固定次數的迴圈
-```c++
-while(條件判斷)
-{
-	程式敘述;
-	........
-}
-```
-
-```c++
-while迴圈要特別注意，必須設定條件判斷的中止條件，以便可以停止迴圈的執行，否則會進入無窮迴圈的窘境
-//無限迴圈
-int n=1, sum;
-while(n<10){
-	sum += n;
-}
-```
-
-	
-```c++
-//============================================================================
-// Name        : while2.cpp
-//小明想要存錢買一輛機車,機車每輛30000元，他將每月存的錢輸入，當存款足夠買機車時，就顯示提示訊息告知。
-//============================================================================
-請輸入第1個月份的存款:4567
-請輸入第2個月份的存款:3456
-請輸入第3個月份的存款:4567
-請輸入第4個月份的存款:4567
-請輸入第5個月份的存款:4567
-請輸入第6個月份的存款:5678
-請輸入第7個月份的存款:7890
-恭喜! 已經存夠了，存了7個月的總存款為:35292元。
-//============================================================================
-
-
-
-#include <iostream>
-using namespace std;
-
-int main() {
-	int deposit=0, num=0, inputNum;
-	while(deposit < 30000){
-		cout << "請輸入第" << ++num << "個月份的存款:";
-		cin >> inputNum;
-		deposit += inputNum;
-	}
-	cout << "恭喜!已經存夠了，存了" << num << "個月的總存款為:" << deposit << "元。";
-	return 0;
-}
-```
-
-
-```c++
-while迴圈取代for迴圈
-for(int i=0; i<=5; i++)
-{
-	cout << "這是第" << i << "次迴圈";
-}
-
-//使用while迴圈達到相同結果
-int i=0;
-while(i<=5){
-	cout << "這是第" << i << "次迴圈";
-	i++;
-}
-```
-
-
-
-```c++
-先執行再判斷
-do{
-	程式敘述;
-	.........
-}while(條件判斷);
-
-//============================================================================
-// Name        : dowhile2.cpp
-//預設的密碼為5678，使用者若輸入的密碼錯誤，將不斷出現輸入密碼訊息，直到輸入的密碼正確才顯示正確訊息
-
-//============================================================================
-請輸入密碼:1234
-請輸入密碼:2345
-請輸入密碼:3456
-請輸入密碼:4567
-請輸入密碼:5678
-恭喜!您的密碼正確了!請進
-//============================================================================
-
-
-#include <iostream>
-using namespace std;
-
-int main() {
-	string password;
-		
-	do{
-		cout << "請輸入密碼:";
-		cin >> password;
-	}while(password != "5678");
-
-	cout << "恭喜!您的密碼正確了!請進" << endl;
-}
-```
-
-
-
-## break可以跳出迴圈
-```c++
-while1_s.cpp
-小美是一位教師，請你以while迴圈方式為小美設計一個輸入成績的程式，如果輸入負數表示成績輸入結束，在輸入成績結束後顯示班上總成績及平均成績。
-
-顯示===============
-請輸入第1位學生的成績:89
-請輸入第2位學生的成績:78
-請輸入第3位學生的成績:68
-請輸入第4位學生的成績:89
-全班總成績為:XXX分, 平均為XX.XX分
-=========================================
-
-#include <iostream>
-using namespace std;
-
-int main() {
-	int num = 0;
-	int score=0;
-	int sum=0;
-	do{	
-		cout << "請輸入第" << num+1 << "學生的成績:";	
-		cin >> score;				
-		if(score < 0){
-			break;
-		}		
-		sum += score;
-		num += 1;
-		
-	}while(true);
-	cout << "全班總成績為:" << sum << "平均分數為" << (float)sum / num;
-}
-
-```
-
-## continue強制回到迴圈起始位置
-```c++
-continue.cpp
-
-請設計一個程式，讓使用者輸入數值，只有加總正偶數值，不加總正奇數值，如果輸入負數，結束程式。
-顯示:========================================
-請輸入第1個數值:456
-請輸入第2個數值:455
-請輸入第3個數值:123
-請輸入第4個數值:-1
-所有輸入的正偶數的加總是:xxxxxxx
-=================================
-
-
-#include <iostream>
-using namespace std;
-
-int main() {
-	int num=0;
-	int inputNum;
-	int sum=0;
-	do{
-		cout << "請輸入第" << ++num << "個數值:";
-		cin >> inputNum;
-		if(inputNum < 0){
-			break;
-		}
-		
-		if(inputNum % 2 == 1){
-			continue;
-		}
-		sum += inputNum;
-
-	}while(true);
-	cout << "所有輸入的正偶數的加總是:" << sum;
-}
-```
-
-```c++
-break可以跳出迴圈
-
-//============================================================================
-// Name        : guess.cpp
-//猜數字遊戲
-#include <iostream>
-#include <stdlib.h>
-#include <stdio.h>
-#include <time.h>
-
-using namespace std;
-int main() {
-	int guess;
-	int keyin;
-	int count = 0;
-	int max = 99;
-	int min = 1;
-
-	srand(time(NULL));
-	guess = rand() % (max-min+1) + min;	
-	cout << "==============猜數字遊戲===============\n\n";
-	while(true){
-		printf("猜數字範圍%d~%d:",min,max);
-		cin >> keyin;
-		count += 1;
-
-		if(keyin >= min && keyin <= max){
-			//輸入的範圍正確
-			if(keyin == guess){
-				cout << "賓果!猜對了,答案是" << guess << endl;
-				cout << "您猜了" << count << "次" << endl;
-				break;
-			}else if(keyin > guess){
-				max = keyin - 1;
-				cout<< "再小一點!";
-			}else if(keyin < guess){
-				min = keyin + 1;
-				cout << "再大一點!";			}
-			cout << "您已經猜了" << count << "次" << endl;
-		}else{
-			//輸入的範圍不正確
-			cout << "請輸入提示範圍內的數字!\n";
-			continue;
-		}
-		
-	};
-	return 0;
-}
-
-```
-
-```c++
-*問題 various_loop1.cpp
-以for迴圈計算1到100的和
-
-顯示============
-1+2+3+~+100的總合是5050
-```
-
-**[解題]**
-
-```
-#include <iostream>
-using namespace std;
-
-int main() {
-	int sum = 0;
-	for(int i=1; i<=100; i++){
-		if (i != 100){
-			cout << i << "+";
-			sum += i;
-			continue;
-		}
-		cout << i << "=";
-		sum += i;		
-	}
-	cout << "的總合是" << sum;
+    for (int i = 1; i <= 9; i++) {
+        for (int j = 1; j <= 9; j++) {
+            cout << i << "×" << j << "=" << i*j << "\t";
+        }
+        cout << endl;
+    }
+    return 0;
 }
 ```
 
 ---
 
-```c++
-*問題 various_loop2.cpp
-以while迴圈計算1到100的和
+## 迴圈控制語句
 
-顯示============
-1+2+3+~+100的總合是5050
+### break 語句
+- **功能**：立即跳出迴圈
+- **用途**：當滿足特定條件時，提前結束迴圈
 
-```
-
-**[解題]**
-
-```
+#### 範例：成績輸入系統
+```cpp
 #include <iostream>
 using namespace std;
 
 int main() {
-	int sum = 0;
-	int i = 0;
-	while(i <= 100){
-		if (i != 100){
-			cout << i << "+";
-		}else{
-			cout << i << "=";
-		}		
-		sum += i;
-		i++;		
-	}
-	cout << "的總合是" << sum;
+    int score;
+    int sum = 0;
+    int count = 0;
+    
+    while (true) {
+        cout << "請輸入第 " << (count + 1) << " 位學生的成績 (輸入負數結束): ";
+        cin >> score;
+        
+        if (score < 0) {
+            break;  // 輸入負數時跳出迴圈
+        }
+        
+        sum += score;
+        count++;
+    }
+    
+    if (count > 0) {
+        cout << "全班總成績為: " << sum << " 分" << endl;
+        cout << "平均成績為: " << (double)sum / count << " 分" << endl;
+    }
+    
+    return 0;
 }
 ```
 
-```c++
-*問題 various_loop3.cpp
-以do_while形式計算1到100的和
+### continue 語句
+- **功能**：跳過本次迴圈，繼續下一次迴圈
+- **用途**：當滿足特定條件時，跳過當前迭代
 
-顯示============
-1+2+3+~+100的總合是5050
-
-```
-
-**[解題]**
-
-```
+#### 範例：只計算正偶數
+```cpp
 #include <iostream>
 using namespace std;
 
 int main() {
-	int sum = 0;
-	int i = 0;
-	do {
-		if (i != 100){
-			cout << i << "+";
-		}else{
-			cout << i << "=";
-		}		
-		sum += i;
-		i++;		
-	}while(i <= 100);
-	cout << "的總合是" << sum;
-}
-```
-
-
-```c++ 
-*問題 nestedLoop1.cpp
-試寫出下列數字排列的程式 
-顯示=================================
-55555
-4444
-333
-22
-1
-```
-
-**[解題]**
-
-```
-#include <iostream>
-using namespace std;
-
-int main() {
-	for(int i=5; i >= 1; i--){
-		for(int j=1; j <= 5; j++){
-			if(j >= i){
-				cout << i;
-			}else{
-				cout << ' ';
-			}
-			
-		}
-		cout << endl;
-	}
+    int num;
+    int sum = 0;
+    int count = 0;
+    
+    while (true) {
+        cout << "請輸入第 " << (count + 1) << " 個數值 (輸入負數結束): ";
+        cin >> num;
+        
+        if (num < 0) {
+            break;
+        }
+        
+        count++;
+        
+        // 跳過奇數
+        if (num % 2 == 1) {
+            cout << num << " 是奇數，跳過計算" << endl;
+            continue;
+        }
+        
+        sum += num;
+        cout << num << " 是偶數，已加入總和，目前總和為: " << sum << endl;
+    }
+    
+    cout << "所有正偶數的總和為: " << sum << endl;
+    return 0;
 }
 ```
 
 ---
 
-```c++
-*問題 nestedLoop2.cpp
-試寫出下列數字排列的程式
+## 實用範例
 
-顯示=================================
-    5
-   44
+### 範例 1：猜數字遊戲
+```cpp
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(NULL));
+    int answer = rand() % 100 + 1;  // 1-100 的隨機數
+    int guess;
+    int attempts = 0;
+    
+    cout << "=== 猜數字遊戲 ===" << endl;
+    cout << "請猜一個 1-100 之間的數字" << endl;
+    
+    while (true) {
+        cout << "請輸入您的猜測: ";
+        cin >> guess;
+        attempts++;
+        
+        if (guess == answer) {
+            cout << "恭喜！猜對了！答案是 " << answer << endl;
+            cout << "您總共猜了 " << attempts << " 次" << endl;
+            break;
+        } else if (guess > answer) {
+            cout << "太大了！再小一點" << endl;
+        } else {
+            cout << "太小了！再大一點" << endl;
+        }
+    }
+    
+    return 0;
+}
+```
+
+### 範例 2：計算最大公因數和最小公倍數
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2;
+    int gcd, lcm;
+    
+    cout << "請輸入第一個整數: ";
+    cin >> num1;
+    cout << "請輸入第二個整數: ";
+    cin >> num2;
+    
+    // 計算最大公因數 (GCD)
+    int a = num1, b = num2;
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    gcd = a;
+    
+    // 計算最小公倍數 (LCM)
+    lcm = (num1 * num2) / gcd;
+    
+    cout << num1 << " 和 " << num2 << " 的最大公因數是: " << gcd << endl;
+    cout << num1 << " 和 " << num2 << " 的最小公倍數是: " << lcm << endl;
+    
+    return 0;
+}
+```
+
+### 範例 3：質數判斷
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    bool isPrime = true;
+    
+    cout << "請輸入一個正整數: ";
+    cin >> n;
+    
+    if (n <= 1) {
+        isPrime = false;
+    } else {
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+    
+    if (isPrime) {
+        cout << n << " 是質數" << endl;
+    } else {
+        cout << n << " 不是質數" << endl;
+    }
+    
+    return 0;
+}
+```
+
+### 範例 4：印出特定圖案
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int rows;
+    cout << "請輸入要印出的行數: ";
+    cin >> rows;
+    
+    // 印出數字三角形
+    for (int i = 1; i <= rows; i++) {
+        // 印出空格
+        for (int j = 1; j <= rows - i; j++) {
+            cout << " ";
+        }
+        // 印出數字
+        for (int k = 1; k <= i; k++) {
+            cout << i;
+        }
+        cout << endl;
+    }
+    
+    return 0;
+}
+```
+
+**執行結果（輸入 5）：**
+```
+    1
+   22
   333
- 2222
-11111 
+ 4444
+55555
 ```
 
 ---
 
-```c++
-*問題 inputLoop.cpp
-設計一個程式，使用者先入一個M, 再輸入另一個數N,然後程式可以求出M*1 + M*2 + M*3 + M*4 + M*5....... + M*N的值
+## 練習題
 
-顯示==========================
-輸入M:5
-輸入N:4
-M*1 + M*2 + M*3 + ......+ M*N = 50
+### 練習 1：計算階乘
+設計一個程式，計算使用者輸入數字的階乘。
+
+### 練習 2：費波那契數列
+設計一個程式，印出前 n 個費波那契數。
+
+### 練習 3：數字金字塔
+設計一個程式，印出如下圖案：
+```
+    1
+   121
+  12321
+ 1234321
+123454321
 ```
 
-**[解題]**
-
-```
-#include <iostream>
-using namespace std;
-
-int main() {
-	unsigned short m;
-	unsigned short n;
-	unsigned int result = 0;
-
-	cout << "輸入M:";
-	cin >> m;
-	cout << "輸入N:";
-	cin >> n;
-
-	for(int i=1; i<=n;i++){
-		result += m * i;
-		if(n != i)
-			cout << "M*" << i << " + ";
-		else 
-			cout << "M*" << i << " = ";
-	}
-	cout << result;
-}
-```
-
-```c++ 
-*問題 commonfactor.cpp
-設計一個程式，可以由鍵盤輸入兩個數值，並求出這2個數值的最大公因數和最小公倍數
-
-顯示======================================
-求兩數的最大公因數和最小公倍數
-請輸入第一個整數:XXX
-請輸入第二個整數:XXX
-
-計算結果:
-14 和 35 的最大公因數:7
-14 和 35 的最小倍數是:70
-```
-
-**[解題]**
-
-```
-#include <iostream>
-using namespace std;
-
-int main() {
-	unsigned int inputValue1;
-	unsigned int inputValue2;
-	unsigned int min;
-	unsigned int max;
-	unsigned int maxResult=0;
-	unsigned int minResult=0;
-
-	cout << "請輸入第一個整數:";
-	cin >> inputValue1;
-	cout << "請輸入第二個整數:";
-	cin >> inputValue2;
-	min = inputValue1 < inputValue2 ? inputValue1:inputValue2 ;
-	max = inputValue1 > inputValue2 ? inputValue1: inputValue2;
-	
-	
-	for(int i=1; i<=min ; i++){
-		if((min % i) == 0 && (max % i) == 0){
-			maxResult = i;
-		}
-	}
-
-	minResult = (inputValue1 / maxResult) * (inputValue2 / maxResult) * maxResult;
-
-	cout << inputValue1 << "和" << inputValue2 << "的最大公因數:" << maxResult << endl;
-
-	cout << inputValue1 << "和" << inputValue2 << "的最小公倍數:" << minResult << endl;
-}
-```
+### 練習 4：簡單計算機
+設計一個程式，可以重複進行加減乘除運算，直到使用者選擇退出。
 
 ---
 
-```c++ 
-*問題 commonfactor.cpp
-設計一個程式，可以由鍵盤輸入1個數值，並求出2至這個數值的所有值數
+## 總結
 
-顯示======================================
-請輸入一個數值:100
+1. **for 迴圈**：適用於已知執行次數的情況
+2. **while 迴圈**：適用於未知執行次數，但知道終止條件的情況
+3. **do-while 迴圈**：適用於至少需要執行一次的情況
+4. **巢狀迴圈**：用於處理二維或多維的問題
+5. **break**：提前結束迴圈
+6. **continue**：跳過當前迭代
 
-2~100的質數有:
-2   3   5   7   11  13  17  19  23  2931   37  41  43  47  53  59  61  67  7173   79  83  89  97  
-=================================================
-```
-
----
-
-```c++ 
-*問題 
-設計一個程式，可以由鍵盤輸入一個數值，並求出2至這個數值的所有值數
-
-顯示======================================
-輸入一個數值:100
-
-2~100的質數有:
-2   3   5   7   11  13  17  19  23  2931   37  41  43  47  53  59  61  67  7173   79  83  89  97 
-============================================
-
-
-#include <iostream>
-using namespace std;
-
-int main() {
-	int end_value;	
-	cout << "請輸入一個數值:";
-	cin >> end_value;
-	cout << "2~" << end_value << "的質數有:" << endl;
-	for(int i=2;i<=end_value;i++){
-		//取出要檢查的數值
-		int check_value = i;
-		bool is_prime = true;
-		for(int j=2;j<check_value;j++){
-			//檢查是否為值數
-			if(check_value % j == 0){
-				is_prime = false;
-				break;
-			}
-		}
-		if (is_prime){
-			cout << check_value << "\t";
-		}
-		
-	}
-}
-
-
-```
-
+選擇適當的迴圈類型可以讓程式更清晰、更有效率！

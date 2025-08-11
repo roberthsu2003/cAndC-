@@ -365,38 +365,47 @@ int main() {
 ## 實用範例
 
 ### 範例 1：猜數字遊戲
-```cpp
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
-using namespace std;
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-int main() {
-    srand(time(NULL));
-    int answer = rand() % 100 + 1;  // 1-100 的隨機數
-    int guess;
-    int attempts = 0;
-    
-    cout << "=== 猜數字遊戲 ===" << endl;
-    cout << "請猜一個 1-100 之間的數字" << endl;
-    
-    while (true) {
-        cout << "請輸入您的猜測: ";
-        cin >> guess;
-        attempts++;
-        
-        if (guess == answer) {
-            cout << "恭喜！猜對了！答案是 " << answer << endl;
-            cout << "您總共猜了 " << attempts << " 次" << endl;
-            break;
-        } else if (guess > answer) {
-            cout << "太大了！再小一點" << endl;
-        } else {
-            cout << "太小了！再大一點" << endl;
-        }
+int main(void) {
+  printf("=====猜數字遊戲======\n\n");
+  srandom(time(NULL));
+  int min = 1;
+  int max = 100;
+  int keyin;
+  int count = 0;
+  int target = random() % (max - min + 1) + min;
+  // printf("亂數:%d\n", target);
+
+  while (1) {
+    printf("請輸入%d-%d的數字:", min, max);
+    scanf("%d", &keyin);
+    count++;
+    if (keyin >= min && keyin <= max) {
+      if (target == keyin) {
+        printf("恭喜！猜對了！答案是%d\n", target);
+        printf("您總共猜了%d次\n", count);
+        break;
+      } else if (keyin > target) {
+        printf("再小一點\n");
+        max = keyin - 1;
+
+      } else if (keyin < target) {
+        printf("再大一點\n");
+        min = keyin + 1;
+      }
+      printf("您已經猜了%d次\n", count);
+
+    } else {
+      printf("超出範圍,請重新輸入\n");
     }
-    
-    return 0;
+  }
+  printf("遊戲結束\n");
+
+  return 0;
 }
 ```
 

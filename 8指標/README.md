@@ -284,6 +284,67 @@ delete p;
 delete[] arr;
 ```
 
+### 為何要手動刪除？（Memory Leak）
+- 使用 `new` 配置的記憶體不會自動釋放
+- 若未釋放會造成記憶體洩漏（Memory Leak），長時間執行或在迴圈中反覆配置時，記憶體占用會持續上升，導致程式變慢甚至崩潰。
+
+範例 1：忘記刪除導致洩漏
+```c++
+void foo() {
+    int *p = new int(42);
+    // 使用 p ...
+    cout << *p << endl;
+    // 忘記釋放 → 洩漏
+    // delete p;
+}
+```
+
+範例 2：迴圈中的洩漏（記憶體會越用越多）
+```c++
+int main() {
+    for (int i = 0; i < 1000000; ++i) {
+        int *buf = new int[100]; // 每次配置 100 個 int
+        buf[0] = i;
+        // 忘了 delete[] buf;  // 洩漏：每圈都遺漏一塊
+    }
+}
+```
+
+正確做法：
+```c++
+void foo() {
+    int *p = new int(42);
+    cout << *p << endl;
+    delete p;          // 釋放單一物件
+}
+
+int main() {
+    for (int i = 0; i < 1000000; ++i) {
+        int *buf = new int[100];
+        // 使用 buf ...
+        delete[] buf;  // 釋放陣列
+    }
+}
+```
+
+常見坑：遺失指標（Lost Pointer）
+```c++
+int *p = new int(1);
+p = new int(2);   // 舊的 new int(1) 的位址遺失 → 洩漏
+// 正確：先釋放再改指向
+// delete p;
+// p = new int(2);
+// delete p;
+```
+
+進階補充：在現代 C++ 可用智慧指標自動管理生命週期，避免手動 delete。
+```c++
+#include <memory>
+
+std::unique_ptr<int> p = std::make_unique<int>(42);
+// 超出作用域自動釋放
+```
+
 ### 完整範例
 ```c++
 int main() {

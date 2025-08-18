@@ -284,6 +284,32 @@ delete p;
 delete[] arr;
 ```
 
+### Stack 與 Heap 的差異（自動釋放 vs 手動釋放）
+- **Stack（堆疊）**：一般區域變數建立在 Stack 上，當函式結束或離開作用域時，記憶體會自動釋放。
+- **Heap（堆積）**：使用 `new`/`new[]` 動態配置的記憶體建立在 Heap 上，不會自動釋放，必須呼叫 `delete`/`delete[]` 來手動釋放。
+
+範例：
+```c++
+void foo() {
+    int a = 10;              // Stack：離開 foo() 自動釋放
+    int *p = new int(20);    // Heap：需要手動 delete
+    // ... 使用 a 與 *p
+    delete p;                // 正確：釋放 Heap 記憶體
+}
+
+void bar() {
+    int *q = new int[3];     // Heap：動態陣列
+    // ... 使用 q
+    delete[] q;              // 正確：釋放陣列
+}
+
+// 反例：回傳區域變數位址（離開作用域後無效）
+int* bad() {
+    int x = 5;               // Stack 變數
+    return &x;               // 錯誤：離開函式後 &x 失效
+}
+```
+
 ### 為何要手動刪除？（Memory Leak）
 - 使用 `new` 配置的記憶體不會自動釋放
 - 若未釋放會造成記憶體洩漏（Memory Leak），長時間執行或在迴圈中反覆配置時，記憶體占用會持續上升，導致程式變慢甚至崩潰。

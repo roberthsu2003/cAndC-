@@ -1,842 +1,457 @@
-# 指標
-## & 取址運算子
+# 指標 (Pointers)
 
-```
-&變數名稱
-```
+## 目錄
+1. [基本概念](#基本概念)
+2. [取址運算子](#取址運算子)
+3. [指標變數](#指標變數)
+4. [指標與陣列](#指標與陣列)
+5. [指標與函式](#指標與函式)
+6. [動態記憶體配置](#動態記憶體配置)
+7. [實作練習](#實作練習)
 
-### 陣列變數內放的是記憶體位址
-取得陣列元素記憶體位址
-- &變數名稱[index]
-- 變數名稱 + index
+---
 
-```c++
-	//============================================================================
-	// Name        : Pointer.cpp
-	//宣告變數 double m=5, int n = 10, 顯示變數m,n的值，位址和記憶體大小。
-	
-	#include <iostream>
-	using namespace std;
-	
-	int main() {
-		double m = 5;
-		int n = 10;
-		cout << "變數m的值=" << m << endl;
-		cout << "變數n的值=" << n << endl;
-		cout << "變數m的位址" << &m << endl;
-		cout << "變數n的位址" << &n << endl;
-		cout << "變數m的記憶體=" << sizeof(m) << "Bytes" << endl;
-		cout << "變數n的記憶體=" << sizeof(n) << "Bytes" << endl;
-		return 0;
-	}
-```
-### 
+## 基本概念
+
+指標是 C++ 中一個重要的概念，它允許我們直接操作記憶體位址。指標變數儲存的內容是記憶體位址，而不是一般的數值。
+
+### 為什麼需要指標？
+- 直接操作記憶體位址
+- 提高程式執行效率
+- 實現動態記憶體配置
+- 傳遞函式參數的參考
+
+---
+
+## 取址運算子
+
+### `&` 運算子
+`&` 運算子用來取得變數的記憶體位址。
 
 ```c++
-//============================================================================
-// Name        : pointer2.cpp
-//顯示陣列的位址。宣告陣列 int n[3] = {1, 2, 3}，顯示陣列元素的位址。
-#include <iostream>
-using namespace std;
-int main() {
-	int n[3] = {1, 2, 3};
-	cout << "陣列n的位址=" << n << endl;
-	cout << "陣列元素n[0]的位址=" << &n[0] << endl;
-	cout << "陣列元素n[1]的位址=" << &n[1] << endl;
-	cout << "陣列元素n[2]的位址=" << &n[2] << endl;
-	cout << "陣列元素n+0的位址" << n+0 << endl;
-	cout << "陣列元素n+1的位址" << n+1 << endl;
-	cout << "陣列元素n+2的位址" << n+2 << endl;
-	return 0;
-}
+int n = 10;
+cout << "變數 n 的值 = " << n << endl;
+cout << "變數 n 的位址 = " << &n << endl;
 ```
 
-```
-*問題 顯示變數n的值和位址 number.cpp
-輸入變數n的值後，顯示此變數的值和存放的位址
-顯示=============================
-請輸入變數 n = 12
-變數 n 的值=12
-變數 n 的位址=0x7ffeef0805a0
+### 陣列與記憶體位址
+陣列變數本身儲存的就是記憶體位址。
+
+```c++
+int arr[3] = {1, 2, 3};
+cout << "陣列 arr 的位址 = " << arr << endl;
+cout << "陣列元素 arr[0] 的位址 = " << &arr[0] << endl;
+cout << "陣列元素 arr[1] 的位址 = " << &arr[1] << endl;
+cout << "陣列元素 arr[2] 的位址 = " << &arr[2] << endl;
+
+// 使用指標運算
+cout << "arr + 0 的位址 = " << arr + 0 << endl;
+cout << "arr + 1 的位址 = " << arr + 1 << endl;
+cout << "arr + 2 的位址 = " << arr + 2 << endl;
 ```
 
-**[解題]**
-
+**執行結果：**
 ```
-#include <iostream>
-using namespace std;
-
-int main() {
-	int n;
-	cout << "請輸入變數 n = ";
-	cin >> n;
-
-	cout << "變數 n 的值=" << n << endl;
-	cout << "變數 n 的位址 =" << &n << endl;
-}
+陣列 arr 的位址 = 0x7ffeef0805a0
+陣列元素 arr[0] 的位址 = 0x7ffeef0805a0
+陣列元素 arr[1] 的位址 = 0x7ffeef0805a4
+陣列元素 arr[2] 的位址 = 0x7ffeef0805a8
 ```
+
+---
 
 ## 指標變數
-指標變數儲存的內容是記憶體位址
 
-```
-指標變數的宣告
-資料型別 *指標變數;
-int *p;
+### 指標變數的宣告
+```c++
+// 基本宣告
+資料型別 *指標變數名稱;
+
+// 範例
+int *p;        // 整數指標
+double *dp;    // 雙精度浮點數指標
+char *cp;      // 字元指標
 ```
 
+### 指標變數的初始化
+```c++
+int n = 10;
+int *p = &n;    // 指標 p 指向變數 n 的位址
 ```
-指標變數的宣告和指向其它變數的位址
-資料型別 *指標變數;
-資料型別 *指標變數 = &變數名稱
+
+### 指標運算子 `*`
+`*` 符號有兩個用途：
+1. **宣告指標變數**：`int *p;`
+2. **取用指標指向的值**：`*p`
+
+```c++
 int n = 10;
 int *p = &n;
+
+cout << "變數 n 的值 = " << n << endl;        // 10
+cout << "變數 n 的位址 = " << &n << endl;     // 0x7ffeef0805a0
+cout << "指標 p 的值 = " << p << endl;        // 0x7ffeef0805a0
+cout << "指標 p 的位址 = " << &p << endl;     // 0x7ffeef0805b0
+cout << "指標 p 指向的值 = " << *p << endl;   // 10
 ```
 
+### 透過指標修改值
 ```c++
-//============================================================================
-// Name        : pointer3.cpp
-// 指標。以指標顯示變數n的位址和內容
-#include <iostream>
-using namespace std;
-int main() {
-	int n=10;
-	int *p = &n;
-	cout << "變數n的值=" << n << endl;
-	cout << "變數n的位址=" << &n << endl;
-	cout << "指標p的值是=" << p << endl;
-	cout << "指標p的記憶體位址是=" << &p << endl;
-	cout << "指標p指向的值是;" << *p << endl;
-	cout << "&n記憶體指向的值是" << *(&n) << endl;
-	return 0;
-}
+int n = 10;
+int *p = &n;
+
+cout << "修改前：n = " << n << endl;  // 10
+*p = 20;                              // 透過指標修改值
+cout << "修改後：n = " << n << endl;  // 20
 ```
-	
-	
+
+### 指標可以改變指向
 ```c++
-//============================================================================
-// Name        : pointer4.cpp
-//宣告n=10,指標p指向n的位址，以指標p存取記憶體的內容
-#include <iostream>
-using namespace std;
-int main() {
-	int n=10;
-	int *p;
-	p = &n;
-	cout << "n=" << n << endl;
-	cout << "&n=" << &n << endl;
-	cout << "p=" << p << endl;
-	cout << "*p=" << *p << endl;
-	cout << "*&n=" << *&n << endl;
-	return 0;
-}
-```
+int n = 10;
+int m = 20;
+int *p;
 
-```
-「*」有2個不同的用途，可以宣告指標變數，也可以當作取用，雖然用法相同，但意義是不一樣
-「int *p」代表p是整數指標變數，所以p是另一個變數的位址。
-「*記憶體位址」代表取得記憶體位址所儲存的內容，所以「*p」表示取得位址p所指向的儲存值。
-```
-![*符號的使用](pic/pic1.png)
+p = &n;  // 指標 p 指向變數 n
+cout << "*p = " << *p << endl;  // 10
 
-### 
-```c++
-//============================================================================
-// Name        : pointer5.cpp
-//改變指標變數所指向的內容
-#include <iostream>
-using namespace std;
-int main() {
-	int n = 10;
-	int *p = &n;
-	cout << "變數n的值=" << n << endl;
-	cout << "指標p的指向的內容=" << *p << endl;
-	*p = 20;
-	cout << "改變後的變數n的值=" << n << endl;
-	return 0;
-}
-```
-	
-	
-	
-###
-```c++
-//============================================================================
-// Name        : Pointer6.cpp
-//同一個指標可以改變指標的指向位址，則其存取的位址和記憶體內容也會不同
-#include <iostream>
-using namespace std;
-int main() {
-	int n = 10;
-	int m = 20;
-	int *p;
-	p = &n;
-	cout << "變數n的值=" << n << endl;
-	cout << "指標p指向的記憶體位址=" << p << endl;
-	cout << "*p的值=" << *p << endl;
-	cout << "-----------------------" << endl;
-	p = &m;
-	cout << "變數m的值=" << m << endl;
-	cout << "指標p指向的記憶體位址=" << p << endl;
-	cout << "*p的值=" << *p << endl;
-	cout << "-----------------------" << endl;
-	return 0;
-}
-```
-![在指標變數內，可以動態儲存不同的記憶體位址](pic/pic2.png)
-
-```
-*問題 pointAdd.cpp
-輸入變數x,y的值，以指標將2數相加並顯示兩數相加的結果?
-顯示===================
-請輸入變數x=20
-請輸入變數y=30
-20 + 30 = 50
-```
-**[解題]**
-
-```
-#include <iostream>
-using namespace std;
-int add(int* x, int* y){
-	int sum = *x + *y;
-	return sum;
-}
-
-int main() {
-	int x;
-	int y;
-	cout << "請輸入變數x=";
-	cin >> x;
-	cout << "請輸入變數y=";
-	cin >> y;
-	int sum = add(&x, &y);
-	cout << x << "+" << y << "=" << sum << endl;
-}
+p = &m;  // 指標 p 改為指向變數 m
+cout << "*p = " << *p << endl;  // 20
 ```
 
 ---
 
-
-
-### 指標的應用
-
-```c++
-#include <iostream>
-using namespace std;
-void add(int x, int y, int *ptr){
-	*ptr = x+y;	
-}
-
-int main() {
-  int n = 10;
-  int m = 20;
-  int sum;
-  add(n, m, &sum);
-  cout << "sum=" << sum << endl;
-  return 0;
-}
-```
-
-
-```c++
-//============================================================================
-// Name        : swap.cpp
-//
-#include <iostream>
-using namespace std;
-void swap(int*, int*);
-int main() {
-	int a = 666,b = 777;
-	cout << "a=" << a << ",b=" << b << endl;
-	swap(&a,&b);
-	cout << "a=" << a << ",b=" << b << endl;
-	return 0;
-}
-void swap(int *n, int *m){
-	int temp = *n;
-	*n = *m;
-	*m = temp;
-}
-```
-![2數交換](pic/pic7.png)
+## 指標與陣列
 
 ### 一維陣列與指標
-```
-要存取陣列元素語法有:  
-1 使用陣列變數語法
-	使用陣列變數[索引]
-2 使用指標變數的語法
-	*(指標變數名稱+索引)
-```
-```
-int array[]={1,2,3};
-cout << array[2];
-cout << *(array+2);
-```
+陣列元素可以用兩種方式存取：
 
 ```c++
+int array[] = {1, 2, 3, 4, 5};
 
-#include <iostream>
-using namespace std;
+// 方法 1：使用陣列索引
+cout << "array[1] = " << array[1] << endl;           // 2
+cout << "&array[1] = " << &array[1] << endl;         // 位址
+
+// 方法 2：使用指標運算
+cout << "*(array + 1) = " << *(array + 1) << endl;   // 2
+cout << "(array + 1) = " << (array + 1) << endl;     // 位址
+```
+
+### 指標變數存取陣列
+```c++
+int array[] = {10, 20, 30};
+int *ptr = array;  // 指標指向陣列開頭
+
+// 使用指標存取陣列元素
+for (int i = 0; i < 3; i++) {
+    cout << *(ptr + i) << " ";
+}
+cout << endl;
+```
+
+### 字元陣列與指標
+```c++
+// 字串指標（可改變指向）
+const char* str1 = "Hello";
+char str2[] = "World";
+
+// 使用指標存取字元
+for (int i = 0; i < 5; i++) {
+    cout << "str1[" << i << "] = " << str1[i] << endl;
+}
+
+// 指標可以改變指向
+str1 = str2;  // 合法
+// str2 = str1;  // 不合法，陣列位址不能改變
+```
+
+---
+
+## 指標與函式
+
+### Call by Value vs Call by Reference
+
+#### Call by Value（傳值呼叫）
+```c++
+void add(int x, int y, int result) {
+    result = x + y;  // 只改變區域變數
+}
 
 int main() {
-	int array[] = {1, 2, 3, 4, 5};
-	cout << "使用陣列變數取出值" << array[1] << endl;
-	cout << "使用陣列變數取出位址" << &array[1] << endl;
-	cout << "使用指標變數取出位址" << (array+1) << endl;
-	cout << "使用指標變數取出值" << *(array+1) << endl;
+    int a = 10, b = 20, sum = 0;
+    add(a, b, sum);
+    cout << "sum = " << sum << endl;  // 仍然是 0
+    return 0;
 }
 ```
 
-![指標變數存取陣列](pic/pic3.png)
-
-### 指標變數可以改變指向的位址
-
+#### Call by Reference（傳參考呼叫）
 ```c++
-using namespace std;
+void add(int x, int y, int &result) {
+    result = x + y;  // 直接修改原變數
+}
+
 int main() {
-  int array1[] = {10, 20, 30};
-  int array2[] = {90, 80, 70};
-
-  int *ptr;
-	ptr = array1;
-  for (int i = 0; i < 3; i++) {
-		cout << *(ptr+i) << "\t";
-  }
-	cout << endl;
-
-	ptr = array2;
-	for (int i = 0; i < 3; i++) {
-		cout << *(ptr+i) << "\t";
-  }
-	cout << endl;
+    int a = 10, b = 20, sum = 0;
+    add(a, b, sum);
+    cout << "sum = " << sum << endl;  // 30
+    return 0;
 }
 ```
 
-### 一維字元陣列與指標
-![使用陣列變數和指標變數存取字元陣列](pic/pic4.png)
-
+#### Call by Address（傳位址呼叫）
 ```c++
-//============================================================================
-// Name        : p_array2.cpp
-// 定義一維字元陣列，分別以陣列與指標取陣列元素內容。
-#include <iostream>
-using namespace std;
+void add(int x, int y, int *result) {
+    *result = x + y;  // 透過指標修改原變數
+}
 
 int main() {
-  //指標變數
-	const char* str1 = "one";
-	//陣列變數
-	char str2[] = "Two";
-	cout << "以陣列顯示str1字串" << endl;
-	for(int i=0; i<3; i++){
-		cout << "str1[" << i << "]=" << str1[i] << endl;
-	}
-
-	cout << "以指標變數顯示str2字串" << endl;
-	for(int i=0; i<3; i++){
-		cout << "*(str2 +" << i << ")=" << *(str2+i) << endl;
-	}
-
-	//指標變數的位址是可以更改的
-	str1 = str2;
-	cout << "str1的內容被更改後,指向新的內容" << endl;
-	for(int i=0; i<3; i++){
-		cout << "str1[" << i << "]=" << str1[i] << endl;
-	}
-
-	//陣列變數的位址是不可以更改的
-	//str2 = str1;
-	return 0;
-
+    int a = 10, b = 20, sum = 0;
+    add(a, b, &sum);
+    cout << "sum = " << sum << endl;  // 30
+    return 0;
 }
 ```
 
-```
-*問題 陣列與指標的存取
-宣告int n[] = {1,2,3}，分別利用陣列和指標求陣列元素的總和。
-顯示==================
-以陣列元素求總和
-總和 total = 6
-以指標求總和
-總和 total = 6
-```
+### 指標參數的應用
 
-**[解題]**
-
-```
-#include <iostream>
-using namespace std;
+#### 交換兩個數值
+```c++
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
 
 int main() {
-	int n[] = {1,2,3};
-	int *pointN = n;
-	int sum=0;
-	for(int i=0;i<3;i++){
-		sum += n[i];
-	}
+    int x = 10, y = 20;
+    cout << "交換前：x = " << x << ", y = " << y << endl;
+    swap(&x, &y);
+    cout << "交換後：x = " << x << ", y = " << y << endl;
+    return 0;
+}
+```
 
-	cout << "以陣列元素求總和" << endl;
-	cout << "總和 total = " << sum << endl;
+#### 陣列參數
+```c++
+void showArray(int *arr, int size) {
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
 
-	sum = 0;
-	for(int i=0; i<3; i++){
-		sum += *(n+i);
-	}
+void modifyArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        arr[i] *= 2;  // 將每個元素乘以 2
+    }
+}
 
-	cout << "以指標求總和" << endl;
-	cout << "總和 total = " << sum << endl;
+int main() {
+    int array[] = {1, 2, 3, 4, 5};
+    showArray(array, 5);
+    modifyArray(array, 5);
+    showArray(array, 5);
+    return 0;
 }
 ```
 
 ---
 
-### 使用call By value和 call By Reference傳遞參數  
+## 動態記憶體配置
+
+### 為什麼需要動態記憶體？
+- 程式執行時才知道需要多少記憶體
+- 避免浪費記憶體空間
+- 實現更靈活的資料結構
+
+### `new` 運算子
 ```c++
+// 配置單一變數
+int *p = new int;        // 未初始化
+int *p = new int(10);    // 初始化為 10
 
-#include <iostream>
-using namespace std;
-void sub1(int, int &);
+// 配置陣列
+int *arr = new int[5];   // 配置 5 個整數的空間
+```
 
+### `delete` 運算子
+```c++
+// 釋放單一變數
+delete p;
+
+// 釋放陣列
+delete[] arr;
+```
+
+### 完整範例
+```c++
 int main() {
-  int a = 10;
-  int b = 20;
-  cout << "a=" << a << endl;
-  cout << "b=" << b << endl;
-  sub1(a,b);
-  cout << "a=" << a << endl;
-  cout << "b=" << b << endl;
-
-}
-
-void sub1(int x, int &y){
-	x = 100;
-	y = 200;
+    // 動態配置記憶體
+    int *n = new int();
+    int *m = new int();
+    
+    cout << "請輸入 n 的值：";
+    cin >> *n;
+    
+    cout << "請輸入 m 的值：";
+    cin >> *m;
+    
+    int sum = *n + *m;
+    cout << "n 和 m 的總和為：" << sum << endl;
+    
+    // 釋放記憶體
+    delete n;
+    delete m;
+    
+    return 0;
 }
 ```
 
-### 傳遞陣列元素，使用call By Value和call By Reference
-
+### 動態陣列
 ```c++
-//============================================================================
-// Name        : array4.cpp
-// 傳遞陣列元素，使用call By Value和call By Reference
-#include <iostream>
-using namespace std;
-void sub1(int, int &);
 int main() {
-	int ary[] = {1, 2, 3};
-	cout << "ary陣列元素 ary[0]傳值,ary[1]傳搖控器後" << endl;
-	sub1(ary[0], ary[1]);
-	for(int i=0; i < 3; i++){
-		cout << ary[i] << " ";
-	}
-	cout << endl;
-	return 0;
-}
-void sub1(int a, int &b){
-	a = 5;
-	b = 5;
-}
-```
-![h2](pic/h2.JPG)
-![h3](pic/h3.JPG)
-![h4](pic/h4.JPG)
-![h5](pic/h5.JPG)
-![h6](pic/h6.JPG) 
- 
-### callbyvalue
-```c++
-//================================================
-//Name        :callByValue.cpp
-
-#include <iostream>
-using namespace std;
-
-int turbo(int);
-
-int main() {
-	int speed;
-	cout << "請輸入初始速度:";
-	cin >> speed;
-	speed = turbo(speed);
-	cout << "加速後速度:" << speed << endl;
-}
-
-//call by value
-int turbo(int mySpeed){
-	cout << "加速前速度:" << mySpeed << endl;
-	mySpeed += 10;
-	return mySpeed;
+    int size;
+    cout << "請輸入陣列大小：";
+    cin >> size;
+    
+    // 動態配置陣列
+    int *arr = new int[size];
+    
+    // 輸入陣列元素
+    cout << "請輸入 " << size << " 個數值：";
+    for (int i = 0; i < size; i++) {
+        cin >> arr[i];
+    }
+    
+    // 顯示陣列元素
+    cout << "陣列元素：";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    
+    // 釋放記憶體
+    delete[] arr;
+    
+    return 0;
 }
 ```
 
-### call By Reference
+---
 
+## 實作練習
+
+### 練習 1：指標基本操作
 ```c++
-//============================================================================
-// Name        : callByRef1.cpp
-// Author      : 傳參考呼叫
 #include <iostream>
 using namespace std;
-void  turbo(int &);
+
 int main() {
-	int speed;
-	cout << "請輸入初始速度:";
-	cin >> speed;
-	turbo(speed);
-	cout << "加速後速度:" << speed << endl;
-	return 0;
-}
-void turbo(int &mySpeed){
-	cout << "加整前速度:" << mySpeed << endl;
-	mySpeed+=10;
+    int n;
+    cout << "請輸入變數 n = ";
+    cin >> n;
+    
+    cout << "變數 n 的值 = " << n << endl;
+    cout << "變數 n 的位址 = " << &n << endl;
+    
+    return 0;
 }
 ```
-![call by Reference](pic/pic5.png)
 
-### call by address
-
+### 練習 2：指標加法
 ```c++
-//============================================================================
-// Name        : callByAddress1.cpp
-//call by address
 #include <iostream>
 using namespace std;
-void turbo(int *);
-int main() {
-	int speed;
-	cout << "請輸入初始速度:";
-	cin >> speed;
-	turbo(&speed);
-	cout << "加速後的速度:" << speed << endl;
-	return 0;
+
+int add(int* x, int* y) {
+    return *x + *y;
 }
-void turbo(int *mySpeed){
-	cout << "加速前的速度:" << *mySpeed << endl;
-	*mySpeed += 10;
+
+int main() {
+    int x, y;
+    cout << "請輸入變數 x = ";
+    cin >> x;
+    cout << "請輸入變數 y = ";
+    cin >> y;
+    
+    int sum = add(&x, &y);
+    cout << x << " + " << y << " = " << sum << endl;
+    
+    return 0;
 }
 ```
-	
-![call by address](pic/pic6.png)
 
+### 練習 3：陣列與指標
 ```c++
-//============================================================================
-// Name        : array21.cpp
-//陣列變數當作參數,或指標變數當作參數
 #include <iostream>
 using namespace std;
-void showAry(int *);
-void sub2(int[]);
+
 int main() {
-	int ary[] = {1, 2, 3};
-	cout << "1指標變數當參數:" << endl;
-	showAry(ary);
-	cout << "2陣列變數當參數" << endl;
-	sub2(ary);
-	showAry(ary);
-	return 0;
-}
-void showAry(int *tempAry){
-	for(int i=0; i<=2; i++){
-		cout << "ary[" << i << "]=" << tempAry[i] << "\t";		
-	}
-	cout << "\n-----------------------------" << endl;
-}
-void sub2(int tempAry[]){
- for(int i=0; i<=2; i++){
-		*(tempAry + i) *= 2;
-	}
+    int n[] = {1, 2, 3};
+    int *ptr = n;
+    int sum = 0;
+    
+    // 使用陣列索引求總和
+    for (int i = 0; i < 3; i++) {
+        sum += n[i];
+    }
+    cout << "以陣列元素求總和：總和 = " << sum << endl;
+    
+    // 使用指標求總和
+    sum = 0;
+    for (int i = 0; i < 3; i++) {
+        sum += *(n + i);
+    }
+    cout << "以指標求總和：總和 = " << sum << endl;
+    
+    return 0;
 }
 ```
-	
 
-### 指標的應用
-
+### 練習 4：字串倒印
 ```c++
-//============================================================================
-// Name        : reverse.cpp
-//字串倒印
 #include <iostream>
 #include <cstring>
 using namespace std;
-int main() {
-	const char *p = "Hello";
-	cout << "字串=" << p << endl;
-	cout << "p大小" << strlen(p) << endl;
-	int count = strlen(p) - 1;
-	for (int i=count; i >= 0; i--){
-		cout << *(p+i);
-	}
-	cout << endl;
-	return 0;
-}
-```
-
-```c++
-//============================================================================
-// Name        : listString.cpp
-//使用者輸入字串，輸出字串
-//c語言的字串輸入
-
-#include <iostream>
-#include <stdio.h>
-
-using namespace std;
 
 int main() {
-	//c++ 的字串輸入	
-	string name;
-	cout << "請輸入姓名:";
-	cin >> name;
-	cout << name << endl;
-	
-
-	//c語言的字串輸入
-	char p1[50];
-	cout << "請輸入字串:";
-	fgets(p1, sizeof(p1), stdin);
-	cout << p1 << endl;
-	return 0;
-}
-```
-
-```
-*問題 reverse.cpp
-輸入任意字串(最多100個字元)，利用指標p輸入字倒印。
-顯示==================================
-請輸入字串 s = Sample
-字串倒印 = elpmaS
-```
-
-**[解題]**
-
-```
-/*--------------------------
-問題 reverse.cpp
-輸入任意字串(最多100個字元)，利用指標p輸入字倒印。
-
-顯示==================================
-請輸入字串 s = Sample
-字串倒印 = elpmaS
----------------------------*/
-
-#include <iostream>
-using namespace std;
-
-int main() {
-	char *s = new char[100];
-
-	cout << "請輸入字串 s =";
-	cin >> s;
-	int i = 0;
-	
-	while(*(s+i) != '\0'){
-		i++;		
-	}
-	
-	for(i; i>=0; i--){		
-		cout << *(s+i);
-	}
-	cout << endl;
-
+    char *str = new char[100];
+    
+    cout << "請輸入字串：";
+    cin >> str;
+    
+    int len = strlen(str);
+    cout << "字串倒印 = ";
+    
+    for (int i = len - 1; i >= 0; i--) {
+        cout << *(str + i);
+    }
+    cout << endl;
+    
+    delete[] str;
+    return 0;
 }
 ```
 
 ---
 
-### new,delete 運算子  
-指標宣告後若未明確指向實體變數的記憶體位址，它就像一艘漂泊未靠岸的般隻，無法裝載任何的貨品，因此，不可以將一個數值放進未取很位址的指標中。
+## 重要提醒
 
-```
-//錯誤
-int *p;
-*p=10;
-```
+1. **指標初始化**：指標宣告後必須指向有效的記憶體位址
+2. **記憶體洩漏**：使用 `new` 配置的記憶體必須用 `delete` 釋放
+3. **空指標**：避免存取未初始化的指標
+4. **陣列邊界**：小心不要超出陣列範圍
+5. **指標運算**：理解指標加減法的意義
 
-![沒有實體的指標](pic/pic8.png)
+---
 
-```
-//解決方法1
-int n;
-int *p = &n;
-*p=10;
-cout << *p;
-```
+## 總結
 
-#### 宣告分配指標變數記憶體空位址，並設定初始值  
-```
-語法:
-資料型態 *指標變數 = new 資料型態(初始值)
-```
-```
-//解決方法2
-int *p = new int;
-int *p = new int(1);
-```
-```
-使用delete運算子釋放指標變數配置的記憶體空間
-delete 指標變數;
-```
-```c++
-//============================================================================
-// Name        : newDelete.cpp
-//new 宣告指標變數p並將p儲存值設為1, 即*p=1，程式結束以後以delete釋放指標變數配置的記憶體空間。
-#include <iostream>
-using namespace std;
-int main() {
-	int *p = new int(1); //初始化
-	cout << "指標p的位址p=" << p << endl;  // 顯示指標p的位址
-	cout << "*p=" << *p << endl;
-	*p = 2;
-	cout << "*p=" << *p << endl;
-	delete p;
-	return 0;
-}
-```
+指標是 C++ 中強大的工具，掌握指標可以：
+- 直接操作記憶體
+- 提高程式效率
+- 實現複雜的資料結構
+- 靈活地傳遞函式參數
 
-### 建立動態陣列，並配置動態記憶體空間  
-```
-語法:
-資料型態 *指標變數 = new 資料型態[一維陣列大小];
-```
-
-### 動態配置(allocate)記憶體空間給指標變數
-
-- new int()
-- new int(10)
-
-```c++
-#include <iostream>
-using namespace std;
-
-int main() {
-	//動態配置記憶體
-  int *n;
-  int *m;
-  n = new int();
-  m = new int();
-  cout << "請輸入n的值:";
-  cin >> *n;
-
-  cout << "請輸入m的值:";
-  cin >> *m;
-
-  int sum;
-  sum = *n + *m;
-  cout << "n和m加總為:" << sum << endl;
-}
-
-//=============================
-請輸入n的值:10
-請輸入m的值:20
-n和m加總為:30
-```
-
-### 動態配置(allocate)連續記憶體空間給指標變數
-
-```c++
-#include <iostream>
-using namespace std;
-
-int main() {
-	//建立連續的記憶體空間
-	int* par = new int[5];
-	cout << "請輸入5個數值(中間空白):";
-	for(int i=0; i<5; i++){
-		cin >> *(par+i);
-	}
-
-	//輸出
-	for(int i=0; i<5; i++){
-		cout << *(par+i) << "\t";
-	}
-	cout << endl;
-}
-```
-
-```c++
-#include <iostream>
-using namespace std;
-
-void division10(int *x,int num) {
-  for (int i = 0; i < num; i++) {
-    *(x + i) /= 10;
-  }
-}
-
-void multiply10(int x[],int num) {
-  for (int i = 0; i < num; i++) {
-    x[i] *= 10;
-  }
-}
-
-void print(int x[],int num) {
-  for (int i = 0; i < num; i++) {
-    cout << x[i] << "\t";
-  }
-  cout << endl;
-}
-
-int main() {
-  int num = 3;
-	//動態配置的記憶體空間allocate
-  int *n = new int[3];
-  *(n + 0) = 10;
-  *(n + 1) = 20;
-  *(n + 2) = 30;
-  print(n,num);
-
-  multiply10(n,num);
-  print(n,num);
-
-  division10(n,num);
-  print(n,num);
-	
-	//動態配置的記憶體空間allocate,要用delete 手動刪除記憶體
-	delete [] n;	
-
-	
-}
-```
-
-
-```
-int *p = new int[3];
-```
-```c++
-//============================================================================
-// Name        : array4.cpp
-//自鍵盤輸入整數n,程式會建立一維陣列大小為n的動態陣列，並自鍵盤輸入陣列元素資料後，利用指標存取陣列顯示陣列元素。
-#include <iostream>
-using namespace std;
-int main() {
-	int n;
-	cout << "請輸入要配置的一維陣列大小=";
-	cin >> n;
-	int *p = new int[n];
-	for (int i=0; i<n; i++){
-		cin >> *(p+i);
-	}
-	cout << "陣列的元素值為" << endl;
-	for(int i = 0; i< n; i++){
-		cout << *(p+i) << endl;
-	}
-	delete[] p;
-	return 0;
-}
-```
-
-```
-*問題 p_reverse2.cpp
-字串輸入後將輸入字串倒印
-輸入任意字串(字元長度不限制)，利用指標p將輸入字串倒印。
-顯示============================
-請輸入字串:First
-字串倒印=tsriF
-字元數 n = 6
-請輸入字串:Second
-字串倒印=dnoceS
-字元數 n=
-```
+記住：**指標就是記憶體位址**，理解這個概念是掌握指標的關鍵！

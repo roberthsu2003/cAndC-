@@ -3,36 +3,36 @@
 
 ![陣列和結構不同之處](pic/pic1.png)
 
-## 📚 目錄 (Table of Contents)
+## 目錄 (Table of Contents)
 
-### 🔰 基礎概念
+### 基礎概念
 - [結構基本語法](#結構基本語法)
   - [定義結構](#定義結構)
   - [建立結構變數](#建立結構變數)
 
-### 📝 基礎範例
+### 基礎範例
 - [範例1：矩形面積計算器](#範例1矩形面積計算器-rectangle-area-calculator)
 - [範例2：座標點系統](#範例2座標點系統-point-coordinate-system)
 
-### 🚀 進階概念
+### 進階概念
 - [範例3：巢狀結構](#範例3巢狀結構-nested-structure)
 
-### 🎯 結構成員存取
+### 結構成員存取
 - [使用「.」運算子存取結構成員](#使用運算子存取結構成員)
 - [範例4：學生成績系統](#範例4學生成績系統-student-grade-system)
 - [範例5：學生陣列系統](#範例5學生陣列系統-student-array-system)
 - [範例6：多科目成績統計](#範例6多科目成績統計-multi-subject-grade-statistics)
 
-### 🔗 結構指標操作
+### 結構指標操作
 - [範例7：BMI計算器](#範例7bmi計算器-bmi-calculator)
 
-### 💼 綜合應用
+### 綜合應用
 - [範例8：學生成績管理系統](#範例8學生成績管理系統-student-grade-management-system)
   - [主程式 (main.cpp)](#主程式-maincpp)
   - [標頭檔 (data.h)](#標頭檔-datah)
   - [實作檔 (data.cpp)](#實作檔-datacpp)
 
-### 📋 總結
+### 總結
 - [重點整理](#重點整理)
 
 ---

@@ -34,25 +34,24 @@
 ### if 語句
 
 #### 基本語法
-```cpp
+```c
 if (條件式) {
     // 條件成立時執行的程式碼
 }
 ```
 
 #### 範例：成績加分系統
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int score;
-    bool hasBonus;
+    int hasBonus;
     
-    cout << "請輸入學生的分數: ";
-    cin >> score;
-    cout << "學生符合加分條件嗎? (1=是, 0=否): ";
-    cin >> hasBonus;
+    printf("請輸入學生的分數: ");
+    scanf("%d", &score);
+    printf("學生符合加分條件嗎? (1=是, 0=否): ");
+    scanf("%d", &hasBonus);
     
     if (hasBonus) {
         score = score * 1.05;  // 加5%
@@ -61,7 +60,7 @@ int main() {
         }
     }
     
-    cout << "學生最終分數是: " << score << endl;
+    printf("學生最終分數是: %d\n", score);
     return 0;
 }
 ```
@@ -69,7 +68,7 @@ int main() {
 ### if-else 語句
 
 #### 基本語法
-```cpp
+```c
 if (條件式) {
     // 條件成立時執行的程式碼
 } else {
@@ -78,20 +77,19 @@ if (條件式) {
 ```
 
 #### 範例 1：奇偶數判斷
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int number;
     
-    cout << "請輸入一個數字: ";
-    cin >> number;
+    printf("請輸入一個數字: ");
+    scanf("%d", &number);
     
     if (number % 2 == 0) {
-        cout << number << " 是偶數" << endl;
+        printf("%d 是偶數\n", number);
     } else {
-        cout << number << " 是奇數" << endl;
+        printf("%d 是奇數\n", number);
     }
     
     return 0;
@@ -99,22 +97,21 @@ int main() {
 ```
 
 #### 範例 2：密碼驗證
-```cpp
-#include <iostream>
-#include <string>
-using namespace std;
+```c
+#include <stdio.h>
+#include <string.h>
 
 int main() {
-    string password;
-    string correctPassword = "1234";
+    char password[100];
+    char correctPassword[] = "1234";
     
-    cout << "請輸入密碼: ";
-    cin >> password;
+    printf("請輸入密碼: ");
+    scanf("%s", password);
     
-    if (password == correctPassword) {
-        cout << "密碼正確！歡迎光臨！" << endl;
+    if (strcmp(password, correctPassword) == 0) {
+        printf("密碼正確！歡迎光臨！\n");
     } else {
-        cout << "密碼錯誤！請重新輸入！" << endl;
+        printf("密碼錯誤！請重新輸入！\n");
     }
     
     return 0;
@@ -122,20 +119,19 @@ int main() {
 ```
 
 #### 範例 3：成績及格判斷
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int score;
     
-    cout << "請輸入成績: ";
-    cin >> score;
+    printf("請輸入成績: ");
+    scanf("%d", &score);
     
     if (score >= 60) {
-        cout << "及格！" << endl;
+        printf("及格！\n");
     } else {
-        cout << "不及格！" << endl;
+        printf("不及格！\n");
     }
     
     return 0;
@@ -145,7 +141,7 @@ int main() {
 ### if-else if-else 語句
 
 #### 基本語法
-```cpp
+```c
 if (條件式1) {
     // 條件1成立時執行的程式碼
 } else if (條件式2) {
@@ -158,26 +154,25 @@ if (條件式1) {
 ```
 
 #### 範例 1：成績等級判斷
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int score;
     
-    cout << "請輸入成績 (0-100): ";
-    cin >> score;
+    printf("請輸入成績 (0-100): ");
+    scanf("%d", &score);
     
     if (score >= 90) {
-        cout << "優等" << endl;
+        printf("優等\n");
     } else if (score >= 80) {
-        cout << "甲等" << endl;
+        printf("甲等\n");
     } else if (score >= 70) {
-        cout << "乙等" << endl;
+        printf("乙等\n");
     } else if (score >= 60) {
-        cout << "丙等" << endl;
+        printf("丙等\n");
     } else {
-        cout << "丁等" << endl;
+        printf("丁等\n");
     }
     
     return 0;
@@ -185,16 +180,15 @@ int main() {
 ```
 
 #### 範例 2：購物折扣計算
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int purchaseAmount;
     int finalAmount;
     
-    cout << "請輸入購買金額: ";
-    cin >> purchaseAmount;
+    printf("請輸入購買金額: ");
+    scanf("%d", &purchaseAmount);
     
     if (purchaseAmount >= 100000) {
         finalAmount = purchaseAmount * 0.8;  // 8折
@@ -208,32 +202,31 @@ int main() {
         finalAmount = purchaseAmount;        // 無折扣
     }
     
-    cout << "實付金額是: " << finalAmount << " 元" << endl;
+    printf("實付金額是: %d 元\n", finalAmount);
     return 0;
 }
 ```
 
 #### 範例 3：員工職務分配
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int age;
     
-    cout << "請輸入您的年齡: ";
-    cin >> age;
+    printf("請輸入您的年齡: ");
+    scanf("%d", &age);
     
     if (age >= 22 && age <= 30) {
-        cout << "您的職務是: 外勤業務員" << endl;
+        printf("您的職務是: 外勤業務員\n");
     } else if (age >= 31 && age <= 45) {
-        cout << "您的職務是: 內勤文書" << endl;
+        printf("您的職務是: 內勤文書\n");
     } else if (age >= 46 && age <= 55) {
-        cout << "您的職務是: 倉庫管理員" << endl;
+        printf("您的職務是: 倉庫管理員\n");
     } else if (age >= 56) {
-        cout << "強迫退休" << endl;
+        printf("強迫退休\n");
     } else {
-        cout << "年齡不符合工作條件" << endl;
+        printf("年齡不符合工作條件\n");
     }
     
     return 0;
@@ -245,16 +238,15 @@ int main() {
 巢狀 if 語句是指在 if 語句內部再包含其他的 if 語句。
 
 #### 範例 1：獎金計算（巢狀方式）
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int chinese, math;
     int bonus = 0;
     
-    cout << "請輸入國文成績和數學成績 (國文,數學): ";
-    cin >> chinese >> math;
+    printf("請輸入國文成績和數學成績 (國文,數學): ");
+    scanf("%d,%d", &chinese, &math);
     
     if (chinese == 100) {
         if (math == 100) {
@@ -270,33 +262,32 @@ int main() {
         }
     }
     
-    cout << "獎金是: " << bonus << " 元" << endl;
+    printf("獎金是: %d 元\n", bonus);
     return 0;
 }
 ```
 
 #### 範例 2：正負數與奇偶數判斷
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int number;
     
-    cout << "請輸入數字: ";
-    cin >> number;
+    printf("請輸入數字: ");
+    scanf("%d", &number);
     
     if (number < 0) {
         if (number % 2 == 0) {
-            cout << "您輸入的 " << number << " 是負偶數" << endl;
+            printf("您輸入的 %d 是負偶數\n", number);
         } else {
-            cout << "您輸入的 " << number << " 是負奇數" << endl;
+            printf("您輸入的 %d 是負奇數\n", number);
         }
     } else {
         if (number % 2 == 0) {
-            cout << "您輸入的 " << number << " 是正偶數" << endl;
+            printf("您輸入的 %d 是正偶數\n", number);
         } else {
-            cout << "您輸入的 " << number << " 是正奇數" << endl;
+            printf("您輸入的 %d 是正奇數\n", number);
         }
     }
     
@@ -311,7 +302,7 @@ int main() {
 switch-case 語句適用於多個固定值的比較，比 if-else if 更簡潔。
 
 #### 基本語法
-```cpp
+```c
 switch (表示式) {
     case 值1:
         程式區塊1;
@@ -329,37 +320,36 @@ switch (表示式) {
 ```
 
 #### 範例 1：簡單計算機
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     char operator_;
     int num1 = 20, num2 = 4;
     
-    cout << "num1 = " << num1 << ", num2 = " << num2 << endl;
-    cout << "請輸入要執行的運算 (+ - * /): ";
-    cin >> operator_;
+    printf("num1 = %d, num2 = %d\n", num1, num2);
+    printf("請輸入要執行的運算 (+ - * /): ");
+    scanf(" %c", &operator_);
     
     switch (operator_) {
         case '+':
-            cout << "num1 + num2 = " << num1 + num2 << endl;
+            printf("num1 + num2 = %d\n", num1 + num2);
             break;
         case '-':
-            cout << "num1 - num2 = " << num1 - num2 << endl;
+            printf("num1 - num2 = %d\n", num1 - num2);
             break;
         case '*':
-            cout << "num1 * num2 = " << num1 * num2 << endl;
+            printf("num1 * num2 = %d\n", num1 * num2);
             break;
         case '/':
             if (num2 != 0) {
-                cout << "num1 / num2 = " << num1 / num2 << endl;
+                printf("num1 / num2 = %d\n", num1 / num2);
             } else {
-                cout << "除數不能為零！" << endl;
+                printf("除數不能為零！\n");
             }
             break;
         default:
-            cout << "無法執行運算！" << endl;
+            printf("無法執行運算！\n");
             break;
     }
     
@@ -368,31 +358,30 @@ int main() {
 ```
 
 #### 範例 2：季節判斷
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int season;
     
-    cout << "請輸入現在是第幾季 (1-4): ";
-    cin >> season;
+    printf("請輸入現在是第幾季 (1-4): ");
+    scanf("%d", &season);
     
     switch (season) {
         case 1:
-            cout << "現在是春天！" << endl;
+            printf("現在是春天！\n");
             break;
         case 2:
-            cout << "現在是夏天！" << endl;
+            printf("現在是夏天！\n");
             break;
         case 3:
-            cout << "現在是秋天！" << endl;
+            printf("現在是秋天！\n");
             break;
         case 4:
-            cout << "現在是冬天！" << endl;
+            printf("現在是冬天！\n");
             break;
         default:
-            cout << "無效的季節代碼！" << endl;
+            printf("無效的季節代碼！\n");
             break;
     }
     
@@ -401,32 +390,31 @@ int main() {
 ```
 
 #### 範例 3：問候語翻譯
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int choice;
     
-    cout << "=== 問候語翻譯 ===" << endl;
-    cout << "1. 您好嗎？" << endl;
-    cout << "2. 晚安" << endl;
-    cout << "3. 早安" << endl;
-    cout << "請選擇中文的選項 (1-3): ";
-    cin >> choice;
+    printf("=== 問候語翻譯 ===\n");
+    printf("1. 您好嗎？\n");
+    printf("2. 晚安\n");
+    printf("3. 早安\n");
+    printf("請選擇中文的選項 (1-3): ");
+    scanf("%d", &choice);
     
     switch (choice) {
         case 1:
-            cout << "英文是: How are you?" << endl;
+            printf("英文是: How are you?\n");
             break;
         case 2:
-            cout << "英文是: Good evening" << endl;
+            printf("英文是: Good evening\n");
             break;
         case 3:
-            cout << "英文是: Good morning" << endl;
+            printf("英文是: Good morning\n");
             break;
         default:
-            cout << "無效的選項！" << endl;
+            printf("無效的選項！\n");
             break;
     }
     
@@ -441,23 +429,22 @@ int main() {
 三元運算子是一種簡化的條件判斷語法。
 
 #### 基本語法
-```cpp
+```c
 條件式 ? 值1 : 值2
 ```
 
 #### 範例：奇偶數判斷
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int number;
     
-    cout << "請輸入任意整數: ";
-    cin >> number;
+    printf("請輸入任意整數: ");
+    scanf("%d", &number);
     
-    string result = (number % 2 == 0) ? "偶數" : "奇數";
-    cout << "您這個數是: " << result << endl;
+    char* result = (number % 2 == 0) ? "偶數" : "奇數";
+    printf("您這個數是: %s\n", result);
     
     return 0;
 }
@@ -475,16 +462,15 @@ int main() {
 - `!`：邏輯非（NOT）
 
 #### 範例 1：獎金計算（邏輯運算子方式）
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int chinese, math;
     int bonus = 0;
     
-    cout << "請輸入國文成績和數學成績 (國文,數學): ";
-    cin >> chinese >> math;
+    printf("請輸入國文成績和數學成績 (國文,數學): ");
+    scanf("%d,%d", &chinese, &math);
     
     if (chinese == 100 && math == 100) {
         bonus = 1000;  // 國文100且數學100
@@ -494,26 +480,25 @@ int main() {
         bonus = 0;     // 都沒有100
     }
     
-    cout << "獎金是: " << bonus << " 元" << endl;
+    printf("獎金是: %d 元\n", bonus);
     return 0;
 }
 ```
 
 #### 範例 2：閏年判斷
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int year;
     
-    cout << "請輸入年份: ";
-    cin >> year;
+    printf("請輸入年份: ");
+    scanf("%d", &year);
     
     if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
-        cout << year << " 是閏年" << endl;
+        printf("%d 是閏年\n", year);
     } else {
-        cout << year << " 不是閏年" << endl;
+        printf("%d 不是閏年\n", year);
     }
     
     return 0;
@@ -521,22 +506,21 @@ int main() {
 ```
 
 #### 範例 3：三個數的最小值
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int a, b, c;
     
-    cout << "請輸入三個數字: ";
-    cin >> a >> b >> c;
+    printf("請輸入三個數字: ");
+    scanf("%d %d %d", &a, &b, &c);
     
     if (a < b && a < c) {
-        cout << "最小值是: " << a << endl;
+        printf("最小值是: %d\n", a);
     } else if (b < a && b < c) {
-        cout << "最小值是: " << b << endl;
+        printf("最小值是: %d\n", b);
     } else {
-        cout << "最小值是: " << c << endl;
+        printf("最小值是: %d\n", c);
     }
     
     return 0;
@@ -548,24 +532,23 @@ int main() {
 ## 實用範例
 
 ### 範例 1：三角形類型判斷
-```cpp
-#include <iostream>
-#include <cmath>
-using namespace std;
+```c
+#include <stdio.h>
+#include <math.h>
 
 int main() {
     double side1, side2, hypotenuse;
     
-    cout << "請輸入第一邊的邊長: ";
-    cin >> side1;
-    cout << "請輸入第二邊的邊長: ";
-    cin >> side2;
-    cout << "請輸入斜邊的邊長: ";
-    cin >> hypotenuse;
+    printf("請輸入第一邊的邊長: ");
+    scanf("%lf", &side1);
+    printf("請輸入第二邊的邊長: ");
+    scanf("%lf", &side2);
+    printf("請輸入斜邊的邊長: ");
+    scanf("%lf", &hypotenuse);
     
     // 檢查是否為三角形
     if (side1 + side2 <= hypotenuse) {
-        cout << "此三邊無法構成三角形" << endl;
+        printf("此三邊無法構成三角形\n");
         return 0;
     }
     
@@ -573,12 +556,12 @@ int main() {
     double sumOfSquares = pow(side1, 2) + pow(side2, 2);
     double hypotenuseSquare = pow(hypotenuse, 2);
     
-    if (abs(sumOfSquares - hypotenuseSquare) < 0.001) {
-        cout << "此三角形為直角三角形" << endl;
+    if (fabs(sumOfSquares - hypotenuseSquare) < 0.001) {
+        printf("此三角形為直角三角形\n");
     } else if (sumOfSquares > hypotenuseSquare) {
-        cout << "此三角形為銳角三角形" << endl;
+        printf("此三角形為銳角三角形\n");
     } else {
-        cout << "此三角形為鈍角三角形" << endl;
+        printf("此三角形為鈍角三角形\n");
     }
     
     return 0;
@@ -586,17 +569,16 @@ int main() {
 ```
 
 ### 範例 2：綜合所得稅計算
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int income;
     double taxRate;
     int progressiveDeduction;
     
-    cout << "請輸入綜合所得淨額: ";
-    cin >> income;
+    printf("請輸入綜合所得淨額: ");
+    scanf("%d", &income);
     
     if (income <= 540000) {
         taxRate = 0.05;
@@ -618,30 +600,29 @@ int main() {
     int taxAmount = income * taxRate;
     int finalTax = taxAmount - progressiveDeduction;
     
-    cout << "綜合所得淨額: " << income << " 元" << endl;
-    cout << "稅率: " << (taxRate * 100) << "%" << endl;
-    cout << "--------------------" << endl;
-    cout << "稅金: " << taxAmount << " 元" << endl;
-    cout << "累進差額: " << progressiveDeduction << " 元" << endl;
-    cout << "--------------------" << endl;
-    cout << "今年應納稅額: " << finalTax << " 元" << endl;
+    printf("綜合所得淨額: %d 元\n", income);
+    printf("稅率: %.0f%%\n", taxRate * 100);
+    printf("--------------------\n");
+    printf("稅金: %d 元\n", taxAmount);
+    printf("累進差額: %d 元\n", progressiveDeduction);
+    printf("--------------------\n");
+    printf("今年應納稅額: %d 元\n", finalTax);
     
     return 0;
 }
 ```
 
 ### 範例 3：停車費計算
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int inHour, inMin, outHour, outMin;
     
-    cout << "請輸入進場時間 (時 分): ";
-    cin >> inHour >> inMin;
-    cout << "請輸入出場時間 (時 分): ";
-    cin >> outHour >> outMin;
+    printf("請輸入進場時間 (時 分): ");
+    scanf("%d %d", &inHour, &inMin);
+    printf("請輸入出場時間 (時 分): ");
+    scanf("%d %d", &outHour, &outMin);
     
     // 計算停車總分鐘數
     int totalMinutes = (outHour - inHour) * 60 + (outMin - inMin);
@@ -660,42 +641,41 @@ int main() {
         parkingFee = 4 * 30 + 4 * 40 + (halfHourSegments - 8) * 60;
     }
     
-    cout << "進場時間: " << inHour << ":" << inMin << endl;
-    cout << "出場時間: " << outHour << ":" << outMin << endl;
-    cout << "停車總分鐘數: " << totalMinutes << endl;
-    cout << "停車費: " << parkingFee << " 元" << endl;
+    printf("進場時間: %d:%d\n", inHour, inMin);
+    printf("出場時間: %d:%d\n", outHour, outMin);
+    printf("停車總分鐘數: %d\n", totalMinutes);
+    printf("停車費: %d 元\n", parkingFee);
     
     return 0;
 }
 ```
 
 ### 範例 4：會員等級與利率計算
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int deposit;
     
-    cout << "請輸入您的存款金額: ";
-    cin >> deposit;
+    printf("請輸入您的存款金額: ");
+    scanf("%d", &deposit);
     
     int interestRate;
-    string memberLevel;
+    char memberLevel[10];
     
     if (deposit >= 1000000) {
         interestRate = 4;
-        memberLevel = "A級";
+        sprintf(memberLevel, "A級");
     } else if (deposit >= 500000) {
         interestRate = 2;
-        memberLevel = "B級";
+        sprintf(memberLevel, "B級");
     } else {
         interestRate = 2;
-        memberLevel = "C級";
+        sprintf(memberLevel, "C級");
     }
     
-    cout << "您的利率是: " << interestRate << "%" << endl;
-    cout << "會員等級是: " << memberLevel << " 會員" << endl;
+    printf("您的利率是: %d%%\n", interestRate);
+    printf("會員等級是: %s 會員\n", memberLevel);
     
     return 0;
 }

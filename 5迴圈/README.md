@@ -23,7 +23,7 @@
 ## for 迴圈
 
 ### 語法結構
-```cpp
+```c
 for (初始條件; 終止條件; 更新條件) {
     // 要重複執行的程式碼
 }
@@ -33,96 +33,87 @@ for (初始條件; 終止條件; 更新條件) {
 
 #### 範例 1：簡單的計數迴圈
 **目的：學習 for 迴圈的基本結構，從 1 數到 5**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
-    int sum = 0;
+    printf("開始計數：\n");
     
-    for (int i = 1; i <= 10; i++) {
-        sum += i;
-        cout << "第 " << i << " 次迴圈，目前總和為: " << sum << endl;
+    for (int i = 1; i <= 5; i++) {
+        printf("這是第 %d 次迴圈\n", i);
     }
     
-    cout << "1 到 10 的總和為: " << sum << endl;
+    printf("計數結束！\n");
     return 0;
 }
 ```
 
 **執行結果：**
 ```
-第 1 次迴圈，目前總和為: 1
-第 2 次迴圈，目前總和為: 3
-第 3 次迴圈，目前總和為: 6
-第 4 次迴圈，目前總和為: 10
-第 5 次迴圈，目前總和為: 15
-第 6 次迴圈，目前總和為: 21
-第 7 次迴圈，目前總和為: 28
-第 8 次迴圈，目前總和為: 36
-第 9 次迴圈，目前總和為: 45
-第 10 次迴圈，目前總和為: 55
-1 到 10 的總和為: 55
+開始計數：
+這是第 1 次迴圈
+這是第 2 次迴圈
+這是第 3 次迴圈
+這是第 4 次迴圈
+這是第 5 次迴圈
+計數結束！
 ```
 
 #### 範例 2：計算 1 到 10 的總和
 **目的：學習在迴圈中累加數值，理解迴圈變數的運用**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int sum = 0;
     
     for (int i = 1; i <= 10; i++) {
         sum += i;
-        cout << "加入 " << i << "，目前總和為: " << sum << endl;
+        printf("加入 %d，目前總和為: %d\n", i, sum);
     }
     
-    cout << "1 到 10 的總和為: " << sum << endl;
+    printf("1 到 10 的總和為: %d\n", sum);
     return 0;
 }
 ```
 
 #### 範例 3：不同的遞增方式
 **目的：學習迴圈變數可以有不同的遞增方式，計算偶數總和**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int sum = 0;
     
-    cout << "計算 2 到 10 的偶數總和：" << endl;
+    printf("計算 2 到 10 的偶數總和：\n");
     for (int i = 2; i <= 10; i += 2) {
         sum += i;
-        cout << "偶數 " << i << " 加入，總和為: " << sum << endl;
+        printf("偶數 %d 加入，總和為: %d\n", i, sum);
     }
     
-    cout << "偶數總和為: " << sum << endl;
+    printf("偶數總和為: %d\n", sum);
     return 0;
 }
 ```
 
 #### 範例 4：結合使用者輸入
 **目的：學習在迴圈中處理使用者輸入，計算一週支出**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int sum = 0;
     int expense;
     
-    cout << "請輸入一週七天的支出：" << endl;
+    printf("請輸入一週七天的支出：\n");
     for (int day = 1; day <= 7; day++) {
-        cout << "請輸入第 " << day << " 天的支出: ";
-        cin >> expense;
+        printf("請輸入第 %d 天的支出: ", day);
+        scanf("%d", &expense);
         sum += expense;
     }
     
-    cout << "本週的總支出為: " << sum << " 元" << endl;
-    cout << "平均每日支出為: " << sum / 7 << " 元" << endl;
+    printf("本週的總支出為: %d 元\n", sum);
+    printf("平均每日支出為: %d 元\n", sum / 7);
     return 0;
 }
 ```
@@ -132,7 +123,7 @@ int main() {
 ## while 迴圈
 
 ### 語法結構
-```cpp
+```c
 while (條件判斷) {
     // 要重複執行的程式碼
     // 記得要改變條件，避免無限迴圈
@@ -146,40 +137,38 @@ while (條件判斷) {
 
 #### 範例 1：基本計數迴圈
 **目的：學習 while 迴圈的基本結構，理解條件判斷的重要性**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int i = 1;
     
-    cout << "使用 while 迴圈計數：" << endl;
+    printf("使用 while 迴圈計數：\n");
     while (i <= 5) {
-        cout << "這是第 " << i << " 次迴圈" << endl;
+        printf("這是第 %d 次迴圈\n", i);
         i++;  // 重要：改變條件變數
     }
     
-    cout << "迴圈結束！" << endl;
+    printf("迴圈結束！\n");
     return 0;
 }
 ```
 
 #### 範例 2：for 迴圈與 while 迴圈的比較
 **目的：理解兩種迴圈的差異和轉換方式**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
-    cout << "=== 使用 for 迴圈 ===" << endl;
+    printf("=== 使用 for 迴圈 ===\n");
     for (int i = 1; i <= 3; i++) {
-        cout << "for 迴圈第 " << i << " 次" << endl;
+        printf("for 迴圈第 %d 次\n", i);
     }
     
-    cout << "\n=== 使用 while 迴圈達到相同效果 ===" << endl;
+    printf("\n=== 使用 while 迴圈達到相同效果 ===\n");
     int j = 1;
     while (j <= 3) {
-        cout << "while 迴圈第 " << j << " 次" << endl;
+        printf("while 迴圈第 %d 次\n", j);
         j++;  // 重要：改變條件變數
     }
     
@@ -189,9 +178,8 @@ int main() {
 
 #### 範例 3：存錢達成目標
 **目的：學習使用 while 迴圈處理未知次數的重複操作**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int target = 10000;  // 目標金額
@@ -199,54 +187,54 @@ int main() {
     int month = 0;       // 月份計數
     int deposit;         // 每月存款
     
-    cout << "目標：存到 " << target << " 元買新手機！" << endl;
+    printf("目標：存到 %d 元買新手機！\n", target);
     
     while (total < target) {
         month++;
-        cout << "請輸入第 " << month << " 個月的存款: ";
-        cin >> deposit;
+        printf("請輸入第 %d 個月的存款: ", month);
+        scanf("%d", &deposit);
         total += deposit;
-        cout << "目前總存款: " << total << " 元" << endl;
+        printf("目前總存款: %d 元\n", total);
         
         if (total < target) {
-            cout << "還差 " << (target - total) << " 元達成目標！" << endl;
+            printf("還差 %d 元達成目標！\n", target - total);
         }
     }
     
-    cout << "恭喜！已經存夠了！" << endl;
-    cout << "總共存了 " << month << " 個月，總存款為: " << total << " 元" << endl;
+    printf("恭喜！已經存夠了！\n");
+    printf("總共存了 %d 個月，總存款為: %d 元\n", month, total);
     return 0;
 }
 ```
 
 #### 範例 4：輸入驗證
 **目的：學習使用 while 迴圈進行輸入驗證，確保資料正確性**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
+#include <stdbool.h>
 
 int main() {
     int score;
     
-    cout << "請輸入一個 0-100 之間的成績：" << endl;
+    printf("請輸入一個 0-100 之間的成績：\n");
     
     while (true) {
-        cout << "請輸入成績: ";
-        cin >> score;
+        printf("請輸入成績: ");
+        scanf("%d", &score);
         
         if (score >= 0 && score <= 100) {
             break;  // 輸入正確，跳出迴圈
         } else {
-            cout << "輸入錯誤！成績必須在 0-100 之間，請重新輸入。" << endl;
+            printf("輸入錯誤！成績必須在 0-100 之間，請重新輸入。\n");
         }
     }
     
-    cout << "您輸入的成績是: " << score << " 分" << endl;
+    printf("您輸入的成績是: %d 分\n", score);
     
     if (score >= 60) {
-        cout << "恭喜及格！" << endl;
+        printf("恭喜及格！\n");
     } else {
-        cout << "需要加油喔！" << endl;
+        printf("需要加油喔！\n");
     }
     
     return 0;
@@ -258,7 +246,7 @@ int main() {
 ## do-while 迴圈
 
 ### 語法結構
-```cpp
+```c
 do {
     // 要重複執行的程式碼
 } while (條件判斷);
@@ -273,26 +261,25 @@ do {
 
 #### 範例 1：基本概念示範
 **目的：理解 do-while 與 while 的差異，程式碼至少執行一次**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int count = 0;
     
-    cout << "=== do-while 迴圈示範 ===" << endl;
+    printf("=== do-while 迴圈示範 ===\n");
     do {
         count++;
-        cout << "執行第 " << count << " 次" << endl;
+        printf("執行第 %d 次\n", count);
     } while (count < 3);
     
-    cout << "迴圈結束，總共執行了 " << count << " 次" << endl;
+    printf("迴圈結束，總共執行了 %d 次\n", count);
     
     // 比較：即使條件一開始就不成立，do-while 也會執行一次
-    cout << "\n=== 條件一開始就不成立的情況 ===" << endl;
+    printf("\n=== 條件一開始就不成立的情況 ===\n");
     int x = 10;
     do {
-        cout << "即使 x = " << x << " > 5，這行還是會執行一次" << endl;
+        printf("即使 x = %d > 5，這行還是會執行一次\n", x);
     } while (x < 5);
     
     return 0;
@@ -301,150 +288,147 @@ int main() {
 
 #### 範例 2：密碼驗證系統
 **目的：學習使用 do-while 進行重複驗證，直到輸入正確**
-```cpp
-#include <iostream>
-#include <string>
-using namespace std;
+```c
+#include <stdio.h>
+#include <string.h>
 
 int main() {
-    string password;
-    string correctPassword = "abc123";
+    char password[50];
+    char correctPassword[] = "abc123";
     int attempts = 0;
     
-    cout << "=== 密碼驗證系統 ===" << endl;
+    printf("=== 密碼驗證系統 ===\n");
     
     do {
         attempts++;
-        cout << "請輸入密碼 (第 " << attempts << " 次嘗試): ";
-        cin >> password;
+        printf("請輸入密碼 (第 %d 次嘗試): ", attempts);
+        scanf("%s", password);
         
-        if (password != correctPassword) {
-            cout << "密碼錯誤！請重新輸入。" << endl;
+        if (strcmp(password, correctPassword) != 0) {
+            printf("密碼錯誤！請重新輸入。\n");
         }
         
-    } while (password != correctPassword);
+    } while (strcmp(password, correctPassword) != 0);
     
-    cout << "恭喜！密碼正確，歡迎進入系統！" << endl;
-    cout << "您總共嘗試了 " << attempts << " 次" << endl;
+    printf("恭喜！密碼正確，歡迎進入系統！\n");
+    printf("您總共嘗試了 %d 次\n", attempts);
     return 0;
 }
 ```
 
 #### 範例 3：簡單計算機
 **目的：學習使用 do-while 建立重複執行的程式選單**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     char choice;
     double num1, num2, result;
     
-    cout << "=== 簡單計算機 ===" << endl;
+    printf("=== 簡單計算機 ===\n");
     
     do {
-        cout << "\n請輸入第一個數字: ";
-        cin >> num1;
-        cout << "請輸入第二個數字: ";
-        cin >> num2;
+        printf("\n請輸入第一個數字: ");
+        scanf("%lf", &num1);
+        printf("請輸入第二個數字: ");
+        scanf("%lf", &num2);
         
-        cout << "\n選擇運算：" << endl;
-        cout << "+ (加法)" << endl;
-        cout << "- (減法)" << endl;
-        cout << "* (乘法)" << endl;
-        cout << "/ (除法)" << endl;
-        cout << "請選擇運算符號: ";
-        cin >> choice;
+        printf("\n選擇運算：\n");
+        printf("+ (加法)\n");
+        printf("- (減法)\n");
+        printf("* (乘法)\n");
+        printf("/ (除法)\n");
+        printf("請選擇運算符號: ");
+        scanf(" %c", &choice);
         
         switch (choice) {
             case '+':
                 result = num1 + num2;
-                cout << num1 << " + " << num2 << " = " << result << endl;
+                printf("%.2f + %.2f = %.2f\n", num1, num2, result);
                 break;
             case '-':
                 result = num1 - num2;
-                cout << num1 << " - " << num2 << " = " << result << endl;
+                printf("%.2f - %.2f = %.2f\n", num1, num2, result);
                 break;
             case '*':
                 result = num1 * num2;
-                cout << num1 << " * " << num2 << " = " << result << endl;
+                printf("%.2f * %.2f = %.2f\n", num1, num2, result);
                 break;
             case '/':
                 if (num2 != 0) {
                     result = num1 / num2;
-                    cout << num1 << " / " << num2 << " = " << result << endl;
+                    printf("%.2f / %.2f = %.2f\n", num1, num2, result);
                 } else {
-                    cout << "錯誤：除數不能為零！" << endl;
+                    printf("錯誤：除數不能為零！\n");
                 }
                 break;
             default:
-                cout << "無效的運算符號！" << endl;
+                printf("無效的運算符號！\n");
         }
         
-        cout << "\n是否繼續計算？(y/n): ";
-        cin >> choice;
+        printf("\n是否繼續計算？(y/n): ");
+        scanf(" %c", &choice);
         
     } while (choice == 'y' || choice == 'Y');
     
-    cout << "感謝使用計算機，再見！" << endl;
+    printf("感謝使用計算機，再見！\n");
     return 0;
 }
 ```
 
 #### 範例 4：選單系統
 **目的：學習建立完整的選單驅動程式**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int choice;
     int balance = 1000;  // 帳戶餘額
     int amount;
     
-    cout << "=== ATM 系統 ===" << endl;
-    cout << "歡迎使用！您的初始餘額為: " << balance << " 元" << endl;
+    printf("=== ATM 系統 ===\n");
+    printf("歡迎使用！您的初始餘額為: %d 元\n", balance);
     
     do {
-        cout << "\n=== 主選單 ===" << endl;
-        cout << "1. 查詢餘額" << endl;
-        cout << "2. 存款" << endl;
-        cout << "3. 提款" << endl;
-        cout << "0. 離開系統" << endl;
-        cout << "請選擇功能 (0-3): ";
-        cin >> choice;
+        printf("\n=== 主選單 ===\n");
+        printf("1. 查詢餘額\n");
+        printf("2. 存款\n");
+        printf("3. 提款\n");
+        printf("0. 離開系統\n");
+        printf("請選擇功能 (0-3): ");
+        scanf("%d", &choice);
         
         switch (choice) {
             case 1:
-                cout << "您的帳戶餘額為: " << balance << " 元" << endl;
+                printf("您的帳戶餘額為: %d 元\n", balance);
                 break;
             case 2:
-                cout << "請輸入存款金額: ";
-                cin >> amount;
+                printf("請輸入存款金額: ");
+                scanf("%d", &amount);
                 if (amount > 0) {
                     balance += amount;
-                    cout << "存款成功！目前餘額: " << balance << " 元" << endl;
+                    printf("存款成功！目前餘額: %d 元\n", balance);
                 } else {
-                    cout << "存款金額必須大於 0！" << endl;
+                    printf("存款金額必須大於 0！\n");
                 }
                 break;
             case 3:
-                cout << "請輸入提款金額: ";
-                cin >> amount;
+                printf("請輸入提款金額: ");
+                scanf("%d", &amount);
                 if (amount > 0 && amount <= balance) {
                     balance -= amount;
-                    cout << "提款成功！目前餘額: " << balance << " 元" << endl;
+                    printf("提款成功！目前餘額: %d 元\n", balance);
                 } else if (amount > balance) {
-                    cout << "餘額不足！目前餘額: " << balance << " 元" << endl;
+                    printf("餘額不足！目前餘額: %d 元\n", balance);
                 } else {
-                    cout << "提款金額必須大於 0！" << endl;
+                    printf("提款金額必須大於 0！\n");
                 }
                 break;
             case 0:
-                cout << "感謝使用 ATM 系統，再見！" << endl;
+                printf("感謝使用 ATM 系統，再見！\n");
                 break;
             default:
-                cout << "無效選擇，請重新輸入！" << endl;
+                printf("無效選擇，請重新輸入！\n");
         }
     } while (choice != 0);
     
@@ -467,22 +451,21 @@ int main() {
 
 #### 範例 1：理解巢狀迴圈的執行順序
 **目的：清楚了解巢狀迴圈的執行流程**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
-    cout << "=== 巢狀迴圈執行順序示範 ===" << endl;
+    printf("=== 巢狀迴圈執行順序示範 ===\n");
     
     for (int i = 1; i <= 3; i++) {
-        cout << "外層迴圈第 " << i << " 次執行" << endl;
+        printf("外層迴圈第 %d 次執行\n", i);
         
         for (int j = 1; j <= 2; j++) {
-            cout << "  內層迴圈第 " << j << " 次執行" << endl;
+            printf("  內層迴圈第 %d 次執行\n", j);
         }
         
-        cout << "外層迴圈第 " << i << " 次結束" << endl;
-        cout << "---" << endl;
+        printf("外層迴圈第 %d 次結束\n", i);
+        printf("---\n");
     }
     
     return 0;
@@ -511,25 +494,24 @@ int main() {
 
 #### 範例 2：印出矩形圖案
 **目的：學習使用巢狀迴圈繪製簡單的矩形圖案**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int rows, cols;
     
-    cout << "請輸入矩形的行數: ";
-    cin >> rows;
-    cout << "請輸入矩形的列數: ";
-    cin >> cols;
+    printf("請輸入矩形的行數: ");
+    scanf("%d", &rows);
+    printf("請輸入矩形的列數: ");
+    scanf("%d", &cols);
     
-    cout << "\n繪製 " << rows << "×" << cols << " 的矩形：" << endl;
+    printf("\n繪製 %d×%d 的矩形：\n", rows, cols);
     
     for (int i = 1; i <= rows; i++) {
         for (int j = 1; j <= cols; j++) {
-            cout << "* ";
+            printf("* ");
         }
-        cout << endl;
+        printf("\n");
     }
     
     return 0;
@@ -538,23 +520,22 @@ int main() {
 
 #### 範例 3：印出直角三角形
 **目的：學習使用巢狀迴圈繪製三角形圖案**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int height;
     
-    cout << "請輸入三角形的高度: ";
-    cin >> height;
+    printf("請輸入三角形的高度: ");
+    scanf("%d", &height);
     
-    cout << "\n直角三角形：" << endl;
+    printf("\n直角三角形：\n");
     for (int i = 1; i <= height; i++) {
-        cout << "第 " << i << " 行: ";
+        printf("第 %d 行: ", i);
         for (int j = 1; j <= i; j++) {
-            cout << "# ";
+            printf("# ");
         }
-        cout << endl;
+        printf("\n");
     }
     
     return 0;
@@ -573,33 +554,31 @@ int main() {
 
 #### 範例 4：九九乘法表
 **目的：學習使用巢狀迴圈處理數學運算表格**
-```cpp
-#include <iostream>
-#include <iomanip>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
-    cout << "=== 九九乘法表 ===" << endl;
+    printf("=== 九九乘法表 ===\n");
     
     // 印出表頭
-    cout << "   ";
+    printf("   ");
     for (int j = 1; j <= 9; j++) {
-        cout << setw(4) << j;
+        printf("%4d", j);
     }
-    cout << endl;
-    cout << "   ";
+    printf("\n");
+    printf("   ");
     for (int j = 1; j <= 9; j++) {
-        cout << "----";
+        printf("----");
     }
-    cout << endl;
+    printf("\n");
     
     // 印出乘法表內容
     for (int i = 1; i <= 9; i++) {
-        cout << i << " |";
+        printf("%d |", i);
         for (int j = 1; j <= 9; j++) {
-            cout << setw(4) << i * j;
+            printf("%4d", i * j);
         }
-        cout << endl;
+        printf("\n");
     }
     
     return 0;
@@ -608,29 +587,28 @@ int main() {
 
 #### 範例 5：等腰三角形
 **目的：學習更複雜的圖案繪製，結合空格和符號**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int height;
     
-    cout << "請輸入等腰三角形的高度: ";
-    cin >> height;
+    printf("請輸入等腰三角形的高度: ");
+    scanf("%d", &height);
     
-    cout << "\n等腰三角形：" << endl;
+    printf("\n等腰三角形：\n");
     for (int i = 1; i <= height; i++) {
         // 印出空格
         for (int space = 1; space <= height - i; space++) {
-            cout << " ";
+            printf(" ");
         }
         
         // 印出星號
         for (int star = 1; star <= 2 * i - 1; star++) {
-            cout << "*";
+            printf("*");
         }
         
-        cout << endl;
+        printf("\n");
     }
     
     return 0;
@@ -649,34 +627,33 @@ int main() {
 
 #### 範例 6：數字金字塔
 **目的：學習在圖案中加入數字變化**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int height;
     
-    cout << "請輸入數字金字塔的高度: ";
-    cin >> height;
+    printf("請輸入數字金字塔的高度: ");
+    scanf("%d", &height);
     
-    cout << "\n數字金字塔：" << endl;
+    printf("\n數字金字塔：\n");
     for (int i = 1; i <= height; i++) {
         // 印出空格
         for (int space = 1; space <= height - i; space++) {
-            cout << " ";
+            printf(" ");
         }
         
         // 印出遞增數字
         for (int num = 1; num <= i; num++) {
-            cout << num;
+            printf("%d", num);
         }
         
         // 印出遞減數字
         for (int num = i - 1; num >= 1; num--) {
-            cout << num;
+            printf("%d", num);
         }
         
-        cout << endl;
+        printf("\n");
     }
     
     return 0;
@@ -711,57 +688,55 @@ int main() {
 
 #### 範例 1：break 語句基本用法
 **目的：學習使用 break 提前結束迴圈**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
-    cout << "=== break 語句示範 ===" << endl;
-    cout << "尋找第一個大於 50 的數字：" << endl;
+    printf("=== break 語句示範 ===\n");
+    printf("尋找第一個大於 50 的數字：\n");
     
     for (int i = 1; i <= 100; i++) {
-        cout << "檢查數字: " << i << endl;
+        printf("檢查數字: %d\n", i);
         
         if (i > 50) {
-            cout << "找到了！數字 " << i << " 大於 50" << endl;
+            printf("找到了！數字 %d 大於 50\n", i);
             break;  // 找到後立即跳出迴圈
         }
     }
     
-    cout << "迴圈結束" << endl;
+    printf("迴圈結束\n");
     return 0;
 }
 ```
 
 #### 範例 2：continue 語句基本用法
 **目的：學習使用 continue 跳過特定條件**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
-    cout << "=== continue 語句示範 ===" << endl;
-    cout << "印出 1 到 10 中的偶數：" << endl;
+    printf("=== continue 語句示範 ===\n");
+    printf("印出 1 到 10 中的偶數：\n");
     
     for (int i = 1; i <= 10; i++) {
         if (i % 2 == 1) {
-            cout << i << " 是奇數，跳過" << endl;
+            printf("%d 是奇數，跳過\n", i);
             continue;  // 跳過奇數，繼續下一次迴圈
         }
         
-        cout << i << " 是偶數" << endl;
+        printf("%d 是偶數\n", i);
     }
     
-    cout << "迴圈結束" << endl;
+    printf("迴圈結束\n");
     return 0;
 }
 ```
 
 #### 範例 3：成績輸入系統（break 應用）
 **目的：學習使用 break 建立靈活的輸入系統**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
+#include <stdbool.h>
 
 int main() {
     int score;
@@ -770,20 +745,20 @@ int main() {
     int highestScore = 0;
     int lowestScore = 100;
     
-    cout << "=== 學生成績統計系統 ===" << endl;
-    cout << "請輸入學生成績，輸入負數結束輸入" << endl;
+    printf("=== 學生成績統計系統 ===\n");
+    printf("請輸入學生成績，輸入負數結束輸入\n");
     
     while (true) {
-        cout << "請輸入第 " << (count + 1) << " 位學生的成績: ";
-        cin >> score;
+        printf("請輸入第 %d 位學生的成績: ", count + 1);
+        scanf("%d", &score);
         
         if (score < 0) {
-            cout << "輸入結束！" << endl;
+            printf("輸入結束！\n");
             break;  // 輸入負數時跳出迴圈
         }
         
         if (score > 100) {
-            cout << "成績不能超過 100 分，請重新輸入" << endl;
+            printf("成績不能超過 100 分，請重新輸入\n");
             continue;  // 跳過無效輸入
         }
         
@@ -797,18 +772,18 @@ int main() {
             lowestScore = score;
         }
         
-        cout << "已輸入 " << count << " 位學生的成績" << endl;
+        printf("已輸入 %d 位學生的成績\n", count);
     }
     
     if (count > 0) {
-        cout << "\n=== 統計結果 ===" << endl;
-        cout << "學生人數: " << count << " 人" << endl;
-        cout << "總成績: " << sum << " 分" << endl;
-        cout << "平均成績: " << (double)sum / count << " 分" << endl;
-        cout << "最高成績: " << highestScore << " 分" << endl;
-        cout << "最低成績: " << lowestScore << " 分" << endl;
+        printf("\n=== 統計結果 ===\n");
+        printf("學生人數: %d 人\n", count);
+        printf("總成績: %d 分\n", sum);
+        printf("平均成績: %.2f 分\n", (double)sum / count);
+        printf("最高成績: %d 分\n", highestScore);
+        printf("最低成績: %d 分\n", lowestScore);
     } else {
-        cout << "沒有輸入任何有效成績" << endl;
+        printf("沒有輸入任何有效成績\n");
     }
     
     return 0;
@@ -817,9 +792,8 @@ int main() {
 
 #### 範例 4：數字篩選器（continue 應用）
 **目的：學習使用 continue 進行條件篩選**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int num;
@@ -828,32 +802,32 @@ int main() {
     int evenCount = 0;
     int oddCount = 0;
     
-    cout << "=== 數字分類統計系統 ===" << endl;
-    cout << "請輸入 10 個整數：" << endl;
+    printf("=== 數字分類統計系統 ===\n");
+    printf("請輸入 10 個整數：\n");
     
     for (int i = 1; i <= 10; i++) {
-        cout << "請輸入第 " << i << " 個數字: ";
-        cin >> num;
+        printf("請輸入第 %d 個數字: ", i);
+        scanf("%d", &num);
         
         if (num == 0) {
-            cout << "跳過數字 0" << endl;
+            printf("跳過數字 0\n");
             continue;  // 跳過 0
         }
         
         if (num % 2 == 0) {
             evenSum += num;
             evenCount++;
-            cout << num << " 是偶數，加入偶數統計" << endl;
+            printf("%d 是偶數，加入偶數統計\n", num);
         } else {
             oddSum += num;
             oddCount++;
-            cout << num << " 是奇數，加入奇數統計" << endl;
+            printf("%d 是奇數，加入奇數統計\n", num);
         }
     }
     
-    cout << "\n=== 統計結果 ===" << endl;
-    cout << "偶數個數: " << evenCount << "，總和: " << evenSum << endl;
-    cout << "奇數個數: " << oddCount << "，總和: " << oddSum << endl;
+    printf("\n=== 統計結果 ===\n");
+    printf("偶數個數: %d，總和: %d\n", evenCount, evenSum);
+    printf("奇數個數: %d，總和: %d\n", oddCount, oddSum);
     
     return 0;
 }
@@ -861,31 +835,30 @@ int main() {
 
 #### 範例 5：巢狀迴圈中的 break 和 continue
 **目的：理解 break 和 continue 在巢狀迴圈中的作用範圍**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
-    cout << "=== 巢狀迴圈中的控制語句 ===" << endl;
+    printf("=== 巢狀迴圈中的控制語句 ===\n");
     
     for (int i = 1; i <= 3; i++) {
-        cout << "\n外層迴圈第 " << i << " 次：" << endl;
+        printf("\n外層迴圈第 %d 次：\n", i);
         
         for (int j = 1; j <= 5; j++) {
             if (j == 3) {
-                cout << "  內層迴圈遇到 j=3，跳過" << endl;
+                printf("  內層迴圈遇到 j=3，跳過\n");
                 continue;  // 只影響內層迴圈
             }
             
             if (j == 5 && i == 2) {
-                cout << "  內層迴圈在 i=2, j=5 時提前結束" << endl;
+                printf("  內層迴圈在 i=2, j=5 時提前結束\n");
                 break;  // 只跳出內層迴圈
             }
             
-            cout << "  內層迴圈 j=" << j << endl;
+            printf("  內層迴圈 j=%d\n", j);
         }
         
-        cout << "外層迴圈第 " << i << " 次結束" << endl;
+        printf("外層迴圈第 %d 次結束\n", i);
     }
     
     return 0;
@@ -905,17 +878,17 @@ int main() {
 
 ### 範例 1：猜數字遊戲
 **目的：綜合運用 while 迴圈、條件判斷和 break 語句，建立互動式遊戲**
-```cpp
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
-using namespace std;
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdbool.h>
 
 int main() {
-    cout << "===== 猜數字遊戲 =====" << endl;
+    printf("===== 猜數字遊戲 =====\n");
     
     // 設定隨機數種子
-    srand(time(nullptr));
+    srand(time(NULL));
     
     int min = 1;
     int max = 100;
@@ -923,75 +896,74 @@ int main() {
     int attempts = 0;
     int target = rand() % (max - min + 1) + min;
     
-    cout << "我已經想好一個 " << min << " 到 " << max << " 之間的數字" << endl;
-    cout << "請開始猜測！" << endl;
+    printf("我已經想好一個 %d 到 %d 之間的數字\n", min, max);
+    printf("請開始猜測！\n");
     
     while (true) {
-        cout << "\n請輸入 " << min << " 到 " << max << " 之間的數字: ";
-        cin >> guess;
+        printf("\n請輸入 %d 到 %d 之間的數字: ", min, max);
+        scanf("%d", &guess);
         attempts++;
         
         if (guess < min || guess > max) {
-            cout << "超出範圍！請輸入 " << min << " 到 " << max << " 之間的數字" << endl;
+            printf("超出範圍！請輸入 %d 到 %d 之間的數字\n", min, max);
             attempts--;  // 無效輸入不計入次數
             continue;
         }
         
         if (guess == target) {
-            cout << "🎉 恭喜！猜對了！答案就是 " << target << endl;
-            cout << "您總共猜了 " << attempts << " 次" << endl;
+            printf("🎉 恭喜！猜對了！答案就是 %d\n", target);
+            printf("您總共猜了 %d 次\n", attempts);
             
             if (attempts <= 3) {
-                cout << "太厲害了！您是猜數字高手！" << endl;
+                printf("太厲害了！您是猜數字高手！\n");
             } else if (attempts <= 7) {
-                cout << "不錯的表現！" << endl;
+                printf("不錯的表現！\n");
             } else {
-                cout << "多練習就會進步的！" << endl;
+                printf("多練習就會進步的！\n");
             }
             break;
         } else if (guess > target) {
-            cout << "太大了！再小一點" << endl;
+            printf("太大了！再小一點\n");
             max = guess - 1;
         } else {
-            cout << "太小了！再大一點" << endl;
+            printf("太小了！再大一點\n");
             min = guess + 1;
         }
         
-        cout << "您已經猜了 " << attempts << " 次" << endl;
-        cout << "提示：答案在 " << min << " 到 " << max << " 之間" << endl;
+        printf("您已經猜了 %d 次\n", attempts);
+        printf("提示：答案在 %d 到 %d 之間\n", min, max);
     }
     
-    cout << "遊戲結束，感謝遊玩！" << endl;
+    printf("遊戲結束，感謝遊玩！\n");
     return 0;
 }
 ```
 
 ### 範例 2：計算最大公因數和最小公倍數
 **目的：學習使用 while 迴圈實現歐幾里得演算法**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int num1, num2;
     int originalNum1, originalNum2;
     int gcd, lcm;
     
-    cout << "=== 最大公因數與最小公倍數計算器 ===" << endl;
+    printf("=== 最大公因數與最小公倍數計算器 ===\n");
     
-    cout << "請輸入第一個正整數: ";
-    cin >> num1;
-    cout << "請輸入第二個正整數: ";
-    cin >> num2;
+    printf("請輸入第一個正整數: ");
+    scanf("%d", &num1);
+    printf("請輸入第二個正整數: ");
+    scanf("%d", &num2);
     
     // 保存原始數值
     originalNum1 = num1;
     originalNum2 = num2;
     
     // 使用歐幾里得演算法計算最大公因數
-    cout << "\n計算過程：" << endl;
+    printf("\n計算過程：\n");
     while (num2 != 0) {
-        cout << num1 << " ÷ " << num2 << " = " << num1/num2 << " 餘 " << num1%num2 << endl;
+        printf("%d ÷ %d = %d 餘 %d\n", num1, num2, num1/num2, num1%num2);
         int temp = num2;
         num2 = num1 % num2;
         num1 = temp;
@@ -1002,9 +974,9 @@ int main() {
     // 計算最小公倍數
     lcm = (originalNum1 * originalNum2) / gcd;
     
-    cout << "\n=== 計算結果 ===" << endl;
-    cout << originalNum1 << " 和 " << originalNum2 << " 的最大公因數是: " << gcd << endl;
-    cout << originalNum1 << " 和 " << originalNum2 << " 的最小公倍數是: " << lcm << endl;
+    printf("\n=== 計算結果 ===\n");
+    printf("%d 和 %d 的最大公因數是: %d\n", originalNum1, originalNum2, gcd);
+    printf("%d 和 %d 的最小公倍數是: %d\n", originalNum1, originalNum2, lcm);
     
     return 0;
 }
@@ -1012,25 +984,25 @@ int main() {
 
 ### 範例 3：質數判斷與質數列表
 **目的：學習使用 for 迴圈進行數學運算和優化演算法**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
+#include <stdbool.h>
 
 int main() {
     int choice;
     
-    cout << "=== 質數工具程式 ===" << endl;
-    cout << "1. 判斷單一數字是否為質數" << endl;
-    cout << "2. 列出範圍內的所有質數" << endl;
-    cout << "請選擇功能 (1 或 2): ";
-    cin >> choice;
+    printf("=== 質數工具程式 ===\n");
+    printf("1. 判斷單一數字是否為質數\n");
+    printf("2. 列出範圍內的所有質數\n");
+    printf("請選擇功能 (1 或 2): ");
+    scanf("%d", &choice);
     
     if (choice == 1) {
         int n;
         bool isPrime = true;
         
-        cout << "請輸入一個正整數: ";
-        cin >> n;
+        printf("請輸入一個正整數: ");
+        scanf("%d", &n);
         
         if (n <= 1) {
             isPrime = false;
@@ -1039,35 +1011,35 @@ int main() {
         } else if (n % 2 == 0) {
             isPrime = false;
         } else {
-            cout << "檢查過程：" << endl;
+            printf("檢查過程：\n");
             for (int i = 3; i * i <= n; i += 2) {
-                cout << "檢查 " << n << " 是否能被 " << i << " 整除...";
+                printf("檢查 %d 是否能被 %d 整除...", n, i);
                 if (n % i == 0) {
-                    cout << " 是！" << endl;
+                    printf(" 是！\n");
                     isPrime = false;
                     break;
                 } else {
-                    cout << " 否" << endl;
+                    printf(" 否\n");
                 }
             }
         }
         
         if (isPrime) {
-            cout << n << " 是質數！" << endl;
+            printf("%d 是質數！\n", n);
         } else {
-            cout << n << " 不是質數" << endl;
+            printf("%d 不是質數\n", n);
         }
         
     } else if (choice == 2) {
         int start, end;
         int count = 0;
         
-        cout << "請輸入起始數字: ";
-        cin >> start;
-        cout << "請輸入結束數字: ";
-        cin >> end;
+        printf("請輸入起始數字: ");
+        scanf("%d", &start);
+        printf("請輸入結束數字: ");
+        scanf("%d", &end);
         
-        cout << start << " 到 " << end << " 之間的質數有：" << endl;
+        printf("%d 到 %d 之間的質數有：\n", start, end);
         
         for (int num = start; num <= end; num++) {
             if (num <= 1) continue;
@@ -1087,13 +1059,13 @@ int main() {
             }
             
             if (isPrime) {
-                cout << num << " ";
+                printf("%d ", num);
                 count++;
-                if (count % 10 == 0) cout << endl;  // 每 10 個換行
+                if (count % 10 == 0) printf("\n");  // 每 10 個換行
             }
         }
         
-        cout << "\n總共找到 " << count << " 個質數" << endl;
+        printf("\n總共找到 %d 個質數\n", count);
     }
     
     return 0;
@@ -1102,99 +1074,98 @@ int main() {
 
 ### 範例 4：圖案繪製工具
 **目的：學習使用巢狀迴圈創造各種圖案**
-```cpp
-#include <iostream>
-using namespace std;
+```c
+#include <stdio.h>
 
 int main() {
     int choice, size;
     
-    cout << "=== 圖案繪製工具 ===" << endl;
-    cout << "1. 數字三角形" << endl;
-    cout << "2. 空心正方形" << endl;
-    cout << "3. 菱形圖案" << endl;
-    cout << "4. 階梯圖案" << endl;
-    cout << "請選擇要繪製的圖案 (1-4): ";
-    cin >> choice;
+    printf("=== 圖案繪製工具 ===\n");
+    printf("1. 數字三角形\n");
+    printf("2. 空心正方形\n");
+    printf("3. 菱形圖案\n");
+    printf("4. 階梯圖案\n");
+    printf("請選擇要繪製的圖案 (1-4): ");
+    scanf("%d", &choice);
     
-    cout << "請輸入圖案大小: ";
-    cin >> size;
+    printf("請輸入圖案大小: ");
+    scanf("%d", &size);
     
     switch (choice) {
         case 1: {
-            cout << "\n數字三角形：" << endl;
+            printf("\n數字三角形：\n");
             for (int i = 1; i <= size; i++) {
                 // 印出空格
                 for (int j = 1; j <= size - i; j++) {
-                    cout << " ";
+                    printf(" ");
                 }
                 // 印出數字
                 for (int k = 1; k <= i; k++) {
-                    cout << i;
+                    printf("%d", i);
                 }
-                cout << endl;
+                printf("\n");
             }
             break;
         }
         
         case 2: {
-            cout << "\n空心正方形：" << endl;
+            printf("\n空心正方形：\n");
             for (int i = 1; i <= size; i++) {
                 for (int j = 1; j <= size; j++) {
                     if (i == 1 || i == size || j == 1 || j == size) {
-                        cout << "* ";
+                        printf("* ");
                     } else {
-                        cout << "  ";
+                        printf("  ");
                     }
                 }
-                cout << endl;
+                printf("\n");
             }
             break;
         }
         
         case 3: {
-            cout << "\n菱形圖案：" << endl;
+            printf("\n菱形圖案：\n");
             // 上半部
             for (int i = 1; i <= size; i++) {
                 for (int j = 1; j <= size - i; j++) {
-                    cout << " ";
+                    printf(" ");
                 }
                 for (int k = 1; k <= 2 * i - 1; k++) {
-                    cout << "*";
+                    printf("*");
                 }
-                cout << endl;
+                printf("\n");
             }
             // 下半部
             for (int i = size - 1; i >= 1; i--) {
                 for (int j = 1; j <= size - i; j++) {
-                    cout << " ";
+                    printf(" ");
                 }
                 for (int k = 1; k <= 2 * i - 1; k++) {
-                    cout << "*";
+                    printf("*");
                 }
-                cout << endl;
+                printf("\n");
             }
             break;
         }
         
         case 4: {
-            cout << "\n階梯圖案：" << endl;
+            printf("\n階梯圖案：\n");
             for (int i = 1; i <= size; i++) {
                 // 印出空格
                 for (int j = 1; j < i; j++) {
-                    cout << "  ";
+                    printf("  ");
                 }
                 // 印出階梯
                 for (int k = 1; k <= size - i + 1; k++) {
-                    cout << "# ";
+                    printf("# ");
                 }
-                cout << endl;
+                printf("\n");
             }
             break;
         }
         
         default:
-            cout << "無效的選擇！" << endl;
+            printf("無效的選擇！\n");
     }
     
     return 0;

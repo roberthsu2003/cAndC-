@@ -5,7 +5,10 @@ using namespace std;
 
 int main() {
   srandom(time(NULL));
-  cout << random() % 10 << endl;
+  int max = 55;
+  int min = 50;
+  int value = random() % (max - min + 1) + min;
+  cout << value << endl;
   /*
   int n = 3; //元素的數量儲存在變數內
   int scores[n];

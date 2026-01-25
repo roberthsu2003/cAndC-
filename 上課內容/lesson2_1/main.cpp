@@ -2,10 +2,11 @@
 using namespace std;
 
 int main() {
-  int scores[5];
+  int n = 3; //元素的數量儲存在變數內
+  int scores[n];
   cout << "陣列大小是:" << sizeof(scores) << endl;
-  cout << "請輸入學生的5個分數(使用空格分隔):";
-  for(int i=0; i<=4; i++){
+  cout << "請輸入學生的" << n << "個分數(使用空格分隔):";
+  for(int i=0; i<n; i++){
     cin >> scores[i];
   }
   
@@ -17,7 +18,7 @@ int main() {
   cout << scores[4] << endl;
   */
 
-  for(int i=0;i<5; i++){
+  for(int i=0;i<n; i++){
     cout << scores[i] << endl;
   }
   

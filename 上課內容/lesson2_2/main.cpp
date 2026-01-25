@@ -16,7 +16,9 @@ int main() {
     scores[i] = random() % (max - min + 1) + min;
   }
 
+  cout << "學生分數: ";
   for (int i = 0; i < n; i++) {
-    cout << scores[i] << endl;
+    cout << scores[i] << " ";
   }
+  cout << endl;
 }

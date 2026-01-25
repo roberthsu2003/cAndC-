@@ -17,9 +17,18 @@ int main() {
   for(int i=0; i<m; i++){
     for(int j=0; j<n; j++){
       students[i][j] = random() % (max - min + 1) + min;
-      cout << students[i][j] << " ";
     }
-    cout << "\n===============\n";
+  }
+
+  //============學生分數的2維陣列已經完成========================
+  for(int i=0; i<m; i++){
+    cout << "學生" << i+1 << ":";
+    int scores = 0;
+    for(int j=0; j<n; j++){
+      cout << students[i][j] << " ";
+      scores += students[i][j];
+    }
+    cout << "總分:" << scores << " 平均:" << scores/(float)n << endl;    
   }
   
 }

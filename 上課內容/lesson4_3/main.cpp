@@ -5,13 +5,12 @@ using namespace std;
 //取址運算子 -> &一般變數名稱
 //取值運算子 -> *記憶體位址
 
+void change_value(int *ptr_n) { 
+  *ptr_n = 20; 
+}
+
 int main() {
   int n = 5;
-  n = 10;
-  int *ptr_n = &n;
-
-  *ptr_n = 20; //取值運算子
-  cout << "n變數內的值" << n << endl;
-  cout << "n變數內的值" << *ptr_n << endl;   //取值運算子
-  cout << "n的記憶體位址:" << ptr_n << endl; //指標變數
+  change_value(&n);
+  cout << "n的值是" << n << endl;
 }

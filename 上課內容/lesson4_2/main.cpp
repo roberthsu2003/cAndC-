@@ -2,15 +2,18 @@
 using namespace std;
 
 //2數對調
+void swap(int n, int m){ //call by value
+  int temp;
+  temp = n;
+  n = m;
+  m = temp;
+}
 
 int main() { 
   int x = 666;
   int y = 888;
   cout << "x=" << x << ",y=" << y << endl;
   //2數對調
-  int temp;
-  temp = x;
-  x = y;
-  y = temp;
+  swap(x, y);
   cout << "x=" << x << ",y=" << y << endl;
 }

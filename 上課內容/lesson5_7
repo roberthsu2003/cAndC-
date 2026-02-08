@@ -1,0 +1,15 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+void print(vector<int> &v){
+  for(int elem:v){
+    cout << elem << endl;
+  }
+}
+
+int main() { 
+  vector<int> list{2, 4, 6, 8};
+  print(list);
+}

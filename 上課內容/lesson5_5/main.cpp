@@ -2,7 +2,7 @@
 using namespace std;
 
 //2數對調
-void swap(int &n, int &m){ //call by address
+void swap(int &n, int &m){ //call by reference
   int temp;
   temp = n;
   n = m;

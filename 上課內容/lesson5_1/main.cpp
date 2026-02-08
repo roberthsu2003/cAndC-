@@ -12,4 +12,18 @@ int main() {
   for(int i=0; i<10; i++){
     cout << vec_b[i] << endl;
   }
+  cout << "===============" << endl;
+
+  vector<int> vec_c(10, 8);
+
+  for(int i=0; i<10; i++){
+    cout << vec_c[i] << endl;
+  }
+  cout << "==================" << endl;
+
+  vector<int> vec_d{10, 20, 30, 40, 50};
+  for(int i=0; i<5; i++){
+    cout << vec_d[i] << endl;
+  }
+  cout << "==================" << endl;
 }

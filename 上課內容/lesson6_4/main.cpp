@@ -6,13 +6,20 @@ class Person{
     string name;
     int height;
     int weight;
+
+    Person(){
+      
+    }
+
+    Person(string n, int h, int w){
+      name = n;
+      height = h;
+      weight = w;
+    }
 };
 
 int main() { 
-  Person p;
-  p.name = "robert";
-  p.height = 170;
-  p.weight = 72;
+  Person p("robert", 170, 72);  
 
   cout << "p的實體資料如下:\n";
   cout << "姓名:" << p.name << endl;

@@ -11,9 +11,9 @@ int main() {
   const int NUMBER_OF_ENTRIES = 5; //建立常數,一般常數全部都為大寫
   vector<double> numbers(NUMBER_OF_ENTRIES); //建立一個元素有5個的vector實體
   cout << "請輸入" << NUMBER_OF_ENTRIES << "個數值:";
-  for(int i=0; i<NUMBER_OF_ENTRIES; i++){
-    cin >> numbers[i];
-    sum += numbers[i];
+  for(double &elem:numbers){
+    cin >> elem;
+    sum += elem;
   }
 
   cout << "此vector:";

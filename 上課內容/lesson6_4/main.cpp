@@ -2,9 +2,20 @@
 using namespace std;
 
 class Person{
-
+  public:
+    string name;
+    int height;
+    int weight;
 };
 
 int main() { 
- Person p; 
+  Person p;
+  p.name = "robert";
+  p.height = 170;
+  p.weight = 72;
+
+  cout << "p的實體資料如下:\n";
+  cout << "姓名:" << p.name << endl;
+  cout << "身高:" << p.height << endl;
+  cout << "體重:" << p.weight << endl;
 }
